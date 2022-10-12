@@ -12,6 +12,7 @@
     "lint:client": "cd client && npm run lint"
   },
   "pre-commit": [
+    "test",
     "lint-fix",
     "lint",
     "lint:client"
