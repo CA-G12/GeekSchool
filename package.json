@@ -4,7 +4,7 @@
   "description": "geekschool",
   "main": "index.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=dev nodemon ./server/index.ts",
+    "dev": "cross-env NODE_ENV=development nodemon ./server/index.ts",
     "start": "cross-env NODE_ENV=production ts-node ./server/index.ts",
     "test": "cross-env NODE_ENV=test jest server/",
     "lint": "eslint --ext .ts server/",
