@@ -3,19 +3,17 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const {
-  DEV_DB_URL,
-  TEST_DB_URL,
-  DATABASE_URL,
-  NODE_ENV,
-  SECRET_KEY,
+  DEV_DB_URL: dbDev,
+  TEST_DB_URL: dbTest,
+  DATABASE_URL: dbProduction,
+  NODE_ENV: nodeEnv,
+  SECRET_KEY: secretKey,
 } = process.env;
 
-const envVars = {
-  dbDev: DEV_DB_URL,
-  dbTest: TEST_DB_URL,
-  dbProduction: DATABASE_URL,
-  nodeEnv: NODE_ENV,
-  secretKey: SECRET_KEY,
+export {
+  dbDev,
+  dbTest,
+  dbProduction,
+  nodeEnv,
+  secretKey,
 };
-
-export default envVars;

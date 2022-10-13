@@ -1,9 +1,11 @@
 import { Sequelize } from 'sequelize';
-import envVars from '../config/environment';
-
-const {
-  dbDev, dbTest, dbProduction, nodeEnv,
-} = envVars;
+import {
+  dbDev,
+  dbTest,
+  dbProduction,
+  nodeEnv,
+}
+  from '../config/environment';
 
 let connectionString: string | undefined = '';
 let ssl: boolean | object = false;
