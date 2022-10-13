@@ -1,6 +1,6 @@
-import { Sequelize, DataTypes } from 'sequelize';
-
-const sequelize = new Sequelize('');
+import { DataTypes } from 'sequelize';
+import sequelize from '../database/connection';
+import Classes from './classes';
 
 const Schedules = sequelize.define('assignment', {
   id: {
@@ -21,5 +21,8 @@ const Schedules = sequelize.define('assignment', {
     allowNull: false,
   },
 });
+
+Classes.hasMany(Schedules);
+Schedules.belongsTo(Classes, { foreignKey: 'class_id' });
 
 export default Schedules;

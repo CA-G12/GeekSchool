@@ -1,5 +1,6 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../database/connection';
+import Classes from './classes';
 
 const Announcements = sequelize.define('Announcement', {
   id: {
@@ -16,5 +17,8 @@ const Announcements = sequelize.define('Announcement', {
     allowNull: false,
   },
 });
+
+Classes.hasMany(Announcements);
+Announcements.belongsTo(Classes, { foreignKey: 'class_id' });
 
 export default Announcements;

@@ -1,6 +1,6 @@
-import { Sequelize, DataTypes } from 'sequelize';
-
-const sequelize = new Sequelize('');
+import { DataTypes } from 'sequelize';
+import sequelize from '../database/connection';
+import Students from './students';
 
 const Health = sequelize.define('health', {
   id: {
@@ -41,5 +41,8 @@ const Health = sequelize.define('health', {
     allowNull: false,
   },
 });
+
+Students.hasOne(Health);
+Health.belongsTo(Students, { foreignKey: 'student_id' });
 
 export default Health;

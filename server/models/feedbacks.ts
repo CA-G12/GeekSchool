@@ -1,8 +1,9 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../database/connection';
+import Students from './students';
 import Classes from './classes';
 
-const Recommendations = sequelize.define('recommendations', {
+const Feedbacks = sequelize.define('assignment', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -12,17 +13,20 @@ const Recommendations = sequelize.define('recommendations', {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
-  material_link: {
-    type: DataTypes.TEXT,
+  student_id: {
+    type: DataTypes.INTEGER,
     allowNull: false,
   },
-  description: {
+  feedback: {
     type: DataTypes.TEXT,
     allowNull: false,
   },
 });
 
-Classes.hasMany(Recommendations);
-Recommendations.belongsTo(Classes, { foreignKey: 'class_id' });
+Students.hasMany(Feedbacks);
+Feedbacks.belongsTo(Students, { foreignKey: 'student_id' });
 
-export default Recommendations;
+Classes.hasMany(Feedbacks);
+Feedbacks.belongsTo(Classes, { foreignKey: 'class_id' });
+
+export default Feedbacks;

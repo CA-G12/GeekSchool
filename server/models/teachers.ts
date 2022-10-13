@@ -2,7 +2,7 @@ import { DataTypes } from 'sequelize';
 import sequelize from '../database/connection';
 import Users from './users';
 
-const Parents = sequelize.define('Parent', {
+const Teachers = sequelize.define('teacher', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -10,11 +10,10 @@ const Parents = sequelize.define('Parent', {
   },
   user_id: {
     type: DataTypes.INTEGER,
-    allowNull: false,
   },
 });
 
-Parents.hasOne(Users);
-Users.belongsTo(Parents, { foreignKey: 'user_id' });
+Users.hasOne(Teachers);
+Teachers.belongsTo(Users, { foreignKey: 'user_id' });
 
-export default Parents;
+export default Teachers;

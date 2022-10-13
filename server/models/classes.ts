@@ -1,5 +1,6 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../database/connection';
+import Teachers from './teachers';
 
 const Classes = sequelize.define('Class', {
   id: {
@@ -12,5 +13,8 @@ const Classes = sequelize.define('Class', {
     allowNull: false,
   },
 });
+
+Teachers.hasMany(Classes);
+Classes.belongsTo(Teachers, { foreignKey: 'teacher_id' });
 
 export default Classes;
