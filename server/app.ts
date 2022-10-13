@@ -3,11 +3,8 @@ import compression from 'compression';
 import cookieParser from 'cookie-parser';
 import morgan from 'morgan';
 import { join } from 'path';
-import * as dotenv from 'dotenv';
-
 import router from './routes';
-
-dotenv.config();
+import { nodeEnv } from './config/environment';
 
 const app = express();
 
@@ -22,7 +19,7 @@ app.disable('x-powered-by');
 
 app.use('/api/v1/', router);
 
-if (process.env.NODE_ENV === 'production') {
+if (nodeEnv === 'production') {
   app.use(express.static(join(__dirname, '..', 'client', 'build')));
   app.get('*', (req: Request, res: Response) => {
     res.sendFile(join(__dirname, '..', 'client', 'build', 'index.html'));
