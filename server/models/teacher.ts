@@ -2,7 +2,7 @@ import { Sequelize, DataTypes } from 'sequelize';
 
 const sequelize = new Sequelize('');
 
-const teacher = sequelize.define('teacher', {
+const Teacher = sequelize.define('teacher', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -13,4 +13,4 @@ const teacher = sequelize.define('teacher', {
   },
 });
 
-export default teacher;
+export default Teacher;

@@ -2,7 +2,7 @@ import { Sequelize, DataTypes } from 'sequelize';
 
 const sequelize = new Sequelize('');
 
-const health = sequelize.define('health', {
+const Health = sequelize.define('health', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -42,4 +42,4 @@ const health = sequelize.define('health', {
   },
 });
 
-export default health;
+export default Health;

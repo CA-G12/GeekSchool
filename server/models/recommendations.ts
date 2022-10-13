@@ -2,7 +2,7 @@ import { Sequelize, DataTypes } from 'sequelize';
 
 const sequelize = new Sequelize('');
 
-const recommendations = sequelize.define('recommendations', {
+const Recommendations = sequelize.define('recommendations', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -22,4 +22,4 @@ const recommendations = sequelize.define('recommendations', {
   },
 });
 
-export default recommendations;
+export default Recommendations;
