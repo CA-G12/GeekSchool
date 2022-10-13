@@ -3,10 +3,11 @@ import compression from 'compression';
 import cookieParser from 'cookie-parser';
 import morgan from 'morgan';
 import { join } from 'path';
+import * as dotenv from 'dotenv';
 
-require('dotenv').config();
+import router from './routes';
 
-const router = require('./routes');
+dotenv.config();
 
 const app = express();
 
