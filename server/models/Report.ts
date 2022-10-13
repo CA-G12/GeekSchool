@@ -1,8 +1,8 @@
-import { Sequelize, DataTypes } from 'sequelize';
+const { Sequelize, DataTypes } = require('sequelize');
 
 const sequelize = new Sequelize('');
 
-const Feedback = sequelize.define('assignment', {
+const Report = sequelize.define('Report', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -10,16 +10,12 @@ const Feedback = sequelize.define('assignment', {
   },
   class_id: {
     type: DataTypes.INTEGER,
-    allowNull: false,
   },
   student_id: {
     type: DataTypes.INTEGER,
-    allowNull: false,
   },
-  feedback: {
-    type: DataTypes.TEXT,
-    allowNull: false,
+  description: {
+    type: DataTypes.STRING(1234),
   },
 });
-
-export default Feedback;
+export default Report;

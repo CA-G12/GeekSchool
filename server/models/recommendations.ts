@@ -2,7 +2,7 @@ import { Sequelize, DataTypes } from 'sequelize';
 
 const sequelize = new Sequelize('');
 
-const Feedback = sequelize.define('assignment', {
+const Recommendations = sequelize.define('recommendations', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -12,14 +12,14 @@ const Feedback = sequelize.define('assignment', {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
-  student_id: {
-    type: DataTypes.INTEGER,
+  material_link: {
+    type: DataTypes.TEXT,
     allowNull: false,
   },
-  feedback: {
+  description: {
     type: DataTypes.TEXT,
     allowNull: false,
   },
 });
 
-export default Feedback;
+export default Recommendations;
