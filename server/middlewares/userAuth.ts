@@ -1,12 +1,6 @@
-import { Request, Response, NextFunction } from 'express';
-import { verify, Secret } from 'jsonwebtoken';
+import { Response, NextFunction } from 'express';
 
-import { secretKey } from '../config/environment';
-import CustomError from '../utils/customError';
-
-interface CustomRequest extends Request {
-  user: object | unknown;
-}
+import { CustomError, CustomRequest, verifyToken } from '../utils';
 
 const userAuth = (req: CustomRequest, res: Response, next: NextFunction) => {
   const token: string = req.cookies;
@@ -15,15 +9,7 @@ const userAuth = (req: CustomRequest, res: Response, next: NextFunction) => {
     throw new CustomError(401, 'Unauthenticated!'); // ? Token is invalid.
   }
 
-  verify(token, secretKey as Secret, (err, decoded) => {
-    if (err) {
-      throw new CustomError(401, 'Unauthenticated!'); // ? Token is invalid.
-    }
-
-    req.user = decoded;
-
-    next();
-  });
+  verifyToken(token, req, next);
 };
 
 export default userAuth;
