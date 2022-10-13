@@ -2,7 +2,7 @@ import { Sequelize, DataTypes } from 'sequelize';
 
 const sequelize = new Sequelize('');
 
-const AssignmentStudentTeacher = sequelize.define('assignment', {
+const assignmentStudentTeacher = sequelize.define('assignment', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -30,4 +30,4 @@ const AssignmentStudentTeacher = sequelize.define('assignment', {
   },
 });
 
-export default AssignmentStudentTeacher;
+export default assignmentStudentTeacher;
