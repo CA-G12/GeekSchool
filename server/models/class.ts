@@ -1,18 +1,14 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../database/connection';
 
-const TestStudent = sequelize.define('TestStudent', {
+const Class = sequelize.define('Class', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
     primaryKey: true,
   },
-  grade: {
-    type: DataTypes.INTEGER,
-    defaultValue: 0,
-  },
 }, {
-  tableName: 'test_student',
+  tableName: 'classes',
 });
 
-export default TestStudent;
+export default Class;

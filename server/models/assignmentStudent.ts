@@ -1,43 +1,26 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../database/connection';
-import Students from './students';
-import Assignments from './assignments';
 
-const AssignmentStudent = sequelize.define('assignment', {
+const AssignmentStudent = sequelize.define('AssignmentStudent', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
     primaryKey: true,
   },
-  student_id: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-  },
-  assignment_id: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-  },
   isSubmitted: {
     type: DataTypes.BOOLEAN,
-    allowNull: false,
+    defaultValue: false,
   },
   material_link: {
     type: DataTypes.TEXT,
-    allowNull: false,
+    defaultValue: '',
   },
   grade: {
     type: DataTypes.INTEGER,
-    allowNull: false,
+    defaultValue: 0,
   },
 }, {
-  timestamps: false,
-  tableName: 'class_student',
+  tableName: 'assignment_student_teacher',
 });
-
-Assignments.hasMany(AssignmentStudent);
-AssignmentStudent.belongsTo(Assignments, { foreignKey: 'assignment_id' });
-
-Students.hasMany(AssignmentStudent);
-AssignmentStudent.belongsTo(Students, { foreignKey: 'student_id' });
 
 export default AssignmentStudent;

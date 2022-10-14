@@ -1,16 +1,11 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../database/connection';
-import Classes from './classes';
 
-const Recommendations = sequelize.define('recommendations', {
+const Recommendation = sequelize.define('Recommendation', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
     primaryKey: true,
-  },
-  class_id: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
   },
   material_link: {
     type: DataTypes.TEXT,
@@ -20,9 +15,8 @@ const Recommendations = sequelize.define('recommendations', {
     type: DataTypes.TEXT,
     allowNull: false,
   },
+}, {
+  tableName: 'recommendations',
 });
 
-Classes.hasMany(Recommendations);
-Recommendations.belongsTo(Classes, { foreignKey: 'class_id' });
-
-export default Recommendations;
+export default Recommendation;

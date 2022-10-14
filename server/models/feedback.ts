@@ -1,18 +1,18 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../database/connection';
 
-const TestStudent = sequelize.define('TestStudent', {
+const Feedbacks = sequelize.define('Feedbacks', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
     primaryKey: true,
   },
-  grade: {
-    type: DataTypes.INTEGER,
-    defaultValue: 0,
+  feedback: {
+    type: DataTypes.TEXT,
+    allowNull: false,
   },
 }, {
-  tableName: 'test_student',
+  tableName: 'feedbacks',
 });
 
-export default TestStudent;
+export default Feedbacks;

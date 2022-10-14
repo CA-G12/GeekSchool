@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../database/connection';
 
-const Users = sequelize.define('User', {
+const User = sequelize.define('User', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -13,7 +13,6 @@ const Users = sequelize.define('User', {
   },
   mobile: {
     type: DataTypes.STRING,
-    allowNull: false,
   },
   email: {
     type: DataTypes.STRING,
@@ -22,16 +21,18 @@ const Users = sequelize.define('User', {
   img: {
     type: DataTypes.STRING,
     allowNull: false,
+    defaultValue: 'https://us.123rf.com/450wm/anwarsikumbang/anwarsikumbang1602/anwarsikumbang160200119/52015141-geek-nerd-guy-cartoon-character-theme-vector-illustration.jpg?ver=6',
   },
   location: {
     type: DataTypes.STRING,
-    allowNull: false,
   },
   role: {
-    type: DataTypes.STRING,
+    type: DataTypes.ENUM('student', 'parent', 'teacher'),
     allowNull: false,
   },
 
+}, {
+  tableName: 'users',
 });
 
-export default Users;
+export default User;

@@ -1,8 +1,7 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../database/connection';
-import Classes from './classes';
 
-const Schedules = sequelize.define('assignment', {
+const Schedule = sequelize.define('Schedule', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -16,13 +15,8 @@ const Schedules = sequelize.define('assignment', {
     type: DataTypes.TIME,
     allowNull: false,
   },
-  class_id: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-  },
+}, {
+  tableName: 'schedules',
 });
 
-Classes.hasMany(Schedules);
-Schedules.belongsTo(Classes, { foreignKey: 'class_id' });
-
-export default Schedules;
+export default Schedule;

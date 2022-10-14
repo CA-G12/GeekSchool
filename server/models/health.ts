@@ -1,48 +1,42 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../database/connection';
-import Students from './students';
 
-const Health = sequelize.define('health', {
+const Health = sequelize.define('Health', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
     primaryKey: true,
   },
-  student_id: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-  },
   dental: {
     type: DataTypes.TEXT,
-    allowNull: false,
+    defaultValue: '',
   },
   vision: {
     type: DataTypes.TEXT,
-    allowNull: false,
+    defaultValue: '',
   },
   blood_pressure: {
     type: DataTypes.TEXT,
-    allowNull: false,
+    defaultValue: '',
   },
   cancer: {
     type: DataTypes.TEXT,
-    allowNull: false,
+    defaultValue: '',
   },
   diabetes: {
     type: DataTypes.TEXT,
-    allowNull: false,
+    defaultValue: '',
   },
   chronic: {
     type: DataTypes.TEXT,
-    allowNull: false,
+    defaultValue: '',
   },
   other: {
     type: DataTypes.TEXT,
-    allowNull: false,
+    defaultValue: '',
   },
+}, {
+  tableName: 'health',
 });
-
-Students.hasOne(Health);
-Health.belongsTo(Students, { foreignKey: 'student_id' });
 
 export default Health;

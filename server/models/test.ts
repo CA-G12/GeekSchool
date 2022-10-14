@@ -1,12 +1,8 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../database/connection';
-import Classes from './classes';
 
-const Tests = sequelize.define('Test', {
+const Test = sequelize.define('Test', {
   id: {
-    type: DataTypes.INTEGER,
-  },
-  class_id: {
     type: DataTypes.INTEGER,
   },
   notes: {
@@ -14,13 +10,14 @@ const Tests = sequelize.define('Test', {
   },
   title: {
     type: DataTypes.STRING,
+    allowNull: false,
   },
   date: {
     type: DataTypes.DATE,
+    allowNull: false,
   },
+}, {
+  tableName: 'tests',
 });
 
-Classes.hasMany(Tests);
-Tests.belongsTo(Classes, { foreignKey: 'class_id' });
-
-export default Tests;
+export default Test;

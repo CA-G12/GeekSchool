@@ -1,8 +1,7 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../database/connection';
-import Classes from './classes';
 
-const Questions = sequelize.define('assignment', {
+const Question = sequelize.define('Question', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -10,19 +9,14 @@ const Questions = sequelize.define('assignment', {
   },
   answer: {
     type: DataTypes.TEXT,
-    allowNull: false,
+    defaultValue: '',
   },
   question: {
     type: DataTypes.TEXT,
     allowNull: false,
   },
-  class_id: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-  },
+}, {
+  tableName: 'questions',
 });
 
-Classes.hasMany(Questions);
-Questions.belongsTo(Classes, { foreignKey: 'class_id' });
-
-export default Questions;
+export default Question;
