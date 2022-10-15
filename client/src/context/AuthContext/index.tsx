@@ -1,7 +1,7 @@
 import React, { useState, useEffect, createContext, useContext } from "react";
 import axios from "axios";
 
-// interface UserContextInterface {
+// interface UserInterface {
 //     id: number;
 //     name: string;
 //     mobile: string;
@@ -11,7 +11,7 @@ import axios from "axios";
 //     role: string;
 //   }
 
-interface UserContextInterface {
+interface UserInterface {
   postId: number;
   id: number;
   name: string;
@@ -20,7 +20,7 @@ interface UserContextInterface {
 }
 
 interface UserDataInterface {
-  userData: UserContextInterface | null;
+  userData: UserInterface | null;
   setUserData: Function;
 }
 
@@ -39,7 +39,7 @@ export const UserAuthContext = createContext<UserDataInterface>(init);
 
 // eslint-disable-next-line react/require-default-props
 export const UserAuthProvider = (props: { children?: React.ReactNode }) => {
-  const [userData, setUserData] = useState<UserContextInterface | null>(null);
+  const [userData, setUserData] = useState<UserInterface | null>(null);
   const { children } = props;
 
   const getUserData = async () => {
