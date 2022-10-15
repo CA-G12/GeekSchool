@@ -14,7 +14,7 @@ const userAuth = async (req: CustomRequest, res: Response, next: NextFunction) =
     req.user = user;
     next();
   } catch (error) {
-    next(new CustomError(401, 'Unauthenticated!'));
+    throw new CustomError(401, `Unauthenticated, ${error}`);
   }
 };
 
