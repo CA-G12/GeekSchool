@@ -8,7 +8,11 @@ const TeacherSignUp: React.ElementType = ({
   <>
     <Input placeholder="الاسم رباعي" name="name" onChange={inputValue} />
     <Input placeholder="البريد الإلكتروني" name="email" onChange={inputValue} />
-    <Input.Password placeholder="كلمة المرور" name="password" onChange={inputValue} />
+    <Input.Password
+      placeholder="كلمة المرور"
+      name="password"
+      onChange={inputValue}
+    />
     <Input.Password
       placeholder="تأكيد كلمة المرور"
       name="confPassword"
