@@ -2,7 +2,8 @@
     "env": {
       "commonjs": true,
       "es2021": true,
-      "node": true
+      "node": true,
+      "jest": true
     },
     "extends": [
       "airbnb-base"
@@ -22,7 +23,7 @@
         "ignorePackages",
         {
           "ts": "never",
-          "json": "never"
+          "json": "always"
         }
       ],
       "no-nested-ternary": "off"

@@ -45,22 +45,22 @@ const signup = async (req: Request, res: Response) => {
         res.status(400).json({ message: 'Incompatible data!' });
       }
 
-      const parent = await createParent(user.id);
+      const parent = await createParent(user.getDataValue('id'));
 
       children?.forEach(async (child) => {
         const doesChildStudent = await findUserByEmail(child);
 
         if (doesChildStudent) {
-          await createStudent(doesChildStudent.id, parent.id);
+          await createStudent(doesChildStudent.getDataValue('id'), parent.getDataValue('id'));
         } else { // ? unprocessable entity
           res.status(422).json({ message: 'The email does not exist!' });
         }
       });
     } else if (role === 'teacher') {
-      await createTeacher(user.id);
+      await createTeacher(user.getDataValue('id'));
     }
 
-    const token = await signToken({ id: user.id, name, role });
+    const token = await signToken({ id: user.getDataValue('id'), name, role });
 
     res.cookie('token', token).status(201).json(
       {

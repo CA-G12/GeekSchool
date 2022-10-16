@@ -14,7 +14,7 @@
     {
         "id": 3,
         "class_id": 3,
-        "question": null,
+        "question": "Fusce consequat. Nulla nisl. Nunc nisl.",
         "answer": "Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus."
     },
     {
@@ -128,8 +128,8 @@
     {
         "id": 22,
         "class_id": 22,
-        "question": null,
-        "answer": "Fusce consequat. Nulla nisl. Nunc nisl."
+        "question": "Fusce consequat. Nulla nisl. Nunc nisl.",
+        "answer": null
     },
     {
         "id": 23,
@@ -176,7 +176,7 @@
     {
         "id": 30,
         "class_id": 30,
-        "question": null,
+        "question": "Fusce consequat. Nulla nisl. Nunc nisl.",
         "answer": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis."
     },
     {
@@ -188,7 +188,7 @@
     {
         "id": 32,
         "class_id": 32,
-        "question": null,
+        "question": "Fusce consequat. Nulla nisl. Nunc nisl.",
         "answer": "Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede."
     },
     {
@@ -254,7 +254,7 @@
     {
         "id": 43,
         "class_id": 4,
-        "question": null,
+        "question": "Fusce consequat. Nulla nisl. Nunc nisl.",
         "answer": "Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat."
     },
     {
@@ -266,7 +266,7 @@
     {
         "id": 45,
         "class_id": 4,
-        "question": null,
+        "question": "Fusce consequat. Nulla nisl. Nunc nisl.",
         "answer": "Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius."
     },
     {

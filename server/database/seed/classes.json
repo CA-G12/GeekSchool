@@ -134,5 +134,9 @@
     {
         "id": 34,
         "teacher_id": 1
+    },
+    {
+        "id": 35,
+        "teacher_id": 6
     }
 ]

@@ -4,6 +4,7 @@ import sequelize from '../database/connection';
 const Test = sequelize.define('Test', {
   id: {
     type: DataTypes.INTEGER,
+    primaryKey: true,
   },
   notes: {
     type: DataTypes.STRING(1234),

@@ -2,15 +2,19 @@
   "name": "geekschool",
   "version": "1.0.0",
   "description": "geekschool",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon ./server/index.ts",
     "start": "cross-env NODE_ENV=production ts-node ./server/index.ts",
-    "test": "cross-env NODE_ENV=test jest server/__test__/",
+    "test": "cross-env NODE_ENV=test jest server/",
     "lint": "eslint --ext .ts server/",
     "lint-fix": "eslint --ext .ts server/ --fix && cd client && npm run lint-fix",
     "lint:client": "cd client && npm run lint",
-    "format-client": "cd client && npm run format"
+    "format-client": "cd client && npm run format",
+    "dbBuild": "cross-env NODE_ENV=development ts-node ./server/database/build.ts",
+    "dbSeed": "cross-env NODE_ENV=development ts-node ./server/database/seed.ts" 
+ 
   },
   "pre-commit": [
     "format-client",
