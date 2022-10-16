@@ -8,5 +8,4 @@ interface UserDataInterface {
   setUserData: Function;
 }
 
-
-export  { UserInterface, UserDataInterface };
+export { UserInterface, UserDataInterface };
