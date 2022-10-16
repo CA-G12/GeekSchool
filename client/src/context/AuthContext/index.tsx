@@ -1,39 +1,37 @@
-import  {
+import {
   useState,
   useEffect,
   createContext,
   useContext,
   useMemo,
   ReactNode,
-  FC
+  FC,
 } from "react";
 
 import axios from "axios";
-import { UserInterface, UserDataInterface, init } from '../../interfaces'
-
+import { UserInterface, UserDataInterface, init } from "../../interfaces";
 
 type Props = { children: ReactNode };
 
-
 export const UserAuthContext = createContext<UserDataInterface>(init);
 
-export const UserAuthProvider: FC<Props> = ({children}) => {
+export const UserAuthProvider: FC<Props> = ({ children }) => {
   const source = axios.CancelToken.source();
   const [userData, setUserData] = useState<UserInterface | null>(null);
 
-  const getUserData = async () => {
-    const {data} = await axios("/auth", { cancelToken: source.token});
-
-    setUserData(data);
-  };
-
-  useEffect(() => {
-    getUserData();
   
+  useEffect(() => {
+    const getUserData = async () => {
+      const { data } = await axios("/auth", { cancelToken: source.token });
+  
+      setUserData(data);
+    };
+    getUserData();
+
     return () => {
       source.cancel();
-  };
-  }, []);
+    };
+  }, [source]);
 
   const value = useMemo(() => ({ userData, setUserData }), [userData]);
 
