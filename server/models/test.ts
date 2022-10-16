@@ -16,8 +16,6 @@ const Test = sequelize.define('Test', {
     type: DataTypes.DATE,
     allowNull: false,
   },
-}, {
-  tableName: 'tests',
 });
 
 export default Test;

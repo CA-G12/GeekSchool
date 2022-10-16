@@ -14,9 +14,6 @@ const Announcement = sequelize.define(
       allowNull: false,
     },
   },
-  {
-    tableName: 'announcements',
-  },
 );
 
 export default Announcement;

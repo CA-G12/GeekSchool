@@ -10,8 +10,6 @@ const Report = sequelize.define('Report', {
   description: {
     type: DataTypes.STRING(1234),
   },
-}, {
-  tableName: 'reports',
 });
 
 export default Report;

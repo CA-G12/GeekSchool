@@ -5,8 +5,6 @@ const Student = sequelize.define('Student', {
   id: {
     type: DataTypes.INTEGER,
   },
-}, {
-  tableName: 'student',
 });
 
 export default Student;

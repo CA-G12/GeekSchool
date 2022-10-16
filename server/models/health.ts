@@ -35,8 +35,6 @@ const Health = sequelize.define('Health', {
     type: DataTypes.TEXT,
     defaultValue: '',
   },
-}, {
-  tableName: 'health',
 });
 
 export default Health;

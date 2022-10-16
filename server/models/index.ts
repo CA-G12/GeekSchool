@@ -3,7 +3,7 @@ import Assignment from './assignment';
 import AssignmentStudent from './assignmentStudent';
 import Class from './class';
 import ClassStudent from './classStudent';
-import Feedbacks from './feedback';
+import Feedback from './feedback';
 import Health from './health';
 import Parent from './parent';
 import Question from './question';
@@ -46,11 +46,11 @@ Student.hasMany(ClassStudent);
 ClassStudent.belongsTo(Student, { foreignKey: 'student_id' });
 
 // *** FeedBack ***
-Student.hasMany(Feedbacks);
-Feedbacks.belongsTo(Student, { foreignKey: 'student_id' });
+Student.hasMany(Feedback);
+Feedback.belongsTo(Student, { foreignKey: 'student_id' });
 
-Class.hasMany(Feedbacks);
-Feedbacks.belongsTo(Class, { foreignKey: 'class_id' });
+Class.hasMany(Feedback);
+Feedback.belongsTo(Class, { foreignKey: 'class_id' });
 
 // *** Health ***
 Student.hasOne(Health);
@@ -106,7 +106,7 @@ export {
   AssignmentStudent,
   Class,
   ClassStudent,
-  Feedbacks,
+  Feedback,
   Health,
   Parent,
   Question,

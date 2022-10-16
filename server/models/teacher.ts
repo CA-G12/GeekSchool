@@ -7,8 +7,6 @@ const Teacher = sequelize.define('Teacher', {
     autoIncrement: true,
     primaryKey: true,
   },
-}, {
-  tableName: 'teachers',
 });
 
 export default Teacher;

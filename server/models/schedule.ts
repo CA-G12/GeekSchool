@@ -15,8 +15,6 @@ const Schedule = sequelize.define('Schedule', {
     type: DataTypes.TIME,
     allowNull: false,
   },
-}, {
-  tableName: 'schedules',
 });
 
 export default Schedule;

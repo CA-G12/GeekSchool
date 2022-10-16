@@ -18,9 +18,6 @@ const Assignment = sequelize.define(
       allowNull: false,
     },
   },
-  {
-    tableName: 'assignments',
-  },
 );
 
 export default Assignment;

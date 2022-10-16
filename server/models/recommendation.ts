@@ -15,8 +15,6 @@ const Recommendation = sequelize.define('Recommendation', {
     type: DataTypes.TEXT,
     allowNull: false,
   },
-}, {
-  tableName: 'recommendations',
 });
 
 export default Recommendation;

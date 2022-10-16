@@ -15,8 +15,6 @@ const Question = sequelize.define('Question', {
     type: DataTypes.TEXT,
     allowNull: false,
   },
-}, {
-  tableName: 'questions',
 });
 
 export default Question;

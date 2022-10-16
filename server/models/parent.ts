@@ -7,8 +7,6 @@ const Parent = sequelize.define('Parent', {
     autoIncrement: true,
     primaryKey: true,
   },
-}, {
-  tableName: 'parents',
 });
 
 export default Parent;

@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../database/connection';
 
-const Feedbacks = sequelize.define('Feedbacks', {
+const Feedback = sequelize.define('Feedback', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -11,8 +11,6 @@ const Feedbacks = sequelize.define('Feedbacks', {
     type: DataTypes.TEXT,
     allowNull: false,
   },
-}, {
-  tableName: 'feedbacks',
 });
 
-export default Feedbacks;
+export default Feedback;

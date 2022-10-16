@@ -11,8 +11,6 @@ const TestStudent = sequelize.define('TestStudent', {
     type: DataTypes.INTEGER,
     defaultValue: 0,
   },
-}, {
-  tableName: 'test_student',
 });
 
 export default TestStudent;
