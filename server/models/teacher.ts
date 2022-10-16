@@ -7,6 +7,9 @@ const Teacher = sequelize.define('Teacher', {
     autoIncrement: true,
     primaryKey: true,
   },
+  user_id: {
+    type: DataTypes.INTEGER,
+  },
 });
 
 export default Teacher;
