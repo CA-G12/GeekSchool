@@ -1,4 +1,3 @@
-import logout from './auth';
+import { logout, userData } from './auth';
 
-// it will must be change to export {} when we add more controllers
-export default logout;
+export { logout, userData };
