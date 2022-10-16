@@ -1,9 +1,9 @@
-import { UserAuthProvider } from './context/AuthContext';
+import { UserAuthProvider } from "./context/AuthContext";
 
 const App = () => (
   <UserAuthProvider>
-  <div className='App'>hi</div>
-</UserAuthProvider>
+    <div className="App">hi</div>
+  </UserAuthProvider>
 );
 
 export default App;

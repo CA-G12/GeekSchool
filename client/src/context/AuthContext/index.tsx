@@ -1,15 +1,21 @@
-import React, { useState, useEffect, createContext, useContext, useMemo } from 'react';
-import axios from 'axios';
+import React, {
+  useState,
+  useEffect,
+  createContext,
+  useContext,
+  useMemo,
+} from "react";
+import axios from "axios";
 
 interface UserInterface {
-    id: number;
-    name: string;
-    mobile: string;
-    email: string;
-    img: string;
-    location: string;
-    role: string;
-  }
+  id: number;
+  name: string;
+  mobile: string;
+  email: string;
+  img: string;
+  location: string;
+  role: string;
+}
 
 interface UserDataInterface {
   userData: UserInterface | null;
@@ -19,16 +25,15 @@ interface UserDataInterface {
 const init = {
   userData: {
     id: 0,
-    name: '',
-    mobile: '',
-    email: '',
-    img: '',
-    location: '',
-    role: '',
+    name: "",
+    mobile: "",
+    email: "",
+    img: "",
+    location: "",
+    role: "",
   },
   setUserData: () => {},
 };
-
 
 export const UserAuthContext = createContext<UserDataInterface>(init);
 
@@ -39,7 +44,7 @@ export const UserAuthProvider = (props: { children?: React.ReactNode }) => {
 
   const getUserData = async () => {
     const axiosData = await axios(
-      'https://jsonplaceholder.typicode.com/comments/1'
+      "https://jsonplaceholder.typicode.com/comments/1"
     );
     const { data } = axiosData;
     setUserData(data);
