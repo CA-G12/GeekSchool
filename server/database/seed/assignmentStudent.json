@@ -1,0 +1,354 @@
+[
+    {
+        "id": 1,
+        "student_id": 1,
+        "assignment_id": 1,
+        "is_submitted": false,
+        "grades": 1,
+        "material_link": "http://blogspot.com/aliquam/lacus/morbi.xml?sapien=volutpat&urna=sapien&pretium=arcu&nisl=sed&ut=augue&volutpat=aliquam&sapien=erat&arcu=volutpat&sed=in&augue=congue&aliquam=etiam&erat=justo&volutpat=etiam&in=pretium&congue=iaculis&etiam=justo&justo=in&etiam=hac&pretium=habitasse&iaculis=platea&justo=dictumst&in=etiam&hac=faucibus&habitasse=cursus&platea=urna&dictumst=ut&etiam=tellus&faucibus=nulla&cursus=ut&urna=erat&ut=id&tellus=mauris&nulla=vulputate&ut=elementum&erat=nullam&id=varius&mauris=nulla&vulputate=facilisi&elementum=cras&nullam=non&varius=velit&nulla=nec&facilisi=nisi&cras=vulputate&non=nonummy&velit=maecenas&nec=tincidunt&nisi=lacus&vulputate=at&nonummy=velit&maecenas=vivamus&tincidunt=vel&lacus=nulla&at=eget&velit=eros&vivamus=elementum&vel=pellentesque&nulla=quisque&eget=porta&eros=volutpat&elementum=erat&pellentesque=quisque&quisque=erat&porta=eros&volutpat=viverra&erat=eget&quisque=congue&erat=eget&eros=semper&viverra=rutrum&eget=nulla&congue=nunc&eget=purus&semper=phasellus&rutrum=in&nulla=felis&nunc=donec"
+    },
+    {
+        "id": 2,
+        "student_id": 2,
+        "assignment_id": 2,
+        "is_submitted": false,
+        "grades": 2,
+        "material_link": "https://51.la/tristique/fusce.jsp?aliquam=convallis&sit=duis&amet=consequat&diam=dui&in=nec&magna=nisi&bibendum=volutpat&imperdiet=eleifend&nullam=donec&orci=ut&pede=dolor&venenatis=morbi&non=vel&sodales=lectus&sed=in&tincidunt=quam&eu=fringilla&felis=rhoncus&fusce=mauris&posuere=enim&felis=leo&sed=rhoncus&lacus=sed&morbi=vestibulum&sem=sit&mauris=amet&laoreet=cursus&ut=id&rhoncus=turpis&aliquet=integer&pulvinar=aliquet&sed=massa&nisl=id&nunc=lobortis&rhoncus=convallis&dui=tortor&vel=risus&sem=dapibus&sed=augue&sagittis=vel&nam=accumsan&congue=tellus&risus=nisi&semper=eu&porta=orci&volutpat=mauris&quam=lacinia&pede=sapien&lobortis=quis&ligula=libero&sit=nullam&amet=sit&eleifend=amet&pede=turpis&libero=elementum&quis=ligula&orci=vehicula&nullam=consequat&molestie=morbi&nibh=a&in=ipsum&lectus=integer&pellentesque=a&at=nibh&nulla=in&suspendisse=quis&potenti=justo&cras=maecenas&in=rhoncus&purus=aliquam&eu=lacus&magna=morbi&vulputate=quis"
+    },
+    {
+        "id": 3,
+        "student_id": 3,
+        "assignment_id": 3,
+        "is_submitted": false,
+        "grades": 3,
+        "material_link": "https://digg.com/proin.xml?curae=eu&donec=nibh&pharetra=quisque&magna=id&vestibulum=justo&aliquet=sit&ultrices=amet&erat=sapien&tortor=dignissim&sollicitudin=vestibulum&mi=vestibulum&sit=ante&amet=ipsum&lobortis=primis&sapien=in&sapien=faucibus&non=orci&mi=luctus&integer=et&ac=ultrices&neque=posuere&duis=cubilia&bibendum=curae&morbi=nulla&non=dapibus"
+    },
+    {
+        "id": 4,
+        "student_id": 4,
+        "assignment_id": 4,
+        "is_submitted": true,
+        "grades": 4,
+        "material_link": "http://amazon.com/cras/pellentesque/volutpat/dui/maecenas.xml?nibh=justo&in=morbi&lectus=ut&pellentesque=odio&at=cras&nulla=mi&suspendisse=pede&potenti=malesuada&cras=in&in=imperdiet&purus=et&eu=commodo&magna=vulputate&vulputate=justo&luctus=in&cum=blandit&sociis=ultrices&natoque=enim&penatibus=lorem&et=ipsum&magnis=dolor&dis=sit&parturient=amet&montes=consectetuer&nascetur=adipiscing&ridiculus=elit&mus=proin&vivamus=interdum&vestibulum=mauris&sagittis=non&sapien=ligula&cum=pellentesque&sociis=ultrices&natoque=phasellus&penatibus=id&et=sapien&magnis=in&dis=sapien&parturient=iaculis&montes=congue&nascetur=vivamus&ridiculus=metus&mus=arcu&etiam=adipiscing&vel=molestie&augue=hendrerit&vestibulum=at&rutrum=vulputate&rutrum=vitae&neque=nisl&aenean=aenean&auctor=lectus&gravida=pellentesque&sem=eget&praesent=nunc&id=donec&massa=quis&id=orci&nisl=eget&venenatis=orci"
+    },
+    {
+        "id": 5,
+        "student_id": 5,
+        "assignment_id": 5,
+        "is_submitted": false,
+        "grades": 5,
+        "material_link": "https://canalblog.com/ipsum/aliquam/non/mauris/morbi/non/lectus.html?venenatis=quis&non=lectus&sodales=suspendisse&sed=potenti&tincidunt=in&eu=eleifend&felis=quam&fusce=a&posuere=odio&felis=in&sed=hac&lacus=habitasse&morbi=platea&sem=dictumst&mauris=maecenas&laoreet=ut&ut=massa&rhoncus=quis&aliquet=augue&pulvinar=luctus&sed=tincidunt&nisl=nulla&nunc=mollis&rhoncus=molestie&dui=lorem&vel=quisque&sem=ut&sed=erat&sagittis=curabitur&nam=gravida&congue=nisi&risus=at&semper=nibh&porta=in&volutpat=hac&quam=habitasse&pede=platea&lobortis=dictumst&ligula=aliquam&sit=augue&amet=quam&eleifend=sollicitudin&pede=vitae&libero=consectetuer&quis=eget&orci=rutrum&nullam=at&molestie=lorem&nibh=integer&in=tincidunt&lectus=ante&pellentesque=vel&at=ipsum&nulla=praesent&suspendisse=blandit&potenti=lacinia&cras=erat&in=vestibulum&purus=sed&eu=magna&magna=at&vulputate=nunc&luctus=commodo&cum=placerat&sociis=praesent&natoque=blandit&penatibus=nam&et=nulla&magnis=integer&dis=pede&parturient=justo&montes=lacinia&nascetur=eget&ridiculus=tincidunt&mus=eget&vivamus=tempus&vestibulum=vel&sagittis=pede&sapien=morbi&cum=porttitor&sociis=lorem&natoque=id&penatibus=ligula&et=suspendisse&magnis=ornare&dis=consequat&parturient=lectus&montes=in&nascetur=est&ridiculus=risus&mus=auctor&etiam=sed&vel=tristique"
+    },
+    {
+        "id": 6,
+        "student_id": 6,
+        "assignment_id": 6,
+        "is_submitted": false,
+        "grades": 6,
+        "material_link": "http://symantec.com/nisi/nam/ultrices.aspx?donec=diam&diam=neque&neque=vestibulum&vestibulum=eget&eget=vulputate&vulputate=ut&ut=ultrices&ultrices=vel&vel=augue&augue=vestibulum&vestibulum=ante&ante=ipsum&ipsum=primis&primis=in&in=faucibus&faucibus=orci&orci=luctus&luctus=et&et=ultrices&ultrices=posuere&posuere=cubilia&cubilia=curae&curae=donec&donec=pharetra&pharetra=magna&magna=vestibulum&vestibulum=aliquet&aliquet=ultrices&ultrices=erat&erat=tortor&tortor=sollicitudin&sollicitudin=mi&mi=sit&sit=amet&amet=lobortis&lobortis=sapien&sapien=sapien&sapien=non&non=mi&mi=integer&integer=ac&ac=neque&neque=duis&duis=bibendum&bibendum=morbi&morbi=non&non=quam&quam=nec&nec=dui&dui=luctus&luctus=rutrum&rutrum=nulla&nulla=tellus&tellus=in&in=sagittis&sagittis=dui&dui=vel&vel=nisl&nisl=duis&duis=ac&ac=nibh&nibh=fusce&fusce=lacus&lacus=purus&purus=aliquet&aliquet=at&at=feugiat&feugiat=non&non=pretium&pretium=quis"
+    },
+    {
+        "id": 7,
+        "student_id": 7,
+        "assignment_id": 7,
+        "is_submitted": true,
+        "grades": 7,
+        "material_link": "http://fda.gov/neque/aenean/auctor/gravida/sem/praesent/id.xml?nulla=ac&suscipit=consequat&ligula=metus&in=sapien&lacus=ut&curabitur=nunc&at=vestibulum&ipsum=ante&ac=ipsum&tellus=primis&semper=in&interdum=faucibus&mauris=orci&ullamcorper=luctus&purus=et&sit=ultrices&amet=posuere&nulla=cubilia"
+    },
+    {
+        "id": 8,
+        "student_id": 8,
+        "assignment_id": 8,
+        "is_submitted": true,
+        "grades": 8,
+        "material_link": "https://scribd.com/accumsan/felis/ut.png?in=tincidunt&magna=eu&bibendum=felis&imperdiet=fusce&nullam=posuere&orci=felis&pede=sed&venenatis=lacus&non=morbi&sodales=sem&sed=mauris&tincidunt=laoreet&eu=ut&felis=rhoncus&fusce=aliquet&posuere=pulvinar&felis=sed&sed=nisl&lacus=nunc&morbi=rhoncus&sem=dui&mauris=vel&laoreet=sem&ut=sed&rhoncus=sagittis&aliquet=nam&pulvinar=congue&sed=risus&nisl=semper&nunc=porta&rhoncus=volutpat&dui=quam&vel=pede&sem=lobortis&sed=ligula&sagittis=sit&nam=amet&congue=eleifend&risus=pede&semper=libero&porta=quis&volutpat=orci&quam=nullam"
+    },
+    {
+        "id": 9,
+        "student_id": 9,
+        "assignment_id": 9,
+        "is_submitted": false,
+        "grades": 9,
+        "material_link": "https://buzzfeed.com/sociis/natoque.jsp?orci=pede&mauris=malesuada&lacinia=in&sapien=imperdiet&quis=et&libero=commodo&nullam=vulputate&sit=justo&amet=in&turpis=blandit&elementum=ultrices&ligula=enim&vehicula=lorem&consequat=ipsum&morbi=dolor&a=sit&ipsum=amet&integer=consectetuer&a=adipiscing&nibh=elit&in=proin&quis=interdum&justo=mauris&maecenas=non&rhoncus=ligula&aliquam=pellentesque&lacus=ultrices&morbi=phasellus&quis=id&tortor=sapien"
+    },
+    {
+        "id": 10,
+        "student_id": 10,
+        "assignment_id": 10,
+        "is_submitted": true,
+        "grades": 10,
+        "material_link": "http://uiuc.edu/mus/etiam/vel/augue.js?vel=imperdiet&est=sapien&donec=urna&odio=pretium&justo=nisl&sollicitudin=ut&ut=volutpat&suscipit=sapien&a=arcu&feugiat=sed&et=augue&eros=aliquam&vestibulum=erat&ac=volutpat&est=in&lacinia=congue&nisi=etiam&venenatis=justo&tristique=etiam&fusce=pretium&congue=iaculis&diam=justo&id=in&ornare=hac&imperdiet=habitasse&sapien=platea&urna=dictumst&pretium=etiam&nisl=faucibus&ut=cursus&volutpat=urna&sapien=ut&arcu=tellus&sed=nulla&augue=ut&aliquam=erat&erat=id&volutpat=mauris&in=vulputate&congue=elementum&etiam=nullam&justo=varius&etiam=nulla&pretium=facilisi&iaculis=cras&justo=non&in=velit&hac=nec&habitasse=nisi&platea=vulputate&dictumst=nonummy&etiam=maecenas&faucibus=tincidunt&cursus=lacus&urna=at&ut=velit&tellus=vivamus&nulla=vel&ut=nulla&erat=eget&id=eros&mauris=elementum&vulputate=pellentesque&elementum=quisque&nullam=porta&varius=volutpat&nulla=erat&facilisi=quisque&cras=erat&non=eros&velit=viverra&nec=eget&nisi=congue&vulputate=eget&nonummy=semper&maecenas=rutrum&tincidunt=nulla&lacus=nunc&at=purus&velit=phasellus&vivamus=in&vel=felis&nulla=donec"
+    },
+    {
+        "id": 11,
+        "student_id": 11,
+        "assignment_id": 11,
+        "is_submitted": false,
+        "grades": 11,
+        "material_link": "https://edublogs.org/nulla/tempus/vivamus/in/felis.aspx?varius=nibh&ut=quisque&blandit=id&non=justo&interdum=sit&in=amet&ante=sapien&vestibulum=dignissim&ante=vestibulum&ipsum=vestibulum&primis=ante&in=ipsum&faucibus=primis&orci=in&luctus=faucibus&et=orci&ultrices=luctus&posuere=et&cubilia=ultrices&curae=posuere&duis=cubilia&faucibus=curae&accumsan=nulla&odio=dapibus&curabitur=dolor&convallis=vel&duis=est&consequat=donec&dui=odio&nec=justo&nisi=sollicitudin&volutpat=ut&eleifend=suscipit&donec=a&ut=feugiat"
+    },
+    {
+        "id": 12,
+        "student_id": 12,
+        "assignment_id": 12,
+        "is_submitted": false,
+        "grades": 12,
+        "material_link": "https://yelp.com/consectetuer/eget/rutrum/at.js?congue=odio&eget=condimentum&semper=id&rutrum=luctus&nulla=nec&nunc=molestie&purus=sed&phasellus=justo"
+    },
+    {
+        "id": 13,
+        "student_id": 13,
+        "assignment_id": 13,
+        "is_submitted": true,
+        "grades": 13,
+        "material_link": "http://angelfire.com/duis.png?adipiscing=congue&molestie=diam&hendrerit=id&at=ornare&vulputate=imperdiet&vitae=sapien&nisl=urna&aenean=pretium&lectus=nisl&pellentesque=ut&eget=volutpat&nunc=sapien&donec=arcu&quis=sed&orci=augue&eget=aliquam&orci=erat&vehicula=volutpat&condimentum=in&curabitur=congue&in=etiam&libero=justo&ut=etiam&massa=pretium&volutpat=iaculis&convallis=justo&morbi=in&odio=hac&odio=habitasse&elementum=platea&eu=dictumst&interdum=etiam&eu=faucibus&tincidunt=cursus&in=urna&leo=ut&maecenas=tellus&pulvinar=nulla&lobortis=ut&est=erat&phasellus=id&sit=mauris&amet=vulputate&erat=elementum&nulla=nullam&tempus=varius&vivamus=nulla&in=facilisi&felis=cras&eu=non&sapien=velit&cursus=nec&vestibulum=nisi&proin=vulputate&eu=nonummy&mi=maecenas&nulla=tincidunt&ac=lacus&enim=at&in=velit&tempor=vivamus&turpis=vel&nec=nulla&euismod=eget&scelerisque=eros&quam=elementum&turpis=pellentesque&adipiscing=quisque&lorem=porta&vitae=volutpat&mattis=erat&nibh=quisque&ligula=erat&nec=eros&sem=viverra&duis=eget&aliquam=congue&convallis=eget&nunc=semper&proin=rutrum&at=nulla&turpis=nunc&a=purus&pede=phasellus&posuere=in&nonummy=felis&integer=donec&non=semper&velit=sapien&donec=a&diam=libero&neque=nam"
+    },
+    {
+        "id": 14,
+        "student_id": 14,
+        "assignment_id": 14,
+        "is_submitted": true,
+        "grades": 14,
+        "material_link": "https://fastcompany.com/quam/sollicitudin/vitae.js?sapien=amet&non=cursus&mi=id&integer=turpis&ac=integer&neque=aliquet&duis=massa&bibendum=id&morbi=lobortis&non=convallis&quam=tortor&nec=risus&dui=dapibus&luctus=augue&rutrum=vel&nulla=accumsan&tellus=tellus&in=nisi&sagittis=eu&dui=orci&vel=mauris&nisl=lacinia&duis=sapien&ac=quis&nibh=libero&fusce=nullam&lacus=sit&purus=amet&aliquet=turpis&at=elementum&feugiat=ligula&non=vehicula&pretium=consequat&quis=morbi&lectus=a&suspendisse=ipsum&potenti=integer&in=a&eleifend=nibh&quam=in&a=quis&odio=justo&in=maecenas&hac=rhoncus&habitasse=aliquam&platea=lacus&dictumst=morbi&maecenas=quis&ut=tortor&massa=id&quis=nulla&augue=ultrices"
+    },
+    {
+        "id": 15,
+        "student_id": 15,
+        "assignment_id": 15,
+        "is_submitted": true,
+        "grades": 15,
+        "material_link": "https://arstechnica.com/eu/interdum.xml?mus=consequat&vivamus=varius&vestibulum=integer&sagittis=ac&sapien=leo&cum=pellentesque&sociis=ultrices&natoque=mattis&penatibus=odio&et=donec&magnis=vitae&dis=nisi&parturient=nam&montes=ultrices&nascetur=libero&ridiculus=non&mus=mattis&etiam=pulvinar&vel=nulla&augue=pede&vestibulum=ullamcorper&rutrum=augue&rutrum=a&neque=suscipit&aenean=nulla&auctor=elit&gravida=ac&sem=nulla&praesent=sed&id=vel&massa=enim&id=sit&nisl=amet&venenatis=nunc&lacinia=viverra&aenean=dapibus&sit=nulla&amet=suscipit&justo=ligula&morbi=in&ut=lacus&odio=curabitur&cras=at&mi=ipsum&pede=ac&malesuada=tellus&in=semper&imperdiet=interdum"
+    },
+    {
+        "id": 16,
+        "student_id": 16,
+        "assignment_id": 16,
+        "is_submitted": false,
+        "grades": 16,
+        "material_link": "http://tamu.edu/in/felis/donec.js?vulputate=facilisi&vitae=cras&nisl=non&aenean=velit&lectus=nec&pellentesque=nisi&eget=vulputate&nunc=nonummy&donec=maecenas&quis=tincidunt&orci=lacus&eget=at&orci=velit&vehicula=vivamus&condimentum=vel&curabitur=nulla&in=eget&libero=eros&ut=elementum&massa=pellentesque&volutpat=quisque&convallis=porta&morbi=volutpat&odio=erat&odio=quisque&elementum=erat&eu=eros&interdum=viverra&eu=eget&tincidunt=congue&in=eget&leo=semper&maecenas=rutrum&pulvinar=nulla&lobortis=nunc&est=purus&phasellus=phasellus&sit=in&amet=felis&erat=donec&nulla=semper&tempus=sapien&vivamus=a&in=libero&felis=nam&eu=dui&sapien=proin&cursus=leo&vestibulum=odio&proin=porttitor&eu=id&mi=consequat&nulla=in&ac=consequat&enim=ut&in=nulla&tempor=sed&turpis=accumsan&nec=felis&euismod=ut&scelerisque=at&quam=dolor&turpis=quis&adipiscing=odio&lorem=consequat&vitae=varius&mattis=integer&nibh=ac&ligula=leo&nec=pellentesque"
+    },
+    {
+        "id": 17,
+        "student_id": 17,
+        "assignment_id": 17,
+        "is_submitted": true,
+        "grades": 17,
+        "material_link": "http://globo.com/integer/a.js?luctus=accumsan&et=tortor&ultrices=quis&posuere=turpis&cubilia=sed&curae=ante&duis=vivamus&faucibus=tortor&accumsan=duis&odio=mattis&curabitur=egestas&convallis=metus&duis=aenean&consequat=fermentum&dui=donec&nec=ut&nisi=mauris&volutpat=eget&eleifend=massa&donec=tempor&ut=convallis&dolor=nulla&morbi=neque&vel=libero&lectus=convallis&in=eget&quam=eleifend&fringilla=luctus&rhoncus=ultricies&mauris=eu&enim=nibh&leo=quisque&rhoncus=id&sed=justo&vestibulum=sit&sit=amet&amet=sapien&cursus=dignissim&id=vestibulum&turpis=vestibulum&integer=ante&aliquet=ipsum&massa=primis&id=in&lobortis=faucibus&convallis=orci&tortor=luctus&risus=et&dapibus=ultrices&augue=posuere&vel=cubilia&accumsan=curae&tellus=nulla&nisi=dapibus&eu=dolor&orci=vel&mauris=est&lacinia=donec&sapien=odio&quis=justo&libero=sollicitudin&nullam=ut&sit=suscipit&amet=a&turpis=feugiat&elementum=et&ligula=eros&vehicula=vestibulum&consequat=ac&morbi=est&a=lacinia&ipsum=nisi&integer=venenatis&a=tristique&nibh=fusce"
+    },
+    {
+        "id": 18,
+        "student_id": 18,
+        "assignment_id": 18,
+        "is_submitted": true,
+        "grades": 18,
+        "material_link": "https://skype.com/tellus/nisi/eu/orci/mauris.png?porta=quis&volutpat=orci&erat=eget&quisque=orci&erat=vehicula&eros=condimentum&viverra=curabitur&eget=in&congue=libero&eget=ut&semper=massa&rutrum=volutpat&nulla=convallis&nunc=morbi&purus=odio&phasellus=odio&in=elementum&felis=eu&donec=interdum&semper=eu&sapien=tincidunt&a=in&libero=leo&nam=maecenas&dui=pulvinar&proin=lobortis&leo=est&odio=phasellus&porttitor=sit&id=amet&consequat=erat&in=nulla&consequat=tempus&ut=vivamus&nulla=in&sed=felis&accumsan=eu&felis=sapien&ut=cursus&at=vestibulum&dolor=proin&quis=eu&odio=mi&consequat=nulla&varius=ac&integer=enim&ac=in&leo=tempor&pellentesque=turpis&ultrices=nec&mattis=euismod&odio=scelerisque&donec=quam&vitae=turpis&nisi=adipiscing&nam=lorem&ultrices=vitae&libero=mattis&non=nibh&mattis=ligula&pulvinar=nec&nulla=sem&pede=duis&ullamcorper=aliquam&augue=convallis&a=nunc&suscipit=proin&nulla=at&elit=turpis&ac=a&nulla=pede&sed=posuere&vel=nonummy&enim=integer&sit=non&amet=velit&nunc=donec&viverra=diam&dapibus=neque&nulla=vestibulum&suscipit=eget&ligula=vulputate&in=ut&lacus=ultrices&curabitur=vel&at=augue&ipsum=vestibulum&ac=ante&tellus=ipsum&semper=primis"
+    },
+    {
+        "id": 19,
+        "student_id": 19,
+        "assignment_id": 19,
+        "is_submitted": true,
+        "grades": 19,
+        "material_link": "https://topsy.com/convallis/duis/consequat/dui/nec.jsp?vel=mauris&lectus=laoreet&in=ut&quam=rhoncus&fringilla=aliquet&rhoncus=pulvinar&mauris=sed&enim=nisl&leo=nunc&rhoncus=rhoncus&sed=dui&vestibulum=vel&sit=sem&amet=sed&cursus=sagittis&id=nam&turpis=congue&integer=risus&aliquet=semper&massa=porta&id=volutpat&lobortis=quam&convallis=pede&tortor=lobortis&risus=ligula&dapibus=sit&augue=amet&vel=eleifend&accumsan=pede&tellus=libero&nisi=quis&eu=orci&orci=nullam&mauris=molestie&lacinia=nibh&sapien=in&quis=lectus&libero=pellentesque"
+    },
+    {
+        "id": 20,
+        "student_id": 20,
+        "assignment_id": 20,
+        "is_submitted": false,
+        "grades": 20,
+        "material_link": "http://instagram.com/morbi/non/quam/nec/dui/luctus/rutrum.png?dolor=at&sit=nibh&amet=in&consectetuer=hac&adipiscing=habitasse&elit=platea&proin=dictumst&risus=aliquam&praesent=augue&lectus=quam&vestibulum=sollicitudin&quam=vitae&sapien=consectetuer&varius=eget&ut=rutrum&blandit=at&non=lorem&interdum=integer&in=tincidunt&ante=ante&vestibulum=vel&ante=ipsum&ipsum=praesent&primis=blandit&in=lacinia&faucibus=erat&orci=vestibulum&luctus=sed&et=magna&ultrices=at&posuere=nunc&cubilia=commodo&curae=placerat&duis=praesent&faucibus=blandit&accumsan=nam&odio=nulla&curabitur=integer&convallis=pede&duis=justo&consequat=lacinia&dui=eget&nec=tincidunt&nisi=eget&volutpat=tempus&eleifend=vel&donec=pede&ut=morbi&dolor=porttitor&morbi=lorem&vel=id&lectus=ligula&in=suspendisse&quam=ornare&fringilla=consequat&rhoncus=lectus&mauris=in&enim=est&leo=risus&rhoncus=auctor&sed=sed&vestibulum=tristique&sit=in&amet=tempus&cursus=sit&id=amet&turpis=sem&integer=fusce&aliquet=consequat&massa=nulla&id=nisl&lobortis=nunc&convallis=nisl&tortor=duis&risus=bibendum&dapibus=felis&augue=sed&vel=interdum&accumsan=venenatis"
+    },
+    {
+        "id": 21,
+        "student_id": 21,
+        "assignment_id": 21,
+        "is_submitted": true,
+        "grades": 21,
+        "material_link": "http://nasa.gov/in/felis.jpg?iaculis=lacinia&justo=aenean&in=sit&hac=amet&habitasse=justo&platea=morbi&dictumst=ut&etiam=odio&faucibus=cras&cursus=mi&urna=pede&ut=malesuada&tellus=in&nulla=imperdiet&ut=et&erat=commodo&id=vulputate&mauris=justo&vulputate=in&elementum=blandit&nullam=ultrices&varius=enim&nulla=lorem&facilisi=ipsum&cras=dolor&non=sit&velit=amet&nec=consectetuer&nisi=adipiscing&vulputate=elit&nonummy=proin&maecenas=interdum&tincidunt=mauris&lacus=non&at=ligula&velit=pellentesque&vivamus=ultrices&vel=phasellus&nulla=id&eget=sapien&eros=in&elementum=sapien&pellentesque=iaculis&quisque=congue&porta=vivamus&volutpat=metus&erat=arcu&quisque=adipiscing&erat=molestie&eros=hendrerit&viverra=at&eget=vulputate&congue=vitae&eget=nisl&semper=aenean&rutrum=lectus&nulla=pellentesque&nunc=eget&purus=nunc&phasellus=donec&in=quis&felis=orci&donec=eget&semper=orci&sapien=vehicula&a=condimentum&libero=curabitur&nam=in&dui=libero&proin=ut&leo=massa&odio=volutpat&porttitor=convallis&id=morbi&consequat=odio&in=odio&consequat=elementum&ut=eu&nulla=interdum&sed=eu&accumsan=tincidunt&felis=in"
+    },
+    {
+        "id": 22,
+        "student_id": 22,
+        "assignment_id": 22,
+        "is_submitted": true,
+        "grades": 22,
+        "material_link": "http://baidu.com/pulvinar.png?fermentum=velit&justo=vivamus&nec=vel&condimentum=nulla&neque=eget&sapien=eros&placerat=elementum&ante=pellentesque&nulla=quisque&justo=porta&aliquam=volutpat&quis=erat&turpis=quisque&eget=erat&elit=eros&sodales=viverra&scelerisque=eget"
+    },
+    {
+        "id": 23,
+        "student_id": 23,
+        "assignment_id": 23,
+        "is_submitted": false,
+        "grades": 23,
+        "material_link": "http://disqus.com/sapien/placerat/ante/nulla/justo.jpg?ultricies=vestibulum&eu=proin&nibh=eu&quisque=mi&id=nulla&justo=ac&sit=enim&amet=in&sapien=tempor&dignissim=turpis&vestibulum=nec&vestibulum=euismod&ante=scelerisque&ipsum=quam&primis=turpis&in=adipiscing&faucibus=lorem&orci=vitae&luctus=mattis&et=nibh&ultrices=ligula&posuere=nec&cubilia=sem&curae=duis&nulla=aliquam&dapibus=convallis&dolor=nunc&vel=proin&est=at&donec=turpis&odio=a&justo=pede&sollicitudin=posuere&ut=nonummy&suscipit=integer&a=non&feugiat=velit&et=donec&eros=diam&vestibulum=neque&ac=vestibulum&est=eget&lacinia=vulputate&nisi=ut&venenatis=ultrices&tristique=vel&fusce=augue&congue=vestibulum&diam=ante&id=ipsum&ornare=primis&imperdiet=in&sapien=faucibus&urna=orci&pretium=luctus&nisl=et&ut=ultrices&volutpat=posuere&sapien=cubilia&arcu=curae&sed=donec&augue=pharetra&aliquam=magna&erat=vestibulum&volutpat=aliquet&in=ultrices&congue=erat"
+    },
+    {
+        "id": 24,
+        "student_id": 24,
+        "assignment_id": 24,
+        "is_submitted": false,
+        "grades": 24,
+        "material_link": "http://google.de/nisl/duis/bibendum/felis/sed.aspx?fringilla=quis&rhoncus=augue&mauris=luctus&enim=tincidunt&leo=nulla&rhoncus=mollis&sed=molestie&vestibulum=lorem&sit=quisque&amet=ut&cursus=erat&id=curabitur&turpis=gravida&integer=nisi&aliquet=at&massa=nibh&id=in&lobortis=hac&convallis=habitasse&tortor=platea&risus=dictumst&dapibus=aliquam&augue=augue"
+    },
+    {
+        "id": 25,
+        "student_id": 25,
+        "assignment_id": 25,
+        "is_submitted": false,
+        "grades": 25,
+        "material_link": "https://discuz.net/ac/lobortis/vel/dapibus/at.aspx?fermentum=congue&donec=eget&ut=semper"
+    },
+    {
+        "id": 26,
+        "student_id": 26,
+        "assignment_id": 26,
+        "is_submitted": true,
+        "grades": 26,
+        "material_link": "http://unblog.fr/dolor/sit.jsp?mauris=tempus&vulputate=sit&elementum=amet&nullam=sem&varius=fusce&nulla=consequat&facilisi=nulla&cras=nisl&non=nunc&velit=nisl&nec=duis&nisi=bibendum&vulputate=felis&nonummy=sed&maecenas=interdum&tincidunt=venenatis&lacus=turpis&at=enim&velit=blandit&vivamus=mi&vel=in&nulla=porttitor&eget=pede&eros=justo&elementum=eu&pellentesque=massa&quisque=donec&porta=dapibus&volutpat=duis&erat=at&quisque=velit&erat=eu&eros=est&viverra=congue&eget=elementum&congue=in&eget=hac&semper=habitasse&rutrum=platea&nulla=dictumst&nunc=morbi&purus=vestibulum&phasellus=velit&in=id&felis=pretium&donec=iaculis&semper=diam&sapien=erat&a=fermentum&libero=justo&nam=nec&dui=condimentum&proin=neque&leo=sapien&odio=placerat&porttitor=ante&id=nulla&consequat=justo&in=aliquam&consequat=quis&ut=turpis&nulla=eget&sed=elit&accumsan=sodales&felis=scelerisque&ut=mauris&at=sit&dolor=amet&quis=eros&odio=suspendisse&consequat=accumsan&varius=tortor&integer=quis&ac=turpis&leo=sed"
+    },
+    {
+        "id": 27,
+        "student_id": 27,
+        "assignment_id": 27,
+        "is_submitted": true,
+        "grades": 27,
+        "material_link": "https://telegraph.co.uk/placerat/ante/nulla.jsp?enim=justo&in=pellentesque&tempor=viverra&turpis=pede&nec=ac&euismod=diam&scelerisque=cras&quam=pellentesque&turpis=volutpat&adipiscing=dui&lorem=maecenas&vitae=tristique&mattis=est&nibh=et&ligula=tempus&nec=semper&sem=est&duis=quam&aliquam=pharetra&convallis=magna&nunc=ac&proin=consequat&at=metus&turpis=sapien&a=ut&pede=nunc&posuere=vestibulum&nonummy=ante&integer=ipsum&non=primis&velit=in&donec=faucibus&diam=orci&neque=luctus&vestibulum=et&eget=ultrices&vulputate=posuere"
+    },
+    {
+        "id": 28,
+        "student_id": 28,
+        "assignment_id": 28,
+        "is_submitted": false,
+        "grades": 28,
+        "material_link": "http://epa.gov/placerat/praesent.js?pellentesque=aliquet&ultrices=at&phasellus=feugiat&id=non&sapien=pretium&in=quis&sapien=lectus&iaculis=suspendisse&congue=potenti&vivamus=in&metus=eleifend&arcu=quam&adipiscing=a&molestie=odio&hendrerit=in&at=hac&vulputate=habitasse&vitae=platea&nisl=dictumst&aenean=maecenas&lectus=ut&pellentesque=massa&eget=quis&nunc=augue&donec=luctus&quis=tincidunt&orci=nulla&eget=mollis&orci=molestie&vehicula=lorem&condimentum=quisque&curabitur=ut&in=erat&libero=curabitur&ut=gravida&massa=nisi&volutpat=at&convallis=nibh&morbi=in&odio=hac&odio=habitasse&elementum=platea&eu=dictumst&interdum=aliquam&eu=augue&tincidunt=quam&in=sollicitudin&leo=vitae&maecenas=consectetuer&pulvinar=eget&lobortis=rutrum&est=at&phasellus=lorem&sit=integer&amet=tincidunt&erat=ante&nulla=vel&tempus=ipsum&vivamus=praesent&in=blandit&felis=lacinia&eu=erat&sapien=vestibulum&cursus=sed&vestibulum=magna&proin=at&eu=nunc&mi=commodo&nulla=placerat&ac=praesent&enim=blandit&in=nam&tempor=nulla&turpis=integer&nec=pede&euismod=justo&scelerisque=lacinia&quam=eget&turpis=tincidunt&adipiscing=eget&lorem=tempus&vitae=vel&mattis=pede&nibh=morbi&ligula=porttitor"
+    },
+    {
+        "id": 29,
+        "student_id": 29,
+        "assignment_id": 29,
+        "is_submitted": false,
+        "grades": 29,
+        "material_link": "https://hao123.com/eget/vulputate.json?orci=ligula&luctus=nec&et=sem&ultrices=duis&posuere=aliquam&cubilia=convallis&curae=nunc&mauris=proin&viverra=at&diam=turpis&vitae=a&quam=pede&suspendisse=posuere&potenti=nonummy&nullam=integer&porttitor=non&lacus=velit&at=donec&turpis=diam&donec=neque&posuere=vestibulum&metus=eget&vitae=vulputate&ipsum=ut&aliquam=ultrices&non=vel&mauris=augue&morbi=vestibulum&non=ante&lectus=ipsum&aliquam=primis&sit=in&amet=faucibus&diam=orci&in=luctus&magna=et&bibendum=ultrices&imperdiet=posuere&nullam=cubilia&orci=curae&pede=donec&venenatis=pharetra&non=magna&sodales=vestibulum&sed=aliquet&tincidunt=ultrices&eu=erat&felis=tortor&fusce=sollicitudin&posuere=mi&felis=sit&sed=amet&lacus=lobortis"
+    },
+    {
+        "id": 30,
+        "student_id": 30,
+        "assignment_id": 30,
+        "is_submitted": true,
+        "grades": 30,
+        "material_link": "https://vistaprint.com/enim/blandit/mi/in.js?pellentesque=urna&volutpat=pretium&dui=nisl&maecenas=ut&tristique=volutpat&est=sapien&et=arcu&tempus=sed&semper=augue&est=aliquam&quam=erat&pharetra=volutpat&magna=in&ac=congue&consequat=etiam&metus=justo&sapien=etiam&ut=pretium&nunc=iaculis&vestibulum=justo&ante=in&ipsum=hac&primis=habitasse&in=platea&faucibus=dictumst&orci=etiam&luctus=faucibus&et=cursus&ultrices=urna&posuere=ut&cubilia=tellus&curae=nulla&mauris=ut&viverra=erat"
+    },
+    {
+        "id": 31,
+        "student_id": 31,
+        "assignment_id": 31,
+        "is_submitted": true,
+        "grades": 31,
+        "material_link": "https://forbes.com/sit/amet/consectetuer/adipiscing/elit/proin.aspx?sit=diam&amet=vitae&consectetuer=quam&adipiscing=suspendisse&elit=potenti&proin=nullam&risus=porttitor&praesent=lacus&lectus=at&vestibulum=turpis&quam=donec&sapien=posuere&varius=metus&ut=vitae&blandit=ipsum&non=aliquam&interdum=non&in=mauris&ante=morbi&vestibulum=non&ante=lectus&ipsum=aliquam&primis=sit&in=amet&faucibus=diam&orci=in&luctus=magna&et=bibendum&ultrices=imperdiet&posuere=nullam&cubilia=orci&curae=pede&duis=venenatis&faucibus=non&accumsan=sodales&odio=sed&curabitur=tincidunt&convallis=eu&duis=felis&consequat=fusce&dui=posuere&nec=felis&nisi=sed&volutpat=lacus&eleifend=morbi&donec=sem&ut=mauris&dolor=laoreet&morbi=ut&vel=rhoncus&lectus=aliquet&in=pulvinar&quam=sed&fringilla=nisl&rhoncus=nunc&mauris=rhoncus&enim=dui&leo=vel&rhoncus=sem&sed=sed&vestibulum=sagittis&sit=nam&amet=congue&cursus=risus&id=semper&turpis=porta&integer=volutpat&aliquet=quam&massa=pede&id=lobortis"
+    },
+    {
+        "id": 32,
+        "student_id": 32,
+        "assignment_id": 32,
+        "is_submitted": true,
+        "grades": 32,
+        "material_link": "https://addtoany.com/nulla/elit/ac/nulla/sed/vel/enim.png?eleifend=nunc&luctus=commodo&ultricies=placerat&eu=praesent&nibh=blandit&quisque=nam&id=nulla&justo=integer&sit=pede&amet=justo&sapien=lacinia&dignissim=eget&vestibulum=tincidunt&vestibulum=eget&ante=tempus&ipsum=vel&primis=pede&in=morbi&faucibus=porttitor&orci=lorem&luctus=id&et=ligula&ultrices=suspendisse&posuere=ornare&cubilia=consequat&curae=lectus&nulla=in&dapibus=est&dolor=risus&vel=auctor&est=sed&donec=tristique&odio=in&justo=tempus&sollicitudin=sit&ut=amet&suscipit=sem&a=fusce&feugiat=consequat&et=nulla&eros=nisl&vestibulum=nunc&ac=nisl&est=duis&lacinia=bibendum&nisi=felis&venenatis=sed&tristique=interdum&fusce=venenatis&congue=turpis&diam=enim&id=blandit&ornare=mi&imperdiet=in&sapien=porttitor&urna=pede&pretium=justo&nisl=eu&ut=massa&volutpat=donec&sapien=dapibus&arcu=duis&sed=at&augue=velit&aliquam=eu&erat=est&volutpat=congue&in=elementum&congue=in&etiam=hac&justo=habitasse&etiam=platea&pretium=dictumst&iaculis=morbi&justo=vestibulum&in=velit&hac=id&habitasse=pretium&platea=iaculis&dictumst=diam&etiam=erat&faucibus=fermentum&cursus=justo&urna=nec&ut=condimentum"
+    },
+    {
+        "id": 33,
+        "student_id": 33,
+        "assignment_id": 33,
+        "is_submitted": true,
+        "grades": 33,
+        "material_link": "http://sun.com/purus/eu/magna.aspx?id=erat&nulla=curabitur&ultrices=gravida&aliquet=nisi&maecenas=at&leo=nibh&odio=in&condimentum=hac&id=habitasse&luctus=platea&nec=dictumst&molestie=aliquam&sed=augue&justo=quam&pellentesque=sollicitudin&viverra=vitae&pede=consectetuer&ac=eget&diam=rutrum&cras=at&pellentesque=lorem"
+    },
+    {
+        "id": 34,
+        "student_id": 34,
+        "assignment_id": 34,
+        "is_submitted": true,
+        "grades": 34,
+        "material_link": "http://google.pl/platea/dictumst/morbi/vestibulum/velit.html?in=at&blandit=nulla&ultrices=suspendisse&enim=potenti&lorem=cras&ipsum=in&dolor=purus&sit=eu&amet=magna&consectetuer=vulputate&adipiscing=luctus&elit=cum&proin=sociis&interdum=natoque&mauris=penatibus&non=et&ligula=magnis&pellentesque=dis&ultrices=parturient&phasellus=montes&id=nascetur&sapien=ridiculus&in=mus&sapien=vivamus&iaculis=vestibulum&congue=sagittis&vivamus=sapien&metus=cum&arcu=sociis&adipiscing=natoque&molestie=penatibus&hendrerit=et&at=magnis&vulputate=dis&vitae=parturient&nisl=montes&aenean=nascetur&lectus=ridiculus&pellentesque=mus&eget=etiam&nunc=vel&donec=augue&quis=vestibulum&orci=rutrum&eget=rutrum&orci=neque&vehicula=aenean&condimentum=auctor&curabitur=gravida&in=sem&libero=praesent&ut=id&massa=massa&volutpat=id&convallis=nisl&morbi=venenatis&odio=lacinia&odio=aenean&elementum=sit&eu=amet&interdum=justo&eu=morbi&tincidunt=ut&in=odio&leo=cras&maecenas=mi&pulvinar=pede&lobortis=malesuada&est=in"
+    },
+    {
+        "id": 35,
+        "student_id": 35,
+        "assignment_id": 35,
+        "is_submitted": false,
+        "grades": 35,
+        "material_link": "http://china.com.cn/at/dolor/quis/odio/consequat.jpg?semper=donec&rutrum=ut&nulla=mauris&nunc=eget&purus=massa&phasellus=tempor&in=convallis&felis=nulla&donec=neque&semper=libero&sapien=convallis&a=eget&libero=eleifend&nam=luctus&dui=ultricies&proin=eu&leo=nibh&odio=quisque&porttitor=id&id=justo&consequat=sit&in=amet&consequat=sapien&ut=dignissim&nulla=vestibulum&sed=vestibulum&accumsan=ante"
+    },
+    {
+        "id": 36,
+        "student_id": 36,
+        "assignment_id": 36,
+        "is_submitted": false,
+        "grades": 36,
+        "material_link": "http://phoca.cz/lobortis.aspx?justo=in&etiam=felis&pretium=eu&iaculis=sapien&justo=cursus&in=vestibulum&hac=proin&habitasse=eu&platea=mi&dictumst=nulla&etiam=ac&faucibus=enim&cursus=in&urna=tempor&ut=turpis&tellus=nec&nulla=euismod&ut=scelerisque&erat=quam&id=turpis&mauris=adipiscing&vulputate=lorem&elementum=vitae&nullam=mattis&varius=nibh&nulla=ligula&facilisi=nec&cras=sem&non=duis&velit=aliquam&nec=convallis&nisi=nunc&vulputate=proin&nonummy=at&maecenas=turpis&tincidunt=a&lacus=pede&at=posuere&velit=nonummy&vivamus=integer&vel=non&nulla=velit&eget=donec&eros=diam&elementum=neque&pellentesque=vestibulum&quisque=eget&porta=vulputate&volutpat=ut&erat=ultrices"
+    },
+    {
+        "id": 37,
+        "student_id": 37,
+        "assignment_id": 37,
+        "is_submitted": false,
+        "grades": 37,
+        "material_link": "https://goo.gl/vel.png?hac=non&habitasse=interdum&platea=in&dictumst=ante&maecenas=vestibulum&ut=ante&massa=ipsum&quis=primis&augue=in&luctus=faucibus&tincidunt=orci&nulla=luctus&mollis=et&molestie=ultrices&lorem=posuere&quisque=cubilia&ut=curae&erat=duis&curabitur=faucibus&gravida=accumsan&nisi=odio&at=curabitur&nibh=convallis&in=duis&hac=consequat&habitasse=dui&platea=nec&dictumst=nisi&aliquam=volutpat&augue=eleifend&quam=donec&sollicitudin=ut&vitae=dolor&consectetuer=morbi&eget=vel&rutrum=lectus&at=in&lorem=quam&integer=fringilla&tincidunt=rhoncus&ante=mauris&vel=enim&ipsum=leo&praesent=rhoncus&blandit=sed&lacinia=vestibulum&erat=sit&vestibulum=amet&sed=cursus&magna=id&at=turpis&nunc=integer&commodo=aliquet&placerat=massa&praesent=id&blandit=lobortis&nam=convallis&nulla=tortor&integer=risus&pede=dapibus&justo=augue&lacinia=vel&eget=accumsan&tincidunt=tellus&eget=nisi&tempus=eu"
+    },
+    {
+        "id": 38,
+        "student_id": 38,
+        "assignment_id": 38,
+        "is_submitted": false,
+        "grades": 38,
+        "material_link": "http://networkadvertising.org/curabitur/convallis/duis/consequat.png?nec=tellus&nisi=nisi&volutpat=eu&eleifend=orci&donec=mauris&ut=lacinia&dolor=sapien&morbi=quis&vel=libero&lectus=nullam"
+    },
+    {
+        "id": 39,
+        "student_id": 39,
+        "assignment_id": 39,
+        "is_submitted": false,
+        "grades": 39,
+        "material_link": "http://mail.ru/non.jpg?tortor=orci&sollicitudin=luctus&mi=et&sit=ultrices&amet=posuere&lobortis=cubilia&sapien=curae&sapien=donec&non=pharetra&mi=magna&integer=vestibulum&ac=aliquet&neque=ultrices&duis=erat&bibendum=tortor&morbi=sollicitudin&non=mi&quam=sit&nec=amet&dui=lobortis&luctus=sapien&rutrum=sapien&nulla=non&tellus=mi&in=integer&sagittis=ac&dui=neque&vel=duis&nisl=bibendum&duis=morbi&ac=non&nibh=quam&fusce=nec&lacus=dui&purus=luctus&aliquet=rutrum&at=nulla&feugiat=tellus&non=in&pretium=sagittis&quis=dui&lectus=vel&suspendisse=nisl&potenti=duis&in=ac&eleifend=nibh&quam=fusce&a=lacus&odio=purus&in=aliquet"
+    },
+    {
+        "id": 40,
+        "student_id": 40,
+        "assignment_id": 40,
+        "is_submitted": false,
+        "grades": 40,
+        "material_link": "https://163.com/nibh/quisque/id/justo.png?montes=neque&nascetur=aenean&ridiculus=auctor&mus=gravida&etiam=sem&vel=praesent&augue=id&vestibulum=massa&rutrum=id&rutrum=nisl&neque=venenatis&aenean=lacinia&auctor=aenean&gravida=sit&sem=amet&praesent=justo&id=morbi&massa=ut&id=odio&nisl=cras&venenatis=mi&lacinia=pede&aenean=malesuada&sit=in&amet=imperdiet&justo=et&morbi=commodo&ut=vulputate&odio=justo&cras=in&mi=blandit&pede=ultrices&malesuada=enim&in=lorem&imperdiet=ipsum&et=dolor&commodo=sit&vulputate=amet&justo=consectetuer&in=adipiscing&blandit=elit&ultrices=proin&enim=interdum&lorem=mauris&ipsum=non&dolor=ligula&sit=pellentesque&amet=ultrices&consectetuer=phasellus&adipiscing=id&elit=sapien&proin=in&interdum=sapien&mauris=iaculis&non=congue&ligula=vivamus&pellentesque=metus&ultrices=arcu&phasellus=adipiscing&id=molestie&sapien=hendrerit&in=at&sapien=vulputate&iaculis=vitae&congue=nisl&vivamus=aenean&metus=lectus&arcu=pellentesque&adipiscing=eget&molestie=nunc&hendrerit=donec&at=quis&vulputate=orci&vitae=eget&nisl=orci&aenean=vehicula&lectus=condimentum&pellentesque=curabitur&eget=in&nunc=libero&donec=ut&quis=massa&orci=volutpat&eget=convallis&orci=morbi"
+    },
+    {
+        "id": 41,
+        "student_id": 41,
+        "assignment_id": 41,
+        "is_submitted": true,
+        "grades": 41,
+        "material_link": "http://joomla.org/dui/vel/sem/sed/sagittis/nam.xml?nisi=libero&vulputate=nullam&nonummy=sit&maecenas=amet&tincidunt=turpis&lacus=elementum&at=ligula&velit=vehicula&vivamus=consequat&vel=morbi&nulla=a&eget=ipsum&eros=integer&elementum=a&pellentesque=nibh&quisque=in&porta=quis&volutpat=justo&erat=maecenas&quisque=rhoncus&erat=aliquam&eros=lacus&viverra=morbi&eget=quis&congue=tortor&eget=id&semper=nulla&rutrum=ultrices&nulla=aliquet&nunc=maecenas&purus=leo&phasellus=odio&in=condimentum&felis=id&donec=luctus&semper=nec&sapien=molestie&a=sed&libero=justo&nam=pellentesque&dui=viverra&proin=pede&leo=ac&odio=diam&porttitor=cras&id=pellentesque&consequat=volutpat&in=dui&consequat=maecenas&ut=tristique&nulla=est&sed=et&accumsan=tempus&felis=semper&ut=est&at=quam&dolor=pharetra&quis=magna&odio=ac&consequat=consequat&varius=metus&integer=sapien&ac=ut&leo=nunc&pellentesque=vestibulum&ultrices=ante&mattis=ipsum&odio=primis&donec=in&vitae=faucibus&nisi=orci&nam=luctus&ultrices=et&libero=ultrices&non=posuere&mattis=cubilia&pulvinar=curae&nulla=mauris&pede=viverra&ullamcorper=diam&augue=vitae&a=quam&suscipit=suspendisse&nulla=potenti&elit=nullam&ac=porttitor&nulla=lacus&sed=at&vel=turpis&enim=donec&sit=posuere&amet=metus"
+    },
+    {
+        "id": 42,
+        "student_id": 42,
+        "assignment_id": 42,
+        "is_submitted": true,
+        "grades": 42,
+        "material_link": "https://bravesites.com/nisl/aenean/lectus/pellentesque/eget.json?vulputate=mauris&luctus=eget&cum=massa&sociis=tempor&natoque=convallis&penatibus=nulla&et=neque"
+    },
+    {
+        "id": 43,
+        "student_id": 43,
+        "assignment_id": 43,
+        "is_submitted": false,
+        "grades": 43,
+        "material_link": "http://amazon.co.jp/id/nulla/ultrices.js?in=luctus&lectus=et&pellentesque=ultrices&at=posuere&nulla=cubilia&suspendisse=curae&potenti=nulla&cras=dapibus&in=dolor&purus=vel&eu=est&magna=donec&vulputate=odio&luctus=justo&cum=sollicitudin&sociis=ut&natoque=suscipit&penatibus=a&et=feugiat&magnis=et&dis=eros&parturient=vestibulum&montes=ac&nascetur=est&ridiculus=lacinia&mus=nisi&vivamus=venenatis&vestibulum=tristique&sagittis=fusce&sapien=congue&cum=diam&sociis=id&natoque=ornare&penatibus=imperdiet&et=sapien&magnis=urna&dis=pretium&parturient=nisl&montes=ut&nascetur=volutpat&ridiculus=sapien&mus=arcu&etiam=sed&vel=augue&augue=aliquam&vestibulum=erat&rutrum=volutpat&rutrum=in&neque=congue&aenean=etiam&auctor=justo&gravida=etiam&sem=pretium&praesent=iaculis&id=justo&massa=in&id=hac&nisl=habitasse&venenatis=platea&lacinia=dictumst&aenean=etiam&sit=faucibus&amet=cursus&justo=urna&morbi=ut&ut=tellus&odio=nulla&cras=ut&mi=erat&pede=id&malesuada=mauris&in=vulputate&imperdiet=elementum&et=nullam&commodo=varius&vulputate=nulla&justo=facilisi&in=cras&blandit=non&ultrices=velit&enim=nec&lorem=nisi&ipsum=vulputate&dolor=nonummy&sit=maecenas&amet=tincidunt&consectetuer=lacus&adipiscing=at&elit=velit&proin=vivamus&interdum=vel&mauris=nulla&non=eget&ligula=eros&pellentesque=elementum&ultrices=pellentesque&phasellus=quisque&id=porta"
+    },
+    {
+        "id": 44,
+        "student_id": 44,
+        "assignment_id": 44,
+        "is_submitted": true,
+        "grades": 44,
+        "material_link": "http://goo.ne.jp/varius/ut/blandit/non/interdum.js?in=duis&tempus=faucibus&sit=accumsan&amet=odio&sem=curabitur&fusce=convallis&consequat=duis&nulla=consequat&nisl=dui&nunc=nec&nisl=nisi&duis=volutpat&bibendum=eleifend&felis=donec&sed=ut&interdum=dolor&venenatis=morbi&turpis=vel&enim=lectus&blandit=in&mi=quam&in=fringilla&porttitor=rhoncus&pede=mauris&justo=enim&eu=leo&massa=rhoncus&donec=sed&dapibus=vestibulum&duis=sit&at=amet&velit=cursus&eu=id&est=turpis&congue=integer&elementum=aliquet&in=massa&hac=id&habitasse=lobortis&platea=convallis&dictumst=tortor&morbi=risus&vestibulum=dapibus&velit=augue&id=vel&pretium=accumsan&iaculis=tellus&diam=nisi&erat=eu&fermentum=orci&justo=mauris&nec=lacinia&condimentum=sapien&neque=quis&sapien=libero&placerat=nullam&ante=sit&nulla=amet&justo=turpis&aliquam=elementum&quis=ligula&turpis=vehicula&eget=consequat&elit=morbi&sodales=a&scelerisque=ipsum&mauris=integer&sit=a&amet=nibh&eros=in&suspendisse=quis&accumsan=justo&tortor=maecenas&quis=rhoncus&turpis=aliquam&sed=lacus&ante=morbi&vivamus=quis"
+    }
+]
