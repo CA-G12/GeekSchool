@@ -14,6 +14,7 @@ import { UserInterface, UserDataInterface } from "../../interfaces";
 const init = {
   userData: {
     id: 0,
+    name: "",
     role: "",
   },
   setUserData: () => {},
@@ -29,7 +30,7 @@ export const UserAuthProvider: FC<Props> = ({ children }) => {
 
   useEffect(() => {
     const getUserData = async () => {
-      const { data } = await axios("/auth", { cancelToken: source.token });
+      const { data } = await axios("/api/v1//auth", { cancelToken: source.token });
 
       setUserData(data);
     };
