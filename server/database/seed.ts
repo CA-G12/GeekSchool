@@ -1,4 +1,3 @@
-// import buildModels from './build';
 import {
   Announcement, Assignment, AssignmentStudent, Class, ClassStudent, Feedback, Health, Parent,
   Question, Recommendation, Report, Schedule, sequelize, Student, Teacher, Test, TestStudent, User,
@@ -11,7 +10,6 @@ import {
 } from './seed/';
 
 const buildSeed = async () => {
-  // buildModels();
   await sequelize.sync({ force: true });
 
   await User.bulkCreate(users, { validate: true });
@@ -31,8 +29,6 @@ const buildSeed = async () => {
   await Report.bulkCreate(reports, { validate: true });
   await Schedule.bulkCreate(schedules, { validate: true });
   await TestStudent.bulkCreate(testStudent, { validate: true });
-  // eslint-disable-next-line no-console
-  console.log('All data added');
 };
 
 buildSeed();
