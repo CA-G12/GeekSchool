@@ -1,23 +1,15 @@
-import React, { useState, useEffect, createContext, useContext } from "react";
-import axios from "axios";
-
-// interface UserInterface {
-//     id: number;
-//     name: string;
-//     mobile: string;
-//     email: string;
-//     img: string;
-//     location: string;
-//     role: string;
-//   }
+import React, { useState, useEffect, createContext, useContext, useMemo } from 'react';
+import axios from 'axios';
 
 interface UserInterface {
-  postId: number;
-  id: number;
-  name: string;
-  email: string;
-  body: string;
-}
+    id: number;
+    name: string;
+    mobile: string;
+    email: string;
+    img: string;
+    location: string;
+    role: string;
+  }
 
 interface UserDataInterface {
   userData: UserInterface | null;
@@ -26,14 +18,17 @@ interface UserDataInterface {
 
 const init = {
   userData: {
-    postId: 0,
     id: 0,
-    name: "",
-    email: "",
-    body: "",
+    name: '',
+    mobile: '',
+    email: '',
+    img: '',
+    location: '',
+    role: '',
   },
   setUserData: () => {},
 };
+
 
 export const UserAuthContext = createContext<UserDataInterface>(init);
 
@@ -44,7 +39,7 @@ export const UserAuthProvider = (props: { children?: React.ReactNode }) => {
 
   const getUserData = async () => {
     const axiosData = await axios(
-      "https://jsonplaceholder.typicode.com/comments/1"
+      'https://jsonplaceholder.typicode.com/comments/1'
     );
     const { data } = axiosData;
     setUserData(data);
@@ -54,9 +49,10 @@ export const UserAuthProvider = (props: { children?: React.ReactNode }) => {
     getUserData();
   }, []);
 
+  const value = useMemo(() => ({ userData, setUserData }), [userData]);
+
   return (
-    // eslint-disable-next-line react/jsx-no-constructed-context-values
-    <UserAuthContext.Provider value={{ userData, setUserData }}>
+    <UserAuthContext.Provider value={value}>
       {children}
     </UserAuthContext.Provider>
   );
