@@ -4,9 +4,6 @@ import { CustomError, CustomRequest } from '../utils';
 
 const teacherAuth = (req: CustomRequest, res: Response, next: NextFunction) => {
   const { user } = req;
-  if (!user.role) {
-    throw new CustomError(401, 'Unauthenticated!');
-  }
 
   if (user.role === 'teacher') {
     next();
