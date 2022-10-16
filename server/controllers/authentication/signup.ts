@@ -2,12 +2,13 @@ import { Request, Response } from 'express';
 import { hash } from 'bcryptjs';
 
 import {
-  User, Parent, Teacher, Student,
-} from '../../models';
+  createUser, createParent, createStudent, createTeacher, findUserByEmail,
+} from '../../queries';
 
 import {
   CustomError,
   userValidation,
+  parentValidation,
   signToken,
   UserInterface,
 } from '../../utils';
@@ -17,52 +18,58 @@ const signup = async (req: Request, res: Response) => {
     name, email, password, confPassword, role, location, mobile, children,
   }: UserInterface = req.body;
 
-  const doesEmailExist = await User.findOne({ where: { email } });
+  const doesEmailExist = await findUserByEmail(email);
   if (doesEmailExist) {
-    res.status(400).json({ success: false, message: 'The email does already exist!!!' });
+    res.status(422).json({ message: 'The email does already exist!' });
   }
 
   try {
-    await userValidation({
+    const isUserValid = await userValidation({
       name, email, mobile, password, confPassword, role, location,
     });
 
+    if (isUserValid.error) {
+      res.status(400).json({ message: 'Incompatible data!' });
+    }
+
     const hashedPassword = await hash(password, 12);
 
-    const user = await User.create({
-      name, email, hashedPassword, mobile, role, location,
-    }); // ! Hashed password should be in the user model!
+    const user = await createUser({
+      name, email, mobile, hashedPassword, role, location,
+    });
 
     if (role === 'parent') {
-      const parent = await Parent.create({ user_id: user.getDataValue('id') });
+      const isParentValid = await parentValidation({ children });
+
+      if (isParentValid.error) {
+        res.status(400).json({ message: 'Incompatible data!' });
+      }
+
+      const parent = await createParent(user.id);
 
       children?.forEach(async (child) => {
-        const childStudent = await Student.findOne({
-          include: { model: User, where: { email: child } },
-        });
+        const doesChildStudent = await findUserByEmail(child);
 
-        if (childStudent) {
-          await childStudent.update({ parent_id: parent.getDataValue('id') });
-        } else {
-          res.status(404).json({ success: false, message: 'No such accounts for your children!!!' });
+        if (doesChildStudent) {
+          await createStudent(doesChildStudent.id, parent.id);
+        } else { // ? unprocessable entity
+          res.status(422).json({ message: 'The email does not exist!' });
         }
       });
     } else if (role === 'teacher') {
-      await Teacher.create({ user_id: user.getDataValue('id') });
-    } else if (role === 'student') {
-      await Student.create({ user_id: user.getDataValue('id') }); // ! parent_id
+      await createTeacher(user.id);
     }
 
-    const token = await signToken({ id: user.getDataValue('id'), name, role });
+    const token = await signToken({ id: user.id, name, role });
 
     res.cookie('token', token).status(201).json(
       {
-        success: true,
         data: {
           id: user.getDataValue('id'),
           role,
           name,
         },
+        message: 'Account is created successfully!',
       },
     );
   } catch (error) {
