@@ -2,7 +2,9 @@ import CustomError from './CustomError';
 import {
   UserInterface, CustomRequest, PayloadInterface,
 } from './interfaces';
-import userValidation from './validation';
+import {
+  userValidation, parentValidation,
+} from './validation';
 import { signToken, verifyToken } from './jwt';
 
 export {
@@ -11,6 +13,7 @@ export {
   UserInterface,
   PayloadInterface,
   userValidation,
+  parentValidation,
   signToken,
   verifyToken,
 };

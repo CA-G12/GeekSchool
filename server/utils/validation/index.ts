@@ -1,3 +1,7 @@
 import userValidation from './userValidation';
+import parentValidation from './parentValidation';
 
-export default userValidation;
+export {
+  userValidation,
+  parentValidation,
+};
