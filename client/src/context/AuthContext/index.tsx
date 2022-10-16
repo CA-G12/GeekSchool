@@ -30,7 +30,7 @@ export const UserAuthProvider: FC<Props> = ({ children }) => {
 
   useEffect(() => {
     const getUserData = async () => {
-      const { data } = await axios("/api/v1//auth", {
+      const { data } = await axios("/api/v1/auth", {
         cancelToken: source.token,
       });
 
