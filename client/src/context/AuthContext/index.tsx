@@ -19,11 +19,10 @@ export const UserAuthProvider: FC<Props> = ({ children }) => {
   const source = axios.CancelToken.source();
   const [userData, setUserData] = useState<UserInterface | null>(null);
 
-  
   useEffect(() => {
     const getUserData = async () => {
       const { data } = await axios("/auth", { cancelToken: source.token });
-  
+
       setUserData(data);
     };
     getUserData();

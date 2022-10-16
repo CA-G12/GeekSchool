@@ -1,17 +1,9 @@
-export interface UserInterface {
-  id: number;
-  role: string;
-}
+import {UserInterface, UserDataInterface, init } from './userInterface';
 
-export interface UserDataInterface {
-  userData: UserInterface | null;
-  setUserData: Function;
-}
-
-export const init = {
-  userData: {
-    id: 0,
-    role: "",
-  },
-  setUserData: () => {},
+export {
+  init
+};
+export type {
+  UserInterface,
+  UserDataInterface
 };
