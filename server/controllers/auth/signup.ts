@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import { Request, Response, NextFunction } from 'express';
 import { hash } from 'bcryptjs';
 
 import {
@@ -13,23 +13,23 @@ import {
   UserInterface,
 } from '../../utils';
 
-const signup = async (req: Request, res: Response) => {
+const signup = async (req: Request, res: Response, next: NextFunction) => {
   const {
     name, email, password, confPassword, role, location, mobile, children,
   }: UserInterface = req.body;
-
-  const doesEmailExist = await findUserByEmail(email);
-  if (doesEmailExist) {
-    res.status(422).json({ message: 'The email does already exist!' });
-  }
 
   try {
     const isUserValid = await userValidation({
       name, email, mobile, password, confPassword, role, location,
     });
 
+    const doesEmailExist = await findUserByEmail(email);
+    if (doesEmailExist) {
+      throw new CustomError(422, 'The email does already exist!');
+    }
+
     if (isUserValid.error) {
-      res.status(400).json({ message: 'Incompatible data!' });
+      throw new CustomError(400, 'Incompatible data!');
     }
 
     const hashedPassword = await hash(password, 12);
@@ -42,7 +42,7 @@ const signup = async (req: Request, res: Response) => {
       const isParentValid = await parentValidation({ children });
 
       if (isParentValid.error) {
-        res.status(400).json({ message: 'Incompatible data!' });
+        throw new CustomError(400, 'Incompatible data!');
       }
 
       const parent = await createParent(user.getDataValue('id'));
@@ -53,7 +53,7 @@ const signup = async (req: Request, res: Response) => {
         if (doesChildStudent) {
           await createStudent(doesChildStudent.getDataValue('id'), parent.getDataValue('id'));
         } else { // ? unprocessable entity
-          res.status(422).json({ message: 'The email does not exist!' });
+          throw new CustomError(422, 'The email does not exist!');
         }
       });
     } else if (role === 'teacher') {
@@ -76,11 +76,7 @@ const signup = async (req: Request, res: Response) => {
     // eslint-disable-next-line no-console
     console.log('signup controller', error);
 
-    if (error.message) {
-      throw new CustomError(422, `error: ${error.message}`);
-    } else {
-      throw new CustomError(500, 'Internal server error!!!');
-    }
+    next(error);
   }
 };
 
