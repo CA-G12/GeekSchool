@@ -2,6 +2,6 @@ import logout from '../controllers';
 
 const authRouter = require('express').Router();
 
-authRouter.get('/auth/logout', logout);
+authRouter.post('/auth/logout', logout);
 
 export default authRouter;
