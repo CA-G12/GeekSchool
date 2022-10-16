@@ -1,10 +1,12 @@
-import React from 'react';
-import SignUpPage from './pages/SignUp';
+import SignUpPage from "./pages/SignUp";
+import { UserAuthProvider } from "./context/AuthContext";
 
-const App: React.FC = () => (
-  <div className="App">
-    <SignUpPage />
-  </div>
+const App = () => (
+  <UserAuthProvider>
+    <div className="App">
+      <SignUpPage />
+    </div>
+  </UserAuthProvider>
 );
 
 export default App;
