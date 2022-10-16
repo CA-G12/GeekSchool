@@ -1,3 +1,15 @@
-import { UserInterface, UserDataInterface } from "./userInterface";
+import {
+  UserInterface,
+  UserDataInterface,
+  emailInterface,
+  userDataInterface,
+  userDataParentInterface,
+} from "./userInterface";
 
-export { UserInterface, UserDataInterface };
+export {
+  UserInterface,
+  UserDataInterface,
+  emailInterface,
+  userDataInterface,
+  userDataParentInterface,
+};
