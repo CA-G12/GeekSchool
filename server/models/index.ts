@@ -15,90 +15,91 @@ import Teacher from './teacher';
 import Test from './test';
 import TestStudent from './testStudent';
 import User from './user';
+import sequelize from '../database/connection';
 
 // Relations
 
 // *** Announcement ***
-Class.hasMany(Announcement);
+Class.hasMany(Announcement, { foreignKey: 'class_id', sourceKey: 'id' });
 Announcement.belongsTo(Class, { foreignKey: 'class_id' });
 
 // *** Assignment ***
-Class.hasMany(Assignment);
+Class.hasMany(Assignment, { foreignKey: 'class_id', sourceKey: 'id' });
 Assignment.belongsTo(Class, { foreignKey: 'class_id' });
 
 // *** AssignmentStudent ***
-Assignment.hasMany(AssignmentStudent);
+Assignment.hasMany(AssignmentStudent, { foreignKey: 'assignment_id', sourceKey: 'id' });
 AssignmentStudent.belongsTo(Assignment, { foreignKey: 'assignment_id' });
 
 // *** Class ***
-Teacher.hasMany(Class);
+Teacher.hasMany(Class, { foreignKey: 'teacher_id', sourceKey: 'id' });
 Class.belongsTo(Teacher, { foreignKey: 'teacher_id' });
 
-Student.hasMany(AssignmentStudent);
+Student.hasMany(AssignmentStudent, { foreignKey: 'student_id', sourceKey: 'id' });
 AssignmentStudent.belongsTo(Student, { foreignKey: 'student_id' });
 
 // *** ClassStudent ***
 
-Class.hasMany(ClassStudent);
+Class.hasMany(ClassStudent, { foreignKey: 'class_id', sourceKey: 'id' });
 ClassStudent.belongsTo(Class, { foreignKey: 'class_id' });
 
-Student.hasMany(ClassStudent);
+Student.hasMany(ClassStudent, { foreignKey: 'student_id', sourceKey: 'id' });
 ClassStudent.belongsTo(Student, { foreignKey: 'student_id' });
 
 // *** FeedBack ***
-Student.hasMany(Feedback);
+Student.hasMany(Feedback, { foreignKey: 'student_id', sourceKey: 'id' });
 Feedback.belongsTo(Student, { foreignKey: 'student_id' });
 
-Class.hasMany(Feedback);
+Class.hasMany(Feedback, { foreignKey: 'class_id', sourceKey: 'id' });
 Feedback.belongsTo(Class, { foreignKey: 'class_id' });
 
 // *** Health ***
-Student.hasOne(Health);
+Student.hasOne(Health, { foreignKey: 'student_id', sourceKey: 'id' });
 Health.belongsTo(Student, { foreignKey: 'student_id' });
 
 // *** Parent ***
-Parent.hasOne(User);
-User.belongsTo(Parent, { foreignKey: 'user_id' });
+User.hasOne(Parent, { foreignKey: 'user_id', sourceKey: 'id' });
+Parent.belongsTo(User, { foreignKey: 'user_id' });
 
 // *** Question ***
-Class.hasMany(Question);
+Class.hasMany(Question, { foreignKey: 'class_id', sourceKey: 'id' });
 Question.belongsTo(Class, { foreignKey: 'class_id' });
 
 // *** Recommendation ***
-Class.hasMany(Recommendation);
+Class.hasMany(Recommendation, { foreignKey: 'class_id', sourceKey: 'id' });
 Recommendation.belongsTo(Class, { foreignKey: 'class_id' });
 
 // *** Report ***
-Class.hasMany(Report);
+Class.hasMany(Report, { foreignKey: 'class_id', sourceKey: 'id' });
 Report.belongsTo(Class, { foreignKey: 'class_id' });
 
-Student.hasMany(Report);
+Student.hasMany(Report, { foreignKey: 'student_id', sourceKey: 'id' });
 Report.belongsTo(Class, { foreignKey: 'student_id' });
 
 // *** Schedule ***
-Class.hasMany(Schedule);
+Class.hasMany(Schedule, { foreignKey: 'class_id', sourceKey: 'id' });
 Schedule.belongsTo(Class, { foreignKey: 'class_id' });
 
 // *** Student ***
-User.hasOne(Student);
+User.hasOne(Student, { foreignKey: 'user_id', sourceKey: 'id' });
 Student.belongsTo(User, { foreignKey: 'user_id' });
 
-Parent.hasMany(Student);
+Parent.hasMany(Student, { foreignKey: 'parent_id', sourceKey: 'id' });
 Student.belongsTo(Parent, { foreignKey: 'parent_id' });
 
 // *** Teacher ***
-User.hasOne(Teacher);
+User.hasOne(Teacher, { foreignKey: 'user_id', sourceKey: 'id' });
 Teacher.belongsTo(User, { foreignKey: 'user_id' });
 
 // *** Test ***
-Class.hasMany(Test);
+Class.hasMany(Test, { foreignKey: 'class_id', sourceKey: 'id' });
 Test.belongsTo(Class, { foreignKey: 'class_id' });
 
 // *** TestStudent ***
-Test.hasMany(TestStudent);
+Test.hasMany(TestStudent, { foreignKey: 'test_id', sourceKey: 'id' });
 TestStudent.belongsTo(Test, { foreignKey: 'test_id' });
 
-Student.hasMany(TestStudent);
+Student.hasMany(TestStudent, { foreignKey: 'student_id', sourceKey: 'id' });
 TestStudent.belongsTo(Student, { foreignKey: 'student_id' });
 export {
   Announcement,
@@ -118,4 +119,5 @@ export {
   Test,
   TestStudent,
   User,
+  sequelize,
 };
