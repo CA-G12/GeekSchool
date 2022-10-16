@@ -1,4 +1,4 @@
-import SignUpPage from "./pages/SignUp";
+import { SignUpPage } from "./pages";
 import { UserAuthProvider } from "./context/AuthContext";
 
 const App = () => (
