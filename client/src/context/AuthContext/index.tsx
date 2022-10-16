@@ -1,57 +1,38 @@
-import React, {
+import  {
   useState,
   useEffect,
   createContext,
   useContext,
   useMemo,
+  ReactNode,
+  FC
 } from "react";
+
 import axios from "axios";
+import { UserInterface, UserDataInterface, init } from '../../interfaces'
 
-interface UserInterface {
-  id: number;
-  name: string;
-  mobile: string;
-  email: string;
-  img: string;
-  location: string;
-  role: string;
-}
 
-interface UserDataInterface {
-  userData: UserInterface | null;
-  setUserData: Function;
-}
+type Props = { children: ReactNode };
 
-const init = {
-  userData: {
-    id: 0,
-    name: "",
-    mobile: "",
-    email: "",
-    img: "",
-    location: "",
-    role: "",
-  },
-  setUserData: () => {},
-};
 
 export const UserAuthContext = createContext<UserDataInterface>(init);
 
-// eslint-disable-next-line react/require-default-props
-export const UserAuthProvider = (props: { children?: React.ReactNode }) => {
+export const UserAuthProvider: FC<Props> = ({children}) => {
+  const source = axios.CancelToken.source();
   const [userData, setUserData] = useState<UserInterface | null>(null);
-  const { children } = props;
 
   const getUserData = async () => {
-    const axiosData = await axios(
-      "https://jsonplaceholder.typicode.com/comments/1"
-    );
-    const { data } = axiosData;
+    const {data} = await axios("/auth", { cancelToken: source.token});
+
     setUserData(data);
   };
 
   useEffect(() => {
     getUserData();
+  
+    return () => {
+      source.cancel();
+  };
   }, []);
 
   const value = useMemo(() => ({ userData, setUserData }), [userData]);
