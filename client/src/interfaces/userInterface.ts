@@ -1,26 +1,12 @@
 interface UserInterface {
-    id: number;
-    role: string;
-  }
-  
+  id: number;
+  role: string;
+}
+
 interface UserDataInterface {
-    userData: UserInterface | null;
-    setUserData: Function;
-  }
-  
-const init = {
-    userData: {
-      id: 0,
-      role: "",
-    },
-    setUserData: () => {},
-  };
-  
+  userData: UserInterface | null;
+  setUserData: Function;
+}
 
-export {
-    init
-};    export type {
-        UserInterface,
-        UserDataInterface
-    };
 
+export  { UserInterface, UserDataInterface };

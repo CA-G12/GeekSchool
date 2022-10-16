@@ -1,9 +1,3 @@
-import {UserInterface, UserDataInterface, init } from './userInterface';
+import { UserInterface, UserDataInterface} from "./userInterface";
 
-export {
-  init
-};
-export type {
-  UserInterface,
-  UserDataInterface
-};
+export { UserInterface, UserDataInterface };

@@ -9,7 +9,15 @@ import {
 } from "react";
 
 import axios from "axios";
-import { UserInterface, UserDataInterface, init } from "../../interfaces";
+import { UserInterface, UserDataInterface } from "../../interfaces";
+
+const init = {
+  userData: {
+    id: 0,
+    role: "",
+  },
+  setUserData: () => {},
+};
 
 type Props = { children: ReactNode };
 
