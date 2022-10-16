@@ -24,7 +24,7 @@ const ParentSignUp: React.ElementType = ({ inputValue, addEmailChildren }: user)
 
   useEffect(() => {
     addEmailChildren(emails);
-  }, [emails]);
+  }, [addEmailChildren, emails]);
 
   const deleteChildEmail = (indexDiv: number): void => {
     const newEmails = emails.filter((e, index: number) => index !== indexDiv);
@@ -41,7 +41,7 @@ const ParentSignUp: React.ElementType = ({ inputValue, addEmailChildren }: user)
       <Input placeholder="العنوان" name="location" onChange={inputValue} />
       <Input placeholder="البريد الإلكتروني للأبناء" onChange={emailChange} />
       <UserAddOutlined onClick={addEmail} />
-      {emails.map((e: String, index: number) => <AddChild email={e} index={index} deleteChildEmail={deleteChildEmail} />)}
+      {emails.map((e: String, index: number) => <AddChild key={e} email={e} index={index} deleteChildEmail={deleteChildEmail} />)}
     </>
   );
 };
