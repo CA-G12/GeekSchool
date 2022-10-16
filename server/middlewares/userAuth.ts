@@ -1,8 +1,8 @@
 import { Response, NextFunction } from 'express';
 
-import { CustomError, CustomRequest, verifyToken } from '../utils';
+import { CustomError, verifyToken } from '../utils';
 
-const userAuth = async (req: CustomRequest, res: Response, next: NextFunction) => {
+const userAuth = async (req: any, res: Response, next: NextFunction) => {
   const token: string = req.cookies;
 
   if (!token) {
