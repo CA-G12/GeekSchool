@@ -1,10 +1,9 @@
-import { Config } from 'jest';
-
-const config: Config = {
-  preset: 'ts-node',
-  testEnvironment: 'node',
-  transform: { '^.+\\.ts?$': 'ts-jest' },
-  transformIgnorePatterns: ['<rootDir>/node_modules/'],
+import type { Config } from '@jest/types';
+// Explanation: This file just for configure Typescript tests and transform it to Commonjs code
+const config: Config.InitialOptions = {
+  verbose: true,
+  transform: {
+    '^.+\\.(ts)?$': 'ts-jest',
+  },
 };
-
 export default config;

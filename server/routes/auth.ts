@@ -1,7 +1,8 @@
-import { logout } from '../controllers';
+import { signup, logout } from '../controllers';
 
-const authRouter = require('express').Router();
+const router = require('express').Router();
 
-authRouter.post('/auth/logout', logout);
+router.post('/signup', signup);
+router.post('/logout', logout);
 
-export default authRouter;
+export default router;

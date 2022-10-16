@@ -7,7 +7,7 @@ const createUser = (obj: {
   hashedPassword: string,
   role: string,
   location: string,
-}) => User.create(obj);
+}) => User.create({ ...obj, password: obj.hashedPassword });
 
 const findUserByEmail = (email: string) => User.findOne({ where: { email } });
 
