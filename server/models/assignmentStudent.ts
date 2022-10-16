@@ -13,7 +13,6 @@ const AssignmentStudent = sequelize.define('AssignmentStudent', {
   },
   material_link: {
     type: DataTypes.TEXT,
-    defaultValue: '',
   },
   grade: {
     type: DataTypes.INTEGER,
