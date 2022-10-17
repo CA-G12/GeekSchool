@@ -2,16 +2,33 @@ import { Request, Response, NextFunction } from 'express';
 import { hash } from 'bcryptjs';
 
 import {
-  createUser, createTeacher, findUserByEmail,
+  createUser, createTeacher, findUserByEmail, createParent, createStudent,
 } from '../../queries';
-import createParentAccount from './signupHelpers/createParent';
 
 import {
   CustomError,
   userValidation,
   signToken,
   UserRequestInterface,
+  UserTableInterface,
 } from '../../utils';
+
+const createParentAccount = async (user: UserTableInterface, children?: Array<string>) => {
+  const parentUser = await createUser(user);
+  const parentId = parentUser.getDataValue('id');
+
+  children?.forEach(async (child) => {
+    const doesChildStudent = await findUserByEmail(child);
+    const childId = doesChildStudent?.getDataValue('id');
+
+    if (!doesChildStudent) {
+      throw new CustomError(422, 'The email does not exist!');
+    }
+
+    await createStudent(childId, parentId);
+    await createParent(parentId);
+  });
+};
 
 const signup = async (req: Request, res: Response, next: NextFunction) => {
   try {
@@ -34,10 +51,9 @@ const signup = async (req: Request, res: Response, next: NextFunction) => {
     };
 
     if (role === 'parent') {
-      const parent = await createParentAccount({
+      await createParentAccount({
         name, email, hashedPassword, mobile, location, role,
       }, children);
-      if (parent === null) throw new CustomError(422, 'The email does not exist!');
     } else if (role === 'teacher') {
       user = await createUser({
         name, email, mobile, hashedPassword, role, location,
@@ -61,8 +77,7 @@ const signup = async (req: Request, res: Response, next: NextFunction) => {
       },
     );
   } catch (error) {
-    // eslint-disable-next-line no-console
-    console.log('signup controller', error);
+    if (error.name === 'ValidationError') next(new CustomError(400, 'Wrong data is inserted!'));
 
     next(error);
   }
