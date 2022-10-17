@@ -1,3 +1,3 @@
-import { logout, userData } from './auth';
+import { logout, userData, login } from './auth';
 
-export { logout, userData };
+export { logout, userData, login };
