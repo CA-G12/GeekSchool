@@ -1,6 +1,6 @@
 import CustomError from './CustomError';
 import {
-  UserInterface, CustomRequest, PayloadInterface,
+  UserRequestInterface, CustomRequest, PayloadInterface, UserTableInterface,
 } from './interfaces';
 import {
   userValidation, parentValidation,
@@ -10,8 +10,9 @@ import { signToken, verifyToken } from './jwt';
 export {
   CustomError,
   CustomRequest,
-  UserInterface,
+  UserRequestInterface,
   PayloadInterface,
+  UserTableInterface,
   userValidation,
   parentValidation,
   signToken,
