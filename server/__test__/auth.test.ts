@@ -1,148 +1,146 @@
 /* eslint-disable no-undef */
-// import supertest from 'supertest';
+import supertest from 'supertest';
 
-// import connection from '../database/connection';
-// import buildModel from '../database/build';
-// import buildSeed from '../database/seed';
-// import app from '../app';
+import buildModel from '../database/build';
+import app from '../app';
 
-// jest.setTimeout(30000);
+jest.setTimeout(20000);
 
-// beforeAll(async () => {
-//   await buildModel();
-// });
-// afterAll(() => connection.close());
+beforeAll(async () => {
+  await buildModel();
+});
 
 describe('Testing signup route', () => {
   test('dummy test', () => {
     expect(1).toBe(1);
   });
 
-  // test(
-  //   'It should check the content type and return 201 when the user enters a valid data.',
-  //   (done) => {
-  //     supertest(app)
-  //       .post('/api/v1/signup')
-  //       .send({
-  //         name: 'Mustafa Salem',
-  //         email: 'hi@gmail.com',
-  //         password: 'root123',
-  //         confPassword: 'root123',
-  //         mobile: '0599000000',
-  //         location: 'Gaza-Palestine',
-  //         role: 'parent',
-  //         children: [
-  //           'child1@gmail.com',
-  //           'child2@gmail.com',
-  //         ],
-  //       })
-  //       .expect(201)
-  //       .end((err) => {
-  //         if (err) return done(err);
-  //         return done();
-  //       });
-  //   },
-  // );
+  test('Should create the student account', (done) => {
+    supertest(app)
+      .post('/api/v1/auth/signup')
+      .send({
+        name: 'Mustafa Salem',
+        email: 'child1@gmail.com',
+        password: 'root123',
+        confPassword: 'root123',
+        mobile: '0599000000',
+        location: 'Gaza-Palestine',
+        role: 'student',
+      })
+      .expect(201)
+      .end((err) => {
+        if (err) return done(err);
+        return done();
+      });
+  });
 
-  // test(
-  //   'It should check if the user data and message are returned from the server.',
-  //   (done) => {
-  //     supertest(app)
-  //       .post('/api/v1/signup')
-  //       .send({
-  //         name: 'Mustafa Salem',
-  //         email: 'hello@hello.hello',
-  //         password: 'root123',
-  //         confPassword: 'root123',
-  //         mobile: '0599000000',
-  //         location: 'Gaza-Palestine',
-  //         role: 'parent',
-  //       })
-  //       .end((err, res) => {
-  //         if (err) return done(err);
-  //         expect(res.body.data).toBeDefined();
-  //         expect(res.body.message).toBeDefined();
-  //         return done();
-  //       });
-  //   },
-  // );
+  test('Should create the student account', (done) => {
+    supertest(app)
+      .post('/api/v1/auth/signup')
+      .send({
+        name: 'Mustafa Salem',
+        email: 'child2@gmail.com',
+        password: 'root123',
+        confPassword: 'root123',
+        mobile: '0599000000',
+        location: 'Gaza-Palestine',
+        role: 'student',
+      })
+      .expect(201)
+      .end((err, res) => {
+        if (err) return done(err);
+        expect(res.body.msg).toBe('Account is created successfully!');
+        return done();
+      });
+  });
 
-  // test('It should return return 400 when the user enters an incompatible data.', (done) => {
-  //   supertest(app)
-  //     .post('/api/v1/signup')
-  //     .send({
-  //       name: 'Mustafa Salem',
-  //       email: 'hi@hi.hi',
-  //       password: 'root123',
-  //       confPassword: 'root123',
-  //       mobile: '0599000000',
-  //       location: 'Gaza-Palestine',
-  //       role: 123,
-  //     })
-  //     .expect(400)
-  //     .end((err) => {
-  //       if (err) return done(err);
-  //       return done();
-  //     });
-  // });
+  test('Should create the teacher account', (done) => {
+    supertest(app)
+      .post('/api/v1/auth/signup')
+      .send({
+        name: 'Kamal Sameer',
+        email: 'teacher@gmail.com',
+        password: 'root123',
+        confPassword: 'root123',
+        mobile: '0599555555',
+        location: 'Gaza-Palestine',
+        role: 'teacher',
+      })
+      .expect(201)
+      .end((err, res) => {
+        if (err) return done(err);
+        expect(res.body.msg).toBe('Account is created successfully!');
+        return done();
+      });
+  });
 
-  // test(
-  //   'It should return return error message when the user enters an incompatible data.',
-  //   (done) => {
-  //     supertest(app)
-  //       .post('/api/v1/signup')
-  //       .send({
-  //         name: 'Mustafa Salem',
-  //         email: 'hi@hi.hi',
-  //         password: 'root123',
-  //         confPassword: 'root123',
-  //         mobile: '0599000000',
-  //         location: 'Gaza-Palestine',
-  //         role: 123,
-  //       })
-  //       .end((err, res) => {
-  //         if (err) return done(err);
-  //         expect(res.body.message).toBe('Incompatible data!');
-  //         return done();
-  //       });
-  //   },
-  // );
+  test('Should create the teacher account', (done) => {
+    supertest(app)
+      .post('/api/v1/auth/signup')
+      .send({
+        name: 'Kamal Sameer',
+        email: 'teacher@gmail.com',
+        password: 'root123',
+        confPassword: 'root123',
+        mobile: '0599555555',
+        location: 'Gaza-Palestine',
+        role: 'teacher',
+      })
+      .end((err, res) => {
+        if (err) return done(err);
+        expect(res.statusCode).toBe(422);
+        expect(res.body.msg).toBe('The email does already exist!');
+        return done();
+      });
+  });
 
-  // test('It should return 422 when the user already exists.', (done) => {
-  //   supertest(app)
-  //     .post('/api/v1/signup')
-  //     .send({
-  //       name: 'Mustafa Salem',
-  //       email: 'hi@hi.hi',
-  //       password: 'root123',
-  //       confPassword: 'root123',
-  //       mobile: '0599000000',
-  //       location: 'Gaza-Palestine',
-  //       role: 123,
-  //     })
-  //     .end((err, res) => {
-  //       if (err) return done(err);
-  //       expect(res.status).toBe(422);
-  //       return done();
-  //     });
-  // });
-
-  // test('It should return a message in the body.', (done) => {
-  //   supertest(app)
-  //     .post('/api/v1/signup')
-  //     .send({
-  //       name: 'Mustafa Salem',
-  //       email: 'hi@hi.hi',
-  //       password: 'root123',
-  //       confPassword: 'root123',
-  //       mobile: '0599000000',
-  //       location: 'Gaza-Palestine',
-  //       role: 123,
-  //     })
-  //     .end((err, res) => {
-  //       if (err) return done(err);
-  //       expect(res.body.message).toBe('The email does already exist!');
-  //       return done();
-  //     });
-  // });
+  test('Should create the parent account and map children', (done) => {
+    supertest(app)
+      .post('/api/v1/auth/signup')
+      .send({
+        name: 'Issa Salem',
+        email: 'parent@gmail.com',
+        password: 'root123',
+        confPassword: 'root123',
+        mobile: '0599999999',
+        location: 'Gaza-Palestine',
+        role: 'parent',
+        children: [
+          'child1@gmail.com',
+          'child2@gmail.com',
+        ],
+      })
+      .expect(201)
+      .end((err, res) => {
+        if (err) return done(err);
+        console.log(res.body);
+        expect(res.body.msg).toBe('Account is created successfully!');
+        return done();
+      });
+  });
 });
+
+// test('Should not create the parent account because at least one
+// student email nt exist', (done) => {
+//   supertest(app)
+//     .post('/api/v1/auth/signup')
+//     .send({
+//       name: 'Issa Salem',
+//       email: 'parent2@gmail.com',
+//       password: 'root123',
+//       confPassword: 'root123',
+//       mobile: '0599999999',
+//       location: 'Gaza-Palestine',
+//       role: 'parent',
+//       children: [
+//         'child10@gmail.com',
+//         'child2@gmail.com',
+//       ],
+//     })
+//     .expect(422)
+//     .end((err, res) => {
+//       if (err) return done(err);
+//       expect(res.body.msg).toBe('The email does not exist!');
+//       return done();
+//     });
+// });
