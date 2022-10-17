@@ -113,34 +113,8 @@ describe('Testing signup route', () => {
       .expect(201)
       .end((err, res) => {
         if (err) return done(err);
-        console.log(res.body);
         expect(res.body.msg).toBe('Account is created successfully!');
         return done();
       });
   });
 });
-
-// test('Should not create the parent account because at least one
-// student email nt exist', (done) => {
-//   supertest(app)
-//     .post('/api/v1/auth/signup')
-//     .send({
-//       name: 'Issa Salem',
-//       email: 'parent2@gmail.com',
-//       password: 'root123',
-//       confPassword: 'root123',
-//       mobile: '0599999999',
-//       location: 'Gaza-Palestine',
-//       role: 'parent',
-//       children: [
-//         'child10@gmail.com',
-//         'child2@gmail.com',
-//       ],
-//     })
-//     .expect(422)
-//     .end((err, res) => {
-//       if (err) return done(err);
-//       expect(res.body.msg).toBe('The email does not exist!');
-//       return done();
-//     });
-// });
