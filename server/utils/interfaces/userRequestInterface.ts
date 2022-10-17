@@ -1,4 +1,4 @@
-interface UserInterface {
+interface UserRequestInterface {
   name: string,
   email: string,
   password: string,
@@ -9,4 +9,4 @@ interface UserInterface {
   children?: Array<string>,
 }
 
-export default UserInterface;
+export default UserRequestInterface;

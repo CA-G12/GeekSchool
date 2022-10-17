@@ -1,11 +1,13 @@
 import CustomRequest from './requestInterface';
-import UserInterface from './userRequestInterface';
+import UserRequestInterface from './userRequestInterface';
 import PayloadInterface from './payloadInterface';
 import UserValInterface from './userValInterface';
+import UserTableInterface from './userTabelInterface';
 
 export {
   CustomRequest,
-  UserInterface,
+  UserRequestInterface,
   PayloadInterface,
   UserValInterface,
+  UserTableInterface,
 };
