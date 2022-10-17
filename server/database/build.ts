@@ -1,4 +1,4 @@
-import { sequelize } from '../models';
+import { sequelize } from '../models';e
 import { nodeEnv } from '../config/environment';
 
 const buildModels = async () => {

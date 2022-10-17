@@ -1,8 +1,11 @@
-import { signup, logout } from '../controllers';
+import { signup, logout, userData } from '../controllers';
+import { logout, userData } from '../controllers';
+import { userAuth } from '../middlewares';
 
-const router = require('express').Router();
+const authRouter = require('express').Router();
 
-router.post('/signup', signup);
-router.post('/logout', logout);
+authRouter.post('/auth/signup', signup);
+authRouter.post('/auth/logout', logout);
+authRouter.get('/auth/', userAuth, userData);
 
-export default router;
+export default authRouter;
