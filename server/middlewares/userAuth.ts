@@ -4,7 +4,7 @@ import { CustomError, verifyToken } from '../utils';
 
 const userAuth = async (req: any, res: Response, next: NextFunction) => {
   try {
-    const token: string = req.cookies;
+    const { token } = req.cookies;
 
     if (!token) {
       throw new CustomError(401, 'Unauthenticated!'); // ? Token is invalid.
