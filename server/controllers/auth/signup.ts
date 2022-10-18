@@ -78,7 +78,6 @@ const signup = async (req: Request, res: Response, next: NextFunction) => {
     );
   } catch (error) {
     if (error.name === 'ValidationError') {
-      console.log(error, 'error');
       next(new CustomError(400, 'Wrong data is inserted!'));
     } else next(new CustomError(error.status, error.msg));
   }
