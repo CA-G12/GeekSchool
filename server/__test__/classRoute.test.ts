@@ -4,7 +4,7 @@ import { sequelize } from '../models';
 import buildSeed from '../database/seed';
 import app from '../app';
 
-jest.setTimeout(20000);
+jest.setTimeout(50000);
 beforeAll(() => buildSeed());
 afterAll(() => sequelize.close());
 
@@ -31,7 +31,7 @@ describe('Testing class routes', () => {
       .expect('Content-Type', /json/)
       .end((err, res) => {
         if (err) return done(err);
-        expect(res.body.msg).toEqual('Unauthenticated');
+        expect(res.body.msg).toEqual('Unauthenticated!');
         return done();
       });
   });
