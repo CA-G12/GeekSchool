@@ -1,12 +1,12 @@
 class CustomError extends Error {
   public status: number;
 
-  public message: string;
+  public msg: string;
 
-  constructor(status: number, message: string) {
+  constructor(status: number, msg: string) {
     super();
     this.status = status || 500;
-    this.message = message || 'Internal server error!!!';
+    this.msg = msg || 'Internal server error!!!';
   }
 }
 

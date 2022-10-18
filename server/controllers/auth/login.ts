@@ -18,8 +18,8 @@ const login = async (req: Request, res: Response, next: NextFunction) => {
     await generateToken({ id: rows[0].getDataValue('id'), username: rows[0].getDataValue('name'), role: rows[0].getDataValue('role') });
     res.json({ mag: 'logged in successfully' });
   } catch (err) {
-    res.status(err.status).json({ msg: err.message });
-    next({ msg: err.message });
+    if (err.name === 'ValidationError') next(new CustomError(400, err.details[0].message));
+    next(err);
   }
 };
 

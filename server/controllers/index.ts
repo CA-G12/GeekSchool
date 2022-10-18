@@ -1,3 +1,13 @@
-import { logout, userData, login } from './auth';
+import {
+  signup, logout, userData, login,
+} from './auth';
+import { serverError, notFound } from './errors';
 
-export { logout, userData, login };
+export {
+  signup,
+  logout,
+  userData,
+  serverError,
+  notFound,
+  login,
+};
