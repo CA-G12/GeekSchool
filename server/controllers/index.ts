@@ -1,6 +1,10 @@
-import { logout, userData } from './auth';
-import recommended from './class';
+import { signup, logout, userData } from './auth';
+import { serverError, notFound } from './errors';
 
 export {
-  logout, userData, recommended,
+  signup,
+  logout,
+  userData,
+  serverError,
+  notFound,
 };
