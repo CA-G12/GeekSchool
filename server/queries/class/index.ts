@@ -1,3 +1,7 @@
 import getAnnouncementQuery from './getAnnouncementQuery';
+import postQuestionQuery from './postQuestionQuery';
 
-export default getAnnouncementQuery;
+export {
+  getAnnouncementQuery,
+  postQuestionQuery,
+};

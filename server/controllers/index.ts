@@ -1,6 +1,7 @@
 import { signup, logout, userData } from './auth';
 import { serverError, notFound } from './errors';
 import getAnnouncement from './class/getAnnouncement';
+import postQuestion from './class/postQuestion';
 
 export {
   signup,
@@ -9,4 +10,5 @@ export {
   serverError,
   notFound,
   getAnnouncement,
+  postQuestion,
 };
