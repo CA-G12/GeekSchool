@@ -1,5 +1,5 @@
 import { QueryTypes } from 'sequelize';
-import sequelize from '../../database/connection';
+import sequelize from '../database/connection';
 
 const submittedAndNotSubmittedNum = (classId: string, isSubmitted: boolean) => (
   sequelize.query(
@@ -32,12 +32,3 @@ const submittedAndNotSubmittedNum = (classId: string, isSubmitted: boolean) => (
   ));
 
 export default submittedAndNotSubmittedNum;
-
-// const getStatsQuery = async (classId: string) => new Promise((resolve, reject) => {
-//   try {
-//     const submittedNum = await execQuery(classId, true);
-//     const notSubmittedNum = await execQuery(classId, false);
-//   } catch (error) {
-
-//   }
-// });
