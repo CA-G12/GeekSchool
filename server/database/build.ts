@@ -1,9 +1,10 @@
 import { sequelize } from '../models';
+import { nodeEnv } from '../config/environment';
 
-const buildModels = async () => {
-  await sequelize.sync({ force: true });
-};
+const buildModels = async () => sequelize.sync({ force: true });
 
-buildModels();
+if (nodeEnv !== 'test') {
+  buildModels();
+}
 
 export default buildModels;
