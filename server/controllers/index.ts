@@ -1,5 +1,6 @@
 import { signup, logout, userData } from './auth';
 import { serverError, notFound } from './errors';
+import recommended from './class';
 
 export {
   signup,
@@ -7,4 +8,6 @@ export {
   userData,
   serverError,
   notFound,
+  recommended,
+
 };
