@@ -1,4 +1,4 @@
-import express, { Request, Response } from 'express';
+import express, { Request, Response, NextFunction } from 'express';
 import compression from 'compression';
 import cookieParser from 'cookie-parser';
 import morgan from 'morgan';
@@ -25,5 +25,9 @@ if (nodeEnv === 'production') {
     res.sendFile(join(__dirname, '..', 'client', 'build', 'index.html'));
   });
 }
+/* eslint-disable no-unused-vars */
+app.use((error:any, req:Request, res:Response, next:NextFunction):void => {
+  res.status(error.status).json({ msg: error.message });
+});
 
 export default app;
