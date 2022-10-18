@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { Request, Response, NextFunction } from 'express';
-import submittedAndNotSubmittedNum from '../../queries';
+import { submittedAndNotSubmittedNum } from '../../queries';
 import { CustomError } from '../../utils';
 
 const getStats = async (req: Request, res: Response, next: NextFunction) => {
