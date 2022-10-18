@@ -24,7 +24,7 @@ const verifyToken = (token: string) => new Promise((resolve, reject) => {
 });
 
 const generateToken = (
-  payload: { id: string, username: string, role: string },
+  payload: { id: string, name: string, role: string },
 ) => new Promise((res, rej) => {
   sign(payload, secretKey as Secret, (error, decoded) => {
     if (error) {

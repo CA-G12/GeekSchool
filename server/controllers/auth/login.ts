@@ -15,7 +15,7 @@ const login = async (req: Request, res: Response, next: NextFunction) => {
     if (!hashedPassword) {
       throw new CustomError(400, 'invalid password');
     }
-    await generateToken({ id: rows[0].getDataValue('id'), username: rows[0].getDataValue('name'), role: rows[0].getDataValue('role') });
+    await generateToken({ id: rows[0].getDataValue('id'), name: rows[0].getDataValue('name'), role: rows[0].getDataValue('role') });
     res.json({ mag: 'logged in successfully' });
   } catch (err) {
     if (err.name === 'ValidationError') next(new CustomError(400, err.details[0].message));
