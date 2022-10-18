@@ -2,6 +2,7 @@ import {
   Announcement, Assignment, AssignmentStudent, Class, ClassStudent, Feedback, Health, Parent,
   Question, Recommendation, Report, Schedule, sequelize, Student, Teacher, Test, TestStudent, User,
 } from '../models';
+import { nodeEnv } from '../config/environment';
 
 import {
   announcements, assignments, assignmentsStudent, classes, classStudent, feedbacks, health,
@@ -31,6 +32,6 @@ const buildSeed = async () => {
   await TestStudent.bulkCreate(testStudent, { validate: true });
 };
 
-buildSeed();
+if (nodeEnv !== 'test') buildSeed();
 
 export default buildSeed;
