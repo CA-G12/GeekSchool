@@ -1,9 +1,5 @@
 import Joi from 'joi';
-
-interface loginValidateInterface {
-  email: string,
-  loginPassword: string
-}
+import { loginValidateInterface } from '../interfaces';
 
 const loginValidate = (body: loginValidateInterface) => {
   const schema = Joi.object({
@@ -13,4 +9,5 @@ const loginValidate = (body: loginValidateInterface) => {
 
   return schema.validateAsync(body);
 };
+
 export default loginValidate;
