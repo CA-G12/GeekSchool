@@ -1,11 +1,9 @@
 /* eslint-disable no-undef */
 import supertest from 'supertest';
 import { sequelize } from '../models';
-import buildModels from '../database/build';
 import buildSeed from '../database/seed';
 import app from '../app';
 
-beforeAll(() => buildModels());
 beforeAll(() => buildSeed());
 afterAll(() => sequelize.close());
 
