@@ -1,3 +1,7 @@
 import CustomRequest from './requestInterface';
+import loginValidateInterface from './auth';
 
-export default CustomRequest;
+export {
+  CustomRequest,
+  loginValidateInterface,
+};
