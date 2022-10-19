@@ -3,12 +3,8 @@ import { getAllStudentWhoSubmitTasksQuery } from '../../queries/class';
 
 const getAllStudentWhoSubmitTasks = async (req:Request, res:Response, next:NextFunction) => {
   try {
-    const { classId, assignmentId } = req.params;
-    console.log(classId, assignmentId);
-
+    const { assignmentId } = req.params;
     const data:any = await getAllStudentWhoSubmitTasksQuery(assignmentId);
-    console.log('mmmmmmmmmmmmmmmmmmmmmmm');
-
     res.json({ msg: 'getting all student successfully', data });
   } catch (error) {
     next(error);
