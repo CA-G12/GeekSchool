@@ -27,6 +27,6 @@ if (!connectionString) {
   throw new Error('Database url is not a valid postgres connection url.');
 }
 
-const sequelize = new Sequelize(connectionString, { dialectOptions: { ssl } });
+const sequelize = new Sequelize(connectionString, { dialectOptions: { ssl }, logging: false });
 
 export default sequelize;

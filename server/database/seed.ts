@@ -9,6 +9,8 @@ import {
   testStudent, users,
 } from './seed/';
 
+import { nodeEnv } from '../config/environment';
+
 const buildSeed = async () => {
   await sequelize.sync({ force: true });
 
@@ -31,6 +33,7 @@ const buildSeed = async () => {
   await TestStudent.bulkCreate(testStudent, { validate: true });
 };
 
-buildSeed();
-
+if (nodeEnv !== 'test') {
+  buildSeed();
+}
 export default buildSeed;

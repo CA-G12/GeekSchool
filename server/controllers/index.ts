@@ -1,3 +1,12 @@
-import { logout, userData } from './auth';
+import { signup, logout, userData } from './auth';
+import { serverError, notFound } from './errors';
+import getAnnouncement from './class/getAnnouncement';
 
-export { logout, userData };
+export {
+  signup,
+  logout,
+  userData,
+  serverError,
+  notFound,
+  getAnnouncement,
+};
