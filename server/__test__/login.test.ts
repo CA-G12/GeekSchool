@@ -10,7 +10,7 @@ afterAll(() => sequelize.close());
 describe('sign in router', () => {
   test("check if the email doesn't exist", (done) => {
     supertest(app)
-      .post('/api/v1/login')
+      .post('/api/v1/auth/login')
       .send({
         email: 'most07173@gmaiasdasdl.com',
         loginPassword: '123',
@@ -26,7 +26,7 @@ describe('sign in router', () => {
 
   test('check if the password is invalid', (done) => {
     supertest(app)
-      .post('/api/v1/login')
+      .post('/api/v1/auth/login')
       .send({
         email: 'jdudding1@cisco.com',
         loginPassword: '123',
