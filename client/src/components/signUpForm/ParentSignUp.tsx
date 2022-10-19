@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import React, { useEffect, useState } from "react";
 import { Input, Button } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
@@ -9,22 +8,26 @@ const ParentSignUp: React.ElementType = ({
   inputValue,
   addEmailChildren,
 }: userDataParentInterface) => {
-  const [emails, setEmail] = useState<string[]>([]);
-  const [emailInput, setEmailInput] = useState<string>("");
+  const regex = /^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,3})+$/
+  const [emails, setEmail] = useState<string[] | []>([]);
+  const [emailInput, setEmailInput] = useState<string>('');
 
-  const addEmail = (): void => {
-    setEmail([emailInput, ...emails]);
+  const handleAddEmail = (): void => {
+    if (emailInput !== '' && regex.test(emailInput)) {
+      setEmail([emailInput, ...emails]);
+    }
   };
 
-  const emailChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setEmailInput(e.target.value);
   };
 
   useEffect(() => {
     addEmailChildren(emails);
-  }, [addEmailChildren, emails]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [emails]);
 
-  const deleteChildEmail = (indexDiv: number): void => {
+  const handleDeleteChildEmail = (indexDiv: number): void => {
     const newEmails = emails.filter((e, index: number) => index !== indexDiv);
     setEmail(newEmails);
   };
@@ -52,13 +55,13 @@ const ParentSignUp: React.ElementType = ({
       <div className="add-child">
         <Input
           placeholder="البريد الإلكتروني للأبناء"
-          onChange={emailChange}
+          onChange={handleEmailChange}
           style={{ height: "100%", width: "89%" }}
         />
         <Button
           type="primary"
           icon={<PlusOutlined />}
-          onClick={addEmail}
+          onClick={handleAddEmail}
           style={{
             height: "100%",
             width: "8%",
@@ -72,7 +75,7 @@ const ParentSignUp: React.ElementType = ({
           key={e}
           email={e}
           index={index}
-          deleteChildEmail={deleteChildEmail}
+          deleteChildEmail={handleDeleteChildEmail}
         />
       ))}
     </>

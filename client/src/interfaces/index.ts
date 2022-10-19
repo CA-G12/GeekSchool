@@ -4,6 +4,7 @@ import {
   emailInterface,
   userDataInterface,
   userDataParentInterface,
+  signUpDataInterface,
 } from "./userInterface";
 
 export {
@@ -12,4 +13,5 @@ export {
   emailInterface,
   userDataInterface,
   userDataParentInterface,
+  signUpDataInterface,
 };

@@ -1,21 +1,11 @@
-/* eslint-disable max-len */
 import React, { useState } from "react";
 import { Form, Radio, Button, message } from "antd";
 import "antd/dist/antd.min.css";
-import "./SignUp.css";
 import axios from "axios";
+import './style.css';
 import { StudentSignUp, ParentSignUp, TeacherSignUp } from "../../components";
 
-interface signUpDataInterface {
-  name: string;
-  email: string;
-  mobile: string;
-  password: string;
-  confPassword: string;
-  location: string;
-  role: string;
-  children: string[];
-}
+import { signUpDataInterface } from '../../interfaces'
 
 const init = {
   name: "",
@@ -25,7 +15,7 @@ const init = {
   confPassword: "",
   location: "",
   role: "",
-  children: [""],
+  children: [],
 };
 
 const SignUpPage: React.FC = () => {
@@ -34,24 +24,25 @@ const SignUpPage: React.FC = () => {
 
   const handleRoleValue: any = (e: any) => {
     setRole(e.target.value);
-    init.role = role;
+    const userRole = e.target.value
+    setSignUpData(() => ({...signUpData, role: userRole}));
   };
 
   const addData: any = async (data: signUpDataInterface) => {
     try {
-      await axios.post("/api/v1/signup", data);
+      await axios.post("/api/v1/auth/signup", data);
     } catch (err: any) {
-      message.error(err);
+      message.error(err.response.data.msg);
     }
   };
 
   const inputValue = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const { value, name } = e.target;
-    setSignUpData({ ...init, [name]: value });
+    setSignUpData({ ...signUpData, [name]: value });
   };
 
   const addEmailChildren = (emailChildren: string[]): void => {
-    init.children = emailChildren;
+    setSignUpData({ ...signUpData, children: emailChildren});
   };
 
   return (

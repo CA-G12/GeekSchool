@@ -26,10 +26,22 @@ interface userDataInterface {
   inputValue: () => {};
 }
 
+interface signUpDataInterface {
+  name: string;
+  email: string;
+  mobile: string;
+  password: string;
+  confPassword: string;
+  location: string;
+  role: string;
+  children: string[] | [];
+}
+
 export {
   UserInterface,
   UserDataInterface,
   emailInterface,
   userDataParentInterface,
   userDataInterface,
+  signUpDataInterface,
 };
