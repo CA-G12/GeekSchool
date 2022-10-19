@@ -1,3 +1,7 @@
 import getAnnouncementQuery from './getAnnouncementQuery';
+import addNewFeedbackQuery from './addNewFeedback';
 
-export default getAnnouncementQuery;
+export {
+  getAnnouncementQuery,
+  addNewFeedbackQuery,
+};

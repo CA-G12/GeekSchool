@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import getAnnouncementQuery from '../../queries/class';
+import { getAnnouncementQuery } from '../../queries';
 
 const getAnnouncement = async (req:Request, res:Response, next:NextFunction) => {
   try {
