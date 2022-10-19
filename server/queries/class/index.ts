@@ -1,3 +1,7 @@
 import getAnnouncementQuery from './getAnnouncementQuery';
+import getClassQuestionsQuery from './getClassQuestionsQuery';
 
-export default getAnnouncementQuery;
+export {
+  getClassQuestionsQuery,
+  getAnnouncementQuery,
+};
