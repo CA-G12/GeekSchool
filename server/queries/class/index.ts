@@ -1,3 +1,7 @@
 import getAnnouncementQuery from './getAnnouncementQuery';
+import getClassStudentsQuery from './getClassStudents';
 
-export default getAnnouncementQuery;
+export {
+  getClassStudentsQuery,
+  getAnnouncementQuery,
+};
