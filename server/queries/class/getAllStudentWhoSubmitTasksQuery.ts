@@ -16,7 +16,7 @@ const getAllStudentWhoSubmitTasksQuery = (assignmentId:string) => AssignmentStud
       include: [{
         model: User,
         attributes: {
-          exclude: ['createdAt', 'updatedAt', 'password', 'id', 'name', 'mobile', 'img', 'location', 'email'],
+          exclude: ['createdAt', 'updatedAt', 'password', 'id', 'mobile', 'img', 'location', 'email'],
         },
       }],
     },
