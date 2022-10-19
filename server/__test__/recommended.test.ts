@@ -34,6 +34,7 @@ describe('Testing get recommended route', () => {
       .expect('Content-Type', /json/)
       .end((err, res) => {
         if (err) return done(err);
+        expect(res.body.msg).toEqual('Recommended data for this class');
         expect(res.body.data[0].id).toEqual(1);
         return done();
       });
