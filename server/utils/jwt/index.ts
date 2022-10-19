@@ -23,20 +23,7 @@ const verifyToken = (token: string) => new Promise((resolve, reject) => {
   });
 });
 
-const generateToken = (
-  payload: { id: string, name: string, role: string },
-) => new Promise((res, rej) => {
-  sign(payload, secretKey as Secret, (error, decoded) => {
-    if (error) {
-      rej(error);
-    } else {
-      res(decoded);
-    }
-  });
-});
-
 export {
   verifyToken,
-  generateToken,
   signToken,
 };

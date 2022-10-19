@@ -5,7 +5,7 @@ import {
 import {
   userValidation, parentValidation, loginValidate,
 } from './validation';
-import { signToken, verifyToken, generateToken } from './jwt';
+import { signToken, verifyToken } from './jwt';
 
 export {
   CustomError,
@@ -18,5 +18,4 @@ export {
   signToken,
   verifyToken,
   loginValidate,
-  generateToken,
 };

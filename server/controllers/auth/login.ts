@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 import { compare } from 'bcryptjs';
 import { loginQuery } from '../../queries';
-import { CustomError, loginValidate, generateToken } from '../../utils';
+import { CustomError, loginValidate, signToken } from '../../utils';
 
 const login = async (req: Request, res: Response, next: NextFunction) => {
   try {
@@ -15,7 +15,7 @@ const login = async (req: Request, res: Response, next: NextFunction) => {
     if (!hashedPassword) {
       throw new CustomError(400, 'invalid password');
     }
-    await generateToken({ id: rows[0].getDataValue('id'), name: rows[0].getDataValue('name'), role: rows[0].getDataValue('role') });
+    await signToken({ id: rows[0].getDataValue('id'), name: rows[0].getDataValue('name'), role: rows[0].getDataValue('role') });
     res.json({ mag: 'logged in successfully' });
   } catch (err) {
     if (err.name === 'ValidationError') next(new CustomError(400, err.details[0].message));
