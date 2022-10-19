@@ -1,5 +1,5 @@
 import { createUser, findUserByEmail } from './userQueries';
-import recommendedQueries from './classQueries';
+import { getAnnouncementQuery, recommendedQueries } from './class';
 
 import createParent from './parentQueries';
 import createStudent from './studentQueries';
@@ -11,5 +11,6 @@ export {
   createStudent,
   createTeacher,
   findUserByEmail,
+  getAnnouncementQuery,
   recommendedQueries,
 };
