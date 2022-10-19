@@ -1,3 +1,7 @@
 import getAnnouncementQuery from './getAnnouncementQuery';
+import deleteStudentQuery from './deleteStudentQuery';
 
-export default getAnnouncementQuery;
+export {
+  getAnnouncementQuery,
+  deleteStudentQuery,
+};
