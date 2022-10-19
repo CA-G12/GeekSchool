@@ -1,3 +1,7 @@
 import getAnnouncementQuery from './getAnnouncementQuery';
+import addNewAssignmentQuery from './addNewAssignmentQuery';
 
-export default getAnnouncementQuery;
+export {
+  getAnnouncementQuery,
+  addNewAssignmentQuery,
+};

@@ -1,6 +1,9 @@
 import { signup, logout, userData } from './auth';
 import { serverError, notFound } from './errors';
-import getAnnouncement from './class/getAnnouncement';
+import {
+  getAnnouncement,
+  addNewAssignment,
+} from './class';
 
 export {
   signup,
@@ -9,4 +12,5 @@ export {
   serverError,
   notFound,
   getAnnouncement,
+  addNewAssignment,
 };
