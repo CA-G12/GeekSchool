@@ -8,12 +8,12 @@ const ParentSignUp: React.ElementType = ({
   inputValue,
   addEmailChildren,
 }: userDataParentInterface) => {
-  const regex = /^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,3})+$/
+  const regex = /^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,3})+$/;
   const [emails, setEmail] = useState<string[] | []>([]);
-  const [emailInput, setEmailInput] = useState<string>('');
+  const [emailInput, setEmailInput] = useState<string>("");
 
   const handleAddEmail = (): void => {
-    if (emailInput !== '' && regex.test(emailInput)) {
+    if (emailInput !== "" && regex.test(emailInput)) {
       setEmail([emailInput, ...emails]);
     }
   };
@@ -24,7 +24,7 @@ const ParentSignUp: React.ElementType = ({
 
   useEffect(() => {
     addEmailChildren(emails);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [emails]);
 
   const handleDeleteChildEmail = (indexDiv: number): void => {

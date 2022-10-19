@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { Form, Radio, Button, message } from "antd";
 import "antd/dist/antd.min.css";
 import axios from "axios";
-import './style.css';
+import "./style.css";
 import { StudentSignUp, ParentSignUp, TeacherSignUp } from "../../components";
 
-import { signUpDataInterface } from '../../interfaces'
+import { signUpDataInterface } from "../../interfaces";
 
 const init = {
   name: "",
@@ -24,8 +24,8 @@ const SignUpPage: React.FC = () => {
 
   const handleRoleValue: any = (e: any) => {
     setRole(e.target.value);
-    const userRole = e.target.value
-    setSignUpData(() => ({...signUpData, role: userRole}));
+    const userRole = e.target.value;
+    setSignUpData(() => ({ ...signUpData, role: userRole }));
   };
 
   const addData: any = async (data: signUpDataInterface) => {
@@ -42,7 +42,7 @@ const SignUpPage: React.FC = () => {
   };
 
   const addEmailChildren = (emailChildren: string[]): void => {
-    setSignUpData({ ...signUpData, children: emailChildren});
+    setSignUpData({ ...signUpData, children: emailChildren });
   };
 
   return (
