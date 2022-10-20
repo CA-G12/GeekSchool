@@ -1,14 +1,13 @@
 import { Response, NextFunction } from 'express';
 import { studentAssignmentQuery, teacherAssignmentQuery } from '../../queries';
-import { CustomError, CustomRequest } from '../../utils';
+import { CustomRequest } from '../../utils';
 
-const studentAssignment = async (req: CustomRequest, res: Response, next:NextFunction) => {
+const getAssignments = async (req: CustomRequest, res: Response, next:NextFunction) => {
   try {
     const { user } = req;
-    const { studentId, classId } = req.params;
+    const { classId } = req.params;
     if (user.role === 'student') {
-      if (!studentId) next(new CustomError(401, 'Unauthenticated'));
-      const data = await studentAssignmentQuery(studentId, classId);
+      const data = await studentAssignmentQuery(user.id, classId);
       res.json({ msg: 'Student Assignments  for this class', data });
     } else {
       const data = await teacherAssignmentQuery(classId);
@@ -19,4 +18,4 @@ const studentAssignment = async (req: CustomRequest, res: Response, next:NextFun
   }
 };
 
-export default studentAssignment;
+export default getAssignments;

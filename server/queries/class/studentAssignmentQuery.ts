@@ -1,6 +1,6 @@
 import { AssignmentStudent, Assignment } from '../../models';
 
-const studentAssignmentQuery = async (studentId : string, classId : string) => AssignmentStudent
+const studentAssignmentQuery = async (id : number, classId : string) => AssignmentStudent
   .findAll({
     attributes: ['id', 'isSubmitted', 'material_link',
       'grade', 'assignment_id', 'student_id',
@@ -10,7 +10,7 @@ const studentAssignmentQuery = async (studentId : string, classId : string) => A
     raw: true,
     nest: false,
     where: {
-      student_id: studentId,
+      student_id: id,
     },
     include: [{
       model: Assignment,

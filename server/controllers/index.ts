@@ -2,7 +2,7 @@ import {
   signup, logout, userData, login,
 } from './auth';
 import { serverError, notFound } from './errors';
-import { getAnnouncement, studentAssignment, recommended } from './class';
+import { getAnnouncement, getAssignments, recommended } from './class';
 
 export {
   signup,
@@ -12,6 +12,6 @@ export {
   notFound,
   recommended,
   getAnnouncement,
-  studentAssignment,
+  getAssignments,
   login,
 };

@@ -1,9 +1,9 @@
 import recommended from './recommended';
 import getAnnouncement from './getAnnouncement';
-import studentAssignment from './studentAssignment';
+import getAssignments from './getAssignments';
 
 export {
   recommended,
   getAnnouncement,
-  studentAssignment,
+  getAssignments,
 };
