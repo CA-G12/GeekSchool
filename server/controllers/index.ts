@@ -1,4 +1,6 @@
-import { signup, logout, userData } from './auth';
+import {
+  signup, logout, userData, login,
+} from './auth';
 import { serverError, notFound } from './errors';
 import { getAnnouncement, studentAssignment } from './class';
 
@@ -10,4 +12,5 @@ export {
   notFound,
   getAnnouncement,
   studentAssignment,
+  login,
 };
