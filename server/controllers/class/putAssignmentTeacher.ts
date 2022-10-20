@@ -9,8 +9,6 @@ const putAssignmentTeacher = async (req:Request, res:Response, next:NextFunction
 
     await updateGradPayloadValidate({ grade, studentId });
 
-    console.log({ assignmentId, grade, studentId });
-
     const [, data]:any = await putAssignmentTeacherQuery(assignmentId, grade, studentId);
     res.status(201).json({ data, msg: 'updating successfully' });
   } catch (error) {
