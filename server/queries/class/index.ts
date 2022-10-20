@@ -1,4 +1,9 @@
 import getAnnouncementQuery from './getAnnouncementQuery';
+import getClassQuestionsQuery from './getClassQuestionsQuery';
 import recommendedQueries from './recommendedQueries';
 
-export { getAnnouncementQuery, recommendedQueries };
+export {
+  getClassQuestionsQuery,
+  getAnnouncementQuery,
+  recommendedQueries,
+};
