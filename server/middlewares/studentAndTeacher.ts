@@ -6,6 +6,7 @@ const studentAndTeacher = (req: CustomRequest, res: Response, next: NextFunction
   const { user } = req;
 
   if (user.role === 'teacher' || user.role === 'student') {
+    req.user = user;
     next();
   } else {
     next(new CustomError(401, 'Unauthenticated!'));
