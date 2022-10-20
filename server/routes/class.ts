@@ -1,4 +1,4 @@
-import { userAuth, studentAndTeacher, teacherAuth } from '../middlewares';
+import { userAuth, studentAndTeacher /* teacherAuth */ } from '../middlewares';
 import {
   getAnnouncement, putAssignmentTeacher, putAssignmentStudent, getClassQuestions, recommended,
 } from '../controllers';

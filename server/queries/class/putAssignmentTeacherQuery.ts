@@ -1,14 +1,19 @@
-import { Assignment } from '../../models';
+import { Op } from 'sequelize';
+import { AssignmentStudent } from '../../models';
 
 const putAssignmentTeacherQuery = (
   assignmentId:string,
-  title:string,
-  description:string,
-) => Assignment.update({ title, description }, {
+  grade:string,
+  studentId:string,
+) => AssignmentStudent.update({ grade }, {
   where: {
-    id: assignmentId,
+    [Op.and]: {
+      student_id: studentId,
+      assignment_id: assignmentId,
+    },
+
   },
-  returning: ['title', 'description'],
+  returning: ['grade'],
 });
 
 export default putAssignmentTeacherQuery;
