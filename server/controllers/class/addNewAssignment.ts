@@ -5,13 +5,11 @@ import { CustomError, addNewAssignmentValidation } from '../../utils';
 
 const addNewAssignment = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    await addNewAssignmentValidation({
-      classId: req.params.classId, title: req.body.title, description: req.body.description,
-    });
-
     const { classId } = req.params;
 
     const { title, description } = req.body;
+
+    await addNewAssignmentValidation({ classId, title, description });
 
     const assignment = await addNewAssignmentQuery(classId, title, description);
 
