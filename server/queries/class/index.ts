@@ -1,3 +1,4 @@
 import getAnnouncementQuery from './getAnnouncementQuery';
+import recommendedQueries from './recommendedQueries';
 
-export default getAnnouncementQuery;
+export { getAnnouncementQuery, recommendedQueries };
