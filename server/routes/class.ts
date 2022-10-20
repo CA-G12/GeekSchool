@@ -4,6 +4,6 @@ import { getAnnouncement, addNewAssignment } from '../controllers';
 const classRouter = require('express').Router();
 
 classRouter.get('/:classId/announcement', userAuth, studentAndTeacher, getAnnouncement);
-classRouter.post('/:classId/assignment/add', userAuth, teacherAuth, addNewAssignment);
+classRouter.post('/:classId/assignment', userAuth, teacherAuth, addNewAssignment);
 
 export default classRouter;
