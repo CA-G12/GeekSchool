@@ -42,7 +42,6 @@ describe('Testing class routes', () => {
       .expect(401)
       .expect('Content-Type', /json/)
       .end((err, res) => {
-        console.log(res.body, 'body');
         if (err) return done(err);
         expect(res.body.msg).toEqual('Unauthenticated');
         return done();
