@@ -1,6 +1,6 @@
 import { Assignment } from '../../models';
 
-const putAssignmentQuery = (
+const putAssignmentTeacherQuery = (
   assignmentId:string,
   title:string,
   description:string,
@@ -11,4 +11,4 @@ const putAssignmentQuery = (
   returning: ['title', 'description'],
 });
 
-export default putAssignmentQuery;
+export default putAssignmentTeacherQuery;
