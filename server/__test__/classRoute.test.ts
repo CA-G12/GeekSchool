@@ -48,6 +48,36 @@ describe('Testing class routes', () => {
       });
   });
 
+  test('should return Internal server error!', (done) => {
+    supertest(app)
+      .get('/api/v1/class/112212121212/questions')
+      .expect(500)
+      .set('Cookie', [
+        'token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3R1ZGVudCIsIm5hbWUiOiJKb2huIERvZSIsImlkIjoxNTE2MjM5MDIyfQ.ivV7KczMBPLI6JBiY7oAXlcfPuaTVNtd71aTrtgZa8A',
+      ])
+      .expect('Content-Type', /json/)
+      .end((err, res) => {
+        if (err) return done(err);
+        expect(res.body.msg).toEqual('Internal server error!');
+        return done();
+      });
+  });
+
+  test('should return empty data but success request', (done) => {
+    supertest(app)
+      .get('/api/v1/class/12222/questions')
+      .expect(200)
+      .set('Cookie', [
+        'token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3R1ZGVudCIsIm5hbWUiOiJKb2huIERvZSIsImlkIjoxNTE2MjM5MDIyfQ.ivV7KczMBPLI6JBiY7oAXlcfPuaTVNtd71aTrtgZa8A',
+      ])
+      .expect('Content-Type', /json/)
+      .end((err, res) => {
+        if (err) return done(err);
+        expect(res.body.data).toEqual([]);
+        return done();
+      });
+  });
+
   test('should update title, description and return updating successfully with using token', (done) => {
     supertest(app)
       .put('/api/v1/class/1/assignment/1')
