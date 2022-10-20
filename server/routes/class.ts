@@ -1,9 +1,5 @@
 import { userAuth, studentAndTeacher } from '../middlewares';
-<<<<<<< HEAD
-import { getAnnouncement, getClassStudents } from '../controllers';
-=======
-import { recommended, getAnnouncement } from '../controllers';
->>>>>>> f49baae7c478f46c38bf9e35d3d7b85451103043
+import { getAnnouncement, getClassStudents, recommended } from '../controllers';
 
 const classRouter = require('express').Router();
 
