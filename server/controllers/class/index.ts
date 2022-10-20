@@ -1,9 +1,11 @@
 import recommended from './recommended';
 import getAnnouncement from './getAnnouncement';
+import getClassQuestions from './getClassQuestions';
 import getAssignments from './getAssignments';
 
 export {
-  recommended,
-  getAnnouncement,
   getAssignments,
+  getAnnouncement,
+  getClassQuestions,
+  recommended,
 };
