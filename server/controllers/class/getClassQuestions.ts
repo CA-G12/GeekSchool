@@ -7,7 +7,6 @@ const getClassQuestions = async (req: Request, res: Response, next: NextFunction
     const data = await getClassQuestionsQuery(classId);
     res.status(200).json({ msg: 'success', data });
   } catch (error) {
-    console.log(error);
     next(error);
   }
 };

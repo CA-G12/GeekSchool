@@ -1,23 +1,18 @@
-import { Request, Response, NextFunction } from 'express';
+import { Response, NextFunction } from 'express';
 import { addNewFeedbackQuery } from '../../queries';
-import { CustomError } from '../../utils';
+import {
+  CustomError, CustomRequest, addNewFeedbackValidation,
+} from '../../utils';
 
-const addNewFeedback = async (req: Request, res: Response, next: NextFunction) => {
+const addNewFeedback = async (req: CustomRequest, res: Response, next: NextFunction) => {
   try {
-    if (!req.body.studentId) {
-      throw new CustomError(400, 'The data needed is not given!');
-    }
-
-    if (!req.body.feedback) {
-      throw new CustomError(400, 'The data needed is not given!');
-    }
-
+    const { id } = req.user;
     const { classId } = req.params;
-    const { studentId, feedback } = req.body;
+    const { feedback } = req.body;
 
-    const addedFeedback = await addNewFeedbackQuery(studentId, classId, feedback);
+    await addNewFeedbackValidation({ id, classId, feedback });
 
-    if (!addedFeedback) throw new CustomError(500, 'Error occurred while adding new feedback!');
+    const addedFeedback = await addNewFeedbackQuery(id, classId, feedback);
 
     res.status(201).json({ msg: 'The feedback is added successfully!', data: addedFeedback });
   } catch (err) {
