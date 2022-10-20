@@ -1,4 +1,4 @@
-import submittedAndNotSubmittedNum from './classQueries';
+import { submittedAndNotSubmittedNum } from './class';
 import { createUser, findUserByEmail } from './userQueries';
 import createParent from './parentQueries';
 import createStudent from './studentQueries';

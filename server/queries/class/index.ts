@@ -1,3 +1,7 @@
 import getAnnouncementQuery from './getAnnouncementQuery';
+import submittedAndNotSubmittedNum from './submittedOrNotQuery';
 
-export default getAnnouncementQuery;
+export {
+  getAnnouncementQuery,
+  submittedAndNotSubmittedNum,
+};
