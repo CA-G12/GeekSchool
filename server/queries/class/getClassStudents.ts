@@ -1,4 +1,6 @@
-import { ClassStudent, Student, User } from '../../models';
+import {
+  ClassStudent, Parent, Student, User,
+} from '../../models';
 
 const getClassStudentsQuery = (classId: string) => ClassStudent.findAll(
   {
@@ -15,6 +17,18 @@ const getClassStudentsQuery = (classId: string) => ClassStudent.findAll(
         model: User,
         attributes: {
           exclude: ['createdAt', 'updatedAt', 'password'],
+        },
+      },
+      {
+        model: Parent,
+        include: [{
+          model: User,
+          attributes: {
+            exclude: ['createdAt', 'updatedAt', 'password'],
+          },
+        }],
+        attributes: {
+          exclude: ['createdAt', 'updatedAt', 'password', 'user_id'],
         },
       }],
     }],
