@@ -1,24 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, FC } from "react";
 import { Form, Radio, Button, message } from "antd";
 import "antd/dist/antd.min.css";
 import axios from "axios";
 import "./style.css";
 import { StudentSignUp, ParentSignUp, TeacherSignUp } from "../../components";
-
 import { signUpDataInterface } from "../../interfaces";
+import { userSchema, parentTeacherUserSchema } from "../../validations";
 
 const init = {
-  name: "",
-  email: "",
-  mobile: "",
-  password: "",
-  confPassword: "",
-  location: "",
-  role: "",
+  name: null,
+  email: null,
+  mobile: null,
+  password: null,
+  confPassword: null,
+  location: null,
+  role: null,
   children: [],
 };
 
-const SignUpPage: React.FC = () => {
+const SignUpPage: FC = () => {
   const [role, setRole] = useState<string>("teacher");
   const [signUpData, setSignUpData] = useState<signUpDataInterface>(init);
 
@@ -30,8 +30,13 @@ const SignUpPage: React.FC = () => {
 
   const addData: any = async (data: signUpDataInterface) => {
     try {
+      const { name, email, password, confPassword, mobile, location } = data;
+      await userSchema.validate({ name, email, password, confPassword });
+      if (data.role !== "student")
+        await parentTeacherUserSchema.validate({ mobile, location });
       await axios.post("/api/v1/auth/signup", data);
     } catch (err: any) {
+      if (err.name === "ValidationError") message.error(err.message);
       message.error(err.response.data.msg);
     }
   };

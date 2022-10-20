@@ -1,6 +1,6 @@
 import { SignUpPage } from "./pages";
 import { UserAuthProvider } from "./context/AuthContext";
-import './style.css';
+import "./style.css";
 
 const App = () => (
   <UserAuthProvider>

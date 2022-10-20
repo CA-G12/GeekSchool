@@ -27,13 +27,13 @@ interface userDataInterface {
 }
 
 interface signUpDataInterface {
-  name: string;
-  email: string;
-  mobile: string;
-  password: string;
-  confPassword: string;
-  location: string;
-  role: string;
+  name: string | null;
+  email: string | null;
+  mobile: string | null;
+  password: string | null;
+  confPassword: string | null;
+  location: string | null;
+  role: string | null;
   children: string[] | [];
 }
 
