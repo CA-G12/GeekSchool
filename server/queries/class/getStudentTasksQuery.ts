@@ -2,11 +2,11 @@ import {
   AssignmentStudent, User, Student,
 } from '../../models';
 
-const getAllStudentWhoSubmitTasksQuery = (assignmentId:string) => AssignmentStudent.findAll({
+const getStudentTasksQuery = (assignmentId:string, isSubmitted:any) => AssignmentStudent.findAll({
   raw: true,
   nest: false,
   attributes: { exclude: ['createdAt', 'updatedAt', 'grade'] },
-  where: { assignment_id: assignmentId, is_submitted: true },
+  where: { assignment_id: assignmentId, is_submitted: isSubmitted },
   include: [
     {
       model: Student,
@@ -24,4 +24,4 @@ const getAllStudentWhoSubmitTasksQuery = (assignmentId:string) => AssignmentStud
 
 });
 
-export default getAllStudentWhoSubmitTasksQuery;
+export default getStudentTasksQuery;

@@ -1,9 +1,9 @@
 import getAnnouncementQuery from './getAnnouncementQuery';
-import getAllStudentWhoSubmitTasksQuery from './getAllStudentWhoSubmitTasksQuery';
+import getStudentTasksQuery from './getStudentTasksQuery';
 import recommendedQueries from './recommendedQueries';
 
 export {
   getAnnouncementQuery,
-  getAllStudentWhoSubmitTasksQuery,
+  getStudentTasksQuery,
   recommendedQueries,
 };
