@@ -1,5 +1,8 @@
-import { signup, logout, userData } from './auth';
+import {
+  signup, logout, userData, login,
+} from './auth';
 import { serverError, notFound } from './errors';
+import recommended from './class';
 import getAnnouncement from './class/getAnnouncement';
 import getAllStudentHowSubmitTasks from './class/getAllStudentHowSubmitTasks';
 
@@ -9,6 +12,8 @@ export {
   userData,
   serverError,
   notFound,
+  recommended,
   getAnnouncement,
   getAllStudentHowSubmitTasks,
+  login,
 };
