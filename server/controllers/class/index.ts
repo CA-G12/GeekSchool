@@ -1,3 +1,4 @@
 import recommended from './recommended';
+import deleteAssignment from './deleteAssignment';
 
-export default recommended;
+export { recommended, deleteAssignment };
