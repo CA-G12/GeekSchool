@@ -1,28 +1,22 @@
 import { Request, Response, NextFunction } from 'express';
-import { deleteStudentQuery } from '../../queries/class';
-import { CustomError } from '../../utils';
+import { deleteStudentFromClassQuery } from '../../queries';
+import { deleteStudentFromClassValidation, CustomError } from '../../utils';
 
-const deleteStudentFromARequest = async (req: Request, res: Response, next: NextFunction) => {
+const deleteStudentFromClass = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const { classId } = req.params;
-
-    if (!req.body.studentId) {
-      throw new CustomError(400, 'The student id is not given!');
-    }
-
     const { studentId } = req.body;
-    const studentDeleted = await deleteStudentQuery(classId, studentId);
 
-    if (!studentDeleted) {
-      throw new CustomError(404, 'The student does not exist in this class!');
-    }
+    await deleteStudentFromClassValidation({ classId, studentId });
 
-    res.json({ msg: 'The student deleted successfully!', data: studentDeleted });
+    await deleteStudentFromClassQuery(classId, studentId);
+
+    res.json({ msg: 'The student deleted successfully!' });
   } catch (err) {
     if (err.name === 'ValidationError') {
       next(new CustomError(400, 'Wrong data is inserted!'));
-    } else next(new CustomError(err.status, err.msg));
+    } else next(err);
   }
 };
 
-export default deleteStudentFromARequest;
+export default deleteStudentFromClass;
