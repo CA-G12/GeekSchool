@@ -2,6 +2,7 @@ import {
   signup, logout, userData, login,
 } from './auth';
 import { serverError, notFound } from './errors';
+import recommended from './class';
 import getAnnouncement from './class/getAnnouncement';
 
 export {
@@ -10,6 +11,7 @@ export {
   userData,
   serverError,
   notFound,
+  recommended,
   getAnnouncement,
   login,
 };
