@@ -1,3 +1,5 @@
 import getAnnouncementQuery from './getAnnouncementQuery';
+import studentAssignmentQuery from './studentAssignmentQuery';
+import teacherAssignmentQuery from './teacherAssignmentQuery';
 
-export default getAnnouncementQuery;
+export { getAnnouncementQuery, studentAssignmentQuery, teacherAssignmentQuery };
