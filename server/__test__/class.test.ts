@@ -66,7 +66,7 @@ describe('Testing the statistics router', () => {
       .expect(401)
       .end((err, res) => {
         if (err) done(err);
-        expect(res.body.msg).toBe('Unauthenticated!');
+        expect(res.body.msg).toBe('Unauthenticated');
         return done();
       });
   });

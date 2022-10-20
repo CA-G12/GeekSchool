@@ -24,6 +24,6 @@ const verifyToken = (token: string) => new Promise((resolve, reject) => {
 });
 
 export {
-  signToken,
   verifyToken,
+  signToken,
 };
