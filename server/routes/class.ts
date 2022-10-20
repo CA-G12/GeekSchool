@@ -6,7 +6,7 @@ import {
 const classRouter = require('express').Router();
 
 classRouter.get('/:classId/announcement', userAuth, studentAndTeacher, getAnnouncement);
-classRouter.post('/:classId/feedback/add', userAuth, studentAuth, addNewFeedback);
+classRouter.post('/:classId/feedback', userAuth, studentAuth, addNewFeedback);
 classRouter.get('/:classId/recommended', userAuth, studentAndTeacher, recommended);
 classRouter.get('/:classId/announcement', userAuth, studentAndTeacher, getAnnouncement);
 classRouter.get('/:classId/questions', userAuth, studentAndTeacher, getClassQuestions);
