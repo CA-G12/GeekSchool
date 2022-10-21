@@ -18,6 +18,7 @@ const putAnswerQuestionQuery = ({
       class_id: classId,
     },
   },
+  returning: ['answer'],
 });
 
 export default putAnswerQuestionQuery;
