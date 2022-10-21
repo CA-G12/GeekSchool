@@ -1,7 +1,9 @@
 import Joi from 'joi';
 
+import { addNewFeedbackInterface } from '../interfaces';
+
 const addNewFeedbackValidation = (
-  obj: { id: string | number, classId: string, feedback: string },
+  obj: addNewFeedbackInterface,
 ) => {
   const schema = Joi.object({
     id: Joi.number().required(),
