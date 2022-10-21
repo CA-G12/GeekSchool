@@ -1,5 +1,5 @@
 interface updateGradPayloadInterface {
-    grade: string | number,
+    grade: string,
     studentId: string
   }
 

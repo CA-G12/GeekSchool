@@ -1,14 +1,29 @@
 import { Request, Response, NextFunction } from 'express';
+import { updateAssignmentPayloadValidate } from '../../utils/validation';
 import { putAssignmentStudentQuery } from '../../queries/class';
 
 const putAssignmentStudent = async (req:Request, res:Response, next:NextFunction) => {
   try {
     const { assignmentId } = req.params;
-    const { title, description } = req.body;
+    const { isSubmitted, materialLink, studentId } = req.body;
 
-    const [, data]:any = await putAssignmentStudentQuery(assignmentId, title, description);
-    res.status(200).json({ msg: 'updating successfully', data });
+    await updateAssignmentPayloadValidate({
+      assignmentId, isSubmitted, materialLink, studentId,
+    });
+    console.log('controller', {
+      isSubmitted, materialLink, studentId, assignmentId,
+    });
+
+    const [, data]:any = await putAssignmentStudentQuery(
+      assignmentId,
+      isSubmitted,
+      materialLink,
+      studentId,
+    );
+    res.status(201).json({ data, msg: 'updating successfully' });
   } catch (error) {
+    console.log(error.message);
+
     next(error);
   }
 };

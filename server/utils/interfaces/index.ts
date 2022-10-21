@@ -5,6 +5,7 @@ import UserValInterface from './userValInterface';
 import UserTableInterface from './userTabelInterface';
 import loginValidateInterface from './auth';
 import updateGradPayloadInterface from './updateGradPayloadInterface';
+import updateAssignmentPayloadInterface from './updateAssignmentPayloadInterface';
 
 export {
   CustomRequest,
@@ -14,4 +15,5 @@ export {
   UserTableInterface,
   loginValidateInterface,
   updateGradPayloadInterface,
+  updateAssignmentPayloadInterface,
 };
