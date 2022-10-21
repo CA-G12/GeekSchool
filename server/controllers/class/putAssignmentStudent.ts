@@ -10,9 +10,6 @@ const putAssignmentStudent = async (req:Request, res:Response, next:NextFunction
     await updateAssignmentPayloadValidate({
       assignmentId, isSubmitted, materialLink, studentId,
     });
-    console.log('controller', {
-      isSubmitted, materialLink, studentId, assignmentId,
-    });
 
     const [, data]:any = await putAssignmentStudentQuery(
       assignmentId,
@@ -22,8 +19,6 @@ const putAssignmentStudent = async (req:Request, res:Response, next:NextFunction
     );
     res.status(201).json({ data, msg: 'updating successfully' });
   } catch (error) {
-    console.log(error.message);
-
     next(error);
   }
 };
