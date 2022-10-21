@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { Request, Response, NextFunction } from 'express';
 import { submittedAndNotSubmittedNum } from '../../queries';
 import { CustomError } from '../../utils';
@@ -15,7 +14,7 @@ const getStats = async (req: Request, res: Response, next: NextFunction) => {
     if (error.msg) {
       next(new CustomError(error.status, error.msg));
     }
-    next(new CustomError(500, 'Internal server error'));
+    next(error);
   }
 };
 
