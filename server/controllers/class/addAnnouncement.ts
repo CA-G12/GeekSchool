@@ -6,8 +6,6 @@ const addAnnouncement = async (req: CustomRequest, res: Response, next: NextFunc
   try {
     const { classId } = req.params;
     const { description } = req.body;
-    const { role } = req.user;
-    if (role !== 'teacher') throw new CustomError(401, 'Unauthenticated');
 
     await addAnnouncementValidate({ classId, description });
 
