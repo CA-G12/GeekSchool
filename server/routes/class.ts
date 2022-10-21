@@ -1,4 +1,4 @@
-import { userAuth, studentAndTeacher } from '../middlewares';
+import { userAuth, studentAndTeacher, teacherAuth } from '../middlewares';
 import {
   getAnnouncement, getClassQuestions, recommended, addAnnouncement,
 } from '../controllers';
@@ -11,6 +11,6 @@ classRouter.get('/class/:classId/announcement', userAuth, studentAndTeacher, get
 
 classRouter.get('/class/:classId/questions', userAuth, studentAndTeacher, getClassQuestions);
 
-classRouter.post('/class/:classId/announcement', userAuth, studentAndTeacher, addAnnouncement);
+classRouter.post('/class/:classId/announcement', userAuth, teacherAuth, addAnnouncement);
 
 export default classRouter;
