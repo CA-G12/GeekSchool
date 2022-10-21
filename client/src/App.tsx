@@ -1,8 +1,11 @@
 import { UserAuthProvider } from "./context/AuthContext";
+import ClassTest from "./components/ClassTests/ClassTests";
 
 const App = () => (
   <UserAuthProvider>
-    <div className="App">hi</div>
+    <div className="App">
+      <ClassTest />
+    </div>
   </UserAuthProvider>
 );
 
