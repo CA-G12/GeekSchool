@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import { updateGradPayloadValidate } from '../../utils/validation';
 import { putAssignmentTeacherQuery } from '../../queries/class';
+import { CustomError } from '../../utils';
 
 const putAssignmentTeacher = async (req:Request, res:Response, next:NextFunction) => {
   try {
@@ -12,6 +13,9 @@ const putAssignmentTeacher = async (req:Request, res:Response, next:NextFunction
     const [, data]:any = await putAssignmentTeacherQuery(assignmentId, grade, studentId);
     res.status(201).json({ data, msg: 'updating successfully' });
   } catch (error) {
+    if (error.name === 'ValidationError') {
+      next(new CustomError(400, 'Wrong data is inserted!'));
+    }
     next(error);
   }
 };
