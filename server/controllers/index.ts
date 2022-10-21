@@ -3,7 +3,12 @@ import {
 } from './auth';
 import { serverError, notFound } from './errors';
 import {
-  recommended, getAnnouncement, getClassQuestions, putAssignmentTeacher, putAssignmentStudent,
+  recommended,
+  getAnnouncement,
+  getClassQuestions,
+  putAssignmentTeacher,
+  putAssignmentStudent,
+  getClassStudents,
 } from './class';
 
 export {
@@ -14,6 +19,7 @@ export {
   notFound,
   recommended,
   getAnnouncement,
+  getClassStudents,
   getClassQuestions,
   login,
   putAssignmentTeacher,
