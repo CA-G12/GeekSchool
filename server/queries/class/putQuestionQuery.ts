@@ -1,11 +1,6 @@
 import { Op } from 'sequelize';
 import { Question } from '../../models';
-
-interface answerInterface {
-  questionId: string | number,
-  classId: string | number,
-  answer: string
-}
+import { answerInterface } from '../../utils';
 
 const putAnswerQuestionQuery = ({
   questionId,
