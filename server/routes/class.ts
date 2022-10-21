@@ -1,4 +1,4 @@
-import { userAuth, studentAndTeacher } from '../middlewares';
+import { userAuth, studentAndTeacher, teacherAuth } from '../middlewares';
 import {
   getAnnouncement, getClassQuestions, recommended, putAnswerQuestion,
 } from '../controllers';
@@ -11,6 +11,6 @@ classRouter.get('/class/:classId/announcement', userAuth, studentAndTeacher, get
 
 classRouter.get('/class/:classId/questions', userAuth, studentAndTeacher, getClassQuestions);
 
-classRouter.put('/class/:classId/questions/:questionId', userAuth, studentAndTeacher, putAnswerQuestion);
+classRouter.put('/class/:classId/questions/:questionId', userAuth, teacherAuth, putAnswerQuestion);
 
 export default classRouter;
