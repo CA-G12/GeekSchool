@@ -1,8 +1,8 @@
-import React from 'react';
-import { Button, Form, Input, DatePicker, ConfigProvider } from 'antd';
-import { CloseSquareOutlined } from '@ant-design/icons';
-import 'antd/dist/antd.css';
-import './AddTest.css';
+import React from "react";
+import { Button, Form, Input, DatePicker, ConfigProvider } from "antd";
+import { CloseSquareOutlined } from "@ant-design/icons";
+import "antd/dist/antd.css";
+import "./AddTest.css";
 
 ConfigProvider.config({
   theme: {
@@ -16,18 +16,20 @@ const layout = {
 };
 
 const config = {
-  rules: [{ type: 'object' as const, required: true, message: 'Please select time!' }],
+  rules: [
+    { type: "object" as const, required: true, message: "Please select time!" },
+  ],
 };
 
 /* eslint-disable no-template-curly-in-string */
 const validateMessages = {
-  required: '${label} is required!',
+  required: "${label} is required!",
   types: {
-    email: '${label} is not a valid email!',
-    number: '${label} is not a valid number!',
+    email: "${label} is not a valid email!",
+    number: "${label} is not a valid number!",
   },
   number: {
-    range: '${label} must be between ${min} and ${max}',
+    range: "${label} must be between ${min} and ${max}",
   },
 };
 /* eslint-enable no-template-curly-in-string */
@@ -36,14 +38,14 @@ const AddTest: React.FC = () => {
   const onFinish = (fieldValues: any) => {
     const values = {
       ...fieldValues,
-      'date-picker': fieldValues['date-picker'].format('YYYY-MM-DD'),
+      "date-picker": fieldValues["date-picker"].format("YYYY-MM-DD"),
     };
 
-    console.log('Received values from: ', values);
+    console.log("Received values from: ", values);
   };
 
   return (
-    <section className='add-test-cont'>
+    <section className="add-test-cont">
       <Form
         wrapperCol={layout.wrapperCol}
         labelCol={layout.labelCol}
@@ -52,13 +54,14 @@ const AddTest: React.FC = () => {
         validateMessages={validateMessages}
         className="add-test-form"
       >
-        <CloseSquareOutlined className='close-icon' />
+        <CloseSquareOutlined className="close-icon" />
         <Form.Item
-          name={['user', 'name']}
-          label="Exam title: " rules={[{ required: true }]}
+          name={["user", "name"]}
+          label="Exam title: "
+          rules={[{ required: true }]}
           className="form-item"
         >
-          <Input className='input' />
+          <Input className="input" />
         </Form.Item>
         <Form.Item
           name="exam-date"
@@ -66,33 +69,41 @@ const AddTest: React.FC = () => {
           rules={config.rules}
           className="form-item"
         >
-        <DatePicker className='input date-picker' showTime format="YYYY-MM-DD HH:mm:ss" />
-      </Form.Item>
+          <DatePicker
+            className="input date-picker"
+            showTime
+            format="YYYY-MM-DD HH:mm:ss"
+          />
+        </Form.Item>
         <Form.Item
-          name={['user', 'introduction']}
+          name={["user", "introduction"]}
           label="Extra notes: "
-          className='form-item'
+          className="form-item"
         >
-          <Input.TextArea className='textarea' />
+          <Input.TextArea className="textarea" />
         </Form.Item>
         <Form.Item
           wrapperCol={{ ...layout.wrapperCol, offset: 8 }}
           style={{
-            width: '52%',
-            display: 'flex',
-            justifyContent: 'flex-end',
+            width: "52%",
+            display: "flex",
+            justifyContent: "flex-end",
           }}
         >
-          <Button type="primary" htmlType="submit" style={{
-            width: '196px',
-            height: '66px',
-            backgroundColor: '#0CBE8A',
-            border: '1px solid #0CBE8A',
-            borderRadius: '8px',
-            fontSize: 'x-large',
-            fontWeight: 'bold',
-            boxShadow: '0 0 5px 0 rgba(0, 0, 0, 0.25)',
-          }}>
+          <Button
+            type="primary"
+            htmlType="submit"
+            style={{
+              width: "196px",
+              height: "66px",
+              backgroundColor: "#0CBE8A",
+              border: "1px solid #0CBE8A",
+              borderRadius: "8px",
+              fontSize: "x-large",
+              fontWeight: "bold",
+              boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.25)",
+            }}
+          >
             Add exam
           </Button>
         </Form.Item>
