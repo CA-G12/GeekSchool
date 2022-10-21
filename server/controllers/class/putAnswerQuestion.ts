@@ -4,11 +4,8 @@ import { CustomError, CustomRequest, putAnswerQuestionValidate } from '../../uti
 
 const putAnswerQuestion = async (req: CustomRequest, res: Response, next: NextFunction) => {
   try {
-    const { role } = req.user;
     const { classId, questionId } = req.params;
     const { answer } = req.body;
-
-    if (!(role === 'teacher')) throw new CustomError(401, 'Unauthenticated');
 
     await putAnswerQuestionValidate({ classId, questionId, answer });
 
