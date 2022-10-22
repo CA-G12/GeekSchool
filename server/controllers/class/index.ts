@@ -3,7 +3,7 @@ import getAnnouncement from './getAnnouncement';
 import recommended from './recommended';
 import getClassQuestions from './getClassQuestions';
 import getAssignments from './getAssignments';
-
+import deleteAssignment from './deleteAssignment';
 import putAssignmentTeacher from './putAssignmentTeacher';
 import putAssignmentStudent from './putAssignmentStudent';
 import addAnnouncement from './addAnnouncement';
@@ -14,6 +14,7 @@ export {
   getAnnouncement,
   getClassQuestions,
   recommended,
+  deleteAssignment,
   putAssignmentTeacher,
   putAssignmentStudent,
   addAnnouncement,

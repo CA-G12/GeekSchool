@@ -12,6 +12,7 @@ import {
   putAssignmentTeacher,
   putAssignmentStudent,
   getAssignments,
+  deleteAssignment,
 } from '../controllers';
 
 const classRouter = require('express').Router();
@@ -28,6 +29,7 @@ classRouter.get('/class/:classId/students', userAuth, studentAndTeacher, getClas
 classRouter.get('/class/:classId/questions', userAuth, studentAndTeacher, getClassQuestions);
 classRouter.get('/class/:classId/announcement', userAuth, studentAndTeacher, getAnnouncement);
 classRouter.get('/class/:classId/assignments', userAuth, studentAndTeacher, getAssignments);
+classRouter.delete('/class/assignment/:id', userAuth, teacherAuth, deleteAssignment);
 
 classRouter.post('/class/:classId/announcement', userAuth, teacherAuth, addAnnouncement);
 
