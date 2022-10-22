@@ -1,9 +1,19 @@
 import CustomError from './CustomError';
 import {
-  UserRequestInterface, CustomRequest, PayloadInterface, UserTableInterface,
+  UserRequestInterface,
+  CustomRequest,
+  PayloadInterface,
+  UserTableInterface,
+  announcementInterface,
+  answerInterface,
 } from './interfaces';
 import {
-  userValidation, parentValidation, loginValidate, testValidation,
+  userValidation,
+  parentValidation,
+  loginValidate,
+  addAnnouncementValidate,
+  putAnswerQuestionValidate,
+  testValidation,
 } from './validation';
 import { signToken, verifyToken } from './jwt';
 
@@ -19,4 +29,8 @@ export {
   verifyToken,
   loginValidate,
   testValidation,
+  announcementInterface,
+  addAnnouncementValidate,
+  answerInterface,
+  putAnswerQuestionValidate,
 };

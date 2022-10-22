@@ -2,8 +2,15 @@ import {
   signup, logout, userData, login,
 } from './auth';
 import { serverError, notFound } from './errors';
+import getAllStudentHowSubmitTasks from './class/getAllStudentHowSubmitTasks';
 import {
-  getAnnouncement, getClassStudents, recommended, getClassQuestions, postTest,
+  recommended,
+  getAnnouncement,
+  getClassQuestions,
+  addAnnouncement,
+  putAnswerQuestion,
+  getClassStudents,
+  postTest,
 } from './class';
 
 export {
@@ -14,8 +21,11 @@ export {
   notFound,
   recommended,
   getAnnouncement,
+  getAllStudentHowSubmitTasks,
   getClassStudents,
   getClassQuestions,
+  putAnswerQuestion,
   login,
   postTest,
+  addAnnouncement,
 };

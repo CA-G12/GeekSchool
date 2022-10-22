@@ -5,6 +5,7 @@ import UserValInterface from './userValInterface';
 import UserTableInterface from './userTabelInterface';
 import loginValidateInterface from './auth';
 import testInterface from './testInterface';
+import { announcementInterface, answerInterface } from './queryInterfaces';
 
 export {
   CustomRequest,
@@ -14,4 +15,6 @@ export {
   UserTableInterface,
   loginValidateInterface,
   testInterface,
+  announcementInterface,
+  answerInterface,
 };
