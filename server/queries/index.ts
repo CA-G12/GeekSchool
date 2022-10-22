@@ -7,6 +7,7 @@ import {
   getClassStudentsQuery,
   getClassQuestionsQuery,
   getStudentTasksQuery,
+  deleteAssignmentQuery,
 } from './class';
 
 import loginQuery from './loginQuery';
@@ -23,6 +24,7 @@ export {
   getAnnouncementQuery,
   recommendedQueries,
   loginQuery,
+  deleteAssignmentQuery,
   addAnnouncementQuery,
   putAnswerQuestionQuery,
   getClassStudentsQuery,

@@ -11,6 +11,7 @@ import {
   getAllStudentHowSubmitTasks,
   putAssignmentTeacher,
   putAssignmentStudent,
+  deleteAssignment,
 } from '../controllers';
 
 const classRouter = require('express').Router();
@@ -25,6 +26,7 @@ classRouter.put('/class/:classId/assignment/students/:assignmentId', userAuth, s
 
 classRouter.get('/class/:classId/students', userAuth, studentAndTeacher, getClassStudents);
 classRouter.get('/class/:classId/questions', userAuth, studentAndTeacher, getClassQuestions);
+classRouter.delete('/class/assignment/:id', userAuth, teacherAuth, deleteAssignment);
 
 classRouter.post('/class/:classId/announcement', userAuth, teacherAuth, addAnnouncement);
 
