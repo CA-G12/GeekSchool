@@ -3,7 +3,9 @@ import {
 } from './auth';
 import { serverError, notFound } from './errors';
 import getAllStudentHowSubmitTasks from './class/getAllStudentHowSubmitTasks';
-import { recommended, getAnnouncement, getClassQuestions } from './class';
+import {
+  recommended, getAnnouncement, getClassQuestions, getClassStudents,
+} from './class';
 
 export {
   signup,
@@ -14,6 +16,7 @@ export {
   recommended,
   getAnnouncement,
   getAllStudentHowSubmitTasks,
+  getClassStudents,
   getClassQuestions,
   login,
 };
