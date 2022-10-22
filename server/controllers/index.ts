@@ -2,7 +2,7 @@ import {
   signup, logout, userData, login,
 } from './auth';
 import { serverError, notFound } from './errors';
-import getAllStudentHowSubmitTasks from './class/getAllStudentHowSubmitTasks';
+
 import {
   getStats,
   recommended,
@@ -13,6 +13,8 @@ import {
   addAnnouncement,
   putAnswerQuestion,
   getClassStudents,
+  getAllStudentWhoSubmitTasks,
+  deleteStudentFromClass,
   getAssignments,
   deleteAssignment,
 } from './class';
@@ -25,10 +27,11 @@ export {
   notFound,
   recommended,
   getAnnouncement,
+  deleteStudentFromClass,
+  getAllStudentWhoSubmitTasks,
   getStats,
   getAssignments,
   deleteAssignment,
-  getAllStudentHowSubmitTasks,
   getClassStudents,
   getClassQuestions,
   putAnswerQuestion,
