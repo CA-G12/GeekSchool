@@ -6,6 +6,7 @@ import putAssignmentTeacher from './putAssignmentTeacher';
 import putAssignmentStudent from './putAssignmentStudent';
 import addAnnouncement from './addAnnouncement';
 import putAnswerQuestion from './putAnswerQuestion';
+import getClassGrades from './getClassGrades';
 
 export {
   getClassStudents,
@@ -16,4 +17,5 @@ export {
   putAssignmentStudent,
   addAnnouncement,
   putAnswerQuestion,
+  getClassGrades,
 };

@@ -12,6 +12,7 @@ import {
   addAnnouncement,
   putAnswerQuestion,
   getClassStudents,
+  getClassGrades,
 } from './class';
 
 export {
@@ -30,4 +31,5 @@ export {
   putAssignmentTeacher,
   putAssignmentStudent,
   addAnnouncement,
+  getClassGrades,
 };
