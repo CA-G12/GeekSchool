@@ -1,10 +1,10 @@
 import { Response, NextFunction } from 'express';
 import { addNewFeedbackQuery } from '../../queries';
 import {
-  CustomError, CustomRequest, addNewFeedbackValidation,
+  CustomError, addNewFeedbackValidation,
 } from '../../utils';
 
-const addNewFeedback = async (req: CustomRequest, res: Response, next: NextFunction) => {
+const addNewFeedback = async (req: any, res: Response, next: NextFunction) => {
   try {
     const { id } = req.user;
     const { classId } = req.params;

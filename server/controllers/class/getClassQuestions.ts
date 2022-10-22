@@ -1,5 +1,5 @@
 import { NextFunction, Response, Request } from 'express';
-import { getClassQuestionsQuery } from '../../queries/class';
+import { getClassQuestionsQuery } from '../../queries';
 
 const getClassQuestions = async (req: Request, res: Response, next: NextFunction) => {
   try {
