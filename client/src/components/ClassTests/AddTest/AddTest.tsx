@@ -1,14 +1,9 @@
 import React from "react";
-import { Button, Form, Input, DatePicker, ConfigProvider } from "antd";
+import axios from "axios";
+import Swal from "sweetalert2";
+import { Button, Form, Input, DatePicker } from "antd";
 import { CloseSquareOutlined } from "@ant-design/icons";
-import "antd/dist/antd.css";
 import "./AddTest.css";
-
-ConfigProvider.config({
-  theme: {
-    primaryColor: "#0CBE8A",
-  },
-});
 
 const layout = {
   labelCol: { span: 8 },
@@ -25,23 +20,62 @@ const config = {
 const validateMessages = {
   required: "${label} is required!",
   types: {
-    email: "${label} is not a valid email!",
-    number: "${label} is not a valid number!",
-  },
-  number: {
-    range: "${label} must be between ${min} and ${max}",
+    text: "${label} is not a valid text!",
+    date: "${label} is not a valid date!",
   },
 };
-/* eslint-enable no-template-curly-in-string */
 
 const AddTest: React.FC = () => {
-  const onFinish = (fieldValues: any) => {
+  const source = axios.CancelToken.source();
+
+  const onFinish = async (fieldValues: any) => {
     const values = {
-      ...fieldValues,
-      "date-picker": fieldValues["date-picker"].format("YYYY-MM-DD"),
+      testTitle: fieldValues["exam-title"],
+      testDate: fieldValues["exam-date"].format("YYYY-MM-DD HH:mm:ss"),
+      testNotes: fieldValues["exam-notes"],
     };
 
-    console.log("Received values from: ", values);
+    try {
+      await axios
+        .post(
+          "/api/v1/class/test",
+          {
+            ...values,
+          },
+          {
+            cancelToken: source.token,
+          }
+        )
+        .then(() => {
+          Swal.fire({
+            title: "The test is added successfully!",
+            showClass: {
+              popup: "animate__animated animate__fadeInDown",
+            },
+            hideClass: {
+              popup: "animate__animated animate__fadeOutUp",
+            },
+          });
+          source.cancel();
+        })
+        .catch(() => {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Something went wrong!",
+            footer: '<a href="">Why do I have this issue?</a>',
+          });
+          source.cancel();
+        });
+    } catch (error: any) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Something went wrong!",
+        footer: '<a href="">Why do I have this issue?</a>',
+      });
+      source.cancel();
+    }
   };
 
   return (
@@ -56,7 +90,7 @@ const AddTest: React.FC = () => {
       >
         <CloseSquareOutlined className="close-icon" />
         <Form.Item
-          name={["user", "name"]}
+          name="exam-title"
           label="Exam title: "
           rules={[{ required: true }]}
           className="form-item"
@@ -76,7 +110,7 @@ const AddTest: React.FC = () => {
           />
         </Form.Item>
         <Form.Item
-          name={["user", "introduction"]}
+          name="exam-notes"
           label="Extra notes: "
           className="form-item"
         >
