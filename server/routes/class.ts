@@ -32,6 +32,6 @@ classRouter.delete('/class/assignment/:id', userAuth, teacherAuth, deleteAssignm
 classRouter.post('/class/:classId/announcement', userAuth, teacherAuth, addAnnouncement);
 
 classRouter.put('/class/:classId/questions/:questionId', userAuth, teacherAuth, putAnswerQuestion);
-classRouter.post('/class/:classId/questions', postQuestion);
+classRouter.post('/class/:classId/questions', userAuth, studentAuth, postQuestion);
 
 export default classRouter;

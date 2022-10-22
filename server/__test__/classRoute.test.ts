@@ -46,11 +46,11 @@ describe('Testing class routes', () => {
       .send({
         question: 'new question',
       })
-      .expect(200)
+      .expect(201)
       .expect('Content-Type', /json/)
       .end((err, res) => {
         if (err) return done(err);
-        expect(res.body.msg).toBe('added successfully');
+        expect(res.body.msg).toBe('added question successfully');
         return done();
       });
   });
