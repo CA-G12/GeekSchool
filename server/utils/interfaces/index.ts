@@ -4,6 +4,7 @@ import PayloadInterface from './payloadInterface';
 import UserValInterface from './userValInterface';
 import UserTableInterface from './userTabelInterface';
 import loginValidateInterface from './auth';
+import testInterface from './testInterface';
 
 export {
   CustomRequest,
@@ -12,4 +13,5 @@ export {
   UserValInterface,
   UserTableInterface,
   loginValidateInterface,
+  testInterface,
 };
