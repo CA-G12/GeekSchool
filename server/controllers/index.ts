@@ -13,6 +13,7 @@ import {
   addAnnouncement,
   putAnswerQuestion,
   getClassStudents,
+  getAssignments,
   deleteAssignment,
   getAllStudentWhoSubmitTasks,
 
@@ -27,6 +28,7 @@ export {
   recommended,
   getAnnouncement,
   postQuestion,
+  getAssignments,
   deleteAssignment,
   getAllStudentWhoSubmitTasks,
   getClassStudents,
