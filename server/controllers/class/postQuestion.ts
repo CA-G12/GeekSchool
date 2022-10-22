@@ -18,8 +18,11 @@ const postQuestion = async (req:CustomRequest, res:Response, next:NextFunction) 
 
     res.status(201).json({ msg: 'added question successfully', data });
   } catch (error) {
-    if (error.name === 'ValidationError') next(new CustomError(400, 'question is required'));
-    next(error);
+    if (error.name === 'ValidationError') {
+      next(new CustomError(400, 'question is required'));
+    } else {
+      next(error);
+    }
   }
 };
 
