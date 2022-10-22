@@ -1,6 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
 import { classStats } from '../../queries';
-import { CustomError } from '../../utils';
 
 const getStats = async (req: Request, res: Response, next: NextFunction) => {
   try {
@@ -21,9 +20,6 @@ const getStats = async (req: Request, res: Response, next: NextFunction) => {
       },
     });
   } catch (error) {
-    if (error.msg) {
-      next(new CustomError(error.status, error.msg));
-    }
     next(error);
   }
 };
