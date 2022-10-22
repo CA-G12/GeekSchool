@@ -18,7 +18,7 @@ describe('Testing get assignments route', () => {
       .expect('Content-Type', /json/)
       .end((err, res) => {
         if (err) return done(err);
-        expect(res.body.data[0].id).toEqual(1);
+        expect(res.body.msg).toEqual('Student Assignments for this class');
         return done();
       });
   });
@@ -33,7 +33,7 @@ describe('Testing get assignments route', () => {
       .expect('Content-Type', /json/)
       .end((err, res) => {
         if (err) return done(err);
-        expect(res.body.msg).toEqual('Teacher Assignments  for this class');
+        expect(res.body.msg).toEqual('Teacher Assignments for this class');
         return done();
       });
   });

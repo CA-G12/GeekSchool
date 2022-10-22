@@ -2,7 +2,7 @@ import { AssignmentStudent, Assignment } from '../../models';
 
 const studentAssignmentQuery = async (id : number, classId : string) => AssignmentStudent
   .findAll({
-    attributes: ['id', 'isSubmitted', 'material_link',
+    attributes: ['id', 'is_submitted', 'material_link',
       'grade', 'assignment_id', 'student_id',
       'Assignment.title' as 'title',
       'Assignment.description' as 'description',

@@ -6,12 +6,16 @@ const getAssignments = async (req: CustomRequest, res: Response, next:NextFuncti
   try {
     const { user } = req;
     const { classId } = req.params;
+    console.log(user, 'user5555555555555');
     if (user.role === 'student') {
+      console.log('student');
       const data = await studentAssignmentQuery(user.id, classId);
-      res.json({ msg: 'Student Assignments  for this class', data });
+      console.log('data', data);
+      res.json({ msg: 'Student Assignments for this class', data });
     } else {
+      console.log('teacher');
       const data = await teacherAssignmentQuery(classId);
-      res.json({ msg: 'Teacher Assignments  for this class', data });
+      res.json({ msg: 'Teacher Assignments for this class', data });
     }
   } catch (error) {
     next(error);

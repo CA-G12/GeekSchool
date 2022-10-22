@@ -5,6 +5,10 @@ import {
   studentAssignmentQuery,
   teacherAssignmentQuery,
   getClassQuestionsQuery,
+  addAnnouncementQuery,
+  putAnswerQuestionQuery,
+  getClassStudentsQuery,
+  getStudentTasksQuery,
 } from './class';
 
 import loginQuery from './loginQuery';
@@ -24,4 +28,8 @@ export {
   getClassQuestionsQuery,
   recommendedQueries,
   loginQuery,
+  addAnnouncementQuery,
+  putAnswerQuestionQuery,
+  getClassStudentsQuery,
+  getStudentTasksQuery,
 };
