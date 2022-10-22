@@ -8,7 +8,13 @@ interface answerInterface {
   answer: string
 }
 
+interface postQuestionInterface {
+  classId: string | number,
+  question: string
+}
+
 export {
   answerInterface,
   announcementInterface,
+  postQuestionInterface,
 };

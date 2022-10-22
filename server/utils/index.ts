@@ -6,6 +6,7 @@ import {
   UserTableInterface,
   announcementInterface,
   answerInterface,
+  postQuestionInterface,
 } from './interfaces';
 import {
   userValidation,
@@ -13,6 +14,7 @@ import {
   loginValidate,
   addAnnouncementValidate,
   putAnswerQuestionValidate,
+  postQuestionValidate,
 } from './validation';
 import { signToken, verifyToken } from './jwt';
 
@@ -31,4 +33,6 @@ export {
   addAnnouncementValidate,
   answerInterface,
   putAnswerQuestionValidate,
+  postQuestionValidate,
+  postQuestionInterface,
 };
