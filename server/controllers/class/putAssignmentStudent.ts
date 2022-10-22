@@ -18,7 +18,7 @@ const putAssignmentStudent = async (req:Request, res:Response, next:NextFunction
       materialLink,
       studentId,
     );
-    res.status(201).json({ data, msg: 'updating successfully' });
+    res.status(204).json({ data, msg: 'updating successfully' });
   } catch (error) {
     if (error.name === 'ValidationError') {
       next(new CustomError(400, 'Wrong data is inserted!'));
