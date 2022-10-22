@@ -2,5 +2,13 @@ interface announcementInterface {
   classId: string | number,
   description: string
 }
+interface answerInterface {
+  questionId: string | number,
+  classId: string | number,
+  answer: string
+}
 
-export default announcementInterface;
+export {
+  answerInterface,
+  announcementInterface,
+};
