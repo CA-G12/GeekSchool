@@ -2,6 +2,9 @@ import getAnnouncementQuery from './getAnnouncementQuery';
 import classStats from './classStats';
 import getClassStudentsQuery from './getClassStudentsQuery';
 import recommendedQueries from './recommendedQueries';
+import studentAssignmentQuery from './studentAssignmentQuery';
+import teacherAssignmentQuery from './teacherAssignmentQuery';
+import deleteAssignmentQuery from './deleteAssignment';
 import addAnnouncementQuery from './addAnnouncementQuery';
 import putAnswerQuestionQuery from './putQuestionQuery';
 import getClassQuestionsQuery from './getClassQuestionsQuery';
@@ -16,6 +19,9 @@ export {
   putAssignmentStudentQuery,
   recommendedQueries,
   classStats,
+  teacherAssignmentQuery,
+  studentAssignmentQuery,
+  deleteAssignmentQuery,
   getClassStudentsQuery,
   addAnnouncementQuery,
   putAnswerQuestionQuery,

@@ -17,6 +17,8 @@ import {
   putAnswerQuestion,
   putAssignmentTeacher,
   putAssignmentStudent,
+  getAssignments,
+  deleteAssignment,
 } from '../controllers';
 
 const classRouter = Router();
@@ -24,6 +26,8 @@ const classRouter = Router();
 classRouter.get('/:classId/statistics', userAuth, teacherAuth, getStats);
 classRouter.get('/:classId/announcement', userAuth, studentAndTeacher, getAnnouncement);
 classRouter.get('/:classId/recommended', userAuth, studentAndTeacher, recommended);
+classRouter.get('/:classId/assignments', userAuth, studentAndTeacher, getAssignments);
+classRouter.delete('/assignment/:id', userAuth, teacherAuth, deleteAssignment);
 classRouter.get('/:classId/questions', userAuth, studentAndTeacher, getClassQuestions);
 classRouter.get('/:classId/students', userAuth, studentAndTeacher, getClassStudents);
 classRouter.get('/:classId/assignment/:assignmentId/students', userAuth, teacherAuth, getAllStudentHowSubmitTasks);
