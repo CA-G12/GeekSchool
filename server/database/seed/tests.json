@@ -1,139 +1,120 @@
 [
     {
-        "id": 1,
         "title": "Analog Circuit Design manager",
         "class_id": 1,
         "date": "05/27/2022",
         "notes": "Radical excis skin les"
     },
     {
-        "id": 2,
         "title": "Statistician I",
         "class_id": 1,
         "date": "09/13/2022",
         "notes": "Replantation of scalp"
     },
     {
-        "id": 3,
         "title": "Automation Specialist IV",
         "class_id": 1,
         "date": "06/17/2022",
         "notes": "Closed bx of esophagus"
     },
     {
-        "id": 4,
         "title": "Accountant III",
         "class_id": 1,
         "date": "08/08/2022",
         "notes": "Remov pyelos/nephros tub"
     },
     {
-        "id": 5,
         "title": "Account Coordinator",
         "class_id": 1,
         "date": "01/18/2022",
         "notes": "Endolymphatic shunt"
     },
     {
-        "id": 6,
         "title": "Registered Nurse",
         "class_id": 2,
         "date": "09/02/2022",
         "notes": "Hyperbaric oxygenation"
     },
     {
-        "id": 7,
         "title": "Geological Engineer",
         "class_id": 2,
         "date": "10/13/2022",
         "notes": "Grft repair hrt sept NOS"
     },
     {
-        "id": 8,
         "title": "GIS Technical Architect",
         "class_id": 2,
         "date": "09/12/2022",
         "notes": "Repair of ureter NEC"
     },
     {
-        "id": 9,
         "title": "Graphic Designer",
         "class_id": 2,
         "date": "06/28/2022",
         "notes": "Iridencleisis/iridotasis"
     },
     {
-        "id": 10,
         "title": "Senior Financial Analyst",
         "class_id": 2,
         "date": "01/14/2022",
         "notes": "Pteryg exc w cornea grft"
     },
     {
-        "id": 11,
         "title": "Executive Secretary",
         "class_id": 3,
         "date": "07/22/2022",
         "notes": "Micro exam-endocrine NEC"
     },
     {
-        "id": 12,
         "title": "Director of Sales",
         "class_id": 3,
         "date": "07/16/2022",
         "notes": "Iridotomy NEC"
     },
     {
-        "id": 13,
         "title": "Engineer I",
         "class_id": 3,
         "date": "04/05/2022",
         "notes": "Remove skull tongs"
     },
     {
-        "id": 14,
         "title": "Tax Accountant",
         "class_id": 3,
         "date": "10/19/2022",
         "notes": "Man replac invert uterus"
     },
     {
-        "id": 15,
         "title": "Sales Representative",
         "class_id": 3,
         "date": "06/26/2022",
         "notes": "Cell blk/pap-upper GI"
     },
     {
-        "id": 16,
+     
         "title": "Help Desk Technician",
         "class_id": 4,
         "date": "03/13/2022",
         "notes": "Stern esophagoesophagost"
     },
     {
-        "id": 17,
         "title": "Environmental Tech",
         "class_id": 4,
         "date": "08/31/2022",
         "notes": "Remove dental packing"
     },
     {
-        "id": 18,
         "title": "Actuary",
         "class_id": 4,
         "date": "01/12/2022",
         "notes": "Proctotomy"
     },
     {
-        "id": 19,
         "title": "Associate Professor",
         "class_id": 4,
         "date": "07/29/2022",
         "notes": "Spinal refusion NOS"
     },
     {
-        "id": 20,
         "title": "Project Manager",
         "class_id": 4,
         "date": "10/29/2022",
