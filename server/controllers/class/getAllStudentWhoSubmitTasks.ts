@@ -1,8 +1,8 @@
-import { Request, Response, NextFunction } from 'express';
+import { Response, NextFunction } from 'express';
 import { getStudentTasksQuery } from '../../queries';
 import { CustomError } from '../../utils';
 
-const getAllStudentWhoSubmitTasks = async (req:Request, res:Response, next:NextFunction) => {
+const getAllStudentWhoSubmitTasks = async (req:any, res:Response, next:NextFunction) => {
   try {
     const { assignmentId } = req.params;
     const { isSubmitted } = req.query;

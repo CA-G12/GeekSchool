@@ -1,8 +1,8 @@
 import { Response, NextFunction } from 'express';
 
-import { CustomError, CustomRequest } from '../utils';
+import { CustomError } from '../utils';
 
-const studentAuth = async (req: CustomRequest, res: Response, next: NextFunction) => {
+const studentAuth = async (req: any, res: Response, next: NextFunction) => {
   const role = req.user?.role;
 
   if (role !== 'student') {

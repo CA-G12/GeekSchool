@@ -1,5 +1,6 @@
-import getClassStudents from './getClassStudents';
 import getAnnouncement from './getAnnouncement';
+import getStats from './getStats';
+import getClassStudents from './getClassStudents';
 import recommended from './recommended';
 import getClassQuestions from './getClassQuestions';
 import getAssignments from './getAssignments';
@@ -8,13 +9,15 @@ import putAssignmentTeacher from './putAssignmentTeacher';
 import putAssignmentStudent from './putAssignmentStudent';
 import addAnnouncement from './addAnnouncement';
 import putAnswerQuestion from './putAnswerQuestion';
-import getAllStudentWhoSubmitTasks from './getAllStudentHowSubmitTasks';
+import getAllStudentWhoSubmitTasks from './getAllStudentWhoSubmitTasks';
+import postQuestion from './postQuestion';
 
 export {
   getClassStudents,
   getAnnouncement,
   getClassQuestions,
   recommended,
+  getStats,
   deleteAssignment,
   putAssignmentTeacher,
   putAssignmentStudent,
@@ -22,4 +25,5 @@ export {
   putAnswerQuestion,
   getAllStudentWhoSubmitTasks,
   getAssignments,
+  postQuestion,
 };

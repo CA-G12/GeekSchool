@@ -5,6 +5,6 @@ import classRouter from './class';
 const router = Router();
 
 router.use(authRouter);
-router.use(classRouter);
+router.use('/class', classRouter);
 
 export default router;
