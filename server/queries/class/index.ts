@@ -1,9 +1,11 @@
 import getAnnouncementQuery from './getAnnouncementQuery';
-import getClassQuestionsQuery from './getClassQuestionsQuery';
+import getClassStudentsQuery from './getClassStudentsQuery';
 import recommendedQueries from './recommendedQueries';
 import putAnswerQuestionQuery from './putQuestionQuery';
+import getClassQuestionsQuery from './getClassQuestionsQuery';
 
 export {
+  getClassStudentsQuery,
   getClassQuestionsQuery,
   getAnnouncementQuery,
   recommendedQueries,
