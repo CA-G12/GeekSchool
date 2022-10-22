@@ -7,7 +7,7 @@ const AssignmentStudent = sequelize.define('AssignmentStudent', {
     autoIncrement: true,
     primaryKey: true,
   },
-  isSubmitted: {
+  is_submitted: {
     type: DataTypes.BOOLEAN,
     defaultValue: false,
   },

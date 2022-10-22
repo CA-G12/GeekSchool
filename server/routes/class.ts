@@ -1,6 +1,17 @@
-import { userAuth, studentAndTeacher, teacherAuth } from '../middlewares';
 import {
-  getAnnouncement, deleteStudentFromClass, recommended, getClassQuestions,
+  userAuth, studentAndTeacher, teacherAuth, studentAuth,
+} from '../middlewares';
+import {
+  getAnnouncement,
+  getClassQuestions,
+  recommended,
+  addAnnouncement,
+  putAnswerQuestion,
+  getClassStudents,
+  getAllStudentWhoSubmitTasks,
+  putAssignmentTeacher,
+  putAssignmentStudent,
+  deleteStudentFromClass,
 } from '../controllers';
 
 const classRouter = require('express').Router();
@@ -8,7 +19,12 @@ const classRouter = require('express').Router();
 classRouter.get('/:classId/recommended', userAuth, studentAndTeacher, recommended);
 classRouter.get('/:classId/announcement', userAuth, studentAndTeacher, getAnnouncement);
 classRouter.delete('/:classId/student', userAuth, teacherAuth, deleteStudentFromClass);
-
 classRouter.get('/:classId/questions', userAuth, studentAndTeacher, getClassQuestions);
+classRouter.get('/:classId/students', userAuth, studentAndTeacher, getClassStudents);
+classRouter.get('/:classId/assignment/:assignmentId/students', userAuth, teacherAuth, getAllStudentWhoSubmitTasks);
+classRouter.put('/:classId/assignment/teachers/:assignmentId', userAuth, teacherAuth, putAssignmentTeacher);
+classRouter.put('/:classId/assignment/students/:assignmentId', userAuth, studentAuth, putAssignmentStudent);
+classRouter.post('/:classId/announcement', userAuth, teacherAuth, addAnnouncement);
+classRouter.put('/:classId/questions/:questionId', userAuth, teacherAuth, putAnswerQuestion);
 
 export default classRouter;
