@@ -1,11 +1,13 @@
 import getAnnouncementQuery from './getAnnouncementQuery';
-import submittedAndNotSubmittedNum from './submittedOrNotQuery';
+import classStats from './classStats';
+import getClassStudentsQuery from './getClassStudents';
 import recommendedQueries from './recommendedQueries';
 import getClassQuestionsQuery from './getClassQuestionsQuery';
 
 export {
+  getClassStudentsQuery,
   getClassQuestionsQuery,
   getAnnouncementQuery,
   recommendedQueries,
-  submittedAndNotSubmittedNum,
+  classStats,
 };

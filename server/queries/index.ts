@@ -1,4 +1,10 @@
-import { submittedAndNotSubmittedNum, getAnnouncementQuery, recommendedQueries } from './class';
+import {
+  classStats,
+  getAnnouncementQuery,
+  recommendedQueries,
+  getClassStudentsQuery,
+  getClassQuestionsQuery,
+} from './class';
 import { createUser, findUserByEmail } from './userQueries';
 
 import loginQuery from './loginQuery';
@@ -12,8 +18,10 @@ export {
   createStudent,
   createTeacher,
   findUserByEmail,
-  submittedAndNotSubmittedNum,
+  classStats,
   getAnnouncementQuery,
   recommendedQueries,
   loginQuery,
+  getClassStudentsQuery,
+  getClassQuestionsQuery,
 };
