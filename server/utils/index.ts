@@ -9,6 +9,7 @@ import {
   postQuestionInterface,
 } from './interfaces';
 import {
+  deleteStudentFromClassValidation,
   userValidation,
   parentValidation,
   loginValidate,
@@ -29,6 +30,7 @@ export {
   signToken,
   verifyToken,
   loginValidate,
+  deleteStudentFromClassValidation,
   announcementInterface,
   addAnnouncementValidate,
   answerInterface,

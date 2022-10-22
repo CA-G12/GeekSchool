@@ -1,6 +1,7 @@
+import deleteStudentFromClass from './deleteStudentFromClass';
+import getClassStudents from './getClassStudents';
 import getAnnouncement from './getAnnouncement';
 import getStats from './getStats';
-import getClassStudents from './getClassStudents';
 import recommended from './recommended';
 import getClassQuestions from './getClassQuestions';
 import getAssignments from './getAssignments';
@@ -17,6 +18,7 @@ export {
   getAnnouncement,
   getClassQuestions,
   recommended,
+  deleteStudentFromClass,
   getStats,
   deleteAssignment,
   putAssignmentTeacher,
