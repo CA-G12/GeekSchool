@@ -1,8 +1,7 @@
 import { Response, NextFunction } from 'express';
 import { studentAssignmentQuery, teacherAssignmentQuery } from '../../queries';
-import { CustomRequest } from '../../utils';
 
-const getAssignments = async (req: CustomRequest, res: Response, next:NextFunction) => {
+const getAssignments = async (req: any, res: Response, next:NextFunction) => {
   try {
     const { user } = req;
     const { classId } = req.params;

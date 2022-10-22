@@ -1,8 +1,7 @@
 import { Response, NextFunction } from 'express';
 import { deleteAssignmentQuery } from '../../queries';
-import { CustomRequest } from '../../utils';
 
-const deleteAssignment = async (req: CustomRequest, res: Response, next:NextFunction) => {
+const deleteAssignment = async (req: any, res: Response, next:NextFunction) => {
   try {
     const { id } = req.params;
     await deleteAssignmentQuery(Number(id));
