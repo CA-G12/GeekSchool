@@ -1,7 +1,22 @@
-import { signup, logout, userData } from './auth';
+import {
+  signup, logout, userData, login,
+} from './auth';
 import { serverError, notFound } from './errors';
-import getAnnouncement from './class/getAnnouncement';
 import postQuestion from './class/postQuestion';
+
+import {
+  recommended,
+  getAnnouncement,
+  getClassQuestions,
+  putAssignmentTeacher,
+  putAssignmentStudent,
+  addAnnouncement,
+  putAnswerQuestion,
+  getClassStudents,
+  deleteAssignment,
+  getAllStudentWhoSubmitTasks,
+
+} from './class';
 
 export {
   signup,
@@ -9,6 +24,16 @@ export {
   userData,
   serverError,
   notFound,
+  recommended,
   getAnnouncement,
   postQuestion,
+  deleteAssignment,
+  getAllStudentWhoSubmitTasks,
+  getClassStudents,
+  getClassQuestions,
+  putAnswerQuestion,
+  login,
+  putAssignmentTeacher,
+  putAssignmentStudent,
+  addAnnouncement,
 };
