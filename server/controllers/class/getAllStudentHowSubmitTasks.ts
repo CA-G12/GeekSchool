@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { getStudentTasksQuery } from '../../queries/class';
+import { getStudentTasksQuery } from '../../queries';
 import { CustomError } from '../../utils';
 
 const getAllStudentWhoSubmitTasks = async (req:Request, res:Response, next:NextFunction) => {

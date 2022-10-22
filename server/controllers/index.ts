@@ -4,7 +4,12 @@ import {
 import { serverError, notFound } from './errors';
 import getAllStudentHowSubmitTasks from './class/getAllStudentHowSubmitTasks';
 import {
-  recommended, getAnnouncement, getClassQuestions, getClassStudents,
+  recommended,
+  getAnnouncement,
+  getClassQuestions,
+  addAnnouncement,
+  putAnswerQuestion,
+  getClassStudents,
 } from './class';
 
 export {
@@ -18,5 +23,7 @@ export {
   getAllStudentHowSubmitTasks,
   getClassStudents,
   getClassQuestions,
+  putAnswerQuestion,
   login,
+  addAnnouncement,
 };

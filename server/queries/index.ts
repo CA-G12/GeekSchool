@@ -1,6 +1,12 @@
 import { createUser, findUserByEmail } from './userQueries';
 import {
-  getAnnouncementQuery, recommendedQueries, getClassStudentsQuery, getClassQuestionsQuery,
+  getAnnouncementQuery,
+  recommendedQueries,
+  addAnnouncementQuery,
+  putAnswerQuestionQuery,
+  getClassStudentsQuery,
+  getClassQuestionsQuery,
+  getStudentTasksQuery,
 } from './class';
 
 import loginQuery from './loginQuery';
@@ -17,6 +23,9 @@ export {
   getAnnouncementQuery,
   recommendedQueries,
   loginQuery,
+  addAnnouncementQuery,
+  putAnswerQuestionQuery,
   getClassStudentsQuery,
   getClassQuestionsQuery,
+  getStudentTasksQuery,
 };
