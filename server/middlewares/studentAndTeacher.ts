@@ -4,7 +4,6 @@ import { CustomError, CustomRequest } from '../utils';
 
 const studentAndTeacher = (req: CustomRequest, res: Response, next: NextFunction) => {
   const { user } = req;
-  console.log(user, 'user');
   if (user.role === 'teacher' || user.role === 'student') {
     next();
   } else {
