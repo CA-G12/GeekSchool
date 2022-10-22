@@ -52,16 +52,16 @@ const signup = async (req: Request, res: Response, next: NextFunction) => {
 
     if (role === 'parent') {
       await createParentAccount({
-        name, email, hashedPassword, mobile, location, role,
+        name, email, password: hashedPassword, mobile, location, role,
       }, children);
     } else if (role === 'teacher') {
       user = await createUser({
-        name, email, mobile, hashedPassword, role, location,
+        name, email, mobile, password: hashedPassword, role, location,
       });
       await createTeacher(user.getDataValue('id'));
     } else {
       user = await createUser({
-        name, email, mobile, hashedPassword, role, location,
+        name, email, mobile, password: hashedPassword, role, location,
       });
     }
 
@@ -77,8 +77,9 @@ const signup = async (req: Request, res: Response, next: NextFunction) => {
       },
     );
   } catch (error) {
-    if (error.name === 'ValidationError') next(new CustomError(400, 'Wrong data is inserted!'));
-    else next(error);
+    if (error.name === 'ValidationError') {
+      next(new CustomError(400, 'Wrong data is inserted!'));
+    } else next(error);
   }
 };
 

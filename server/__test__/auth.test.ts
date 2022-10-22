@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // /* eslint-disable no-undef */
 import supertest from 'supertest';
 
@@ -9,6 +10,18 @@ jest.setTimeout(20000);
 beforeAll(async () => {
   await buildModel();
 });
+=======
+/* eslint-disable no-undef */
+import supertest from 'supertest';
+import sequelize from '../database/connection';
+import buildModel from '../database/build';
+import app from '../app';
+
+jest.setTimeout(20000);
+
+beforeAll(() => buildModel());
+afterAll(() => sequelize.close());
+>>>>>>> c7ae98588d7ab722dd34af47f2f36ce5040e4ae4
 
 describe('Testing signup route', () => {
   test('dummy test', () => {
@@ -94,27 +107,27 @@ describe('Testing signup route', () => {
       });
   });
 
-//   test('Should create the parent account and map children', (done) => {
-//     supertest(app)
-//       .post('/api/v1/auth/signup')
-//       .send({
-//         name: 'Issa Salem',
-//         email: 'parent@gmail.com',
-//         password: 'root123',
-//         confPassword: 'root123',
-//         mobile: '0599999999',
-//         location: 'Gaza-Palestine',
-//         role: 'parent',
-//         children: [
-//           'child1@gmail.com',
-//           'child2@gmail.com',
-//         ],
-//       })
-//       .expect(201)
-//       .end((err, res) => {
-//         if (err) return done(err);
-//         expect(res.body.msg).toBe('Account is created successfully!');
-//         return done();
-//       });
-//   });
+  // test('Should create the parent account and map children', (done) => {
+  //   supertest(app)
+  //     .post('/api/v1/auth/signup')
+  //     .send({
+  //       name: 'Issa Salem',
+  //       email: 'parent@gmail.com',
+  //       password: 'root123',
+  //       confPassword: 'root123',
+  //       mobile: '0599999999',
+  //       location: 'Gaza-Palestine',
+  //       role: 'parent',
+  //       children: [
+  //         'child1@gmail.com',
+  //         'child2@gmail.com',
+  //       ],
+  //     })
+  //     .expect(201)
+  //     .end((err, res) => {
+  //       if (err) return done(err);
+  //       expect(res.body.msg).toBe('Account is created successfully!');
+  //       return done();
+  //     });
+  // });
 });

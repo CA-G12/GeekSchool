@@ -3,6 +3,7 @@ import {
 } from './auth';
 import { serverError, notFound } from './errors';
 import {
+  getStats,
   recommended,
   getAnnouncement,
   getClassQuestions,
@@ -13,6 +14,7 @@ import {
   getClassStudents,
   getFeedback,
   getAllStudentHowSubmitTasks,
+  getAssignments,
   deleteAssignment,
 } from './class';
 
@@ -25,6 +27,8 @@ export {
   recommended,
   getAnnouncement,
   getFeedback,
+  getStats,
+  getAssignments,
   deleteAssignment,
   getAllStudentHowSubmitTasks,
   getClassStudents,
