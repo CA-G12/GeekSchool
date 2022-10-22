@@ -1,15 +1,25 @@
 import { Request, Response, NextFunction } from 'express';
-import { submittedAndNotSubmittedNum } from '../../queries';
+import { classStats } from '../../queries';
 import { CustomError } from '../../utils';
 
 const getStats = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const { classId } = req.params;
 
-    const submitted = await submittedAndNotSubmittedNum(classId, true);
-    const notSubmitted = await submittedAndNotSubmittedNum(classId, false);
+    const stats = await classStats(classId);
 
-    res.json({ msg: 'The data is sent successfully!', data: { submitted, notSubmitted } });
+    const submitted = stats['0'][0];
+    const notSubmitted = stats['1'][0];
+    const studentsNum = stats['2'][0];
+    const assignmentsNum = stats['3'][0];
+    const questionsNum = stats['4'][0];
+
+    res.json({
+      msg: 'The data is sent successfully!',
+      data: {
+        submitted, notSubmitted, studentsNum, assignmentsNum, questionsNum,
+      },
+    });
   } catch (error) {
     if (error.msg) {
       next(new CustomError(error.status, error.msg));
