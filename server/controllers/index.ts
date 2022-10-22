@@ -13,6 +13,7 @@ import {
   putAnswerQuestion,
   getClassStudents,
   getClassGrades,
+  deleteAssignment,
 } from './class';
 
 export {
@@ -23,6 +24,7 @@ export {
   notFound,
   recommended,
   getAnnouncement,
+  deleteAssignment,
   getAllStudentHowSubmitTasks,
   getClassStudents,
   getClassQuestions,
