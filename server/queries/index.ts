@@ -7,6 +7,8 @@ import {
   getClassStudentsQuery,
   getClassQuestionsQuery,
   getStudentTasksQuery,
+  getClassGradesQuery,
+  getActivitiesQuery,
 } from './class';
 
 import loginQuery from './loginQuery';
@@ -28,4 +30,6 @@ export {
   getClassStudentsQuery,
   getClassQuestionsQuery,
   getStudentTasksQuery,
+  getClassGradesQuery,
+  getActivitiesQuery,
 };
