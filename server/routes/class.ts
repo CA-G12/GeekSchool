@@ -1,6 +1,6 @@
-import { userAuth, studentAndTeacher } from '../middlewares';
+import { userAuth, studentAndTeacher, teacherAuth } from '../middlewares';
 import {
-  getAnnouncement, getClassStudents, recommended, getClassQuestions,
+  getAnnouncement, getClassStudents, recommended, getClassQuestions, postRecommendation,
 } from '../controllers';
 
 const classRouter = require('express').Router();
@@ -11,5 +11,7 @@ classRouter.get('/class/:classId/announcement', userAuth, studentAndTeacher, get
 classRouter.get('/class/:classId/students', userAuth, studentAndTeacher, getClassStudents);
 
 classRouter.get('/class/:classId/questions', userAuth, studentAndTeacher, getClassQuestions);
+
+classRouter.post('/class/:classId/recommended', userAuth, teacherAuth, postRecommendation);
 
 export default classRouter;
