@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-// /* eslint-disable no-undef */
-import supertest from 'supertest';
-
-import buildModel from '../database/build';
-import app from '../app';
-
-jest.setTimeout(20000);
-
-beforeAll(async () => {
-  await buildModel();
-});
-=======
 /* eslint-disable no-undef */
 import supertest from 'supertest';
 import sequelize from '../database/connection';
@@ -21,7 +8,6 @@ jest.setTimeout(20000);
 
 beforeAll(() => buildModel());
 afterAll(() => sequelize.close());
->>>>>>> c7ae98588d7ab722dd34af47f2f36ce5040e4ae4
 
 describe('Testing signup route', () => {
   test('dummy test', () => {

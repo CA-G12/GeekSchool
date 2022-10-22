@@ -38,5 +38,4 @@ classRouter.put('/:classId/questions/:questionId', userAuth, teacherAuth, putAns
 classRouter.delete('/assignment/:id', userAuth, teacherAuth, deleteAssignment);
 classRouter.get('/:classId/assignments', userAuth, studentAndTeacher, getAssignments);
 
-
 export default classRouter;
