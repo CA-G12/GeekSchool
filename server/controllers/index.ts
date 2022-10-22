@@ -4,6 +4,7 @@ import {
 import { serverError, notFound } from './errors';
 
 import {
+  getStats,
   recommended,
   getAnnouncement,
   getClassQuestions,
@@ -14,6 +15,8 @@ import {
   getClassStudents,
   getAllStudentWhoSubmitTasks,
   deleteStudentFromClass,
+  getAssignments,
+  deleteAssignment,
 } from './class';
 
 export {
@@ -26,6 +29,9 @@ export {
   getAnnouncement,
   deleteStudentFromClass,
   getAllStudentWhoSubmitTasks,
+  getStats,
+  getAssignments,
+  deleteAssignment,
   getClassStudents,
   getClassQuestions,
   putAnswerQuestion,
