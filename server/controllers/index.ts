@@ -8,6 +8,8 @@ import {
   recommended,
   getAnnouncement,
   getClassQuestions,
+  putAssignmentTeacher,
+  putAssignmentStudent,
   addAnnouncement,
   putAnswerQuestion,
   getClassStudents,
@@ -27,5 +29,7 @@ export {
   getClassQuestions,
   putAnswerQuestion,
   login,
+  putAssignmentTeacher,
+  putAssignmentStudent,
   addAnnouncement,
 };

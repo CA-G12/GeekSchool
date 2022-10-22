@@ -4,8 +4,8 @@ import {
   userAuth,
   studentAndTeacher,
   teacherAuth,
+  studentAuth,
 } from '../middlewares';
-
 import {
   getStats,
   getAnnouncement,
@@ -15,6 +15,8 @@ import {
   getAllStudentHowSubmitTasks,
   addAnnouncement,
   putAnswerQuestion,
+  putAssignmentTeacher,
+  putAssignmentStudent,
 } from '../controllers';
 
 const classRouter = Router();
@@ -27,5 +29,7 @@ classRouter.get('/:classId/students', userAuth, studentAndTeacher, getClassStude
 classRouter.get('/:classId/assignment/:assignmentId/students', userAuth, teacherAuth, getAllStudentHowSubmitTasks);
 classRouter.post('/:classId/announcement', userAuth, teacherAuth, addAnnouncement);
 classRouter.put('/:classId/questions/:questionId', userAuth, teacherAuth, putAnswerQuestion);
+classRouter.put('/:classId/assignment/teachers/:assignmentId', userAuth, teacherAuth, putAssignmentTeacher);
+classRouter.put('/:classId/assignment/students/:assignmentId', userAuth, studentAuth, putAssignmentStudent);
 
 export default classRouter;
