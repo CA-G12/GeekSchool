@@ -6,11 +6,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon ./server/index.ts",
     "start": "cross-env NODE_ENV=production ts-node ./server/index.ts",
-<<<<<<< HEAD
     "test": "cross-env NODE_ENV=test jest --runInBand server/__test__/",
-=======
-    "test": "cross-env NODE_ENV=test jest --runInBand server/__test__",
->>>>>>> c7ae98588d7ab722dd34af47f2f36ce5040e4ae4
     "lint": "eslint --ext .ts server/",
     "lint-fix": "eslint --ext .ts server/ --fix && cd client && npm run lint-fix",
     "lint:client": "cd client && npm run lint",
