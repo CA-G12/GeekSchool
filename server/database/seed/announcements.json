@@ -1,4 +1,5 @@
 [
+<<<<<<< HEAD
     {        "class_id": 1,
         "description": "Maecenas ut massa quis augue luctus tincidunt."
     },
@@ -24,6 +25,42 @@
         "description": "Aenean fermentum."
     },
     {        "class_id": 9,
+=======
+    {
+        "class_id": 1,
+        "description": "Maecenas ut massa quis augue luctus tincidunt."
+    },
+    {
+        "class_id": 2,
+        "description": "Integer ac leo."
+    },
+    {
+        "class_id": 3,
+        "description": "Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla."
+    },
+    {
+        "class_id": 4,
+        "description": "Donec vitae nisi."
+    },
+    {
+        "class_id": 5,
+        "description": "Praesent id massa id nisl venenatis lacinia."
+    },
+    {
+        "class_id": 6,
+        "description": "Integer non velit."
+    },
+    {
+        "class_id": 7,
+        "description": "Proin eu mi."
+    },
+    {
+        "class_id": 8,
+        "description": "Aenean fermentum."
+    },
+    {
+        "class_id": 9,
+>>>>>>> a4668df13172428d72233a9d963b04c2ff6b2d98
         "description": "Phasellus sit amet erat."
     },
     {

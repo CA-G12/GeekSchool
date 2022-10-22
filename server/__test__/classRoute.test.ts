@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import supertest from 'supertest';
 import { sequelize } from '../models';
 import buildSeed from '../database/seed';

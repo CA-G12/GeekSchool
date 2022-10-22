@@ -2,8 +2,11 @@ import {
   classStats,
   getAnnouncementQuery,
   recommendedQueries,
+  addAnnouncementQuery,
+  putAnswerQuestionQuery,
   getClassStudentsQuery,
   getClassQuestionsQuery,
+  getStudentTasksQuery,
 } from './class';
 import { createUser, findUserByEmail } from './userQueries';
 
@@ -22,6 +25,9 @@ export {
   getAnnouncementQuery,
   recommendedQueries,
   loginQuery,
+  addAnnouncementQuery,
+  putAnswerQuestionQuery,
   getClassStudentsQuery,
   getClassQuestionsQuery,
+  getStudentTasksQuery,
 };
