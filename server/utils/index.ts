@@ -3,7 +3,7 @@ import {
   UserRequestInterface, CustomRequest, PayloadInterface, UserTableInterface,
 } from './interfaces';
 import {
-  userValidation, parentValidation, loginValidate,
+  userValidation, parentValidation, loginValidate, recommendationValidation,
 } from './validation';
 import { signToken, verifyToken } from './jwt';
 
@@ -18,4 +18,5 @@ export {
   signToken,
   verifyToken,
   loginValidate,
+  recommendationValidation,
 };
