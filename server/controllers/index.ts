@@ -6,6 +6,7 @@ import {
   recommended,
   getAnnouncement,
   getClassQuestions,
+  addAnnouncement,
   putAnswerQuestion,
   getClassStudents,
 } from './class';
@@ -22,4 +23,5 @@ export {
   getClassQuestions,
   putAnswerQuestion,
   login,
+  addAnnouncement,
 };
