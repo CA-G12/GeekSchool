@@ -6,6 +6,7 @@ import {
   putAnswerQuestionQuery,
   getClassStudentsQuery,
   getClassQuestionsQuery,
+  getStudentTasksQuery,
 } from './class';
 
 import loginQuery from './loginQuery';
@@ -26,4 +27,5 @@ export {
   putAnswerQuestionQuery,
   getClassStudentsQuery,
   getClassQuestionsQuery,
+  getStudentTasksQuery,
 };

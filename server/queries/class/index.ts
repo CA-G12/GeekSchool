@@ -4,6 +4,7 @@ import recommendedQueries from './recommendedQueries';
 import addAnnouncementQuery from './addAnnouncementQuery';
 import putAnswerQuestionQuery from './putQuestionQuery';
 import getClassQuestionsQuery from './getClassQuestionsQuery';
+import getStudentTasksQuery from './getStudentTasksQuery';
 
 export {
   getClassStudentsQuery,
@@ -12,4 +13,5 @@ export {
   recommendedQueries,
   addAnnouncementQuery,
   putAnswerQuestionQuery,
+  getStudentTasksQuery,
 };
