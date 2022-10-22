@@ -1,5 +1,14 @@
 import { createUser, findUserByEmail } from './userQueries';
-import { getAnnouncementQuery, recommendedQueries, deleteAssignmentQuery } from './class';
+import {
+  getAnnouncementQuery,
+  recommendedQueries,
+  addAnnouncementQuery,
+  putAnswerQuestionQuery,
+  getClassStudentsQuery,
+  getClassQuestionsQuery,
+  getStudentTasksQuery,
+  deleteAssignmentQuery,
+} from './class';
 
 import loginQuery from './loginQuery';
 import createParent from './parentQueries';
@@ -16,4 +25,9 @@ export {
   recommendedQueries,
   loginQuery,
   deleteAssignmentQuery,
+  addAnnouncementQuery,
+  putAnswerQuestionQuery,
+  getClassStudentsQuery,
+  getClassQuestionsQuery,
+  getStudentTasksQuery,
 };
