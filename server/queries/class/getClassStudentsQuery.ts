@@ -6,7 +6,7 @@ const getClassStudentsQuery = (classId: string) => ClassStudent.findAll(
   {
     raw: true,
     nest: false,
-    attributes: { exclude: ['id', 'createdAt', 'updatedAt', 'class_id', 'student_id'] },
+    attributes: { exclude: ['id', 'createdAt', 'updatedAt', 'class_id'] },
     where: { class_id: classId },
     include: [{
       model: Student,
