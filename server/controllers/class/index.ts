@@ -1,7 +1,9 @@
+import addNewAssignment from './addNewAssignment';
 import addNewFeedback from './addNewFeedback';
 import deleteStudentFromClass from './deleteStudentFromClass';
 import getClassStudents from './getClassStudents';
 import getAnnouncement from './getAnnouncement';
+import getFeedback from './getFeedback';
 import getStats from './getStats';
 import recommended from './recommended';
 import getClassQuestions from './getClassQuestions';
@@ -16,10 +18,12 @@ import postQuestion from './postQuestion';
 import getClassGrades from './getClassGrades';
 
 export {
+  addNewAssignment,
   getClassStudents,
   getAnnouncement,
   getClassQuestions,
   recommended,
+  getFeedback,
   addNewFeedback,
   deleteStudentFromClass,
   getStats,

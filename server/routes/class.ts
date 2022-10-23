@@ -11,12 +11,14 @@ import {
   getStats,
   getAnnouncement,
   recommended,
+  addNewAssignment,
   getClassQuestions,
   getClassStudents,
   getAllStudentWhoSubmitTasks,
   putAssignmentTeacher,
   putAssignmentStudent,
   getClassGrades,
+  getFeedback,
   addNewFeedback,
   deleteStudentFromClass,
   deleteAssignment,
@@ -28,10 +30,11 @@ import {
 
 const classRouter = Router();
 
-classRouter.get('/:classId/recommended', userAuth, studentAndTeacher, recommended);
 classRouter.get('/:classId/statistics', userAuth, teacherAuth, getStats);
-classRouter.get('/:classId/assignment/:assignmentId/students', userAuth, teacherAuth, getAllStudentWhoSubmitTasks);
 classRouter.get('/:classId/announcement', userAuth, studentAndTeacher, getAnnouncement);
+classRouter.post('/:classId/assignment', userAuth, teacherAuth, addNewAssignment);
+classRouter.get('/:classId/recommended', userAuth, studentAndTeacher, recommended);
+classRouter.get('/:classId/assignment/:assignmentId/students', userAuth, teacherAuth, getAllStudentWhoSubmitTasks);
 classRouter.put('/:classId/assignment/teachers/:assignmentId', userAuth, teacherAuth, putAssignmentTeacher);
 classRouter.put('/:classId/assignment/students/:assignmentId', userAuth, studentAuth, putAssignmentStudent);
 classRouter.get('/:classId/students', userAuth, studentAndTeacher, getClassStudents);
@@ -42,8 +45,11 @@ classRouter.get('/:classId/grades', getClassGrades);
 
 classRouter.post('/:classId/announcement', userAuth, teacherAuth, addAnnouncement);
 classRouter.put('/:classId/questions/:questionId', userAuth, teacherAuth, putAnswerQuestion);
-classRouter.post('/:classId/questions', userAuth, studentAuth, postQuestion);
+classRouter.get('/:classId/feedback', userAuth, teacherAuth, getFeedback);
 classRouter.post('/:classId/feedback', userAuth, studentAuth, addNewFeedback);
 classRouter.delete('/:classId/student', userAuth, teacherAuth, deleteStudentFromClass);
+classRouter.delete('/assignment/:id', userAuth, teacherAuth, deleteAssignment);
+classRouter.post('/:classId/questions', userAuth, studentAuth, postQuestion);
+classRouter.get('/:classId/assignments', userAuth, studentAndTeacher, getAssignments);
 
 export default classRouter;

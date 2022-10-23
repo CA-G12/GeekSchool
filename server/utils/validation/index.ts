@@ -1,5 +1,6 @@
 import userValidation from './userValidation';
 import parentValidation from './parentValidation';
+import addNewAssignmentValidation from './newAssignmentValidation';
 import loginValidate from './loginValidate';
 import addNewFeedbackValidation from './addNewFeedbackValidation';
 import deleteStudentFromClassValidation from './deleteStudentFromClassValidation';
@@ -12,6 +13,7 @@ import postQuestionValidate from './postQuestionValidate';
 export {
   userValidation,
   parentValidation,
+  addNewAssignmentValidation,
   loginValidate,
   addNewFeedbackValidation,
   deleteStudentFromClassValidation,
