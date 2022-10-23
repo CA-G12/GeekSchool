@@ -1,4 +1,5 @@
 import getAnnouncementQuery from './getAnnouncementQuery';
+import getClassFeedbackQuery from './getClassFeedbackQuery';
 import addNewFeedbackQuery from './addNewFeedback';
 import getClassQuestionsQuery from './getClassQuestionsQuery';
 import deleteStudentFromClassQuery from './deleteStudentQuery';
@@ -21,6 +22,7 @@ export {
   putAssignmentTeacherQuery,
   putAssignmentStudentQuery,
   recommendedQueries,
+  getClassFeedbackQuery,
   addNewFeedbackQuery,
   deleteStudentFromClassQuery,
   classStats,
