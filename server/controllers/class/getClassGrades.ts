@@ -9,14 +9,16 @@ const getClassGrades = async (req: Request, res: Response, next: NextFunction) =
     const data = await getClassGradesQuery(classId);
 
     const activities = await getActivitiesQuery(classId);
-    console.log(activities);
+    console.log(data);
     console.log({
       data: data.length,
       activities: activities.length,
     });
 
-    res.status(200).json({ msg: 'success', activities });
+    res.status(200).json({ msg: 'success', data });
   } catch (error) {
+    console.log(error);
+
     next(error);
   }
 };

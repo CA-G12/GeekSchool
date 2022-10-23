@@ -38,7 +38,7 @@ classRouter.get('/:classId/students', userAuth, studentAndTeacher, getClassStude
 classRouter.get('/:classId/questions', userAuth, studentAndTeacher, getClassQuestions);
 classRouter.get('/:classId/assignments', userAuth, studentAndTeacher, getAssignments);
 classRouter.delete('/assignment/:id', userAuth, teacherAuth, deleteAssignment);
-classRouter.get('/class/:classId/grades', getClassGrades);
+classRouter.get('/:classId/grades', getClassGrades);
 
 classRouter.post('/:classId/announcement', userAuth, teacherAuth, addAnnouncement);
 classRouter.put('/:classId/questions/:questionId', userAuth, teacherAuth, putAnswerQuestion);
