@@ -30,6 +30,7 @@
     align-items: center;
 }
 .question_input .answer{
+    flex: 1;
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
