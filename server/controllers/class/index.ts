@@ -1,3 +1,4 @@
+import addNewAssignment from './addNewAssignment';
 import addNewFeedback from './addNewFeedback';
 import deleteStudentFromClass from './deleteStudentFromClass';
 import getClassStudents from './getClassStudents';
@@ -16,6 +17,7 @@ import getAllStudentWhoSubmitTasks from './getAllStudentWhoSubmitTasks';
 import postQuestion from './postQuestion';
 
 export {
+  addNewAssignment,
   getClassStudents,
   getAnnouncement,
   getClassQuestions,
