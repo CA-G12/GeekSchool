@@ -37,26 +37,25 @@ const AddTest: React.FC = () => {
     };
 
     try {
-      await axios
-        .post(
-          "/api/v1/class/test",
-          {
-            ...values,
-          },
-          {
-            cancelToken: source.token,
-          }
-        );
-        await Swal.fire({
-          title: "The test is added successfully!",
-          showClass: {
-            popup: "animate__animated animate__fadeInDown",
-          },
-          hideClass: {
-            popup: "animate__animated animate__fadeOutUp",
-          },
-        });
-        source.cancel();
+      await axios.post(
+        "/api/v1/class/test",
+        {
+          ...values,
+        },
+        {
+          cancelToken: source.token,
+        }
+      );
+      await Swal.fire({
+        title: "The test is added successfully!",
+        showClass: {
+          popup: "animate__animated animate__fadeInDown",
+        },
+        hideClass: {
+          popup: "animate__animated animate__fadeOutUp",
+        },
+      });
+      source.cancel();
     } catch (error: any) {
       Swal.fire({
         icon: "error",
@@ -69,78 +68,78 @@ const AddTest: React.FC = () => {
   };
 
   return (
-  <>
-      {
-      isShown && <section className="add-test-cont">
-      <Form
-        wrapperCol={layout.wrapperCol}
-        labelCol={layout.labelCol}
-        name="nest-messages"
-        onFinish={onFinish}
-        validateMessages={validateMessages}
-        className="add-test-form"
-      >
-        <CloseSquareOutlined
-          className="close-icon"
-          onClick={() => setIsShown(false)}
-        />
-        <Form.Item
-          name="exam-title"
-          label="Exam title: "
-          rules={[{ required: true }]}
-          className="form-item"
-        >
-          <Input className="input" />
-        </Form.Item>
-        <Form.Item
-          name="exam-date"
-          label="Exam date: "
-          rules={config.rules}
-          className="form-item"
-        >
-          <DatePicker
-            className="input date-picker"
-            showTime
-            format="YYYY-MM-DD HH:mm:ss"
-          />
-        </Form.Item>
-        <Form.Item
-          name="exam-notes"
-          label="Extra notes: "
-          className="form-item"
-        >
-          <Input.TextArea className="textarea" />
-        </Form.Item>
-        <Form.Item
-          wrapperCol={{ ...layout.wrapperCol, offset: 8 }}
-          style={{
-            width: "42%",
-            display: "flex",
-            justifyContent: "flex-end",
-          }}
-        >
-          <Button
-            type="primary"
-            htmlType="submit"
-            style={{
-              width: "196px",
-              height: "50px",
-              backgroundColor: "#0CBE8A",
-              border: "1px solid #0CBE8A",
-              borderRadius: "8px",
-              fontSize: "x-large",
-              fontWeight: "bold",
-              boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.25)",
-            }}
+    <>
+      {isShown && (
+        <section className="add-test-cont">
+          <Form
+            wrapperCol={layout.wrapperCol}
+            labelCol={layout.labelCol}
+            name="nest-messages"
+            onFinish={onFinish}
+            validateMessages={validateMessages}
+            className="add-test-form"
           >
-            Add exam
-          </Button>
-        </Form.Item>
-      </Form>
-    </section>
-    }
-    <div />
-  </>
+            <CloseSquareOutlined
+              className="close-icon"
+              onClick={() => setIsShown(false)}
+            />
+            <Form.Item
+              name="exam-title"
+              label="Exam title: "
+              rules={[{ required: true }]}
+              className="form-item"
+            >
+              <Input className="input" />
+            </Form.Item>
+            <Form.Item
+              name="exam-date"
+              label="Exam date: "
+              rules={config.rules}
+              className="form-item"
+            >
+              <DatePicker
+                className="input date-picker"
+                showTime
+                format="YYYY-MM-DD HH:mm:ss"
+              />
+            </Form.Item>
+            <Form.Item
+              name="exam-notes"
+              label="Extra notes: "
+              className="form-item"
+            >
+              <Input.TextArea className="textarea" />
+            </Form.Item>
+            <Form.Item
+              wrapperCol={{ ...layout.wrapperCol, offset: 8 }}
+              style={{
+                width: "42%",
+                display: "flex",
+                justifyContent: "flex-end",
+              }}
+            >
+              <Button
+                type="primary"
+                htmlType="submit"
+                style={{
+                  width: "196px",
+                  height: "50px",
+                  backgroundColor: "#0CBE8A",
+                  border: "1px solid #0CBE8A",
+                  borderRadius: "8px",
+                  fontSize: "x-large",
+                  fontWeight: "bold",
+                  boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.25)",
+                }}
+              >
+                Add exam
+              </Button>
+            </Form.Item>
+          </Form>
+        </section>
+      )}
+      <div />
+    </>
   );
 };
 
