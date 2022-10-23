@@ -18,6 +18,7 @@ import {
   deleteStudentFromClass,
   getAssignments,
   deleteAssignment,
+  postQuestion,
 } from './class';
 
 export {
@@ -29,8 +30,9 @@ export {
   recommended,
   getAnnouncement,
   addNewFeedback,
-  getAllStudentWhoSubmitTasks,
+  postQuestion,
   deleteStudentFromClass,
+  getAllStudentWhoSubmitTasks,
   getStats,
   getAssignments,
   deleteAssignment,

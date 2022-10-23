@@ -11,7 +11,8 @@ import putAssignmentTeacher from './putAssignmentTeacher';
 import putAssignmentStudent from './putAssignmentStudent';
 import addAnnouncement from './addAnnouncement';
 import putAnswerQuestion from './putAnswerQuestion';
-import getAllStudentWhoSubmitTasks from './getAllStudentHowSubmitTasks';
+import getAllStudentWhoSubmitTasks from './getAllStudentWhoSubmitTasks';
+import postQuestion from './postQuestion';
 
 export {
   getClassStudents,
@@ -28,4 +29,5 @@ export {
   putAnswerQuestion,
   getAllStudentWhoSubmitTasks,
   getAssignments,
+  postQuestion,
 };
