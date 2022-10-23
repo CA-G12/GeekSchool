@@ -18,6 +18,7 @@ import {
   addAnnouncementValidate,
   putAnswerQuestionValidate,
   postQuestionValidate,
+  recommendationValidation,
 } from './validation';
 import { signToken, verifyToken } from './jwt';
 
@@ -34,6 +35,7 @@ export {
   signToken,
   verifyToken,
   loginValidate,
+  recommendationValidation,
   deleteStudentFromClassValidation,
   announcementInterface,
   addAnnouncementValidate,

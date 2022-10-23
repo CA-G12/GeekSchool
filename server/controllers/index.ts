@@ -20,6 +20,7 @@ import {
   getAssignments,
   deleteAssignment,
   postQuestion,
+  postRecommendation,
 } from './class';
 
 export {
@@ -43,6 +44,7 @@ export {
   getClassQuestions,
   putAnswerQuestion,
   login,
+  postRecommendation,
   putAssignmentTeacher,
   putAssignmentStudent,
   addAnnouncement,

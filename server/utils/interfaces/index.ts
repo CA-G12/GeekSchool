@@ -4,6 +4,7 @@ import PayloadInterface from './payloadInterface';
 import UserValInterface from './userValInterface';
 import UserTableInterface from './userTabelInterface';
 import loginValidateInterface from './auth';
+import recommendationInterface from './recommendationInterface';
 import addNewFeedbackInterface from './addNewFeedbackInterface';
 import updateGradPayloadInterface from './updateGradPayloadInterface';
 import updateAssignmentPayloadInterface from './updateAssignmentPayloadInterface';
@@ -16,6 +17,7 @@ export {
   UserValInterface,
   UserTableInterface,
   loginValidateInterface,
+  recommendationInterface,
   addNewFeedbackInterface,
   announcementInterface,
   answerInterface,
