@@ -6,6 +6,7 @@ import updateGradPayloadValidate from './updateGradPayloadValidate';
 import updateAssignmentPayloadValidate from './updateAssignmentPayloadValidate';
 import addAnnouncementValidate from './addAnnouncementValidate';
 import putAnswerQuestionValidate from './putAnswerQuestionValidate';
+import postQuestionValidate from './postQuestionValidate';
 
 export {
   userValidation,
@@ -16,4 +17,5 @@ export {
   updateAssignmentPayloadValidate,
   addAnnouncementValidate,
   putAnswerQuestionValidate,
+  postQuestionValidate,
 };

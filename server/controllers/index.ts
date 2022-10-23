@@ -17,6 +17,8 @@ import {
   deleteStudentFromClass,
   getAssignments,
   deleteAssignment,
+  postQuestion,
+
 } from './class';
 
 export {
@@ -27,6 +29,7 @@ export {
   notFound,
   recommended,
   getAnnouncement,
+  postQuestion,
   deleteStudentFromClass,
   getAllStudentWhoSubmitTasks,
   getStats,

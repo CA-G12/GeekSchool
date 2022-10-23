@@ -37,6 +37,23 @@ describe('Testing class routes', () => {
       });
   });
 
+  test('Should add a new question', (done) => {
+    supertest(app)
+      .post('/api/v1/class/1/questions')
+      .set('Cookie', [
+        'token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3R1ZGVudCIsIm5hbWUiOiJKb2huIERvZSIsImlkIjoxNTE2MjM5MDIyfQ.ivV7KczMBPLI6JBiY7oAXlcfPuaTVNtd71aTrtgZa8A',
+      ])
+      .send({
+        question: 'new question',
+      })
+      .expect(201)
+      .expect('Content-Type', /json/)
+      .end((err, res) => {
+        if (err) return done(err);
+        expect(res.body.msg).toBe('added question successfully');
+        return done();
+      });
+  });
   test('should return Unauthenticated', (done) => {
     supertest(app)
       .get('/api/v1/class/1/students')
