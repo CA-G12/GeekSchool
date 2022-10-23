@@ -1,12 +1,13 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider, Link } from "react-router-dom";
 import { ConfigProvider } from "antd";
-
+import Feedback from "./components/Class/Feedback/Feedback";
 import "./i18n/config.js";
 import StatsDummy from "./components/StatsDummy/Dummy";
 import { UserAuthProvider } from "./context/AuthContext";
 import Class from "./components/Class/Class";
 import "antd/dist/antd.variable.min.css";
+import "./App.css";
 
 ConfigProvider.config({
   theme: {
@@ -41,7 +42,7 @@ const router = createBrowserRouter([
       },
       {
         path: "feedback",
-        element: <h1>Feedback</h1>,
+        element: <Feedback />,
       },
       {
         path: "recommended",
