@@ -9,6 +9,7 @@ import {
 } from './interfaces';
 import {
   addNewFeedbackValidation,
+  deleteStudentFromClassValidation,
   userValidation,
   parentValidation,
   loginValidate,
@@ -29,6 +30,7 @@ export {
   signToken,
   verifyToken,
   loginValidate,
+  deleteStudentFromClassValidation,
   announcementInterface,
   addAnnouncementValidate,
   answerInterface,

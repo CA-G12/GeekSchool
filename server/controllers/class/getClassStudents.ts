@@ -1,7 +1,7 @@
-import { NextFunction, Request, Response } from 'express';
+import { NextFunction, Response } from 'express';
 import { getClassStudentsQuery } from '../../queries';
 
-const getClassStudents = async (req: Request, res: Response, next: NextFunction) => {
+const getClassStudents = async (req: any, res: Response, next: NextFunction) => {
   try {
     const { classId } = req.params;
     const data = await getClassStudentsQuery(classId);
