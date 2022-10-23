@@ -9,7 +9,7 @@ const postTest = async (req: Request, res:Response, next: NextFunction) => {
     await testValidation({
       classId, title, notes, date,
     });
-    await postTestQuery(Number(classId), title, notes, date);
+    await postTestQuery(classId, title, notes, date);
     res.status(201).json({ msg: 'Test added successfully' });
   } catch (error) {
     if (error.name === 'ValidationError') {

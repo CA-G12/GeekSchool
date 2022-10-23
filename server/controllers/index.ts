@@ -2,7 +2,6 @@ import {
   signup, logout, userData, login,
 } from './auth';
 import { serverError, notFound } from './errors';
-
 import {
   getStats,
   recommended,
@@ -15,6 +14,7 @@ import {
   addNewFeedback,
   getClassStudents,
   postTest,
+  getFeedback,
   getAllStudentWhoSubmitTasks,
   deleteStudentFromClass,
   getAssignments,
@@ -30,6 +30,7 @@ export {
   notFound,
   recommended,
   getAnnouncement,
+  getFeedback,
   addNewFeedback,
   postQuestion,
   deleteStudentFromClass,

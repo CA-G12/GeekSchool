@@ -11,6 +11,7 @@ import {
   getClassStudentsQuery,
   getStudentTasksQuery,
   postTestQuery,
+  getClassFeedbackQuery,
   deleteStudentFromClassQuery,
   deleteAssignmentQuery,
 } from './class';
@@ -30,6 +31,7 @@ export {
   addNewFeedbackQuery,
   classStats,
   getAnnouncementQuery,
+  getClassFeedbackQuery,
   studentAssignmentQuery,
   teacherAssignmentQuery,
   recommendedQueries,
