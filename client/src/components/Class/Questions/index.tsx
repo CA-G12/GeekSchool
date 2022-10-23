@@ -1,12 +1,10 @@
 import { FC } from "react";
 import { Input, Button } from "antd";
-// import DashboardLayout from "../../components/Layout/DashboardLayout";
 import "./style.css";
 
 type Props = {};
 
 const Grades: FC<Props> = () => (
-  // <DashboardLayout>
   <>
     <h1 className="title">Questions</h1>
     <div className="question_card">
@@ -44,7 +42,6 @@ const Grades: FC<Props> = () => (
       </div>
     </div>
   </>
-  // </DashboardLayout>
 );
 
 export default Grades;
