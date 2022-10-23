@@ -4,7 +4,7 @@ import { ConfigProvider } from "antd";
 
 import "./i18n/config.js";
 import StatsDummy from "./components/StatsDummy/Dummy";
-import Question from './components/Class/Questions'
+import Question from "./components/Class/Questions";
 import { UserAuthProvider } from "./context/AuthContext";
 import Class from "./components/Class";
 import "antd/dist/antd.variable.min.css";
