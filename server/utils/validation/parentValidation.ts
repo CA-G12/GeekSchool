@@ -4,7 +4,7 @@ const parentValidation = (body: {
   children: Array<string> | undefined,
 }) => {
   const schema = Joi.object({
-    children: Joi.array().items(Joi.string()).required(),
+    children: Joi.array().required(),
   });
 
   return schema.validateAsync(body);

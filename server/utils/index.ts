@@ -6,14 +6,18 @@ import {
   UserTableInterface,
   announcementInterface,
   answerInterface,
+  postQuestionInterface,
 } from './interfaces';
 import {
   addNewAssignmentValidation,
+  addNewFeedbackValidation,
+  deleteStudentFromClassValidation,
   userValidation,
   parentValidation,
   loginValidate,
   addAnnouncementValidate,
   putAnswerQuestionValidate,
+  postQuestionValidate,
 } from './validation';
 import { signToken, verifyToken } from './jwt';
 
@@ -26,11 +30,15 @@ export {
   userValidation,
   parentValidation,
   addNewAssignmentValidation,
+  addNewFeedbackValidation,
   signToken,
   verifyToken,
   loginValidate,
+  deleteStudentFromClassValidation,
   announcementInterface,
   addAnnouncementValidate,
   answerInterface,
   putAnswerQuestionValidate,
+  postQuestionValidate,
+  postQuestionInterface,
 };
