@@ -1,5 +1,5 @@
 import { UserAuthProvider } from "./context/AuthContext";
-import AssignmentModal from './components/AssignmentModal'
+import AssignmentModal from "./components/AssignmentModal";
 
 const App = () => (
   <UserAuthProvider>
