@@ -30,9 +30,9 @@ const AddTest: React.FC = () => {
 
   const onFinish = async (fieldValues: any) => {
     const values = {
-      testTitle: fieldValues["exam-title"],
-      testDate: fieldValues["exam-date"].format("YYYY-MM-DD HH:mm:ss"),
-      testNotes: fieldValues["exam-notes"],
+      title: fieldValues["exam-title"],
+      date: fieldValues["exam-date"].format("YYYY-MM-DD HH:mm:ss"),
+      notes: fieldValues["exam-notes"],
     };
 
     try {
