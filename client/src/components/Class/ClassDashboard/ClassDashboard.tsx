@@ -6,6 +6,7 @@ import {
   DeliveredProcedureOutlined,
   CarryOutOutlined,
   BellFilled,
+  FormOutlined 
 } from "@ant-design/icons";
 import React, { useState } from "react";
 import { Outlet, NavLink } from "react-router-dom";
@@ -93,6 +94,7 @@ const items2: MenuProps["items"] = [
   QuestionCircleOutlined,
   DeliveredProcedureOutlined,
   CarryOutOutlined,
+  FormOutlined,
 ].map((Icon, index) => {
   const key: string = String(index + 1);
 
