@@ -1,4 +1,5 @@
 import {
+  addNewFeedbackQuery,
   classStats,
   getAnnouncementQuery,
   recommendedQueries,
@@ -10,6 +11,7 @@ import {
   getClassStudentsQuery,
   getStudentTasksQuery,
   getClassFeedbackQuery,
+  deleteStudentFromClassQuery,
   deleteAssignmentQuery,
 } from './class';
 import { createUser, findUserByEmail } from './userQueries';
@@ -25,6 +27,7 @@ export {
   createStudent,
   createTeacher,
   findUserByEmail,
+  addNewFeedbackQuery,
   classStats,
   getAnnouncementQuery,
   getClassFeedbackQuery,
@@ -33,6 +36,7 @@ export {
   getClassQuestionsQuery,
   recommendedQueries,
   loginQuery,
+  deleteStudentFromClassQuery,
   deleteAssignmentQuery,
   addAnnouncementQuery,
   putAnswerQuestionQuery,
