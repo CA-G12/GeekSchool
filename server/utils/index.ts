@@ -9,6 +9,7 @@ import {
   postQuestionInterface,
 } from './interfaces';
 import {
+  addNewFeedbackValidation,
   deleteStudentFromClassValidation,
   userValidation,
   parentValidation,
@@ -27,6 +28,7 @@ export {
   UserTableInterface,
   userValidation,
   parentValidation,
+  addNewFeedbackValidation,
   signToken,
   verifyToken,
   loginValidate,
