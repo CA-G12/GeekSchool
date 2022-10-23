@@ -1,8 +1,8 @@
 import { NextFunction, Response } from 'express';
 import { addAnnouncementQuery } from '../../queries';
-import { CustomError, CustomRequest, addAnnouncementValidate } from '../../utils';
+import { CustomError, addAnnouncementValidate } from '../../utils';
 
-const addAnnouncement = async (req: CustomRequest, res: Response, next: NextFunction) => {
+const addAnnouncement = async (req: any, res: Response, next: NextFunction) => {
   try {
     const { classId } = req.params;
     const { description } = req.body;

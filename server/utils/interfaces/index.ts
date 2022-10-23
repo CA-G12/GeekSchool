@@ -4,8 +4,11 @@ import PayloadInterface from './payloadInterface';
 import UserValInterface from './userValInterface';
 import UserTableInterface from './userTabelInterface';
 import loginValidateInterface from './auth';
+import addNewFeedbackInterface from './addNewFeedbackInterface';
+import updateGradPayloadInterface from './updateGradPayloadInterface';
+import updateAssignmentPayloadInterface from './updateAssignmentPayloadInterface';
 import testInterface from './testInterface';
-import { announcementInterface, answerInterface } from './queryInterfaces';
+import { announcementInterface, answerInterface, postQuestionInterface } from './queryInterfaces';
 
 export {
   CustomRequest,
@@ -15,6 +18,10 @@ export {
   UserTableInterface,
   loginValidateInterface,
   testInterface,
+  addNewFeedbackInterface,
   announcementInterface,
   answerInterface,
+  updateGradPayloadInterface,
+  updateAssignmentPayloadInterface,
+  postQuestionInterface,
 };

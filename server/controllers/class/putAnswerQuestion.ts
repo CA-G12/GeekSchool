@@ -1,8 +1,8 @@
 import { NextFunction, Response } from 'express';
 import { putAnswerQuestionQuery } from '../../queries';
-import { CustomError, CustomRequest, putAnswerQuestionValidate } from '../../utils';
+import { CustomError, putAnswerQuestionValidate } from '../../utils';
 
-const putAnswerQuestion = async (req: CustomRequest, res: Response, next: NextFunction) => {
+const putAnswerQuestion = async (req: any, res: Response, next: NextFunction) => {
   try {
     const { classId, questionId } = req.params;
     const { answer } = req.body;

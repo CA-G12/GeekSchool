@@ -2,15 +2,24 @@ import {
   signup, logout, userData, login,
 } from './auth';
 import { serverError, notFound } from './errors';
-import getAllStudentHowSubmitTasks from './class/getAllStudentHowSubmitTasks';
+
 import {
+  getStats,
   recommended,
   getAnnouncement,
   getClassQuestions,
+  putAssignmentTeacher,
+  putAssignmentStudent,
   addAnnouncement,
   putAnswerQuestion,
+  addNewFeedback,
   getClassStudents,
   postTest,
+  getAllStudentWhoSubmitTasks,
+  deleteStudentFromClass,
+  getAssignments,
+  deleteAssignment,
+  postQuestion,
 } from './class';
 
 export {
@@ -21,11 +30,19 @@ export {
   notFound,
   recommended,
   getAnnouncement,
-  getAllStudentHowSubmitTasks,
+  addNewFeedback,
+  postQuestion,
+  deleteStudentFromClass,
+  getAllStudentWhoSubmitTasks,
+  getStats,
+  getAssignments,
+  deleteAssignment,
   getClassStudents,
   getClassQuestions,
   putAnswerQuestion,
   login,
   postTest,
+  putAssignmentTeacher,
+  putAssignmentStudent,
   addAnnouncement,
 };

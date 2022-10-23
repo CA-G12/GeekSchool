@@ -7,9 +7,10 @@ const userAuth = async (req: any, res: Response, next: NextFunction) => {
     const { token } = req.cookies;
 
     if (!token) {
-      throw new CustomError(401, 'Unauthenticated!'); // ? Token is invalid.
+      throw new CustomError(401, 'Unauthenticated'); // ? Token is invalid.
     }
     const user = await verifyToken(token);
+
     req.user = user;
     next();
   } catch (error) {
