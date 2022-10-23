@@ -6,9 +6,8 @@ import {
   DeliveredProcedureOutlined,
   CarryOutOutlined,
   BellFilled,
-  MenuOutlined,
 } from "@ant-design/icons";
-import React from "react";
+import React, { useState } from "react";
 import { Outlet, NavLink } from "react-router-dom";
 import type { MenuProps } from "antd";
 import { Breadcrumb, Layout, Menu } from "antd";
@@ -20,10 +19,11 @@ const { Header, Content, Sider } = Layout;
 
 const styles = {
   navLinks: {
-    width: "100%",
+    width: "80%",
     display: "flex",
-    justifyContent: "center",
+    justifyContent: "flex-start",
     alignItems: "center",
+    gap: '1rem',
   },
   navIcons: { fontSize: "1.5rem" },
   header: {
@@ -33,25 +33,12 @@ const styles = {
     gap: "3rem",
     backgroundColor: "#fff",
   },
-  headerFirstSection: {
-    width: "15rem",
-    height: "100%",
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
   headerSecondSection: {
     width: "6rem",
     height: "100%",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-  },
-  menuIcon: {
-    fontSize: "27px",
-    fontWeight: "bold",
-    height: "18px",
-    color: "#0CBE8A",
   },
   logo: { width: "10rem" },
   bellIcon: { fontSize: "23px", color: "#767672" },
@@ -88,6 +75,15 @@ const paths = [
   "/class/recommended",
 ];
 
+const labels = [
+  'Statistics',
+  'Students',
+  'Assignments',
+  'Questions',
+  'Feedback',
+  'Recommended',
+];
+
 const items2: MenuProps["items"] = [
   BarChartOutlined,
   UserOutlined,
@@ -103,49 +99,56 @@ const items2: MenuProps["items"] = [
     icon: (
       <NavLink to={paths[index]} style={styles.navLinks}>
         <Icon style={styles.navIcons} />
+        <p style={{ marginBottom: '-5px' }}>{labels[index]}</p>
       </NavLink>
     ),
   };
 });
 
-const ClassDashboard: React.FC = () => (
-  <Layout className="class-dashboard">
-    <Header className="header" style={styles.header}>
-      <section style={styles.headerFirstSection}>
-        <MenuOutlined style={styles.menuIcon} />
+const ClassDashboard: React.FC = () => {
+  const [collapsed, setCollapsed] = useState(false);
+
+  return (
+      <Layout className="class-dashboard">
+      <Header className="header" style={styles.header}>
         <img src={Logo} alt="Logo" style={styles.logo} />
-      </section>
-      <section style={{ ...styles.headerSecondSection, position: "relative" }}>
-        <BellFilled style={styles.bellIcon} />
-        <img src={Avatar} alt="avatar" />
-        <div
-          className="notification-dot"
-          style={{ ...styles.notificationsDot, position: "absolute" }}
-        />
-      </section>
-    </Header>
-    <Layout>
-      <Sider width={150} className="site-layout-background">
-        <Menu
-          mode="inline"
-          style={{ ...styles.navbar, flexDirection: "column" }}
-          items={items2}
-        />
-      </Sider>
-      <Layout style={styles.layout}>
-        <Breadcrumb style={styles.breadcrumb}>
-          <Breadcrumb.Item>Home</Breadcrumb.Item>
-          <Breadcrumb.Item>Class</Breadcrumb.Item>
-        </Breadcrumb>
-        <Content
+        <section style={{ ...styles.headerSecondSection, position: "relative" }}>
+          <BellFilled style={styles.bellIcon} />
+          <img src={Avatar} alt="avatar" />
+          <div
+            className="notification-dot"
+            style={{ ...styles.notificationsDot, position: "absolute" }}
+          />
+        </section>
+      </Header>
+      <Layout>
+        <Sider
+          collapsed={collapsed}
+          width={200}
           className="site-layout-background"
-          style={styles.layoutContent}
+          onCollapse={value => setCollapsed(value)}
         >
-          <Outlet />
-        </Content>
+          <Menu
+            mode="inline"
+            style={{ ...styles.navbar, flexDirection: "column" }}
+            items={items2}
+          />
+        </Sider>
+        <Layout style={styles.layout}>
+          <Breadcrumb style={styles.breadcrumb}>
+            <Breadcrumb.Item>Home</Breadcrumb.Item>
+            <Breadcrumb.Item>Class</Breadcrumb.Item>
+          </Breadcrumb>
+          <Content
+            className="site-layout-background"
+            style={styles.layoutContent}
+          >
+            <Outlet />
+          </Content>
+        </Layout>
       </Layout>
     </Layout>
-  </Layout>
-);
+  );
+};
 
 export default ClassDashboard;
