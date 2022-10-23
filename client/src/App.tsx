@@ -47,6 +47,10 @@ const router = createBrowserRouter([
         path: "recommended",
         element: <h1>Recommended</h1>,
       },
+      {
+        path: "grades",
+        element: <h1>grades</h1>,
+      },
     ],
   },
 ]);
