@@ -14,8 +14,4 @@ interface feedbackInterface {
   feedback: string;
 }
 
-export {
-  questionInterface,
-  recommendedInterface,
-  feedbackInterface
-}
+export { questionInterface, recommendedInterface, feedbackInterface };
