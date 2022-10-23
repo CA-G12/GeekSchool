@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { Button, Form, Input, DatePicker } from "antd";
@@ -26,6 +26,7 @@ const validateMessages = {
 };
 
 const AddTest: React.FC = () => {
+  const [isShown, setIsShown] = useState<boolean>(true);
   const source = axios.CancelToken.source();
 
   const onFinish = async (fieldValues: any) => {
@@ -45,28 +46,17 @@ const AddTest: React.FC = () => {
           {
             cancelToken: source.token,
           }
-        )
-        .then(() => {
-          Swal.fire({
-            title: "The test is added successfully!",
-            showClass: {
-              popup: "animate__animated animate__fadeInDown",
-            },
-            hideClass: {
-              popup: "animate__animated animate__fadeOutUp",
-            },
-          });
-          source.cancel();
-        })
-        .catch(() => {
-          Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: "Something went wrong!",
-            footer: '<a href="">Why do I have this issue?</a>',
-          });
-          source.cancel();
+        );
+        await Swal.fire({
+          title: "The test is added successfully!",
+          showClass: {
+            popup: "animate__animated animate__fadeInDown",
+          },
+          hideClass: {
+            popup: "animate__animated animate__fadeOutUp",
+          },
         });
+        source.cancel();
     } catch (error: any) {
       Swal.fire({
         icon: "error",
@@ -79,7 +69,9 @@ const AddTest: React.FC = () => {
   };
 
   return (
-    <section className="add-test-cont">
+  <>
+      {
+      isShown && <section className="add-test-cont">
       <Form
         wrapperCol={layout.wrapperCol}
         labelCol={layout.labelCol}
@@ -88,7 +80,10 @@ const AddTest: React.FC = () => {
         validateMessages={validateMessages}
         className="add-test-form"
       >
-        <CloseSquareOutlined className="close-icon" />
+        <CloseSquareOutlined
+          className="close-icon"
+          onClick={() => setIsShown(false)}
+        />
         <Form.Item
           name="exam-title"
           label="Exam title: "
@@ -119,7 +114,7 @@ const AddTest: React.FC = () => {
         <Form.Item
           wrapperCol={{ ...layout.wrapperCol, offset: 8 }}
           style={{
-            width: "52%",
+            width: "42%",
             display: "flex",
             justifyContent: "flex-end",
           }}
@@ -129,7 +124,7 @@ const AddTest: React.FC = () => {
             htmlType="submit"
             style={{
               width: "196px",
-              height: "66px",
+              height: "50px",
               backgroundColor: "#0CBE8A",
               border: "1px solid #0CBE8A",
               borderRadius: "8px",
@@ -143,6 +138,9 @@ const AddTest: React.FC = () => {
         </Form.Item>
       </Form>
     </section>
+    }
+    <div />
+  </>
   );
 };
 
