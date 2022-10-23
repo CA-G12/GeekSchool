@@ -23,7 +23,7 @@ const styles = {
     display: "flex",
     justifyContent: "flex-start",
     alignItems: "center",
-    gap: '1rem',
+    gap: "1rem",
   },
   navIcons: { fontSize: "1.5rem" },
   header: {
@@ -76,12 +76,12 @@ const paths = [
 ];
 
 const labels = [
-  'Statistics',
-  'Students',
-  'Assignments',
-  'Questions',
-  'Feedback',
-  'Recommended',
+  "Statistics",
+  "Students",
+  "Assignments",
+  "Questions",
+  "Feedback",
+  "Recommended",
 ];
 
 const items2: MenuProps["items"] = [
@@ -99,7 +99,7 @@ const items2: MenuProps["items"] = [
     icon: (
       <NavLink to={paths[index]} style={styles.navLinks}>
         <Icon style={styles.navIcons} />
-        <p style={{ marginBottom: '-5px' }}>{labels[index]}</p>
+        <p style={{ marginBottom: "-5px" }}>{labels[index]}</p>
       </NavLink>
     ),
   };
@@ -109,10 +109,12 @@ const ClassDashboard: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
 
   return (
-      <Layout className="class-dashboard">
+    <Layout className="class-dashboard">
       <Header className="header" style={styles.header}>
         <img src={Logo} alt="Logo" style={styles.logo} />
-        <section style={{ ...styles.headerSecondSection, position: "relative" }}>
+        <section
+          style={{ ...styles.headerSecondSection, position: "relative" }}
+        >
           <BellFilled style={styles.bellIcon} />
           <img src={Avatar} alt="avatar" />
           <div
@@ -126,7 +128,7 @@ const ClassDashboard: React.FC = () => {
           collapsed={collapsed}
           width={200}
           className="site-layout-background"
-          onCollapse={value => setCollapsed(value)}
+          onCollapse={(value) => setCollapsed(value)}
         >
           <Menu
             mode="inline"

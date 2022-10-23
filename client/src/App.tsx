@@ -24,27 +24,27 @@ const router = createBrowserRouter([
     element: <Class />,
     children: [
       {
-        path: "/class/stats",
+        path: "stats",
         element: <StatsDummy />,
       },
       {
-        path: "/class/students",
+        path: "students",
         element: <h1>Students</h1>,
       },
       {
-        path: "/class/assignments",
+        path: "assignments",
         element: <h1>Assignments</h1>,
       },
       {
-        path: "/class/questions",
+        path: "questions",
         element: <h1>Questions</h1>,
       },
       {
-        path: "/class/feedback",
+        path: "feedback",
         element: <h1>Feedback</h1>,
       },
       {
-        path: "/class/recommended",
+        path: "recommended",
         element: <h1>Recommended</h1>,
       },
     ],
