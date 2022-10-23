@@ -1,12 +1,13 @@
 import { FC } from "react";
 import { Input, Button } from "antd";
-import DashboardLayout from "../../components/Layout/DashboardLayout";
+// import DashboardLayout from "../../components/Layout/DashboardLayout";
 import "./style.css";
 
 type Props = {};
 
 const Grades: FC<Props> = () => (
-  <DashboardLayout>
+  // <DashboardLayout>
+  <>
     <h1 className="title">Questions</h1>
     <div className="question_card">
       <p className="question">
@@ -42,7 +43,8 @@ const Grades: FC<Props> = () => (
         </Button>
       </div>
     </div>
-  </DashboardLayout>
+  </>
+  // </DashboardLayout>
 );
 
 export default Grades;
