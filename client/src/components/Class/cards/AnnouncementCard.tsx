@@ -1,5 +1,5 @@
 import { ReadOutlined } from "@ant-design/icons";
-import { announcementCard } from '../../../interfaces'
+import { announcementCard } from "../../../interfaces";
 import "./style.css";
 
 const AnnouncementCard = ({ description, createdAt }: announcementCard) => (

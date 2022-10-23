@@ -3,6 +3,4 @@ interface announcementCard {
   createdAt: string;
 }
 
-export {
-  announcementCard,
-}
+export { announcementCard };
