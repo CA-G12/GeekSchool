@@ -8,6 +8,7 @@ import recommendationInterface from './recommendationInterface';
 import addNewFeedbackInterface from './addNewFeedbackInterface';
 import updateGradPayloadInterface from './updateGradPayloadInterface';
 import updateAssignmentPayloadInterface from './updateAssignmentPayloadInterface';
+import testInterface from './testInterface';
 import { announcementInterface, answerInterface, postQuestionInterface } from './queryInterfaces';
 
 export {
@@ -17,6 +18,7 @@ export {
   UserValInterface,
   UserTableInterface,
   loginValidateInterface,
+  testInterface,
   recommendationInterface,
   addNewFeedbackInterface,
   announcementInterface,
