@@ -4,6 +4,7 @@ import { sequelize } from '../models';
 import buildSeed from '../database/seed';
 import app from '../app';
 
+jest.setTimeout(20000);
 beforeAll(() => buildSeed());
 afterAll(() => sequelize.close());
 
