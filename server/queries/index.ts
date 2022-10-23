@@ -14,6 +14,7 @@ import {
   getClassFeedbackQuery,
   deleteStudentFromClassQuery,
   deleteAssignmentQuery,
+  postRecommendationQuery,
 } from './class';
 import { createUser, findUserByEmail } from './userQueries';
 
@@ -43,5 +44,6 @@ export {
   getClassStudentsQuery,
   getClassQuestionsQuery,
   postTestQuery,
+  postRecommendationQuery,
   getStudentTasksQuery,
 };
