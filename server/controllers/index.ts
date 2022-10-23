@@ -3,7 +3,24 @@ import {
 } from './auth';
 import { serverError, notFound } from './errors';
 import {
-  getAnnouncement, getClassStudents, recommended, getClassQuestions, postRecommendation,
+  addNewAssignment,
+  getStats,
+  recommended,
+  getAnnouncement,
+  getClassQuestions,
+  putAssignmentTeacher,
+  putAssignmentStudent,
+  addAnnouncement,
+  putAnswerQuestion,
+  addNewFeedback,
+  getClassStudents,
+  getAllStudentWhoSubmitTasks,
+  getFeedback,
+  deleteStudentFromClass,
+  getAssignments,
+  deleteAssignment,
+  postQuestion,
+  postRecommendation,
 } from './class';
 
 export {
@@ -14,8 +31,21 @@ export {
   notFound,
   recommended,
   getAnnouncement,
+  addNewAssignment,
+  getFeedback,
+  addNewFeedback,
+  postQuestion,
+  deleteStudentFromClass,
+  getAllStudentWhoSubmitTasks,
+  getStats,
+  getAssignments,
+  deleteAssignment,
   getClassStudents,
   getClassQuestions,
+  putAnswerQuestion,
   login,
   postRecommendation,
+  putAssignmentTeacher,
+  putAssignmentStudent,
+  addAnnouncement,
 };
