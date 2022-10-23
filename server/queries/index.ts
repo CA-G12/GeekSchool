@@ -1,4 +1,5 @@
 import {
+  addNewFeedbackQuery,
   classStats,
   getAnnouncementQuery,
   recommendedQueries,
@@ -27,6 +28,7 @@ export {
   createStudent,
   createTeacher,
   findUserByEmail,
+  addNewFeedbackQuery,
   classStats,
   getAnnouncementQuery,
   studentAssignmentQuery,

@@ -1,3 +1,4 @@
+import addNewFeedback from './addNewFeedback';
 import deleteStudentFromClass from './deleteStudentFromClass';
 import getClassStudents from './getClassStudents';
 import getAnnouncement from './getAnnouncement';
@@ -19,6 +20,7 @@ export {
   getAnnouncement,
   getClassQuestions,
   recommended,
+  addNewFeedback,
   deleteStudentFromClass,
   getStats,
   deleteAssignment,
