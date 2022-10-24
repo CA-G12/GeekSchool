@@ -18,7 +18,6 @@ import getStudentTasksQuery from './getStudentTasksQuery';
 import putAssignmentTeacherQuery from './putAssignmentTeacherQuery';
 import putAssignmentStudentQuery from './putAssignmentStudentQuery';
 import getClassGradesQuery from './getClassGradesQuery';
-import getActivitiesQuery from './getActivitiesQuery';
 import postQuestionQuery from './postQuestionQuery';
 
 export {
@@ -42,6 +41,5 @@ export {
   putAnswerQuestionQuery,
   getStudentTasksQuery,
   getClassGradesQuery,
-  getActivitiesQuery,
   postQuestionQuery,
 };

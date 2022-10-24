@@ -11,7 +11,6 @@ import {
   getClassStudentsQuery,
   getStudentTasksQuery,
   getClassGradesQuery,
-  getActivitiesQuery,
   postTestQuery,
   getClassFeedbackQuery,
   deleteStudentFromClassQuery,
@@ -49,5 +48,4 @@ export {
   postRecommendationQuery,
   getStudentTasksQuery,
   getClassGradesQuery,
-  getActivitiesQuery,
 };
