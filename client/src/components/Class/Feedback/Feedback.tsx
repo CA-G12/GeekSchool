@@ -12,13 +12,14 @@ const Feedback: React.FC = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const feedbackData: AxiosResponse = await axios.get(`/api/v1/class/${classId}/feedback`);
+      const feedbackData: AxiosResponse = await axios.get(
+        `/api/v1/class/${classId}/feedback`
+      );
 
       setFeedbacks(feedbackData.data.data.rows);
     };
 
     fetchData();
-
 
     return () => source.cancel();
   }, []);
@@ -77,7 +78,9 @@ const Feedback: React.FC = () => {
       </section>
 
       <section className="feedbacks-boxes">
-        {feedbacks.map((feedback: any) => <p className="feedback">{feedback.feedback}</p>)}
+        {feedbacks.map((feedback: any) => (
+          <p className="feedback">{feedback.feedback}</p>
+        ))}
         <p className="feedback">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
           obcaecati pariatur ullam ipsum laboriosam nemo rerum dicta repudiandae
