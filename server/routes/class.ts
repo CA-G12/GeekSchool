@@ -27,6 +27,7 @@ import {
   getAssignments,
   addAnnouncement,
   postRecommendation,
+  getTests,
 } from '../controllers';
 
 const classRouter = Router();
@@ -49,7 +50,7 @@ classRouter.post('/:classId/test', userAuth, teacherAuth, postTest);
 classRouter.delete('/assignment/:id', userAuth, teacherAuth, deleteAssignment);
 classRouter.post('/:classId/questions', userAuth, studentAuth, postQuestion);
 classRouter.get('/:classId/assignments', userAuth, studentAndTeacher, getAssignments);
-
+classRouter.get('/:classId/tests', userAuth, studentAndTeacher, getTests);
 classRouter.post('/:classId/recommended', userAuth, teacherAuth, postRecommendation);
 
 export default classRouter;
