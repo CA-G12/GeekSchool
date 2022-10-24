@@ -2,6 +2,8 @@ import userValidation from './userValidation';
 import parentValidation from './parentValidation';
 import addNewAssignmentValidation from './newAssignmentValidation';
 import loginValidate from './loginValidate';
+import testValidation from './testValidation';
+import recommendationValidation from './recommendationValidation';
 import addNewFeedbackValidation from './addNewFeedbackValidation';
 import deleteStudentFromClassValidation from './deleteStudentFromClassValidation';
 import updateGradPayloadValidate from './updateGradPayloadValidate';
@@ -15,6 +17,8 @@ export {
   parentValidation,
   addNewAssignmentValidation,
   loginValidate,
+  testValidation,
+  recommendationValidation,
   addNewFeedbackValidation,
   deleteStudentFromClassValidation,
   updateGradPayloadValidate,

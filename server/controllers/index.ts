@@ -14,14 +14,16 @@ import {
   putAnswerQuestion,
   addNewFeedback,
   getClassStudents,
-  getAllStudentWhoSubmitTasks,
+  postTest,
   getFeedback,
+  getAllStudentWhoSubmitTasks,
   deleteStudentFromClass,
   getAssignments,
   deleteAssignment,
   postQuestion,
   getClassGrades,
 
+  postRecommendation,
 } from './class';
 
 export {
@@ -45,6 +47,8 @@ export {
   getClassQuestions,
   putAnswerQuestion,
   login,
+  postTest,
+  postRecommendation,
   putAssignmentTeacher,
   putAssignmentStudent,
   addAnnouncement,

@@ -17,7 +17,9 @@ import {
   loginValidate,
   addAnnouncementValidate,
   putAnswerQuestionValidate,
+  testValidation,
   postQuestionValidate,
+  recommendationValidation,
 } from './validation';
 import { signToken, verifyToken } from './jwt';
 
@@ -34,6 +36,8 @@ export {
   signToken,
   verifyToken,
   loginValidate,
+  testValidation,
+  recommendationValidation,
   deleteStudentFromClassValidation,
   announcementInterface,
   addAnnouncementValidate,
