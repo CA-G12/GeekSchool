@@ -4,7 +4,6 @@ import { classStats } from '../../queries';
 const getStats = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const { classId } = req.params;
-
     const stats = await classStats(classId);
 
     const submitted = stats['0'][0];
@@ -20,6 +19,7 @@ const getStats = async (req: Request, res: Response, next: NextFunction) => {
       },
     });
   } catch (error) {
+    console.log(error.name);
     next(error);
   }
 };

@@ -2,10 +2,10 @@ import React from "react";
 import { createBrowserRouter, RouterProvider, Link } from "react-router-dom";
 import { ConfigProvider } from "antd";
 
-import "./i18n/config.js";
-import StatsDummy from "./components/StatsDummy/Dummy";
+import { StatisticsPage } from "./pages";
 import { UserAuthProvider } from "./context/AuthContext";
 import Class from "./components/Class/Class";
+import "./i18n/config.js";
 import "antd/dist/antd.variable.min.css";
 
 ConfigProvider.config({
@@ -25,7 +25,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "stats",
-        element: <StatsDummy />,
+        element: <StatisticsPage classId={1} />,
       },
       {
         path: "students",
