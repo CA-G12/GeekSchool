@@ -13,7 +13,7 @@ const getClassGradesQuery = (classId: string) => ClassStudent.findAll({
   attributes: ['id'],
   include: [{
     model: Student,
-    attributes: ['user_id'],
+    attributes: ['id'],
     include: [
       {
         model: TestStudent,
