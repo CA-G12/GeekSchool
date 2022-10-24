@@ -6,6 +6,7 @@ import "./i18n/config.js";
 import StatsDummy from "./components/StatsDummy/Dummy";
 import { UserAuthProvider } from "./context/AuthContext";
 import Class from "./components/Class/Class";
+import Announcements from "./components/Class/Announcements/Announcements";
 import "antd/dist/antd.variable.min.css";
 
 ConfigProvider.config({
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: "assignments",
         element: <h1>Assignments</h1>,
+      },
+      {
+        path: "announcements",
+        element: <Announcements />,
       },
       {
         path: "questions",
