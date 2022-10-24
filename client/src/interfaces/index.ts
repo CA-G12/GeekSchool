@@ -6,6 +6,7 @@ import {
   userDataParentInterface,
   signUpDataInterface,
 } from "./userInterface";
+import { announcementCard } from "./componentsInterface";
 
 export {
   UserInterface,
@@ -14,4 +15,5 @@ export {
   userDataInterface,
   userDataParentInterface,
   signUpDataInterface,
+  announcementCard,
 };
