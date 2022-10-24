@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-console */
 import { FC, useEffect, useState } from "react";
 import type { PaginationProps } from "antd";
 import axios from "axios";
@@ -13,27 +15,24 @@ interface questionInterface {
   answer: string;
 }
 
-// const testQuestion: questionInterface[] = [
-//   {
-//     id: "1",
-//     question: "test",
-//     answer: "",
-//   },
-//   {
-//     id: "2",
-//     question: "test2",
-//     answer: "",
-//   },
-// ];
 
 const Questions: FC<Props> = () => {
   const [questions, setQuestions] = useState<questionInterface[]>([]);
   const [count, setCount] = useState<number>(1);
   const [current, setCurrent] = useState(1);
 
-  const handleChange = (id: string, value: string): void => {
-    // api call to answer question with id and value
+  const fetchData = async () => {
+    axios(`/api/v1/class/2/questions/?page=${current}`)
+      .then(({ data }) => {
+        setCount(data.count);
+        setQuestions(data.data);
+      })
+      .catch((err) => console.log(err, "err"));
+  };
 
+  const handleChange = async(id: string, value: string) => {
+    // api call to answer question with id and value
+     await axios.put(`/api/v1/class/2/questions/${id}`,{"answer": value});
     setQuestions(
       questions
         .sort((a, b) => (a.answer > b.answer ? 1 : -1))
@@ -48,22 +47,11 @@ const Questions: FC<Props> = () => {
     setCurrent(page);
   };
 
-  const fetchData = async () => {
-    axios(`/api/v1/class/2/questions/?page=${current}`)
-      .then(({ data }) => {
-        console.log(data.count);
-        setCount(data.count);
-        setQuestions(data.data);
-      })
-      .catch((err) => console.log(err, "err"));
-  };
 
   useEffect(() => {
     // api call to get questions from the back
     fetchData();
-    console.log(count);
-  }, [current]);
-  console.log(questions);
+  }, [current, fetchData]);
   return (
     <>
       <h1 className="title">Questions</h1>

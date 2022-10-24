@@ -10,14 +10,12 @@ type Props = {
   handleChange: (id: string, value: string) => void;
 };
 
-// const a = " It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum?"
 const AnsweredQuestion: FC<Props> = ({
   question,
   answer,
   id,
   handleChange,
 }) => {
-  // const [answer, setAnswer] = useState(a);
   const [edit, setEdit] = useState(false);
 
   return (
