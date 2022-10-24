@@ -22,6 +22,7 @@ import {
   deleteAssignment,
   postQuestion,
   postRecommendation,
+  getTests,
 } from './class';
 
 export {
@@ -50,4 +51,5 @@ export {
   putAssignmentTeacher,
   putAssignmentStudent,
   addAnnouncement,
+  getTests,
 };
