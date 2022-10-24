@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Input, Button } from "antd";
+import { Input, Button, message } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 import AddChild from "./AddChild";
 import { userDataParentInterface } from "../../interfaces";
@@ -15,6 +15,8 @@ const ParentSignUp: React.ElementType = ({
   const handleAddEmail = (): void => {
     if (emailInput !== "" && regex.test(emailInput)) {
       setEmail([emailInput, ...emails]);
+    } else {
+      message.error('Child email required or not an email ');
     }
   };
 
