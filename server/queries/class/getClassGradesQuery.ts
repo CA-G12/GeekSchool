@@ -6,10 +6,6 @@ const getClassGradesQuery = (classId: string) => ClassStudent.findAll({
   where: {
     class_id: classId,
   },
-  // raw: true,
-  // nest: false,
-  // eslint-disable-next-line max-len
-  // attributes: ['id', 'Student.id', 'Student.TestStudents.grade', 'Student.TestStudents.Test.title', 'Student.AssignmentStudents.grade', 'Student.AssignmentStudents.Assignment.title', 'Student.User.name', 'Student.User.img'],
   attributes: ['id'],
   include: [{
     model: Student,
