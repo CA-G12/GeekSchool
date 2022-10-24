@@ -44,11 +44,9 @@ const data: DataType[] = [
   {
     id: "1",
     name: <NameCell name="test" image={testImage} />,
-    MobileNum: '0599999999',
-    ParentName: 'mahmoud',
-    Action: (
-      <Action />
-    ),
+    MobileNum: "0599999999",
+    ParentName: "mahmoud",
+    Action: <Action />,
   },
 ];
 
