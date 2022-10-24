@@ -10,11 +10,12 @@
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.11.65",
-    "@types/react": "^18.0.21",
+    "@types/react": "^18.0.22",
     "@types/react-dom": "^18.0.6",
+    "@types/react-i18next": "^8.1.0",
+    "@types/yup": "^0.32.0",
     "antd": "^4.23.5",
     "axios": "^1.1.2",
-    "i18next": "^22.0.2",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -22,7 +23,8 @@
     "react-router-dom": "^6.4.2",
     "react-scripts": "5.0.1",
     "sweetalert2": "^11.6.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "yup": "^0.32.11"
   },
   "scripts": {
     "start": "react-scripts start",

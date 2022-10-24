@@ -1,4 +1,27 @@
-import { UserInterface, UserDataInterface } from "./userInterface";
-import { announcementCard } from "./componentsInterface";
+import {
+  questionInterface,
+  recommendedInterface,
+  feedbackInterface,
+  announcementCard,
+} from "./componentsInterface";
+import {
+  UserInterface,
+  UserDataInterface,
+  emailInterface,
+  userDataInterface,
+  userDataParentInterface,
+  signUpDataInterface,
+} from "./userInterface";
 
-export { UserInterface, UserDataInterface, announcementCard };
+export {
+  UserInterface,
+  UserDataInterface,
+  questionInterface,
+  recommendedInterface,
+  feedbackInterface,
+  emailInterface,
+  userDataInterface,
+  userDataParentInterface,
+  signUpDataInterface,
+  announcementCard,
+};
