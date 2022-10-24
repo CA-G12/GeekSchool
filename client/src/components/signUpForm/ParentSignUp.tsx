@@ -8,6 +8,7 @@ const ParentSignUp: React.ElementType = ({
   inputValue,
   addEmailChildren,
 }: userDataParentInterface) => {
+  // regex validation email for email children input
   const regex = /^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,3})+$/;
   const [emails, setEmail] = useState<string[] | []>([]);
   const [emailInput, setEmailInput] = useState<string>("");
