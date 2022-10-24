@@ -6,6 +6,7 @@ import {
   DeliveredProcedureOutlined,
   CarryOutOutlined,
   BellFilled,
+  SoundOutlined,
 } from "@ant-design/icons";
 import React, { useState } from "react";
 import { Outlet, NavLink } from "react-router-dom";
@@ -70,6 +71,7 @@ const paths = [
   "/class/stats",
   "/class/students",
   "/class/assignments",
+  "/class/announcements",
   "/class/questions",
   "/class/feedback",
   "/class/recommended",
@@ -79,6 +81,7 @@ const labels = [
   "Statistics",
   "Students",
   "Assignments",
+  "Announcements",
   "Questions",
   "Feedback",
   "Recommended",
@@ -88,6 +91,7 @@ const items2: MenuProps["items"] = [
   BarChartOutlined,
   UserOutlined,
   ReconciliationOutlined,
+  SoundOutlined,
   QuestionCircleOutlined,
   DeliveredProcedureOutlined,
   CarryOutOutlined,
