@@ -51,7 +51,7 @@ const Questions: FC<Props> = () => {
     fetchData();
   }, [current, fetchData]);
   return (
-    <>
+    <div className="card">
       <h1 className="title">Questions</h1>
       {questions.map((q) =>
         q.answer ? (
@@ -78,7 +78,7 @@ const Questions: FC<Props> = () => {
         total={10 * Math.ceil(count / 2)}
       />
       ;
-    </>
+    </div>
   );
 };
 

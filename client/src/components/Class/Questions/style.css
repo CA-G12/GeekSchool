@@ -64,3 +64,9 @@
 .edit_btn:hover {
     background: #0490af!important;
 }
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
