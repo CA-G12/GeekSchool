@@ -21,9 +21,7 @@ const Question: FC<Props> = ({ id, question, answer, handleChange }) => {
 
   return (
     <div className="question_card">
-      <p className="question">
-        {question}
-      </p>
+      <p className="question">{question}</p>
       <div className="question_input">
         <Input
           placeholder="Enter Your Answer"

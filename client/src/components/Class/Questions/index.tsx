@@ -15,7 +15,6 @@ interface questionInterface {
   answer: string;
 }
 
-
 const Questions: FC<Props> = () => {
   const [questions, setQuestions] = useState<questionInterface[]>([]);
   const [count, setCount] = useState<number>(1);
@@ -30,9 +29,9 @@ const Questions: FC<Props> = () => {
       .catch((err) => console.log(err, "err"));
   };
 
-  const handleChange = async(id: string, value: string) => {
+  const handleChange = async (id: string, value: string) => {
     // api call to answer question with id and value
-     await axios.put(`/api/v1/class/2/questions/${id}`,{"answer": value});
+    await axios.put(`/api/v1/class/2/questions/${id}`, { answer: value });
     setQuestions(
       questions
         .sort((a, b) => (a.answer > b.answer ? 1 : -1))
@@ -46,7 +45,6 @@ const Questions: FC<Props> = () => {
   const onChange: PaginationProps["onChange"] = (page) => {
     setCurrent(page);
   };
-
 
   useEffect(() => {
     // api call to get questions from the back
