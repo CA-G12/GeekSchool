@@ -16,7 +16,7 @@ const ParentSignUp: React.ElementType = ({
     if (emailInput !== "" && regex.test(emailInput)) {
       setEmail([emailInput, ...emails]);
     } else {
-      message.error('Child email required or not an email ');
+      message.error("Child email required or not an email ");
     }
   };
 
