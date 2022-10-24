@@ -2,7 +2,8 @@ import {
   questionInterface,
   recommendedInterface,
   feedbackInterface,
-  announcementCard } from "./componentsInterface";
+  announcementCard,
+} from "./componentsInterface";
 import {
   UserInterface,
   UserDataInterface,
@@ -11,7 +12,6 @@ import {
   userDataParentInterface,
   signUpDataInterface,
 } from "./userInterface";
-
 
 export {
   UserInterface,

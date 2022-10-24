@@ -19,4 +19,9 @@ interface announcementCard {
   createdAt: string;
 }
 
-export { questionInterface, recommendedInterface, feedbackInterface, announcementCard };
+export {
+  questionInterface,
+  recommendedInterface,
+  feedbackInterface,
+  announcementCard,
+};

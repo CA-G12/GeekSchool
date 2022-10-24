@@ -19,15 +19,19 @@ const QuestionsCard: ElementType = ({
   };
   const handleAddAnswer = async () => {
     try {
-      const { data: {data: {msg}} } = await axios.put(
+      const {
+        data: {
+          data: { msg },
+        },
+      } = await axios.put(
         `/api/v1/class/${classId}/questions/${id}`,
         newAnswer
       );
       message.success(msg);
     } catch (error: any) {
-      message.error(error.response.data.msg)
+      message.error(error.response.data.msg);
     }
-  }
+  };
 
   return (
     <div className="question-card">
