@@ -1,13 +1,14 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider, Link } from "react-router-dom";
 import { ConfigProvider } from "antd";
-
-import "./i18n/config.js";
-import StatsDummy from "./components/StatsDummy/Dummy";
+import { SignUpPage } from "./pages";
 import { UserAuthProvider } from "./context/AuthContext";
+import StatsDummy from "./components/StatsDummy/Dummy";
 import Class from "./components/Class/Class";
 import Grades from "./components/Class/Grades";
 import "antd/dist/antd.variable.min.css";
+import "./i18n/config.js";
+import "./style.css";
 
 ConfigProvider.config({
   theme: {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Link to="/class">Go to the class page!</Link>,
+  },
+  {
+    path: "/signup",
+    element: <SignUpPage />,
   },
   {
     path: "/class",
