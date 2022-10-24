@@ -1,58 +1,27 @@
-import React, { SetStateAction, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Form, Input } from "antd";
 import axios, { AxiosResponse } from "axios";
 import Swal from "sweetalert2";
 import "./Feedback.css";
 
-// try {
-//   const data = await axios
-//     .get(`/api/v1/class/${classId}/feedback`);
-//   setFeedbacks(data);
-
-// Swal.fire({
-//   title: 'The feedback is added successfully!',
-//   showClass: {
-//     popup: 'animate__animated animate__fadeInDown'
-//   },
-//   hideClass: {
-//     popup: 'animate__animated animate__fadeOutUp'
-//   }
-// })
-// } catch (error) {
-// Swal.fire({
-//   icon: 'error',
-//   title: 'Oops...',
-//   text: 'Something went wrong!',
-// })
-// }
-// };
-
-// fetchData();
-
 const Feedback: React.FC = () => {
-  const [, setFeedbacks] = useState<
-    SetStateAction<object[]> | AxiosResponse<any, any>
-  >([]);
+  const [feedbacks, setFeedbacks] = useState<object[]>([]);
 
   const source = axios.CancelToken.source();
-  const classId = 5; // ? This will change depending on which class was opened.
+  const classId = 8; // ? This will change depending on which class was opened.
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await axios.get(`/api/v1/class/${classId}/feedback`, {
-        headers: {
-          Authorization:
-            "token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6Ik11c3RhZmEgU2FsZW0iLCJyb2xlIjoidGVhY2hlciIsImlhdCI6MTY2NjExNjM4NH0.sr7oT_2dHMdTWfBKZEC7pa4VOZnlN9vM9y8P1UnsTa8",
-        },
-      });
+      const feedbackData: AxiosResponse = await axios.get(`/api/v1/class/${classId}/feedback`);
 
-      setFeedbacks(data);
+      setFeedbacks(feedbackData.data.data.rows);
     };
 
     fetchData();
 
+
     return () => source.cancel();
-  }, [source]);
+  }, []);
 
   const onFinish = async (values: any) => {
     await axios.post(`api/v1/class/${classId}/feedback`, {
@@ -108,6 +77,7 @@ const Feedback: React.FC = () => {
       </section>
 
       <section className="feedbacks-boxes">
+        {feedbacks.map((feedback: any) => <p className="feedback">{feedback.feedback}</p>)}
         <p className="feedback">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
           obcaecati pariatur ullam ipsum laboriosam nemo rerum dicta repudiandae
