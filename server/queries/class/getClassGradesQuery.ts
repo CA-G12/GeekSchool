@@ -1,26 +1,90 @@
 import {
-  TestStudent, Test, Student, User,
+  TestStudent, Test, Student, User, Assignment, AssignmentStudent, ClassStudent,
 } from '../../models';
 
-const getClassGradesQuery = (classId: string) => Test.findAll({
-  raw: true,
-  nest: false,
-  where: { class_id: classId },
-  group: ['Test.id', 'TestStudents.Student.User.img', 'TestStudents.test_id', 'TestStudents.student_id', 'TestStudents.Student.User.name'],
-  attributes: ['TestStudents.grade' as 'grade', 'TestStudents.Student.User.img' as 'img', 'TestStudents.test_id' as 'testId', 'TestStudents.student_id' as 'studentId', 'TestStudents.Student.User.name' as 'studentName'],
+const getClassGradesQuery = (classId: string) => ClassStudent.findAll({
+  where: {
+    class_id: classId,
+  },
+  // raw: true,
+  // nest: false,
+  // eslint-disable-next-line max-len
+  // attributes: ['id', 'Student.id', 'Student.TestStudents.grade', 'Student.TestStudents.Test.title', 'Student.AssignmentStudents.grade', 'Student.AssignmentStudents.Assignment.title', 'Student.User.name', 'Student.User.img'],
+  attributes: ['id'],
   include: [{
-    // attributes: [],
-    model: TestStudent,
-    include: [{
-      // attributes: [],
-      model: Student,
-      include: [{
-        // attributes: [],
+    model: Student,
+    attributes: ['user_id'],
+    include: [
+      {
+        model: TestStudent,
+        attributes: ['grade', 'student_id'],
+        include: [{
+          model: Test,
+          attributes: ['title', 'class_id'],
+          where: {
+            class_id: classId,
+          },
+        }],
+      },
+      {
+        model: AssignmentStudent,
+        attributes: ['grade'],
+        include: [{
+          model: Assignment,
+          attributes: ['title', 'class_id'],
+          where: {
+            class_id: classId,
+          },
+        }],
+      },
+      {
         model: User,
-      }],
-    }],
+        attributes: ['name', 'img'],
+      },
+    ],
   }],
 });
+
+// const getClassGradesQuery = (classId: string) => Test.findAll({
+
+//   include: [
+//     {
+//       model: TestStudent,
+//       include: [{
+//         model: Student,
+//         include: [{ model: User },
+//           { model: AssignmentStudent, include: [{ model: Assignment }] },
+//         ],
+//       }],
+//     }],
+//   where: {
+//     class_id: classId,
+//   },
+// });
+
+// Test.findAll({
+//   raw: true,
+//   nest: false,
+//   where: { class_id: classId },
+//   group: ['Test.id',
+// 'TestStudents.Student.User.img', 'TestStudents.test_id',
+//  'TestStudents.student_id', 'TestStudents.Student.User.name'],
+//   attributes: ['TestStudents.grade' as 'grade', 'TestStudents.Student.User.img'
+//  as 'img', 'TestStudents.test_id' as 'testId', 'TestStudents.student_id' as 'studentId'
+// , 'TestStudents.Student.User.name' as 'studentName'],
+//   include: [{
+//     // attributes: [],
+//     model: TestStudent,
+//     include: [{
+//       // attributes: [],
+//       model: Student,
+//       include: [{
+//         // attributes: [],
+//         model: User,
+//       }],
+//     }],
+//   }],
+// });
 
 export default getClassGradesQuery;
 
