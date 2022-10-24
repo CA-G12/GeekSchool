@@ -18,6 +18,7 @@ import getStudentTasksQuery from './getStudentTasksQuery';
 import putAssignmentTeacherQuery from './putAssignmentTeacherQuery';
 import putAssignmentStudentQuery from './putAssignmentStudentQuery';
 import postQuestionQuery from './postQuestionQuery';
+import getTestsQuery from './getTestsQuery';
 
 export {
   getAnnouncementQuery,
@@ -40,4 +41,5 @@ export {
   putAnswerQuestionQuery,
   getStudentTasksQuery,
   postQuestionQuery,
+  getTestsQuery,
 };
