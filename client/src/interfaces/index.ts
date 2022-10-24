@@ -1,4 +1,10 @@
 import {
+  questionInterface,
+  recommendedInterface,
+  feedbackInterface,
+  announcementCard,
+} from "./componentsInterface";
+import {
   UserInterface,
   UserDataInterface,
   emailInterface,
@@ -6,11 +12,13 @@ import {
   userDataParentInterface,
   signUpDataInterface,
 } from "./userInterface";
-import { announcementCard } from "./componentsInterface";
 
 export {
   UserInterface,
   UserDataInterface,
+  questionInterface,
+  recommendedInterface,
+  feedbackInterface,
   emailInterface,
   userDataInterface,
   userDataParentInterface,
