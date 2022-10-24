@@ -1,7 +1,7 @@
 import { Button, Modal, Form, Input } from "antd";
 import { useState } from "react";
 import { PlusOutlined } from "@ant-design/icons";
-import "./AssignmentModal.css";
+import "./index.css";
 
 const AssignmentModal = () => {
   const [visible, setVisible] = useState<boolean>(false);

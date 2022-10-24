@@ -9,6 +9,7 @@ import {
   postQuestionInterface,
 } from './interfaces';
 import {
+  addNewAssignmentValidation,
   addNewFeedbackValidation,
   deleteStudentFromClassValidation,
   userValidation,
@@ -16,7 +17,9 @@ import {
   loginValidate,
   addAnnouncementValidate,
   putAnswerQuestionValidate,
+  testValidation,
   postQuestionValidate,
+  recommendationValidation,
 } from './validation';
 import { signToken, verifyToken } from './jwt';
 
@@ -28,10 +31,13 @@ export {
   UserTableInterface,
   userValidation,
   parentValidation,
+  addNewAssignmentValidation,
   addNewFeedbackValidation,
   signToken,
   verifyToken,
   loginValidate,
+  testValidation,
+  recommendationValidation,
   deleteStudentFromClassValidation,
   announcementInterface,
   addAnnouncementValidate,

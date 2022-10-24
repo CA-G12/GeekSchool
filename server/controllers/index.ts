@@ -3,6 +3,7 @@ import {
 } from './auth';
 import { serverError, notFound } from './errors';
 import {
+  addNewAssignment,
   getStats,
   recommended,
   getAnnouncement,
@@ -13,12 +14,14 @@ import {
   putAnswerQuestion,
   addNewFeedback,
   getClassStudents,
+  postTest,
   getFeedback,
   getAllStudentWhoSubmitTasks,
   deleteStudentFromClass,
   getAssignments,
   deleteAssignment,
   postQuestion,
+  postRecommendation,
 } from './class';
 
 export {
@@ -29,6 +32,7 @@ export {
   notFound,
   recommended,
   getAnnouncement,
+  addNewAssignment,
   getFeedback,
   addNewFeedback,
   postQuestion,
@@ -41,6 +45,8 @@ export {
   getClassQuestions,
   putAnswerQuestion,
   login,
+  postTest,
+  postRecommendation,
   putAssignmentTeacher,
   putAssignmentStudent,
   addAnnouncement,
