@@ -39,7 +39,7 @@ classRouter.get('/:classId/assignment/:assignmentId/students', userAuth, teacher
 classRouter.put('/:classId/assignment/teachers/:assignmentId', userAuth, teacherAuth, putAssignmentTeacher);
 classRouter.put('/:classId/assignment/students/:assignmentId', userAuth, studentAuth, putAssignmentStudent);
 classRouter.get('/:classId/students', userAuth, studentAndTeacher, getClassStudents);
-classRouter.get('/:classId/questions', userAuth, studentAndTeacher, getClassQuestions);
+classRouter.get('/:classId/questions', getClassQuestions);
 classRouter.post('/:classId/announcement', userAuth, teacherAuth, addAnnouncement);
 classRouter.put('/:classId/questions/:questionId', userAuth, teacherAuth, putAnswerQuestion);
 classRouter.get('/:classId/feedback', userAuth, teacherAuth, getFeedback);
