@@ -1,9 +1,12 @@
 import { Button, Modal, Form, Input } from "antd";
-import { useState } from "react";
-import { PlusOutlined } from "@ant-design/icons";
+import React, { useState } from "react";
+import { PlusOutlined, CloseOutlined } from "@ant-design/icons";
+import axios from "axios";
 import "./index.css";
+import Swal from "sweetalert2";
 
-const AssignmentModal = () => {
+const AssignmentModal: React.FC = () => {
+  const source = axios.CancelToken.source();
   const [visible, setVisible] = useState<boolean>(false);
 
   const showModal = () => setVisible(true);
@@ -12,24 +15,69 @@ const AssignmentModal = () => {
     setVisible(false);
   };
 
+  const onFinish = async (fieldValues: any) => {
+    try {
+      await axios
+        .post(
+          "/api/v1/class/25/assignment",
+          { ...fieldValues },
+          { cancelToken: source.token }
+        )
+        .then((res) => {
+          Swal.fire({
+            title: res.data.msg,
+            showClass: {
+              popup: "animate__animated animate__fadeInDown",
+            },
+            hideClass: {
+              popup: "animate__animated animate__fadeOutUp",
+            },
+          });
+        })
+        .catch((res) => {
+          Swal.fire({
+            icon: "error",
+            title: res.data.msg,
+            text: "Something went wrong!",
+          });
+        });
+    } catch (error: any) {
+      Swal.fire({
+        icon: "error",
+        text: "Something went wrong!",
+      });
+    }
+
+    handleCancel();
+  };
+
   return (
     <div>
-      <Button type="primary" onClick={() => showModal()}>
+      <Button
+        type="primary"
+        onClick={() => showModal()}
+        style={{ borderRadius: "30px" }}
+      >
         <PlusOutlined /> Add
       </Button>
       <Modal
-        cancelButtonProps={{ style: { display: "none" } }}
-        okButtonProps={{ style: { display: "none" } }}
-        visible={visible}
+        className="modal"
+        footer={null}
+        open={visible}
         onCancel={handleCancel}
         width="60%"
+        closeIcon={
+          <CloseOutlined
+            style={{ color: "#0CBE8A", border: "2px solid #0CBE8A" }}
+          />
+        }
       >
-        <Form>
+        <Form className="form" onFinish={onFinish} labelCol={{ span: 8 }}>
           <br />
 
           <Form.Item
             label="Assignment title"
-            style={{ width: "80%" }}
+            style={{ width: "70%" }}
             name="title"
             rules={[
               {
@@ -38,13 +86,17 @@ const AssignmentModal = () => {
               },
             ]}
           >
-            <Input placeholder="Assignment title" width="100%" />
+            <Input
+              className="input"
+              placeholder="Assignment title"
+              style={{}}
+            />
           </Form.Item>
 
           <Form.Item
-            label="Assignment description: "
-            style={{ width: "100%" }}
-            name="title"
+            label="Assignment details: "
+            style={{ width: "70%" }}
+            name="describtion"
             rules={[
               {
                 required: true,
@@ -52,14 +104,13 @@ const AssignmentModal = () => {
               },
             ]}
           >
-            <Input
-              placeholder="Assignment description"
-              width="60%"
-              height="100%"
+            <Input.TextArea
+              style={{ borderRadius: "8px", height: "100px" }}
+              placeholder="Assignment detail"
             />
           </Form.Item>
 
-          <Form.Item wrapperCol={{ span: 8, offset: 4 }}>
+          <Form.Item className="button">
             <Button type="primary" htmlType="submit">
               Submit
             </Button>
