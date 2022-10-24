@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from "react";
-import type { PaginationProps } from 'antd';
+import type { PaginationProps } from "antd";
 import axios from "axios";
-import { Pagination } from 'antd';
+import { Pagination } from "antd";
 import Question from "./Question";
 import AnsweredQuestion from "./AnsweredQuestion";
 import "./style.css";
@@ -44,31 +44,26 @@ const Questions: FC<Props> = () => {
     );
   };
 
-
-  const onChange: PaginationProps['onChange'] = page => {
+  const onChange: PaginationProps["onChange"] = (page) => {
     setCurrent(page);
   };
 
   const fetchData = async () => {
-    
     axios(`/api/v1/class/2/questions/?page=${current}`)
-    .then(({data}) =>{
-      console.log(data.count);
-      setCount(data.count);
-      setQuestions(data.data);
-       
+      .then(({ data }) => {
+        console.log(data.count);
+        setCount(data.count);
+        setQuestions(data.data);
       })
-    .catch(err => console.log(err, 'err'))
-  
-  }
+      .catch((err) => console.log(err, "err"));
+  };
 
   useEffect(() => {
     // api call to get questions from the back
     fetchData();
     console.log(count);
-
   }, [current]);
-console.log(questions)
+  console.log(questions);
   return (
     <>
       <h1 className="title">Questions</h1>
@@ -91,7 +86,12 @@ console.log(questions)
           />
         )
       )}
-      <Pagination current={current} onChange={onChange} total={10 * Math.ceil(count / 2)} />;
+      <Pagination
+        current={current}
+        onChange={onChange}
+        total={10 * Math.ceil(count / 2)}
+      />
+      ;
     </>
   );
 };
