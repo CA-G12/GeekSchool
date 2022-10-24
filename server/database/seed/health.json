@@ -1,6 +1,5 @@
 [
     {
-        "id": 1,
         "student_id": 1,
         "dental": "Ceftriaxone Sodium",
         "vision": "La Prairie Switzerland",
@@ -11,7 +10,6 @@
         "others": "Enteric Coated Aspirin"
     },
     {
-        "id": 2,
         "student_id": 2,
         "dental": "Eastern Cottonwood",
         "vision": "Kiwi",
@@ -22,7 +20,6 @@
         "others": "Secret Natural Mineral"
     },
     {
-        "id": 3,
         "student_id": 3,
         "dental": "Bambusa Stibium",
         "vision": "enema",
@@ -33,7 +30,6 @@
         "others": "Pain Relief PM"
     },
     {
-        "id": 4,
         "student_id": 4,
         "dental": "MS CONTIN",
         "vision": "Enteric Aspirin",
@@ -44,7 +40,6 @@
         "others": "Carbidopa and Levodopa"
     },
     {
-        "id": 5,
         "student_id": 5,
         "dental": "Bayberry",
         "vision": "Oxygen",
@@ -55,7 +50,6 @@
         "others": "Chlorhexidine Gluconate"
     },
     {
-        "id": 6,
         "student_id": 6,
         "dental": "CYBERWHITE EX",
         "vision": "Atenolol",
@@ -66,7 +60,6 @@
         "others": "AMLODIPINE BESYLATE"
     },
     {
-        "id": 7,
         "student_id": 7,
         "dental": "Tamoxifen Citrate",
         "vision": "Disney FROZEN ANTIBACTERIAL HAND WIPES",
@@ -77,7 +70,6 @@
         "others": "Medi First Cramp"
     },
     {
-        "id": 8,
         "student_id": 8,
         "dental": "Simcor",
         "vision": "Sucralfate",
@@ -88,7 +80,6 @@
         "others": "Isopropyl Rubbing Alcohol"
     },
     {
-        "id": 9,
         "student_id": 9,
         "dental": "Dermal Wound Cleanser",
         "vision": "ACONITUM NAPELLUS",
@@ -99,7 +90,7 @@
         "others": "benzonatate"
     },
     {
-        "id": 10,
+
         "student_id": 10,
         "dental": "Pollens - Weeds and Garden Plants, Nettle Urtica dioica",
         "vision": "Burrobrush",
@@ -110,7 +101,7 @@
         "others": "potassium chloride"
     },
     {
-        "id": 11,
+
         "student_id": 11,
         "dental": "Methylprednisolone Acetate",
         "vision": "Levofloxacin",
@@ -121,7 +112,7 @@
         "others": "SunDrops 77"
     },
     {
-        "id": 12,
+
         "student_id": 12,
         "dental": "Medi UV Block Suncream SPF50 PA",
         "vision": "CLOMIPRAMINE HYDROCHLORIDE",
@@ -132,7 +123,7 @@
         "others": "Phenobarbital"
     },
     {
-        "id": 13,
+
         "student_id": 13,
         "dental": "Tummy Calm",
         "vision": "Levocarnitine",
@@ -143,7 +134,7 @@
         "others": "Isopropyl Alcohol"
     },
     {
-        "id": 14,
+
         "student_id": 14,
         "dental": "Hydrocodone Bitartrate and Acetaminophen",
         "vision": "UltraMax Invisible Solid",
@@ -154,7 +145,7 @@
         "others": "Penicillin V Potassium"
     },
     {
-        "id": 15,
+
         "student_id": 15,
         "dental": "Childrens Mapap",
         "vision": "Dorflex Icy Hot",
@@ -165,7 +156,7 @@
         "others": "MAMONDE BRIGHTENING PACT 10HR N21"
     },
     {
-        "id": 16,
+
         "student_id": 16,
         "dental": "Allerstat",
         "vision": "SPINY PIGWEED POLLEN",
@@ -176,7 +167,7 @@
         "others": "TISSEEL"
     },
     {
-        "id": 17,
+
         "student_id": 17,
         "dental": "KETOROLAC TROMETHAMINE",
         "vision": "Dermasil Advanced",
@@ -187,7 +178,7 @@
         "others": "Blemish Serum"
     },
     {
-        "id": 18,
+
         "student_id": 18,
         "dental": "Levofloxacin",
         "vision": "PNEUMOPLEX",
@@ -198,7 +189,7 @@
         "others": "NICOTINE"
     },
     {
-        "id": 19,
+
         "student_id": 19,
         "dental": "Pentazocine HCl and Acetaminophen",
         "vision": "Treatment Set TS331634",
@@ -209,7 +200,7 @@
         "others": "Apis ex animale 30"
     },
     {
-        "id": 20,
+
         "student_id": 20,
         "dental": "WARFARIN SODIUM",
         "vision": "Nexplanon",
@@ -220,7 +211,7 @@
         "others": "CALCITRIOL"
     },
     {
-        "id": 21,
+
         "student_id": 21,
         "dental": "Progesterone",
         "vision": "Liver Tonic",
@@ -231,7 +222,7 @@
         "others": "Clindamycin Hydrochloride"
     },
     {
-        "id": 22,
+
         "student_id": 22,
         "dental": "TOBREX",
         "vision": "Naproxen Sodium",
@@ -242,7 +233,7 @@
         "others": "Lactulose"
     },
     {
-        "id": 23,
+
         "student_id": 23,
         "dental": "Ipratropium Bromide and Albuterol Sulfate",
         "vision": "Allergy",
@@ -253,7 +244,7 @@
         "others": "Regular Strength Aspirin EC"
     },
     {
-        "id": 24,
+
         "student_id": 24,
         "dental": "lisinopril",
         "vision": "LODOSYN",
@@ -264,7 +255,7 @@
         "others": "Sulfamethoxazole and Trimethoprim"
     },
     {
-        "id": 25,
+
         "student_id": 25,
         "dental": "hydrochlorothiazide",
         "vision": "SEAWEED MEDICLEAR STEMCELL BB",
@@ -275,7 +266,7 @@
         "others": "Clearskin"
     },
     {
-        "id": 26,
+
         "student_id": 26,
         "dental": "Kynamro",
         "vision": "FIREBUSH KOCHIA POLLEN",
@@ -286,7 +277,7 @@
         "others": "Healing Waters Mandarin Vanilla Antibacterial Hand Soap"
     },
     {
-        "id": 27,
+
         "student_id": 27,
         "dental": "Alendronate Sodium",
         "vision": "Perfect Pore Clean I",
@@ -297,7 +288,7 @@
         "others": "American Infection Control Antiseptic Hand Wipes"
     },
     {
-        "id": 28,
+
         "student_id": 28,
         "dental": "Formula 10",
         "vision": "Back and Neck Rescue",
@@ -308,7 +299,7 @@
         "others": "Xeloda"
     },
     {
-        "id": 29,
+
         "student_id": 29,
         "dental": "BuPROPion Hydrochloride",
         "vision": "childrens fever reducer and pain reliever",
@@ -319,7 +310,7 @@
         "others": "Depo-Medrol"
     },
     {
-        "id": 30,
+
         "student_id": 30,
         "dental": "Pyrazinamide",
         "vision": "Antibacterial Hand Sanitizer",
@@ -330,7 +321,7 @@
         "others": "Shang Shi Zhi Tong Gao"
     },
     {
-        "id": 31,
+
         "student_id": 31,
         "dental": "ABILIFY",
         "vision": "DIVALPROEX SODIUM",
@@ -341,7 +332,7 @@
         "others": "Minocycline Hydrochloride"
     },
     {
-        "id": 32,
+
         "student_id": 32,
         "dental": "Triaminic",
         "vision": "AMIFOSTINE",
@@ -352,7 +343,7 @@
         "others": "Relaxoforce"
     },
     {
-        "id": 33,
+
         "student_id": 33,
         "dental": "ULTRA CORRECTION LIFT",
         "vision": "Salicylic acid",
@@ -363,7 +354,7 @@
         "others": "No7 Protect and Perfect Foundation Sunscreen Broad Spectrum SPF 15 Mocha"
     },
     {
-        "id": 34,
+
         "student_id": 34,
         "dental": "NAPRELAN",
         "vision": "Hydrocodone Bitartate and Acetaminophen",
@@ -374,7 +365,7 @@
         "others": "LISINOPRIL"
     },
     {
-        "id": 35,
+
         "student_id": 35,
         "dental": "Cyanocobalamin",
         "vision": "Primidone",
@@ -385,7 +376,7 @@
         "others": "Doxercalciferol"
     },
     {
-        "id": 36,
+
         "student_id": 36,
         "dental": "Preferred Plus Hemorrhoidal",
         "vision": "KADCYLA",
@@ -396,7 +387,7 @@
         "others": "Degree"
     },
     {
-        "id": 37,
+
         "student_id": 37,
         "dental": "NICARdipine Hydrochloride",
         "vision": "SPARKLING MIST",
@@ -407,7 +398,7 @@
         "others": "Sevoflurane"
     },
     {
-        "id": 38,
+
         "student_id": 38,
         "dental": "Pramipexole Dihydrochloride",
         "vision": "Buspirone Hydrochloride",
@@ -418,7 +409,7 @@
         "others": "Eszopiclone"
     },
     {
-        "id": 39,
+
         "student_id": 39,
         "dental": "Rx Act Pain Relief",
         "vision": "Cell Salts",
@@ -429,7 +420,7 @@
         "others": "No7 Stay Perfect Foundation Sunscreen SPF 15 Suede"
     },
     {
-        "id": 40,
+
         "student_id": 40,
         "dental": "sunmark acid reducer",
         "vision": "GUNA-FGF",
@@ -440,7 +431,7 @@
         "others": "Cefaclor"
     },
     {
-        "id": 41,
+
         "student_id": 41,
         "dental": "Kidney-Tone",
         "vision": "Chicken Feathers",
@@ -451,7 +442,7 @@
         "others": "Topcare Sinus Congestion and Pain"
     },
     {
-        "id": 42,
+
         "student_id": 42,
         "dental": "SHISEIDO RADIANT LIFTING FOUNDATION",
         "vision": "SHISEIDO ADVANCED HYDRO-LIQUID COMPACT (REFILL)",
@@ -462,7 +453,7 @@
         "others": "Arnica Recovery"
     },
     {
-        "id": 43,
+
         "student_id": 43,
         "dental": "Real Deal Foundation",
         "vision": "In An Instant",
@@ -473,7 +464,7 @@
         "others": "Aspir Low"
     },
     {
-        "id": 44,
+
         "student_id": 44,
         "dental": "Jason Dandruff Relief Treatment 2 in 1",
         "vision": "ANTIBACTERIAL",
@@ -484,7 +475,7 @@
         "others": "Old Spice Fresh Collection"
     },
     {
-        "id": 45,
+
         "student_id": 45,
         "dental": "Gabapentin",
         "vision": "Vitamin K1",
@@ -495,7 +486,7 @@
         "others": "Metoprolol Tartrate"
     },
     {
-        "id": 46,
+
         "student_id": 46,
         "dental": "Coppertone UltraGuard",
         "vision": "Balancing Dynamics Kit",
@@ -506,7 +497,7 @@
         "others": "Acarbose"
     },
     {
-        "id": 47,
+
         "student_id": 47,
         "dental": "Misoprostol",
         "vision": "Asepso",
