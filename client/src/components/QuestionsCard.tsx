@@ -17,16 +17,17 @@ const QuestionsCard: ElementType = ({
       setNewAnswer(e.target.value);
     }
   };
-
   const handleAddAnswer = async () => {
-    const response = await axios.put(
-      `/api/v1/class/${classId}/questions/${id}`,
-      newAnswer
-    );
-    if (response.data.data.msg === "answer was update") {
-      message.success("Answer was update");
+    try {
+      const { data: {data: {msg}} } = await axios.put(
+        `/api/v1/class/${classId}/questions/${id}`,
+        newAnswer
+      );
+      message.success(msg);
+    } catch (error: any) {
+      message.error(error.response.data.msg)
     }
-  };
+  }
 
   return (
     <div className="question-card">

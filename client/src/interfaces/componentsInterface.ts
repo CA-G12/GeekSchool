@@ -14,4 +14,9 @@ interface feedbackInterface {
   feedback: string;
 }
 
-export { questionInterface, recommendedInterface, feedbackInterface };
+interface announcementCard {
+  description: string;
+  createdAt: string;
+}
+
+export { questionInterface, recommendedInterface, feedbackInterface, announcementCard };

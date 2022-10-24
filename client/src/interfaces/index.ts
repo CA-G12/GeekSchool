@@ -1,9 +1,17 @@
-import { UserInterface, UserDataInterface } from "./userInterface";
 import {
   questionInterface,
   recommendedInterface,
   feedbackInterface,
-} from "./componentsInterface";
+  announcementCard } from "./componentsInterface";
+import {
+  UserInterface,
+  UserDataInterface,
+  emailInterface,
+  userDataInterface,
+  userDataParentInterface,
+  signUpDataInterface,
+} from "./userInterface";
+
 
 export {
   UserInterface,
@@ -11,4 +19,9 @@ export {
   questionInterface,
   recommendedInterface,
   feedbackInterface,
+  emailInterface,
+  userDataInterface,
+  userDataParentInterface,
+  signUpDataInterface,
+  announcementCard,
 };
