@@ -13,6 +13,7 @@ import teacherAssignmentQuery from './teacherAssignmentQuery';
 import deleteAssignmentQuery from './deleteAssignment';
 import addAnnouncementQuery from './addAnnouncementQuery';
 import putAnswerQuestionQuery from './putQuestionQuery';
+import postTestQuery from './postTestQuery';
 import getStudentTasksQuery from './getStudentTasksQuery';
 import putAssignmentTeacherQuery from './putAssignmentTeacherQuery';
 import putAssignmentStudentQuery from './putAssignmentStudentQuery';
@@ -25,6 +26,7 @@ export {
   putAssignmentTeacherQuery,
   putAssignmentStudentQuery,
   recommendedQueries,
+  postTestQuery,
   postRecommendationQuery,
   getClassFeedbackQuery,
   addNewFeedbackQuery,

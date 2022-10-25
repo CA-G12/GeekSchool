@@ -15,6 +15,7 @@ import {
   getClassQuestions,
   getClassStudents,
   getAllStudentWhoSubmitTasks,
+  postTest,
   putAssignmentTeacher,
   putAssignmentStudent,
   getFeedback,
@@ -44,6 +45,7 @@ classRouter.put('/:classId/questions/:questionId', userAuth, teacherAuth, putAns
 classRouter.get('/:classId/feedback', userAuth, teacherAuth, getFeedback);
 classRouter.post('/:classId/feedback', userAuth, studentAuth, addNewFeedback);
 classRouter.delete('/:classId/student', userAuth, teacherAuth, deleteStudentFromClass);
+classRouter.post('/:classId/test', userAuth, teacherAuth, postTest);
 classRouter.delete('/assignment/:id', userAuth, teacherAuth, deleteAssignment);
 classRouter.post('/:classId/questions', userAuth, studentAuth, postQuestion);
 classRouter.get('/:classId/assignments', userAuth, studentAndTeacher, getAssignments);

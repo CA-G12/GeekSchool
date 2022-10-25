@@ -7,6 +7,7 @@ import getFeedback from './getFeedback';
 import getStats from './getStats';
 import recommended from './recommended';
 import getClassQuestions from './getClassQuestions';
+import postTest from './postTest';
 import postRecommendation from './postRecommendation';
 import getAssignments from './getAssignments';
 import deleteAssignment from './deleteAssignment';
@@ -23,6 +24,7 @@ export {
   getAnnouncement,
   getClassQuestions,
   recommended,
+  postTest,
   postRecommendation,
   getFeedback,
   addNewFeedback,

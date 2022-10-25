@@ -17,6 +17,7 @@ import {
   loginValidate,
   addAnnouncementValidate,
   putAnswerQuestionValidate,
+  testValidation,
   postQuestionValidate,
   recommendationValidation,
 } from './validation';
@@ -35,6 +36,7 @@ export {
   signToken,
   verifyToken,
   loginValidate,
+  testValidation,
   recommendationValidation,
   deleteStudentFromClassValidation,
   announcementInterface,
