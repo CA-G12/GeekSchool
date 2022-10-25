@@ -3,6 +3,8 @@ import {
   recommendedInterface,
   feedbackInterface,
   announcementCard,
+  TeacherAssignmentCardProps,
+  StudentAssignmentCardProps,
 } from "./componentsInterface";
 import {
   UserInterface,
@@ -24,4 +26,6 @@ export {
   userDataParentInterface,
   signUpDataInterface,
   announcementCard,
+  TeacherAssignmentCardProps,
+  StudentAssignmentCardProps,
 };

@@ -19,9 +19,25 @@ interface announcementCard {
   createdAt: string;
 }
 
+interface StudentAssignmentCardProps {
+  title: string;
+  createdAt: string;
+  description: string;
+}
+
+interface TeacherAssignmentCardProps {
+  title: string;
+  createdAt: string;
+  description: string;
+  submitted: number;
+  notSubmitted: number;
+}
+
 export {
   questionInterface,
   recommendedInterface,
   feedbackInterface,
   announcementCard,
+  StudentAssignmentCardProps,
+  TeacherAssignmentCardProps,
 };
