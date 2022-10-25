@@ -17,34 +17,19 @@ const AssignmentModal: React.FC = () => {
 
   const onFinish = async (fieldValues: any) => {
     try {
-      await axios
-        .post(
-          "/api/v1/class/25/assignment",
-          { ...fieldValues },
-          { cancelToken: source.token }
-        )
-        .then((res) => {
-          Swal.fire({
-            title: res.data.msg,
-            showClass: {
-              popup: "animate__animated animate__fadeInDown",
-            },
-            hideClass: {
-              popup: "animate__animated animate__fadeOutUp",
-            },
-          });
-        })
-        .catch((res) => {
-          Swal.fire({
-            icon: "error",
-            title: res.data.msg,
-            text: "Something went wrong!",
-          });
-        });
+      await axios.post("/api/v1/class/25/assignment", { ...fieldValues }, { cancelToken: source.token })
+
+
+      await Swal.fire({
+        title: "تم إضافة المهمة بنجاح",
+        icon: "success"
+
+      });
+
     } catch (error: any) {
       Swal.fire({
         icon: "error",
-        text: "Something went wrong!",
+        text: error.response.statusText,
       });
     }
 
@@ -58,7 +43,7 @@ const AssignmentModal: React.FC = () => {
         onClick={() => showModal()}
         style={{ borderRadius: "30px" }}
       >
-        <PlusOutlined /> Add
+        <PlusOutlined /> إضافة
       </Button>
       <Modal
         className="modal"
@@ -73,46 +58,46 @@ const AssignmentModal: React.FC = () => {
         }
       >
         <Form className="form" onFinish={onFinish} labelCol={{ span: 8 }}>
-          <br />
+
 
           <Form.Item
-            label="Assignment title"
+            label="عنوان المهمة"
             style={{ width: "70%" }}
             name="title"
             rules={[
               {
                 required: true,
-                message: "Assignment title is required",
+                message: "عنوان المهمة مطلوب",
               },
             ]}
           >
             <Input
               className="input"
-              placeholder="Assignment title"
+              placeholder="عنوان المهمة"
               style={{}}
             />
           </Form.Item>
 
           <Form.Item
-            label="Assignment details: "
+            label="تفاصيل المهمة"
             style={{ width: "70%" }}
-            name="describtion"
+            name="description"
             rules={[
               {
                 required: true,
-                message: "Assignment details is required",
+                message: "تفاصيل المهمة مطلوبة",
               },
             ]}
           >
             <Input.TextArea
               style={{ borderRadius: "8px", height: "100px" }}
-              placeholder="Assignment detail"
+              placeholder="تفاصيل المهمة"
             />
           </Form.Item>
 
           <Form.Item className="button">
             <Button type="primary" htmlType="submit">
-              Submit
+              أضف المهمة
             </Button>
           </Form.Item>
         </Form>
