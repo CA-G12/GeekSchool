@@ -46,7 +46,7 @@ const StudentsProfile = () => {
 
       const {
         data: { data },
-      } = await axios(`/api/v1/class/2/students`);
+      } = await axios(`/api/v1/class/${classId}/students`);
 
       setStudents(
         data.map((s: any) => ({
