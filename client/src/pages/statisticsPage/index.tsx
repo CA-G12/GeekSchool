@@ -1,10 +1,10 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { message } from "antd";
-import { Area } from '@antv/g2plot';
-import { DashboardCard } from '../../components/Class/cards';
-import { dashboardNumberInterface } from '../../interfaces';
-import './style.css'
+import { Area } from "@antv/g2plot";
+import { DashboardCard } from "../../components/Class/cards";
+import { dashboardNumberInterface } from "../../interfaces";
+import "./style.css";
 
 const init = {
   studentLength: 0,
@@ -13,26 +13,61 @@ const init = {
 };
 
 const StatisticsPage: any = ({ classId }: { classId: number | string }) => {
-  const [{
-    studentLength,
-    assignmentLength,
-    questionsLength },
+  const [
+    { studentLength, assignmentLength, questionsLength },
     setDashboardNumber,
   ] = useState<dashboardNumberInterface>(init);
 
-  const area = new Area('dashboard-chart', {
-    data: [{
-      timePeriod: "2006 Q3",
-      value: 1
-    }],
-    xField: 'timePeriod',
-    yField: 'value',
-    xAxis: {
-      range: [0, 1],
-    },
-    theme: {colors10 :['#30BF78'],}
-  });
-  area.render();
+  // eslint-disable-next-line no-unused-vars
+  const chart = () => {
+    const area = new Area("dashboard-chart", {
+      data: [
+        {
+          timePeriod: "2006 Q3",
+          value: 1,
+        },
+        {
+          timePeriod: "2015 Q3",
+          value: 2,
+        },        {
+          timePeriod: "2002 Q3",
+          value: 3,
+        },        {
+          timePeriod: "2010 Q3",
+          value: 4,
+        },        {
+          timePeriod: "2008 Q3",
+          value: 5,
+        },
+        {
+          timePeriod: "2008 Q3",
+          value: 8,
+        },
+        {
+          timePeriod: "2008 Q3",
+          value: 6,
+        },
+        {
+          timePeriod: "2008 Q3",
+          value: 7,
+        },
+      ],
+      xField: "timePeriod",
+      yField: "value",
+      xAxis: {
+        range: [0, 1],
+      },
+      areaStyle: () => ({
+          fill: 'l(270) 0:#ffffff 0.5:#7ec2f3 1:#1890ff',
+        }),
+    });
+    return area.render();
+  }
+
+  useEffect(() => {
+    chart();
+  }, [])
+
   const getStatistics = async () => {
     try {
       const statisticsData = await axios.get(
@@ -51,14 +86,22 @@ const StatisticsPage: any = ({ classId }: { classId: number | string }) => {
 
   useEffect(() => {
     getStatistics();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <section id="dashboard-page">
       <section id="dashboard-cards">
         <DashboardCard length={studentLength} name="Students" color="#FB7D5B" />
-        <DashboardCard length={assignmentLength} name="Assignment" color="#FCC43E" />
-        <DashboardCard length={questionsLength} name="Questions" color="#111111" />
+        <DashboardCard
+          length={assignmentLength}
+          name="Assignment"
+          color="#FCC43E"
+        />
+        <DashboardCard
+          length={questionsLength}
+          name="Questions"
+          color="#111111"
+        />
       </section>
       <section id="dashboard-chart" />
     </section>

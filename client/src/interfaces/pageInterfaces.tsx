@@ -4,6 +4,4 @@ interface dashboardNumberInterface {
   questionsLength: number | string;
 }
 
-export {
-  dashboardNumberInterface,
-}
+export { dashboardNumberInterface };
