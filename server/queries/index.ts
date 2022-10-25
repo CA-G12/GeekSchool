@@ -10,6 +10,7 @@ import {
   putAnswerQuestionQuery,
   getClassStudentsQuery,
   getStudentTasksQuery,
+  getClassGradesQuery,
   postTestQuery,
   getClassFeedbackQuery,
   deleteStudentFromClassQuery,
@@ -46,4 +47,5 @@ export {
   postTestQuery,
   postRecommendationQuery,
   getStudentTasksQuery,
+  getClassGradesQuery,
 };

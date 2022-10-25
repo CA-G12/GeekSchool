@@ -17,6 +17,7 @@ import addAnnouncement from './addAnnouncement';
 import putAnswerQuestion from './putAnswerQuestion';
 import getAllStudentWhoSubmitTasks from './getAllStudentWhoSubmitTasks';
 import postQuestion from './postQuestion';
+import getClassGrades from './getClassGrades';
 
 export {
   addNewAssignment,
@@ -38,4 +39,5 @@ export {
   getAllStudentWhoSubmitTasks,
   getAssignments,
   postQuestion,
+  getClassGrades,
 };
