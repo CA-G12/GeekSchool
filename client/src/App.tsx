@@ -4,6 +4,7 @@ import { ConfigProvider } from "antd";
 import Question from "./components/Class/Questions";
 import { SignUpPage } from "./pages";
 import { UserAuthProvider } from "./context/AuthContext";
+import ClassTest from "./components/ClassTests/ClassTests";
 import StatsDummy from "./components/StatsDummy/Dummy";
 import Class from "./components/Class";
 import "antd/dist/antd.variable.min.css";
@@ -39,7 +40,7 @@ const router = createBrowserRouter([
       },
       {
         path: "assignments",
-        element: <h1>Assignments</h1>,
+        element: <ClassTest />, // ? this just temporary, any one works on the assignments can remove it.
       },
       {
         path: "questions",
