@@ -73,6 +73,7 @@ const paths = [
   "/class/questions",
   "/class/feedback",
   "/class/recommended",
+  "/class/grades",
 ];
 
 const labels = [
@@ -82,6 +83,7 @@ const labels = [
   "Questions",
   "Feedback",
   "Recommended",
+  "Grades",
 ];
 
 const items2: MenuProps["items"] = [
@@ -90,6 +92,7 @@ const items2: MenuProps["items"] = [
   ReconciliationOutlined,
   QuestionCircleOutlined,
   DeliveredProcedureOutlined,
+  CarryOutOutlined,
   CarryOutOutlined,
 ].map((Icon, index) => {
   const key: string = String(index + 1);

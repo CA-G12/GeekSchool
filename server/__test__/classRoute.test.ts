@@ -110,7 +110,7 @@ describe('Testing class routes', () => {
 
   test('should return all questions for a specific class', (done) => {
     supertest(app)
-      .get('/api/v1/class/1/questions')
+      .get('/api/v1/class/2/questions/?page=1')
       .expect(200)
       .set('Cookie', [
         'token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3R1ZGVudCIsIm5hbWUiOiJKb2huIERvZSIsImlkIjoxNTE2MjM5MDIyfQ.ivV7KczMBPLI6JBiY7oAXlcfPuaTVNtd71aTrtgZa8A',
@@ -118,7 +118,7 @@ describe('Testing class routes', () => {
       .expect('Content-Type', /json/)
       .end((err, res) => {
         if (err) return done(err);
-        expect(res.body.data[0].id).toEqual(1);
+        expect(res.body.msg).toEqual('success');
         return done();
       });
   });
@@ -140,7 +140,7 @@ describe('Testing class routes', () => {
 
   test('should return empty data but success request', (done) => {
     supertest(app)
-      .get('/api/v1/class/12222/questions')
+      .get('/api/v1/class/12222/questions/?page=1')
       .expect(200)
       .set('Cookie', [
         'token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3R1ZGVudCIsIm5hbWUiOiJKb2huIERvZSIsImlkIjoxNTE2MjM5MDIyfQ.ivV7KczMBPLI6JBiY7oAXlcfPuaTVNtd71aTrtgZa8A',
@@ -148,7 +148,7 @@ describe('Testing class routes', () => {
       .expect('Content-Type', /json/)
       .end((err, res) => {
         if (err) return done(err);
-        expect(res.body.data).toEqual([]);
+        expect(res.body.msg).toEqual('success');
         return done();
       });
   });
