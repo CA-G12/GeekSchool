@@ -1,10 +1,11 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider, Link } from "react-router-dom";
 import { ConfigProvider } from "antd";
+import Question from "./components/Class/Questions";
 import { SignUpPage } from "./pages";
 import { UserAuthProvider } from "./context/AuthContext";
 import StatsDummy from "./components/StatsDummy/Dummy";
-import Class from "./components/Class/Class";
+import Class from "./components/Class";
 import "antd/dist/antd.variable.min.css";
 import "./i18n/config.js";
 import "./style.css";
@@ -42,7 +43,7 @@ const router = createBrowserRouter([
       },
       {
         path: "questions",
-        element: <h1>Questions</h1>,
+        element: <Question />,
       },
       {
         path: "feedback",
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
       {
         path: "recommended",
         element: <h1>Recommended</h1>,
+      },
+      {
+        path: "grades",
+        element: <h1>grades</h1>,
       },
     ],
   },
