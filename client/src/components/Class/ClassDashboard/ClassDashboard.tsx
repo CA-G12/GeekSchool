@@ -95,6 +95,7 @@ const items2: MenuProps["items"] = [
   DeliveredProcedureOutlined,
   CarryOutOutlined,
   FormOutlined,
+  CarryOutOutlined,
 ].map((Icon, index) => {
   const key: string = String(index + 1);
 
@@ -132,7 +133,7 @@ const ClassDashboard: React.FC = () => {
           collapsed={collapsed}
           width={200}
           className="site-layout-background"
-          onCollapse={(value) => setCollapsed(value)}
+          onCollapse={(value:any) => setCollapsed(value)}
         >
           <Menu
             mode="inline"
