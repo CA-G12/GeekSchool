@@ -20,21 +20,23 @@ const Questions: FC<Props> = () => {
   const [questions, setQuestions] = useState<questionInterface[]>([]);
   const [count, setCount] = useState<number>(1);
   const [current, setCurrent] = useState(1);
-  const {classId} = useParams();
+  const { classId } = useParams();
 
   const fetchData = async () => {
     try {
-      const {data} = await axios(`/api/v1/class/${classId}/questions/?page=${current}`);
+      const { data } = await axios(
+        `/api/v1/class/${classId}/questions/?page=${current}`
+      );
       setCount(data.count);
       setQuestions(data.data);
-    }  catch (error) {
-      console.log(error)
+    } catch (error) {
+      console.log(error);
     }
   };
 
   const handleChange = async (id: string, value: string) => {
     // api call to answer question with id and value
-    await axios.put(`/api/v1/class/2/questions/${id}`, { answer: value });
+    await axios.put(`/api/v1/class/${classId}/questions/${id}`, { answer: value });
     setQuestions(
       questions
         .sort((a, b) => (a.answer > b.answer ? 1 : -1))
