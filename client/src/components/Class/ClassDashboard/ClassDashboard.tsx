@@ -133,7 +133,7 @@ const ClassDashboard: React.FC = () => {
           collapsed={collapsed}
           width={200}
           className="site-layout-background"
-          onCollapse={(value:any) => setCollapsed(value)}
+          onCollapse={(value: any) => setCollapsed(value)}
         >
           <Menu
             mode="inline"
