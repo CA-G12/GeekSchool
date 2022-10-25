@@ -20,6 +20,7 @@ const paths = [
   "/class/questions",
   "/class/feedback",
   "/class/recommended",
+  "/class/grades",
 ];
 
 const icons = [

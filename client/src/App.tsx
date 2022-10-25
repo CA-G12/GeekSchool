@@ -1,10 +1,13 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider, Link } from "react-router-dom";
 import { ConfigProvider } from "antd";
+import Question from "./components/Class/Questions";
 import { SignUpPage } from "./pages";
 import { UserAuthProvider } from "./context/AuthContext";
+import ClassTest from "./components/ClassTests/ClassTests";
 import StatsDummy from "./components/StatsDummy/Dummy";
-import Class from "./components/Class/Class";
+import StudentsProfile from "./components/Class/StudentsPage";
+import Class from "./components/Class";
 import "antd/dist/antd.variable.min.css";
 import "./i18n/config.js";
 import "./style.css";
@@ -25,6 +28,10 @@ const router = createBrowserRouter([
     element: <SignUpPage />,
   },
   {
+    path: "/student/:studentId",
+    element: <h1>student profile</h1>,
+  },
+  {
     path: "/class",
     element: <Class />,
     children: [
@@ -34,15 +41,15 @@ const router = createBrowserRouter([
       },
       {
         path: "students",
-        element: <h1>Students</h1>,
+        element: <StudentsProfile />,
       },
       {
         path: "assignments",
-        element: <h1>Assignments</h1>,
+        element: <ClassTest />, // ? this just temporary, any one works on the assignments can remove it.
       },
       {
         path: "questions",
-        element: <h1>Questions</h1>,
+        element: <Question />,
       },
       {
         path: "feedback",
@@ -51,6 +58,10 @@ const router = createBrowserRouter([
       {
         path: "recommended",
         element: <h1>Recommended</h1>,
+      },
+      {
+        path: "grades",
+        element: <h1>grades</h1>,
       },
     ],
   },
