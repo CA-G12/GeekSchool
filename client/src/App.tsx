@@ -26,6 +26,10 @@ const router = createBrowserRouter([
     element: <SignUpPage />,
   },
   {
+    path: '/student/:studentId',
+    element: <h1>student profile</h1>
+  },
+  {
     path: "/class",
     element: <Class />,
     children: [

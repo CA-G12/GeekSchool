@@ -1,67 +1,125 @@
-import React, { ReactNode, FC } from "react";
-import { Table } from "antd";
-import type { ColumnsType } from "antd/es/table";
+import { useState, useEffect } from "react";
+import { Table, Space, Spin, notification  } from "antd";
+import axios from "axios";
+import { useNavigate , useParams } from "react-router-dom";
 import NameCell from "./NameCell";
 import Action from "./Action";
-
 import "./style.css";
 
-const testImage =
-  "https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=386&q=80";
-
-interface DataType {
-  name: ReactNode;
-  MobileNum: string;
-  ParentName: string;
-  Action: ReactNode;
-  id: React.Key;
+interface StudentInterface {
+  id: number;
+  name: string;
+  mobile: string;
+  img: string;
+  parentName: string;
 }
 
-type Props = {};
-
-// columns name
-const columns: ColumnsType<DataType> = [
+const columns = [
   {
     title: "Name",
     dataIndex: "name",
   },
   {
     title: "Mobile-Num",
-    dataIndex: "MobileNum",
+    dataIndex: "mobile",
   },
   {
     title: "Parent-Name",
-    dataIndex: "ParentName",
+    dataIndex: "parentName",
   },
   {
     title: "Action",
-    dataIndex: "Action",
+    dataIndex: "action",
   },
 ];
 
-// fake data => should replace it with actual data
-const data: DataType[] = [
-  {
-    id: "1",
-    name: <NameCell name="test" image={testImage} />,
-    MobileNum: "0599999999",
-    ParentName: "mahmoud",
-    Action: <Action />,
-  },
-];
+const StudentsProfile = () => {
+  const [students, setStudents] = useState<StudentInterface[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+  const { classId } = useParams();
 
-const StudentsProfile: FC<Props> = () => (
-  <>
-    <h1 className="title">Students</h1>
-    <div className="table_wrapper">
-      <Table
-        columns={columns}
-        dataSource={data}
-        size="middle"
-        pagination={{ pageSize: 4 }}
-      />
-    </div>
-  </>
-);
+
+  const fetchData = async () => {
+    try {
+      setLoading(true)
+
+      const {
+        data: { data },
+      } = await axios(`/api/v1/class/2/students`);
+
+      setStudents(
+        data.map((s: any) => ({
+          id: s.student_id,
+          name: s.name,
+          mobile: s.mobile,
+          img: s.img,
+          parentName: s["Student.Parent.User.name"],
+        }))
+      );
+      setLoading(false)
+    } catch (err) {
+      setLoading(false)
+      setError("Something went wrong");
+    }
+  };
+
+
+  const handelDeleteStudent = async (id: number) => {
+    await axios.delete(`/api/v1/class/${classId}/student`, {data: {studentId:id}});
+    await fetchData();
+  };
+  const handelStudentProfile = async (id: number) => {
+    navigate(`/student/${id}`);
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const dataSource = students.map((s) => ({
+    name: <NameCell name={s.name} image={s.img} />,
+    mobile: s.mobile,
+    parentName: s.parentName,
+    action: <Action id={s.id} handelDeleteStudent={() => handelDeleteStudent(s.id) } handelStudentProfile={() => handelStudentProfile(s.id)} />,
+  }));
+
+  if(loading) {
+    return (
+      <Space size="large">
+      <Spin size="large" />
+    </Space>
+    )
+  }
+
+  if(error) {
+    notification.config({
+      placement: 'bottomLeft',
+      bottom: 10,
+      duration: 3,
+      rtl: true,
+    });
+      notification.error({
+        message: error,
+        // description: error,
+      })
+
+  }
+
+  return (
+    <>
+      <h1 className="title">Students</h1>
+      <div className="table_wrapper">
+        <Table
+          columns={columns}
+          dataSource={dataSource}
+          size="middle"
+          pagination={{ pageSize: 4 }}
+        />
+      </div>
+    </>
+  );
+};
 
 export default StudentsProfile;
