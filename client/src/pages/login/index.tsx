@@ -18,7 +18,7 @@ const LoginPage: React.FC = () => {
       );
       message.success(loginMsg.data.mag);
     } catch (error: any) {
-      message.error("error");
+      message.error(error.response.data.msg);
     }
   };
 
