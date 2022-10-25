@@ -17,15 +17,16 @@ const AssignmentModal: React.FC = () => {
 
   const onFinish = async (fieldValues: any) => {
     try {
-      await axios.post("/api/v1/class/25/assignment", { ...fieldValues }, { cancelToken: source.token })
-
+      await axios.post(
+        "/api/v1/class/25/assignment",
+        { ...fieldValues },
+        { cancelToken: source.token }
+      );
 
       await Swal.fire({
         title: "تم إضافة المهمة بنجاح",
-        icon: "success"
-
+        icon: "success",
       });
-
     } catch (error: any) {
       Swal.fire({
         icon: "error",
@@ -58,8 +59,6 @@ const AssignmentModal: React.FC = () => {
         }
       >
         <Form className="form" onFinish={onFinish} labelCol={{ span: 8 }}>
-
-
           <Form.Item
             label="عنوان المهمة"
             style={{ width: "70%" }}
@@ -71,11 +70,7 @@ const AssignmentModal: React.FC = () => {
               },
             ]}
           >
-            <Input
-              className="input"
-              placeholder="عنوان المهمة"
-              style={{}}
-            />
+            <Input className="input" placeholder="عنوان المهمة" style={{}} />
           </Form.Item>
 
           <Form.Item
