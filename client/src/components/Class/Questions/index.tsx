@@ -36,7 +36,9 @@ const Questions: FC<Props> = () => {
 
   const handleChange = async (id: string, value: string) => {
     // api call to answer question with id and value
-    await axios.put(`/api/v1/class/${classId}/questions/${id}`, { answer: value });
+    await axios.put(`/api/v1/class/${classId}/questions/${id}`, {
+      answer: value,
+    });
     setQuestions(
       questions
         .sort((a, b) => (a.answer > b.answer ? 1 : -1))
