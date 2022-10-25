@@ -16,7 +16,7 @@
   },
   {
    "test_id": 1,
-    "student_id": 2,
+    "student_id": 5,
     "grade": 15
   },
   {
@@ -125,22 +125,17 @@
     "grade": 25
   },
   {
-    "test_id": 6,
-    "student_id": 8,
-    "grade": 26
-  },
-  {
-    "test_id": 6,
+    "test_id": 7,
     "student_id": 8,
     "grade": 27
   },
   {
-    "test_id": 6,
+    "test_id": 10,
     "student_id": 8,
     "grade": 28
   },
   {
-    "test_id": 6,
+    "test_id": 14,
     "student_id": 8,
     "grade": 29
   },
