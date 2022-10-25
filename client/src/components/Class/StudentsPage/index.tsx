@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { Table, Space, Spin, notification  } from "antd";
+import { Table, Space, Spin, notification } from "antd";
 import axios from "axios";
-import { useNavigate , useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import NameCell from "./NameCell";
 import Action from "./Action";
 import "./style.css";
@@ -40,10 +40,9 @@ const StudentsProfile = () => {
   const navigate = useNavigate();
   const { classId } = useParams();
 
-
   const fetchData = async () => {
     try {
-      setLoading(true)
+      setLoading(true);
 
       const {
         data: { data },
@@ -58,21 +57,22 @@ const StudentsProfile = () => {
           parentName: s["Student.Parent.User.name"],
         }))
       );
-      setLoading(false)
+      setLoading(false);
     } catch (err) {
-      setLoading(false)
+      setLoading(false);
       setError("Something went wrong");
     }
   };
 
-
   const handelDeleteStudent = async (id: number) => {
-    await axios.delete(`/api/v1/class/${classId}/student`, {data: {studentId:id}});
+    await axios.delete(`/api/v1/class/${classId}/student`, {
+      data: { studentId: id },
+    });
     await fetchData();
   };
   const handelStudentProfile = async (id: number) => {
     navigate(`/student/${id}`);
-  }
+  };
 
   useEffect(() => {
     fetchData();
@@ -82,29 +82,34 @@ const StudentsProfile = () => {
     name: <NameCell name={s.name} image={s.img} />,
     mobile: s.mobile,
     parentName: s.parentName,
-    action: <Action id={s.id} handelDeleteStudent={() => handelDeleteStudent(s.id) } handelStudentProfile={() => handelStudentProfile(s.id)} />,
+    action: (
+      <Action
+        id={s.id}
+        handelDeleteStudent={() => handelDeleteStudent(s.id)}
+        handelStudentProfile={() => handelStudentProfile(s.id)}
+      />
+    ),
   }));
 
-  if(loading) {
+  if (loading) {
     return (
       <Space size="large">
-      <Spin size="large" />
-    </Space>
-    )
+        <Spin size="large" />
+      </Space>
+    );
   }
 
-  if(error) {
+  if (error) {
     notification.config({
-      placement: 'bottomLeft',
+      placement: "bottomLeft",
       bottom: 10,
       duration: 3,
       rtl: true,
     });
-      notification.error({
-        message: error,
-        // description: error,
-      })
-
+    notification.error({
+      message: error,
+      // description: error,
+    });
   }
 
   return (
