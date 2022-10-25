@@ -1,7 +1,7 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider, Link } from "react-router-dom";
 import { ConfigProvider } from "antd";
-import { SignUpPage } from "./pages";
+import { SignUpPage, LoginPage } from "./pages";
 import { UserAuthProvider } from "./context/AuthContext";
 import StatsDummy from "./components/StatsDummy/Dummy";
 import Class from "./components/Class/Class";
@@ -23,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "/signup",
     element: <SignUpPage />,
+  },
+  {
+    path: "/login",
+    element: <LoginPage />,
   },
   {
     path: "/class",
