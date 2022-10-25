@@ -1,18 +1,14 @@
+import { FC } from "react";
 import { Card, Button } from "antd";
 import "./AssignmentCards.css";
 import { UnorderedListOutlined } from "@ant-design/icons";
+import { StudentAssignmentCardProps } from "../../../interfaces";
 
-interface StudentAssignmentCardProps {
-  title: string;
-  createdAt: string;
-  description: string;
-}
-
-const StudentAssignmentCard = ({
+const StudentAssignmentCard: FC<StudentAssignmentCardProps> = ({
   title,
   createdAt,
   description,
-}: StudentAssignmentCardProps) => (
+}) => (
   <div>
     <Card style={{ margin: "5px" }}>
       <div className="card-title">

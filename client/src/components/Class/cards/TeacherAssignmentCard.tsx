@@ -1,9 +1,16 @@
 import { Card } from "antd";
 import React from "react";
-import "./AssignmentCards.css";
 import { UnorderedListOutlined, DeleteFilled } from "@ant-design/icons";
+import { TeacherAssignmentCardProps } from "../../../interfaces";
+import "./AssignmentCards.css";
 
-const TeacherAssignmentCard: React.FC = () => (
+const TeacherAssignmentCard: React.FC<TeacherAssignmentCardProps> = ({
+  title,
+  createdAt,
+  description,
+  submitted,
+  notSubmitted,
+}) => (
   <div>
     <Card style={{ margin: "5px" }}>
       <div className="card-title">
@@ -12,32 +19,27 @@ const TeacherAssignmentCard: React.FC = () => (
             <UnorderedListOutlined />{" "}
           </div>
           <div>
-            <h1>Title card</h1>
+            <h1>{title}</h1>
           </div>
         </div>
 
         <div className="title-side">
-          <p style={{ color: "#7C7C7C" }}>Posted: 1-12-2000</p>
+          <p style={{ color: "#7C7C7C" }}>Posted: {createdAt}</p>
           <DeleteFilled style={{ color: "red" }} />
         </div>
       </div>
 
       <div className="card-content">
         <div className="left">
-          <p className="assignment-content">
-            It was popularised in the 1960s with the release of Letraset sheets
-            containing Lorem Ipsum passages, and more recently with desktop
-            publishing software like Aldus PageMaker. including versions of
-            Lorem Ipsum
-          </p>
+          <p className="assignment-content">{description}</p>
         </div>
 
         <div className="right">
           <div className="turnedOn">
-            <span>50</span>Turned on
+            <span>{submitted}</span>Turned on
           </div>
           <div className="missing">
-            <span>45</span>Missing
+            <span>{notSubmitted}</span>Missing
           </div>
         </div>
       </div>
