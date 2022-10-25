@@ -41,7 +41,7 @@ export const UserAuthProvider: FC<Props> = ({ children }) => {
     return () => {
       source.cancel();
     };
-  }, [source]);
+  }, []);
 
   const value = useMemo(() => ({ userData, setUserData }), [userData]);
 
