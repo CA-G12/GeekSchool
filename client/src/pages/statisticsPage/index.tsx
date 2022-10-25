@@ -29,13 +29,16 @@ const StatisticsPage: any = ({ classId }: { classId: number | string }) => {
         {
           timePeriod: "2015 Q3",
           value: 2,
-        },        {
+        },
+        {
           timePeriod: "2002 Q3",
           value: 3,
-        },        {
+        },
+        {
           timePeriod: "2010 Q3",
           value: 4,
-        },        {
+        },
+        {
           timePeriod: "2008 Q3",
           value: 5,
         },
@@ -58,15 +61,15 @@ const StatisticsPage: any = ({ classId }: { classId: number | string }) => {
         range: [0, 1],
       },
       areaStyle: () => ({
-          fill: 'l(270) 0:#ffffff 0.5:#7ec2f3 1:#1890ff',
-        }),
+        fill: "l(270) 0:#ffffff 0.5:#7ec2f3 1:#1890ff",
+      }),
     });
     return area.render();
-  }
+  };
 
   useEffect(() => {
     chart();
-  }, [])
+  }, []);
 
   const getStatistics = async () => {
     try {
