@@ -6,7 +6,8 @@ const studentAssignmentQuery = async (id : number, classId : string) => Assignme
       'grade', 'assignment_id', 'student_id',
       'Assignment.title' as 'title',
       'Assignment.description' as 'description',
-      'Assignment.class_id' as 'class_id'],
+      'Assignment.class_id' as 'class_id',
+      'Assignment.createdAt'],
     raw: true,
     nest: false,
     where: {

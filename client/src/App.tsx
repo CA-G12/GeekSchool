@@ -2,9 +2,11 @@ import React from "react";
 import { createBrowserRouter, RouterProvider, Link } from "react-router-dom";
 import { ConfigProvider } from "antd";
 import { SignUpPage } from "./pages";
-import { UserAuthProvider } from "./context/AuthContext";
-import StatsDummy from "./components/StatsDummy/Dummy";
 import Class from "./components/Class/Class";
+import { TeacherAssignmentCard } from "./components/Class/cards";
+import StatsDummy from "./components/StatsDummy/Dummy";
+import Assignments from "./components/Class/Assignments/Assignments";
+import { UserAuthProvider } from "./context/AuthContext";
 import "antd/dist/antd.variable.min.css";
 import "./i18n/config.js";
 import "./style.css";
@@ -38,11 +40,11 @@ const router = createBrowserRouter([
       },
       {
         path: "assignments",
-        element: <h1>Assignments</h1>,
+        element: <Assignments />,
       },
       {
         path: "questions",
-        element: <h1>Questions</h1>,
+        element: <TeacherAssignmentCard />,
       },
       {
         path: "feedback",
