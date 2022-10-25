@@ -63,8 +63,11 @@ const Announcements: React.FC = () => {
               <div className="hr" />
               <section className="test-box-inner">
                 <h2 className="test-title">{object.title}</h2>
-                <p className="test-date">{`${object.date.day}/${object.date.month}/${object.date.year}`}</p>
-                <p className="test-time">{object.date.time[1].slice(0, 11)}</p>
+                <p className="test-date">
+                  {`${object.date.day}/${object.date.month}/${object.date.year}`}
+                  &nbsp; &nbsp; | &nbsp; &nbsp;
+                  {object.date.time[1].slice(0, 11)}
+                </p>
                 <p className="test-notes">{object.notes}</p>
               </section>
             </section>
