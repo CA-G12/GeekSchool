@@ -27,7 +27,6 @@ const validateMessages = {
 
 const AddTest: React.FC = () => {
   const [isShown, setIsShown] = useState<boolean>(true);
-  const source = axios.CancelToken.source();
 
   const onFinish = async (fieldValues: any) => {
     const values = {
@@ -37,15 +36,7 @@ const AddTest: React.FC = () => {
     };
 
     try {
-      await axios.post(
-        "/api/v1/class/test",
-        {
-          ...values,
-        },
-        {
-          cancelToken: source.token,
-        }
-      );
+      await axios.post("/api/v1/class/test", { ...values });
       await Swal.fire({
         title: "The test is added successfully!",
         showClass: {
@@ -55,15 +46,13 @@ const AddTest: React.FC = () => {
           popup: "animate__animated animate__fadeOutUp",
         },
       });
-      source.cancel();
     } catch (error: any) {
       Swal.fire({
         icon: "error",
-        title: "Oops...",
-        text: "Something went wrong!",
+        title: "Oops...Something went wrong!",
+        text: error,
         footer: '<a href="">Why do I have this issue?</a>',
       });
-      source.cancel();
     }
   };
 
@@ -85,7 +74,7 @@ const AddTest: React.FC = () => {
             />
             <Form.Item
               name="exam-title"
-              label="Exam title: "
+              label="اسم الاختبار: "
               rules={[{ required: true }]}
               className="form-item"
             >
@@ -93,7 +82,7 @@ const AddTest: React.FC = () => {
             </Form.Item>
             <Form.Item
               name="exam-date"
-              label="Exam date: "
+              label="موعد الاختبار: "
               rules={config.rules}
               className="form-item"
             >
@@ -105,7 +94,7 @@ const AddTest: React.FC = () => {
             </Form.Item>
             <Form.Item
               name="exam-notes"
-              label="Extra notes: "
+              label="ملاحظات إضافية: "
               className="form-item"
             >
               <Input.TextArea className="textarea" />
@@ -113,7 +102,7 @@ const AddTest: React.FC = () => {
             <Form.Item
               wrapperCol={{ ...layout.wrapperCol, offset: 8 }}
               style={{
-                width: "42%",
+                width: "20%",
                 display: "flex",
                 justifyContent: "flex-end",
               }}
@@ -127,12 +116,12 @@ const AddTest: React.FC = () => {
                   backgroundColor: "#0CBE8A",
                   border: "1px solid #0CBE8A",
                   borderRadius: "8px",
-                  fontSize: "x-large",
+                  fontSize: "large",
                   fontWeight: "bold",
                   boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.25)",
                 }}
               >
-                Add exam
+                إضافة الإختبار
               </Button>
             </Form.Item>
           </Form>
