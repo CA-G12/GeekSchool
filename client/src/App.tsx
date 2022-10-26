@@ -1,9 +1,9 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider, Link } from "react-router-dom";
 import { ConfigProvider } from "antd";
+import Question from "./components/Class/Questions";
 import { SignUpPage } from "./pages";
-import Class from "./components/Class/Class";
-import { TeacherAssignmentCard } from "./components/Class/cards";
+import Class from "./components/Class";
 import StatsDummy from "./components/StatsDummy/Dummy";
 import Assignments from "./components/Class/Assignments/Assignments";
 import { UserAuthProvider } from "./context/AuthContext";
@@ -44,7 +44,7 @@ const router = createBrowserRouter([
       },
       {
         path: "questions",
-        element: <TeacherAssignmentCard />,
+        element: <Question />,
       },
       {
         path: "feedback",
@@ -53,6 +53,10 @@ const router = createBrowserRouter([
       {
         path: "recommended",
         element: <h1>Recommended</h1>,
+      },
+      {
+        path: "grades",
+        element: <h1>grades</h1>,
       },
     ],
   },
