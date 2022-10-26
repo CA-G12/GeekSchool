@@ -7,6 +7,9 @@ const Class = sequelize.define('Class', {
     autoIncrement: true,
     primaryKey: true,
   },
+  name: {
+    type: DataTypes.STRING,
+  },
 });
 
 export default Class;
