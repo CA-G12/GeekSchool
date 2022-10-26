@@ -6,6 +6,7 @@ import "./index.css";
 import Swal from "sweetalert2";
 
 const AssignmentModal: React.FC = () => {
+  const [form] = Form.useForm();
   const source = axios.CancelToken.source();
   const [visible, setVisible] = useState<boolean>(false);
 
@@ -33,8 +34,9 @@ const AssignmentModal: React.FC = () => {
         text: error.response.statusText,
       });
     }
-
     handleCancel();
+    form.resetFields();
+   
   };
 
   return (
@@ -58,7 +60,7 @@ const AssignmentModal: React.FC = () => {
           />
         }
       >
-        <Form className="form" onFinish={onFinish} labelCol={{ span: 8 }}>
+        <Form form={form} className="form" onFinish={onFinish} labelCol={{ span: 8 }}>
           <Form.Item
             label="عنوان المهمة"
             style={{ width: "70%" }}
