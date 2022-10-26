@@ -26,11 +26,10 @@ interface StudentAssignmentCardProps {
 }
 
 interface TeacherAssignmentCardProps {
+  id: number;
   title: string;
   createdAt: string;
   description: string;
-  submitted: number;
-  notSubmitted: number;
 }
 
 export {
