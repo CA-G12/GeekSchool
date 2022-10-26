@@ -24,6 +24,8 @@ import createParent from './parentQueries';
 import createStudent from './studentQueries';
 import createTeacher from './teacherQueries';
 
+import getTeacherScheduleQuery from './getTeacherScheduleQuery';
+
 export {
   createUser,
   createParent,
@@ -48,4 +50,5 @@ export {
   postRecommendationQuery,
   getStudentTasksQuery,
   getClassGradesQuery,
+  getTeacherScheduleQuery,
 };
