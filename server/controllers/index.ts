@@ -22,9 +22,10 @@ import {
   deleteAssignment,
   postQuestion,
   getClassGrades,
-
   postRecommendation,
 } from './class';
+
+import getParentTeachers from './getParentTeachers';
 
 export {
   signup,
@@ -53,4 +54,5 @@ export {
   putAssignmentStudent,
   addAnnouncement,
   getClassGrades,
+  getParentTeachers,
 };
