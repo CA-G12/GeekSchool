@@ -94,15 +94,15 @@ const StatisticsPage: any = ({ classId }: { classId: number | string }) => {
   return (
     <section id="dashboard-page">
       <section id="dashboard-cards">
-        <DashboardCard length={studentLength} name="Students" color="#FB7D5B" />
+        <DashboardCard length={studentLength} name="الطلاب" color="#FB7D5B" />
         <DashboardCard
           length={assignmentLength}
-          name="Assignment"
+          name="المهمات"
           color="#FCC43E"
         />
         <DashboardCard
           length={questionsLength}
-          name="Questions"
+          name="الاسئلة"
           color="#111111"
         />
       </section>

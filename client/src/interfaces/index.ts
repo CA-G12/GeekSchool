@@ -1,5 +1,17 @@
-import { UserInterface, UserDataInterface } from "./userInterface";
-import { announcementCard } from "./componentsInterface";
+import {
+  UserInterface,
+  UserDataInterface,
+  emailInterface,
+  userDataParentInterface,
+  signUpDataInterface,
+} from "./userInterface";
+
+import {
+  announcementCard,
+  questionInterface,
+  recommendedInterface,
+  feedbackInterface,
+} from "./componentsInterface";
 import { dashboardNumberInterface } from "./pageInterfaces";
 
 export {
@@ -7,4 +19,10 @@ export {
   UserDataInterface,
   announcementCard,
   dashboardNumberInterface,
+  questionInterface,
+  recommendedInterface,
+  feedbackInterface,
+  emailInterface,
+  userDataParentInterface,
+  signUpDataInterface,
 };

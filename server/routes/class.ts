@@ -18,6 +18,7 @@ import {
   postTest,
   putAssignmentTeacher,
   putAssignmentStudent,
+  getClassGrades,
   getFeedback,
   addNewFeedback,
   deleteStudentFromClass,
@@ -40,6 +41,10 @@ classRouter.put('/:classId/assignment/teachers/:assignmentId', userAuth, teacher
 classRouter.put('/:classId/assignment/students/:assignmentId', userAuth, studentAuth, putAssignmentStudent);
 classRouter.get('/:classId/students', userAuth, studentAndTeacher, getClassStudents);
 classRouter.get('/:classId/questions', userAuth, studentAndTeacher, getClassQuestions);
+classRouter.get('/:classId/assignments', userAuth, studentAndTeacher, getAssignments);
+classRouter.delete('/assignment/:id', userAuth, teacherAuth, deleteAssignment);
+classRouter.get('/:classId/grades', userAuth, teacherAuth, getClassGrades);
+
 classRouter.post('/:classId/announcement', userAuth, teacherAuth, addAnnouncement);
 classRouter.put('/:classId/questions/:questionId', userAuth, teacherAuth, putAnswerQuestion);
 classRouter.get('/:classId/feedback', userAuth, teacherAuth, getFeedback);
