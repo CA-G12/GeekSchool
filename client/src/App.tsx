@@ -1,9 +1,9 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider, Link } from "react-router-dom";
 import { ConfigProvider } from "antd";
-import { StatisticsPage, SignUpPage } from "./pages";
-import { UserAuthProvider } from "./context/AuthContext";
+import { StatisticsPage, SignUpPage, LoginPage } from "./pages";
 import Question from "./components/Class/Questions";
+import { UserAuthProvider } from "./context/AuthContext";
 import ClassTest from "./components/ClassTests/ClassTests";
 import StudentsProfile from "./components/Class/StudentsPage";
 import Class from "./components/Class";
@@ -27,6 +27,9 @@ const router = createBrowserRouter([
     element: <SignUpPage />,
   },
   {
+    path: "/login",
+    element: <LoginPage />,
+  },{
     path: "/student/:studentId",
     element: <h1>student profile</h1>,
   },
