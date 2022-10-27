@@ -2,9 +2,10 @@ import React from "react";
 import { createBrowserRouter, RouterProvider, Link } from "react-router-dom";
 import { ConfigProvider } from "antd";
 import Question from "./components/Class/Questions";
-import { SignUpPage , LoginPage} from "./pages";
+import { SignUpPage, LoginPage } from "./pages";
 import { UserAuthProvider } from "./context/AuthContext";
 import ClassTest from "./components/ClassTests/ClassTests";
+import Feedback from "./components/Class/Feedback/Feedback";
 import StatsDummy from "./components/StatsDummy/Dummy";
 import StudentsProfile from "./components/Class/StudentsPage";
 import Class from "./components/Class";
@@ -30,7 +31,8 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <LoginPage />,
-  },{
+  },
+  {
     path: "/student/:studentId",
     element: <h1>student profile</h1>,
   },
@@ -56,7 +58,7 @@ const router = createBrowserRouter([
       },
       {
         path: "feedback",
-        element: <h1>Feedback</h1>,
+        element: <Feedback />,
       },
       {
         path: "recommended",
