@@ -35,9 +35,9 @@ const Grades = () => {
       // eslint-disable-next-line @typescript-eslint/no-shadow
       const { cols, students } = handleStudentsData(data);
       setCol([
-        { title: "name", dataIndex: "name", width: "25%" },
+        { title: "إسم الطالب", dataIndex: "name", width: "25%" },
         ...cols,
-        { title: "total", dataIndex: "total" },
+        { title: "العلامة النهائية", dataIndex: "total" },
       ]);
       setStudents(students);
       setLoading(false);
