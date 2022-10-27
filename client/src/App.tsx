@@ -2,7 +2,7 @@ import React from "react";
 import { createBrowserRouter, RouterProvider, Link } from "react-router-dom";
 import { ConfigProvider } from "antd";
 import Question from "./components/Class/Questions";
-import { SignUpPage } from "./pages";
+import { SignUpPage , LoginPage} from "./pages";
 import { UserAuthProvider } from "./context/AuthContext";
 import ClassTest from "./components/ClassTests/ClassTests";
 import StatsDummy from "./components/StatsDummy/Dummy";
@@ -29,6 +29,9 @@ const router = createBrowserRouter([
     element: <SignUpPage />,
   },
   {
+    path: "/login",
+    element: <LoginPage />,
+  },{
     path: "/student/:studentId",
     element: <h1>student profile</h1>,
   },
@@ -61,7 +64,7 @@ const router = createBrowserRouter([
         element: <h1>Recommended</h1>,
       },
       {
-        path: "grades",
+        path: "/class/:classId/grades",
         element: <Grades />,
       },
     ],
