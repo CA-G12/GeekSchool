@@ -6,7 +6,7 @@ import {
   FileTextOutlined,
   DashboardOutlined,
   MenuOutlined,
-  FundProjectionScreenOutlined, 
+  FundProjectionScreenOutlined,
 } from "@ant-design/icons";
 import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
@@ -21,7 +21,7 @@ const paths = [
   "/class/questions",
   "/class/feedback",
   "/class/recommended",
-  "/class/grades",
+  "/class/1/grades", // we should change '1' to classId to let the teacher move on with his class
 ];
 
 const icons = [
@@ -31,7 +31,7 @@ const icons = [
   <QuestionCircleOutlined />,
   <DeliveredProcedureOutlined />,
   <FileTextOutlined />,
-  <FundProjectionScreenOutlined />
+  <FundProjectionScreenOutlined />,
 ];
 
 const labels = [

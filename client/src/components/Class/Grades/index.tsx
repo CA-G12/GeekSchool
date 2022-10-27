@@ -25,7 +25,7 @@ const Grades = () => {
 
   const fetchData = async () => {
     console.log(classId);
-    
+
     try {
       setLoading(true);
 
@@ -86,7 +86,7 @@ const Grades = () => {
 
   return (
     <>
-      <h1 className="title">Grades</h1>
+      <h1 className="title">الدرجات</h1>
       <div className="table_wrapper">
         <Table
           columns={col}
