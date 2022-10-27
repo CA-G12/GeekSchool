@@ -9,14 +9,17 @@
 .name_wrapper {
     display: flex;
     align-items: center;
-    padding-left: 53px !important;
+    padding-right: 53px !important;
+}
+
+.name_wrapper span {
+    text-align: right;
 }
 
 .name_image {
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    margin-right: 10px;
     object-fit: cover;
 }
 
@@ -35,7 +38,19 @@
     color: green;
 }
 
+.ant-table-row-level-0 .ant-table-cell:nth-child(2) {
+    color: rgba(0, 0, 0, 0.85) !important;
+}
+
+.ant-table-row-level-0 .ant-table-cell:nth-child(3) {
+    color: rgba(0, 0, 0, 0.85) !important;
+}
+
 /* antd style */
+
+.ant-table-cell {
+    text-align: center !important;
+}
 
 .ant-table-cell, .ant-table-wrapper {
     background-color: white !important;
@@ -47,4 +62,10 @@
 
 .ant-table-cell::before {
     background-color: transparent !important;
+}
+
+.ant-pagination li:first-child,
+.ant-pagination li:last-child
+ {
+    transform: rotate(180deg);
 }

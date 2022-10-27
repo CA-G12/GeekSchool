@@ -95,7 +95,6 @@ const items2: MenuProps["items"] = [
   DeliveredProcedureOutlined,
   CarryOutOutlined,
   FormOutlined,
-  CarryOutOutlined,
 ].map((Icon, index) => {
   const key: string = String(index + 1);
 

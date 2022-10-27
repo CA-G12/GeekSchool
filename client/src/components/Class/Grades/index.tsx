@@ -1,255 +1,90 @@
-import React, { ReactNode, FC } from "react";
-import { Table } from "antd";
-import type { ColumnsType } from "antd/es/table";
+import { useState, useEffect } from "react";
+import { Table, Space, Spin, notification } from "antd";
+import axios from "axios";
 import NameCell from "./NameCell";
-import ResultCell from "./ResultCell";
-
+import Resultcell from "./ResultCell";
+import handleData from "./handleData";
 import "./style.css";
 
-const testImage =
-  "https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=386&q=80";
-
-interface DataType {
-  name: ReactNode;
-  activity: number;
-  firstMonth: number;
-  midTirm: number;
-  secondTirm: number;
-  finalTirm: number;
-  result: ReactNode;
-  id: React.Key;
+interface StudentInterface {
+  id: number;
+  name: string;
+  img: string;
+  degrees: object;
 }
 
-type Props = {};
 
-// columns name
-const columns: ColumnsType<DataType> = [
-  {
-    title: "Name",
-    dataIndex: "name",
-  },
-  {
-    title: "Activity",
-    dataIndex: "activity",
-  },
-  {
-    title: "First-Month",
-    dataIndex: "firstMonth",
-  },
-  {
-    title: "Mid-Tirm",
-    dataIndex: "midTirm",
-  },
-  {
-    title: "Second-Tirm",
-    dataIndex: "secondTirm",
-  },
-  {
-    title: "Final-tirm",
-    dataIndex: "finalTirm",
-  },
-  {
-    title: "Result",
-    dataIndex: "result",
-  },
-];
 
-// fake data => should replace it with actual data
-const data: DataType[] = [
-  {
-    id: "1",
-    name: <NameCell name="test" image={testImage} />,
-    activity: 5,
-    firstMonth: 9,
-    midTirm: 16,
-    secondTirm: 7,
-    finalTirm: 13,
-    result: (
-      <ResultCell
-        activity={5}
-        firstMonth={9}
-        midTirm={16}
-        secondTirm={7}
-        finalTirm={13}
-      />
-    ),
-  },
-  {
-    id: "2",
-    name: <NameCell name="test1" image={testImage} />,
-    activity: 9,
-    firstMonth: 9,
-    midTirm: 18,
-    secondTirm: 7,
-    finalTirm: 48,
-    result: (
-      <ResultCell
-        activity={9}
-        firstMonth={9}
-        midTirm={18}
-        secondTirm={7}
-        finalTirm={48}
-      />
-    ),
-  },
-  {
-    id: "2",
-    name: <NameCell name="test1" image={testImage} />,
-    activity: 9,
-    firstMonth: 9,
-    midTirm: 18,
-    secondTirm: 7,
-    finalTirm: 48,
-    result: (
-      <ResultCell
-        activity={9}
-        firstMonth={9}
-        midTirm={18}
-        secondTirm={7}
-        finalTirm={48}
-      />
-    ),
-  },
-  {
-    id: "2",
-    name: <NameCell name="test1" image={testImage} />,
-    activity: 9,
-    firstMonth: 9,
-    midTirm: 18,
-    secondTirm: 7,
-    finalTirm: 48,
-    result: (
-      <ResultCell
-        activity={9}
-        firstMonth={9}
-        midTirm={18}
-        secondTirm={7}
-        finalTirm={48}
-      />
-    ),
-  },
-  {
-    id: "2",
-    name: <NameCell name="test1" image={testImage} />,
-    activity: 9,
-    firstMonth: 9,
-    midTirm: 18,
-    secondTirm: 7,
-    finalTirm: 48,
-    result: (
-      <ResultCell
-        activity={9}
-        firstMonth={9}
-        midTirm={18}
-        secondTirm={7}
-        finalTirm={48}
-      />
-    ),
-  },
-  {
-    id: "2",
-    name: <NameCell name="test1" image={testImage} />,
-    activity: 9,
-    firstMonth: 9,
-    midTirm: 18,
-    secondTirm: 7,
-    finalTirm: 48,
-    result: (
-      <ResultCell
-        activity={9}
-        firstMonth={9}
-        midTirm={18}
-        secondTirm={7}
-        finalTirm={48}
-      />
-    ),
-  },
-  {
-    id: "2",
-    name: <NameCell name="test1" image={testImage} />,
-    activity: 9,
-    firstMonth: 9,
-    midTirm: 18,
-    secondTirm: 7,
-    finalTirm: 48,
-    result: (
-      <ResultCell
-        activity={9}
-        firstMonth={9}
-        midTirm={18}
-        secondTirm={7}
-        finalTirm={48}
-      />
-    ),
-  },
-  {
-    id: "2",
-    name: <NameCell name="test1" image={testImage} />,
-    activity: 9,
-    firstMonth: 9,
-    midTirm: 18,
-    secondTirm: 7,
-    finalTirm: 48,
-    result: (
-      <ResultCell
-        activity={9}
-        firstMonth={9}
-        midTirm={18}
-        secondTirm={7}
-        finalTirm={48}
-      />
-    ),
-  },
-  {
-    id: "2",
-    name: <NameCell name="test1" image={testImage} />,
-    activity: 4,
-    firstMonth: 5,
-    midTirm: 3,
-    secondTirm: 7,
-    finalTirm: 20,
-    result: (
-      <ResultCell
-        activity={4}
-        firstMonth={5}
-        midTirm={3}
-        secondTirm={7}
-        finalTirm={20}
-      />
-    ),
-  },
-  {
-    id: "2",
-    name: <NameCell name="test1" image={testImage} />,
-    activity: 0,
-    firstMonth: 9,
-    midTirm: 8,
-    secondTirm: 7,
-    finalTirm: 30,
-    result: (
-      <ResultCell
-        activity={0}
-        firstMonth={9}
-        midTirm={8}
-        secondTirm={7}
-        finalTirm={30}
-      />
-    ),
-  },
-];
+type Col =  {title: string, dataIndex:string, width?:string }
 
-const Grades: FC<Props> = () => (
+const Grades = () => {
+  const [students, setStudents] = useState<StudentInterface[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const [col, setCol] = useState<Col[]>([]);
+
+
+  const fetchData = async () => {
+    try {
+      setLoading(true);
+
+      const {data: { data }} = await axios(`/api/v1/class/1/grades`);
+      const {cols, users } = handleData(data);
+      setCol([{title: "name", dataIndex: "name", width: '25%'}, ...cols, {title: "total", dataIndex: "total"}]);
+      setStudents(users)
+      setLoading(false);
+
+    } catch (err) {
+
+      setLoading(false);
+      setError("Something went wrong");
+
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const dataSource = students.map((s) => ({
+    ...s,
+      name: <NameCell name={s.name} image={s.img} />,
+      total: <Resultcell sum={Object.values(s.degrees).reduce((cum, current) => cum + current, 0)} /> 
+    }));
+  
+  if (loading) {
+    return (
+      <Space size="large">
+        <Spin size="large" />
+      </Space>
+    );
+  }
+
+  if (error) {
+    notification.config({
+      placement: "bottomLeft",
+      bottom: 10,
+      duration: 3,
+      rtl: true,
+    });
+    notification.error({
+      message: error,
+    });
+  }
+
+  return (  
   <>
     <h1 className="title">Grades</h1>
     <div className="table_wrapper">
       <Table
-        columns={columns}
-        dataSource={data}
+        columns={col}
+        dataSource={dataSource}
         size="middle"
         pagination={{ pageSize: 4 }}
       />
     </div>
   </>
-);
+  )
+};
 
 export default Grades;

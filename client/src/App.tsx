@@ -6,10 +6,11 @@ import { SignUpPage } from "./pages";
 import { UserAuthProvider } from "./context/AuthContext";
 import ClassTest from "./components/ClassTests/ClassTests";
 import StatsDummy from "./components/StatsDummy/Dummy";
+import StudentsProfile from "./components/Class/StudentsPage";
 import Class from "./components/Class";
 import Grades from "./components/Class/Grades";
 import "antd/dist/antd.variable.min.css";
-import "./i18n/config.js";
+// import "./i18n/config.js";
 import "./style.css";
 
 ConfigProvider.config({
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
     element: <SignUpPage />,
   },
   {
+    path: "/student/:studentId",
+    element: <h1>student profile</h1>,
+  },
+  {
     path: "/class",
     element: <Class />,
     children: [
@@ -37,7 +42,7 @@ const router = createBrowserRouter([
       },
       {
         path: "students",
-        element: <h1>Students</h1>,
+        element: <StudentsProfile />,
       },
       {
         path: "assignments",
