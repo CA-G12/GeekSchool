@@ -5,9 +5,9 @@ import { CustomError } from '../utils';
 const studentRelatedToParent = async (req: any, res: Response, next: NextFunction) => {
   try {
     const { id } = req.user;
-    const studentId = req.params;
+    const { studentId } = req.params;
     const data = await studentParentRelationQuery(id);
-    const isRelated = data.filter((e:any) => e.user_id === +studentId.student).length;
+    const isRelated = data.filter((e:any) => e.user_id === +studentId).length;
 
     if (!isRelated) {
       throw new CustomError(401, 'Unauthenticated');
