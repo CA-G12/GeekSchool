@@ -7,7 +7,7 @@ const studentAndTeacher = (req: any, res: Response, next: NextFunction) => {
   if (user.role === 'teacher' || user.role === 'student') {
     next();
   } else {
-    next(new CustomError(401, 'Unauthenticated!'));
+    next(new CustomError(401, 'Unauthenticated'));
   }
 };
 

@@ -10,9 +10,9 @@ afterAll(() => sequelize.close());
 describe('Testing get the students for a specific teacher route.', () => {
   test('Testing the success path, when the user is logged in and the role of him is teacher. The statusCode should be 200.', (done) => {
     supertest(app)
-      .get('/api/v1/teacher/5/students')
+      .get('/api/v1/student/classes')
       .set('Cookie', [
-        'token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6Ik11c3RhZmEgU2FsZW0iLCJyb2xlIjoidGVhY2hlciIsImlhdCI6MTY2NjExNjM4NH0.sr7oT_2dHMdTWfBKZEC7pa4VOZnlN9vM9y8P1UnsTa8',
+        'token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6Ik11c3RhZmEiLCJyb2xlIjoic3R1ZGVudCIsImlhdCI6MTY2Njk2OTcwOX0.fCtmQWvLsiKGQbk-v4Lq8yoe4Q3CbiC_02I1p0tAbjM',
       ])
       .expect('Content-Type', /json/)
       .end((err, res) => {
@@ -24,9 +24,9 @@ describe('Testing get the students for a specific teacher route.', () => {
 
   test('Testing the success path, when the user is logged in and the role of him is teacher', (done) => {
     supertest(app)
-      .get('/api/v1/teacher/5/students')
+      .get('/api/v1/student/classes')
       .set('Cookie', [
-        'token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6Ik11c3RhZmEgU2FsZW0iLCJyb2xlIjoidGVhY2hlciIsImlhdCI6MTY2NjExNjM4NH0.sr7oT_2dHMdTWfBKZEC7pa4VOZnlN9vM9y8P1UnsTa8',
+        'token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6Ik11c3RhZmEiLCJyb2xlIjoic3R1ZGVudCIsImlhdCI6MTY2Njk2OTcwOX0.fCtmQWvLsiKGQbk-v4Lq8yoe4Q3CbiC_02I1p0tAbjM',
       ])
       .expect('Content-Type', /json/)
       .expect(200)
@@ -39,7 +39,7 @@ describe('Testing get the students for a specific teacher route.', () => {
 
   test('Testing the failure path, when the user is logged in and the role of him is not teacher, it should return Unauthenticated', (done) => {
     supertest(app)
-      .get('/api/v1/teacher/5/students')
+      .get('/api/v1/student/classes')
       .set('Cookie', [
         'token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6Ik11c3RhZmEiLCJyb2xlIjoicGFyZW50IiwiaWF0IjoxNjY2ODU2OTg5fQ.zRPQHH51kwdsFlF4wDZP1kT7RCRmchw4YtflOFCWtYc',
       ])
@@ -47,34 +47,19 @@ describe('Testing get the students for a specific teacher route.', () => {
       .end((err, res) => {
         if (err) return done(err);
         expect(res.statusCode).toBe(401);
-        expect(res.body.msg).toBe('Unauthenticated');
+        expect(res.body.msg).toBe('Unauthenticated!');
         return done();
       });
   });
 
   test('Testing the failure path, when the user is logged in, it should return Unauthenticated', (done) => {
     supertest(app)
-      .get('/api/v1/teacher/5/students')
+      .get('/api/v1/student/classes')
       .expect('Content-Type', /json/)
       .end((err, res) => {
         if (err) return done(err);
         expect(res.statusCode).toBe(401);
         expect(res.body.msg).toBe('Unauthenticated');
-        return done();
-      });
-  });
-
-  test('Testing the fail path, when the user is logged in and the role of him is teacher but the params is not valid.', (done) => {
-    supertest(app)
-      .get('/api/v1/teacher/55t/students')
-      .set('Cookie', [
-        'token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6Ik11c3RhZmEgU2FsZW0iLCJyb2xlIjoidGVhY2hlciIsImlhdCI6MTY2NjExNjM4NH0.sr7oT_2dHMdTWfBKZEC7pa4VOZnlN9vM9y8P1UnsTa8',
-      ])
-      .expect('Content-Type', /json/)
-      .end((err, res) => {
-        if (err) return done(err);
-        expect(res.statusCode).toBe(404);
-        expect(res.body.msg).toBe('The teacher you are searching for does not exist');
         return done();
       });
   });

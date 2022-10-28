@@ -9,7 +9,7 @@ const teacherAuth = (req: any, res: Response, next: NextFunction) => {
     if (user.role === 'teacher') {
       next();
     } else {
-      throw new CustomError(401, 'Unauthenticated!');
+      throw new CustomError(401, 'Unauthenticated');
     }
   } catch (error) {
     next(error);
