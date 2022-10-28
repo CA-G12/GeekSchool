@@ -6,7 +6,6 @@ const getClassQuestions = async (req: any, res: Response, next: NextFunction) =>
     const { classId } = req.params;
     const { page } = req.query;
     const { count, rows } = await getClassQuestionsQuery(classId, page);
-    console.log(count);
 
     res.json({ msg: 'success', data: rows, count });
   } catch (error) {
