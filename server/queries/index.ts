@@ -19,9 +19,8 @@ import {
 } from './class';
 
 import getStudentClassesQuery from './student';
-
+import getParentInfoQuery from './parent';
 import { createUser, findUserByEmail } from './userQueries';
-
 import loginQuery from './loginQuery';
 import createParent from './parentQueries';
 import createStudent from './studentQueries';
@@ -55,4 +54,5 @@ export {
   getStudentClassesQuery,
   getParentStudentQuery,
   getTeacherClassesQuery,
+  getParentInfoQuery,
 };
