@@ -8,7 +8,7 @@ const teacherAuth = (req: any, res: Response, next: NextFunction) => {
   if (user.role === 'teacher') {
     next();
   } else {
-    next(new CustomError(401, 'Unauthenticated!'));
+    next(new CustomError(401, 'Unauthenticated'));
   }
 };
 
