@@ -26,6 +26,8 @@ import {
   postRecommendation,
 } from './class';
 
+import getStudentClasses from './student';
+
 import { getParentStudent, getTeachersClasses } from './profiles';
 
 export {
@@ -55,6 +57,7 @@ export {
   putAssignmentStudent,
   addAnnouncement,
   getClassGrades,
+  getStudentClasses,
   getParentStudent,
   getTeachersClasses,
 };
