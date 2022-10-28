@@ -9,20 +9,11 @@ import {
   FundProjectionScreenOutlined,
 } from "@ant-design/icons";
 import React, { useState } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet , useParams} from "react-router-dom";
 import AsideLink from "../../AsideLink";
 import Logo from "../../../assets/Logo.png";
 import "./style.css";
 
-const paths = [
-  "/class/classId/stats",
-  "/class/classId/students",
-  "/class/classId/assignments",
-  "/class/classId/questions",
-  "/class/classId/feedback",
-  "/class/classId/recommended",
-  "/class/classId/grades",
-];
 
 const icons = [
   <DashboardOutlined />,
@@ -50,6 +41,19 @@ const ClassDashboard: React.FC = () => {
   const [open, setOpen] = useState<string>("close");
   const [newPath, setNewPath] = useState<string | null>(pathname);
   const [activeColor] = useState<string>("active");
+
+  const {classId} = useParams()
+
+const paths = [
+  `/class/${classId}/stats`,
+  `/class/${classId}/students`,
+  `/class/${classId}/assignments`,
+  `/class/${classId}/questions`,
+  `/class/${classId}/feedback`,
+  `/class/${classId}/recommended`,
+  `/class/${classId}/grades`,
+];
+
 
   const openAside = () => {
     if (open === "close") setOpen("open");
