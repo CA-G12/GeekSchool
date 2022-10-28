@@ -23,7 +23,8 @@ import loginQuery from './loginQuery';
 import createParent from './parentQueries';
 import createStudent from './studentQueries';
 import createTeacher from './teacherQueries';
-import { getParentStudentQuery, getTeacherClassesQuery } from './profile';
+import { getParentStudentQuery, getTeacherClassesQuery, getReportsQuery } from './profile';
+import { studentParentRelationQuery } from './Auth';
 
 export {
   createUser,
@@ -51,4 +52,6 @@ export {
   getClassGradesQuery,
   getParentStudentQuery,
   getTeacherClassesQuery,
+  studentParentRelationQuery,
+  getReportsQuery,
 };
