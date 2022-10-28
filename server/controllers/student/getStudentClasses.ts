@@ -1,12 +1,12 @@
-import { Request, Response, NextFunction } from 'express';
+import { Response, NextFunction } from 'express';
 import { getStudentClassesQuery } from '../../queries';
 import { CustomError } from '../../utils';
 
-const getStudentClasses = async (req: Request, res: Response, next: NextFunction) => {
+const getStudentClasses = async (req: any, res: Response, next: NextFunction) => {
   try {
-    const { studentId } = req.params;
+    const { id } = req.user;
 
-    const studentClasses = await getStudentClassesQuery(Number(studentId) || 0);
+    const studentClasses = await getStudentClassesQuery(Number(id) || 0);
 
     if (studentClasses.length === 0) {
       throw new CustomError(404, 'The user id you searched with have no classes!');
