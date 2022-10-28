@@ -1,6 +1,7 @@
 import getParentStudentQuery from './getParentStudentQuery';
+import getTeacherClassesQuery from './getTeacherClassesQuery';
 
 export {
-  // eslint-disable-next-line import/prefer-default-export
   getParentStudentQuery,
+  getTeacherClassesQuery,
 };

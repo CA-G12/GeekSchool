@@ -1,6 +1,7 @@
 import getParentStudent from './getParentStudent';
+import getTeachersClasses from './getTeachersClasses';
 
 export {
-  // eslint-disable-next-line import/prefer-default-export
   getParentStudent,
+  getTeachersClasses,
 };
