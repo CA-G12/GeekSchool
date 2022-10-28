@@ -80,6 +80,8 @@
 }
 
 .ant-table-thead tr th:first-child {
+    padding-left: 60px !important;
+    margin-right: 65px;
     padding-right: 80px !important;
     display: flex;
 }

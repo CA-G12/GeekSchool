@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-console */
 import { FC, useEffect, useState } from "react";
 import type { PaginationProps } from "antd";

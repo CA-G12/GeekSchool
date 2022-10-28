@@ -18,6 +18,7 @@ import {
   postRecommendationQuery,
 } from './class';
 
+import getTeacherStudentsQuery from './teacher';
 import getStudentClassesQuery from './student';
 import getParentInfoQuery from './parent';
 import { createUser, findUserByEmail } from './userQueries';
@@ -51,6 +52,7 @@ export {
   postRecommendationQuery,
   getStudentTasksQuery,
   getClassGradesQuery,
+  getTeacherStudentsQuery,
   getStudentClassesQuery,
   getParentStudentQuery,
   getTeacherClassesQuery,
