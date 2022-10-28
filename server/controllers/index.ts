@@ -26,7 +26,9 @@ import {
   postRecommendation,
 } from './class';
 
-import { getParentStudent, getTeachersClasses, getReports } from './profiles';
+import {
+  getParentStudent, getTeachersClasses, getReports, getStudentHealth,
+} from './profiles';
 import getStudentClasses from './student';
 import getTeacherStudents from './teacher';
 
@@ -62,4 +64,5 @@ export {
   getParentStudent,
   getTeachersClasses,
   getReports,
+  getStudentHealth,
 };
