@@ -71,4 +71,31 @@ describe('Testing the statistics router', () => {
         return done();
       });
   });
+
+  test('Should return 401 because the token is invalid', (done) => {
+    supertest(app)
+      .get('/api/v1/profile/student/1/health')
+      .expect('Content-Type', /json/)
+      .expect(401)
+      .end((err, res) => {
+        if (err) done(err);
+        expect(res.body.msg).toBe('Unauthenticated');
+        return done();
+      });
+  });
+
+  test('Should return all health status for a specific teacher', (done) => {
+    supertest(app)
+      .get('/api/v1/profile/student/1/health')
+      .set('Cookie', [
+        'token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3R1ZGVudCIsIm5hbWUiOiJKb2huIERvZSIsImlkIjoxNTE2MjM5MDIyfQ.ivV7KczMBPLI6JBiY7oAXlcfPuaTVNtd71aTrtgZa8A',
+      ])
+      .expect('Content-Type', /json/)
+      .expect(200)
+      .end((err, res) => {
+        if (err) done(err);
+        expect(res.body.msg).toBe('getting all health status successfully');
+        return done();
+      });
+  });
 });
