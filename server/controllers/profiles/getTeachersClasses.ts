@@ -5,7 +5,7 @@ const getTeachersClasses = async (req:Request, res:Response, next:NextFunction) 
   try {
     const { teacherId } = req.params;
     const data = await getTeacherClassesQuery(teacherId);
-    res.json({ msg: 'getting all student successfully', data });
+    res.json({ msg: 'getting all classes successfully', data });
   } catch (error) {
     next(error);
   }

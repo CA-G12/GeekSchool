@@ -52,7 +52,7 @@ describe('Testing the statistics router', () => {
       .expect(200)
       .end((err, res) => {
         if (err) done(err);
-        expect(res.body.msg).toBe('getting all student successfully');
+        expect(res.body.msg).toBe('getting all classes successfully');
         return done();
       });
   });
