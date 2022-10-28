@@ -15,13 +15,13 @@ import Logo from "../../../assets/Logo.png";
 import "./style.css";
 
 const paths = [
-  "/class/:classId/stats",
-  "/class/:classId/students",
-  "/class/:classId/assignments",
-  "/class/:classId/questions",
-  "/class/:classId/feedback",
-  "/class/:classId/recommended",
-  "/class/:classId/grades",
+  "/class/classId/stats",
+  "/class/classId/students",
+  "/class/classId/assignments",
+  "/class/classId/questions",
+  "/class/classId/feedback",
+  "/class/classId/recommended",
+  "/class/classId/grades",
 ];
 
 const icons = [
