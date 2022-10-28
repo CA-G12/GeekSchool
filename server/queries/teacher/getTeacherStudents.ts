@@ -1,33 +1,27 @@
 import {
-  Teacher, Class, ClassStudent, Student, User,
+  Class, ClassStudent, Student, User,
 } from '../../models';
 
-const getTeacherStudentsQuery = (teacherId: number) => Teacher.findAll({
-  attributes: ['id'],
+const getTeacherStudentsQuery = (teacherId: number) => Class.findAll({
+  attributes: ['teacher_id', 'createdAt', 'updatedAt'],
   where: {
-    id: teacherId,
+    teacher_id: teacherId,
   },
   include: [{
-    model: Class,
+    model: ClassStudent,
     attributes: {
-      exclude: ['teacher_id', 'createdAt', 'updatedAt'],
+      exclude: ['teacher_id', 'class_id', 'createdAt', 'updatedAt'],
     },
     include: [{
-      model: ClassStudent,
+      model: Student,
       attributes: {
-        exclude: ['teacher_id', 'class_id', 'createdAt', 'updatedAt'],
+        exclude: ['class_id', 'createdAt', 'updatedAt'],
       },
       include: [{
-        model: Student,
+        model: User,
         attributes: {
-          exclude: ['class_id', 'createdAt', 'updatedAt'],
+          exclude: ['createdAt', 'updatedAt'],
         },
-        include: [{
-          model: User,
-          attributes: {
-            exclude: ['createdAt', 'updatedAt'],
-          },
-        }],
       }],
     }],
   }],
