@@ -1,11 +1,14 @@
 import { Student } from '../../models';
 
-const studentParentRelationQuery = (id:string) => Student.findAll({
-  raw: true,
+const { Op } = require('sequelize');
+
+const studentParentRelationQuery = (
+  id:string | number,
+  studentId:string | number,
+) => Student.findAll({
   where: {
-    parent_id: id,
+    [Op.and]: [{ id: studentId }, { parent_id: id }],
   },
-  attributes: ['user_id', 'parent_id'],
 });
 
 export default studentParentRelationQuery;

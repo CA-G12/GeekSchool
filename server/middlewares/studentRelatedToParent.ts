@@ -6,9 +6,8 @@ const studentRelatedToParent = async (req: any, res: Response, next: NextFunctio
   try {
     const { id } = req.user;
     const { studentId } = req.params;
-    const data = await studentParentRelationQuery(id);
-    const isRelated = data.filter((e:any) => e.user_id === +studentId).length;
-
+    const data = await studentParentRelationQuery(id, studentId);
+    const isRelated = data;
     if (!isRelated) {
       throw new CustomError(401, 'Unauthenticated');
     } else {
