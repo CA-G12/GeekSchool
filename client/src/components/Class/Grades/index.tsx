@@ -24,8 +24,6 @@ const Grades = () => {
   const { classId } = useParams();
 
   const fetchData = async () => {
-    console.log(classId);
-
     try {
       setLoading(true);
 

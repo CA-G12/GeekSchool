@@ -15,13 +15,13 @@ import Logo from "../../../assets/Logo.png";
 import "./style.css";
 
 const paths = [
-  "/class/stats",
-  "/class/students",
-  "/class/assignments",
-  "/class/questions",
-  "/class/feedback",
-  "/class/recommended",
-  "/class/1/grades", // we should change '1' to classId to let the teacher move on with his class
+  "/class/:classId/stats",
+  "/class/:classId/students",
+  "/class/:classId/assignments",
+  "/class/:classId/questions",
+  "/class/:classId/feedback",
+  "/class/:classId/recommended",
+  "/class/:classId/grades",
 ];
 
 const icons = [
