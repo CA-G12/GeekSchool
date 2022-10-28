@@ -7,8 +7,6 @@ const getReports = async (req:Request, res:Response, next:NextFunction) => {
     const data = await getReportsQuery(studentId);
     res.json({ msg: 'getting all reports successfully', data });
   } catch (error) {
-    console.log({ error });
-
     next(error);
   }
 };
