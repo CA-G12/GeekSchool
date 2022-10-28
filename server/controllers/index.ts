@@ -27,6 +27,7 @@ import {
 } from './class';
 
 import { getParentStudent, getTeachersClasses, getReports } from './profiles';
+import getStudentClasses from './student';
 
 export {
   signup,
@@ -55,6 +56,7 @@ export {
   putAssignmentStudent,
   addAnnouncement,
   getClassGrades,
+  getStudentClasses,
   getParentStudent,
   getTeachersClasses,
   getReports,
