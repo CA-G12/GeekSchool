@@ -1,3 +1,4 @@
 import getStudentClasses from './getStudentClasses';
+import getStudentTests from './getStudentTests';
 
-export default getStudentClasses;
+export { getStudentClasses, getStudentTests };
