@@ -1,3 +1,4 @@
+import getTeacherStudentsQuery from './getTeacherStudents';
 import teacherInfoQuery from './getTeacherInfo';
 
-export default teacherInfoQuery;
+export { getTeacherStudentsQuery, teacherInfoQuery };

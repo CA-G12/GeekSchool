@@ -19,7 +19,7 @@ describe('Testing get teacherInfo route', () => {
       .expect('Content-Type', /json/)
       .end((err, res) => {
         if (err) return done(err);
-        expect(res.body.msg).toEqual('Unauthenticated!');
+        expect(res.body.msg).toEqual('Unauthenticated');
         return done();
       });
   });

@@ -1,3 +1,4 @@
+import getTeacherStudents from './getTeacherStudents';
 import teacherInfo from './teacherInfo';
 
-export default teacherInfo;
+export { getTeacherStudents, teacherInfo };

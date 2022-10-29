@@ -22,12 +22,12 @@
   {
     "title": "Health Coach IV",
     "description": "Morbi vestibulum, velit pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante.",
-    "class_id": 5
+    "class_id": 4
   },
   {
     "title": "Engineer III",
     "description": "Suspendisse potenti.",
-    "class_id": 5
+    "class_id": 4
   },
   {
     "title": "Financial Analyst",
@@ -37,7 +37,7 @@
   {
     "title": "Speech Pathologist",
     "description": "Praesent blandit lacinia erat.",
-    "class_id": 8
+    "class_id": 1
   },
   {
     "title": "Structural Analysis Engineer",
