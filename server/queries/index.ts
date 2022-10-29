@@ -19,7 +19,7 @@ import {
 } from './class';
 
 import getTeacherStudentsQuery from './teacher';
-import getStudentClassesQuery from './student';
+import { getStudentClassesQuery, getStudentTestsQuery } from './student';
 import getParentInfoQuery from './parent';
 import { createUser, findUserByEmail } from './userQueries';
 import loginQuery from './loginQuery';
@@ -57,4 +57,5 @@ export {
   getParentStudentQuery,
   getTeacherClassesQuery,
   getParentInfoQuery,
+  getStudentTestsQuery,
 };
