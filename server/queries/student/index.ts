@@ -1,3 +1,4 @@
 import studentGradesQuery from './getStudentGradesQuery';
+import getStudentClassesQuery from './getStudentClassesQuery';
 
-export default studentGradesQuery;
+export { getStudentClassesQuery, studentGradesQuery };
