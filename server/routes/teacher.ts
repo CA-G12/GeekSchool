@@ -11,6 +11,6 @@ import { teacherInfo } from '../controllers';
 
 const teacherRouter = Router();
 
-teacherRouter.get('/:teacherId', userAuth, teacherAuth, teacherInfo);
+teacherRouter.get('/info', userAuth, teacherAuth, teacherInfo);
 
 export default teacherRouter;
