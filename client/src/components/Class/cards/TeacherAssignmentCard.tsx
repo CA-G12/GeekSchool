@@ -1,6 +1,6 @@
 import { Card } from "antd";
 import React from "react";
-import "./index.css";
+import "./AssignmentCards.css";
 import { UnorderedListOutlined, DeleteFilled } from "@ant-design/icons";
 
 const TeacherAssignmentCard: React.FC = () => (
