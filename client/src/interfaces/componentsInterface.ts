@@ -20,18 +20,18 @@ interface announcementCard {
 }
 
 interface ClassCardProps {
-  className: string,
-  teacherName: string,
+  className: string;
+  teacherName: string;
   assignments: {
-    id: number,
-    title: string,
-    createdAt: string,
-  }[],
+    id: number;
+    title: string;
+    createdAt: string;
+  }[];
   tests: {
-    id: number,
-    title: string,
-    date: string,
-  }[],
+    id: number;
+    title: string;
+    date: string;
+  }[];
 }
 
 export {
