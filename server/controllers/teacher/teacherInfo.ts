@@ -1,10 +1,10 @@
-import { Request, Response, NextFunction } from 'express';
+import { Response, NextFunction } from 'express';
 import { teacherInfoQuery } from '../../queries';
 
-const teacherInfo = async (req: Request, res: Response, next:NextFunction) => {
+const teacherInfo = async (req: any, res: Response, next:NextFunction) => {
   try {
-    const { teacherId } = req.params;
-    const data:any = await teacherInfoQuery(Number(teacherId));
+    const { id } = req.user;
+    const data:any = await teacherInfoQuery(id);
     res.json({ msg: 'Teacher info', data });
   } catch (error) {
     next(error);
