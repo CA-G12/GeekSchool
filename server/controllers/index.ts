@@ -2,6 +2,8 @@ import {
   signup, logout, userData, login,
 } from './auth';
 import { serverError, notFound } from './errors';
+import getStudentGrade from './student';
+
 import {
   addNewAssignment,
   getStats,
@@ -22,7 +24,6 @@ import {
   deleteAssignment,
   postQuestion,
   getClassGrades,
-
   postRecommendation,
 } from './class';
 
@@ -53,4 +54,5 @@ export {
   putAssignmentStudent,
   addAnnouncement,
   getClassGrades,
+  getStudentGrade,
 };
