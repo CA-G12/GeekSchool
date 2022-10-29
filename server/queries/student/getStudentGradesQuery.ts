@@ -2,12 +2,12 @@ import {
   TestStudent, Test, Class,
 } from '../../models';
 
-const studentGradesQuery = (studentId: number) => TestStudent
+const studentGradesQuery = (id: number) => TestStudent
   .findAll({
     raw: true,
     nest: false,
-    where: { student_id: studentId },
-    attributes: ['TestStudent.id', 'Test.title', 'grade', 'Test.class_id'],
+    where: { student_id: id },
+    attributes: ['Test.title', 'grade', 'Test.class_id', 'Test.Class.name'],
     include: [{
       model: Test,
       as: 'Test',
