@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Pagination } from "antd";
 import type { PaginationProps } from "antd";
+import { useParams } from "react-router-dom";
 import { RecommendedCard } from "../../components";
 import AddRecommended from "../../components/AddRecommended";
 import { useUserData } from "../../context/AuthContext";
@@ -18,11 +19,11 @@ const RecommendedPage: React.FC = () => {
   const [recommended, setRecommended] = useState<Array<recommendedType>>([]);
   const source = axios.CancelToken.source();
 
-  // const classId = 1
+  const { classId } = useParams();
   useEffect(() => {
     const fetchRecommended = async () => {
       const { data } = await axios.get(
-        `/api/v1/class/1/recommended/?page=${current}`
+        `/api/v1/class/${classId}/recommended/?page=${current}`
       );
       setRecommended(data.rows);
       setCount(data.count);

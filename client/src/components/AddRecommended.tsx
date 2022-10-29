@@ -3,11 +3,13 @@ import "./style.css";
 import { Form, Button, message, Input, Modal } from "antd";
 import axios from "axios";
 import { PlusOutlined, CloseOutlined } from "@ant-design/icons";
+import { useParams } from "react-router-dom";
 
 const AddRecommended: React.FC = () => {
   const [form] = Form.useForm();
   const [visible, setVisible] = useState<boolean>(false);
   const source = axios.CancelToken.source();
+  const { classId } = useParams();
 
   const showModal = () => setVisible(true);
 
@@ -18,7 +20,7 @@ const AddRecommended: React.FC = () => {
   const onFinish = async (fieldValues: any) => {
     try {
       const newRecommneded = await axios.post(
-        "/api/v1/class/1/recommended",
+        `/api/v1/class/${classId}/recommended`,
         { ...fieldValues },
         { cancelToken: source.token }
       );
