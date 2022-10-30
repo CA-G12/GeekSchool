@@ -1,10 +1,10 @@
-import { Request, Response, NextFunction } from 'express';
+import { Response, NextFunction } from 'express';
 import { getParentTeachersQuery } from '../queries';
 
-const getParentTeachers = async (req: Request, res: Response, next: NextFunction) => {
+const getParentTeachers = async (req: any, res: Response, next: NextFunction) => {
   try {
-    const { parentId } = req.params;
-    const data = await getParentTeachersQuery(parentId);
+    const { id } = req.user;
+    const data = await getParentTeachersQuery(id);
     res.json({ data });
   } catch (error) {
     next(error);

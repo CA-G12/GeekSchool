@@ -10,24 +10,14 @@
     "grade": 20
   },
   {
-   "test_id": 3,
-    "student_id": 1,
-    "grade": 18
-  },
-  {
-   "test_id": 1,
-    "student_id": 5,
-    "grade": 15
-  },
-  {
-   "test_id": 1,
+   "test_id": 2,
     "student_id": 2,
     "grade": 15
   },
   {
    "test_id": 1,
     "student_id": 2,
-    "grade": 16
+    "grade": 15
   },
   {
    "test_id": 1,
@@ -45,22 +35,22 @@
     "grade": 9
   },
   {
-    "test_id": 2,
+    "test_id": 5,
     "student_id": 4,
     "grade": 10
   },
   {
-    "test_id": 2,
+    "test_id": 5,
     "student_id": 4,
     "grade": 11
   },
   {
-    "test_id": 2,
+    "test_id": 5,
     "student_id": 4,
     "grade": 12
   },
   {
-    "test_id": 2,
+    "test_id": 5,
     "student_id": 4,
     "grade": 13
   },
