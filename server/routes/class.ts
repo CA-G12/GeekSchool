@@ -39,7 +39,7 @@ classRouter.get('/:classId/recommended', userAuth, studentAndTeacher, recommende
 classRouter.get('/:classId/assignment/:assignmentId/students', userAuth, teacherAuth, getAllStudentWhoSubmitTasks);
 classRouter.put('/:classId/assignment/teachers/:assignmentId', userAuth, teacherAuth, putAssignmentTeacher);
 classRouter.put('/:classId/assignment/students/:assignmentId', userAuth, studentAuth, putAssignmentStudent);
-classRouter.get('/:classId/students', /* userAuth, studentAndTeacher, */getClassStudents);
+classRouter.get('/:classId/students', userAuth, studentAndTeacher, getClassStudents);
 classRouter.get('/:classId/questions', userAuth, studentAndTeacher, getClassQuestions);
 classRouter.get('/:classId/assignments', userAuth, studentAndTeacher, getAssignments);
 classRouter.delete('/assignment/:id', userAuth, teacherAuth, deleteAssignment);
