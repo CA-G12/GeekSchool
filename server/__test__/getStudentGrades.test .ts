@@ -11,7 +11,7 @@ afterAll(() => sequelize.close());
 describe('Testing get student grades route', () => {
   test('should return all grades for this student', (done) => {
     supertest(app)
-      .get('/api/v1/student/1/grades')
+      .get('/api/v1/student/grades')
       .set('Cookie', [
         'token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic3R1ZGVudCIsIm5hbWUiOiJKb2huIERvZSIsImlkIjoxNTE2MjM5MDIyfQ.ivV7KczMBPLI6JBiY7oAXlcfPuaTVNtd71aTrtgZa8A',
       ])
@@ -26,7 +26,7 @@ describe('Testing get student grades route', () => {
 
   test('should not  return grades because this is teacher', (done) => {
     supertest(app)
-      .get('/api/v1/student/1/grades')
+      .get('/api/v1/student/grades')
       .set('Cookie', [
         'token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6Ik11c3RhZmEgU2FsZW0iLCJyb2xlIjoidGVhY2hlciIsImlhdCI6MTY2NjExNjM4NH0.sr7oT_2dHMdTWfBKZEC7pa4VOZnlN9vM9y8P1UnsTa8',
       ])
@@ -41,7 +41,7 @@ describe('Testing get student grades route', () => {
 
   test('should not return grades because this is not auth', (done) => {
     supertest(app)
-      .get('/api/v1/student/1/grades')
+      .get('/api/v1/student/grades')
       .expect(401)
       .expect('Content-Type', /json/)
       .end((err, res) => {
