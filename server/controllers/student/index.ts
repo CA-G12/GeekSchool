@@ -1,6 +1,7 @@
 import putStudentHealth from './putStudentHealth';
+import getStudentClasses from './getStudentClasses';
 
 export {
-  // eslint-disable-next-line import/prefer-default-export
+  getStudentClasses,
   putStudentHealth,
 };

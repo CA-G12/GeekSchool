@@ -1,9 +1,18 @@
 import { Card, Button } from "antd";
-import React from "react";
-import "./index.css";
+import "./AssignmentCards.css";
 import { UnorderedListOutlined } from "@ant-design/icons";
 
-const StudentAssignmentCard: React.FC = () => (
+interface StudentAssignmentCardProps {
+  title: string;
+  createdAt: string;
+  description: string;
+}
+
+const StudentAssignmentCard = ({
+  title,
+  createdAt,
+  description,
+}: StudentAssignmentCardProps) => (
   <div>
     <Card style={{ margin: "5px" }}>
       <div className="card-title">
@@ -12,23 +21,18 @@ const StudentAssignmentCard: React.FC = () => (
             <UnorderedListOutlined />{" "}
           </div>
           <div>
-            <h1>Title card</h1>
+            <h1>{title}</h1>
           </div>
         </div>
 
         <div className="title-side">
-          <p style={{ color: "#7C7C7C" }}>Posted: 1-12-2000</p>
+          <p style={{ color: "#7C7C7C" }}>Posted: {createdAt}</p>
         </div>
       </div>
 
       <div className="card-content">
         <div className="left">
-          <p className="assignment-content">
-            It was popularised in the 1960s with the release of Letraset sheets
-            containing Lorem Ipsum passages, and more recently with desktop
-            publishing software like Aldus PageMaker. including versions of
-            Lorem Ipsum
-          </p>
+          <p className="assignment-content">{description}</p>
         </div>
 
         <div
