@@ -6,6 +6,6 @@ import { userAuth, studentAuth } from '../middlewares';
 const studentRouter = Router();
 
 studentRouter.get('/classes', userAuth, studentAuth, getStudentClasses);
-studentRouter.get('/:studentId/grades', userAuth, studentAuth, getStudentGrade);
+studentRouter.get('/grades', userAuth, studentAuth, getStudentGrade);
 
 export default studentRouter;
