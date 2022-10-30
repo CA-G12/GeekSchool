@@ -1,6 +1,7 @@
 import getTeacherSchedule from './getTeacherSchedule';
+import getTeacherStudents from './getTeacherStudents';
 
 export {
-  // eslint-disable-next-line import/prefer-default-export
   getTeacherSchedule,
+  getTeacherStudents,
 };

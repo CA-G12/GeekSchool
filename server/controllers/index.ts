@@ -24,8 +24,10 @@ import {
   getClassGrades,
   postRecommendation,
 } from './class';
+import getStudentClasses from './student';
 
-import { getTeacherSchedule } from './teacher';
+import { getTeacherSchedule, getTeacherStudents } from './teacher';
+import { getParentStudent, getTeachersClasses } from './profiles';
 
 export {
   signup,
@@ -55,4 +57,8 @@ export {
   addAnnouncement,
   getClassGrades,
   getTeacherSchedule,
+  getTeacherStudents,
+  getStudentClasses,
+  getParentStudent,
+  getTeachersClasses,
 };
