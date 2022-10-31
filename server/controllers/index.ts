@@ -23,6 +23,7 @@ import {
   postQuestion,
   getClassGrades,
   postRecommendation,
+  getTests,
 } from './class';
 
 import {
@@ -58,6 +59,7 @@ export {
   putAssignmentTeacher,
   putAssignmentStudent,
   addAnnouncement,
+  getTests,
   getClassGrades,
   getParentTeachers,
   getTeacherSchedule,
