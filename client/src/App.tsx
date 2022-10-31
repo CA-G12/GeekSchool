@@ -2,7 +2,7 @@ import React from "react";
 import { createBrowserRouter, RouterProvider, Link } from "react-router-dom";
 import { ConfigProvider } from "antd";
 import Question from "./components/Class/Questions";
-import { SignUpPage, LoginPage } from "./pages";
+import { SignUpPage, LoginPage, RecommendedPage } from "./pages";
 import { UserAuthProvider } from "./context/AuthContext";
 import ClassTest from "./components/ClassTests/ClassTests";
 import Feedback from "./components/Class/Feedback/Feedback";
@@ -63,7 +63,7 @@ const router = createBrowserRouter([
       },
       {
         path: "recommended",
-        element: <h1>Recommended</h1>,
+        element: <RecommendedPage />,
       },
       {
         path: "grades",
