@@ -8,6 +8,7 @@ import {
 import axios from "axios";
 // import { useUserData } from "../../../context/AuthContext";
 import AddTest from "../../ClassTests/AddTest/AddTest";
+import AssignmentModal from "../../AssignmentModal";
 import { TeacherAssignmentCard } from "../cards";
 import "./Assignments.css";
 
@@ -16,7 +17,7 @@ const { Search } = Input;
 const Assignments: React.FC = () => {
   const [assignments, setAssignments] = useState<Array<object>>([]);
   const [addTest, setAddTest] = useState<boolean>(false);
-  const [, setAddAssignment] = useState<boolean>(false);
+  const [addAssignment, setAddAssignment] = useState<boolean>(false);
 
   const classId = 5; // ? This will be passed when the user clicks on some class.
   const role = "teacher";
@@ -30,7 +31,7 @@ const Assignments: React.FC = () => {
 
   // ? Button events
   const handleMenuClick: MenuProps["onClick"] = (e) => {
-    message.info("Click on menu item.");
+    message.info(e.key);
     if (e.key === "1") {
       setAddAssignment(true);
     } else {
@@ -74,6 +75,7 @@ const Assignments: React.FC = () => {
 
   return (
     <>
+      {addAssignment && <AssignmentModal />}
       {addTest && <AddTest />}
       <main className="class-assignment">
         <h1 className="assignment-title">التكليفات</h1>
