@@ -15,6 +15,7 @@ body {
   justify-content: space-between;
   align-items: center;
   box-shadow: 0px 2px 4px #00000026;
+  margin: 0.6rem;
 }
 
 .recommended-card p {
