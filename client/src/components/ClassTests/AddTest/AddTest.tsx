@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC, useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { Button, Form, Input, DatePicker } from "antd";
@@ -25,11 +25,13 @@ const validateMessages = {
   },
 };
 
-interface Props {
-  setValue: React.Dispatch<React.SetStateAction<boolean>>;
-}
+// interface Props {
+//   setValue: React.Dispatch<React.SetStateAction<boolean>>;
+// }
 
-const AddTest: FC<Props> = ({ setValue }) => {
+const AddTest: FC = () => {
+  const [isShown, setIsShown] = useState<boolean>(true);
+
   const onFinish = async (fieldValues: any) => {
     const values = {
       title: fieldValues["exam-title"],
@@ -59,73 +61,78 @@ const AddTest: FC<Props> = ({ setValue }) => {
   };
 
   return (
-    <section className="add-test-cont">
-      <Form
-        wrapperCol={layout.wrapperCol}
-        labelCol={layout.labelCol}
-        name="nest-messages"
-        onFinish={onFinish}
-        validateMessages={validateMessages}
-        className="add-test-form"
-      >
-        <CloseSquareOutlined
-          className="close-icon"
-          onClick={() => setValue(false)}
-        />
-        <Form.Item
-          name="exam-title"
-          label="اسم الاختبار: "
-          rules={[{ required: true }]}
-          className="form-item"
-        >
-          <Input className="input" />
-        </Form.Item>
-        <Form.Item
-          name="exam-date"
-          label="موعد الاختبار: "
-          rules={config.rules}
-          className="form-item"
-        >
-          <DatePicker
-            className="input date-picker"
-            showTime
-            format="YYYY-MM-DD HH:mm:ss"
-          />
-        </Form.Item>
-        <Form.Item
-          name="exam-notes"
-          label="ملاحظات إضافية: "
-          className="form-item"
-        >
-          <Input.TextArea className="textarea" />
-        </Form.Item>
-        <Form.Item
-          wrapperCol={{ ...layout.wrapperCol, offset: 8 }}
-          style={{
-            width: "20%",
-            display: "flex",
-            justifyContent: "flex-end",
-          }}
-        >
-          <Button
-            type="primary"
-            htmlType="submit"
-            style={{
-              width: "196px",
-              height: "50px",
-              backgroundColor: "#0CBE8A",
-              border: "1px solid #0CBE8A",
-              borderRadius: "8px",
-              fontSize: "large",
-              fontWeight: "bold",
-              boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.25)",
-            }}
+    <>
+      {isShown && (
+        <section className="add-test-cont">
+          <Form
+            wrapperCol={layout.wrapperCol}
+            labelCol={layout.labelCol}
+            name="nest-messages"
+            onFinish={onFinish}
+            validateMessages={validateMessages}
+            className="add-test-form"
           >
-            إضافة الإختبار
-          </Button>
-        </Form.Item>
-      </Form>
-    </section>
+            <CloseSquareOutlined
+              className="close-icon"
+              onClick={() => setIsShown(false)}
+            />
+            <Form.Item
+              name="exam-title"
+              label="اسم الاختبار: "
+              rules={[{ required: true }]}
+              className="form-item"
+            >
+              <Input className="input" />
+            </Form.Item>
+            <Form.Item
+              name="exam-date"
+              label="موعد الاختبار: "
+              rules={config.rules}
+              className="form-item"
+            >
+              <DatePicker
+                className="input date-picker"
+                showTime
+                format="YYYY-MM-DD HH:mm:ss"
+              />
+            </Form.Item>
+            <Form.Item
+              name="exam-notes"
+              label="ملاحظات إضافية: "
+              className="form-item"
+            >
+              <Input.TextArea className="textarea" />
+            </Form.Item>
+            <Form.Item
+              wrapperCol={{ ...layout.wrapperCol, offset: 8 }}
+              style={{
+                width: "20%",
+                display: "flex",
+                justifyContent: "flex-end",
+              }}
+            >
+              <Button
+                type="primary"
+                htmlType="submit"
+                style={{
+                  width: "196px",
+                  height: "50px",
+                  backgroundColor: "#0CBE8A",
+                  border: "1px solid #0CBE8A",
+                  borderRadius: "8px",
+                  fontSize: "large",
+                  fontWeight: "bold",
+                  boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.25)",
+                }}
+              >
+                إضافة الإختبار
+              </Button>
+            </Form.Item>
+          </Form>
+        </section>
+      )}
+      <div />
+    </>
   );
 };
 

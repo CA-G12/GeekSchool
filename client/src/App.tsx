@@ -2,13 +2,17 @@ import React from "react";
 import { createBrowserRouter, RouterProvider, Link } from "react-router-dom";
 import { ConfigProvider } from "antd";
 import Question from "./components/Class/Questions";
-import { SignUpPage } from "./pages";
-import Class from "./components/Class";
-import StatsDummy from "./components/StatsDummy/Dummy";
 import Assignments from "./components/Class/Assignments/Assignments";
+import { SignUpPage, LoginPage, RecommendedPage } from "./pages";
 import { UserAuthProvider } from "./context/AuthContext";
+// import ClassTest from "./components/ClassTests/ClassTests";
+import Feedback from "./components/Class/Feedback/Feedback";
+import StatsDummy from "./components/StatsDummy/Dummy";
+import StudentsProfile from "./components/Class/StudentsPage";
+import Class from "./components/Class";
+import Grades from "./components/Class/Grades";
 import "antd/dist/antd.variable.min.css";
-import "./i18n/config.js";
+// import "./i18n/config.js";
 import "./style.css";
 
 ConfigProvider.config({
@@ -27,7 +31,15 @@ const router = createBrowserRouter([
     element: <SignUpPage />,
   },
   {
-    path: "/class",
+    path: "/login",
+    element: <LoginPage />,
+  },
+  {
+    path: "/student/:studentId",
+    element: <h1>student profile</h1>,
+  },
+  {
+    path: "/class/:classId",
     element: <Class />,
     children: [
       {
@@ -36,7 +48,7 @@ const router = createBrowserRouter([
       },
       {
         path: "students",
-        element: <h1>Students</h1>,
+        element: <StudentsProfile />,
       },
       {
         path: "assignments",
@@ -48,11 +60,15 @@ const router = createBrowserRouter([
       },
       {
         path: "feedback",
-        element: <h1>Feedback</h1>,
+        element: <Feedback />,
       },
       {
         path: "recommended",
-        element: <h1>Recommended</h1>,
+        element: <RecommendedPage />,
+      },
+      {
+        path: "grades",
+        element: <Grades />,
       },
       {
         path: "grades",

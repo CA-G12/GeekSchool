@@ -10,11 +10,11 @@
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.11.65",
-    "@types/react": "^18.0.21",
+    "@types/react": "^18.0.22",
     "@types/react-dom": "^18.0.6",
     "@types/react-i18next": "^8.1.0",
     "@types/yup": "^0.32.0",
-    "antd": "^4.23.5",
+    "antd": "^4.23.6",
     "axios": "^1.1.2",
     "i18next": "^22.0.2",
     "prop-types": "^15.8.1",
@@ -55,6 +55,7 @@
     ]
   },
   "devDependencies": {
+    "@types/antd": "^1.0.0",
     "@typescript-eslint/eslint-plugin": "^5.40.0",
     "@typescript-eslint/parser": "^5.38.1",
     "eslint": "^7.32.0",

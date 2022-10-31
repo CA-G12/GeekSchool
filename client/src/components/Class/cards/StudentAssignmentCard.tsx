@@ -8,7 +8,7 @@ const StudentAssignmentCard: FC<StudentAssignmentCardProps> = ({
   title,
   createdAt,
   description,
-}) => (
+}: StudentAssignmentCardProps) => (
   <div>
     <Card style={{ margin: "5px" }}>
       <div className="card-title">

@@ -22,9 +22,15 @@ import {
   deleteAssignment,
   postQuestion,
   getClassGrades,
-
   postRecommendation,
 } from './class';
+
+import {
+  getParentStudent, getTeachersClasses, getReports, getStudentHealth,
+} from './profiles';
+import { putStudentHealth, getStudentClasses } from './student';
+import { getTeacherSchedule, getTeacherStudents, teacherInfo } from './teacher';
+import getParentTeachers from './getParentTeachers';
 
 export {
   signup,
@@ -53,4 +59,14 @@ export {
   putAssignmentStudent,
   addAnnouncement,
   getClassGrades,
+  getParentTeachers,
+  getTeacherSchedule,
+  putStudentHealth,
+  getTeacherStudents,
+  getStudentClasses,
+  getParentStudent,
+  getTeachersClasses,
+  teacherInfo,
+  getReports,
+  getStudentHealth,
 };

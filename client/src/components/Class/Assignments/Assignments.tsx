@@ -74,7 +74,7 @@ const Assignments: React.FC = () => {
 
   return (
     <>
-      {addTest && <AddTest setValue={setAddTest} />}
+      {addTest && <AddTest />}
       <main className="class-assignment">
         <h1 className="assignment-title">التكليفات</h1>
         <section className="assignment-add-search">
@@ -106,13 +106,8 @@ const Assignments: React.FC = () => {
         )} */}
         {role === "teacher" && (
           <section className="assignment-box">
-            {assignments.map((assignment: any) => (
-              <TeacherAssignmentCard
-                id={assignment.id}
-                title={assignment.title}
-                createdAt={assignment.createdAt}
-                description={assignment.description}
-              />
+            {assignments.map(() => (
+              <TeacherAssignmentCard />
             ))}
           </section>
         )}

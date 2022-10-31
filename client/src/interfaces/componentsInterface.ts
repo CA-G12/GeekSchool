@@ -31,6 +31,20 @@ interface TeacherAssignmentCardProps {
   createdAt: string;
   description: string;
 }
+interface ClassCardProps {
+  className: string;
+  teacherName: string;
+  assignments: {
+    id: number;
+    title: string;
+    createdAt: string;
+  }[];
+  tests: {
+    id: number;
+    title: string;
+    date: string;
+  }[];
+}
 
 export {
   questionInterface,
@@ -39,4 +53,5 @@ export {
   announcementCard,
   StudentAssignmentCardProps,
   TeacherAssignmentCardProps,
+  ClassCardProps,
 };
