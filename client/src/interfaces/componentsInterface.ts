@@ -53,6 +53,21 @@ interface GradeCollapseProps {
   children: ReactNode;
 }
 
+interface ClassCardProps {
+  className: string;
+  teacherName: string;
+  assignments: {
+    id: number;
+    title: string;
+    createdAt: string;
+  }[];
+  tests: {
+    id: number;
+    title: string;
+    date: string;
+  }[];
+}
+
 export {
   questionInterface,
   recommendedInterface,
@@ -61,4 +76,5 @@ export {
   GradesTableProps,
   DataType,
   GradeCollapseProps,
+  ClassCardProps,
 };
