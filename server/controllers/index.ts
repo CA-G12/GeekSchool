@@ -29,7 +29,7 @@ import {
   getTeachersClasses, getReports, getParentStudent,
 } from './profiles';
 import { putStudentHealth, getStudentClasses } from './student';
-import { getTeacherSchedule, getTeacherStudents } from './teacher';
+import { getTeacherSchedule, getTeacherStudents, teacherInfo } from './teacher';
 import getParentTeachers from './getParentTeachers';
 
 export {
@@ -66,5 +66,6 @@ export {
   getStudentClasses,
   getParentStudent,
   getTeachersClasses,
+  teacherInfo,
   getReports,
 };
