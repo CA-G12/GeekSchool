@@ -11,23 +11,19 @@ const studentGradesQuery = (id: number) => ClassStudent
       attributes: ['id', 'name'],
       include: [{
         model: Test,
-        // attributes: [],
         attributes: ['title', 'id'],
         include: [{
           model: TestStudent,
           where: { student_id: id },
-          // attributes: [],
           attributes: ['grade', 'id'],
         }],
       },
       {
         model: Assignment,
-        // attributes: [],
         attributes: ['title', 'id'],
         include: [{
           model: AssignmentStudent,
           where: { student_id: id },
-          // attributes: [],
           attributes: ['id', 'grade'],
         }],
       },
