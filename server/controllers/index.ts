@@ -25,9 +25,12 @@ import {
   postRecommendation,
 } from './class';
 
-import { getTeacherStudents, teacherInfo } from './teacher';
-import getStudentClasses from './student';
-import { getParentStudent, getTeachersClasses } from './profiles';
+import {
+  getTeachersClasses, getReports, getParentStudent,
+} from './profiles';
+import { putStudentHealth, getStudentClasses } from './student';
+import { getTeacherSchedule, getTeacherStudents, teacherInfo } from './teacher';
+import getParentTeachers from './getParentTeachers';
 
 export {
   signup,
@@ -56,9 +59,13 @@ export {
   putAssignmentStudent,
   addAnnouncement,
   getClassGrades,
+  getParentTeachers,
+  getTeacherSchedule,
+  putStudentHealth,
   getTeacherStudents,
   getStudentClasses,
   getParentStudent,
   getTeachersClasses,
   teacherInfo,
+  getReports,
 };

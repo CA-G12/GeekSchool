@@ -5,6 +5,7 @@ import Question from "./components/Class/Questions";
 import { SignUpPage, LoginPage } from "./pages";
 import { UserAuthProvider } from "./context/AuthContext";
 import ClassTest from "./components/ClassTests/ClassTests";
+import Feedback from "./components/Class/Feedback/Feedback";
 import StatsDummy from "./components/StatsDummy/Dummy";
 import StudentsProfile from "./components/Class/StudentsPage";
 import Class from "./components/Class";
@@ -58,7 +59,7 @@ const router = createBrowserRouter([
       },
       {
         path: "feedback",
-        element: <h1>Feedback</h1>,
+        element: <Feedback />,
       },
       {
         path: "recommended",
