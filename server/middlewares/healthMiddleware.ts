@@ -8,13 +8,20 @@ const healthMiddleware = async (req: any, res: Response, next: NextFunction) => 
     const { studentId } = req.params;
     const data = await studentParentRelationQuery(id, studentId);
     const isRelated = data[0]?.getDataValue('id');
+    const userId = data[0]?.getDataValue('user_id');
 
-    if (!isRelated) {
-      throw new CustomError(401, 'Unauthenticated');
-    } else if (isRelated) {
-      next();
-    } else if (role === 'student' || role === 'teacher') {
-      next();
+    switch (true) {
+      case role === 'teacher':
+        next();
+        break;
+      case role === 'student' && studentId === userId:
+        next();
+        break;
+      case role === 'parent' && isRelated:
+        next();
+        break;
+      default:
+        throw new CustomError(401, 'Unauthenticated');
     }
   } catch (error) {
     next(error);
