@@ -74,35 +74,11 @@ const router = createBrowserRouter([
   },
 ]);
 
-// required data to run this component
-
-interface DataType {
-  name: string;
-  mobile: string;
-  img: string;
-  id: number;
-}
-
-const testData: DataType[] = [
-  {
-    name: "Mustafa",
-    mobile: "9528140936",
-    img: "http://dummyimage.com/219x100.png/5fa2dd/ffffff",
-    id: 1,
-  },
-  {
-    name: "HUMAN RABIES VIRUS IMMUNE GLOBULIN",
-    mobile: "7127917035",
-    img: "http://dummyimage.com/118x100.png/dddddd/000000",
-    id: 2,
-  },
-];
 
 const App: React.FC = () => (
   <UserAuthProvider>
     <div className="App">
       <RouterProvider router={router} />
-      <ProfileCard title="asdasdasd" data={testData} type="" />
     </div>
   </UserAuthProvider>
 );
