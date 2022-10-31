@@ -12,6 +12,7 @@ import Grades from "./components/Class/Grades";
 import "antd/dist/antd.variable.min.css";
 // import "./i18n/config.js";
 import "./style.css";
+import TeacherSchedule from './components/TeacherSchedule'
 
 ConfigProvider.config({
   theme: {
@@ -76,6 +77,7 @@ const App: React.FC = () => (
   <UserAuthProvider>
     <div className="App">
       <RouterProvider router={router} />
+    <TeacherSchedule />
     </div>
   </UserAuthProvider>
 );
