@@ -11,7 +11,9 @@ const healthMiddleware = async (req: any, res: Response, next: NextFunction) => 
 
     if (!isRelated) {
       throw new CustomError(401, 'Unauthenticated');
-    } else if (role === 'student' || role === 'parent' || role === 'teacher') {
+    } else if (isRelated) {
+      next();
+    } else if (role === 'student' || role === 'teacher') {
       next();
     }
   } catch (error) {
