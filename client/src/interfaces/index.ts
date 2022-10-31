@@ -3,6 +3,9 @@ import {
   recommendedInterface,
   feedbackInterface,
   announcementCard,
+  GradesTableProps,
+  DataType,
+  GradeCollapseProps,
 } from "./componentsInterface";
 import {
   UserInterface,
@@ -24,4 +27,7 @@ export {
   userDataParentInterface,
   signUpDataInterface,
   announcementCard,
+  GradesTableProps,
+  DataType,
+  GradeCollapseProps,
 };
