@@ -22,7 +22,7 @@ import { createUser, findUserByEmail } from './userQueries';
 
 import { putStudentHealthQuery } from './students';
 
-import getTeacherStudentsQuery from './teacher';
+import { getTeacherStudentsQuery, teacherInfoQuery } from './teacher';
 import getStudentClassesQuery from './student';
 import getParentInfoQuery from './parent';
 import loginQuery from './loginQuery';
@@ -75,4 +75,6 @@ export {
   getReportsQuery,
   getParentInfoQuery,
   getStudentHealthsQuery,
+  teacherInfoQuery,
+
 };
