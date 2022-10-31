@@ -12,6 +12,7 @@ import Grades from "./components/Class/Grades";
 import "antd/dist/antd.variable.min.css";
 // import "./i18n/config.js";
 import "./style.css";
+import TeacherLists from "./components/ListComponent";
 
 ConfigProvider.config({
   theme: {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Link to="/class">Go to the class page!</Link>,
+  },
+  {
+    path: "/lists",
+    element: <TeacherLists />,
   },
   {
     path: "/signup",
