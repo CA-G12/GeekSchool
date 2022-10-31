@@ -13,7 +13,6 @@ import "antd/dist/antd.variable.min.css";
 // import "./i18n/config.js";
 import "./style.css";
 
-import ProfileCard from "./components/ProfileCard";
 
 ConfigProvider.config({
   theme: {
@@ -73,7 +72,6 @@ const router = createBrowserRouter([
     ],
   },
 ]);
-
 
 const App: React.FC = () => (
   <UserAuthProvider>
