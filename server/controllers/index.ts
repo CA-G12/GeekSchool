@@ -22,12 +22,11 @@ import {
   deleteAssignment,
   postQuestion,
   getClassGrades,
-
   postRecommendation,
 } from './class';
 
 import getTeacherStudents from './teacher';
-import getStudentClasses from './student';
+import { putStudentHealth, getStudentClasses } from './student';
 import { getParentStudent, getTeachersClasses } from './profiles';
 
 export {
@@ -57,6 +56,7 @@ export {
   putAssignmentStudent,
   addAnnouncement,
   getClassGrades,
+  putStudentHealth,
   getTeacherStudents,
   getStudentClasses,
   getParentStudent,

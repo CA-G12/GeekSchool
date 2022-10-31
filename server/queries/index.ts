@@ -18,10 +18,13 @@ import {
   postRecommendationQuery,
 } from './class';
 
+import { createUser, findUserByEmail } from './userQueries';
+
+import { putStudentHealthQuery } from './students';
+
 import getTeacherStudentsQuery from './teacher';
 import getStudentClassesQuery from './student';
 import getParentInfoQuery from './parent';
-import { createUser, findUserByEmail } from './userQueries';
 import loginQuery from './loginQuery';
 import createParent from './parentQueries';
 import createStudent from './studentQueries';
@@ -52,6 +55,7 @@ export {
   postRecommendationQuery,
   getStudentTasksQuery,
   getClassGradesQuery,
+  putStudentHealthQuery,
   getTeacherStudentsQuery,
   getStudentClassesQuery,
   getParentStudentQuery,
