@@ -6,8 +6,8 @@ const studentRelatedToParent = async (req: any, res: Response, next: NextFunctio
   try {
     const { id, role } = req.user;
     const { studentId } = req.params;
-    const data = await studentParentRelationQuery(id, studentId);
-    const isRelated = data;
+    const { data }:any = await studentParentRelationQuery(id, studentId);
+    const isRelated = data.length;
 
     switch (role) {
       case role === 'student':
