@@ -1,28 +1,39 @@
 import {
-  TestStudent, Test, Class,
+  TestStudent, Test, Class, ClassStudent, Assignment, AssignmentStudent,
 } from '../../models';
 
-const studentGradesQuery = (id: number) => TestStudent
+const studentGradesQuery = (id: number) => ClassStudent
   .findAll({
-    raw: true,
-    nest: false,
+    attributes: ['class_id', 'id'],
     where: { student_id: id },
-    attributes: ['Test.title', 'grade', 'Test.class_id', 'Test.Class.name'],
     include: [{
-      model: Test,
-      as: 'Test',
-      attributes: [],
+      model: Class,
+      attributes: ['id', 'name'],
       include: [{
-        model: Class,
-        as: 'Class',
-        attributes: [],
-      }],
-    },
-
-    ],
-
+        model: Test,
+        // attributes: [],
+        attributes: ['title', 'id'],
+        include: [{
+          model: TestStudent,
+          where: { student_id: id },
+          // attributes: [],
+          attributes: ['grade', 'id'],
+        }],
+      },
+      {
+        model: Assignment,
+        // attributes: [],
+        attributes: ['title', 'id'],
+        include: [{
+          model: AssignmentStudent,
+          where: { student_id: id },
+          // attributes: [],
+          attributes: ['id', 'grade'],
+        }],
+      },
+      ],
+    }],
   });
-
 export default studentGradesQuery;
 
 // Student
@@ -65,4 +76,25 @@ export default studentGradesQuery;
 //         }],
 //       }],
 //     }],
+//   });
+
+// TestStudent
+//   .findAll({
+//     raw: true,
+//     nest: false,
+//     where: { student_id: id },
+//     attributes: ['Test.title', 'grade', 'Test.class_id', 'Test.Class.name'],
+//     include: [{
+//       model: Test,
+//       as: 'Test',
+//       attributes: [],
+//       include: [{
+//         model: Class,
+//         as: 'Class',
+//         attributes: [],
+//       }],
+//     },
+
+//     ],
+
 //   });
