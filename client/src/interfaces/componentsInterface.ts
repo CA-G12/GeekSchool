@@ -1,4 +1,4 @@
-import { Key, ReactNode } from 'react';
+import { Key, ReactNode } from "react";
 
 interface questionInterface {
   id: string | number;
@@ -23,21 +23,21 @@ interface announcementCard {
 
 interface GradesTableProps {
   tests: {
-    title: string,
-    id: number,
+    title: string;
+    id: number;
     TestsStudents: {
-      grade: number,
-      id: number,
-    }[],
-  }[],
+      grade: number;
+      id: number;
+    }[];
+  }[];
   assignments: {
-    title: string,
-    id: number,
+    title: string;
+    id: number;
     AssignmentStudents: {
-      grade: number,
-      id: number,
-    }[],
-  }[],
+      grade: number;
+      id: number;
+    }[];
+  }[];
 }
 
 interface DataType {
@@ -48,9 +48,9 @@ interface DataType {
 }
 
 interface GradeCollapseProps {
-  title: string,
-  id: number,
-  children: ReactNode,
+  title: string;
+  id: number;
+  children: ReactNode;
 }
 
 export {
