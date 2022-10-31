@@ -30,7 +30,10 @@ import createParent from './parentQueries';
 import createStudent from './studentQueries';
 import createTeacher from './teacherQueries';
 import {
-  getParentStudentQuery, getTeacherClassesQuery, getReportsQuery, getStudentHealthsQuery,
+  getParentStudentQuery,
+  getTeacherClassesQuery,
+  getReportsQuery,
+  getStudentHealthsQuery,
 } from './profile';
 import { studentParentRelationQuery } from './Auth';
 import getParentTeachersQuery from './getParentTeachers';
