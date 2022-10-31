@@ -14,7 +14,6 @@ const getAssignments = async (req: any, res: Response, next:NextFunction) => {
       res.json({ msg: 'Teacher Assignments for this class', data });
     }
   } catch (error) {
-    console.log(error);
     next(error);
   }
 };

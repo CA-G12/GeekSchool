@@ -1,0 +1,34 @@
+.profile_card {
+    background-color: #fff;
+    max-width: 500px;
+    border-radius: 19px;
+}
+.card_header {
+    padding: 40px 30px;
+    border-radius: 19px 19px 0px 0px;
+}
+
+#scrollableDiv {
+    border-radius: 0px 0px 19px 19px;
+    border: none !important;
+    direction: ltr;
+}
+.icons {
+    display: flex;
+    flex-direction: column;
+}
+
+.icons > * {
+    color: #0AB28B;
+    margin: 4px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.teachers_number {
+    color: #0AB28B;
+
+}
+.ant-list-item-meta-content {
+    padding: 0 14px;
+}

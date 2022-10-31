@@ -1,8 +1,8 @@
 import { Router } from 'express';
 import authRouter from './auth';
 import classRouter from './class';
-import teacherRouter from './teacher';
 import studentRouter from './student';
+import teacherRouter from './teacher';
 import profilesRouter from './profile';
 import parentRouter from './parent';
 
