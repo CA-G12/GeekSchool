@@ -25,10 +25,12 @@ import {
   postRecommendation,
 } from './class';
 
-import getParentTeachers from './getParentTeachers';
-import { getTeacherSchedule, getTeacherStudents } from './teacher';
+import {
+  getTeachersClasses, getReports, getParentStudent,
+} from './profiles';
 import { putStudentHealth, getStudentClasses } from './student';
-import { getParentStudent, getTeachersClasses } from './profiles';
+import { getTeacherSchedule, getTeacherStudents } from './teacher';
+import getParentTeachers from './getParentTeachers';
 
 export {
   signup,
@@ -64,4 +66,5 @@ export {
   getStudentClasses,
   getParentStudent,
   getTeachersClasses,
+  getReports,
 };
