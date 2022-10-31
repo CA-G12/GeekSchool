@@ -16,6 +16,7 @@ import {
   deleteStudentFromClassQuery,
   deleteAssignmentQuery,
   postRecommendationQuery,
+  getTestsQuery,
 } from './class';
 
 import { createUser, findUserByEmail } from './userQueries';
@@ -33,6 +34,7 @@ import {
   getParentStudentQuery,
   getTeacherClassesQuery,
   getReportsQuery,
+  getStudentHealthsQuery,
 } from './profile';
 import { studentParentRelationQuery } from './Auth';
 import getParentTeachersQuery from './getParentTeachers';
@@ -62,6 +64,7 @@ export {
   postTestQuery,
   postRecommendationQuery,
   getStudentTasksQuery,
+  getTestsQuery,
   getClassGradesQuery,
   getParentTeachersQuery,
   getTeacherScheduleQuery,
@@ -73,6 +76,6 @@ export {
   studentParentRelationQuery,
   getReportsQuery,
   getParentInfoQuery,
+  getStudentHealthsQuery,
   teacherInfoQuery,
-
 };
