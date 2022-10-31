@@ -1,3 +1,7 @@
+import getTeacherSchedule from './getTeacherSchedule';
 import getTeacherStudents from './getTeacherStudents';
 
-export default getTeacherStudents;
+export {
+  getTeacherSchedule,
+  getTeacherStudents,
+};
