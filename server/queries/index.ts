@@ -29,6 +29,7 @@ import loginQuery from './loginQuery';
 import createParent from './parentQueries';
 import createStudent from './studentQueries';
 import createTeacher from './teacherQueries';
+import getParentTeachersQuery from './getParentTeachers';
 import { getParentStudentQuery, getTeacherClassesQuery } from './profile';
 
 import getTeacherScheduleQuery from './getTeacherScheduleQuery';
@@ -57,6 +58,7 @@ export {
   postRecommendationQuery,
   getStudentTasksQuery,
   getClassGradesQuery,
+  getParentTeachersQuery,
   getTeacherScheduleQuery,
   putStudentHealthQuery,
   getTeacherStudentsQuery,
