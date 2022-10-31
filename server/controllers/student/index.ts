@@ -1,3 +1,7 @@
+import putStudentHealth from './putStudentHealth';
 import getStudentClasses from './getStudentClasses';
 
-export default getStudentClasses;
+export {
+  getStudentClasses,
+  putStudentHealth,
+};
