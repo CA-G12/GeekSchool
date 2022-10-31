@@ -4,14 +4,23 @@ import { CustomError } from '../utils';
 
 const studentRelatedToParent = async (req: any, res: Response, next: NextFunction) => {
   try {
-    const { id } = req.user;
+    const { id, role } = req.user;
     const { studentId } = req.params;
     const data = await studentParentRelationQuery(id, studentId);
     const isRelated = data;
-    if (!isRelated) {
-      throw new CustomError(401, 'Unauthenticated');
-    } else {
-      next();
+
+    switch (role) {
+      case role === 'student':
+        throw new CustomError(401, 'you are not allowed to see your reports');
+
+      case role === 'teacher':
+        next();
+        break;
+      case role === 'parent' && isRelated:
+        next();
+        break;
+      default:
+        throw new CustomError(401, 'Unauthenticated');
     }
   } catch (error) {
     next(error);
