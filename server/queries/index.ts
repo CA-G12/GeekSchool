@@ -33,6 +33,7 @@ import {
   getParentStudentQuery,
   getTeacherClassesQuery,
   getReportsQuery,
+  getStudentHealthsQuery,
 } from './profile';
 import { studentParentRelationQuery } from './Auth';
 import getParentTeachersQuery from './getParentTeachers';
@@ -74,6 +75,7 @@ export {
   getReportsQuery,
   getParentInfoQuery,
   getStudentTestsQuery,
+  getStudentHealthsQuery,
   teacherInfoQuery,
 
 };

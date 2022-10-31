@@ -5,6 +5,7 @@ import studentAuth from './studentAuth';
 import studentAndTeacher from './studentAndTeacher';
 import studentRelatedToParent from './studentRelatedToParent';
 import studentAndParent from './studentAndParent';
+import healthMiddleware from './healthMiddleware';
 
 export {
   userAuth,
@@ -14,4 +15,5 @@ export {
   studentAuth,
   studentRelatedToParent,
   studentAndParent,
+  healthMiddleware,
 };

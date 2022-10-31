@@ -71,4 +71,16 @@ describe('Testing the statistics router', () => {
         return done();
       });
   });
+
+  test('Should return 401 because the token is invalid', (done) => {
+    supertest(app)
+      .get('/api/v1/profile/student/1/health')
+      .expect('Content-Type', /json/)
+      .expect(401)
+      .end((err, res) => {
+        if (err) done(err);
+        expect(res.body.msg).toBe('Unauthenticated');
+        return done();
+      });
+  });
 });
