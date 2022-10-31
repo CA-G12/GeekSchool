@@ -41,7 +41,8 @@ export const UserAuthProvider: FC<Props> = ({ children }) => {
     return () => {
       source.cancel();
     };
-  }, [source]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const value = useMemo(() => ({ userData, setUserData }), [userData]);
 

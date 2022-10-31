@@ -1,13 +1,19 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider, Link } from "react-router-dom";
 import { ConfigProvider } from "antd";
-
-import "./i18n/config.js";
-import StatsDummy from "./components/StatsDummy/Dummy";
+import Question from "./components/Class/Questions";
+import { SignUpPage, LoginPage, RecommendedPage } from "./pages";
 import { UserAuthProvider } from "./context/AuthContext";
-import Class from "./components/Class/Class";
 import Announcements from "./components/Class/Announcements/Announcements";
+import ClassTest from "./components/ClassTests/ClassTests";
+import Feedback from "./components/Class/Feedback/Feedback";
+import StatsDummy from "./components/StatsDummy/Dummy";
+import StudentsProfile from "./components/Class/StudentsPage";
+import Class from "./components/Class";
+import Grades from "./components/Class/Grades";
 import "antd/dist/antd.variable.min.css";
+// import "./i18n/config.js";
+import "./style.css";
 
 ConfigProvider.config({
   theme: {
@@ -21,7 +27,19 @@ const router = createBrowserRouter([
     element: <Link to="/class">Go to the class page!</Link>,
   },
   {
-    path: "/class",
+    path: "/signup",
+    element: <SignUpPage />,
+  },
+  {
+    path: "/login",
+    element: <LoginPage />,
+  },
+  {
+    path: "/student/:studentId",
+    element: <h1>student profile</h1>,
+  },
+  {
+    path: "/class/:classId",
     element: <Class />,
     children: [
       {
@@ -30,11 +48,11 @@ const router = createBrowserRouter([
       },
       {
         path: "students",
-        element: <h1>Students</h1>,
+        element: <StudentsProfile />,
       },
       {
         path: "assignments",
-        element: <h1>Assignments</h1>,
+        element: <ClassTest />, // ? this just temporary, any one works on the assignments can remove it.
       },
       {
         path: "announcements",
@@ -42,15 +60,19 @@ const router = createBrowserRouter([
       },
       {
         path: "questions",
-        element: <h1>Questions</h1>,
+        element: <Question />,
       },
       {
         path: "feedback",
-        element: <h1>Feedback</h1>,
+        element: <Feedback />,
       },
       {
         path: "recommended",
-        element: <h1>Recommended</h1>,
+        element: <RecommendedPage />,
+      },
+      {
+        path: "grades",
+        element: <Grades />,
       },
     ],
   },
