@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import { Button, Form, Input } from "antd";
 import axios, { AxiosResponse } from "axios";
 import Swal from "sweetalert2";
+import FeedbackCard from "../../FeedbackCard";
 import "./Feedback.css";
 
 const Feedback: React.FC = () => {
   const [feedbacks, setFeedbacks] = useState<object[]>([]);
 
   const source = axios.CancelToken.source();
-  const classId = 8; // ? This will change depending on which class was opened.
+  const classId = 1; // ? This will change depending on which class was opened.
 
   useEffect(() => {
     const fetchData = async () => {
@@ -79,7 +80,7 @@ const Feedback: React.FC = () => {
 
       <section className="feedbacks-boxes">
         {feedbacks.map((feedback: any) => (
-          <p className="feedback">{feedback.feedback}</p>
+          <FeedbackCard feedback={feedback.feedback} />
         ))}
       </section>
     </main>
