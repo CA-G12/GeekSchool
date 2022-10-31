@@ -36,7 +36,6 @@ const AssignmentModal: React.FC = () => {
     }
     handleCancel();
     form.resetFields();
-   
   };
 
   return (
@@ -60,7 +59,12 @@ const AssignmentModal: React.FC = () => {
           />
         }
       >
-        <Form form={form} className="form" onFinish={onFinish} labelCol={{ span: 8 }}>
+        <Form
+          form={form}
+          className="form"
+          onFinish={onFinish}
+          labelCol={{ span: 8 }}
+        >
           <Form.Item
             label="عنوان المهمة"
             style={{ width: "70%" }}

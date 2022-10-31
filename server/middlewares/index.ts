@@ -4,6 +4,7 @@ import parentAuth from './parentAuth';
 import studentAuth from './studentAuth';
 import studentAndTeacher from './studentAndTeacher';
 import studentRelatedToParent from './studentRelatedToParent';
+import studentAndParent from './studentAndParent';
 
 export {
   userAuth,
@@ -12,4 +13,5 @@ export {
   studentAndTeacher,
   studentAuth,
   studentRelatedToParent,
+  studentAndParent,
 };
