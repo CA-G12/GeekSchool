@@ -2,8 +2,23 @@ import { FC } from "react";
 import { Card, Typography } from "antd";
 import ClassAvatar from "../../../../assets/class_avatar.png";
 import ClassBcg from "../../../../assets/class_bcg.png";
-import { ClassCardProps } from "../../../../interfaces/componentsInterface";
+// import { ClassCardProps } from "../../../../interfaces/componentsInterface";
 import "./ClassCard.css";
+
+interface ClassCardProps {
+  className: string;
+  teacherName: string;
+  assignments: {
+    id: number;
+    title: string;
+    createdAt: string;
+  }[];
+  tests: {
+    id: number;
+    title: string;
+    date: string;
+  }[];
+}
 
 const { Title, Text } = Typography;
 

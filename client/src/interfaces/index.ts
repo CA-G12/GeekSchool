@@ -3,6 +3,7 @@ import {
   recommendedInterface,
   feedbackInterface,
   announcementCard,
+  profileNavLinkInterface,
 } from "./componentsInterface";
 import {
   UserInterface,
@@ -11,6 +12,8 @@ import {
   userDataInterface,
   userDataParentInterface,
   signUpDataInterface,
+  userDetailsInterface,
+  reportsInterface,
 } from "./userInterface";
 
 export {
@@ -24,4 +27,7 @@ export {
   userDataParentInterface,
   signUpDataInterface,
   announcementCard,
+  userDetailsInterface,
+  reportsInterface,
+  profileNavLinkInterface,
 };

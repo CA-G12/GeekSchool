@@ -2,11 +2,9 @@ import React from "react";
 import { createBrowserRouter, RouterProvider, Link } from "react-router-dom";
 import { ConfigProvider } from "antd";
 import Question from "./components/Class/Questions";
-import { SignUpPage, LoginPage, RecommendedPage } from "./pages";
+import { SignUpPage, LoginPage, ProfilePage } from "./pages";
 import { UserAuthProvider } from "./context/AuthContext";
-import Announcements from "./components/Class/Announcements/Announcements";
 import ClassTest from "./components/ClassTests/ClassTests";
-import Feedback from "./components/Class/Feedback/Feedback";
 import StatsDummy from "./components/StatsDummy/Dummy";
 import StudentsProfile from "./components/Class/StudentsPage";
 import Class from "./components/Class";
@@ -35,6 +33,10 @@ const router = createBrowserRouter([
     element: <LoginPage />,
   },
   {
+    path: "/profile",
+    element: <ProfilePage />,
+  },
+  {
     path: "/student/:studentId",
     element: <h1>student profile</h1>,
   },
@@ -55,20 +57,16 @@ const router = createBrowserRouter([
         element: <ClassTest />, // ? this just temporary, any one works on the assignments can remove it.
       },
       {
-        path: "announcements",
-        element: <Announcements />,
-      },
-      {
         path: "questions",
         element: <Question />,
       },
       {
         path: "feedback",
-        element: <Feedback />,
+        element: <h1>Feedback</h1>,
       },
       {
         path: "recommended",
-        element: <RecommendedPage />,
+        element: <h1>Recommended</h1>,
       },
       {
         path: "grades",

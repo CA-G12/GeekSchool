@@ -19,19 +19,13 @@ interface announcementCard {
   createdAt: string;
 }
 
-interface ClassCardProps {
-  className: string;
-  teacherName: string;
-  assignments: {
-    id: number;
-    title: string;
-    createdAt: string;
-  }[];
-  tests: {
-    id: number;
-    title: string;
-    date: string;
-  }[];
+interface profileNavLinkInterface {
+  name: string;
+  path: string;
+  activeColor: string;
+  newPath: string | null;
+  // eslint-disable-next-line no-unused-vars
+  handleClicked: (path: string) => void;
 }
 
 export {
@@ -39,5 +33,5 @@ export {
   recommendedInterface,
   feedbackInterface,
   announcementCard,
-  ClassCardProps,
+  profileNavLinkInterface,
 };
