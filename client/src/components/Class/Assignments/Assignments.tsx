@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { Dropdown, Space, Button, Menu, MenuProps, Input } from "antd";
 import { PlusOutlined, FileTextOutlined } from "@ant-design/icons";
 import axios from "axios";
@@ -14,7 +15,7 @@ const Assignments: React.FC = () => {
   const [assignments, setAssignments] = useState<Array<object>>([]);
   const [addTest, setAddTest] = useState<boolean>(false);
 
-  const classId = 5; // ? This will be passed when the user clicks on some class.
+  const { classId } = useParams();
   const role = useUserData().userData?.role;
   const source = axios.CancelToken.source();
 

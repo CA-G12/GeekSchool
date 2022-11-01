@@ -13,7 +13,6 @@ import StudentsProfile from "./components/Class/StudentsPage";
 import Class from "./components/Class";
 import Grades from "./components/Class/Grades";
 import "antd/dist/antd.variable.min.css";
-// import "./i18n/config.js";
 import "./style.css";
 
 ConfigProvider.config({
