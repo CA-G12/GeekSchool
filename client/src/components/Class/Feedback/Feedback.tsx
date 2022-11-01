@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { Button, Form, Input } from "antd";
 import axios, { AxiosResponse } from "axios";
 import Swal from "sweetalert2";
@@ -9,7 +10,7 @@ const Feedback: React.FC = () => {
   const [feedbacks, setFeedbacks] = useState<object[]>([]);
 
   const source = axios.CancelToken.source();
-  const classId = 1; // ? This will change depending on which class was opened.
+  const { classId } = useParams();
 
   useEffect(() => {
     const fetchData = async () => {

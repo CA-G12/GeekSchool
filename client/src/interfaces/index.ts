@@ -6,6 +6,8 @@ import {
   GradesTableProps,
   DataType,
   GradeCollapseProps,
+  TeacherAssignmentCardProps,
+  StudentAssignmentCardProps,
 } from "./componentsInterface";
 import {
   UserInterface,
@@ -30,4 +32,6 @@ export {
   GradesTableProps,
   DataType,
   GradeCollapseProps,
+  TeacherAssignmentCardProps,
+  StudentAssignmentCardProps,
 };
