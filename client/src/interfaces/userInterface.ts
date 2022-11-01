@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 interface UserInterface {
   id: number;
   name: string;
@@ -37,6 +38,22 @@ interface signUpDataInterface {
   children: string[] | [];
 }
 
+interface userDetailsInterface {
+  name: string | null;
+  location: string | null;
+  mobile: string | null;
+  email: string | null;
+  image: string | null;
+  role: string | null;
+}
+
+interface reportsInterface {
+  id: number;
+  description: string;
+  class_id: number;
+  student_id: number;
+}
+
 export {
   UserInterface,
   UserDataInterface,
@@ -44,4 +61,6 @@ export {
   userDataParentInterface,
   userDataInterface,
   signUpDataInterface,
+  userDetailsInterface,
+  reportsInterface,
 };

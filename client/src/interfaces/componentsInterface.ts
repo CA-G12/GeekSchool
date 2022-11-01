@@ -21,6 +21,15 @@ interface announcementCard {
   createdAt: string;
 }
 
+interface profileNavLinkInterface {
+  name: string;
+  path: string;
+  activeColor: string;
+  newPath: string | null;
+  // eslint-disable-next-line no-unused-vars
+  handleClicked: (path: string) => void;
+}
+
 interface GradesTableProps {
   tests: {
     title: string;
@@ -86,6 +95,7 @@ export {
   recommendedInterface,
   feedbackInterface,
   announcementCard,
+  profileNavLinkInterface,
   GradesTableProps,
   DataType,
   GradeCollapseProps,

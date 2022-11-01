@@ -3,6 +3,7 @@ import {
   recommendedInterface,
   feedbackInterface,
   announcementCard,
+  profileNavLinkInterface,
   GradesTableProps,
   DataType,
   GradeCollapseProps,
@@ -16,6 +17,8 @@ import {
   userDataInterface,
   userDataParentInterface,
   signUpDataInterface,
+  userDetailsInterface,
+  reportsInterface,
 } from "./userInterface";
 
 export {
@@ -29,6 +32,9 @@ export {
   userDataParentInterface,
   signUpDataInterface,
   announcementCard,
+  userDetailsInterface,
+  reportsInterface,
+  profileNavLinkInterface,
   GradesTableProps,
   DataType,
   GradeCollapseProps,
