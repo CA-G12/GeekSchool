@@ -4,6 +4,8 @@ import {
   feedbackInterface,
   announcementCard,
   profileNavLinkInterface,
+  TeacherAssignmentCardProps,
+  StudentAssignmentCardProps,
 } from "./componentsInterface";
 import {
   UserInterface,
@@ -30,4 +32,6 @@ export {
   userDetailsInterface,
   reportsInterface,
   profileNavLinkInterface,
+  TeacherAssignmentCardProps,
+  StudentAssignmentCardProps,
 };
