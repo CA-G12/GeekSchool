@@ -65,9 +65,7 @@ const ProfilePage = () => {
             />
           ))}
         </nav>
-        <main>
-          <Outlet />
-        </main>
+        <Outlet />
       </main>
     </main>
   );
