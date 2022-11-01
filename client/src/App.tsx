@@ -6,6 +6,7 @@ import Assignments from "./components/Class/Assignments/Assignments";
 import { SignUpPage, LoginPage, RecommendedPage } from "./pages";
 import { UserAuthProvider } from "./context/AuthContext";
 // import ClassTest from "./components/ClassTests/ClassTests";
+import Announcements from "./components/Class/Announcements/Announcements";
 import Feedback from "./components/Class/Feedback/Feedback";
 import StatsDummy from "./components/StatsDummy/Dummy";
 import StudentsProfile from "./components/Class/StudentsPage";
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
       {
         path: "assignments",
         element: <Assignments />,
+      },
+      {
+        path: "announcements",
+        element: <Announcements />,
       },
       {
         path: "questions",
