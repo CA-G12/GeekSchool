@@ -1,6 +1,6 @@
 import { Button, Modal, Form, Input } from "antd";
 import React, { useState } from "react";
-import { PlusOutlined, CloseOutlined } from "@ant-design/icons";
+import { CloseOutlined, FileTextOutlined } from "@ant-design/icons";
 import axios from "axios";
 import "./index.css";
 import Swal from "sweetalert2";
@@ -43,9 +43,16 @@ const AssignmentModal: React.FC = () => {
       <Button
         type="primary"
         onClick={() => showModal()}
-        style={{ borderRadius: "30px" }}
+        style={{
+          width: '100%',
+          backgroundColor: 'transparent',
+          borderRadius: "5rem",
+          color: '#000',
+          boxShadow: 'none',
+          border: 'none'
+        }}
       >
-        <PlusOutlined /> إضافة
+        <FileTextOutlined />
       </Button>
       <Modal
         className="modal"

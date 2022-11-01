@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Dropdown, Space, Button, Menu, message, MenuProps, Input } from "antd";
+import { Dropdown, Space, Button, Menu, MenuProps, Input } from "antd";
 import {
   PlusOutlined,
   FileTextOutlined,
-  FileProtectOutlined,
 } from "@ant-design/icons";
 import axios from "axios";
-// import { useUserData } from "../../../context/AuthContext";
+import { useUserData } from "../../../context/AuthContext";
 import AddTest from "../../ClassTests/AddTest/AddTest";
 import AssignmentModal from "../../AssignmentModal";
-import { TeacherAssignmentCard } from "../cards";
+import { StudentAssignmentCard, TeacherAssignmentCard } from "../cards";
 import "./Assignments.css";
 
 const { Search } = Input;
@@ -17,10 +16,9 @@ const { Search } = Input;
 const Assignments: React.FC = () => {
   const [assignments, setAssignments] = useState<Array<object>>([]);
   const [addTest, setAddTest] = useState<boolean>(false);
-  const [addAssignment, setAddAssignment] = useState<boolean>(false);
 
   const classId = 5; // ? This will be passed when the user clicks on some class.
-  const role = "teacher";
+  const role = useUserData().userData?.role;
   const source = axios.CancelToken.source();
 
   // ? The search function.
@@ -31,10 +29,7 @@ const Assignments: React.FC = () => {
 
   // ? Button events
   const handleMenuClick: MenuProps["onClick"] = (e) => {
-    message.info(e.key);
-    if (e.key === "1") {
-      setAddAssignment(true);
-    } else {
+    if (e.key === "2") {
       setAddTest(true);
     }
   };
@@ -46,7 +41,7 @@ const Assignments: React.FC = () => {
         {
           label: "إضافة تكليف",
           key: "1",
-          icon: <FileProtectOutlined />,
+          icon: <AssignmentModal />,
         },
         {
           label: "إضافة اختبار",
@@ -75,7 +70,6 @@ const Assignments: React.FC = () => {
 
   return (
     <>
-      {addAssignment && <AssignmentModal />}
       {addTest && <AddTest />}
       <main className="class-assignment">
         <h1 className="assignment-title">التكليفات</h1>
@@ -95,7 +89,7 @@ const Assignments: React.FC = () => {
             </Button>
           </Dropdown>
         </section>
-        {/* {role === "student" && (
+        {role === "student" && (
           <section className="assignments-box">
             {assignments.map((assignment: any) => (
               <StudentAssignmentCard
@@ -105,11 +99,16 @@ const Assignments: React.FC = () => {
               />
             ))}
           </section>
-        )} */}
+        )}
         {role === "teacher" && (
           <section className="assignment-box">
-            {assignments.map(() => (
-              <TeacherAssignmentCard />
+            {assignments.map((assignment: any) => (
+              <TeacherAssignmentCard
+                id={assignment.id}
+                title={assignment.title}
+                createdAt={assignment.createdAt}
+                description={assignment.description}
+                />
             ))}
           </section>
         )}
