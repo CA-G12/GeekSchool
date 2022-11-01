@@ -2,12 +2,9 @@ import React from "react";
 import { createBrowserRouter, RouterProvider, Link } from "react-router-dom";
 import { ConfigProvider } from "antd";
 import Question from "./components/Class/Questions";
-import Assignments from "./components/Class/Assignments/Assignments";
-import { SignUpPage, LoginPage, RecommendedPage } from "./pages";
+import { SignUpPage, LoginPage, ProfilePage } from "./pages";
 import { UserAuthProvider } from "./context/AuthContext";
-// import ClassTest from "./components/ClassTests/ClassTests";
-import Announcements from "./components/Class/Announcements/Announcements";
-import Feedback from "./components/Class/Feedback/Feedback";
+import Assignments from "./components/Class/Assignments/Assignments";
 import StatsDummy from "./components/StatsDummy/Dummy";
 import StudentsProfile from "./components/Class/StudentsPage";
 import Class from "./components/Class";
@@ -35,6 +32,10 @@ const router = createBrowserRouter([
     element: <LoginPage />,
   },
   {
+    path: "/profile",
+    element: <ProfilePage />,
+  },
+  {
     path: "/student/:studentId",
     element: <h1>student profile</h1>,
   },
@@ -55,20 +56,16 @@ const router = createBrowserRouter([
         element: <Assignments />,
       },
       {
-        path: "announcements",
-        element: <Announcements />,
-      },
-      {
         path: "questions",
         element: <Question />,
       },
       {
         path: "feedback",
-        element: <Feedback />,
+        element: <h1>Feedback</h1>,
       },
       {
         path: "recommended",
-        element: <RecommendedPage />,
+        element: <h1>Recommended</h1>,
       },
       {
         path: "grades",
