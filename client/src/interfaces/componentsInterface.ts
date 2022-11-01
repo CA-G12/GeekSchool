@@ -1,3 +1,5 @@
+import { Key, ReactNode } from "react";
+
 interface questionInterface {
   id: string | number;
   classId: string | number;
@@ -19,6 +21,38 @@ interface announcementCard {
   createdAt: string;
 }
 
+interface GradesTableProps {
+  tests: {
+    title: string;
+    id: number;
+    TestsStudents: {
+      grade: number;
+      id: number;
+    }[];
+  }[];
+  assignments: {
+    title: string;
+    id: number;
+    AssignmentStudents: {
+      grade: number;
+      id: number;
+    }[];
+  }[];
+}
+
+interface DataType {
+  key: Key;
+  id: number;
+  title: string;
+  grade: number;
+}
+
+interface GradeCollapseProps {
+  title: string;
+  id: number;
+  children: ReactNode;
+}
+
 interface StudentAssignmentCardProps {
   title: string;
   createdAt: string;
@@ -31,6 +65,7 @@ interface TeacherAssignmentCardProps {
   createdAt: string;
   description: string;
 }
+
 interface ClassCardProps {
   className: string;
   teacherName: string;
@@ -51,6 +86,9 @@ export {
   recommendedInterface,
   feedbackInterface,
   announcementCard,
+  GradesTableProps,
+  DataType,
+  GradeCollapseProps,
   StudentAssignmentCardProps,
   TeacherAssignmentCardProps,
   ClassCardProps,
