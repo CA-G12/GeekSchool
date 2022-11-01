@@ -44,12 +44,12 @@ const AssignmentModal: React.FC = () => {
         type="primary"
         onClick={() => showModal()}
         style={{
-          width: '100%',
-          backgroundColor: 'transparent',
+          width: "100%",
+          backgroundColor: "transparent",
           borderRadius: "5rem",
-          color: '#000',
-          boxShadow: 'none',
-          border: 'none'
+          color: "#000",
+          boxShadow: "none",
+          border: "none",
         }}
       >
         <FileTextOutlined />

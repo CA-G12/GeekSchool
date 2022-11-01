@@ -23,7 +23,6 @@ const TeacherAssignmentCard: React.FC<TeacherAssignmentCardProps> = ({
 
   const { classId } = useParams(); // ? This will change depending on the class that is clicked on.
 
-
   useEffect(() => {
     const fetchSubmitted = async () => {
       const data = await axios.get(

@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Dropdown, Space, Button, Menu, MenuProps, Input } from "antd";
-import {
-  PlusOutlined,
-  FileTextOutlined,
-} from "@ant-design/icons";
+import { PlusOutlined, FileTextOutlined } from "@ant-design/icons";
 import axios from "axios";
 import { useUserData } from "../../../context/AuthContext";
 import AddTest from "../../ClassTests/AddTest/AddTest";
@@ -108,7 +105,7 @@ const Assignments: React.FC = () => {
                 title={assignment.title}
                 createdAt={assignment.createdAt}
                 description={assignment.description}
-                />
+              />
             ))}
           </section>
         )}
