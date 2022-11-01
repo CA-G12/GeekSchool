@@ -18,13 +18,6 @@
     font-size: 28px;
   }
   
-  .schedule_wrapper {
-    border: 1px solid red;
-    width: 80%;
-    margin: auto;
-    padding-bottom: 24px;
-    height: 500px;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
+.ant-collapse-header {
+  flex-direction: row-reverse;
 }

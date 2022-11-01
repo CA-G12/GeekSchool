@@ -1,82 +1,128 @@
-import type { BadgeProps } from "antd";
-import { Badge, Calendar } from "antd";
-import type { Moment } from "moment";
-import React from "react";
+import { useState, useEffect } from "react";
+import { Table, Space, Spin, notification, Collapse } from "antd";
+import axios from "axios";
 import "./style.css";
 
-const getListData = (value: Moment) => {
-  let listData;
-  switch (value.date()) {
-    case 8:
-      listData = [
-        { type: "warning", content: "This is warning event." },
-        { type: "success", content: "This is usual event." },
-      ];
-      break;
-    case 10:
-      listData = [
-        { type: "warning", content: "This is warning event." },
-        { type: "success", content: "This is usual event." },
-        { type: "error", content: "This is error event." },
-      ];
-      break;
-    case 15:
-      listData = [
-        { type: "warning", content: "This is warning event" },
-        { type: "success", content: "This is very long usual event。。...." },
-        { type: "error", content: "This is error event 1." },
-        { type: "error", content: "This is error event 2." },
-        { type: "error", content: "This is error event 3." },
-        { type: "error", content: "This is error event 4." },
-      ];
-      break;
-    default:
-  }
-  return listData || [];
-};
+interface weekInterface {
+  id: number;
+  subjectName: any | [];
+  saturdays: string;
+  Sundays: string;
+  Mondays: string;
+  Tuesdays: string;
+  Wednesdays: string;
+  Thursdays: string;
+}
 
-// const getMonthData = (value: Moment) => {
-//   if (value.month() === 8) {
-//     return 1394;
-//   }
-// };
+const columns = [
+  {
+    title: "المساق",
+    dataIndex: "subjectName",
+  },
+  {
+    title: "السبت",
+    dataIndex: "saturdays",
+  },
+  {
+    title: "الأحد",
+    dataIndex: "Sundays",
+  },
+  {
+    title: "الإثنين",
+    dataIndex: "Mondays",
+  },
+  {
+    title: "الثلاثاء",
+    dataIndex: "Tuesdays",
+  },
+  {
+    title: "الأربعاء",
+    dataIndex: "Wednesdays",
+  },
+  {
+    title: "الخميس",
+    dataIndex: "Thursdays",
+  },
+];
 
-const getMonthData = (value: Moment) => (value.month() === 8 ? 1394 : null);
+const { Panel } = Collapse;
 
-const TeacherSchedule: React.FC = () => {
-  const monthCellRender = (value: Moment) => {
-    const num = getMonthData(value);
-    return num ? (
-      <div className="notes-month">
-        <section>{num}</section>
-        <span>Backlog number</span>
-      </div>
-    ) : null;
+const TeacherSchedule = () => {
+  const [schedule, setSchedule] = useState<weekInterface[] | []>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  const fetchData = async () => {
+    try {
+      setLoading(true);
+      const {
+        data: { data },
+      } = await axios(`/api/v1/teacher/schedule`);
+
+      const subjects = data?.map((s: any) => ({
+        subjectName: s.name,
+      }));
+      const classes: any = data?.map((e: any) => e.Schedules);
+
+      const dataSource = subjects.map((e: any, i: number) => {
+        const a = classes[i].map((obj: any) => ({
+          [obj.day]: obj.time,
+        }));
+
+        let scheduleObj = { ...e };
+
+        for (let j = 0; j < a.length; j += 1) {
+          scheduleObj = { ...scheduleObj, ...a[j] };
+        }
+
+        return scheduleObj;
+      });
+      setSchedule(dataSource);
+      setLoading(false);
+    } catch (err) {
+      setLoading(false);
+      setError("Something went wrong");
+    }
   };
 
-  const dateCellRender = (value: Moment) => {
-    const listData = getListData(value);
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  if (loading) {
     return (
-      <ul className="events">
-        {listData.map((item) => (
-          <li key={item.content}>
-            <Badge
-              status={item.type as BadgeProps["status"]}
-              text={item.content}
-            />
-          </li>
-        ))}
-      </ul>
+      <Space size="large">
+        <Spin size="large" />
+      </Space>
     );
-  };
+  }
+
+  if (error) {
+    notification.config({
+      placement: "bottomLeft",
+      bottom: 10,
+      duration: 3,
+      rtl: true,
+    });
+    notification.error({
+      message: error,
+      // description: error,
+    });
+  }
 
   return (
-    <Calendar
-      className="schedule_wrapper"
-      dateCellRender={dateCellRender}
-      monthCellRender={monthCellRender}
-      
-    />
+    <Collapse accordion>
+      <Panel header="جدول حصص المعلم" key="1">
+        <div className="table_wrapper">
+          <Table
+            columns={columns}
+            dataSource={schedule}
+            size="middle"
+            pagination={{ pageSize: 4 }}
+          />
+        </div>
+      </Panel>
+    </Collapse>
   );
 };
 
