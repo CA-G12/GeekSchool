@@ -36,7 +36,7 @@ const router = createBrowserRouter([
     element: <h1>student profile</h1>,
   },
   {
-    path: '/parent',
+    path: "/parent",
     element: <ParentProfile />,
   },
   {
