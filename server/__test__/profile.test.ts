@@ -17,7 +17,7 @@ describe('Testing the statistics router', () => {
 
   test('Should return all parents students', (done) => {
     supertest(app)
-      .get('/api/v1/profile/parent/7/students')
+      .get('/api/v1/profile/parent/students')
       .set('Cookie', [
         'token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6Ik11c3RhZmEiLCJyb2xlIjoicGFyZW50IiwiaWF0IjoxNjY2ODU2OTg5fQ.zRPQHH51kwdsFlF4wDZP1kT7RCRmchw4YtflOFCWtYc',
       ])
@@ -32,7 +32,7 @@ describe('Testing the statistics router', () => {
 
   test('Should return 401 because the token is invalid', (done) => {
     supertest(app)
-      .get('/api/v1/profile/parent/7/students')
+      .get('/api/v1/profile/parent/students')
       .expect('Content-Type', /json/)
       .expect(401)
       .end((err, res) => {

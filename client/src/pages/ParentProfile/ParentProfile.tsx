@@ -1,6 +1,5 @@
 import { FC, useState, useEffect } from "react";
 import axios from "axios";
-import { useUserData } from "../../context/AuthContext";
 import ProfilePage from "../profile";
 import ProfileCard from "../../components/ProfileCard";
 import {
@@ -39,25 +38,30 @@ const ParentProfile: FC = () => {
   ]);
 
   const controller = new AbortController();
-  const parentId = useUserData().userData?.id || 1;
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await axios.get("/api/v1/parent/info");
+      const data = await axios.get("/api/v1/parent/info", {
+        signal: controller.signal,
+      });
 
       setParentInfo(data.data.data[0].User);
     };
 
     const fetchChildren = async () => {
       const data = await axios.get(
-        `/api/v1/profile/parent/${parentId}/students`
+        `/api/v1/profile/parent/students`, {
+          signal: controller.signal,
+        }
       );
 
       setChildren(data.data.data);
     };
 
     const fetchTeachers = async () => {
-      const data = await axios.get("/api/v1/parent/teachers");
+      const data = await axios.get("/api/v1/parent/teachers", {
+        signal: controller.signal,
+      });
 
       setTeachers(data.data.data);
     };
