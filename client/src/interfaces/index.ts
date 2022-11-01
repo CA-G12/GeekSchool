@@ -4,6 +4,9 @@ import {
   feedbackInterface,
   announcementCard,
   profileNavLinkInterface,
+  GradesTableProps,
+  DataType,
+  GradeCollapseProps,
   TeacherAssignmentCardProps,
   StudentAssignmentCardProps,
 } from "./componentsInterface";
@@ -32,6 +35,9 @@ export {
   userDetailsInterface,
   reportsInterface,
   profileNavLinkInterface,
+  GradesTableProps,
+  DataType,
+  GradeCollapseProps,
   TeacherAssignmentCardProps,
   StudentAssignmentCardProps,
 };
