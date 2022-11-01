@@ -14,6 +14,7 @@ const Question: FC<Props> = ({ id, question, answer, handleChange }) => {
   const [_answer, setAnswer] = useState(answer);
 
   const handleClick = (): void => {
+    console.log(id);
     if (!_answer) return;
     handleChange(id, _answer);
   };

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { FileTextOutlined } from "@ant-design/icons";
 import axios from "axios";
 import { AnnouncementCard } from "../cards";
@@ -9,7 +10,7 @@ const Announcements: React.FC = () => {
   const [tests, setTests] = useState<Array<object>>([]);
 
   const source = axios.CancelToken.source();
-  const classId = 1;
+  const { classId } = useParams();
 
   useEffect(() => {
     const fetchTestsData = async () => {

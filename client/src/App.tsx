@@ -2,17 +2,17 @@ import React from "react";
 import { createBrowserRouter, RouterProvider, Link } from "react-router-dom";
 import { ConfigProvider } from "antd";
 import Question from "./components/Class/Questions";
+import Assignments from "./components/Class/Assignments/Assignments";
 import { SignUpPage, LoginPage, RecommendedPage } from "./pages";
 import { UserAuthProvider } from "./context/AuthContext";
+// import ClassTest from "./components/ClassTests/ClassTests";
 import Announcements from "./components/Class/Announcements/Announcements";
-import ClassTest from "./components/ClassTests/ClassTests";
 import Feedback from "./components/Class/Feedback/Feedback";
 import StatsDummy from "./components/StatsDummy/Dummy";
 import StudentsProfile from "./components/Class/StudentsPage";
 import Class from "./components/Class";
 import Grades from "./components/Class/Grades";
 import "antd/dist/antd.variable.min.css";
-// import "./i18n/config.js";
 import "./style.css";
 
 ConfigProvider.config({
@@ -52,7 +52,7 @@ const router = createBrowserRouter([
       },
       {
         path: "assignments",
-        element: <ClassTest />, // ? this just temporary, any one works on the assignments can remove it.
+        element: <Assignments />,
       },
       {
         path: "announcements",
@@ -73,6 +73,10 @@ const router = createBrowserRouter([
       {
         path: "grades",
         element: <Grades />,
+      },
+      {
+        path: "grades",
+        element: <h1>grades</h1>,
       },
     ],
   },
