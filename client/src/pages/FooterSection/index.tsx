@@ -88,103 +88,102 @@ const forthCol = [
 
 const Footer = () => (
   <div className="footer_wrapper">
-    <footer >
-    <div className="footer_banner">
-      <img className="left_hash" src={leftHash} alt="leftHash" />
-      <img className="right_hash" src={rightHash} alt="rightHash" />
-      <div className="map_wrapper">
-        <img className="map" src={map} alt="rightHash" />
-        <div className="content_section">
-          <div className="title">
-            <h1>إنه الوقت كي نستثمر أكثر في تعليم أبنائنا</h1>
-          </div>
-          <div className="description">
-            <p>
-              من خلال منصة GeekSchool يمكنك متابعة صحة، سلوك، و حتى تحصيل أبناءك
-              التعليمي داخل المدرسة، و الربط مع المعلم
-            </p>
-            <Button
-              type="primary"
-              shape="round"
-              icon={<ArrowLeftOutlined />}
-              size="large"
-            >
-              إنضم الآن
-            </Button>
+    <footer>
+      <div className="footer_banner">
+        <img className="left_hash" src={leftHash} alt="leftHash" />
+        <img className="right_hash" src={rightHash} alt="rightHash" />
+        <div className="map_wrapper">
+          <img className="map" src={map} alt="rightHash" />
+          <div className="content_section">
+            <div className="title">
+              <h1>إنه الوقت كي نستثمر أكثر في تعليم أبنائنا</h1>
+            </div>
+            <div className="description">
+              <p>
+                من خلال منصة GeekSchool يمكنك متابعة صحة، سلوك، و حتى تحصيل
+                أبناءك التعليمي داخل المدرسة، و الربط مع المعلم
+              </p>
+              <Button
+                type="primary"
+                shape="round"
+                icon={<ArrowLeftOutlined />}
+                size="large"
+              >
+                إنضم الآن
+              </Button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div className="list_section">
-      <img className="school_logo" src={schoolLogo} alt="schoolLogo" />
+      <div className="list_section">
+        <img className="school_logo" src={schoolLogo} alt="schoolLogo" />
 
-      <List
-        itemLayout="horizontal"
-        dataSource={firstCol}
-        renderItem={(item) => (
-          <List.Item>
-            <List.Item.Meta
-              title={<a href="https://ant.design">{item.title}</a>}
-            />
-          </List.Item>
-        )}
-      />
-      <List
-        itemLayout="horizontal"
-        dataSource={secondCol}
-        renderItem={(item) => (
-          <List.Item>
-            <List.Item.Meta
-              title={<a href="https://ant.design">{item.title}</a>}
-            />
-          </List.Item>
-        )}
-      />
+        <List
+          itemLayout="horizontal"
+          dataSource={firstCol}
+          renderItem={(item) => (
+            <List.Item>
+              <List.Item.Meta
+                title={<a href="https://ant.design">{item.title}</a>}
+              />
+            </List.Item>
+          )}
+        />
+        <List
+          itemLayout="horizontal"
+          dataSource={secondCol}
+          renderItem={(item) => (
+            <List.Item>
+              <List.Item.Meta
+                title={<a href="https://ant.design">{item.title}</a>}
+              />
+            </List.Item>
+          )}
+        />
 
-      <List
-        itemLayout="horizontal"
-        dataSource={thirdCol}
-        renderItem={(item) => (
-          <List.Item>
-            <List.Item.Meta
-              title={<a href="https://ant.design">{item.title}</a>}
-            />
-          </List.Item>
-        )}
-      />
+        <List
+          itemLayout="horizontal"
+          dataSource={thirdCol}
+          renderItem={(item) => (
+            <List.Item>
+              <List.Item.Meta
+                title={<a href="https://ant.design">{item.title}</a>}
+              />
+            </List.Item>
+          )}
+        />
 
-      <List
-        itemLayout="horizontal"
-        dataSource={forthCol}
-        renderItem={(item) => (
-          <List.Item>
-            <List.Item.Meta
-              title={<a href="https://ant.design">{item.title}</a>}
-            />
-          </List.Item>
-        )}
-      />
-    </div>
-    <div className="under_line"></div>
-    <div className="tail_section">
-      <div>
-      <p>© Copyright Geek school 2022</p>
+        <List
+          itemLayout="horizontal"
+          dataSource={forthCol}
+          renderItem={(item) => (
+            <List.Item>
+              <List.Item.Meta
+                title={<a href="https://ant.design">{item.title}</a>}
+              />
+            </List.Item>
+          )}
+        />
       </div>
-      <div className="icons_section">
-        <FacebookOutlined />
-        <TwitterOutlined />
-        <LinkedinOutlined />
-        <InstagramOutlined />
-        <FacebookOutlined />
-        <GithubOutlined />
+      <div className="under_line"></div>
+      <div className="tail_section">
+        <div>
+          <p>© Copyright Geek school 2022</p>
+        </div>
+        <div className="icons_section">
+          <FacebookOutlined />
+          <TwitterOutlined />
+          <LinkedinOutlined />
+          <InstagramOutlined />
+          <FacebookOutlined />
+          <GithubOutlined />
+        </div>
+        <div>
+          <p>Lorem ipsum dolor sit amet</p>
+        </div>
       </div>
-      <div>
-        <p>Lorem ipsum dolor sit amet</p>
-      </div>
-    </div>
-  </footer>
+    </footer>
   </div>
-  
 );
 
 export default Footer;
