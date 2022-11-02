@@ -49,11 +49,9 @@ const ParentProfile: FC = () => {
     };
 
     const fetchChildren = async () => {
-      const data = await axios.get(
-        `/api/v1/profile/parent/students`, {
-          signal: controller.signal,
-        }
-      );
+      const data = await axios.get(`/api/v1/profile/parent/students`, {
+        signal: controller.signal,
+      });
 
       setChildren(data.data.data);
     };
@@ -91,6 +89,7 @@ const ParentProfile: FC = () => {
         }))}
         title="students"
         type="students"
+        _role="parent"
       />
       <ProfileCard
         data={teachers.map((teacher: TeachersData) => ({
@@ -101,6 +100,7 @@ const ParentProfile: FC = () => {
         }))}
         title="teacher"
         type="student"
+        _role="parent"
       />
     </ProfilePage>
   );
