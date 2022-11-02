@@ -90,6 +90,22 @@ interface ClassCardProps {
   }[];
 }
 
+interface contentNameHealthInterface {
+  content: string;
+  name: string;
+}
+
+interface healthCardInterface {
+  type: string;
+  description: any;
+  color: string[];
+  image: string;
+  name: string;
+  role: string | undefined;
+  // eslint-disable-next-line no-unused-vars
+  handleUpdateHealth: (healthValue: string, type: string) => void;
+}
+
 export {
   questionInterface,
   recommendedInterface,
@@ -102,4 +118,6 @@ export {
   StudentAssignmentCardProps,
   TeacherAssignmentCardProps,
   ClassCardProps,
+  contentNameHealthInterface,
+  healthCardInterface,
 };

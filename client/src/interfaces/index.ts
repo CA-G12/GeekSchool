@@ -9,6 +9,8 @@ import {
   GradeCollapseProps,
   TeacherAssignmentCardProps,
   StudentAssignmentCardProps,
+  contentNameHealthInterface,
+  healthCardInterface,
 } from "./componentsInterface";
 import {
   UserInterface,
@@ -40,4 +42,6 @@ export {
   GradeCollapseProps,
   TeacherAssignmentCardProps,
   StudentAssignmentCardProps,
+  contentNameHealthInterface,
+  healthCardInterface,
 };
