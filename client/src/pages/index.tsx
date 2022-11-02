@@ -5,4 +5,11 @@ import HealthProfilePage from "./healthProfile";
 import ParentProfile from "./ParentProfile/ParentProfile";
 import TeacherProfile from "./teacherProfile/TeacherProfile";
 
-export { SignUpPage, LoginPage, ProfilePage, HealthProfilePage, ParentProfile, TeacherProfile };
+export {
+  SignUpPage,
+  LoginPage,
+  ProfilePage,
+  HealthProfilePage,
+  ParentProfile,
+  TeacherProfile,
+};

@@ -3,11 +3,7 @@ import FeedbackCard from "./FeedbackCard";
 import QuestionsCard from "./QuestionsCard";
 import HealthCard from "./healthProfile/HealthCard";
 
-import {
-  StudentSignUp,
-  ParentSignUp,
-  TeacherSignUp
-} from "./signUpForm";
+import { StudentSignUp, ParentSignUp, TeacherSignUp } from "./signUpForm";
 import TeacherSchedule from "./TeacherSchedule";
 
 export {
