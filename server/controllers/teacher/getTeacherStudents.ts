@@ -5,7 +5,6 @@ import { CustomError } from '../../utils';
 const getTeacherStudents = async (req: any, res: Response, next: NextFunction) => {
   try {
     const { id } = req.user;
-
     const teacherStudents = await getTeacherStudentsQuery(Number(id) || 0);
 
     if (teacherStudents.length === 0) {

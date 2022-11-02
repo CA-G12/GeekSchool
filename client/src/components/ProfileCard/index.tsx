@@ -18,11 +18,26 @@ interface ProfileCardCC {
   data: DataType[];
   title: string;
   type?: string;
+  _role: string;
 }
 
-const ProfileCard: ElementType = ({ data, title, type }: ProfileCardCC) => {
-  const subtitle1 = type === "students" ? `لديك  من` : `يمكنك الوصول إلى`;
-  const subtitle2 = type === "students" ? `الأبناء` : `من المدرسين`;
+const ProfileCard: ElementType = ({
+  data,
+  title,
+  type,
+  _role,
+}: ProfileCardCC) => {
+  let subtitle1;
+  let subtitle2;
+
+  if (_role === "parent") {
+    subtitle1 = type === "students" ? `لديك ` : `يمكنك الوصول إلى`;
+    subtitle2 = type === "students" ? `من الأبناء` : `من المدرسين`;
+  } else {
+    subtitle1 = type === "students" ? `لديك ` : `يمكنك الوصول إلى`;
+    subtitle2 = type === "students" ? `من الطلاب` : `من الفصول الدراسية`;
+  }
+
   return (
     <div className="profile_card">
       <div className="card_header">

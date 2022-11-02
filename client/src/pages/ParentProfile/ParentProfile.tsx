@@ -89,6 +89,7 @@ const ParentProfile: FC = () => {
         }))}
         title="students"
         type="students"
+        _role="parent"
       />
       <ProfileCard
         data={teachers.map((teacher: TeachersData) => ({
@@ -99,6 +100,7 @@ const ParentProfile: FC = () => {
         }))}
         title="teacher"
         type="student"
+        _role="parent"
       />
     </ProfilePage>
   );
