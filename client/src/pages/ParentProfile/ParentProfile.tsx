@@ -49,11 +49,9 @@ const ParentProfile: FC = () => {
     };
 
     const fetchChildren = async () => {
-      const data = await axios.get(
-        `/api/v1/profile/parent/students`, {
-          signal: controller.signal,
-        }
-      );
+      const data = await axios.get(`/api/v1/profile/parent/students`, {
+        signal: controller.signal,
+      });
 
       setChildren(data.data.data);
     };
