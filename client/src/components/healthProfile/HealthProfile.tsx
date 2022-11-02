@@ -1,7 +1,7 @@
 import { EditOutlined } from "@ant-design/icons";
 import { Button, Input } from "antd";
 import { useState } from "react";
-import { healthCardInterface } from '../../interfaces';
+import { healthCardInterface } from "../../interfaces";
 import "./style.css";
 
 const { TextArea } = Input;
