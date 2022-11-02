@@ -2,6 +2,7 @@ import {
   signup, logout, userData, login,
 } from './auth';
 import { serverError, notFound } from './errors';
+
 import {
   addNewAssignment,
   getStats,
@@ -29,7 +30,9 @@ import {
 import {
   getParentStudent, getTeachersClasses, getReports, getStudentHealth,
 } from './profiles';
-import { putStudentHealth, getStudentClasses, getStudentTests } from './student';
+import {
+  putStudentHealth, getStudentClasses, getStudentTests, getStudentGrade,
+} from './student';
 import { getTeacherSchedule, getTeacherStudents, teacherInfo } from './teacher';
 import getParentTeachers from './getParentTeachers';
 
@@ -72,4 +75,6 @@ export {
   teacherInfo,
   getReports,
   getStudentHealth,
+  getStudentGrade,
+
 };

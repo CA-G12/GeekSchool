@@ -9,6 +9,9 @@ import {
   GradeCollapseProps,
   TeacherAssignmentCardProps,
   StudentAssignmentCardProps,
+  ParentInfoInterface,
+  ChildrenData,
+  TeachersData,
 } from "./componentsInterface";
 import {
   UserInterface,
@@ -40,4 +43,7 @@ export {
   GradeCollapseProps,
   TeacherAssignmentCardProps,
   StudentAssignmentCardProps,
+  ParentInfoInterface,
+  ChildrenData,
+  TeachersData,
 };
