@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import type { BadgeProps } from "antd";
 import { Badge, Calendar } from "antd";
 import type { Moment } from "moment";
-import moment from 'moment';
+import moment from "moment";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
@@ -12,7 +12,6 @@ type testsType = {
   date: string;
 };
 
-
 const Calender: React.FC = () => {
   const source = axios.CancelToken.source();
   const [tests, setTest] = useState<Array<any>>([]);
@@ -20,9 +19,7 @@ const Calender: React.FC = () => {
   const { studentId } = useParams();
   useEffect(() => {
     const fetchTests = async () => {
-      const { data } = await axios.get(
-        `/api/v1/student/${studentId}/tests/`
-      );
+      const { data } = await axios.get(`/api/v1/student/${studentId}/tests/`);
       setTest(data.data);
     };
     fetchTests();
@@ -30,19 +27,19 @@ const Calender: React.FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-
-
-
   const getListData = (value: Moment) => {
     let listData;
     tests.map((ele: testsType) => {
       const newDate = moment(ele.date);
-      if (newDate.isSame(value, 'month') && newDate.isSame(value, 'year') && newDate.isSame(value, 'day')) {
+      if (
+        newDate.isSame(value, "month") &&
+        newDate.isSame(value, "year") &&
+        newDate.isSame(value, "day")
+      ) {
         listData = [{ type: "success", content: ele.title }];
       }
       return null;
-    }
-    )
+    });
     return listData || [];
   };
 
@@ -63,12 +60,7 @@ const Calender: React.FC = () => {
     );
   };
 
-
-  return (
-    <Calendar
-      dateCellRender={dateCellRender}
-    />
-  );
+  return <Calendar dateCellRender={dateCellRender} />;
 };
 
 export default Calender;
