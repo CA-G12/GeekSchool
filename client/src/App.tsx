@@ -2,7 +2,7 @@ import React from "react";
 import { createBrowserRouter, RouterProvider, Link } from "react-router-dom";
 import { ConfigProvider } from "antd";
 import Question from "./components/Class/Questions";
-import { SignUpPage, LoginPage, ParentProfile } from "./pages";
+import { SignUpPage, LoginPage, ParentProfile, TeacherProfile } from "./pages";
 import { UserAuthProvider } from "./context/AuthContext";
 import Assignments from "./components/Class/Assignments/Assignments";
 import StatsDummy from "./components/StatsDummy/Dummy";
@@ -11,7 +11,6 @@ import Class from "./components/Class";
 import Grades from "./components/Class/Grades";
 import "antd/dist/antd.variable.min.css";
 import "./style.css";
-import TeacherLists from "./components/ListComponent";
 
 ConfigProvider.config({
   theme: {
@@ -24,10 +23,7 @@ const router = createBrowserRouter([
     path: "/",
     element: <Link to="/class">Go to the class page!</Link>,
   },
-  {
-    path: "/lists",
-    element: <TeacherLists />,
-  },
+
   {
     path: "/signup",
     element: <SignUpPage />,
@@ -43,6 +39,10 @@ const router = createBrowserRouter([
   {
     path: "/parent",
     element: <ParentProfile />,
+  },
+  {
+    path: "/teacher",
+    element: <TeacherProfile />,
   },
   {
     path: "/class/:classId",
