@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { FC, useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { Button, Form, Input, DatePicker } from "antd";
@@ -25,7 +25,11 @@ const validateMessages = {
   },
 };
 
-const AddTest: React.FC = () => {
+// interface Props {
+//   setValue: React.Dispatch<React.SetStateAction<boolean>>;
+// }
+
+const AddTest: FC = () => {
   const [isShown, setIsShown] = useState<boolean>(true);
 
   const onFinish = async (fieldValues: any) => {

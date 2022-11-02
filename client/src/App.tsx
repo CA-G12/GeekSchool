@@ -1,20 +1,16 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider, Link } from "react-router-dom";
 import { ConfigProvider } from "antd";
-// import Question from "./components/Class/Questions";
-import { SignUpPage, LoginPage, RecommendedPage } from "./pages";
+import Question from "./components/Class/Questions";
+import { SignUpPage, LoginPage, ProfilePage } from "./pages";
 import { UserAuthProvider } from "./context/AuthContext";
-import Announcements from "./components/Class/Announcements/Announcements";
-import ClassTest from "./components/ClassTests/ClassTests";
-import Feedback from "./components/Class/Feedback/Feedback";
+import Assignments from "./components/Class/Assignments/Assignments";
 import StatsDummy from "./components/StatsDummy/Dummy";
 import StudentsProfile from "./components/Class/StudentsPage";
 import Class from "./components/Class";
 import Grades from "./components/Class/Grades";
 import "antd/dist/antd.variable.min.css";
-// import "./i18n/config.js";
 import "./style.css";
-import Calender from "./components/Calender";
 
 ConfigProvider.config({
   theme: {
@@ -36,6 +32,10 @@ const router = createBrowserRouter([
     element: <LoginPage />,
   },
   {
+    path: "/profile",
+    element: <ProfilePage />,
+  },
+  {
     path: "/student/:studentId",
     element: <h1>student profile</h1>,
   },
@@ -53,27 +53,27 @@ const router = createBrowserRouter([
       },
       {
         path: "assignments",
-        element: <ClassTest />, // ? this just temporary, any one works on the assignments can remove it.
-      },
-      {
-        path: "announcements",
-        element: <Announcements />,
+        element: <Assignments />,
       },
       {
         path: "questions",
-        element: <Calender />,
+        element: <Question />,
       },
       {
         path: "feedback",
-        element: <Feedback />,
+        element: <h1>Feedback</h1>,
       },
       {
         path: "recommended",
-        element: <RecommendedPage />,
+        element: <h1>Recommended</h1>,
       },
       {
         path: "grades",
         element: <Grades />,
+      },
+      {
+        path: "grades",
+        element: <h1>grades</h1>,
       },
     ],
   },
