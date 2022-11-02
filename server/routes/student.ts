@@ -3,7 +3,7 @@ import {
   putStudentHealth, getStudentClasses, getStudentTests, getStudentGrade,
 } from '../controllers';
 import {
-  userAuth, studentAuth, parentAuth, studentAndParent,studentAndParentAndTeacher
+  userAuth, studentAuth, parentAuth, studentAndParent, studentAndParentAndTeacher,
 } from '../middlewares';
 
 const studentRouter = Router();
