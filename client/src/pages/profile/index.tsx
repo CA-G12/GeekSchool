@@ -2,6 +2,7 @@ import { FC, useState, ReactNode } from "react";
 import UserHeader from "../../components/profile/UserHeader";
 import Reports from "../../components/profile/Report";
 import Nav from "../../components/profile/Nav";
+import { TeacherSchedule } from "../../components";
 // import { userDetailsInterface } from "../../interfaces";
 import Logo from "../../assets/Logo.png";
 import "./style.css";
@@ -49,9 +50,12 @@ const ProfilePage: FC<ProfilePageProps> = ({
           />
         </div>
       </header>
-      <aside id="profile-aside">
-        <Reports studentId={1} />
-      </aside>
+      {role === "student" && (
+        <aside id="profile-aside">
+          <Reports studentId={1} />
+        </aside>
+      )}
+
       <main id="profile-main">
         <UserHeader
           name={name}
@@ -61,7 +65,7 @@ const ProfilePage: FC<ProfilePageProps> = ({
           role={role}
           image={image}
         />
-        {role !== "parent" && (
+        {role === "student" && (
           <nav id="profile-nav">
             {labels.map((pathName, i) => (
               <Nav
@@ -74,6 +78,8 @@ const ProfilePage: FC<ProfilePageProps> = ({
             ))}
           </nav>
         )}
+        {role === "teacher" && <TeacherSchedule />}
+
         <main className="main-content">{children}</main>
       </main>
     </main>
