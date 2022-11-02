@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { Key, ReactNode } from "react";
 
 interface questionInterface {
@@ -90,6 +91,32 @@ interface ClassCardProps {
   }[];
 }
 
+interface ParentInfoInterface {
+  email: string;
+  img: string;
+  location: string;
+  mobile: string;
+  name: string;
+  role: string;
+}
+
+interface ChildrenData {
+  parent_id: number;
+  user_id: number;
+  img: string;
+  name: string;
+}
+
+interface TeachersData {
+  id: number;
+  email: string;
+  img: string;
+  location: string;
+  mobile: string;
+  name: string;
+  role: string;
+}
+
 export {
   questionInterface,
   recommendedInterface,
@@ -102,4 +129,7 @@ export {
   StudentAssignmentCardProps,
   TeacherAssignmentCardProps,
   ClassCardProps,
+  ParentInfoInterface,
+  ChildrenData,
+  TeachersData,
 };

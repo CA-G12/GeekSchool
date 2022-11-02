@@ -2,7 +2,7 @@ import React from "react";
 import { createBrowserRouter, RouterProvider, Link } from "react-router-dom";
 import { ConfigProvider } from "antd";
 import Question from "./components/Class/Questions";
-import { SignUpPage, LoginPage, ProfilePage } from "./pages";
+import { SignUpPage, LoginPage, ParentProfile } from "./pages";
 import { UserAuthProvider } from "./context/AuthContext";
 import Assignments from "./components/Class/Assignments/Assignments";
 import StatsDummy from "./components/StatsDummy/Dummy";
@@ -32,12 +32,12 @@ const router = createBrowserRouter([
     element: <LoginPage />,
   },
   {
-    path: "/profile",
-    element: <ProfilePage />,
-  },
-  {
     path: "/student/:studentId",
     element: <h1>student profile</h1>,
+  },
+  {
+    path: "/parent",
+    element: <ParentProfile />,
   },
   {
     path: "/class/:classId",
