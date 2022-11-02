@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { Key, ReactNode } from "react";
 
 interface questionInterface {
@@ -105,6 +106,31 @@ interface healthCardInterface {
   // eslint-disable-next-line no-unused-vars
   handleUpdateHealth: (healthValue: string, type: string) => void;
 }
+interface ParentInfoInterface {
+  email: string;
+  img: string;
+  location: string;
+  mobile: string;
+  name: string;
+  role: string;
+}
+
+interface ChildrenData {
+  parent_id: number;
+  user_id: number;
+  img: string;
+  name: string;
+}
+
+interface TeachersData {
+  id: number;
+  email: string;
+  img: string;
+  location: string;
+  mobile: string;
+  name: string;
+  role: string;
+}
 
 export {
   questionInterface,
@@ -120,4 +146,7 @@ export {
   ClassCardProps,
   contentNameHealthInterface,
   healthCardInterface,
+  ParentInfoInterface,
+  ChildrenData,
+  TeachersData,
 };

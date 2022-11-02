@@ -1,24 +1,32 @@
-import { useState } from "react";
-import { Outlet } from "react-router-dom";
+import { FC, useState, ReactNode } from "react";
 import UserHeader from "../../components/profile/UserHeader";
 import Reports from "../../components/profile/Report";
 import Nav from "../../components/profile/Nav";
-import { userDetailsInterface } from "../../interfaces";
+import { TeacherSchedule } from "../../components";
+// import { userDetailsInterface } from "../../interfaces";
 import Logo from "../../assets/Logo.png";
 import "./style.css";
 
-const userDetailsInit = {
-  name: "باسل الشيخ",
-  location: "فلسطين غزة",
-  mobile: "+972595238737",
-  email: "basil@gmail.com",
-  role: "ولي امر",
-  image: null,
-};
+interface ProfilePageProps {
+  name: string;
+  location: string;
+  mobile: string;
+  email: string;
+  role: string;
+  image: string;
+  children: ReactNode;
+}
 
-const ProfilePage = () => {
+const ProfilePage: FC<ProfilePageProps> = ({
+  name,
+  location,
+  mobile,
+  email,
+  role,
+  image,
+  children,
+}) => {
   const { pathname } = window.location;
-  const [data] = useState<userDetailsInterface>(userDetailsInit);
   const [newPath, setNewPath] = useState<string | null>(pathname);
   const [activeColor] = useState<string>("profile-active");
 
@@ -42,30 +50,37 @@ const ProfilePage = () => {
           />
         </div>
       </header>
-      <aside id="profile-aside">
-        <Reports studentId={1} />
-      </aside>
+      {role === "student" && (
+        <aside id="profile-aside">
+          <Reports studentId={1} />
+        </aside>
+      )}
+
       <main id="profile-main">
         <UserHeader
-          name={data.name}
-          location={data.location}
-          mobile={data.mobile}
-          email={data.email}
-          role={data.role}
-          image={data.image}
+          name={name}
+          location={location}
+          mobile={mobile}
+          email={email}
+          role={role}
+          image={image}
         />
-        <nav id="profile-nav">
-          {labels.map((pathName, i) => (
-            <Nav
-              path={paths[i]}
-              name={pathName}
-              activeColor={activeColor}
-              handleClicked={handleClicked}
-              newPath={newPath}
-            />
-          ))}
-        </nav>
-        <Outlet />
+        {role === "student" && (
+          <nav id="profile-nav">
+            {labels.map((pathName, i) => (
+              <Nav
+                path={paths[i]}
+                name={pathName}
+                activeColor={activeColor}
+                handleClicked={handleClicked}
+                newPath={newPath}
+              />
+            ))}
+          </nav>
+        )}
+        {role === "teacher" && <TeacherSchedule />}
+
+        <main className="main-content">{children}</main>
       </main>
     </main>
   );

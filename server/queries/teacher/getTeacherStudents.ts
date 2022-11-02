@@ -3,25 +3,21 @@ import {
 } from '../../models';
 
 const getTeacherStudentsQuery = (teacherId: number) => Class.findAll({
-  attributes: ['teacher_id', 'createdAt', 'updatedAt'],
+  raw: true,
+  nest: false,
+  attributes: ['teacher_id', 'ClassStudents.student_id', 'ClassStudents.Student.User.img', 'ClassStudents.Student.User.name', 'ClassStudents.Student.User.email'],
   where: {
     teacher_id: teacherId,
   },
   include: [{
     model: ClassStudent,
-    attributes: {
-      exclude: ['teacher_id', 'class_id', 'createdAt', 'updatedAt'],
-    },
+    attributes: [],
     include: [{
       model: Student,
-      attributes: {
-        exclude: ['class_id', 'createdAt', 'updatedAt'],
-      },
+      attributes: [],
       include: [{
         model: User,
-        attributes: {
-          exclude: ['createdAt', 'updatedAt'],
-        },
+        attributes: [],
       }],
     }],
   }],
