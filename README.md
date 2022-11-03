@@ -112,15 +112,15 @@ You should install `PostgreSQL`.
 
 ## Technologies We Used
 
-➡️ Node.js.
-➡️ React.js.
-➡️ Express.js
-➡️ TypeScript.
-➡️ PostgreSQL.
-➡️ Sequelize.
-➡️ Antd.
-➡️ Eslint.
-➡️ CSS3.
+- ➡️ Node.js.
+- ➡️ React.js.
+- ➡️ Express.js
+- ➡️ TypeScript.
+- ➡️ PostgreSQL.
+- ➡️ Sequelize.
+- ➡️ Antd.
+- ➡️ Eslint.
+- ➡️ CSS3.
 
 ## Team Lead
 
@@ -128,18 +128,18 @@ OUr great mentor, ***[Raghad Mezied](https://github.com/Raghad-Mezied)***.
 
 ## Team Members
 
-***[Aaya Al-Sharif](https://github.com/Aaya-Elsharief)***
-***[Mahmoud Hammad](https://github.com/mahmoudhammad309)***
-***[Basil Al-Sheikh](https://github.com/Bas-Shiekh)***
-***[Mustafa Salem](https://github.com/moustf)***
+- ***[Aaya Al-Sharif](https://github.com/Aaya-Elsharief)***
+- ***[Mahmoud Hammad](https://github.com/mahmoudhammad309)***
+- ***[Basil Al-Sheikh](https://github.com/Bas-Shiekh)***
+- ***[Mustafa Salem](https://github.com/moustf)***
 
 ## Useful Resources
 
-[Nodejs](https://nodejs.org/en/docs/).
-[Expressjs](https://expressjs.com/en/4x/api.html).
-[Reactjs](https://beta.reactjs.org/).
-[Postgresql](https://www.postgresqltutorial.com/).
-[Sequelize](https://sequelize.org/).
-[Ant Design](https://ant.design/).
-[React Router](https://reactrouter.com/en/main).
-[TypeScript](https://www.typescriptlang.org/docs/handbook/intro.html).
+- [Nodejs](https://nodejs.org/en/docs/).
+- [Expressjs](https://expressjs.com/en/4x/api.html).
+- [Reactjs](https://beta.reactjs.org/).
+- [Postgresql](https://www.postgresqltutorial.com/).
+- [Sequelize](https://sequelize.org/).
+- [Ant Design](https://ant.design/).
+- [React Router](https://reactrouter.com/en/main).
+- [TypeScript](https://www.typescriptlang.org/docs/handbook/intro.html).
