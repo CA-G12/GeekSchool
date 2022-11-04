@@ -2,7 +2,13 @@ import React from "react";
 import { createBrowserRouter, RouterProvider, Link } from "react-router-dom";
 import { ConfigProvider } from "antd";
 import Question from "./components/Class/Questions";
-import { SignUpPage, LoginPage, ParentProfile, TeacherProfile } from "./pages";
+import {
+  SignUpPage,
+  LoginPage,
+  ParentProfile,
+  TeacherProfile,
+  HealthProfilePage,
+} from "./pages";
 import { UserAuthProvider } from "./context/AuthContext";
 import Assignments from "./components/Class/Assignments/Assignments";
 import StatsDummy from "./components/StatsDummy/Dummy";
@@ -11,10 +17,11 @@ import Class from "./components/Class";
 import Grades from "./components/Class/Grades";
 import "antd/dist/antd.variable.min.css";
 import "./style.css";
+import StudentProfile from "./pages/studentProfile";
 
 ConfigProvider.config({
   theme: {
-    primaryColor: "#0CBE8A",
+    primaryColor: "#0F93CB",
   },
 });
 
@@ -34,7 +41,13 @@ const router = createBrowserRouter([
   },
   {
     path: "/student/:studentId",
-    element: <h1>student profile</h1>,
+    element: <StudentProfile />,
+    children: [
+      {
+        path: "health",
+        element: <HealthProfilePage />,
+      },
+    ],
   },
   {
     path: "/parent",

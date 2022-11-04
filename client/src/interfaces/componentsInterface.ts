@@ -27,6 +27,7 @@ interface profileNavLinkInterface {
   path: string;
   activeColor: string;
   newPath: string | null;
+  testPath: string;
   // eslint-disable-next-line no-unused-vars
   handleClicked: (path: string) => void;
 }

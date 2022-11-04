@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/aria-role */
 import React, { useEffect, useState } from "react";
 import { message } from "antd";
 import axios from "axios";
@@ -84,7 +85,6 @@ const TeacherProfile: React.FC = () => {
       location={user.location}
       mobile={user.mobile}
       email={user.email}
-      // eslint-disable-next-line jsx-a11y/aria-role
       role="teacher"
       image={user.img}
     >

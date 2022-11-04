@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import { message } from "antd";
 import { HealthCard } from "../../components";
@@ -62,7 +63,8 @@ const colors = [
   ["#BE7474", "#7D4B4B"],
 ];
 
-const HealthProfilePage = ({ studentId }: { studentId: number | string }) => {
+const HealthProfilePage = () => {
+  const { studentId } = useParams();
   const [healthData, setHealthData] = useState<any>(initHealth);
   const role: string | undefined = useUserData()?.userData?.role;
   const handleUpdateHealth = async (healthValue: string, type: string) => {
