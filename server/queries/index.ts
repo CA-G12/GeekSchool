@@ -24,7 +24,13 @@ import { createUser, findUserByEmail } from './userQueries';
 import { putStudentHealthQuery } from './students';
 
 import { getTeacherStudentsQuery, teacherInfoQuery } from './teacher';
-import { getStudentClassesQuery, getStudentTestsQuery, studentGradesQuery } from './student';
+import {
+  getStudentClassesQuery,
+  getStudentTestsQuery,
+  studentGradesQuery,
+  getStudentInfoQuery,
+} from './student';
+
 import getParentInfoQuery from './parent';
 import loginQuery from './loginQuery';
 import createParent from './parentQueries';
@@ -36,6 +42,7 @@ import {
   getReportsQuery,
   getStudentHealthsQuery,
 } from './profile';
+
 import { studentParentRelationQuery } from './Auth';
 import getParentTeachersQuery from './getParentTeachers';
 
@@ -80,4 +87,5 @@ export {
   getStudentTestsQuery,
   getStudentHealthsQuery,
   teacherInfoQuery,
+  getStudentInfoQuery,
 };
