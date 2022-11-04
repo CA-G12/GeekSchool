@@ -29,7 +29,7 @@ const ClassSection: FC = () => {
     fetchClasses();
 
     return () => source.cancel();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
