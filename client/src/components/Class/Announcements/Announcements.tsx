@@ -29,7 +29,7 @@ const Announcements: React.FC = () => {
     fetchAnnouncementData();
 
     return () => source.cancel();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const dataToRender = [...announcements, ...tests]
