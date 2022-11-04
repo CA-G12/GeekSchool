@@ -1,4 +1,4 @@
-import { message } from "antd";
+import { message, Spin } from "antd";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -22,7 +22,7 @@ const StudentProfile = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (!studentData) return <h1>loading ...</h1>;
+  if (!studentData) return  <Spin tip="Loading..." />;
   return (
     <ProfilePage
       name={studentData.name}

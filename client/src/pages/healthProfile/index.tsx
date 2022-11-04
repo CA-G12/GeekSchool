@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { message } from "antd";
+import { message, Spin } from "antd";
 import { HealthCard } from "../../components";
 import { useUserData } from "../../context/AuthContext";
 import {
@@ -14,17 +14,6 @@ import {
   other,
 } from "../../assets";
 import "./style.css";
-
-const initHealth = {
-  dental: "",
-  vision: "",
-  blood_pressure: "",
-  cancer: "",
-  diabetes: "",
-  chronic: "",
-  other: "",
-  student_id: null,
-};
 
 const types = [
   "dental",
@@ -65,7 +54,7 @@ const colors = [
 
 const HealthProfilePage = () => {
   const { studentId } = useParams();
-  const [healthData, setHealthData] = useState<any>(initHealth);
+  const [healthData, setHealthData] = useState<any>(null);
   const role: string | undefined = useUserData()?.userData?.role;
   const handleUpdateHealth = async (healthValue: string, type: string) => {
     try {
@@ -96,24 +85,22 @@ const HealthProfilePage = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return (
-    <main>
+  return (!healthData ? <main style={{justifyContent: 'center', display: 'flex'}}><Spin tip="Loading..." /></main> : <main>
       <section id="health-container">
-        {types.map((type, i) => (
-          <HealthCard
-            key={`${i + 1}health card`}
-            type={type}
-            name={names[i]}
-            description={healthData[type]}
-            image={images[i]}
-            color={colors[i]}
-            handleUpdateHealth={handleUpdateHealth}
-            role={role}
-          />
-        ))}
+      {types.map((type, i) => (
+        <HealthCard
+          key={`${i + 1}health card`}
+          type={type}
+          name={names[i]}
+          description={healthData[type]}
+          image={images[i]}
+          color={colors[i]}
+          handleUpdateHealth={handleUpdateHealth}
+          role={role}
+        />
+      ))}
       </section>
-    </main>
-  );
+    </main>)
 };
 
 export default HealthProfilePage;
