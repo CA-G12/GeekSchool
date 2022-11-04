@@ -85,22 +85,28 @@ const HealthProfilePage = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return (!healthData ? <main style={{justifyContent: 'center', display: 'flex'}}><Spin tip="Loading..." /></main> : <main>
+  return !healthData ? (
+    <main style={{ justifyContent: "center", display: "flex" }}>
+      <Spin tip="Loading..." />
+    </main>
+  ) : (
+    <main>
       <section id="health-container">
-      {types.map((type, i) => (
-        <HealthCard
-          key={`${i + 1}health card`}
-          type={type}
-          name={names[i]}
-          description={healthData[type]}
-          image={images[i]}
-          color={colors[i]}
-          handleUpdateHealth={handleUpdateHealth}
-          role={role}
-        />
-      ))}
+        {types.map((type, i) => (
+          <HealthCard
+            key={`${i + 1}health card`}
+            type={type}
+            name={names[i]}
+            description={healthData[type]}
+            image={images[i]}
+            color={colors[i]}
+            handleUpdateHealth={handleUpdateHealth}
+            role={role}
+          />
+        ))}
       </section>
-    </main>)
+    </main>
+  );
 };
 
 export default HealthProfilePage;
