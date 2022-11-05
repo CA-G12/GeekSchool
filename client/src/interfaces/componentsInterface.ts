@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import { Key, ReactNode } from "react";
 
 interface questionInterface {
@@ -106,6 +107,32 @@ interface healthCardInterface {
   handleUpdateHealth: (healthValue: string, type: string) => void;
 }
 
+interface ParentInfoInterface {
+  email: string;
+  img: string;
+  location: string;
+  mobile: string;
+  name: string;
+  role: string;
+}
+
+interface ChildrenData {
+  parent_id: number;
+  user_id: number;
+  img: string;
+  name: string;
+}
+
+interface TeachersData {
+  id: number;
+  email: string;
+  img: string;
+  location: string;
+  mobile: string;
+  name: string;
+  role: string;
+}
+
 export {
   questionInterface,
   recommendedInterface,
@@ -120,4 +147,7 @@ export {
   ClassCardProps,
   contentNameHealthInterface,
   healthCardInterface,
+  ParentInfoInterface,
+  ChildrenData,
+  TeachersData,
 };

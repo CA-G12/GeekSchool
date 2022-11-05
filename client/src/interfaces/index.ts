@@ -11,7 +11,11 @@ import {
   StudentAssignmentCardProps,
   contentNameHealthInterface,
   healthCardInterface,
+  ParentInfoInterface,
+  ChildrenData,
+  TeachersData,
 } from "./componentsInterface";
+
 import {
   UserInterface,
   UserDataInterface,
@@ -44,4 +48,7 @@ export {
   StudentAssignmentCardProps,
   contentNameHealthInterface,
   healthCardInterface,
+  ParentInfoInterface,
+  ChildrenData,
+  TeachersData,
 };

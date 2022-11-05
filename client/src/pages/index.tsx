@@ -3,4 +3,14 @@ import LoginPage from "./login";
 import ProfilePage from "./profile";
 import HealthProfilePage from "./healthProfile";
 
-export { SignUpPage, LoginPage, ProfilePage, HealthProfilePage };
+import ParentProfile from "./ParentProfile/ParentProfile";
+import TeacherProfile from "./teacherProfile/TeacherProfile";
+
+export {
+  SignUpPage,
+  LoginPage,
+  ProfilePage,
+  ParentProfile,
+  TeacherProfile,
+  HealthProfilePage,
+};

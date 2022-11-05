@@ -1,7 +1,9 @@
 import { Router } from 'express';
-import { putStudentHealth, getStudentClasses, getStudentTests } from '../controllers';
 import {
-  userAuth, studentAuth, parentAuth, studentAndParent,
+  putStudentHealth, getStudentClasses, getStudentTests, getStudentGrade,
+} from '../controllers';
+import {
+  userAuth, studentAuth, parentAuth, studentAndParent, studentAndParentAndTeacher,
 } from '../middlewares';
 
 const studentRouter = Router();
@@ -9,5 +11,6 @@ const studentRouter = Router();
 studentRouter.put('/:studentId/health', userAuth, parentAuth, putStudentHealth);
 studentRouter.get('/classes', userAuth, studentAuth, getStudentClasses);
 studentRouter.get('/:studentId/tests', userAuth, studentAndParent, getStudentTests);
+studentRouter.get('/:studentId/grades', userAuth, studentAndParentAndTeacher, getStudentGrade);
 
 export default studentRouter;
