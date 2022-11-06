@@ -107,6 +107,7 @@ interface healthCardInterface {
   // eslint-disable-next-line no-unused-vars
   handleUpdateHealth: (healthValue: string, type: string) => void;
 }
+
 interface ParentInfoInterface {
   email: string;
   img: string;

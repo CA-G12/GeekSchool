@@ -15,6 +15,7 @@ import StatsDummy from "./components/StatsDummy/Dummy";
 import StudentsProfile from "./components/Class/StudentsPage";
 import Class from "./components/Class";
 import Grades from "./components/Class/Grades";
+import { TimeLineSection } from "./components";
 import "antd/dist/antd.variable.min.css";
 import "./style.css";
 import StudentProfile from "./pages/studentProfile";
@@ -29,6 +30,11 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Link to="/class">Go to the class page!</Link>,
+  },
+
+  {
+    path: "/timeline",
+    element: <TimeLineSection />,
   },
 
   {

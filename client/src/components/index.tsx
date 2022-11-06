@@ -2,9 +2,9 @@ import RecommendedCard from "./RecommendedCard";
 import FeedbackCard from "./FeedbackCard";
 import QuestionsCard from "./QuestionsCard";
 import HealthCard from "./healthProfile/HealthCard";
-
-import { StudentSignUp, ParentSignUp, TeacherSignUp } from "./signUpForm";
 import TeacherSchedule from "./TeacherSchedule";
+import { TimeLineSection } from "./landingPage";
+import { StudentSignUp, ParentSignUp, TeacherSignUp } from "./signUpForm";
 
 export {
   RecommendedCard,
@@ -15,4 +15,5 @@ export {
   ParentSignUp,
   TeacherSignUp,
   TeacherSchedule,
+  TimeLineSection,
 };
