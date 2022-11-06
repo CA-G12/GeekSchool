@@ -1,21 +1,22 @@
 * {
     font-family: 'Poppins';
     font-style: normal;
-    color: white;
 }
 
 .statistic {
-    background-image: url("../../assets/shape.png");
+    background-image: url("../../../assets/shape.png");
     background-size: cover;
     background-position:bottom;
     background-repeat: no-repeat;
-    height: 100%;
+    height: 80vh;
     display: flex;
     flex-direction: row;
      justify-content:center;
     gap: 4rem
+}
 
-
+.statistic p {
+    color: var(--white);
 }
 
 .right,

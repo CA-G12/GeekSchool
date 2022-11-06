@@ -9,10 +9,10 @@ import {
   GithubOutlined,
 } from "@ant-design/icons";
 import { Button, List } from "antd";
-import leftHash from "../../assets/left hash.svg";
-import rightHash from "../../assets/right hash.svg";
-import map from "../../assets/Map.svg";
-import schoolLogo from "../../assets/image 20.png";
+import leftHash from "../../../assets/left hash.svg";
+import rightHash from "../../../assets/right hash.svg";
+import map from "../../../assets/Map.svg";
+import schoolLogo from "../../../assets/image 20.png";
 
 const firstCol = [
   {

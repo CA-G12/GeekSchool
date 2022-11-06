@@ -12,7 +12,7 @@ const { Title, Text } = Typography;
 const LandingFeedback: React.FC = () => (
   <Card
     className="landing-feedback"
-    style={{ width: "100vw" }}
+    style={{ width: "100%", overflow: "hidden" }}
     bordered={false}
   >
     <Card className="feedback-head" bordered={false}>
