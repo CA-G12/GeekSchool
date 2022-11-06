@@ -16,7 +16,7 @@ const login = async (req: Request, res: Response, next: NextFunction) => {
       throw new CustomError(400, 'invalid password');
     }
     await signToken({ id: rows[0].getDataValue('id'), name: rows[0].getDataValue('name'), role: rows[0].getDataValue('role') });
-    res.json({ mag: 'logged in successfully' });
+    res.json({ mag: 'logged in successfully', data: rows[0] });
   } catch (err) {
     if (err.name === 'ValidationError') next(new CustomError(400, err.details[0].message));
     next(err);

@@ -53,28 +53,61 @@ p {
 }
 
 #signUp-form {
-  padding: 1rem 6rem;
+  padding: 2rem;
   width: 45%;
   display: flex;
-  align-items: center;
   background-color: #F8F9FB;
+  flex-wrap: wrap;
+  overflow: auto;
+  align-items: flex-start;
 }
+
+/* width */
+#signUp-form::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+#signUp-form::-webkit-scrollbar-track {
+  background: inherit;
+}
+
+/* Handle */
+#signUp-form::-webkit-scrollbar-thumb {
+  background: #2e9cc792;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+#signUp-form::-webkit-scrollbar-thumb:hover {
+  background: inherit;
+}
+
 
 #signUp-form > div {
   display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  overflow: auto;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
 }
 
-#signUp-form > div .welcome-massage h1 {
-  font-size: 2.2rem;
+#signUp-form .welcome-massage {
+  flex-direction: column;
+  height: auto;
+}
+
+#signUp-form .welcome-massage h1 {
+  font-size: 2rem;
   color: #2F3032;
   font-weight: 600;
 }
 
-#signUp-form > div .welcome-massage p {
+#signUp-form .welcome-massage p {
   font-size: 1.2rem;
+}
+
+.ant-form-item {
+  margin: 0 !important;
 }
 
 .xz label{
@@ -86,15 +119,22 @@ p {
   flex-wrap: wrap;
   gap: 1rem;
   padding: 0 2px;
+  margin-top: 0;
+  align-items: flex-start !important;
+  height: auto !important;
+}
+
+.form > p {
+  font-size: 1.2rem;
 }
 
 .form input {
-
   padding: 0.5rem 1rem !important;
+  width: 100%;
+  box-shadow: 0 0 0 0 black !important;
 }
 
 .form > span {
-
   padding: 0 0 0 1rem !important;
 }
 
@@ -102,21 +142,32 @@ p {
   display: flex;
   width: 100%;
   justify-content: space-between;
+  align-items: center;
+}
+
+.child-cont {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
 }
 
 .child-email {
   display: flex;
   justify-content: space-between;
-  background: var(--green);
+  background: var(--second-color);
   padding: 0.4rem 1rem;
   align-items: center;
   gap: 1rem;
   border-radius: 30px;
+  width: calc(95% / 2);
+  margin-top: 0.5rem;
 }
 
 .child-email p {
   font-size: 0.8rem;
   color: var(--white);
+  margin: 0;
 }
 
 .child-email svg {
