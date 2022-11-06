@@ -1,5 +1,5 @@
 import React from "react";
-import { createBrowserRouter, RouterProvider, Link } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ConfigProvider } from "antd";
 import Question from "./components/Class/Questions";
 import {
@@ -8,6 +8,7 @@ import {
   ParentProfile,
   TeacherProfile,
   HealthProfilePage,
+  LandingPage,
 } from "./pages";
 import { UserAuthProvider } from "./context/AuthContext";
 import Assignments from "./components/Class/Assignments/Assignments";
@@ -15,7 +16,6 @@ import StatsDummy from "./components/StatsDummy/Dummy";
 import StudentsProfile from "./components/Class/StudentsPage";
 import Class from "./components/Class";
 import Grades from "./components/Class/Grades";
-import { TimeLineSection } from "./components";
 import "antd/dist/antd.variable.min.css";
 import "./style.css";
 import StudentProfile from "./pages/studentProfile";
@@ -29,12 +29,7 @@ ConfigProvider.config({
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Link to="/class">Go to the class page!</Link>,
-  },
-
-  {
-    path: "/timeline",
-    element: <TimeLineSection />,
+    element: <LandingPage />,
   },
 
   {
