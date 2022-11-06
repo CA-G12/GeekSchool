@@ -63,7 +63,7 @@ const ParentSignUp: React.ElementType = ({
         />
         <Button
           type="primary"
-          icon={<PlusOutlined style={{fontSize: '1.2rem'}}/>}
+          icon={<PlusOutlined style={{ fontSize: "1.2rem" }} />}
           onClick={handleAddEmail}
           style={{
             background: "#13B9DE",

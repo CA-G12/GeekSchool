@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Form, Input, message } from "antd";
 import axios from "axios";
 import "../signUp/style.css";
-import './style.css';
+import "./style.css";
 import { Link, useNavigate } from "react-router-dom";
 
 const LoginPage: React.FC = () => {
@@ -20,10 +20,10 @@ const LoginPage: React.FC = () => {
         { cancelToken: source.token }
       );
       message.success(loginMsg.data.mag);
-      const {role, id} = loginMsg.data.data
-      if (role === 'parent') navigate('/parent');
-      else if (role === 'teacher') navigate('/teacher');
-      else if (role === 'student') navigate(`/student/${id}`);
+      const { role, id } = loginMsg.data.data;
+      if (role === "parent") navigate("/parent");
+      else if (role === "teacher") navigate("/teacher");
+      else if (role === "student") navigate(`/student/${id}`);
     } catch (error: any) {
       message.error(error.response.data.msg);
     }
@@ -100,8 +100,7 @@ const LoginPage: React.FC = () => {
             </Form.Item>
 
             <p style={{ width: "100%", textAlign: "left" }}>
-              لم تنشئ أي حساب مسبقًا؟{" "}
-              <Link to='/signup'>أنشئ حساب</Link>
+              لم تنشئ أي حساب مسبقًا؟ <Link to="/signup">أنشئ حساب</Link>
             </p>
           </Form>
         </div>
