@@ -66,7 +66,7 @@ const ProfileCard: ElementType = ({
                   avatar={<Avatar src={item.img} />}
                   title={<Link to={`/student/${item.id}`}>{item.name}</Link>}
                   description={item.mobile}
-                  />
+                />
                 <div className="icons">
                   {type === "students" ? (
                     <>
