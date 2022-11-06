@@ -5,8 +5,8 @@
       "email": "dbehnecke0@npr.org",
       "location": "Minnesota",
       "img": "http://dummyimage.com/219x100.png/5fa2dd/ffffff",
-      "role": "parent",
-      "password": "123"
+      "role": "teacher",
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Zonisamide",
