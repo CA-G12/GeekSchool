@@ -9,68 +9,72 @@ import "./LandingHeader.css";
 
 const { Title, Text } = Typography;
 
-
 const LandingHeader: React.FC = () => {
   const userId = useUserData().userData?.id;
   const userRole = useUserData().userData?.role;
 
-  return <main className="landing-section">
-    <header className="landing-header">
-      <Link to="/" className="logo-image">
-        <Image preview={false} width={50} src={Logo} />
-      </Link>
-      {!userId && (
-        <section className="buttons">
-          <Link to="/login">
-            <Button type="primary">تسجيل دخول</Button>
+  return (
+    <main className="landing-section">
+      <header className="landing-header">
+        <Link to="/" className="logo-image">
+          <Image preview={false} width={50} src={Logo} />
+        </Link>
+        {!userId && (
+          <section className="buttons">
+            <Link to="/login">
+              <Button type="primary">تسجيل دخول</Button>
+            </Link>
+            <Link to="/signup">
+              <Button type="primary">إنشاء حساب</Button>
+            </Link>
+          </section>
+        )}
+        {userRole && (
+          <Link
+            to={
+              userRole === "parent"
+                ? "/parent"
+                : userRole === "student"
+                ? "/student"
+                : "/teacher"
+            }
+            className="user-profile"
+          >
+            <Button type="primary">حسابي</Button>
           </Link>
-          <Link to="/signup">
-            <Button type="primary">إنشاء حساب</Button>
-          </Link>
+        )}
+        <section className="navigation">
+          <a className="nav-link" href="#join">
+            انضم إلينا
+          </a>
+          <a className="nav-link" href="#statistics">
+            احصائيات
+          </a>
+          <a className="nav-link" href="#timeline-section">
+            الجدول الزمني
+          </a>
+          <a className="nav-link" href="#opinions">
+            آراء
+          </a>
         </section>
-      )}
-      {userRole && (
-        <Link to={
-          userRole === 'parent'
-          ? '/parent'
-          : userRole === 'student'
-          ? '/student'
-          : '/teacher'
-        } className='user-profile'>
-        <Button type="primary">حسابي</Button>
-      </Link>
-      )}
-      <section className="navigation">
-        <a className="nav-link" href="#join">
-          انضم إلينا
-        </a>
-        <a className="nav-link" href="#statistics">
-          احصائيات
-        </a>
-        <a className="nav-link" href="#timeline-section">
-          الجدول الزمني
-        </a>
-        <a className="nav-link" href="#opinions">
-          آراء
-        </a>
+      </header>
+      <section
+        className="join-us-section"
+        id="join"
+        style={{ backgroundImage: `url(${BcgImage})` }}
+      >
+        <Image preview={false} className="landing-image" src={LandingImage} />
+        <section className="join-us-texts">
+          <Title level={2} className="text-title">
+            انضم لتكون معنا في الرؤية الجديدة لنظام التعليم..
+          </Title>
+          <Text type="secondary" className="text-para">
+            مكان واحد يجمع المعلم و الطالب و ولي الأمر
+          </Text>
+        </section>
       </section>
-    </header>
-    <section
-      className="join-us-section"
-      id="join"
-      style={{ backgroundImage: `url(${BcgImage})` }}
-    >
-      <Image preview={false} className="landing-image" src={LandingImage} />
-      <section className="join-us-texts">
-        <Title level={2} className="text-title">
-          انضم لتكون معنا في الرؤية الجديدة لنظام التعليم..
-        </Title>
-        <Text type="secondary" className="text-para">
-          مكان واحد يجمع المعلم و الطالب و ولي الأمر
-        </Text>
-      </section>
-    </section>
-  </main>
+    </main>
+  );
 };
 
 export default LandingHeader;

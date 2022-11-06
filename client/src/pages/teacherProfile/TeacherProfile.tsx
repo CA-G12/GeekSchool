@@ -5,6 +5,7 @@ import axios from "axios";
 import ProfilePage from "../profile";
 import ProfileCard from "../../components/ProfileCard";
 import avtar from "../../assets/class_avatar.png";
+import "./style.css";
 
 interface UserItem {
   id: number;
@@ -88,25 +89,27 @@ const TeacherProfile: React.FC = () => {
       role="teacher"
       image={user.img}
     >
-      <ProfileCard
-        data={students.map((student: UserItem) => ({
-          img: student.img,
-          name: student.name,
-        }))}
-        title="الطلاب"
-        type="students"
-        _role="teacher"
-      />
+      <section id="teacher-tables">
+        <ProfileCard
+          data={students.map((student: UserItem) => ({
+            img: student.img,
+            name: student.name,
+          }))}
+          title="الطلاب"
+          type="students"
+          _role="teacher"
+        />
 
-      <ProfileCard
-        data={classes.map((oneClass: classItem) => ({
-          img: avtar,
-          name: oneClass.name,
-        }))}
-        title="الفصول الدراسية"
-        type="classes"
-        _role="teacher"
-      />
+        <ProfileCard
+          data={classes.map((oneClass: classItem) => ({
+            img: avtar,
+            name: oneClass.name,
+          }))}
+          title="الفصول الدراسية"
+          type="classes"
+          _role="teacher"
+        />
+      </section>
     </ProfilePage>
   );
 };

@@ -111,7 +111,14 @@ const TeacherSchedule = () => {
   }
 
   return (
-    <Collapse accordion>
+    <Collapse
+      accordion
+      style={{
+        boxShadow: "0px 0px 5px 0px rgb(0 0 0 / 20%)",
+        background: "white",
+        borderRadius: "10px",
+      }}
+    >
       <Panel header="جدول حصص المعلم" key="1">
         <div className="table_wrapper">
           <Table

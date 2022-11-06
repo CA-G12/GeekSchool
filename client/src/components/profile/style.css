@@ -110,6 +110,13 @@ nav,
   padding: 1rem 2.5rem;
 }
 
+#user-profile .info-header .profile-details {
+  padding: 1rem 0;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
 #user-profile .info-header .location-container {
   display: flex;
   flex-direction: column;
