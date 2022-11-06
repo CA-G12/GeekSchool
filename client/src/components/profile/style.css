@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+#user-profile {
+  min-height: 18rem;
+}
+
 #user-profile p,
 #user-profile h1,
 #user-profile h2 {

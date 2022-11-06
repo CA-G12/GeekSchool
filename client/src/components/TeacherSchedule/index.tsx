@@ -114,7 +114,7 @@ const TeacherSchedule = () => {
     <Collapse
       accordion
       style={{
-        boxShadow: "0px 0px 5px 0px rgba(100, 100, 100, 0.2)",
+        boxShadow: "0px 0px 5px 0px rgb(0 0 0 / 20%)",
         background: "white",
         borderRadius: "10px",
       }}

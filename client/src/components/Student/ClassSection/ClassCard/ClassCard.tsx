@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { Link } from "react-router-dom";
 import { Card, Typography } from "antd";
 import ClassAvatar from "../../../../assets/class_avatar.png";
 import ClassBcg from "../../../../assets/class_bcg.png";
@@ -8,19 +9,20 @@ import "./ClassCard.css";
 const { Title, Text } = Typography;
 
 const ClassCard: FC<ClassCardProps> = ({
+  id,
   className,
   teacherName,
   assignments,
   tests,
 }) => (
-  <Card
-    id="2"
-    bodyStyle={{
+  <section
+    id={String(id)}
+    style={{
       width: "calc((100% - 5rem) / 3)",
-      height: "100%",
       direction: "ltr",
       position: "relative",
       fontFamily: `'Poppins', sans-serif`,
+      cursor: "pointer",
     }}
   >
     <Card
@@ -45,7 +47,9 @@ const ClassCard: FC<ClassCardProps> = ({
         {teacherName}
       </Title>
     </Card>
-    <img className="class-avatar" src={ClassAvatar} alt="class avatar" />
+    <Link to={`/class/${id}`}>
+      <img className="class-avatar" src={ClassAvatar} alt="class avatar" />
+    </Link>
     <Card
       className="assignments-tests"
       bodyStyle={{
@@ -129,7 +133,7 @@ const ClassCard: FC<ClassCardProps> = ({
         ))}
       </Card>
     </Card>
-  </Card>
+  </section>
 );
 
 export default ClassCard;

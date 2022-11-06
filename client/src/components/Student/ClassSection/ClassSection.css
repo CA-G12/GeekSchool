@@ -1,8 +1,8 @@
-/* .classes {
+.classes {
   width: 100%;
   height: 100%;
+  padding: 1rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
-  align-items: flex-start;
-} */
+  gap: 2rem;
+}

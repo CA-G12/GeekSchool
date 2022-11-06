@@ -75,6 +75,7 @@ const HealthProfilePage = () => {
         `/api/v1/profile/student/${studentId}/health`
       );
       setHealthData(data.data.data[0]);
+      console.log(data.data.data[0]);
     } catch (error: any) {
       message.error(error.response.data.msg);
     }

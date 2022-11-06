@@ -11,7 +11,13 @@ ConfigProvider.config({
   },
 });
 
-const Reports = ({ studentId }: { studentId: string | number }) => {
+const Reports = ({
+  studentId,
+  role,
+}: {
+  studentId: string | number;
+  role: string;
+}) => {
   const [dataReports, setDataReports] = useState<reportsInterface[] | null>(
     null
   );
@@ -45,14 +51,18 @@ const Reports = ({ studentId }: { studentId: string | number }) => {
     <section id="reports">
       <h1>الشكاوي</h1>
       <div className="report-form">
-        <Input
-          status={reportInput === null ? "" : !reportInput ? "error" : ""}
-          placeholder="أكتب الشكوى هنا"
-          onChange={(e) => setReportInput(e.target.value)}
-        />
-        <Button onClick={addNewReport}>
-          <PlusOutlined />
-        </Button>
+        {role === "teacher" && (
+          <Input
+            status={reportInput === null ? "" : !reportInput ? "error" : ""}
+            placeholder="أكتب الشكوى هنا"
+            onChange={(e) => setReportInput(e.target.value)}
+          />
+        )}
+        {role === "teacher" && (
+          <Button onClick={addNewReport}>
+            <PlusOutlined />
+          </Button>
+        )}
       </div>
       <div className="reports-container">
         {dataReports?.map((report) => (

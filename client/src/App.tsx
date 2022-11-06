@@ -16,6 +16,9 @@ import StatsDummy from "./components/StatsDummy/Dummy";
 import StudentsProfile from "./components/Class/StudentsPage";
 import Class from "./components/Class";
 import Grades from "./components/Class/Grades";
+import StudentGrades from "./components/Student/Grades/StudentGrades";
+import ClassSection from "./components/Student/ClassSection/ClassSection";
+import Calender from "./components/Calender";
 import "antd/dist/antd.variable.min.css";
 import "./style.css";
 import StudentProfile from "./pages/studentProfile";
@@ -44,6 +47,18 @@ const router = createBrowserRouter([
     path: "/student/:studentId",
     element: <StudentProfile />,
     children: [
+      {
+        path: "classes",
+        element: <ClassSection />,
+      },
+      {
+        path: "grades",
+        element: <StudentGrades />,
+      },
+      {
+        path: "tests",
+        element: <Calender />,
+      },
       {
         path: "health",
         element: <HealthProfilePage />,
