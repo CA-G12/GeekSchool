@@ -1,6 +1,10 @@
 import {
-  TimeLineSection, LandingHeader, LandingFeedback, Footer, StatisticLanding
-} from '../../components';
+  TimeLineSection,
+  LandingHeader,
+  LandingFeedback,
+  Footer,
+  StatisticLanding,
+} from "../../components";
 
 const LandingPage = () => (
   <>
@@ -10,7 +14,6 @@ const LandingPage = () => (
     <LandingFeedback />
     <Footer />
   </>
-  )
-
+);
 
 export default LandingPage;

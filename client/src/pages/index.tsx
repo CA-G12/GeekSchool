@@ -2,7 +2,7 @@ import SignUpPage from "./signUp";
 import LoginPage from "./login";
 import ProfilePage from "./profile";
 import HealthProfilePage from "./healthProfile";
-import LandingPage from './LandingPage';
+import LandingPage from "./LandingPage";
 import ParentProfile from "./ParentProfile/ParentProfile";
 import TeacherProfile from "./teacherProfile/TeacherProfile";
 
