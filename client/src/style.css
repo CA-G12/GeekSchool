@@ -22,6 +22,7 @@ body {
   --gray: #B8C5D3;
   --yellow-ball: #FCC43E;
   --red-ball: #FB7D5B;
+  --light-black: #555555;
 }
 
 .App {
@@ -31,4 +32,21 @@ body {
 
 .App > main {
   height: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: inherit;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2e9cc792;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: inherit;
 }
