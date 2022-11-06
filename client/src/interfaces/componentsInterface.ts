@@ -78,6 +78,7 @@ interface TeacherAssignmentCardProps {
 }
 
 interface ClassCardProps {
+  id: number;
   className: string;
   teacherName: string;
   assignments: {

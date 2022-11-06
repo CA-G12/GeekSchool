@@ -1,12 +1,30 @@
-import { message, Spin } from "antd";
+import { message } from "antd";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ProfilePage } from "..";
 
+interface StudentDataInterface {
+  id: number;
+  name: string;
+  mobile: string;
+  email: string;
+  img: string;
+  location: string;
+  role: string;
+}
+
 const StudentProfile = () => {
   const { studentId } = useParams();
-  const [studentData, setStudentData] = useState<any>(null);
+  const [studentData, setStudentData] = useState<StudentDataInterface>({
+    id: 0,
+    name: "",
+    mobile: "",
+    email: "",
+    img: "",
+    location: "",
+    role: "",
+  });
 
   const getStudentInfo = async () => {
     try {
@@ -22,7 +40,7 @@ const StudentProfile = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (!studentData) return <Spin tip="Loading..." />;
+  // if (!studentData) return <Spin tip="Loading..." />;
   return (
     <ProfilePage
       name={studentData.name}

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import GradeCollapse from "./GradesCollapse/GradesCollapse";
 
@@ -8,10 +9,13 @@ import "./StudentGrades.css";
 const StudentGrades: React.FC = () => {
   const [data, setData] = useState<Array<object>>([]);
   const controller = new AbortController();
+  const { studentId } = useParams();
 
   useEffect(() => {
     const fetchData = async () => {
-      const fetchedData = await axios.get("/api/v1/student/grades");
+      const fetchedData = await axios.get(
+        `/api/v1/student/${studentId}/grades`
+      );
 
       setData(fetchedData.data.data);
     };

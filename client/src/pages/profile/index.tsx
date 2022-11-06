@@ -33,7 +33,7 @@ const ProfilePage: FC<ProfilePageProps> = ({
   const { studentId } = useParams();
 
   const paths = [
-    `/student/${studentId}/profile`,
+    `/student/${studentId}/classes`,
     `/student/${studentId}/grades`,
     `/student/${studentId}/tests`,
     `/student/${studentId}/health`,
@@ -57,9 +57,9 @@ const ProfilePage: FC<ProfilePageProps> = ({
           />
         </div>
       </header>
-      {role === "student" && (
+      {role !== "student" && (
         <aside id="profile-aside">
-          <Reports studentId={1} />
+          <Reports role={role} studentId={1} />
         </aside>
       )}
 

@@ -25,14 +25,17 @@ const HealthCard = ({
         <img src={image} alt={type} />
       </div>
       <div style={{ backgroundColor: color[1] }}>
-        {!edited && description ? (
-          <div>
+        {!edited && (
+          <div className="bottom-card">
             <p>{description}</p>
             {role === "parent" && (
-              <EditOutlined onClick={() => setEdited(true)} />
+              <EditOutlined
+                onClick={() => setEdited((prevEdit) => !prevEdit)}
+              />
             )}
           </div>
-        ) : (
+        )}
+        {edited && (
           <div>
             <TextArea
               rows={4}
