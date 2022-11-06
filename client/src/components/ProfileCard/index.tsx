@@ -51,7 +51,6 @@ const ProfileCard: ElementType = ({
       <div
         id="scrollableDiv"
         style={{
-          height: 400,
           overflow: "auto",
           padding: "0 16px",
           border: "1px solid rgba(140, 140, 140, 0.35)",
@@ -64,7 +63,11 @@ const ProfileCard: ElementType = ({
               <List.Item key={item.mobile}>
                 <List.Item.Meta
                   avatar={<Avatar src={item.img} />}
-                  title={<Link to={`/student/${item.id}`}>{item.name}</Link>}
+                  title={
+                    _role === 'student' ?
+                      <Link to={`/student/${item.id}`} style={{fontSize: '1rem', color: 'var(--light-black)'}}>{item.name}</Link> :
+                      <Link to={`/class/${item.id}/stats`} style={{fontSize: '1rem', color: 'var(--light-black)'}}>{item.name}</Link> 
+                  }
                   description={item.mobile}
                 />
                 <div className="icons">
