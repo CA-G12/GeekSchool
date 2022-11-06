@@ -121,12 +121,7 @@ const TeacherSchedule = () => {
     >
       <Panel header="جدول حصص المعلم" key="1">
         <div className="table_wrapper">
-          <Table
-            columns={columns}
-            dataSource={schedule}
-            size="middle"
-            pagination={{ pageSize: 4 }}
-          />
+          <Table columns={columns} dataSource={schedule} size="middle" />
         </div>
       </Panel>
     </Collapse>
