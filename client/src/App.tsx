@@ -27,7 +27,7 @@ const router = createBrowserRouter([
 
   {
     path: "/timeline",
-    element: <TimeLineSection /> ,
+    element: <TimeLineSection />,
   },
 
   {
