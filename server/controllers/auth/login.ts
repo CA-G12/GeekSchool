@@ -15,7 +15,8 @@ const login = async (req: Request, res: Response, next: NextFunction) => {
     if (!hashedPassword) {
       throw new CustomError(400, 'invalid password');
     }
-    await signToken({ id: rows[0].getDataValue('id'), name: rows[0].getDataValue('name'), role: rows[0].getDataValue('role') });
+    const token = await signToken({ id: rows[0].getDataValue('id'), name: rows[0].getDataValue('name'), role: rows[0].getDataValue('role') });
+    res.cookie('token', token);
     res.json({ mag: 'logged in successfully' });
   } catch (err) {
     if (err.name === 'ValidationError') next(new CustomError(400, err.details[0].message));

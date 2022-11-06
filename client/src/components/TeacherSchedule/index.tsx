@@ -111,14 +111,13 @@ const TeacherSchedule = () => {
   }
 
   return (
-    <Collapse accordion>
+    <Collapse  accordion>
       <Panel header="جدول حصص المعلم" key="1">
         <div className="table_wrapper">
           <Table
             columns={columns}
             dataSource={schedule}
             size="middle"
-            pagination={{ pageSize: 4 }}
           />
         </div>
       </Panel>
