@@ -9,12 +9,13 @@ import StatsDummy from "./components/StatsDummy/Dummy";
 import StudentsProfile from "./components/Class/StudentsPage";
 import Class from "./components/Class";
 import Grades from "./components/Class/Grades";
+import { TimeLineSection } from "./components";
 import "antd/dist/antd.variable.min.css";
 import "./style.css";
 
 ConfigProvider.config({
   theme: {
-    primaryColor: "#0CBE8A",
+    primaryColor: "#0F93CB",
   },
 });
 
@@ -22,6 +23,11 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Link to="/class">Go to the class page!</Link>,
+  },
+
+  {
+    path: "/timeline",
+    element: <TimeLineSection /> ,
   },
 
   {

@@ -4,6 +4,8 @@ import QuestionsCard from "./QuestionsCard";
 import HealthCard from "./healthProfile/HealthProfile";
 import { StudentSignUp, ParentSignUp, TeacherSignUp } from "./signUpForm";
 
+import { TimeLineSection } from "./landingPage";
+
 import TeacherSchedule from "./TeacherSchedule";
 
 export {
@@ -15,4 +17,5 @@ export {
   ParentSignUp,
   TeacherSignUp,
   TeacherSchedule,
+  TimeLineSection,
 };
