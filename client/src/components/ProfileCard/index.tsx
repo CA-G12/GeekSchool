@@ -64,9 +64,27 @@ const ProfileCard: ElementType = ({
                 <List.Item.Meta
                   avatar={<Avatar src={item.img} />}
                   title={
-                    _role === 'student' ?
-                      <Link to={`/student/${item.id}`} style={{fontSize: '1rem', color: 'var(--light-black)'}}>{item.name}</Link> :
-                      <Link to={`/class/${item.id}/stats`} style={{fontSize: '1rem', color: 'var(--light-black)'}}>{item.name}</Link> 
+                    _role === "student" ? (
+                      <Link
+                        to={`/student/${item.id}`}
+                        style={{
+                          fontSize: "1rem",
+                          color: "var(--light-black)",
+                        }}
+                      >
+                        {item.name}
+                      </Link>
+                    ) : (
+                      <Link
+                        to={`/class/${item.id}/stats`}
+                        style={{
+                          fontSize: "1rem",
+                          color: "var(--light-black)",
+                        }}
+                      >
+                        {item.name}
+                      </Link>
+                    )
                   }
                   description={item.mobile}
                 />
