@@ -25,33 +25,32 @@ const HealthCard = ({
         <img src={image} alt={type} />
       </div>
       <div style={{ backgroundColor: color[1] }}>
-        {!edited && (
-          <div className="bottom-card">
+        {!edited && description ? (
+          <div>
             <p>{description}</p>
             {role === "parent" && (
-              <EditOutlined
-                onClick={() => setEdited((prevEdit) => !prevEdit)}
-              />
+              <EditOutlined onClick={() => setEdited(true)} />
             )}
           </div>
-        )}
-        {edited && (
-          <div>
-            <TextArea
-              rows={4}
-              placeholder={`اكتب حالة ${name}`}
-              onChange={(e) => setHealthValue(e.target.value)}
-              name={type}
-            />
-            <Button
-              onClick={() => {
-                setEdited(false);
-                handleUpdateHealth(healthValue, type);
-              }}
-            >
-              {description ? "تحديث" : "إضافة"}
-            </Button>
-          </div>
+        ) : (
+          role === "parent" && (
+            <div>
+              <TextArea
+                rows={4}
+                placeholder={`اكتب حالة ${name}`}
+                onChange={(e) => setHealthValue(e.target.value)}
+                name={type}
+              />
+              <Button
+                onClick={() => {
+                  setEdited(false);
+                  handleUpdateHealth(healthValue, type);
+                }}
+              >
+                {description ? "تحديث" : "إضافة"}
+              </Button>
+            </div>
+          )
         )}
       </div>
     </div>

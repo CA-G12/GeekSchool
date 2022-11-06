@@ -28,6 +28,7 @@ const initUser: UserItem = {
 interface classItem {
   name: string;
   img: string;
+  id: number | string;
 }
 
 const TeacherProfile: React.FC = () => {
@@ -94,6 +95,7 @@ const TeacherProfile: React.FC = () => {
           data={students.map((student: UserItem) => ({
             img: student.img,
             name: student.name,
+            id: student.id,
           }))}
           title="الطلاب"
           type="students"
@@ -104,6 +106,7 @@ const TeacherProfile: React.FC = () => {
           data={classes.map((oneClass: classItem) => ({
             img: avtar,
             name: oneClass.name,
+            id: oneClass.id,
           }))}
           title="الفصول الدراسية"
           type="classes"
