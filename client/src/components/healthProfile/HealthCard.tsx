@@ -32,23 +32,26 @@ const HealthCard = ({
               <EditOutlined onClick={() => setEdited(true)} />
             )}
           </div>
-        ) : 
-          role === "parent" && (<div>
-            <TextArea
-              rows={4}
-              placeholder={`اكتب حالة ${name}`}
-              onChange={(e) => setHealthValue(e.target.value)}
-              name={type}
-            />
-            <Button
-              onClick={() => {
-                setEdited(false);
-                handleUpdateHealth(healthValue, type);
-              }}
-            >
-              {description ? "تحديث" : "إضافة"}
-            </Button>
-          </div>)}
+        ) : (
+          role === "parent" && (
+            <div>
+              <TextArea
+                rows={4}
+                placeholder={`اكتب حالة ${name}`}
+                onChange={(e) => setHealthValue(e.target.value)}
+                name={type}
+              />
+              <Button
+                onClick={() => {
+                  setEdited(false);
+                  handleUpdateHealth(healthValue, type);
+                }}
+              >
+                {description ? "تحديث" : "إضافة"}
+              </Button>
+            </div>
+          )
+        )}
       </div>
     </div>
   );

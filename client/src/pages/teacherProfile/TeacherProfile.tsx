@@ -5,7 +5,7 @@ import axios from "axios";
 import ProfilePage from "../profile";
 import ProfileCard from "../../components/ProfileCard";
 import avtar from "../../assets/class_avatar.png";
-import './style.css';
+import "./style.css";
 
 interface UserItem {
   id: number;
