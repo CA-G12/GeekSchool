@@ -64,6 +64,10 @@
   font-weight: 600;
 }
 
+.ant-tabs-tabpane {
+  margin-right: 2rem;
+}
+
 .ant-timeline-item-content {
   padding: 0.2rem 1.2rem !important;
   margin: 0 !important;

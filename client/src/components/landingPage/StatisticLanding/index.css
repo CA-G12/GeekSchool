@@ -24,10 +24,13 @@
     display: flex;
     height: 50%;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: center !important;
+    align-items: center !important;
     border: none;
-    text-align: center;
+}
+
+.right {
+    gap: 1rem !important;
 }
 
 .left {
@@ -40,8 +43,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-
+    gap: 1rem !important;
 }
 
 .line {
@@ -75,18 +77,16 @@ h1 .text-number {
 }
 
 .right h1 {
-    height: 144px;
     font-weight: 600;
     font-size: 50px;
     color: white;
-
 }
 
-.right h2 {
+.right p {
     font-family: 'Poppins';
     font-style: normal;
-    font-weight: 600;
-    font-size: 30px;
+    font-weight: 500;
+    font-size: 25px;
+    letter-spacing: 0.8px;
     color: white;
-
 }

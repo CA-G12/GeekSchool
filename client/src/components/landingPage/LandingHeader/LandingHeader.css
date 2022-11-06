@@ -12,7 +12,7 @@
 }
 
 .landing-section .landing-header .buttons {
-  width: 20rem;
+  width: 18rem;
   height: 100%;
   display: flex;
   justify-content: space-between;
@@ -20,7 +20,8 @@
   box-shadow: none;
 }
 
-.landing-section .landing-header .buttons button {
+.landing-section .landing-header .buttons button,
+.user-profile button {
   width: 8rem;
   height: 2.3rem;
   font-size: 0.9rem;
@@ -28,19 +29,19 @@
 }
 
 .landing-section .landing-header .navigation {
-  width: 20rem;
+  width: 25rem;
   height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-right: 40%;
+  margin-right: 35%;
   box-shadow: none;
 }
 
 .landing-section .landing-header .navigation .nav-link {
-  width: 5rem;
+  width: 8rem;
   height: 2rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
   position: relative;
   border-radius: 1rem;
   display: flex;

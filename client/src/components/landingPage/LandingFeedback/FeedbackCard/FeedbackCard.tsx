@@ -17,7 +17,7 @@ const FeedbackCard: React.FC<FeedbackCardProps> = ({
   userName,
   date,
 }) => (
-  <Card className="feedback-card" bordered={false}>
+  <Card className="feedback-card" id="opinions" bordered={false}>
     <Text className="head-para">{text}</Text>
     <Card
       bordered={false}

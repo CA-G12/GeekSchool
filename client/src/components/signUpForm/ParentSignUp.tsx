@@ -63,24 +63,24 @@ const ParentSignUp: React.ElementType = ({
         />
         <Button
           type="primary"
-          icon={<PlusOutlined />}
+          icon={<PlusOutlined style={{ fontSize: "1.2rem" }} />}
           onClick={handleAddEmail}
           style={{
-            height: "100%",
-            width: "8%",
             background: "#13B9DE",
             border: 0,
           }}
         />
       </div>
-      {emails.map((e: String, index: number) => (
-        <AddChild
-          key={e}
-          email={e}
-          index={index}
-          deleteChildEmail={handleDeleteChildEmail}
-        />
-      ))}
+      <div className="child-cont">
+        {emails.map((e: String, index: number) => (
+          <AddChild
+            key={e}
+            email={e}
+            index={index}
+            deleteChildEmail={handleDeleteChildEmail}
+          />
+        ))}
+      </div>
     </>
   );
 };

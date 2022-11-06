@@ -1,14 +1,14 @@
 import "./index.css";
 
 const StatisticLanding = () => (
-  <div className="statistic">
+  <div className="statistic" id="statistics">
     <div className="left">
       <div className="content">
         <div className="line">
-          <div className="number" style={{ display: "flex" }}>
+          <div className="number" style={{ display: "flex", gap: "0.5rem" }}>
             <h1
               className="text-number"
-              style={{ color: "white", fontSize: "30px" }}
+              style={{ color: "white", fontSize: "40px" }}
             >
               544+
             </h1>
@@ -23,10 +23,10 @@ const StatisticLanding = () => (
         </div>
 
         <div className="line">
-          <div className="number" style={{ display: "flex" }}>
+          <div className="number" style={{ display: "flex", gap: "0.5rem" }}>
             <h1
               className="text-number"
-              style={{ color: "white", fontSize: "30px" }}
+              style={{ color: "white", fontSize: "40px" }}
             >
               1000+
             </h1>
@@ -42,10 +42,10 @@ const StatisticLanding = () => (
         </div>
 
         <div className="line">
-          <div className="number" style={{ display: "flex" }}>
+          <div className="number" style={{ display: "flex", gap: "0.5rem" }}>
             <h1
               className="text-number"
-              style={{ color: "white", fontSize: "30px" }}
+              style={{ color: "white", fontSize: "40px" }}
             >
               200+
             </h1>
@@ -63,7 +63,7 @@ const StatisticLanding = () => (
 
     <div className="right">
       <h1>معاً لتعليم أفضل</h1>
-      <h2>نهدف إلى بناء عملية تعليمية بجودة عالية</h2>
+      <p>نهدف إلى بناء عملية تعليمية بجودة عالية</p>
     </div>
   </div>
 );

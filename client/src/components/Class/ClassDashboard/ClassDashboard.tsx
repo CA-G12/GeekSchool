@@ -11,7 +11,7 @@ import {
 import React, { useState } from "react";
 import { Outlet, useParams } from "react-router-dom";
 import AsideLink from "../../AsideLink";
-import Logo from "../../../assets/Logo.png";
+import Logo from "../../../assets/new-logo.png";
 import "./style.css";
 
 const icons = [
