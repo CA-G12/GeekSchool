@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button, Image, Typography } from "antd";
-import Logo from "../../../assets/GeekSchoolLogo.png";
+import Logo from "../../../assets/new-logo.png";
 import BcgImage from "../../../assets/landing-bcg.png";
 import LandingImage from "../../../assets/landing-image.png";
 import { useUserData } from "../../../context/AuthContext";
@@ -9,13 +9,17 @@ import "./LandingHeader.css";
 
 const { Title, Text } = Typography;
 
-const LandingHeader: React.FC = () => (
-  <main className="landing-section">
+
+const LandingHeader: React.FC = () => {
+  const userId = useUserData().userData?.id;
+  const userRole = useUserData().userData?.role;
+
+  return <main className="landing-section">
     <header className="landing-header">
       <Link to="/" className="logo-image">
         <Image preview={false} width={50} src={Logo} />
       </Link>
-      {useUserData().userData?.id !== 0 && (
+      {!userId && (
         <section className="buttons">
           <Link to="/login">
             <Button type="primary">تسجيل دخول</Button>
@@ -25,16 +29,30 @@ const LandingHeader: React.FC = () => (
           </Link>
         </section>
       )}
+      {userRole && (
+        <Link to={
+          userRole === 'parent'
+          ? '/parent'
+          : userRole === 'student'
+          ? '/student'
+          : '/teacher'
+        } className='user-profile'>
+        <Button type="primary">حسابي</Button>
+      </Link>
+      )}
       <section className="navigation">
-        <Link className="nav-link" to="#join">
+        <a className="nav-link" href="#join">
           انضم إلينا
-        </Link>
-        <Link className="nav-link" to="#statistics">
+        </a>
+        <a className="nav-link" href="#statistics">
           احصائيات
-        </Link>
-        <Link className="nav-link" to="#opinions">
+        </a>
+        <a className="nav-link" href="#timeline-section">
+          الجدول الزمني
+        </a>
+        <a className="nav-link" href="#opinions">
           آراء
-        </Link>
+        </a>
       </section>
     </header>
     <section
@@ -53,6 +71,6 @@ const LandingHeader: React.FC = () => (
       </section>
     </section>
   </main>
-);
+};
 
 export default LandingHeader;

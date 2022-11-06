@@ -1,11 +1,11 @@
 import "./index.css";
 
 const StatisticLanding = () => (
-  <div className="statistic">
+  <div className="statistic" id="statistics">
     <div className="left">
       <div className="content">
         <div className="line">
-          <div className="number" style={{ display: "flex", gap: '0.5rem' }}>
+          <div className="number" style={{ display: "flex", gap: "0.5rem" }}>
             <h1
               className="text-number"
               style={{ color: "white", fontSize: "40px" }}
@@ -23,7 +23,7 @@ const StatisticLanding = () => (
         </div>
 
         <div className="line">
-          <div className="number" style={{ display: "flex", gap: '0.5rem' }}>
+          <div className="number" style={{ display: "flex", gap: "0.5rem" }}>
             <h1
               className="text-number"
               style={{ color: "white", fontSize: "40px" }}
@@ -42,7 +42,7 @@ const StatisticLanding = () => (
         </div>
 
         <div className="line">
-          <div className="number" style={{ display: "flex", gap: '0.5rem' }}>
+          <div className="number" style={{ display: "flex", gap: "0.5rem" }}>
             <h1
               className="text-number"
               style={{ color: "white", fontSize: "40px" }}
