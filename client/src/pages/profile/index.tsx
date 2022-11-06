@@ -5,7 +5,7 @@ import UserHeader from "../../components/profile/UserHeader";
 import Reports from "../../components/profile/Report";
 import Nav from "../../components/profile/Nav";
 import { TeacherSchedule } from "../../components";
-import Logo from "../../assets/Logo.png";
+import Logo from "../../assets/new-logo.png";
 import "./style.css";
 
 interface ProfilePageProps {
