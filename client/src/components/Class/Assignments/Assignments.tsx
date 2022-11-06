@@ -64,6 +64,7 @@ const Assignments: React.FC = () => {
     fetchAssignmentsData();
 
     return () => source.cancel();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

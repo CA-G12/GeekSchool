@@ -6,6 +6,7 @@ import {
   AppstoreAddOutlined,
 } from "@ant-design/icons";
 import "./style.css";
+import { Link } from "react-router-dom";
 
 interface DataType {
   name: string;
@@ -63,7 +64,7 @@ const ProfileCard: ElementType = ({
               <List.Item key={item.mobile}>
                 <List.Item.Meta
                   avatar={<Avatar src={item.img} />}
-                  title={<a href="https://ant.design">{item.name}</a>}
+                  title={<Link to={`/student/${item.id}`}>{item.name}</Link>}
                   description={item.mobile}
                 />
                 <div className="icons">

@@ -7,6 +7,11 @@
   font-family: 'Poppins', sans-serif;
 }
 
+body {
+  height: 100vh;
+  background-color: #F8F9FB;
+}
+
 :root {
   --main-color: linear-gradient(180deg, #13B9DE 0%, #0A8DB6 100%);
   --second-color: #0F93CB;
@@ -18,12 +23,6 @@
   --gray: #B8C5D3;
   --yellow-ball: #FCC43E;
   --red-ball: #FB7D5B;
-}
-
-#root {
-  background-color: #F8F9FB;
-  height: 100vh;
-  overflow: hidden;
 }
 
 .App {

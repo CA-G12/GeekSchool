@@ -7,11 +7,12 @@ const Nav = ({
   newPath,
   handleClicked,
   activeColor,
+  testPath,
 }: profileNavLinkInterface) => (
   <Link
     to={path}
     onClick={() => handleClicked(path)}
-    className={newPath === path ? activeColor : undefined}
+    className={newPath === testPath ? activeColor : undefined}
   >
     {name}
   </Link>

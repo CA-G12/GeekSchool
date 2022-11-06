@@ -1,9 +1,10 @@
-import { FC, useState, ReactNode } from "react";
+/* eslint-disable react/jsx-no-useless-fragment */
+import { FC, ReactNode, useState } from "react";
+import { Outlet, useParams } from "react-router-dom";
 import UserHeader from "../../components/profile/UserHeader";
 import Reports from "../../components/profile/Report";
 import Nav from "../../components/profile/Nav";
 import { TeacherSchedule } from "../../components";
-// import { userDetailsInterface } from "../../interfaces";
 import Logo from "../../assets/Logo.png";
 import "./style.css";
 
@@ -14,7 +15,7 @@ interface ProfilePageProps {
   email: string;
   role: string;
   image: string;
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 const ProfilePage: FC<ProfilePageProps> = ({
@@ -29,8 +30,14 @@ const ProfilePage: FC<ProfilePageProps> = ({
   const { pathname } = window.location;
   const [newPath, setNewPath] = useState<string | null>(pathname);
   const [activeColor] = useState<string>("profile-active");
+  const { studentId } = useParams();
 
-  const paths = ["/profile", "/grades", "/tests", "/health"];
+  const paths = [
+    `/student/${studentId}/profile`,
+    `/student/${studentId}/grades`,
+    `/student/${studentId}/tests`,
+    `/student/${studentId}/health`,
+  ];
   const labels = ["الصفوف", "الدرجات", "الاختبارات", "الصحة"];
 
   const handleClicked = (path: string): void => {
@@ -74,13 +81,13 @@ const ProfilePage: FC<ProfilePageProps> = ({
                 activeColor={activeColor}
                 handleClicked={handleClicked}
                 newPath={newPath}
+                testPath={paths[i]}
               />
             ))}
           </nav>
         )}
         {role === "teacher" && <TeacherSchedule />}
-
-        <main className="main-content">{children}</main>
+        {children ? <>{children}</> : <Outlet />}
       </main>
     </main>
   );

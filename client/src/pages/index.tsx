@@ -10,7 +10,7 @@ export {
   SignUpPage,
   LoginPage,
   ProfilePage,
-  ParentProfile,
-  TeacherProfile,
   HealthProfilePage,
+  TeacherProfile,
+  ParentProfile,
 };
