@@ -13,9 +13,9 @@ const LandingHeader: React.FC = () => (
   <main className="landing-section">
     <header className="landing-header">
       <Link to="/" className="logo-image">
-        <Image width={50} src={Logo} />
+        <Image preview={false} width={50} src={Logo} />
       </Link>
-      {useUserData().userData?.id && (
+      {useUserData().userData?.id !== 0 && (
         <section className="buttons">
           <Link to="/login">
             <Button type="primary">تسجيل دخول</Button>
