@@ -32,8 +32,8 @@ const HealthCard = ({
               <EditOutlined onClick={() => setEdited(true)} />
             )}
           </div>
-        ) : (
-          <div>
+        ) : 
+          role === "parent" && (<div>
             <TextArea
               rows={4}
               placeholder={`اكتب حالة ${name}`}
@@ -48,8 +48,7 @@ const HealthCard = ({
             >
               {description ? "تحديث" : "إضافة"}
             </Button>
-          </div>
-        )}
+          </div>)}
       </div>
     </div>
   );
