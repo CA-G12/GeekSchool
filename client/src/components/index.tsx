@@ -1,9 +1,21 @@
 import RecommendedCard from "./RecommendedCard";
 import FeedbackCard from "./FeedbackCard";
 import QuestionsCard from "./QuestionsCard";
-import TeacherSchedule from "./TeacherSchedule";
+import HealthCard from "./healthProfile/HealthProfile";
 import { StudentSignUp, ParentSignUp, TeacherSignUp } from "./signUpForm";
 
-export { RecommendedCard, FeedbackCard, QuestionsCard, TeacherSchedule };
+import { TimeLineSection } from "./landingPage";
 
-export { StudentSignUp, ParentSignUp, TeacherSignUp };
+import TeacherSchedule from "./TeacherSchedule";
+
+export {
+  RecommendedCard,
+  FeedbackCard,
+  QuestionsCard,
+  HealthCard,
+  StudentSignUp,
+  ParentSignUp,
+  TeacherSignUp,
+  TeacherSchedule,
+  TimeLineSection,
+};
