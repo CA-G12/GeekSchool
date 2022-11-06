@@ -3,6 +3,7 @@ import { Form, Radio, Button, message } from "antd";
 import "antd/dist/antd.min.css";
 import axios from "axios";
 import "./style.css";
+import { Link, useNavigate } from "react-router-dom";
 import { StudentSignUp, ParentSignUp, TeacherSignUp } from "../../components";
 import { signUpDataInterface } from "../../interfaces";
 import { userSchema, parentTeacherUserSchema } from "../../validations";
@@ -21,6 +22,7 @@ const init = {
 const SignUpPage: FC = () => {
   const [role, setRole] = useState<string>("teacher");
   const [signUpData, setSignUpData] = useState<signUpDataInterface>(init);
+  const navigate = useNavigate();
 
   const handleRoleValue: any = (e: any) => {
     setRole(e.target.value);
@@ -34,7 +36,13 @@ const SignUpPage: FC = () => {
       await userSchema.validate({ name, email, password, confPassword });
       if (data.role !== "student")
         await parentTeacherUserSchema.validate({ mobile, location });
-      await axios.post("/api/v1/auth/signup", data);
+      const signUpLogin = await axios.post("/api/v1/auth/signup", data);
+
+      const { role: roleCheck, id } = signUpLogin.data.data;
+
+      if (roleCheck === 'parent') navigate('/parent');
+      else if (roleCheck === 'teacher') navigate('/teacher');
+      else if (roleCheck === 'student') navigate(`/student/${id}`);
     } catch (err: any) {
       if (err.name === "ValidationError") message.error(err.message);
       message.error(err.response.data.msg);
@@ -64,7 +72,6 @@ const SignUpPage: FC = () => {
         </div>
       </section>
       <section id="signUp-form">
-        <div>
           <div className="welcome-massage">
             <h1>إنشاء حساب</h1>
             <p>موقع شامل وكامل من خلاله يمكنك إدارة كل شي يخص الطالب!</p>
@@ -106,8 +113,8 @@ const SignUpPage: FC = () => {
             >
               تسجيل حساب جديد
             </Button>
+            <p>لديك حساب مسبقا ؟ <Link to='/login'>اضغط هنا</Link></p>
           </div>
-        </div>
       </section>
     </main>
   );

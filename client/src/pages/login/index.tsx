@@ -1,10 +1,13 @@
 import React from "react";
 import { Button, Form, Input, message } from "antd";
-import "../signUp/style.css";
 import axios from "axios";
+import "../signUp/style.css";
+import './style.css';
+import { Link, useNavigate } from "react-router-dom";
 
 const LoginPage: React.FC = () => {
   const source = axios.CancelToken.source();
+  const navigate = useNavigate();
 
   const onFinish = async (fieldValues: any) => {
     try {
@@ -17,6 +20,10 @@ const LoginPage: React.FC = () => {
         { cancelToken: source.token }
       );
       message.success(loginMsg.data.mag);
+      const {role, id} = loginMsg.data.data
+      if (role === 'parent') navigate('/parent');
+      else if (role === 'teacher') navigate('/teacher');
+      else if (role === 'student') navigate(`/student/${id}`);
     } catch (error: any) {
       message.error(error.response.data.msg);
     }
@@ -35,7 +42,7 @@ const LoginPage: React.FC = () => {
           </p>
         </div>
       </section>
-      <section id="signUp-form">
+      <section id="signUp-form" className="login-form">
         <div>
           <div className="welcome-massage">
             <h1>عوداً حميداً</h1>
@@ -86,8 +93,6 @@ const LoginPage: React.FC = () => {
                   height: "100%",
                   width: "100%",
                   border: "none",
-                  background:
-                    "linear-gradient(180deg, #13DE82 0%, #0AB68B 100%)",
                 }}
               >
                 تسجيل دخول
@@ -96,7 +101,7 @@ const LoginPage: React.FC = () => {
 
             <p style={{ width: "100%", textAlign: "left" }}>
               لم تنشئ أي حساب مسبقًا؟{" "}
-              <span style={{ color: "#0AB28B" }}>أنشئ حساب</span>
+              <Link to='/signup'>أنشئ حساب</Link>
             </p>
           </Form>
         </div>
