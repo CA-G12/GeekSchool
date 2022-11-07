@@ -1,6 +1,9 @@
 /* eslint-disable react/jsx-no-useless-fragment */
 import { FC, ReactNode, useState } from "react";
-import { Outlet, useParams } from "react-router-dom";
+import { Outlet, useNavigate, useParams } from "react-router-dom";
+import { LogoutOutlined } from "@ant-design/icons";
+import { message } from "antd";
+import axios from "axios";
 import UserHeader from "../../components/profile/UserHeader";
 import Reports from "../../components/profile/Report";
 import Nav from "../../components/profile/Nav";
@@ -33,6 +36,7 @@ const ProfilePage: FC<ProfilePageProps> = ({
   const [newPath, setNewPath] = useState<string | null>(pathname);
   const [activeColor] = useState<string>("profile-active");
   const { studentId } = useParams();
+  const navigate = useNavigate();
 
   const paths = [
     `/student/${studentId}/classes`,
@@ -46,12 +50,23 @@ const ProfilePage: FC<ProfilePageProps> = ({
     setNewPath(path);
   };
 
+  const logOut = async () => {
+    try {
+      const logOutData = await axios.post("/api/v1/auth/logout");
+      message.success(logOutData.data.msg);
+      navigate("/");
+    } catch (error: any) {
+      message.error(error.response.data.msg);
+    }
+  };
+
   return (
     <main id="profile-page">
       <header>
         <div>
           <img src={Logo} alt="geek school logo" />
         </div>
+        <LogoutOutlined onClick={logOut} />
         <div>
           <img
             src="https://www.pngitem.com/pimgs/m/99-998739_dale-engen-person-placeholder-hd-png-download.png"

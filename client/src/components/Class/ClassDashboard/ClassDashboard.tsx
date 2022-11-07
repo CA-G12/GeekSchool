@@ -7,9 +7,12 @@ import {
   DashboardOutlined,
   MenuOutlined,
   FundProjectionScreenOutlined,
+  LogoutOutlined,
 } from "@ant-design/icons";
+import { message } from "antd";
+import axios from "axios";
 import React, { useState } from "react";
-import { Outlet, useParams } from "react-router-dom";
+import { Link, Outlet, useNavigate, useParams } from "react-router-dom";
 import AsideLink from "../../AsideLink";
 import Logo from "../../../assets/new-logo.png";
 import "./style.css";
@@ -36,7 +39,7 @@ const labels = [
 
 const ClassDashboard: React.FC = () => {
   const { pathname } = window.location;
-
+  const navigate = useNavigate();
   const [open, setOpen] = useState<string>("close");
   const [newPath, setNewPath] = useState<string | null>(pathname);
   const [activeColor] = useState<string>("active");
@@ -60,6 +63,16 @@ const ClassDashboard: React.FC = () => {
 
   const handleClicked = (path: string): void => {
     setNewPath(path);
+  };
+
+  const logOut = async () => {
+    try {
+      const logOutData = await axios.post("/api/v1/auth/logout");
+      message.success(logOutData.data.msg);
+      navigate("/");
+    } catch (error: any) {
+      message.error(error.response.data.msg);
+    }
   };
 
   return (
@@ -89,6 +102,9 @@ const ClassDashboard: React.FC = () => {
               key={Math.random() * 2}
             />
           ))}
+          <Link to="/">
+            <LogoutOutlined onClick={logOut} />
+          </Link>
         </aside>
         <main>
           <Outlet />
