@@ -15,6 +15,7 @@ interface ProfilePageProps {
   email: string;
   role: string;
   image: string;
+  visitRole: string | undefined;
   children?: ReactNode;
 }
 
@@ -25,6 +26,7 @@ const ProfilePage: FC<ProfilePageProps> = ({
   email,
   role,
   image,
+  visitRole,
   children,
 }) => {
   const { pathname } = window.location;
@@ -57,10 +59,9 @@ const ProfilePage: FC<ProfilePageProps> = ({
           />
         </div>
       </header>
-      {role !== "student" && (
-        <aside id="profile-aside">
-          <Reports role={role} studentId={1} />
-        </aside>
+
+      {role === "student" && (
+        <Reports studentId={studentId} visitRole={visitRole} />
       )}
 
       <main id="profile-main">

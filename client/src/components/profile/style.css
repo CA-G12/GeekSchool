@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-#user-profile {
-  min-height: 18rem;
-}
-
 #user-profile p,
 #user-profile h1,
 #user-profile h2 {
@@ -35,6 +31,7 @@ nav,
   border-radius: 0.8rem;
   overflow: hidden;
   background-color: var(--white);
+  gap: 1.5rem;
 }
 
 #user-profile .image-header {
@@ -107,7 +104,6 @@ nav,
 
 #user-profile .info-header {
   width: 100%;
-  margin-top: 1.2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
