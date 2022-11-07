@@ -55,7 +55,7 @@ const SignUpPage: FC = () => {
   };
 
   const addEmailChildren = (emailChildren: string[]): void => {
-    setSignUpData({ ...signUpData, role,  children: emailChildren });
+    setSignUpData({ ...signUpData, role, children: emailChildren });
   };
 
   return (
@@ -103,7 +103,7 @@ const SignUpPage: FC = () => {
           <Button
             type="primary"
             className="submit-btn"
-            onClick={() => addData({...signUpData, role})}
+            onClick={() => addData({ ...signUpData, role })}
             style={{
               flexShrink: 0,
               width: "100%",
