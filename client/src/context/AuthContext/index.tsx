@@ -3,7 +3,6 @@ import {
   useEffect,
   createContext,
   useContext,
-
   ReactChild,
   ReactElement,
 } from "react";
@@ -26,20 +25,18 @@ export const UserAuthContext = createContext<UserDataInterface | null>(null);
 
 export const useUserData = (): any => useContext(UserAuthContext);
 
-
-export const UserAuthProvider = () : UserDataInterface => {
+export const UserAuthProvider = (): UserDataInterface => {
   const source = axios.CancelToken.source();
   const [userData, setUserData] = useState<UserInterface | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
-
 
   const login = async (
     email: string,
     loginPassword: string,
     callback: any = null
-  ) : Promise<any>  => {
+  ): Promise<any> => {
     try {
-      setLoading(true)
+      setLoading(true);
       const res = await axios.post(
         "/api/v1/auth/login",
         {
@@ -47,21 +44,20 @@ export const UserAuthProvider = () : UserDataInterface => {
           loginPassword,
         },
         { cancelToken: source.token }
-        );
+      );
 
-        console.log('res: ', res);
-        
+      console.log("res: ", res);
+
       setUserData({
         id: res.data.data.id,
         role: res.data.data.role,
         name: res.data.data.name,
       });
-      setLoading(false)
+      setLoading(false);
 
-      console.log(userData)
+      console.log(userData);
       if (callback) callback(null);
-      return  {role: res.data.data.role, id: res.data.data.id}
-
+      return { role: res.data.data.role, id: res.data.data.id };
     } catch (err) {
       if (callback) callback(err);
     }
@@ -70,18 +66,16 @@ export const UserAuthProvider = () : UserDataInterface => {
 
   useEffect(() => {
     const getUserData = async () => {
-      try{
-
+      try {
         const { data } = await axios("/api/v1/auth", {
           cancelToken: source.token,
         });
-        setLoading(false)
-        
-        console.log(data)
-        setUserData(data);
-      }catch(err){
-        setLoading(false)
+        setLoading(false);
 
+        console.log(data);
+        setUserData(data);
+      } catch (err) {
+        setLoading(false);
       }
     };
     getUserData();
@@ -94,33 +88,29 @@ export const UserAuthProvider = () : UserDataInterface => {
 
   // const value = useMemo(() => ({ userData, setUserData }), [userData]);
 
-
   return {
     login,
     setUserData,
     userData,
-    loading
+    loading,
   };
-
 };
-
 
 interface ProvideAuthProps {
   children: ReactChild;
 }
 
-
 export const ProvideAuth = ({ children }: ProvideAuthProps): ReactElement => {
   const auth = UserAuthProvider();
-  if(auth.loading){
-    return <h2>loading ...</h2>
+  if (auth.loading) {
+    return <h2>loading ...</h2>;
   }
-  return <UserAuthContext.Provider value={auth}>{children} </UserAuthContext.Provider>
+  return (
+    <UserAuthContext.Provider value={auth}>
+      {children}{" "}
+    </UserAuthContext.Provider>
+  );
 };
-
-
-
-
 
 // const login = async (
 //   email: string,
@@ -143,5 +133,3 @@ export const ProvideAuth = ({ children }: ProvideAuthProps): ReactElement => {
 //     if (callback) callback(err);
 //   }
 // };
-
-

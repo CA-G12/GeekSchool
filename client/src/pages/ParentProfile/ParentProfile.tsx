@@ -3,7 +3,7 @@ import { Navigate } from "react-router-dom";
 import axios from "axios";
 import ProfilePage from "../profile";
 import ProfileCard from "../../components/ProfileCard";
-import {useUserData} from '../../context/AuthContext'
+import { useUserData } from "../../context/AuthContext";
 import {
   ParentInfoInterface,
   ChildrenData,
@@ -27,9 +27,9 @@ const ParentProfile: FC = () => {
       img: "",
     },
   ]);
-  const {userData} = useUserData();
-  console.log(userData, 'from profile');
-  
+  const { userData } = useUserData();
+  console.log(userData, "from profile");
+
   const [teachers, setTeachers] = useState<TeachersData[]>([
     {
       id: 1,
@@ -77,9 +77,9 @@ const ParentProfile: FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   // console.log( useUserData().userData,'parent profile')
-if(userData?.role !== 'parent'){
-  return  <Navigate to='/login'/>
-}
+  if (userData?.role !== "parent") {
+    return <Navigate to="/login" />;
+  }
   return (
     // useUserData().userData?.role !== 'parent' ?  <Navigate to='/login'/> :
     <ProfilePage

@@ -35,7 +35,7 @@ interface classItem {
 
 const TeacherProfile: React.FC = () => {
   // console.log( useUserData().userData,'teacher profile')
-  
+
   const source = axios.CancelToken.source();
   const [students, setStudents] = useState<UserItem[]>([]);
   const [classes, setClasses] = useState<classItem[]>([]);
@@ -84,10 +84,10 @@ const TeacherProfile: React.FC = () => {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
- 
+
   return (
     // useUserData().userData?.role !== 'teacher' ?  <Navigate to='/login'/> :
-    
+
     <ProfilePage
       name={user.name}
       location={user.location}

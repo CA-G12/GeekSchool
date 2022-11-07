@@ -28,7 +28,6 @@ ConfigProvider.config({
 });
 
 const App: React.FC = () => {
-
   const router = createBrowserRouter([
     {
       path: "/",
@@ -55,15 +54,15 @@ const App: React.FC = () => {
     },
     {
       path: "/parent",
-      element:  <ParentProfile /> ,
+      element: <ParentProfile />,
     },
     {
       path: "/teacher",
-      element:  <TeacherProfile /> ,
+      element: <TeacherProfile />,
     },
     {
       path: "/class/:classId",
-      element: <Class /> ,
+      element: <Class />,
       children: [
         {
           path: "stats",
@@ -101,12 +100,13 @@ const App: React.FC = () => {
     },
   ]);
 
-
-  return <ProvideAuth>
-    <div className="App">
-      <RouterProvider router={router} />
-    </div>
-  </ProvideAuth>
+  return (
+    <ProvideAuth>
+      <div className="App">
+        <RouterProvider router={router} />
+      </div>
+    </ProvideAuth>
+  );
 };
 
 export default App;
