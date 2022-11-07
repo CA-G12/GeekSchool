@@ -51,11 +51,11 @@ const SignUpPage: FC = () => {
 
   const inputValue = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const { value, name } = e.target;
-    setSignUpData({ ...signUpData, [name]: value });
+    setSignUpData({ ...signUpData, role, [name]: value });
   };
 
   const addEmailChildren = (emailChildren: string[]): void => {
-    setSignUpData({ ...signUpData, children: emailChildren });
+    setSignUpData({ ...signUpData, role, children: emailChildren });
   };
 
   return (
@@ -103,7 +103,7 @@ const SignUpPage: FC = () => {
           <Button
             type="primary"
             className="submit-btn"
-            onClick={() => addData(signUpData)}
+            onClick={() => addData({ ...signUpData, role })}
             style={{
               flexShrink: 0,
               width: "100%",
