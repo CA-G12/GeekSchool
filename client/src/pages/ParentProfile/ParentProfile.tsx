@@ -7,6 +7,7 @@ import {
   ChildrenData,
   TeachersData,
 } from "../../interfaces";
+import { useUserData } from "../../context/AuthContext";
 
 const ParentProfile: FC = () => {
   const [parentInfo, setParentInfo] = useState<ParentInfoInterface>({
@@ -36,7 +37,7 @@ const ParentProfile: FC = () => {
       role: "",
     },
   ]);
-
+  const { userData } = useUserData();
   const controller = new AbortController();
 
   useEffect(() => {
@@ -74,12 +75,13 @@ const ParentProfile: FC = () => {
 
   return (
     <ProfilePage
-      name={parentInfo.name}
-      email={parentInfo.email}
-      role={parentInfo.role}
-      image={parentInfo.img}
-      location={parentInfo.location}
-      mobile={parentInfo.mobile}
+    name={parentInfo.name}
+    email={parentInfo.email}
+    role={parentInfo.role}
+    image={parentInfo.img}
+    location={parentInfo.location}
+    mobile={parentInfo.mobile}
+    visitRole={userData?.role}
     >
       <ProfileCard
         data={children.map((child: ChildrenData) => ({
@@ -100,7 +102,7 @@ const ParentProfile: FC = () => {
           mobile: parentInfo.mobile,
         }))}
         title="teacher"
-        type="student"
+        type="teacher"
         _role="parent"
       />
     </ProfilePage>
