@@ -52,13 +52,13 @@ const ProfilePage: FC<ProfilePageProps> = ({
 
   const logOut = async () => {
     try {
-      const logOutData = await axios.post('/api/v1/auth/logout');
+      const logOutData = await axios.post("/api/v1/auth/logout");
       message.success(logOutData.data.msg);
-      navigate('/');
+      navigate("/");
     } catch (error: any) {
-      message.error(error.response.data.msg)
+      message.error(error.response.data.msg);
     }
-  }
+  };
 
   return (
     <main id="profile-page">

@@ -67,13 +67,13 @@ const ClassDashboard: React.FC = () => {
 
   const logOut = async () => {
     try {
-      const logOutData = await axios.post('/api/v1/auth/logout');
+      const logOutData = await axios.post("/api/v1/auth/logout");
       message.success(logOutData.data.msg);
-      navigate('/');
+      navigate("/");
     } catch (error: any) {
-      message.error(error.response.data.msg)
+      message.error(error.response.data.msg);
     }
-  }
+  };
 
   return (
     <main>
@@ -101,9 +101,10 @@ const ClassDashboard: React.FC = () => {
               newPath={newPath}
               key={Math.random() * 2}
             />
-            
           ))}
-          <Link to='/'><LogoutOutlined onClick={logOut} /></Link>
+          <Link to="/">
+            <LogoutOutlined onClick={logOut} />
+          </Link>
         </aside>
         <main>
           <Outlet />
