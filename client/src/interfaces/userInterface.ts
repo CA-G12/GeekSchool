@@ -8,6 +8,9 @@ interface UserInterface {
 interface UserDataInterface {
   userData: UserInterface | null;
   setUserData: Function;
+  login:Function;
+  loading: boolean
+  
 }
 
 interface emailInterface {
