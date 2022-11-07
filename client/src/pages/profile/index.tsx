@@ -15,7 +15,7 @@ interface ProfilePageProps {
   email: string;
   role: string;
   image: string;
-  visitRole: string | undefined,
+  visitRole: string | undefined;
   children?: ReactNode;
 }
 

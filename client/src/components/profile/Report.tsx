@@ -16,7 +16,7 @@ const Reports = ({
   visitRole,
 }: {
   studentId: string | number | undefined;
-  visitRole: string | undefined,
+  visitRole: string | undefined;
 }) => {
   const [dataReports, setDataReports] = useState<reportsInterface[] | null>(
     null
@@ -47,9 +47,8 @@ const Reports = ({
     }
   };
 
-  return (
-    visitRole !== 'student' ? (
-      <aside id="profile-aside">
+  return visitRole !== "student" ? (
+    <aside id="profile-aside">
       <section id="reports">
         <h1>الشكاوي</h1>
         <div className="report-form">
@@ -68,12 +67,16 @@ const Reports = ({
         </div>
         <div className="reports-container">
           {dataReports?.map((report) => (
-            <ReportCard report={report.description} key={`${report.id}reports`} />
+            <ReportCard
+              report={report.description}
+              key={`${report.id}reports`}
+            />
           ))}
         </div>
-        </section>
-        </aside>)
-      : <div style={{display: 'none'}} />  
+      </section>
+    </aside>
+  ) : (
+    <div style={{ display: "none" }} />
   );
 };
 

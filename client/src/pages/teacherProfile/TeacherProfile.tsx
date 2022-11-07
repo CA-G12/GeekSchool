@@ -38,7 +38,7 @@ const TeacherProfile: React.FC = () => {
   const [classes, setClasses] = useState<classItem[]>([]);
   const [user, setUser] = useState<UserItem>(initUser);
   const { userData } = useUserData();
-  
+
   useEffect(() => {
     const fetchteacherInfo = async () => {
       try {

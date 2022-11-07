@@ -75,13 +75,13 @@ const ParentProfile: FC = () => {
 
   return (
     <ProfilePage
-    name={parentInfo.name}
-    email={parentInfo.email}
-    role={parentInfo.role}
-    image={parentInfo.img}
-    location={parentInfo.location}
-    mobile={parentInfo.mobile}
-    visitRole={userData?.role}
+      name={parentInfo.name}
+      email={parentInfo.email}
+      role={parentInfo.role}
+      image={parentInfo.img}
+      location={parentInfo.location}
+      mobile={parentInfo.mobile}
+      visitRole={userData?.role}
     >
       <ProfileCard
         data={children.map((child: ChildrenData) => ({
