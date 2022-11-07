@@ -29,7 +29,7 @@ const createParentAccount = async (user: UserTableInterface, children?: Array<st
   const parentUser = await createUser(user);
   const parentId = parentUser.getDataValue('id');
 
-  children?.forEach(async (child) => {
+  children?.forEach((child) => {
     addChild(child, parentId);
   });
 };
