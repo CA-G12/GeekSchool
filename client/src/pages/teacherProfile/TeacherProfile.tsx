@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/aria-role */
 import React, { useEffect, useState } from "react";
 import { message } from "antd";
+import { Navigate } from "react-router-dom";
 import axios from "axios";
 import ProfilePage from "../profile";
 import ProfileCard from "../../components/ProfileCard";
@@ -83,7 +84,9 @@ const TeacherProfile: React.FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return (
+  return userData?.role !== "teacher" ? (
+    <Navigate to="/login" />
+  ) : (
     <ProfilePage
       name={user.name}
       location={user.location}

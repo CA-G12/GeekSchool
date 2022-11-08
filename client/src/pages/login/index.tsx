@@ -1,31 +1,37 @@
 import React from "react";
 import { Button, Form, Input, message } from "antd";
-import axios from "axios";
+// import axios from "axios";
 import "../signUp/style.css";
 import "./style.css";
 import { Link, useNavigate } from "react-router-dom";
+import { useUserData } from "../../context/AuthContext/index";
 
 const LoginPage: React.FC = () => {
-  const source = axios.CancelToken.source();
+  const { login, userData } = useUserData();
+  // const source = axios.CancelToken.source();
   const navigate = useNavigate();
 
   const onFinish = async (fieldValues: any) => {
     try {
-      const loginMsg = await axios.post(
-        "/api/v1/auth/login",
-        {
-          email: fieldValues.email,
-          loginPassword: fieldValues.loginPassword,
-        },
-        { cancelToken: source.token }
+      const { error } = await login(
+        fieldValues.email,
+        fieldValues.loginPassword
       );
-      message.success(loginMsg.data.mag);
-      const { role, id } = loginMsg.data.data;
-      if (role === "parent") navigate("/parent");
-      else if (role === "teacher") navigate("/teacher");
-      else if (role === "student") navigate(`/student/${id}`);
-    } catch (error: any) {
-      message.error(error.response.data.msg);
+
+      if (!error) {
+        const { role, id } = userData;
+        if (role === "parent") navigate("/parent");
+        else if (role === "teacher") navigate("/teacher");
+        else if (role === "student") navigate(`/student/${id}`);
+      } else {
+        message.error(error.response?.data?.msg);
+      }
+    } catch (err: any) {
+      if (err.response?.data?.msg) {
+        message.error(err.response?.data?.msg);
+      } else {
+        message.error(err.message);
+      }
     }
   };
 

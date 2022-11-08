@@ -1,12 +1,12 @@
 import React, { useState, FC } from "react";
 import { Form, Radio, Button, message } from "antd";
 import "antd/dist/antd.min.css";
-import axios from "axios";
 import "./style.css";
 import { Link, useNavigate } from "react-router-dom";
 import { StudentSignUp, ParentSignUp, TeacherSignUp } from "../../components";
 import { signUpDataInterface } from "../../interfaces";
 import { userSchema, parentTeacherUserSchema } from "../../validations";
+import { useUserData } from "../../context/AuthContext/index";
 
 const init = {
   name: null,
@@ -20,8 +20,11 @@ const init = {
 };
 
 const SignUpPage: FC = () => {
+  const { signup, userData } = useUserData();
+
   const [role, setRole] = useState<string>("teacher");
   const [signUpData, setSignUpData] = useState<signUpDataInterface>(init);
+  const [isOkToSend, setIsOkToSend] = useState<boolean>(true);
   const navigate = useNavigate();
 
   const handleRoleValue: any = (e: any) => {
@@ -36,13 +39,18 @@ const SignUpPage: FC = () => {
       await userSchema.validate({ name, email, password, confPassword });
       if (data.role !== "student")
         await parentTeacherUserSchema.validate({ mobile, location });
-      const signUpLogin = await axios.post("/api/v1/auth/signup", data);
 
-      const { role: roleCheck, id } = signUpLogin.data.data;
+      const { error } = await signup(data);
 
-      if (roleCheck === "parent") navigate("/parent");
-      else if (roleCheck === "teacher") navigate("/teacher");
-      else if (roleCheck === "student") navigate(`/student/${id}`);
+      if (!error) {
+        const { role: roleCheck } = userData;
+        if (roleCheck === "parent") navigate("/parent");
+        else if (roleCheck === "teacher") navigate("/teacher");
+        else if (roleCheck === "student")
+          message.success("The user is crated successfully!");
+      } else {
+        message.error(error.response?.data?.msg);
+      }
     } catch (err: any) {
       if (err.name === "ValidationError") message.error(err.message);
       message.error(err.response.data.msg);
@@ -98,11 +106,13 @@ const SignUpPage: FC = () => {
             <ParentSignUp
               inputValue={inputValue}
               addEmailChildren={addEmailChildren}
+              setIsOk={setIsOkToSend}
             />
           )}
           <Button
             type="primary"
             className="submit-btn"
+            disabled={!isOkToSend}
             onClick={() => addData({ ...signUpData, role })}
             style={{
               flexShrink: 0,

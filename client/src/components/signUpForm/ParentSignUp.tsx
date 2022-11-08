@@ -1,28 +1,50 @@
 import React, { useEffect, useState } from "react";
 import { Input, Button, message } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
+import axios from "axios";
 import AddChild from "./AddChild";
 import { userDataParentInterface } from "../../interfaces";
 
 const ParentSignUp: React.ElementType = ({
   inputValue,
   addEmailChildren,
+  setIsOk,
 }: userDataParentInterface) => {
   // regex validation email for email children input
   const regex = /^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,3})+$/;
   const [emails, setEmail] = useState<string[] | []>([]);
   const [emailInput, setEmailInput] = useState<string>("");
+  const [isChildEmailValid, setIsChildEmailValid] = useState<boolean>(false);
 
   const handleAddEmail = (): void => {
     if (emailInput !== "" && regex.test(emailInput)) {
       setEmail([emailInput, ...emails]);
+      setIsChildEmailValid(false);
     } else {
       message.error("Child email required or not an email ");
     }
   };
 
-  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    setEmailInput(e.target.value);
+  const handleEmailChange = async (
+    e: React.ChangeEvent<HTMLInputElement>
+  ): Promise<any> => {
+    try {
+      const res = await axios.post("/api/v1/student/validate", {
+        email: e.target.value,
+      });
+      if (res.status === 200) {
+        message.success("The student email is a valid email!");
+        setEmailInput(e.target.value);
+        setIsChildEmailValid(true);
+        setIsOk(true);
+      }
+    } catch (error: any) {
+      if (error.response.status === 404) {
+        message.error("The student email you entered does not exist!");
+        setIsChildEmailValid(false);
+        setIsOk(false);
+      }
+    }
   };
 
   useEffect(() => {
@@ -63,7 +85,9 @@ const ParentSignUp: React.ElementType = ({
         />
         <Button
           type="primary"
-          icon={<PlusOutlined style={{ fontSize: "1.2rem" }} />}
+          icon={
+            isChildEmailValid && <PlusOutlined style={{ fontSize: "1.2rem" }} />
+          }
           onClick={handleAddEmail}
           style={{
             background: "#13B9DE",
