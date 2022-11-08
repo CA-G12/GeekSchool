@@ -59,7 +59,9 @@ const Questions: FC<Props> = () => {
   }, [current]);
   return (
     <div className="card">
-      <h1 className="title">Questions</h1>
+      <div>
+
+      <h1 className="title">الإسئلة</h1>
       {questions.map((q) =>
         q.answer ? (
           <AnsweredQuestion
@@ -79,12 +81,12 @@ const Questions: FC<Props> = () => {
           />
         )
       )}
+      </div>
       <Pagination
         current={current}
         onChange={onChange}
         total={10 * Math.ceil(count / 2)}
       />
-      ;
     </div>
   );
 };
