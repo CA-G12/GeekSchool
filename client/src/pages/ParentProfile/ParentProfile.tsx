@@ -1,13 +1,14 @@
 import { FC, useState, useEffect } from "react";
+import { Navigate } from "react-router-dom";
 import axios from "axios";
 import ProfilePage from "../profile";
 import ProfileCard from "../../components/ProfileCard";
+import { useUserData } from "../../context/AuthContext";
 import {
   ParentInfoInterface,
   ChildrenData,
   TeachersData,
 } from "../../interfaces";
-import { useUserData } from "../../context/AuthContext";
 
 const ParentProfile: FC = () => {
   const [parentInfo, setParentInfo] = useState<ParentInfoInterface>({
@@ -26,6 +27,8 @@ const ParentProfile: FC = () => {
       img: "",
     },
   ]);
+  const { userData } = useUserData();
+
   const [teachers, setTeachers] = useState<TeachersData[]>([
     {
       id: 1,
@@ -37,7 +40,6 @@ const ParentProfile: FC = () => {
       role: "",
     },
   ]);
-  const { userData } = useUserData();
   const controller = new AbortController();
 
   useEffect(() => {
@@ -72,7 +74,9 @@ const ParentProfile: FC = () => {
     return () => controller.abort();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
+  if (userData?.role !== "parent") {
+    return <Navigate to="/login" />;
+  }
   return (
     <ProfilePage
       name={parentInfo.name}

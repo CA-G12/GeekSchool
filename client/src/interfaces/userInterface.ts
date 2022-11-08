@@ -8,6 +8,10 @@ interface UserInterface {
 interface UserDataInterface {
   userData: UserInterface | null;
   setUserData: Function;
+  login: Function;
+  signup: Function;
+  logout: Function;
+  loading: boolean;
 }
 
 interface emailInterface {
