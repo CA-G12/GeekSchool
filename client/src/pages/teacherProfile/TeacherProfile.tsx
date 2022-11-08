@@ -7,7 +7,7 @@ import ProfilePage from "../profile";
 import ProfileCard from "../../components/ProfileCard";
 import avtar from "../../assets/class_avatar.png";
 import "./style.css";
-// import {useUserData} from '../../context/AuthContext'
+import { useUserData } from "../../context/AuthContext";
 
 interface UserItem {
   id: number;
@@ -40,6 +40,7 @@ const TeacherProfile: React.FC = () => {
   const [students, setStudents] = useState<UserItem[]>([]);
   const [classes, setClasses] = useState<classItem[]>([]);
   const [user, setUser] = useState<UserItem>(initUser);
+  const { userData } = useUserData();
 
   useEffect(() => {
     const fetchteacherInfo = async () => {
@@ -95,6 +96,7 @@ const TeacherProfile: React.FC = () => {
       email={user.email}
       role="teacher"
       image={user.img}
+      visitRole={userData?.role}
     >
       <section id="teacher-tables">
         <ProfileCard

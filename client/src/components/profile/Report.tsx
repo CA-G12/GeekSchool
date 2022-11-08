@@ -13,10 +13,10 @@ ConfigProvider.config({
 
 const Reports = ({
   studentId,
-  role,
+  visitRole,
 }: {
-  studentId: string | number;
-  role: string;
+  studentId: string | number | undefined;
+  visitRole: string | undefined;
 }) => {
   const [dataReports, setDataReports] = useState<reportsInterface[] | null>(
     null
@@ -47,29 +47,36 @@ const Reports = ({
     }
   };
 
-  return (
-    <section id="reports">
-      <h1>الشكاوي</h1>
-      <div className="report-form">
-        {role === "teacher" && (
-          <Input
-            status={reportInput === null ? "" : !reportInput ? "error" : ""}
-            placeholder="أكتب الشكوى هنا"
-            onChange={(e) => setReportInput(e.target.value)}
-          />
-        )}
-        {role === "teacher" && (
-          <Button onClick={addNewReport}>
-            <PlusOutlined />
-          </Button>
-        )}
-      </div>
-      <div className="reports-container">
-        {dataReports?.map((report) => (
-          <ReportCard report={report.description} key={`${report.id}reports`} />
-        ))}
-      </div>
-    </section>
+  return visitRole !== "student" ? (
+    <aside id="profile-aside">
+      <section id="reports">
+        <h1>الشكاوي</h1>
+        <div className="report-form">
+          {visitRole === "teacher" && (
+            <Input
+              status={reportInput === null ? "" : !reportInput ? "error" : ""}
+              placeholder="أكتب الشكوى هنا"
+              onChange={(e) => setReportInput(e.target.value)}
+            />
+          )}
+          {visitRole === "teacher" && (
+            <Button onClick={addNewReport}>
+              <PlusOutlined />
+            </Button>
+          )}
+        </div>
+        <div className="reports-container">
+          {dataReports?.map((report) => (
+            <ReportCard
+              report={report.description}
+              key={`${report.id}reports`}
+            />
+          ))}
+        </div>
+      </section>
+    </aside>
+  ) : (
+    <div style={{ display: "none" }} />
   );
 };
 

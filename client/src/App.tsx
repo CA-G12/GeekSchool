@@ -17,9 +17,14 @@ import StatsDummy from "./components/StatsDummy/Dummy";
 import StudentsProfile from "./components/Class/StudentsPage";
 import Class from "./components/Class";
 import Grades from "./components/Class/Grades";
+import StudentGrades from "./components/Student/Grades/StudentGrades";
+import ClassSection from "./components/Student/ClassSection/ClassSection";
+import Calender from "./components/Calender";
 import "antd/dist/antd.variable.min.css";
 import "./style.css";
 import StudentProfile from "./pages/studentProfile";
+import Feedback from "./components/Class/Feedback/Feedback";
+import RecommendedPage from "./pages/recommended/RecommendedPage";
 
 ConfigProvider.config({
   theme: {
@@ -33,7 +38,6 @@ const App: React.FC = () => {
       path: "/",
       element: <LandingPage />,
     },
-
     {
       path: "/signup",
       element: <SignUpPage />,
@@ -46,6 +50,18 @@ const App: React.FC = () => {
       path: "/student/:studentId",
       element: <StudentProfile />,
       children: [
+        {
+          path: "classes",
+          element: <ClassSection />,
+        },
+        {
+          path: "grades",
+          element: <StudentGrades />,
+        },
+        {
+          path: "tests",
+          element: <Calender />,
+        },
         {
           path: "health",
           element: <HealthProfilePage />,
@@ -82,19 +98,15 @@ const App: React.FC = () => {
         },
         {
           path: "feedback",
-          element: <h1>Feedback</h1>,
+          element: <Feedback />,
         },
         {
           path: "recommended",
-          element: <h1>Recommended</h1>,
+          element: <RecommendedPage />,
         },
         {
           path: "grades",
           element: <Grades />,
-        },
-        {
-          path: "grades",
-          element: <h1>grades</h1>,
         },
       ],
     },

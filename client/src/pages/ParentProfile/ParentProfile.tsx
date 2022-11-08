@@ -3,7 +3,7 @@ import { Navigate } from "react-router-dom";
 import axios from "axios";
 import ProfilePage from "../profile";
 import ProfileCard from "../../components/ProfileCard";
-import { useUserData } from "../../context/AuthContext";
+import { useUserData  } from "../../context/AuthContext";
 import {
   ParentInfoInterface,
   ChildrenData,
@@ -28,7 +28,6 @@ const ParentProfile: FC = () => {
     },
   ]);
   const { userData } = useUserData();
-  console.log(userData, "from profile");
 
   const [teachers, setTeachers] = useState<TeachersData[]>([
     {
@@ -41,7 +40,6 @@ const ParentProfile: FC = () => {
       role: "",
     },
   ]);
-
   const controller = new AbortController();
 
   useEffect(() => {
@@ -76,12 +74,10 @@ const ParentProfile: FC = () => {
     return () => controller.abort();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  // console.log( useUserData().userData,'parent profile')
   if (userData?.role !== "parent") {
     return <Navigate to="/login" />;
   }
   return (
-    // useUserData().userData?.role !== 'parent' ?  <Navigate to='/login'/> :
     <ProfilePage
       name={parentInfo.name}
       email={parentInfo.email}
@@ -89,6 +85,7 @@ const ParentProfile: FC = () => {
       image={parentInfo.img}
       location={parentInfo.location}
       mobile={parentInfo.mobile}
+      visitRole={userData?.role}
     >
       <ProfileCard
         data={children.map((child: ChildrenData) => ({
@@ -109,7 +106,7 @@ const ParentProfile: FC = () => {
           mobile: parentInfo.mobile,
         }))}
         title="teacher"
-        type="student"
+        type="teacher"
         _role="parent"
       />
     </ProfilePage>

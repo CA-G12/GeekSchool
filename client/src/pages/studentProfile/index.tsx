@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ProfilePage } from "..";
+import { useUserData } from "../../context/AuthContext";
 
 interface StudentDataInterface {
   id: number;
@@ -16,6 +17,7 @@ interface StudentDataInterface {
 
 const StudentProfile = () => {
   const { studentId } = useParams();
+  const { userData } = useUserData();
   const [studentData, setStudentData] = useState<StudentDataInterface>({
     id: 0,
     name: "",
@@ -49,6 +51,7 @@ const StudentProfile = () => {
       email={studentData.email}
       role={studentData.role}
       image={studentData.img}
+      visitRole={userData?.role}
     />
   );
 };

@@ -10,16 +10,6 @@ import {
 import axios from "axios";
 import { UserInterface, UserDataInterface } from "../../interfaces";
 
-// const init = {
-//   userData: {
-//     id: 0,
-//     name: "",
-//     role: "",
-//   },
-//   setUserData: () => { },
-// };
-
-// type Props = { children: ReactNode };
 
 export const UserAuthContext = createContext<UserDataInterface | null>(null);
 
@@ -46,7 +36,6 @@ export const UserAuthProvider = (): UserDataInterface => {
         { cancelToken: source.token }
       );
 
-      console.log("res: ", res);
 
       setUserData({
         id: res.data.data.id,
@@ -54,8 +43,6 @@ export const UserAuthProvider = (): UserDataInterface => {
         name: res.data.data.name,
       });
       setLoading(false);
-
-      console.log(userData);
       if (callback) callback(null);
       return { role: res.data.data.role, id: res.data.data.id };
     } catch (err) {
@@ -71,8 +58,6 @@ export const UserAuthProvider = (): UserDataInterface => {
           cancelToken: source.token,
         });
         setLoading(false);
-
-        console.log(data);
         setUserData(data);
       } catch (err) {
         setLoading(false);
@@ -85,8 +70,6 @@ export const UserAuthProvider = (): UserDataInterface => {
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  // const value = useMemo(() => ({ userData, setUserData }), [userData]);
 
   return {
     login,
@@ -111,25 +94,3 @@ export const ProvideAuth = ({ children }: ProvideAuthProps): ReactElement => {
     </UserAuthContext.Provider>
   );
 };
-
-// const login = async (
-//   email: string,
-//   password: string,
-//   callback: any = null
-// ): Promise<any> => {
-//   try {
-//     const res = await axios.post('/auth/login', {
-//       email,
-//       password,
-//     });
-
-//     setUser({
-//       id: res.data.data.id,
-//       role: res.data.role,
-//       image: res.data.data.image,
-//     });
-//     if (callback) callback(null);
-//   } catch (err) {
-//     if (callback) callback(err);
-//   }
-// };
