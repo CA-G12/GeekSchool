@@ -7,7 +7,11 @@ import {
   ReactElement,
 } from "react";
 import axios from "axios";
-import { signUpDataInterface, UserInterface, UserDataInterface } from "../../interfaces";
+import {
+  signUpDataInterface,
+  UserInterface,
+  UserDataInterface,
+} from "../../interfaces";
 
 // const init = {
 //   userData: {
@@ -60,7 +64,6 @@ export const UserAuthProvider = (): UserDataInterface => {
     return true;
   };
 
-
   const signup = async (
     data: signUpDataInterface,
     callback: any = null
@@ -83,16 +86,14 @@ export const UserAuthProvider = (): UserDataInterface => {
     return true;
   };
 
-
-  const logout = async (callback: any = null) : Promise<any>  => {
-
+  const logout = async (callback: any = null): Promise<any> => {
     try {
       setLoading(true);
       await axios.post("/api/v1/auth/logout");
       setUserData({
         id: 0,
-        role: '',
-        name: '',
+        role: "",
+        name: "",
       });
       setLoading(false);
       if (callback) callback(null);
@@ -102,9 +103,7 @@ export const UserAuthProvider = (): UserDataInterface => {
     }
 
     return true;
-
-
-  }
+  };
 
   useEffect(() => {
     const getUserData = async () => {
@@ -133,7 +132,6 @@ export const UserAuthProvider = (): UserDataInterface => {
     userData,
     loading,
     logout,
-
   };
 };
 

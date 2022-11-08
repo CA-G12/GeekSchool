@@ -22,7 +22,6 @@ const init = {
 const SignUpPage: FC = () => {
   const { signup, userData } = useUserData();
 
-
   const [role, setRole] = useState<string>("teacher");
   const [signUpData, setSignUpData] = useState<signUpDataInterface>(init);
   const navigate = useNavigate();

@@ -13,7 +13,6 @@ const LoginPage: React.FC = () => {
 
   const onFinish = async (fieldValues: any) => {
     try {
-
       const { error } = await login(
         fieldValues.email,
         fieldValues.loginPassword
@@ -27,7 +26,6 @@ const LoginPage: React.FC = () => {
       } else {
         message.error(error.response?.data?.msg);
       }
-
     } catch (err: any) {
       if (err.response?.data?.msg) {
         message.error(err.response?.data?.msg);
@@ -35,7 +33,6 @@ const LoginPage: React.FC = () => {
         message.error(err.message);
       }
     }
-
   };
 
   return (

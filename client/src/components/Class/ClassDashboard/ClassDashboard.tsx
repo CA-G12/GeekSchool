@@ -67,13 +67,12 @@ const ClassDashboard: React.FC = () => {
 
   const logOut = async () => {
     try {
-      const {error} =await logout();
-      if(!userData){
+      const { error } = await logout();
+      if (!userData) {
         navigate("/");
-      }else{
+      } else {
         message.error(error);
       }
-   
     } catch (error: any) {
       message.error(error.response.data.msg);
     }

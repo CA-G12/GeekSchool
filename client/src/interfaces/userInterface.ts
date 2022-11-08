@@ -10,7 +10,7 @@ interface UserDataInterface {
   setUserData: Function;
   login: Function;
   signup: Function;
-  logout:Function;
+  logout: Function;
   loading: boolean;
 }
 
