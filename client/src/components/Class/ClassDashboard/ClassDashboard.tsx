@@ -10,12 +10,12 @@ import {
   LogoutOutlined,
 } from "@ant-design/icons";
 import { message } from "antd";
-import axios from "axios";
 import React, { useState } from "react";
 import { Link, Outlet, useNavigate, useParams } from "react-router-dom";
 import AsideLink from "../../AsideLink";
 import Logo from "../../../assets/new-logo.png";
 import "./style.css";
+import { useUserData } from "../../../context/AuthContext/index";
 
 const icons = [
   <DashboardOutlined />,
@@ -43,7 +43,7 @@ const ClassDashboard: React.FC = () => {
   const [open, setOpen] = useState<string>("close");
   const [newPath, setNewPath] = useState<string | null>(pathname);
   const [activeColor] = useState<string>("active");
-
+  const { logout, userData } = useUserData();
   const { classId } = useParams();
 
   const paths = [
@@ -67,9 +67,13 @@ const ClassDashboard: React.FC = () => {
 
   const logOut = async () => {
     try {
-      const logOutData = await axios.post("/api/v1/auth/logout");
-      message.success(logOutData.data.msg);
-      navigate("/");
+      const {error} =await logout();
+      if(!userData){
+        navigate("/");
+      }else{
+        message.error(error);
+      }
+   
     } catch (error: any) {
       message.error(error.response.data.msg);
     }

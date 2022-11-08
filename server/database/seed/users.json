@@ -15,7 +15,7 @@
       "location": "California",
       "img": "http://dummyimage.com/118x100.png/dddddd/000000",
       "role": "parent",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "iopamidol",
@@ -24,7 +24,7 @@
       "location": "Oklahoma",
       "img": "http://dummyimage.com/154x100.png/5fa2dd/ffffff",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Calendula Officinalis Flower, Hydrated Silica, and Allylthiourea",
@@ -33,7 +33,7 @@
       "location": "California",
       "img": "http://dummyimage.com/168x100.png/cc0000/ffffff",
       "role": "teacher",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "HUMAN RABIES VIRUS IMMUNE GLOBULIN",
@@ -42,7 +42,7 @@
       "location": "Iowa",
       "img": "http://dummyimage.com/122x100.png/dddddd/000000",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "BACILLUS ANTHRACIS",
@@ -51,7 +51,7 @@
       "location": "New York",
       "img": "http://dummyimage.com/239x100.png/dddddd/000000",
       "role": "teacher",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "octreotide acetate",
@@ -60,7 +60,7 @@
       "location": "California",
       "img": "http://dummyimage.com/153x100.png/5fa2dd/ffffff",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "calcium ascorbate, calcium threonate, Cholecalciferol, ALPHA-TOCOPHERYL ACETATE, RIBOFLAVIN, NIACINAMIDE, PYRIDOXINE HYDROCHLORIDE, FOLIC ACID, CALCIUM CARBONATE, IRON, IODINE, MAGNESIUM, ZINC, DOCUSA",
@@ -69,7 +69,7 @@
       "location": "Texas",
       "img": "http://dummyimage.com/207x100.png/ff4444/ffffff",
       "role": "parent",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "MIRTAZAPINE",
@@ -78,7 +78,7 @@
       "location": "West Virginia",
       "img": "http://dummyimage.com/170x100.png/dddddd/000000",
       "role": "teacher",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "acyclovir",
@@ -87,7 +87,7 @@
       "location": "Texas",
       "img": "http://dummyimage.com/144x100.png/dddddd/000000",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Treatment Set TS350623",
@@ -96,7 +96,7 @@
       "location": "California",
       "img": "http://dummyimage.com/114x100.png/cc0000/ffffff",
       "role": "teacher",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "AVOBENZONE, HOMOSALATE, OCTISALATE, OCTOCRYLENE, OXYBENZONE",
@@ -105,7 +105,7 @@
       "location": "Colorado",
       "img": "http://dummyimage.com/209x100.png/dddddd/000000",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "glycerin",
@@ -114,7 +114,7 @@
       "location": "Missouri",
       "img": "http://dummyimage.com/123x100.png/dddddd/000000",
       "role": "teacher",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "CHLORPHENIRAMINE MALEATE and PHENYLEPHRINE HYDROCHLORIDE",
@@ -123,7 +123,7 @@
       "location": "Tennessee",
       "img": "http://dummyimage.com/243x100.png/cc0000/ffffff",
       "role": "teacher",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Eastern Cottonwood",
@@ -132,7 +132,7 @@
       "location": "Michigan",
       "img": "http://dummyimage.com/118x100.png/5fa2dd/ffffff",
       "role": "parent",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "azithromycin",
@@ -141,7 +141,7 @@
       "location": "California",
       "img": "http://dummyimage.com/126x100.png/cc0000/ffffff",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Simvastatin",
@@ -150,7 +150,7 @@
       "location": "Michigan",
       "img": "http://dummyimage.com/127x100.png/5fa2dd/ffffff",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "camphor, eucalyptus oil, menthol",
@@ -159,7 +159,7 @@
       "location": "Minnesota",
       "img": "http://dummyimage.com/178x100.png/ff4444/ffffff",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Octinoxate and Titanium dioxide",
@@ -168,7 +168,7 @@
       "location": "Ohio",
       "img": "http://dummyimage.com/221x100.png/ff4444/ffffff",
       "role": "teacher",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "dutasteride",
@@ -177,7 +177,7 @@
       "location": "Georgia",
       "img": "http://dummyimage.com/205x100.png/5fa2dd/ffffff",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "amlodipine besylate and atorvastatin calcium",
@@ -186,7 +186,7 @@
       "location": "Florida",
       "img": "http://dummyimage.com/217x100.png/dddddd/000000",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Arsenicum album, Belladonna, Echinacea angustifolia, Eupatorium perfoliatum, Gelsemium sempervirens, Lycopodium clavatum, Phosphoricum acidum, Phosphorus, Pyrogenium, Rhus toxicodendron,",
@@ -195,7 +195,7 @@
       "location": "Missouri",
       "img": "http://dummyimage.com/160x100.png/5fa2dd/ffffff",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "valsartan and hydrochlorothiazide",
@@ -204,7 +204,7 @@
       "location": "Texas",
       "img": "http://dummyimage.com/102x100.png/ff4444/ffffff",
       "role": "teacher",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Dextromethorphan HBr, Guaifenesin",
@@ -213,7 +213,7 @@
       "location": "Massachusetts",
       "img": "http://dummyimage.com/164x100.png/5fa2dd/ffffff",
       "role": "parent",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Albuterol Sulfate",
@@ -222,7 +222,7 @@
       "location": "California",
       "img": "http://dummyimage.com/248x100.png/5fa2dd/ffffff",
       "role": "teacher",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Paroxetine",
@@ -231,7 +231,7 @@
       "location": "Ohio",
       "img": "http://dummyimage.com/205x100.png/ff4444/ffffff",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Timolol Maleate",
@@ -240,7 +240,7 @@
       "location": "North Dakota",
       "img": "http://dummyimage.com/101x100.png/ff4444/ffffff",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Titanium Dioxide, Zinc Oxide",
@@ -249,7 +249,7 @@
       "location": "California",
       "img": "http://dummyimage.com/237x100.png/5fa2dd/ffffff",
       "role": "teacher",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "BENZALKONIUM CHLORIDE",
@@ -258,7 +258,7 @@
       "location": "New York",
       "img": "http://dummyimage.com/134x100.png/5fa2dd/ffffff",
       "role": "parent",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Trazodone Hydrochloride",
@@ -267,7 +267,7 @@
       "location": "Minnesota",
       "img": "http://dummyimage.com/136x100.png/dddddd/000000",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Baclofen",
@@ -276,7 +276,7 @@
       "location": "Colorado",
       "img": "http://dummyimage.com/200x100.png/ff4444/ffffff",
       "role": "parent",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "OXYGEN",
@@ -285,7 +285,7 @@
       "location": "Missouri",
       "img": "http://dummyimage.com/161x100.png/ff4444/ffffff",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "felodipine",
@@ -294,7 +294,7 @@
       "location": "California",
       "img": "http://dummyimage.com/130x100.png/5fa2dd/ffffff",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Cyclosporine",
@@ -303,7 +303,7 @@
       "location": "Ohio",
       "img": "http://dummyimage.com/108x100.png/ff4444/ffffff",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "linezolid",
@@ -312,7 +312,7 @@
       "location": "Kansas",
       "img": "http://dummyimage.com/250x100.png/cc0000/ffffff",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Sotalol Hydrochloride",
@@ -321,7 +321,7 @@
       "location": "Illinois",
       "img": "http://dummyimage.com/235x100.png/cc0000/ffffff",
       "role": "teacher",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Pyrithione Zinc",
@@ -330,7 +330,7 @@
       "location": "Nebraska",
       "img": "http://dummyimage.com/180x100.png/ff4444/ffffff",
       "role": "parent",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Kiwi",
@@ -339,7 +339,7 @@
       "location": "Arizona",
       "img": "http://dummyimage.com/239x100.png/ff4444/ffffff",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Hazelnut Pollen",
@@ -348,7 +348,7 @@
       "location": "South Dakota",
       "img": "http://dummyimage.com/213x100.png/5fa2dd/ffffff",
       "role": "parent",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "desipramine hydrochloride",
@@ -357,7 +357,7 @@
       "location": "New York",
       "img": "http://dummyimage.com/160x100.png/dddddd/000000",
       "role": "teacher",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Clarithromycin",
@@ -366,7 +366,7 @@
       "location": "Alaska",
       "img": "http://dummyimage.com/230x100.png/5fa2dd/ffffff",
       "role": "teacher",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "GLYCERIN, NAPHAZOLINE HYDROCHLORIDE",
@@ -375,7 +375,7 @@
       "location": "Kentucky",
       "img": "http://dummyimage.com/119x100.png/ff4444/ffffff",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Mepivacaine Hydrochloride",
@@ -384,7 +384,7 @@
       "location": "Washington",
       "img": "http://dummyimage.com/139x100.png/dddddd/000000",
       "role": "parent",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Diphenhydramine, Acetaminophen",
@@ -393,7 +393,7 @@
       "location": "Alabama",
       "img": "http://dummyimage.com/187x100.png/dddddd/000000",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "ACETAMINOPHEN, DIPHENHYDRAMINE HYDROCHLORIDE, and PHENYLEPHRINE HYDROCHLORIDE",
@@ -402,7 +402,7 @@
       "location": "Georgia",
       "img": "http://dummyimage.com/153x100.png/cc0000/ffffff",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "medroxyprogesterone acetate",
@@ -411,7 +411,7 @@
       "location": "Georgia",
       "img": "http://dummyimage.com/235x100.png/dddddd/000000",
       "role": "teacher",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "arformoterol tartrate",
@@ -420,7 +420,7 @@
       "location": "Georgia",
       "img": "http://dummyimage.com/107x100.png/ff4444/ffffff",
       "role": "teacher",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "AIR COMPRESSED",
@@ -429,7 +429,7 @@
       "location": "Florida",
       "img": "http://dummyimage.com/208x100.png/5fa2dd/ffffff",
       "role": "parent",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "CITRIC ACID MONOHYDRATE",
@@ -438,7 +438,7 @@
       "location": "Virginia",
       "img": "http://dummyimage.com/119x100.png/dddddd/000000",
       "role": "teacher",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "paroxetine hydrochloride",
@@ -447,7 +447,7 @@
       "location": "California",
       "img": "http://dummyimage.com/231x100.png/cc0000/ffffff",
       "role": "teacher",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Tadalafil",
@@ -456,7 +456,7 @@
       "location": "Florida",
       "img": "http://dummyimage.com/166x100.png/dddddd/000000",
       "role": "teacher",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Gentamicin Sulfate",
@@ -465,7 +465,7 @@
       "location": "North Carolina",
       "img": "http://dummyimage.com/152x100.png/cc0000/ffffff",
       "role": "teacher",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Levonorgestrel",
@@ -474,7 +474,7 @@
       "location": "New York",
       "img": "http://dummyimage.com/105x100.png/cc0000/ffffff",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Potassium Nitrate and Sodium Fluoride",
@@ -483,7 +483,7 @@
       "location": "Texas",
       "img": "http://dummyimage.com/108x100.png/5fa2dd/ffffff",
       "role": "parent",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Levetiracetam",
@@ -492,7 +492,7 @@
       "location": "Ohio",
       "img": "http://dummyimage.com/217x100.png/5fa2dd/ffffff",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "ETHYL ALCOHOL",
@@ -501,7 +501,7 @@
       "location": "Delaware",
       "img": "http://dummyimage.com/154x100.png/cc0000/ffffff",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Pyrithione Zinc",
@@ -510,7 +510,7 @@
       "location": "Florida",
       "img": "http://dummyimage.com/118x100.png/dddddd/000000",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "ISOMETHEPTENE MUCATE, DICHLORALPHENAZONE, and ACETAMINOPHEN",
@@ -519,7 +519,7 @@
       "location": "Missouri",
       "img": "http://dummyimage.com/190x100.png/5fa2dd/ffffff",
       "role": "parent",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "rumex acetosella pollen and rumex crispus pollen",
@@ -528,7 +528,7 @@
       "location": "Virginia",
       "img": "http://dummyimage.com/231x100.png/dddddd/000000",
       "role": "teacher",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Warfarin Sodium",
@@ -537,7 +537,7 @@
       "location": "Maryland",
       "img": "http://dummyimage.com/184x100.png/5fa2dd/ffffff",
       "role": "teacher",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Enoxaparin sodium",
@@ -546,7 +546,7 @@
       "location": "Georgia",
       "img": "http://dummyimage.com/107x100.png/cc0000/ffffff",
       "role": "teacher",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Anticoagulant Citrate Phosphate Dextrose Adenine",
@@ -555,7 +555,7 @@
       "location": "Florida",
       "img": "http://dummyimage.com/139x100.png/ff4444/ffffff",
       "role": "parent",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "aspirin",
@@ -564,7 +564,7 @@
       "location": "Michigan",
       "img": "http://dummyimage.com/236x100.png/dddddd/000000",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "minoxidil",
@@ -573,7 +573,7 @@
       "location": "Nevada",
       "img": "http://dummyimage.com/143x100.png/cc0000/ffffff",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "OCTINOXATE, OXYBENZONE, ZINC OXIDE, TITANIUM DIOXIDE",
@@ -582,7 +582,7 @@
       "location": "New Mexico",
       "img": "http://dummyimage.com/155x100.png/dddddd/000000",
       "role": "teacher",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Mexican Tea Pollen",
@@ -591,7 +591,7 @@
       "location": "North Carolina",
       "img": "http://dummyimage.com/137x100.png/dddddd/000000",
       "role": "parent",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "AVOBENZONE, HOMOSALATE, OCTISALATE, OCTOCRYLENE, OCTINOXATE",
@@ -600,7 +600,7 @@
       "location": "Washington",
       "img": "http://dummyimage.com/109x100.png/cc0000/ffffff",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Fluconazole",
@@ -609,7 +609,7 @@
       "location": "Connecticut",
       "img": "http://dummyimage.com/162x100.png/cc0000/ffffff",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "alprazolam",
@@ -618,7 +618,7 @@
       "location": "Oklahoma",
       "img": "http://dummyimage.com/234x100.png/5fa2dd/ffffff",
       "role": "teacher",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Gabapentin",
@@ -627,7 +627,7 @@
       "location": "Florida",
       "img": "http://dummyimage.com/227x100.png/ff4444/ffffff",
       "role": "parent",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Passiflora, Chamomilla, Calc fluor, Calc phos, Chamomilla",
@@ -636,7 +636,7 @@
       "location": "Indiana",
       "img": "http://dummyimage.com/243x100.png/dddddd/000000",
       "role": "teacher",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "metformin hydrochloride",
@@ -645,7 +645,7 @@
       "location": "New Mexico",
       "img": "http://dummyimage.com/104x100.png/dddddd/000000",
       "role": "teacher",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Minocycline Hydrochloride",
@@ -654,7 +654,7 @@
       "location": "New Jersey",
       "img": "http://dummyimage.com/106x100.png/5fa2dd/ffffff",
       "role": "teacher",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Glycerin",
@@ -663,7 +663,7 @@
       "location": "District of Columbia",
       "img": "http://dummyimage.com/150x100.png/5fa2dd/ffffff",
       "role": "teacher",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Silver Sulfadiazine",
@@ -672,7 +672,7 @@
       "location": "California",
       "img": "http://dummyimage.com/210x100.png/dddddd/000000",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Octinoxate and Titanium dioxide",
@@ -681,7 +681,7 @@
       "location": "Wisconsin",
       "img": "http://dummyimage.com/111x100.png/dddddd/000000",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "OCTINOXATE, OCTISALATE, OCTOCRYLENE, OXYBENZONE, TITANIUM DIOXIDE",
@@ -690,7 +690,7 @@
       "location": "New Mexico",
       "img": "http://dummyimage.com/162x100.png/5fa2dd/ffffff",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "ondansetron hydrochloride and dextrose",
@@ -699,7 +699,7 @@
       "location": "Nevada",
       "img": "http://dummyimage.com/147x100.png/cc0000/ffffff",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Argentum 0.4 Adult Size (cocoa butter) Special Order",
@@ -708,7 +708,7 @@
       "location": "New York",
       "img": "http://dummyimage.com/220x100.png/dddddd/000000",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Ketorolac Tromethamine",
@@ -717,7 +717,7 @@
       "location": "New Mexico",
       "img": "http://dummyimage.com/160x100.png/dddddd/000000",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "OCTINOXATE and TITANIUM DIOXIDE",
@@ -726,7 +726,7 @@
       "location": "Washington",
       "img": "http://dummyimage.com/151x100.png/cc0000/ffffff",
       "role": "parent",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "valsartan and hydrochlorothiazide",
@@ -735,7 +735,7 @@
       "location": "Colorado",
       "img": "http://dummyimage.com/184x100.png/dddddd/000000",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Sodium Fluoride",
@@ -744,7 +744,7 @@
       "location": "Florida",
       "img": "http://dummyimage.com/136x100.png/dddddd/000000",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Eucalyptol, menthol, methyl salicylate, thymol",
@@ -753,7 +753,7 @@
       "location": "Michigan",
       "img": "http://dummyimage.com/135x100.png/ff4444/ffffff",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "LOPERAMIDE HYDROCHLORIDE",
@@ -762,7 +762,7 @@
       "location": "California",
       "img": "http://dummyimage.com/170x100.png/5fa2dd/ffffff",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "levonorgestrel",
@@ -771,7 +771,7 @@
       "location": "Texas",
       "img": "http://dummyimage.com/130x100.png/5fa2dd/ffffff",
       "role": "parent",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "RISPERIDONE",
@@ -780,7 +780,7 @@
       "location": "California",
       "img": "http://dummyimage.com/122x100.png/cc0000/ffffff",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Glyburide and Metformin Hydrochloride",
@@ -789,7 +789,7 @@
       "location": "Illinois",
       "img": "http://dummyimage.com/171x100.png/dddddd/000000",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "not applicable",
@@ -798,7 +798,7 @@
       "location": "Colorado",
       "img": "http://dummyimage.com/185x100.png/ff4444/ffffff",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Menthol",
@@ -807,7 +807,7 @@
       "location": "Florida",
       "img": "http://dummyimage.com/108x100.png/dddddd/000000",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "CETYLPYRIDINIUM CHLORIDE",
@@ -816,7 +816,7 @@
       "location": "Iowa",
       "img": "http://dummyimage.com/131x100.png/ff4444/ffffff",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "FAMOTIDINE",
@@ -825,7 +825,7 @@
       "location": "Iowa",
       "img": "http://dummyimage.com/153x100.png/5fa2dd/ffffff",
       "role": "teacher",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "benazepril hydrochloride and hydrochlorothiazide",
@@ -834,7 +834,7 @@
       "location": "California",
       "img": "http://dummyimage.com/125x100.png/5fa2dd/ffffff",
       "role": "parent",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Multiple Vitamin Capsule",
@@ -843,7 +843,7 @@
       "location": "Ohio",
       "img": "http://dummyimage.com/176x100.png/cc0000/ffffff",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Hydrochlorothiazide",
@@ -852,7 +852,7 @@
       "location": "Georgia",
       "img": "http://dummyimage.com/206x100.png/5fa2dd/ffffff",
       "role": "teacher",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Guaifenesin",
@@ -861,7 +861,7 @@
       "location": "California",
       "img": "http://dummyimage.com/174x100.png/cc0000/ffffff",
       "role": "teacher",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "kidney bean",
@@ -870,7 +870,7 @@
       "location": "Minnesota",
       "img": "http://dummyimage.com/131x100.png/dddddd/000000",
       "role": "teacher",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Tadalafil",
@@ -879,7 +879,7 @@
       "location": "Delaware",
       "img": "http://dummyimage.com/154x100.png/ff4444/ffffff",
       "role": "student",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "nitroglycerin",
@@ -888,7 +888,7 @@
       "location": "Arkansas",
       "img": "http://dummyimage.com/230x100.png/ff4444/ffffff",
       "role": "parent",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     },
     {
       "name": "Aluminum Zirconium Tetrachlorohydrex GLY",
@@ -897,6 +897,6 @@
       "location": "Iowa",
       "img": "http://dummyimage.com/197x100.png/cc0000/ffffff",
       "role": "teacher",
-      "password": "123"
+      "password": "$2a$12$gc76a.5WWg6d/DTsbD5CZ.TUDqpuG8s4sK0feSm6zGVglezNTAbLi"
     }
   ]

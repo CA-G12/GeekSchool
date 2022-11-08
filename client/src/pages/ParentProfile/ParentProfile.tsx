@@ -3,7 +3,7 @@ import { Navigate } from "react-router-dom";
 import axios from "axios";
 import ProfilePage from "../profile";
 import ProfileCard from "../../components/ProfileCard";
-import { useUserData  } from "../../context/AuthContext";
+import { useUserData } from "../../context/AuthContext";
 import {
   ParentInfoInterface,
   ChildrenData,
