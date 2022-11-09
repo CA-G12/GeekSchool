@@ -8,11 +8,11 @@ const teacherInfoQuery = async (teacherId: number) => Teacher
     include: [
       {
         model: User,
-        where: { id: teacherId },
-        attributes: [],
-
       },
     ],
+    where: {
+      id: teacherId,
+    },
   });
 
 export default teacherInfoQuery;
