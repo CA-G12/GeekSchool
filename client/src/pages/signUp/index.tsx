@@ -24,6 +24,7 @@ const SignUpPage: FC = () => {
 
   const [role, setRole] = useState<string>("teacher");
   const [signUpData, setSignUpData] = useState<signUpDataInterface>(init);
+  const [isOkToSend, setIsOkToSend] = useState<boolean>(true);
   const navigate = useNavigate();
 
   const handleRoleValue: any = (e: any) => {
@@ -42,10 +43,11 @@ const SignUpPage: FC = () => {
       const { error } = await signup(data);
 
       if (!error) {
-        const { role: roleCheck, id } = userData;
+        const { role: roleCheck } = userData;
         if (roleCheck === "parent") navigate("/parent");
         else if (roleCheck === "teacher") navigate("/teacher");
-        else if (roleCheck === "student") navigate(`/student/${id}`);
+        else if (roleCheck === "student")
+          message.success("The user is crated successfully!");
       } else {
         message.error(error.response?.data?.msg);
       }
@@ -104,11 +106,13 @@ const SignUpPage: FC = () => {
             <ParentSignUp
               inputValue={inputValue}
               addEmailChildren={addEmailChildren}
+              setIsOk={setIsOkToSend}
             />
           )}
           <Button
             type="primary"
             className="submit-btn"
+            disabled={!isOkToSend}
             onClick={() => addData({ ...signUpData, role })}
             style={{
               flexShrink: 0,

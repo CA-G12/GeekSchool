@@ -35,7 +35,7 @@ const LandingHeader: React.FC = () => {
               userRole === "parent"
                 ? "/parent"
                 : userRole === "student"
-                ? "/student"
+                ? `/student/${userId}`
                 : "/teacher"
             }
             className="user-profile"

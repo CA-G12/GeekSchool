@@ -13,17 +13,6 @@ import {
   UserDataInterface,
 } from "../../interfaces";
 
-// const init = {
-//   userData: {
-//     id: 0,
-//     name: "",
-//     role: "",
-//   },
-//   setUserData: () => { },
-// };
-
-// type Props = { children: ReactNode };
-
 export const UserAuthContext = createContext<UserDataInterface | null>(null);
 
 export const useUserData = (): any => useContext(UserAuthContext);
@@ -112,7 +101,11 @@ export const UserAuthProvider = (): UserDataInterface => {
           cancelToken: source.token,
         });
         setLoading(false);
-        setUserData(data);
+        setUserData({
+          id: data.iat,
+          role: data.role,
+          name: data.name,
+        });
       } catch (err) {
         setLoading(false);
       }

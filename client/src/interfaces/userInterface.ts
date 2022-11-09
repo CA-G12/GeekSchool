@@ -1,3 +1,5 @@
+import { Dispatch, SetStateAction } from "react";
+
 /* eslint-disable camelcase */
 interface UserInterface {
   id: number;
@@ -25,6 +27,7 @@ interface userDataParentInterface {
   inputValue: () => {};
   /* eslint-disable no-unused-vars */
   addEmailChildren: (emails: string[]) => {};
+  setIsOk: Dispatch<SetStateAction<boolean>>;
 }
 
 interface userDataInterface {
