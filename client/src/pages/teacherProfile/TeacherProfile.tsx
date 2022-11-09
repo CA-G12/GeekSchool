@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/aria-role */
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { message } from "antd";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
@@ -46,6 +46,8 @@ const TeacherProfile: React.FC = () => {
         const data = await axios.get("/api/v1/teacher/info", {
           cancelToken: source.token,
         });
+        console.log(data);
+        
         setUser(data.data.data[0]);
       } catch (error: any) {
         message.error(error.response.data.msg);
@@ -64,8 +66,11 @@ const TeacherProfile: React.FC = () => {
     };
 
     const fetchClasses = async () => {
+      console.log({id :user.id});
+      console.log({user});
       try {
         const data = await axios.get(
+
           `/api/v1/profile/teacher/${user.id}/classes`,
           {
             cancelToken: source.token,
@@ -84,16 +89,18 @@ const TeacherProfile: React.FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  
+
   return userData?.role !== "teacher" ? (
     <Navigate to="/login" />
   ) : (
     <ProfilePage
-      name={user.name}
-      location={user.location}
-      mobile={user.mobile}
-      email={user.email}
+      name={user?.name}
+      location={user?.location}
+      mobile={user?.mobile}
+      email={user?.email}
       role="teacher"
-      image={user.img}
+      image={user?.img}
       visitRole={userData?.role}
     >
       <section id="teacher-tables">

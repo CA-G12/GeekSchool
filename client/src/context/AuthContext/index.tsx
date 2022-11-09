@@ -60,6 +60,8 @@ export const UserAuthProvider = (): UserDataInterface => {
     try {
       setLoading(true);
       const res = await axios.post("/api/v1/auth/signup", data);
+      console.log(data);
+      
       setUserData({
         id: res.data.data.id,
         role: res.data.data.role,
