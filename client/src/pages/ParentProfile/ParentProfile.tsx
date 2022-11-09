@@ -42,8 +42,6 @@ const ParentProfile: FC = () => {
   ]);
   const controller = new AbortController();
 
-  console.log(userData);
-
   useEffect(() => {
     const fetchData = async () => {
       const data = await axios.get("/api/v1/parent/info", {
