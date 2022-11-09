@@ -66,7 +66,7 @@ const TeacherProfile: React.FC = () => {
     const fetchClasses = async () => {
       try {
         const data = await axios.get(
-          `/api/v1/profile/teacher/${user.id}/classes`,
+          `/api/v1/profile/teacher/${userData.id}/classes`,
           {
             cancelToken: source.token,
           }
