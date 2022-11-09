@@ -1,4 +1,4 @@
-import { FC, useState, useEffect } from "react";
+import { FC, useState, useEffect, Dispatch, SetStateAction } from "react";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
 import ProfilePage from "../profile";
@@ -10,7 +10,9 @@ import {
   TeachersData,
 } from "../../interfaces";
 
-const ParentProfile: FC = () => {
+const ParentProfile: FC<{
+  setIsGotten: Dispatch<SetStateAction<boolean>>,
+}> = ({ setIsGotten }) => {
   const [parentInfo, setParentInfo] = useState<ParentInfoInterface>({
     email: "",
     img: "",
@@ -86,6 +88,7 @@ const ParentProfile: FC = () => {
       location={parentInfo.location}
       mobile={parentInfo.mobile}
       visitRole={userData?.role}
+      setIsGotten={setIsGotten}
     >
       <ProfileCard
         data={children.map((child: ChildrenData) => ({

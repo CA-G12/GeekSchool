@@ -1,6 +1,5 @@
 import {
   useState,
-  useEffect,
   createContext,
   useContext,
   ReactChild,
@@ -9,17 +8,33 @@ import {
 import axios from "axios";
 import {
   signUpDataInterface,
-  UserInterface,
   UserDataInterface,
 } from "../../interfaces";
+
+// const init: UserDataInterface = {
+//   userData: {
+//     id: 0,
+//     role: '',
+//     name: '',
+//   },
+//   setUserData: () => {},
+//   login: () => {},
+//   signup: () => {},
+//   logout: () => {},
+//   getUserData: () => {},
+//   loading: false,
+// };
 
 export const UserAuthContext = createContext<UserDataInterface | null>(null);
 
 export const useUserData = (): any => useContext(UserAuthContext);
 
 export const UserAuthProvider = (): UserDataInterface => {
-  const source = axios.CancelToken.source();
-  const [userData, setUserData] = useState<UserInterface | null>(null);
+  const [userData, setUserData] = useState<any>({
+    id: 0,
+    role: '',
+    name: '',
+  });
   const [loading, setLoading] = useState<boolean>(true);
 
   const login = async (
@@ -34,8 +49,7 @@ export const UserAuthProvider = (): UserDataInterface => {
         {
           email,
           loginPassword,
-        },
-        { cancelToken: source.token }
+        }
       );
 
       setUserData({
@@ -94,29 +108,20 @@ export const UserAuthProvider = (): UserDataInterface => {
     return true;
   };
 
-  useEffect(() => {
     const getUserData = async () => {
       try {
-        const { data } = await axios("/api/v1/auth", {
-          cancelToken: source.token,
-        });
+        const { data } = await axios.get("/api/v1/auth");
         setLoading(false);
         setUserData({
-          id: data.iat,
+          id: data.id,
           role: data.role,
           name: data.name,
         });
       } catch (err) {
         setLoading(false);
       }
+      return true;
     };
-    getUserData();
-
-    return () => {
-      source.cancel();
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   return {
     login,
@@ -124,7 +129,9 @@ export const UserAuthProvider = (): UserDataInterface => {
     setUserData,
     userData,
     loading,
+    setLoading,
     logout,
+    getUserData,
   };
 };
 
@@ -134,12 +141,12 @@ interface ProvideAuthProps {
 
 export const ProvideAuth = ({ children }: ProvideAuthProps): ReactElement => {
   const auth = UserAuthProvider();
-  if (auth.loading) {
-    return <h2>loading ...</h2>;
-  }
+ // if (auth.loading) {
+  //   return <h2>loading ...</h2>;
+  // }
   return (
     <UserAuthContext.Provider value={auth}>
-      {children}{" "}
+      {children}
     </UserAuthContext.Provider>
   );
 };
