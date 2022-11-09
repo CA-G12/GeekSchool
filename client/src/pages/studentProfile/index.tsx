@@ -16,7 +16,7 @@ interface StudentDataInterface {
 }
 
 const StudentProfile: FC<{
-  setIsGotten: Dispatch<SetStateAction<boolean>>,
+  setIsGotten: Dispatch<SetStateAction<boolean>>;
 }> = ({ setIsGotten }) => {
   const { studentId } = useParams();
   const { userData } = useUserData();

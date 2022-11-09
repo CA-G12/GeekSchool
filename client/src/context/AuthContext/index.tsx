@@ -6,10 +6,7 @@ import {
   ReactElement,
 } from "react";
 import axios from "axios";
-import {
-  signUpDataInterface,
-  UserDataInterface,
-} from "../../interfaces";
+import { signUpDataInterface, UserDataInterface } from "../../interfaces";
 
 // const init: UserDataInterface = {
 //   userData: {
@@ -32,8 +29,8 @@ export const useUserData = (): any => useContext(UserAuthContext);
 export const UserAuthProvider = (): UserDataInterface => {
   const [userData, setUserData] = useState<any>({
     id: 0,
-    role: '',
-    name: '',
+    role: "",
+    name: "",
   });
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -44,13 +41,10 @@ export const UserAuthProvider = (): UserDataInterface => {
   ): Promise<any> => {
     try {
       setLoading(true);
-      const res = await axios.post(
-        "/api/v1/auth/login",
-        {
-          email,
-          loginPassword,
-        }
-      );
+      const res = await axios.post("/api/v1/auth/login", {
+        email,
+        loginPassword,
+      });
 
       setUserData({
         id: res.data.data.id,
@@ -108,20 +102,20 @@ export const UserAuthProvider = (): UserDataInterface => {
     return true;
   };
 
-    const getUserData = async () => {
-      try {
-        const { data } = await axios.get("/api/v1/auth");
-        setLoading(false);
-        setUserData({
-          id: data.id,
-          role: data.role,
-          name: data.name,
-        });
-      } catch (err) {
-        setLoading(false);
-      }
-      return true;
-    };
+  const getUserData = async () => {
+    try {
+      const { data } = await axios.get("/api/v1/auth");
+      setLoading(false);
+      setUserData({
+        id: data.id,
+        role: data.role,
+        name: data.name,
+      });
+    } catch (err) {
+      setLoading(false);
+    }
+    return true;
+  };
 
   return {
     login,
@@ -141,12 +135,10 @@ interface ProvideAuthProps {
 
 export const ProvideAuth = ({ children }: ProvideAuthProps): ReactElement => {
   const auth = UserAuthProvider();
- // if (auth.loading) {
+  // if (auth.loading) {
   //   return <h2>loading ...</h2>;
   // }
   return (
-    <UserAuthContext.Provider value={auth}>
-      {children}
-    </UserAuthContext.Provider>
+    <UserAuthContext.Provider value={auth}>{children}</UserAuthContext.Provider>
   );
 };

@@ -11,7 +11,7 @@ import {
 } from "../../interfaces";
 
 const ParentProfile: FC<{
-  setIsGotten: Dispatch<SetStateAction<boolean>>,
+  setIsGotten: Dispatch<SetStateAction<boolean>>;
 }> = ({ setIsGotten }) => {
   const [parentInfo, setParentInfo] = useState<ParentInfoInterface>({
     email: "",
