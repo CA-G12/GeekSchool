@@ -20,6 +20,9 @@ const LoginPage: React.FC = () => {
 
       if (!error) {
         const { role, id } = userData;
+        console.log({'login':userData});
+        console.log(id);
+        
         if (role === "parent") navigate("/parent");
         else if (role === "teacher") navigate("/teacher");
         else if (role === "student") navigate(`/student/${id}`);

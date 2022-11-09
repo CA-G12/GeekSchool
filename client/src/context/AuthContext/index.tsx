@@ -61,12 +61,14 @@ export const UserAuthProvider = (): UserDataInterface => {
       setLoading(true);
       const res = await axios.post("/api/v1/auth/signup", data);
       console.log(data);
+      console.log(res);
       
       setUserData({
-        id: res.data.data.id,
-        role: res.data.data.role,
-        name: res.data.data.name,
+        ...res.data.data
       });
+      
+      console.log({userData});
+      
       setLoading(false);
       if (callback) callback(null);
     } catch (err) {
@@ -104,7 +106,7 @@ export const UserAuthProvider = (): UserDataInterface => {
         });
         setLoading(false);
         setUserData({
-          id: data.iat,
+          id: data.id,
           role: data.role,
           name: data.name,
         });
@@ -136,6 +138,8 @@ interface ProvideAuthProps {
 
 export const ProvideAuth = ({ children }: ProvideAuthProps): ReactElement => {
   const auth = UserAuthProvider();
+  console.log(auth);
+  
   if (auth.loading) {
     return <h2>loading ...</h2>;
   }

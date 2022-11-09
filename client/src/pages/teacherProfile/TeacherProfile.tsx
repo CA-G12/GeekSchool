@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/aria-role */
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { message } from "antd";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
@@ -46,7 +46,6 @@ const TeacherProfile: React.FC = () => {
         const data = await axios.get("/api/v1/teacher/info", {
           cancelToken: source.token,
         });
-        console.log(data);
         
         setUser(data.data.data[0]);
       } catch (error: any) {
@@ -66,12 +65,9 @@ const TeacherProfile: React.FC = () => {
     };
 
     const fetchClasses = async () => {
-      console.log({id :user.id});
-      console.log({user});
       try {
         const data = await axios.get(
-
-          `/api/v1/profile/teacher/${user.id}/classes`,
+          `/api/v1/profile/teacher/${userData.id}/classes`,
           {
             cancelToken: source.token,
           }
