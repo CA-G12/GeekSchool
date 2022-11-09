@@ -12,7 +12,6 @@ import { Button, List } from "antd";
 import leftHash from "../../../assets/left hash.svg";
 import rightHash from "../../../assets/right hash.svg";
 import map from "../../../assets/Map.svg";
-import schoolLogo from "../../../assets/image 20.png";
 
 const firstCol = [
   {
@@ -70,19 +69,19 @@ const thirdCol = [
 
 const forthCol = [
   {
-    title: "روابط مساعدة",
+    title: "المعلومات",
   },
   {
-    title: "دليل الاستخدام",
+    title: "المساعدة و الدعم",
   },
   {
-    title: "برامجنا",
+    title: "سياسات الاستخدام",
   },
   {
-    title: "المدونات",
+    title: "الاشتراك",
   },
   {
-    title: "سيرة ذاتية",
+    title: "شروط الاستخدام ",
   },
 ];
 
@@ -116,13 +115,12 @@ const Footer = () => (
         </div>
       </div>
       <div className="list_section">
-        <img className="school_logo" src={schoolLogo} alt="schoolLogo" />
-
         <List
+          className="list-footer"
           itemLayout="horizontal"
           dataSource={firstCol}
           renderItem={(item) => (
-            <List.Item>
+            <List.Item className="listItem-footer">
               <List.Item.Meta
                 title={<a href="https://ant.design">{item.title}</a>}
               />
@@ -130,10 +128,11 @@ const Footer = () => (
           )}
         />
         <List
+          className="list-footer"
           itemLayout="horizontal"
           dataSource={secondCol}
           renderItem={(item) => (
-            <List.Item>
+            <List.Item className="listItem-footer">
               <List.Item.Meta
                 title={<a href="https://ant.design">{item.title}</a>}
               />
@@ -142,10 +141,11 @@ const Footer = () => (
         />
 
         <List
+          className="list-footer"
           itemLayout="horizontal"
           dataSource={thirdCol}
           renderItem={(item) => (
-            <List.Item>
+            <List.Item className="listItem-footer">
               <List.Item.Meta
                 title={<a href="https://ant.design">{item.title}</a>}
               />
@@ -154,10 +154,11 @@ const Footer = () => (
         />
 
         <List
+          className="list-footer"
           itemLayout="horizontal"
           dataSource={forthCol}
           renderItem={(item) => (
-            <List.Item>
+            <List.Item className="listItem-footer">
               <List.Item.Meta
                 title={<a href="https://ant.design">{item.title}</a>}
               />
@@ -168,7 +169,7 @@ const Footer = () => (
       <div className="under_line"></div>
       <div className="tail_section">
         <div>
-          <p>© Copyright Geek school 2022</p>
+          <p>©جميع الحقوق محفوظة</p>
         </div>
         <div className="icons_section">
           <FacebookOutlined />
@@ -179,7 +180,7 @@ const Footer = () => (
           <GithubOutlined />
         </div>
         <div>
-          <p>Lorem ipsum dolor sit amet</p>
+          <p>معاً لتعليم أفضل</p>
         </div>
       </div>
     </footer>

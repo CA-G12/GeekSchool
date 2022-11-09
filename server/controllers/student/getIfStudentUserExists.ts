@@ -8,7 +8,7 @@ const getIfStudentUserExists = async (req: Request, res: Response, next: NextFun
 
     const data = await findUserByEmail(email);
 
-    if (data === null || data.dataValues.role !== 'student') {
+    if (data === null || data.getDataValue('role') !== 'student') {
       res.status(404).json({ msg: 'The student user does not exist!' });
     } else res.json({ msg: 'The user does exist!', data });
   } catch (error) {

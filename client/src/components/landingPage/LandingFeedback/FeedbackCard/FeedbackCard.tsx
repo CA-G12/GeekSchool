@@ -26,7 +26,7 @@ const FeedbackCard: React.FC<FeedbackCardProps> = ({
         width: "100%",
         display: "flex",
         flexDirection: "row",
-        justifyContent: "space-between",
+        justifyContent: "center",
         alignItems: "center",
       }}
     >

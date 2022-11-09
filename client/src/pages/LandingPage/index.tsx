@@ -9,9 +9,10 @@ import {
 const LandingPage = () => (
   <>
     <LandingHeader />
-    <StatisticLanding />
     <TimeLineSection />
     <LandingFeedback />
+    <StatisticLanding />
+
     <Footer />
   </>
 );
