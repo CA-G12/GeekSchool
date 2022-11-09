@@ -85,3 +85,7 @@ body {
 .question-card hr {
   color: #969696;
 }
+
+.fa-up-right-from-square {
+  margin-right: 1rem;
+}
