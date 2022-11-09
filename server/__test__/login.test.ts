@@ -29,7 +29,7 @@ describe('sign in router', () => {
     supertest(app)
       .post('/api/v1/auth/login')
       .send({
-        email: 'jdudding1@cisco.com',
+        email: 'rami@gmail.com',
         loginPassword: '123',
       })
       .expect(400)
