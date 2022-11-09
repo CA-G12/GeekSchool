@@ -16,9 +16,6 @@ const LandingHeader: React.FC = () => {
   return (
     <main className="landing-section">
       <header className="landing-header">
-        <Link to="/" className="logo-image">
-          <Image preview={false} width={50} src={Logo} />
-        </Link>
         {!userId && (
           <section className="buttons">
             <Link to="/login">
@@ -43,6 +40,7 @@ const LandingHeader: React.FC = () => {
             <Button type="primary">حسابي</Button>
           </Link>
         )}
+
         <section className="navigation">
           <a className="nav-link" href="#join">
             انضم إلينا
@@ -57,7 +55,12 @@ const LandingHeader: React.FC = () => {
             آراء
           </a>
         </section>
+
+        <Link to="/" className="logo-image">
+          <Image preview={false} src={Logo} />
+        </Link>
       </header>
+
       <section
         className="join-us-section"
         id="join"

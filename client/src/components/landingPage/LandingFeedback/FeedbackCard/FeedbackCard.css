@@ -1,5 +1,5 @@
 .feedback-card {
-  width: calc(100vw / 3);
+  width: calc(100% / 3);
   display: flex;
   flex-direction: column;
   box-shadow: none;
@@ -8,7 +8,7 @@
 .feedback-card .head-para {
   display: inline-block;
   font-size: 18px;
-  width: 25rem;
+  /* width: 25rem; */
 }
 
 .user-image {
@@ -21,5 +21,5 @@
 }
 
 .user-info .date {
-  color: #0AB28B;
+  color: #1B93CB;
 }

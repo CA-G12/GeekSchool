@@ -1,6 +1,6 @@
 
 .footer_wrapper {
-  min-height: 600px;
+  min-height: 500px;
 }
 
 .footer_banner {
@@ -123,7 +123,7 @@
 }
 
 .icons_section {
-  color:  #0AB68B;
+  color:  #1B93CB;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -150,9 +150,16 @@
 
 }
 
+.list-footer{
+text-align: center; 
+}
+
+.list-footer .listItem-footer{
+  padding: 0;
+}
+
 @media only screen and (max-width: 980px) {
   .content_section {
-    /* display: none; */
     flex-direction: column;
   }
   .footer_banner {
