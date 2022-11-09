@@ -31,7 +31,12 @@ import {
   getParentStudent, getTeachersClasses, getReports, getStudentHealth,
 } from './profiles';
 import {
-  putStudentHealth, getStudentClasses, getStudentTests, getStudentGrade, getStudentInfo,
+  putStudentHealth,
+  getStudentClasses,
+  getStudentTests,
+  getStudentGrade,
+  getStudentInfo,
+  getIfStudentUserExists,
 } from './student';
 import { getTeacherSchedule, getTeacherStudents, teacherInfo } from './teacher';
 import getParentTeachers from './getParentTeachers';
@@ -77,4 +82,5 @@ export {
   getStudentHealth,
   getStudentGrade,
   getStudentInfo,
+  getIfStudentUserExists,
 };

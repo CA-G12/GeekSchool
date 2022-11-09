@@ -1,122 +1,26 @@
 [
     {
         "class_id": 1,
-        "description": "Maecenas ut massa quis augue luctus tincidunt."
-    },
-    {
-        "class_id": 2,
-        "description": "Integer ac leo."
-    },
-    {
-        "class_id": 3,
-        "description": "Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla."
-    },
-    {
-        "class_id": 4,
-        "description": "Donec vitae nisi."
-    },
-    {
-        "class_id": 5,
-        "description": "Praesent id massa id nisl venenatis lacinia."
-    },
-    {
-        "class_id": 6,
-        "description": "Integer non velit."
-    },
-    {
-        "class_id": 7,
-        "description": "Proin eu mi."
-    },
-    {
-        "class_id": 8,
-        "description": "Aenean fermentum."
-    },
-    {
-        "class_id": 9,
-        "description": "Phasellus sit amet erat."
-    },
-    {
-        "class_id": 10,
-        "description": "Quisque arcu libero, rutrum ac, lobortis vel, dapibus at, diam."
-    },
-    {
-        "class_id": 11,
-        "description": "Duis consequat dui nec nisi volutpat eleifend."
-    },
-    {
-        "class_id": 12,
-        "description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
-    },
-    {
-        "class_id": 13,
-        "description": "Fusce posuere felis sed lacus."
-    },
-    {
-        "class_id": 14,
-        "description": "Aenean fermentum."
-    },
-    {
-        "class_id": 2,
-        "description": "Nam nulla."
-    },
-    {
-        "class_id": 16,
-        "description": "Sed accumsan felis."
-    },
-    {
-        "class_id": 17,
-        "description": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est."
-    },
-    {
-        "class_id": 18,
-        "description": "Duis ac nibh."
+        "description": "نذكر بتسليم التكليف المعطى لكم سابقًا."
     },
     {
         "class_id": 1,
-        "description": "In hac habitasse platea dictumst."
-    },
-    {
-        "class_id": 20,
-        "description": "Nam dui."
-    },
-    {
-        "class_id": 21,
-        "description": "Curabitur at ipsum ac tellus semper interdum."
-    },
-    {
-        "class_id": 3,
-        "description": "Pellentesque ultrices mattis odio."
-    },
-    {
-        "class_id": 23,
-        "description": "Fusce consequat."
+        "description": "يوم الخميس سيكون هناك كويز في الفصل الثاني."
     },
     {
         "class_id": 1,
-        "description": "In est risus, auctor sed, tristique in, tempus sit amet, sem."
+        "description": "يوم الأحد سيكون هناك مشرف، يوم السبت في آخر الدوان سيكون هناك حملة تنظيف للفصل."
     },
     {
         "class_id": 2,
-        "description": "Cras in purus eu magna vulputate luctus."
-    },
-    {
-        "class_id": 1,
-        "description": "Maecenas ut massa quis augue luctus tincidunt."
-    },
-    {
-        "class_id": 27,
-        "description": "Pellentesque eget nunc."
+        "description": "نذكر بتسليم التكليف المعطى لكم سابقًا."
     },
     {
         "class_id": 2,
-        "description": "Pellentesque eget nunc."
+        "description": "يوم الخميس سيكون هناك كويز في الفصل الثاني."
     },
     {
-        "class_id": 29,
-        "description": "Nullam varius."
-    },
-    {
-        "class_id": 1,
-        "description": "Quisque id justo sit amet sapien dignissim vestibulum."
+        "class_id": 2,
+        "description": "يوم الأحد سيكون هناك مشرف، يوم السبت في آخر الدوان سيكون هناك حملة تنظيف للفصل."
     }
 ]

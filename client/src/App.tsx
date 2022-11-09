@@ -2,6 +2,7 @@ import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ConfigProvider } from "antd";
 import Question from "./components/Class/Questions";
+
 import {
   SignUpPage,
   LoginPage,
@@ -10,7 +11,7 @@ import {
   HealthProfilePage,
   LandingPage,
 } from "./pages";
-import { UserAuthProvider } from "./context/AuthContext";
+import { ProvideAuth } from "./context/AuthContext";
 import Assignments from "./components/Class/Assignments/Assignments";
 import StatsDummy from "./components/StatsDummy/Dummy";
 import StudentsProfile from "./components/Class/StudentsPage";
@@ -31,92 +32,93 @@ ConfigProvider.config({
   },
 });
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <LandingPage />,
-  },
+const App: React.FC = () => {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <LandingPage />,
+    },
+    {
+      path: "/signup",
+      element: <SignUpPage />,
+    },
+    {
+      path: "/login",
+      element: <LoginPage />,
+    },
+    {
+      path: "/student/:studentId",
+      element: <StudentProfile />,
+      children: [
+        {
+          path: "classes",
+          element: <ClassSection />,
+        },
+        {
+          path: "grades",
+          element: <StudentGrades />,
+        },
+        {
+          path: "tests",
+          element: <Calender />,
+        },
+        {
+          path: "health",
+          element: <HealthProfilePage />,
+        },
+      ],
+    },
+    {
+      path: "/parent",
+      element: <ParentProfile />,
+    },
+    {
+      path: "/teacher",
+      element: <TeacherProfile />,
+    },
+    {
+      path: "/class/:classId",
+      element: <Class />,
+      children: [
+        {
+          path: "stats",
+          element: <StatsDummy />,
+        },
+        {
+          path: "students",
+          element: <StudentsProfile />,
+        },
+        {
+          path: "assignments",
+          element: <Assignments />,
+        },
+        {
+          path: "questions",
+          element: <Question />,
+        },
+        {
+          path: "feedback",
+          element: <Feedback />,
+        },
+        {
+          path: "recommended",
+          element: <RecommendedPage />,
+        },
+        {
+          path: "grades",
+          element: <Grades />,
+        },
+      ],
+    },
+  ]);
 
-  {
-    path: "/signup",
-    element: <SignUpPage />,
-  },
-  {
-    path: "/login",
-    element: <LoginPage />,
-  },
-  {
-    path: "/student/:studentId",
-    element: <StudentProfile />,
-    children: [
-      {
-        path: "classes",
-        element: <ClassSection />,
-      },
-      {
-        path: "grades",
-        element: <StudentGrades />,
-      },
-      {
-        path: "tests",
-        element: <Calender />,
-      },
-      {
-        path: "health",
-        element: <HealthProfilePage />,
-      },
-    ],
-  },
-  {
-    path: "/parent",
-    element: <ParentProfile />,
-  },
-  {
-    path: "/teacher",
-    element: <TeacherProfile />,
-  },
-  {
-    path: "/class/:classId",
-    element: <Class />,
-    children: [
-      {
-        path: "stats",
-        element: <StatsDummy />,
-      },
-      {
-        path: "students",
-        element: <StudentsProfile />,
-      },
-      {
-        path: "assignments",
-        element: <Assignments />,
-      },
-      {
-        path: "questions",
-        element: <Question />,
-      },
-      {
-        path: "feedback",
-        element: <Feedback />,
-      },
-      {
-        path: "recommended",
-        element: <RecommendedPage />,
-      },
-      {
-        path: "grades",
-        element: <Grades />,
-      },
-    ],
-  },
-]);
-
-const App: React.FC = () => (
-  <UserAuthProvider>
-    <div className="App">
-      <RouterProvider router={router} />
-    </div>
-  </UserAuthProvider>
-);
+  return (
+    <ProvideAuth>
+      <div className="App">
+        <RouterProvider router={router} />
+      </div>
+    </ProvideAuth>
+  );
+};
 
 export default App;

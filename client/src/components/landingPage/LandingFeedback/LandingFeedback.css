@@ -3,10 +3,17 @@
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  /* text-align: center; */
+}
+
+.feedback-div{
+  width: 100%;
+  padding: auto;
+  margin: auto;
 }
 
 .feedback-head {
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
