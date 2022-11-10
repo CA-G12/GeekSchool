@@ -1,16 +1,16 @@
 import { Parent, User } from '../../models';
 
-const getParentInfoQuery = (parentId: number) => Parent.findAll({
-  where: {
-    id: parentId,
-  },
+const getParentInfoQuery = (parentId: number) => User.findAll({
   attributes: {
     exclude: ['createdAt', 'updatedAt'],
   },
   include: {
-    model: User,
+    model: Parent,
     attributes: {
       exclude: ['createdAt', 'updatedAt'],
+    },
+    where: {
+      user_id: parentId,
     },
   },
 });

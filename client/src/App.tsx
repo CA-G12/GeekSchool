@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ConfigProvider } from "antd";
 import Question from "./components/Class/Questions";
@@ -11,8 +11,8 @@ import {
   HealthProfilePage,
   LandingPage,
 } from "./pages";
-import { ProvideAuth } from "./context/AuthContext";
 import Assignments from "./components/Class/Assignments/Assignments";
+import { useUserData } from "./context/AuthContext";
 import StatsDummy from "./components/StatsDummy/Dummy";
 import StudentsProfile from "./components/Class/StudentsPage";
 import Class from "./components/Class";
@@ -33,6 +33,19 @@ ConfigProvider.config({
 });
 
 const App: React.FC = () => {
+  const [isGotten, setIsGotten] = useState<boolean>(false);
+  const { getUserData } = useUserData();
+
+  useEffect(() => {
+    const getData = async () => {
+      const data = await getUserData();
+
+      if (data) setIsGotten(true);
+    };
+
+    getData();
+  }, [isGotten]);
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -48,7 +61,7 @@ const App: React.FC = () => {
     },
     {
       path: "/student/:studentId",
-      element: <StudentProfile />,
+      element: <StudentProfile setIsGotten={setIsGotten} />,
       children: [
         {
           path: "classes",
@@ -70,11 +83,11 @@ const App: React.FC = () => {
     },
     {
       path: "/parent",
-      element: <ParentProfile />,
+      element: <ParentProfile setIsGotten={setIsGotten} />,
     },
     {
       path: "/teacher",
-      element: <TeacherProfile />,
+      element: <TeacherProfile setIsGotten={setIsGotten} />,
     },
     {
       path: "/class/:classId",
@@ -113,11 +126,9 @@ const App: React.FC = () => {
   ]);
 
   return (
-    <ProvideAuth>
-      <div className="App">
-        <RouterProvider router={router} />
-      </div>
-    </ProvideAuth>
+    <div className="App">
+      <RouterProvider router={router} />
+    </div>
   );
 };
 

@@ -1,13 +1,12 @@
 /* eslint-disable jsx-a11y/aria-role */
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Dispatch, SetStateAction } from "react";
 import { message } from "antd";
-import { Navigate } from "react-router-dom";
 import axios from "axios";
 import ProfilePage from "../profile";
 import ProfileCard from "../../components/ProfileCard";
 import avtar from "../../assets/class_avatar.png";
-import "./style.css";
 import { useUserData } from "../../context/AuthContext";
+import "./style.css";
 
 interface UserItem {
   id: number;
@@ -33,7 +32,11 @@ interface classItem {
   id: number | string;
 }
 
-const TeacherProfile: React.FC = () => {
+interface ProfileProps {
+  setIsGotten: Dispatch<SetStateAction<boolean>>;
+}
+
+const TeacherProfile: React.FC<ProfileProps> = ({ setIsGotten }) => {
   const source = axios.CancelToken.source();
   const [students, setStudents] = useState<UserItem[]>([]);
   const [classes, setClasses] = useState<classItem[]>([]);
@@ -85,9 +88,7 @@ const TeacherProfile: React.FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return userData?.role !== "teacher" ? (
-    <Navigate to="/login" />
-  ) : (
+  return (
     <ProfilePage
       name={user?.name}
       location={user?.location}
@@ -96,6 +97,7 @@ const TeacherProfile: React.FC = () => {
       role="teacher"
       image={user?.img}
       visitRole={userData?.role}
+      setIsGotten={setIsGotten}
     >
       <section id="teacher-tables">
         <ProfileCard
