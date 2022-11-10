@@ -1,13 +1,11 @@
 import { Response, NextFunction } from 'express';
-import { getTeacherStudentsQuery, getUserIdFromTableQuery } from '../../queries';
+import { getTeacherStudentsQuery } from '../../queries';
 import { CustomError } from '../../utils';
 
 const getTeacherStudents = async (req: any, res: Response, next: NextFunction) => {
   try {
-    const { id, role } = req.user;
-    const teacherId = await getUserIdFromTableQuery(role, id);
-
-    const teacherStudents = await getTeacherStudentsQuery(Number(teacherId?.getDataValue('id')));
+    const { id } = req.user;
+    const teacherStudents = await getTeacherStudentsQuery(Number(id) || 0);
 
     if (teacherStudents.length === 0) {
       throw new CustomError(404, 'The teacher you are searching for does not exist');

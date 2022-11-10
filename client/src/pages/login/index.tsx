@@ -13,11 +13,9 @@ const LoginPage: React.FC = () => {
   useEffect(() => {
     if (!loading) {
       const { role, id } = userData;
-      setTimeout(() => {
-        if (role === "parent") navigate("/parent");
-        else if (role === "teacher") navigate("/teacher");
-        else if (role === "student") navigate(`/student/${id}`);
-      }, 500);
+      if (role === "parent") navigate("/parent");
+      else if (role === "teacher") navigate("/teacher");
+      else if (role === "student") navigate(`/student/${id}`);
     }
   }, [loading]);
 
