@@ -19,6 +19,8 @@ const StudentProfile: FC<{
   setIsGotten: Dispatch<SetStateAction<boolean>>;
 }> = ({ setIsGotten }) => {
   const { studentId } = useParams();
+  console.log({studentId});
+  
   const { userData } = useUserData();
   const [studentData, setStudentData] = useState<StudentDataInterface>({
     id: 0,
@@ -32,7 +34,11 @@ const StudentProfile: FC<{
 
   const getStudentInfo = async () => {
     try {
+      console.log('sdfsdfsdf',{studentId});
+
       const data = await axios.get(`/api/v1/student/${studentId}/info`);
+      console.log('sssssssss',data);
+      
       setStudentData(data.data.data[0]);
     } catch (error: any) {
       message.error(error);
@@ -47,12 +53,12 @@ const StudentProfile: FC<{
   // if (!studentData) return <Spin tip="Loading..." />;
   return (
     <ProfilePage
-      name={studentData.name}
-      location={studentData.location}
-      mobile={studentData.mobile}
-      email={studentData.email}
-      role={studentData.role}
-      image={studentData.img}
+      name={studentData?.name}
+      location={studentData?.location}
+      mobile={studentData?.mobile}
+      email={studentData?.email}
+      role={studentData?.role}
+      image={studentData?.img}
       visitRole={userData?.role}
       setIsGotten={setIsGotten}
     />
