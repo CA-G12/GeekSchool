@@ -139,9 +139,6 @@ interface ProvideAuthProps {
 
 export const ProvideAuth = ({ children }: ProvideAuthProps): ReactElement => {
   const auth = UserAuthProvider();
-  // if (auth.loading) {
-  //   return <h2>loading ...</h2>;
-  // }
   return (
     <UserAuthContext.Provider value={auth}>{children}</UserAuthContext.Provider>
   );

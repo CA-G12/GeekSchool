@@ -1,6 +1,7 @@
 import studentParentRelationQuery from './studentParentRelationQuery';
+import getUserIdFromTableQuery from './getUserIdFromTableQuery';
 
 export {
-  // eslint-disable-next-line import/prefer-default-export
   studentParentRelationQuery,
+  getUserIdFromTableQuery,
 };
