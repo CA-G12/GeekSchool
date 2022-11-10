@@ -65,6 +65,7 @@ interface HealthDataInterface {
   createdAt: string;
   updatedAt: string;
   student_id: number;
+  [key: string]: string | number | null,
 }
 
 const init: HealthDataInterface = {
@@ -118,7 +119,7 @@ const HealthProfilePage = () => {
     <main>
       <section id="health-container">
         {types.map((type, i) => {
-          const key: any = healthData[`${type}`];
+          const key = healthData[type];
           return (
             <HealthCard
               key={`${i + 1}health card`}
