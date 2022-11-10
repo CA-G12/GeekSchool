@@ -1,33 +1,35 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Form, Input, message } from "antd";
-// import axios from "axios";
 import "../signUp/style.css";
 import "./style.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useUserData } from "../../context/AuthContext/index";
 
 const LoginPage: React.FC = () => {
+  const [loading, setLoading] = useState<boolean>(true);
   const { login, userData } = useUserData();
-  // const source = axios.CancelToken.source();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!loading) {
+      const { role, id } = userData;
+      if (role === "parent") navigate("/parent");
+      else if (role === "teacher") navigate("/teacher");
+      else if (role === "student") navigate(`/student/${id}`);
+    }
+  }, [loading]);
 
   const onFinish = async (fieldValues: any) => {
     try {
-      const { error } = await login(
+      const loggedIn = await login(
         fieldValues.email,
         fieldValues.loginPassword
       );
 
-      if (!error) {
-        const { role, id } = userData;
-        console.log({'login':userData});
-        console.log(id);
-        
-        if (role === "parent") navigate("/parent");
-        else if (role === "teacher") navigate("/teacher");
-        else if (role === "student") navigate(`/student/${id}`);
-      } else {
-        message.error(error.response?.data?.msg);
+      if (loggedIn) setLoading(false);
+
+      if (!loggedIn?.error) {
+        message.error(loggedIn?.error.response?.data?.msg);
       }
     } catch (err: any) {
       if (err.response?.data?.msg) {

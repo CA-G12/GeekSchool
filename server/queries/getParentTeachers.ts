@@ -5,10 +5,10 @@ import {
 const getParentTeachersQuery = (parentId: string) => Student.findAll({
   raw: true,
   nest: false,
-  where: { parent_id: parentId },
+  where: { user_id: parentId },
 
   attributes: {
-    exclude: ['id', 'createdAt', 'updatedAt', 'user_id', 'parent_id'],
+    exclude: ['createdAt', 'updatedAt', 'user_id', 'parent_id'],
     include: [
       'ClassStudents.Class.Teacher.User.id' as 'id',
       'ClassStudents.Class.Teacher.User.name' as 'name',

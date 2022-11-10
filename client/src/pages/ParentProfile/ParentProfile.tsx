@@ -1,5 +1,5 @@
-import { FC, useState, useEffect } from "react";
-import { Navigate } from "react-router-dom";
+import { FC, useState, useEffect, Dispatch, SetStateAction } from "react";
+// import { Navigate } from "react-router-dom";
 import axios from "axios";
 import ProfilePage from "../profile";
 import ProfileCard from "../../components/ProfileCard";
@@ -10,7 +10,9 @@ import {
   TeachersData,
 } from "../../interfaces";
 
-const ParentProfile: FC = () => {
+const ParentProfile: FC<{
+  setIsGotten: Dispatch<SetStateAction<boolean>>;
+}> = ({ setIsGotten }) => {
   const [parentInfo, setParentInfo] = useState<ParentInfoInterface>({
     email: "",
     img: "",
@@ -48,7 +50,7 @@ const ParentProfile: FC = () => {
         signal: controller.signal,
       });
 
-      setParentInfo(data.data.data[0].User);
+      setParentInfo(data.data.data[0]);
     };
 
     const fetchChildren = async () => {
@@ -74,9 +76,9 @@ const ParentProfile: FC = () => {
     return () => controller.abort();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  if (userData?.role !== "parent") {
-    return <Navigate to="/login" />;
-  }
+  // if (userData?.role !== "parent") {
+  //   return <Navigate to="/login" />;
+  // }
   return (
     <ProfilePage
       name={parentInfo.name}
@@ -86,6 +88,7 @@ const ParentProfile: FC = () => {
       location={parentInfo.location}
       mobile={parentInfo.mobile}
       visitRole={userData?.role}
+      setIsGotten={setIsGotten}
     >
       <ProfileCard
         data={children.map((child: ChildrenData) => ({

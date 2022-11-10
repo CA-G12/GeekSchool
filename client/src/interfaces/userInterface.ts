@@ -13,6 +13,8 @@ interface UserDataInterface {
   login: Function;
   signup: Function;
   logout: Function;
+  getUserData: Function;
+  setLoading: Function;
   loading: boolean;
 }
 

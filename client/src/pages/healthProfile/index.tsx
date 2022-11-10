@@ -1,7 +1,8 @@
+/* eslint-disable camelcase */
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { message, Spin } from "antd";
+import { message } from "antd";
 import { HealthCard } from "../../components";
 import { useUserData } from "../../context/AuthContext";
 import {
@@ -52,9 +53,38 @@ const colors = [
   ["#BE7474", "#7D4B4B"],
 ];
 
+interface HealthDataInterface {
+  id: number;
+  dental: string;
+  vision: string;
+  blood_pressure: string | null;
+  cancer: string;
+  diabetes: string;
+  chronic: string;
+  other: string | null;
+  createdAt: string;
+  updatedAt: string;
+  student_id: number;
+  [key: string]: string | number | null;
+}
+
+const init: HealthDataInterface = {
+  id: 2,
+  dental: "",
+  vision: "",
+  blood_pressure: null,
+  cancer: "",
+  diabetes: "",
+  chronic: "",
+  other: null,
+  createdAt: "2022-11-09T20:21:54.838Z",
+  updatedAt: "2022-11-09T20:21:54.838Z",
+  student_id: 2,
+};
+
 const HealthProfilePage = () => {
   const { studentId } = useParams();
-  const [healthData, setHealthData] = useState<any>(null);
+  const [healthData, setHealthData] = useState<HealthDataInterface>(init);
   const role: string | undefined = useUserData()?.userData?.role;
   const handleUpdateHealth = async (healthValue: string, type: string) => {
     try {
@@ -85,25 +115,24 @@ const HealthProfilePage = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return !healthData ? (
-    <main style={{ justifyContent: "center", display: "flex" }}>
-      <Spin tip="Loading..." />
-    </main>
-  ) : (
+  return (
     <main>
       <section id="health-container">
-        {types.map((type, i) => (
-          <HealthCard
-            key={`${i + 1}health card`}
-            type={type}
-            name={names[i]}
-            description={healthData[type]}
-            image={images[i]}
-            color={colors[i]}
-            handleUpdateHealth={handleUpdateHealth}
-            role={role}
-          />
-        ))}
+        {types.map((type, i) => {
+          const key = healthData[type];
+          return (
+            <HealthCard
+              key={`${i + 1}health card`}
+              type={type}
+              name={names[i]}
+              description={key}
+              image={images[i]}
+              color={colors[i]}
+              handleUpdateHealth={handleUpdateHealth}
+              role={role}
+            />
+          );
+        })}
       </section>
     </main>
   );
