@@ -60,27 +60,26 @@ const Questions: FC<Props> = () => {
   return (
     <div className="card">
       <div>
-
-      <h1 className="title">الإسئلة</h1>
-      {questions.map((q) =>
-        q.answer ? (
-          <AnsweredQuestion
-            key={q.id}
-            id={q.id}
-            question={q.question}
-            answer={q.answer}
-            handleChange={handleChange}
-          />
-        ) : (
-          <Question
-            key={q.id}
-            id={q.id}
-            question={q.question}
-            answer={q.answer}
-            handleChange={handleChange}
-          />
-        )
-      )}
+        <h1 className="title">الإسئلة</h1>
+        {questions.map((q) =>
+          q.answer ? (
+            <AnsweredQuestion
+              key={q.id}
+              id={q.id}
+              question={q.question}
+              answer={q.answer}
+              handleChange={handleChange}
+            />
+          ) : (
+            <Question
+              key={q.id}
+              id={q.id}
+              question={q.question}
+              answer={q.answer}
+              handleChange={handleChange}
+            />
+          )
+        )}
       </div>
       <Pagination
         current={current}
