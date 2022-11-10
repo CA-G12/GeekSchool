@@ -65,7 +65,7 @@ interface HealthDataInterface {
   createdAt: string;
   updatedAt: string;
   student_id: number;
-  [key: string]: string | number | null,
+  [key: string]: string | number | null;
 }
 
 const init: HealthDataInterface = {
