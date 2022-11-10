@@ -50,7 +50,7 @@ const TeacherProfile: React.FC<ProfileProps> = ({ setIsGotten }) => {
         const data = await axios.get("/api/v1/teacher/info", {
           cancelToken: source.token,
         });
-        
+
         setUser(data.data.data[0]);
       } catch (error: any) {
         message.error(error.response.data.msg);
@@ -88,8 +88,6 @@ const TeacherProfile: React.FC<ProfileProps> = ({ setIsGotten }) => {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  
 
   return userData?.role !== "teacher" ? (
     <Navigate to="/login" />
