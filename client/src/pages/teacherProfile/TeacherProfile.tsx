@@ -46,6 +46,7 @@ const TeacherProfile: React.FC = () => {
         const data = await axios.get("/api/v1/teacher/info", {
           cancelToken: source.token,
         });
+
         setUser(data.data.data[0]);
       } catch (error: any) {
         message.error(error.response.data.msg);
@@ -88,12 +89,12 @@ const TeacherProfile: React.FC = () => {
     <Navigate to="/login" />
   ) : (
     <ProfilePage
-      name={user.name}
-      location={user.location}
-      mobile={user.mobile}
-      email={user.email}
+      name={user?.name}
+      location={user?.location}
+      mobile={user?.mobile}
+      email={user?.email}
       role="teacher"
-      image={user.img}
+      image={user?.img}
       visitRole={userData?.role}
     >
       <section id="teacher-tables">

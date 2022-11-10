@@ -38,24 +38,26 @@ const RecommendedPage: React.FC = () => {
   };
 
   return (
-    <>
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <h2>توصيات إضافية</h2>
-        {useUserData().userData?.role === "teacher" ? <AddRecommended /> : ""}
-      </div>
+    <div className="card">
+      <div>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <h2>توصيات إضافية</h2>
+          {useUserData().userData?.role === "teacher" ? <AddRecommended /> : ""}
+        </div>
 
-      {recommended.map((ele) => (
-        <RecommendedCard
-          description={ele.description}
-          materialLink={ele.material_link}
-        />
-      ))}
+        {recommended.map((ele) => (
+          <RecommendedCard
+            description={ele.description}
+            materialLink={ele.material_link}
+          />
+        ))}
+      </div>
       <Pagination
         current={current}
         onChange={onChange}
         total={10 * Math.ceil(count / 2)}
       />
-    </>
+    </div>
   );
 };
 export default RecommendedPage;

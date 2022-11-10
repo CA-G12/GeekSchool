@@ -44,6 +44,8 @@ const SignUpPage: FC = () => {
 
       if (!error) {
         const { role: roleCheck } = userData;
+        console.log(userData);
+
         if (roleCheck === "parent") navigate("/parent");
         else if (roleCheck === "teacher") navigate("/teacher");
         else if (roleCheck === "student")

@@ -43,9 +43,30 @@
 }
 
 .feedbacks-boxes {
-  width: 96%;
+  /* width: 96%; */
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  display: flex;
+}
+
+.feedback-card {
+  width: inherit;
+  text-align: right !important;
+  display: flex;
+  align-items: flex-start;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 80vh;
+  padding: 0;
+  margin: 0;
+}
+
+.ant-pagination {
+  display: flex;
+  justify-content: flex-end;
 }

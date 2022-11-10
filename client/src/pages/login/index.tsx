@@ -20,11 +20,14 @@ const LoginPage: React.FC = () => {
 
       if (!error) {
         const { role, id } = userData;
-        if (role === "parent") navigate("/parent");
-        else if (role === "teacher") navigate("/teacher");
-        else if (role === "student") navigate(`/student/${id}`);
-      } else {
-        message.error(error.response?.data?.msg);
+        setTimeout(() => {
+          if (role === "parent") navigate("/parent");
+          else if (role === "teacher") navigate("/teacher");
+          else if (role === "student") navigate(`/student/${id}`);
+          else {
+            message.error(error.response?.data?.msg);
+          }
+        }, 1000);
       }
     } catch (err: any) {
       if (err.response?.data?.msg) {

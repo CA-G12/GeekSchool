@@ -16,19 +16,19 @@ interface StudentInterface {
 
 const columns = [
   {
-    title: "Name",
+    title: "إسم الطالب",
     dataIndex: "name",
   },
   {
-    title: "Mobile-Num",
+    title: "رقم الجوال",
     dataIndex: "mobile",
   },
   {
-    title: "Parent-Name",
+    title: "إسم ولي الأمر",
     dataIndex: "parentName",
   },
   {
-    title: "Action",
+    title: "عمليات",
     dataIndex: "action",
   },
 ];
@@ -115,7 +115,7 @@ const StudentsProfile = () => {
 
   return (
     <>
-      <h1 className="title">Students</h1>
+      <h1 className="title">الطلاب</h1>
       <div className="table_wrapper">
         <Table
           columns={columns}
