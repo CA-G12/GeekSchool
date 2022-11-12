@@ -5,7 +5,6 @@ import { CustomError } from '../utils';
 const teacherAuth = (req: any, res: Response, next: NextFunction) => {
   try {
     const { user } = req;
-
     if (user.role === 'teacher') {
       next();
     } else {
