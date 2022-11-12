@@ -28,6 +28,7 @@ const LoginPage: React.FC = () => {
         else if (role === "student") navigate(`/student/${id}`);
       }, 100);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
 
   const onFinish = async (fieldValues: any) => {
