@@ -2,8 +2,6 @@ import { Response, NextFunction } from 'express';
 import { postStudentReportsQuery } from '../../queries';
 
 const postStudentReports = async (req: any, res: Response, next: NextFunction) => {
-    console.log('asdasdasdasasdasd');
-    console.log(req.body);
     try {
         const { studentId } = req.params;
         const { description } = req.body;
