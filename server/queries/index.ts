@@ -29,6 +29,7 @@ import {
   getStudentTestsQuery,
   studentGradesQuery,
   getStudentInfoQuery,
+  postStudentReportsQuery
 } from './student';
 
 import getParentInfoQuery from './parent';
@@ -89,4 +90,5 @@ export {
   teacherInfoQuery,
   getStudentInfoQuery,
   getUserIdFromTableQuery,
+  postStudentReportsQuery,
 };
