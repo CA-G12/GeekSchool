@@ -50,7 +50,7 @@ const AddRecommended: React.FC = () => {
         width="60%"
         closeIcon={
           <CloseOutlined
-            style={{ color: "#0CBE8A", border: "2px solid #0CBE8A" }}
+            style={{ color: "#2AA4D4", border: "2px solid #2AA4D4" }}
           />
         }
       >
@@ -101,7 +101,11 @@ const AddRecommended: React.FC = () => {
             className="button"
             style={{ width: "55%", display: "flex", justifyContent: "start" }}
           >
-            <Button type="primary" htmlType="submit">
+            <Button
+              type="primary"
+              htmlType="submit"
+              style={{ backgroundColor: "#2AA4D4" }}
+            >
               أضف
             </Button>
           </Form.Item>

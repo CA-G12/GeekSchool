@@ -1,15 +1,15 @@
-:root {
+ :root {
     --Carmine-Pink: #ED4C4C;
-    --Caribbean-Green: #0CBE8A;
+    --Caribbean-Green: #1B93CB;
     --Gray: #7C7C7C;
     --Gainsboro: #DFDFDF;
-}
+} 
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-}
+} 
 
 .icon-title {
     background-color: var(--Caribbean-Green);
@@ -58,13 +58,13 @@ h1 {
     display: flex;
     width: 62%;
     align-items: center;
-    border-left: 1px solid var(--Gainsboro);
 }
 
 .card-content {
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
     padding: 0 10px;
 }
@@ -80,6 +80,7 @@ h1 {
 
 .right {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     height: 100%;
@@ -98,6 +99,7 @@ h1 {
     justify-content: center;
     align-items: center;
     padding-left: 10px;
+    text-align: center;
 }
 
 .turnedOn button,
@@ -149,4 +151,4 @@ h1 {
     width: 50%;
     font-size: 0.5rem;
     color: var(--Gray);
-}
+} 

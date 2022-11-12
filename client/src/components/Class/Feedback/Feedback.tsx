@@ -57,9 +57,10 @@ const Feedback: React.FC = () => {
       <h1 className="feedback-title">التغذية الراجعة</h1>
       <section className="feedback-inner">
         <Form
+          style={{ padding: "0.5rem", display: "flex" }}
           name="basic"
-          labelCol={{ span: 8 }}
-          wrapperCol={{ span: 16 }}
+          // labelCol={{ span: 8 }}
+          // wrapperCol={{ span: 16 }}
           initialValues={{ remember: true }}
           onFinish={onFinish}
           onFinishFailed={onFinishFailed}
@@ -67,12 +68,18 @@ const Feedback: React.FC = () => {
           className="add-feedback-form"
         >
           <Form.Item
+            style={{ width: "90%", padding: "1rem" }}
             name="feedback"
             rules={[{ required: true, message: "الرجاء التفضل بإدخال نص" }]}
           >
-            <Input className="input-field" placeholder="شارك مراجعة جديدة!" />
+            <Input
+              className="input-field"
+              placeholder="شارك مراجعة جديدة!"
+              style={{ width: "100%" }}
+            />
           </Form.Item>
-          <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+
+          <Form.Item style={{ width: "10%" }}>
             <Button type="primary" htmlType="submit" className="submit-btn">
               أرسل
             </Button>
