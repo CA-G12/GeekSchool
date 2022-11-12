@@ -10,6 +10,15 @@ const LoginPage: React.FC = () => {
   const { login, userData } = useUserData();
   const navigate = useNavigate();
 
+  if (userData) {
+    const { role, id } = userData;
+    setTimeout(() => {
+      if (role === "parent") navigate("/parent");
+      else if (role === "teacher") navigate("/teacher");
+      else if (role === "student") navigate(`/student/${id}`);
+    }, 100);
+  }
+
   useEffect(() => {
     if (!loading) {
       const { role, id } = userData;
@@ -17,7 +26,7 @@ const LoginPage: React.FC = () => {
         if (role === "parent") navigate("/parent");
         else if (role === "teacher") navigate("/teacher");
         else if (role === "student") navigate(`/student/${id}`);
-      }, 500);
+      }, 100);
     }
   }, [loading]);
 

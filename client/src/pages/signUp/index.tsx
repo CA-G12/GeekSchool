@@ -27,6 +27,15 @@ const SignUpPage: FC = () => {
   const [isOkToSend, setIsOkToSend] = useState<boolean>(true);
   const navigate = useNavigate();
 
+  if (userData) {
+    const { role: userRole, id } = userData;
+    setTimeout(() => {
+      if (userRole === "parent") navigate("/parent");
+      else if (userRole === "teacher") navigate("/teacher");
+      else if (userRole === "student") navigate(`/student/${id}`);
+    }, 100);
+  }
+
   const handleRoleValue: any = (e: any) => {
     setRole(e.target.value);
     const userRole = e.target.value;
@@ -44,7 +53,6 @@ const SignUpPage: FC = () => {
 
       if (!error) {
         const { role: roleCheck } = userData;
-        console.log(userData);
 
         if (roleCheck === "parent") navigate("/parent");
         else if (roleCheck === "teacher") navigate("/teacher");

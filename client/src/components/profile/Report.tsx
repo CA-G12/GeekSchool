@@ -23,13 +23,15 @@ const Reports = ({
   );
   const [reportInput, setReportInput] = useState<string | null>(null);
 
+  const getReports = async () => {
+    const { data }: any = await axios.get(
+      `/api/v1/profile/student/${studentId}/reports`
+    );
+    console.log(data.data)
+    setDataReports(data.data);
+  };
+
   useEffect(() => {
-    const getReports = async () => {
-      const { data }: any = await axios.get(
-        `/api/v1/student/${studentId}/reports`
-      );
-      setDataReports(data);
-    };
     getReports();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
