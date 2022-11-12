@@ -44,7 +44,7 @@ const App: React.FC = () => {
     };
 
     getData();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isGotten]);
 
   const router = createBrowserRouter([
