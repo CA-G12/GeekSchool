@@ -44,10 +44,13 @@
     "jest": "^29.1.2",
     "joi": "^17.6.3",
     "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.4",
     "morgan": "^1.10.0",
     "pg": "^8.8.0",
     "pg-hstore": "^2.3.4",
+    "rc-virtual-list": "^3.4.11",
     "sequelize": "^6.25.0",
+    "sweetalert2": "^11.6.1",
     "ts-jest": "^29.0.3",
     "ts-node": "^10.9.1"
   },

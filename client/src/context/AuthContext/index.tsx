@@ -1,57 +1,136 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import {
   useState,
-  useEffect,
   createContext,
   useContext,
-  useMemo,
-  ReactNode,
-  FC,
+  ReactChild,
+  ReactElement,
 } from "react";
-
 import axios from "axios";
-import { UserInterface, UserDataInterface } from "../../interfaces";
+import { signUpDataInterface, UserDataInterface } from "../../interfaces";
 
-const init = {
-  userData: {
-    id: 0,
-    name: "",
-    role: "",
-  },
-  setUserData: () => {},
-};
+// const init: UserDataInterface = {
+//   userData: {
+//     id: 0,
+//     role: '',
+//     name: '',
+//   },
+//   setUserData: () => {},
+//   login: () => {},
+//   signup: () => {},
+//   logout: () => {},
+//   getUserData: () => {},
+//   loading: false,
+// };
 
-type Props = { children: ReactNode };
+export const UserAuthContext = createContext<UserDataInterface | null>(null);
 
-export const UserAuthContext = createContext<UserDataInterface>(init);
+export const useUserData = (): any => useContext(UserAuthContext);
 
-export const UserAuthProvider: FC<Props> = ({ children }) => {
-  const source = axios.CancelToken.source();
-  const [userData, setUserData] = useState<UserInterface | null>(null);
+export const UserAuthProvider = (): UserDataInterface => {
+  const [userData, setUserData] = useState<any>(null);
+  const [loading, setLoading] = useState<boolean>(true);
 
-  useEffect(() => {
-    const getUserData = async () => {
-      const { data } = await axios("/api/v1/auth", {
-        cancelToken: source.token,
+  const login = async (
+    email: string,
+    loginPassword: string,
+    callback: any = null
+  ): Promise<any> => {
+    try {
+      setLoading(true);
+      const res = await axios.post("/api/v1/auth/login", {
+        email,
+        loginPassword,
       });
 
-      setUserData(data);
-    };
-    getUserData();
+      setUserData({
+        id: res.data.data.id,
+        role: res.data.data.role,
+        name: res.data.data.name,
+      });
+      setLoading(false);
+      if (callback) callback(null);
+    } catch (err) {
+      setLoading(false);
+      return { error: err };
+    }
 
-    return () => {
-      source.cancel();
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    return true;
+  };
 
-  const value = useMemo(() => ({ userData, setUserData }), [userData]);
+  const signup = async (
+    data: signUpDataInterface,
+    callback: any = null
+  ): Promise<any> => {
+    try {
+      setLoading(true);
+      const res = await axios.post("/api/v1/auth/signup", data);
+      setUserData({
+        ...res.data.data,
+      });
+      setLoading(false);
+      if (callback) callback(null);
+    } catch (err) {
+      setLoading(false);
+      return { error: err };
+    }
 
-  return (
-    <UserAuthContext.Provider value={value}>
-      {children}
-    </UserAuthContext.Provider>
-  );
+    return true;
+  };
+
+  const logout = async (callback: any = null): Promise<any> => {
+    try {
+      setLoading(true);
+      await axios.post("/api/v1/auth/logout");
+      setUserData({
+        id: 0,
+        role: "",
+        name: "",
+      });
+      setLoading(false);
+      if (callback) callback(null);
+    } catch (err) {
+      setLoading(false);
+      return { error: err };
+    }
+
+    return true;
+  };
+
+  const getUserData = async () => {
+    try {
+      const { data } = await axios.get("/api/v1/auth");
+      setLoading(false);
+      setUserData({
+        id: data.id,
+        role: data.role,
+        name: data.name,
+      });
+    } catch (err) {
+      setLoading(false);
+    }
+    return true;
+  };
+
+  return {
+    login,
+    signup,
+    setUserData,
+    userData,
+    loading,
+    setLoading,
+    logout,
+    getUserData,
+  };
 };
 
-export const useUserData = () => useContext(UserAuthContext);
+interface ProvideAuthProps {
+  children: ReactChild;
+}
+
+export const ProvideAuth = ({ children }: ProvideAuthProps): ReactElement => {
+  const auth = UserAuthProvider();
+  return (
+    <UserAuthContext.Provider value={auth}>{children}</UserAuthContext.Provider>
+  );
+};

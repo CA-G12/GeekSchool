@@ -1,11 +1,12 @@
 import React, { useState, FC } from "react";
 import { Form, Radio, Button, message } from "antd";
 import "antd/dist/antd.min.css";
-import axios from "axios";
 import "./style.css";
+import { Link, useNavigate } from "react-router-dom";
 import { StudentSignUp, ParentSignUp, TeacherSignUp } from "../../components";
 import { signUpDataInterface } from "../../interfaces";
 import { userSchema, parentTeacherUserSchema } from "../../validations";
+import { useUserData } from "../../context/AuthContext/index";
 
 const init = {
   name: null,
@@ -19,8 +20,21 @@ const init = {
 };
 
 const SignUpPage: FC = () => {
+  const { signup, userData } = useUserData();
+
   const [role, setRole] = useState<string>("teacher");
   const [signUpData, setSignUpData] = useState<signUpDataInterface>(init);
+  const [isOkToSend, setIsOkToSend] = useState<boolean>(true);
+  const navigate = useNavigate();
+
+  if (userData) {
+    const { role: userRole, id } = userData;
+    setTimeout(() => {
+      if (userRole === "parent") navigate("/parent");
+      else if (userRole === "teacher") navigate("/teacher");
+      else if (userRole === "student") navigate(`/student/${id}`);
+    }, 100);
+  }
 
   const handleRoleValue: any = (e: any) => {
     setRole(e.target.value);
@@ -34,7 +48,19 @@ const SignUpPage: FC = () => {
       await userSchema.validate({ name, email, password, confPassword });
       if (data.role !== "student")
         await parentTeacherUserSchema.validate({ mobile, location });
-      await axios.post("/api/v1/auth/signup", data);
+
+      const { error } = await signup(data);
+
+      if (!error) {
+        const { role: roleCheck } = userData;
+
+        if (roleCheck === "parent") navigate("/parent");
+        else if (roleCheck === "teacher") navigate("/teacher");
+        else if (roleCheck === "student")
+          message.success("The user is crated successfully!");
+      } else {
+        message.error(error.response?.data?.msg);
+      }
     } catch (err: any) {
       if (err.name === "ValidationError") message.error(err.message);
       message.error(err.response.data.msg);
@@ -43,11 +69,11 @@ const SignUpPage: FC = () => {
 
   const inputValue = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const { value, name } = e.target;
-    setSignUpData({ ...signUpData, [name]: value });
+    setSignUpData({ ...signUpData, role, [name]: value });
   };
 
   const addEmailChildren = (emailChildren: string[]): void => {
-    setSignUpData({ ...signUpData, children: emailChildren });
+    setSignUpData({ ...signUpData, role, children: emailChildren });
   };
 
   return (
@@ -64,49 +90,52 @@ const SignUpPage: FC = () => {
         </div>
       </section>
       <section id="signUp-form">
-        <div>
-          <div className="welcome-massage">
-            <h1>إنشاء حساب</h1>
-            <p>موقع شامل وكامل من خلاله يمكنك إدارة كل شي يخص الطالب!</p>
-          </div>
-          <div className="form">
-            <Form.Item label="أنسب وصف لك:" className="xz">
-              <Radio.Group defaultValue="teacher">
-                <Radio value="teacher" onClick={handleRoleValue}>
-                  معلم
-                </Radio>
-                <Radio value="student" onClick={handleRoleValue}>
-                  طالب
-                </Radio>
-                <Radio value="parent" onClick={handleRoleValue}>
-                  ولي أمر
-                </Radio>
-              </Radio.Group>
-            </Form.Item>
-            {role === "student" ? (
-              <StudentSignUp inputValue={inputValue} />
-            ) : role === "teacher" ? (
-              <TeacherSignUp inputValue={inputValue} />
-            ) : (
-              <ParentSignUp
-                inputValue={inputValue}
-                addEmailChildren={addEmailChildren}
-              />
-            )}
-            <Button
-              type="primary"
-              className="submit-btn"
-              onClick={() => addData(signUpData)}
-              style={{
-                flexShrink: 0,
-                width: "100%",
-                padding: "0.5rem 1rem",
-                background: "var(--main-color)",
-              }}
-            >
-              تسجيل حساب جديد
-            </Button>
-          </div>
+        <div className="welcome-massage">
+          <h1>إنشاء حساب</h1>
+          <p>موقع شامل وكامل من خلاله يمكنك إدارة كل شي يخص الطالب!</p>
+        </div>
+        <div className="form">
+          <Form.Item label="أنسب وصف لك:" className="xz">
+            <Radio.Group defaultValue="teacher">
+              <Radio value="teacher" onClick={handleRoleValue}>
+                معلم
+              </Radio>
+              <Radio value="student" onClick={handleRoleValue}>
+                طالب
+              </Radio>
+              <Radio value="parent" onClick={handleRoleValue}>
+                ولي أمر
+              </Radio>
+            </Radio.Group>
+          </Form.Item>
+          {role === "student" ? (
+            <StudentSignUp inputValue={inputValue} />
+          ) : role === "teacher" ? (
+            <TeacherSignUp inputValue={inputValue} />
+          ) : (
+            <ParentSignUp
+              inputValue={inputValue}
+              addEmailChildren={addEmailChildren}
+              setIsOk={setIsOkToSend}
+            />
+          )}
+          <Button
+            type="primary"
+            className="submit-btn"
+            disabled={!isOkToSend}
+            onClick={() => addData({ ...signUpData, role })}
+            style={{
+              flexShrink: 0,
+              width: "100%",
+              padding: "0.5rem 1rem",
+              background: "var(--main-color)",
+            }}
+          >
+            تسجيل حساب جديد
+          </Button>
+          <p>
+            لديك حساب مسبقا ؟ <Link to="/login">اضغط هنا</Link>
+          </p>
         </div>
       </section>
     </main>

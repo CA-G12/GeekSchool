@@ -2,6 +2,7 @@ import {
   signup, logout, userData, login,
 } from './auth';
 import { serverError, notFound } from './errors';
+
 import {
   addNewAssignment,
   getStats,
@@ -22,9 +23,24 @@ import {
   deleteAssignment,
   postQuestion,
   getClassGrades,
-
   postRecommendation,
+  getTests,
 } from './class';
+
+import {
+  getParentStudent, getTeachersClasses, getReports, getStudentHealth,
+} from './profiles';
+import {
+  putStudentHealth,
+  getStudentClasses,
+  getStudentTests,
+  getStudentGrade,
+  getStudentInfo,
+  getIfStudentUserExists,
+  postStudentReports,
+} from './student';
+import { getTeacherSchedule, getTeacherStudents, teacherInfo } from './teacher';
+import getParentTeachers from './getParentTeachers';
 
 export {
   signup,
@@ -52,5 +68,21 @@ export {
   putAssignmentTeacher,
   putAssignmentStudent,
   addAnnouncement,
+  getTests,
   getClassGrades,
+  getParentTeachers,
+  getTeacherSchedule,
+  putStudentHealth,
+  getTeacherStudents,
+  getStudentClasses,
+  getParentStudent,
+  getTeachersClasses,
+  getStudentTests,
+  teacherInfo,
+  getReports,
+  getStudentHealth,
+  getStudentGrade,
+  getStudentInfo,
+  getIfStudentUserExists,
+  postStudentReports,
 };

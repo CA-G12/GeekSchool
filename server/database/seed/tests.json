@@ -1,122 +1,38 @@
 [
     {
-        "title": "Analog Circuit Design manager",
+        "title": "اختبار أحياء شهري",
         "class_id": 1,
-        "date": "05/27/2022",
-        "notes": "Radical excis skin les"
+        "date": "01/27/2022",
+        "notes": "اختبار الشهر الأول لمادة الأحياء. سيكون من 20 علامة."
     },
     {
-        "title": "Statistician I",
-        "class_id": 5,
-        "date": "09/13/2022",
-        "notes": "Replantation of scalp"
-    },
-    {
-        "title": "Automation Specialist IV",
+        "title": "اختبار أحياء نصفي",
         "class_id": 1,
-        "date": "06/17/2022",
-        "notes": "Closed bx of esophagus"
+        "date": "03/02/2022",
+        "notes": "اختبار نصف السنة لمادة الأحياء. سيكون من 30 علامة."
     },
     {
-        "title": "Accountant III",
+        "title": "اختبار أحياء نهائي",
         "class_id": 1,
-        "date": "08/08/2022",
-        "notes": "Remov pyelos/nephros tub"
+        "date": "05/10/2022",
+        "notes": "اختبار نهاية السنة لمادة الأحياء. سيكون من 50 علامة."
     },
     {
-        "title": "Account Coordinator",
-        "class_id": 1,
-        "date": "01/18/2022",
-        "notes": "Endolymphatic shunt"
-    },
-    {
-        "title": "Registered Nurse",
+        "title": "اختبار رياضيات شهري",
         "class_id": 2,
-        "date": "09/02/2022",
-        "notes": "Hyperbaric oxygenation"
+        "date": "01/27/2022",
+        "notes": "اختبار الشهر الأول لمادة الأحياء. سيكون من 20 علامة."
     },
     {
-        "title": "Geological Engineer",
+        "title": "اختبار رياضيات نصفي",
         "class_id": 2,
-        "date": "10/13/2022",
-        "notes": "Grft repair hrt sept NOS"
+        "date": "03/02/2022",
+        "notes": "اختبار نصف السنة لمادة الأحياء. سيكون من 30 علامة."
     },
     {
-        "title": "GIS Technical Architect",
+        "title": "اختبار رياضيات نهائي",
         "class_id": 2,
-        "date": "09/12/2022",
-        "notes": "Repair of ureter NEC"
-    },
-    {
-        "title": "Graphic Designer",
-        "class_id": 2,
-        "date": "06/28/2022",
-        "notes": "Iridencleisis/iridotasis"
-    },
-    {
-        "title": "Senior Financial Analyst",
-        "class_id": 2,
-        "date": "01/14/2022",
-        "notes": "Pteryg exc w cornea grft"
-    },
-    {
-        "title": "Executive Secretary",
-        "class_id": 3,
-        "date": "07/22/2022",
-        "notes": "Micro exam-endocrine NEC"
-    },
-    {
-        "title": "Director of Sales",
-        "class_id": 3,
-        "date": "07/16/2022",
-        "notes": "Iridotomy NEC"
-    },
-    {
-        "title": "Engineer I",
-        "class_id": 3,
-        "date": "04/05/2022",
-        "notes": "Remove skull tongs"
-    },
-    {
-        "title": "Tax Accountant",
-        "class_id": 3,
-        "date": "10/19/2022",
-        "notes": "Man replac invert uterus"
-    },
-    {
-        "title": "Sales Representative",
-        "class_id": 3,
-        "date": "06/26/2022",
-        "notes": "Cell blk/pap-upper GI"
-    },
-    {
-        "title": "Help Desk Technician",
-        "class_id": 4,
-        "date": "03/13/2022",
-        "notes": "Stern esophagoesophagost"
-    },
-    {
-        "title": "Environmental Tech",
-        "class_id": 4,
-        "date": "08/31/2022",
-        "notes": "Remove dental packing"
-    },
-    {
-        "title": "Actuary",
-        "class_id": 4,
-        "date": "01/12/2022",
-        "notes": "Proctotomy"
-    },
-    {
-        "title": "Associate Professor",
-        "class_id": 4,
-        "date": "07/29/2022",
-        "notes": "Spinal refusion NOS"
-    },
-    {
-        "title": "Project Manager",
-        "class_id": 4,
-        "date": "10/29/2022",
-        "notes": "Superficial radiation"
+        "date": "05/10/2022",
+        "notes": "اختبار نهاية السنة لمادة الأحياء. سيكون من 50 علامة."
     }
 ]

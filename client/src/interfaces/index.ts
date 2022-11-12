@@ -1,23 +1,36 @@
 import {
+  questionInterface,
+  recommendedInterface,
+  feedbackInterface,
+  announcementCard,
+  profileNavLinkInterface,
+  GradesTableProps,
+  DataType,
+  GradeCollapseProps,
+  TeacherAssignmentCardProps,
+  StudentAssignmentCardProps,
+  contentNameHealthInterface,
+  healthCardInterface,
+  ParentInfoInterface,
+  ChildrenData,
+  TeachersData,
+} from "./componentsInterface";
+
+import {
   UserInterface,
   UserDataInterface,
   emailInterface,
   userDataParentInterface,
   signUpDataInterface,
+  userDetailsInterface,
+  reportsInterface,
 } from "./userInterface";
 
-import {
-  announcementCard,
-  questionInterface,
-  recommendedInterface,
-  feedbackInterface,
-} from "./componentsInterface";
 import { dashboardNumberInterface } from "./pageInterfaces";
 
 export {
   UserInterface,
   UserDataInterface,
-  announcementCard,
   dashboardNumberInterface,
   questionInterface,
   recommendedInterface,
@@ -25,4 +38,18 @@ export {
   emailInterface,
   userDataParentInterface,
   signUpDataInterface,
+  announcementCard,
+  userDetailsInterface,
+  reportsInterface,
+  profileNavLinkInterface,
+  GradesTableProps,
+  DataType,
+  GradeCollapseProps,
+  TeacherAssignmentCardProps,
+  StudentAssignmentCardProps,
+  contentNameHealthInterface,
+  healthCardInterface,
+  ParentInfoInterface,
+  ChildrenData,
+  TeachersData,
 };

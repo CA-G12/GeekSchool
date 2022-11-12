@@ -1,3 +1,6 @@
+import { Dispatch, SetStateAction } from "react";
+
+/* eslint-disable camelcase */
 interface UserInterface {
   id: number;
   name: string;
@@ -7,6 +10,12 @@ interface UserInterface {
 interface UserDataInterface {
   userData: UserInterface | null;
   setUserData: Function;
+  login: Function;
+  signup: Function;
+  logout: Function;
+  getUserData: Function;
+  setLoading: Function;
+  loading: boolean;
 }
 
 interface emailInterface {
@@ -20,6 +29,7 @@ interface userDataParentInterface {
   inputValue: () => {};
   /* eslint-disable no-unused-vars */
   addEmailChildren: (emails: string[]) => {};
+  setIsOk: Dispatch<SetStateAction<boolean>>;
 }
 
 interface userDataInterface {
@@ -37,6 +47,22 @@ interface signUpDataInterface {
   children: string[] | [];
 }
 
+interface userDetailsInterface {
+  name: string | null;
+  location: string | null;
+  mobile: string | null;
+  email: string | null;
+  image: string | null;
+  role: string | null;
+}
+
+interface reportsInterface {
+  id: number;
+  description: string;
+  class_id: number;
+  student_id: number;
+}
+
 export {
   UserInterface,
   UserDataInterface,
@@ -44,4 +70,6 @@ export {
   userDataParentInterface,
   userDataInterface,
   signUpDataInterface,
+  userDetailsInterface,
+  reportsInterface,
 };

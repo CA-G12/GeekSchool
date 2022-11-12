@@ -1,24 +1,53 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Form, Input, message } from "antd";
 import "../signUp/style.css";
-import axios from "axios";
+import "./style.css";
+import { Link, useNavigate } from "react-router-dom";
+import { useUserData } from "../../context/AuthContext/index";
 
 const LoginPage: React.FC = () => {
-  const source = axios.CancelToken.source();
+  const [loading, setLoading] = useState<boolean>(true);
+  const { login, userData } = useUserData();
+  const navigate = useNavigate();
+
+  if (userData) {
+    const { role, id } = userData;
+    setTimeout(() => {
+      if (role === "parent") navigate("/parent");
+      else if (role === "teacher") navigate("/teacher");
+      else if (role === "student") navigate(`/student/${id}`);
+    }, 100);
+  }
+
+  useEffect(() => {
+    if (!loading) {
+      const { role, id } = userData;
+      setTimeout(() => {
+        if (role === "parent") navigate("/parent");
+        else if (role === "teacher") navigate("/teacher");
+        else if (role === "student") navigate(`/student/${id}`);
+      }, 100);
+    }
+  }, [loading]);
 
   const onFinish = async (fieldValues: any) => {
     try {
-      const loginMsg = await axios.post(
-        "/api/v1/auth/login",
-        {
-          email: fieldValues.email,
-          loginPassword: fieldValues.loginPassword,
-        },
-        { cancelToken: source.token }
+      const loggedIn = await login(
+        fieldValues.email,
+        fieldValues.loginPassword
       );
-      message.success(loginMsg.data.mag);
-    } catch (error: any) {
-      message.error(error.response.data.msg);
+
+      if (loggedIn) setLoading(false);
+
+      if (!loggedIn?.error) {
+        message.error(loggedIn?.error.response?.data?.msg);
+      }
+    } catch (err: any) {
+      if (err.response?.data?.msg) {
+        message.error(err.response?.data?.msg);
+      } else {
+        message.error(err.message);
+      }
     }
   };
 
@@ -35,7 +64,7 @@ const LoginPage: React.FC = () => {
           </p>
         </div>
       </section>
-      <section id="signUp-form">
+      <section id="signUp-form" className="login-form">
         <div>
           <div className="welcome-massage">
             <h1>عوداً حميداً</h1>
@@ -86,8 +115,6 @@ const LoginPage: React.FC = () => {
                   height: "100%",
                   width: "100%",
                   border: "none",
-                  background:
-                    "linear-gradient(180deg, #13DE82 0%, #0AB68B 100%)",
                 }}
               >
                 تسجيل دخول
@@ -95,8 +122,7 @@ const LoginPage: React.FC = () => {
             </Form.Item>
 
             <p style={{ width: "100%", textAlign: "left" }}>
-              لم تنشئ أي حساب مسبقًا؟{" "}
-              <span style={{ color: "#0AB28B" }}>أنشئ حساب</span>
+              لم تنشئ أي حساب مسبقًا؟ <Link to="/signup">أنشئ حساب</Link>
             </p>
           </Form>
         </div>

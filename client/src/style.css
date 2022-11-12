@@ -7,21 +7,22 @@
   font-family: 'Poppins', sans-serif;
 }
 
+body {
+  height: 100vh;
+  background-color: #F8F9FB;
+}
+
 :root {
   --main-color: linear-gradient(180deg, #13B9DE 0%, #0A8DB6 100%);
   --second-color: #0F93CB;
   --third-color: #0A61B2;
-  --green: #680863;
   --white: #FFFFFF;
   --red: #ED4C4C;
   --black: #111111;
   --gray: #B8C5D3;
-}
-
-#root {
-  background-color: #F8F9FB;
-  height: 100vh;
-  overflow: hidden;
+  --yellow-ball: #FCC43E;
+  --red-ball: #FB7D5B;
+  --light-black: #555555;
 }
 
 .App {
@@ -31,4 +32,21 @@
 
 .App > main {
   height: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: inherit;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2e9cc792;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: inherit;
 }

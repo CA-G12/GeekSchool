@@ -1,5 +1,19 @@
 import StatisticsPage from "./statisticsPage";
 import SignUpPage from "./signUp";
 import LoginPage from "./login";
+import ProfilePage from "./profile";
+import HealthProfilePage from "./healthProfile";
+import LandingPage from "./LandingPage";
+import ParentProfile from "./ParentProfile/ParentProfile";
+import TeacherProfile from "./teacherProfile/TeacherProfile";
 
-export { StatisticsPage, SignUpPage, LoginPage };
+export {
+  SignUpPage,
+  LoginPage,
+  ProfilePage,
+  HealthProfilePage,
+  TeacherProfile,
+  ParentProfile,
+  LandingPage,
+  StatisticsPage,
+};

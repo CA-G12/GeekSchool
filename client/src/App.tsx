@@ -1,81 +1,135 @@
-import React from "react";
-import { createBrowserRouter, RouterProvider, Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ConfigProvider } from "antd";
-import { StatisticsPage, SignUpPage, LoginPage } from "./pages";
+import {
+  StatisticsPage,
+  SignUpPage,
+  LoginPage,
+  ParentProfile,
+  TeacherProfile,
+  HealthProfilePage,
+  LandingPage,
+} from "./pages";
 import Question from "./components/Class/Questions";
-import { UserAuthProvider } from "./context/AuthContext";
-import ClassTest from "./components/ClassTests/ClassTests";
+import { useUserData } from "./context/AuthContext";
+import Assignments from "./components/Class/Assignments/Assignments";
 import StudentsProfile from "./components/Class/StudentsPage";
 import Class from "./components/Class";
+import Grades from "./components/Class/Grades";
+import StudentGrades from "./components/Student/Grades/StudentGrades";
+import ClassSection from "./components/Student/ClassSection/ClassSection";
+import Calender from "./components/Calender";
 import "antd/dist/antd.variable.min.css";
-import "./i18n/config.js";
 import "./style.css";
+import StudentProfile from "./pages/studentProfile";
+import Feedback from "./components/Class/Feedback/Feedback";
+import RecommendedPage from "./pages/recommended/RecommendedPage";
 
 ConfigProvider.config({
   theme: {
-    primaryColor: "#0CBE8A",
+    primaryColor: "#0F93CB",
   },
 });
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Link to="/class">Go to the class page!</Link>,
-  },
-  {
-    path: "/signup",
-    element: <SignUpPage />,
-  },
-  {
-    path: "/login",
-    element: <LoginPage />,
-  },
-  {
-    path: "/student/:studentId",
-    element: <h1>student profile</h1>,
-  },
-  {
-    path: "/class",
-    element: <Class />,
-    children: [
-      {
-        path: "stats",
-        element: <StatisticsPage classId={1} />,
-      },
-      {
-        path: "students",
-        element: <StudentsProfile />,
-      },
-      {
-        path: "assignments",
-        element: <ClassTest />, // ? this just temporary, any one works on the assignments can remove it.
-      },
-      {
-        path: "questions",
-        element: <Question />,
-      },
-      {
-        path: "feedback",
-        element: <h1>Feedback</h1>,
-      },
-      {
-        path: "recommended",
-        element: <h1>Recommended</h1>,
-      },
-      {
-        path: "grades",
-        element: <h1>grades</h1>,
-      },
-    ],
-  },
-]);
+const App: React.FC = () => {
+  const [isGotten, setIsGotten] = useState<boolean>(false);
+  const { getUserData } = useUserData();
 
-const App: React.FC = () => (
-  <UserAuthProvider>
+  useEffect(() => {
+    const getData = async () => {
+      const data = await getUserData();
+
+      if (data) setIsGotten(true);
+    };
+
+    getData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isGotten]);
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <LandingPage />,
+    },
+    {
+      path: "/signup",
+      element: <SignUpPage />,
+    },
+    {
+      path: "/login",
+      element: <LoginPage />,
+    },
+    {
+      path: "/student/:studentId",
+      element: <StudentProfile setIsGotten={setIsGotten} />,
+      children: [
+        {
+          path: "classes",
+          element: <ClassSection />,
+        },
+        {
+          path: "grades",
+          element: <StudentGrades />,
+        },
+        {
+          path: "tests",
+          element: <Calender />,
+        },
+        {
+          path: "health",
+          element: <HealthProfilePage />,
+        },
+      ],
+    },
+    {
+      path: "/parent",
+      element: <ParentProfile setIsGotten={setIsGotten} />,
+    },
+    {
+      path: "/teacher",
+      element: <TeacherProfile setIsGotten={setIsGotten} />,
+    },
+    {
+      path: "/class/:classId",
+      element: <Class />,
+      children: [
+        {
+          path: "stats",
+          element: <StatisticsPage />,
+        },
+        {
+          path: "students",
+          element: <StudentsProfile />,
+        },
+        {
+          path: "assignments",
+          element: <Assignments />,
+        },
+        {
+          path: "questions",
+          element: <Question />,
+        },
+        {
+          path: "feedback",
+          element: <Feedback />,
+        },
+        {
+          path: "recommended",
+          element: <RecommendedPage />,
+        },
+        {
+          path: "grades",
+          element: <Grades />,
+        },
+      ],
+    },
+  ]);
+
+  return (
     <div className="App">
       <RouterProvider router={router} />
     </div>
-  </UserAuthProvider>
-);
+  );
+};
 
 export default App;

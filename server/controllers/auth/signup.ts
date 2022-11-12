@@ -13,20 +13,25 @@ import {
   UserTableInterface,
 } from '../../utils';
 
+const addChild = async (child: any, parentId: number) => {
+  const studentUser = await findUserByEmail(child);
+  const studentId = studentUser?.getDataValue('id');
+
+  await createStudent(studentId, parentId);
+};
+
 const createParentAccount = async (user: UserTableInterface, children?: Array<string>) => {
   const parentUser = await createUser(user);
-  const parentId = parentUser.getDataValue('id');
+  const parentUserId = parentUser.getDataValue('id');
+  const parent = await createParent(parentUserId);
+  const parentId = parent.getDataValue('id');
 
-  children?.forEach(async (child) => {
-    const doesChildStudent = await findUserByEmail(child);
-    const childId = doesChildStudent?.getDataValue('id');
-
-    if (!doesChildStudent) {
-      throw new CustomError(422, 'The email does not exist!');
-    }
-
-    await createStudent(childId, parentId);
-    await createParent(parentId);
+  // [email1, email2]
+  // check if emails in user
+  // create students
+  // create one parent
+  children?.forEach((child) => {
+    addChild(child, parentId);
   });
 };
 
