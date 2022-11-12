@@ -1,3 +1,4 @@
+import StatisticsPage from "./statisticsPage";
 import SignUpPage from "./signUp";
 import LoginPage from "./login";
 import ProfilePage from "./profile";
@@ -14,4 +15,5 @@ export {
   TeacherProfile,
   ParentProfile,
   LandingPage,
+  StatisticsPage,
 };

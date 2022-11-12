@@ -29,7 +29,7 @@ import {
   getStudentTestsQuery,
   studentGradesQuery,
   getStudentInfoQuery,
-  postStudentReportsQuery
+  postStudentReportsQuery,
 } from './student';
 
 import getParentInfoQuery from './parent';

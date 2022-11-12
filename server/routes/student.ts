@@ -6,14 +6,14 @@ import {
   getStudentGrade,
   getStudentInfo,
   getIfStudentUserExists,
-  postStudentReports
+  postStudentReports,
 } from '../controllers';
 import {
   userAuth,
   parentAuth,
   studentAndParent,
   studentAndParentAndTeacher,
-  teacherAuth
+  teacherAuth,
 } from '../middlewares';
 
 const studentRouter = Router();

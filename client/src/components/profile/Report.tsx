@@ -23,7 +23,6 @@ const Reports = ({
   );
   const [reportInput, setReportInput] = useState<string | null>(null);
   const getReports = async () => {
-    
     const { data }: any = await axios.get(
       `/api/v1/profile/student/${studentId}/reports`
     );
@@ -36,7 +35,7 @@ const Reports = ({
   }, []);
 
   const addNewReport = async () => {
-    setReportInput('')
+    setReportInput("");
     try {
       if (!reportInput) {
         throw new Error("Reports field required");
@@ -44,9 +43,8 @@ const Reports = ({
       await axios.post(`/api/v1/student/${studentId}/reports`, {
         description: reportInput,
       });
-      
+
       getReports();
-      
     } catch (error: any) {
       message.error(error);
     }
