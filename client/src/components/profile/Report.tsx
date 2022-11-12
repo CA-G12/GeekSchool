@@ -27,7 +27,6 @@ const Reports = ({
     const { data }: any = await axios.get(
       `/api/v1/profile/student/${studentId}/reports`
     );
-    console.log(data.data)
     setDataReports(data.data);
   };
 

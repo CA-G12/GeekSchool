@@ -5,7 +5,7 @@ import type { Moment } from "moment";
 import moment from "moment";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import './style.css';
+import "./style.css";
 
 type testsType = {
   title: string;

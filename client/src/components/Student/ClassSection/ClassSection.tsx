@@ -8,7 +8,7 @@ import "./ClassSection.css";
 
 const ClassSection: FC = () => {
   const [classes, setClasses] = useState<Array<object>>([]);
-  const { studentId } = useParams()
+  const { studentId } = useParams();
   const source = axios.CancelToken.source();
 
   useEffect(() => {
