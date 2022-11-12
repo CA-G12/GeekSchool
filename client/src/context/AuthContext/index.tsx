@@ -27,11 +27,7 @@ export const UserAuthContext = createContext<UserDataInterface | null>(null);
 export const useUserData = (): any => useContext(UserAuthContext);
 
 export const UserAuthProvider = (): UserDataInterface => {
-  const [userData, setUserData] = useState<any>({
-    id: 0,
-    role: "",
-    name: "",
-  });
+  const [userData, setUserData] = useState<any>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
   const login = async (
@@ -68,15 +64,9 @@ export const UserAuthProvider = (): UserDataInterface => {
     try {
       setLoading(true);
       const res = await axios.post("/api/v1/auth/signup", data);
-      console.log(data);
-      console.log(res);
-
       setUserData({
         ...res.data.data,
       });
-
-      console.log({ userData });
-
       setLoading(false);
       if (callback) callback(null);
     } catch (err) {

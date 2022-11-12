@@ -6,21 +6,13 @@ const studentRelatedToParent = async (req: any, res: Response, next: NextFunctio
   try {
     const { id, role } = req.user;
     const { studentId } = req.params;
-    const { data }:any = await studentParentRelationQuery(id, studentId);
-    const isRelated = data.length;
 
-    switch (role) {
-      case role === 'student':
-        throw new CustomError(401, 'you are not allowed to see your reports');
-
-      case role === 'teacher':
-        next();
-        break;
-      case role === 'parent' && isRelated:
-        next();
-        break;
-      default:
-        throw new CustomError(401, 'Unauthenticated');
+    if (role === 'teacher') next();
+    else if (role === 'parent') {
+      const { data }:any = await studentParentRelationQuery(id, studentId);
+      const isRelated = data.length;
+      if (!isRelated) throw new CustomError(401, 'unAuthenticated');
+      next();
     }
   } catch (error) {
     next(error);

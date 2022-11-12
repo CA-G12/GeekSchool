@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 /* eslint-disable jsx-a11y/aria-role */
 import React, { useEffect, useState, Dispatch, SetStateAction } from "react";
 import { message } from "antd";
@@ -15,6 +16,14 @@ interface UserItem {
   img: string;
   location: string;
   mobile: string;
+}
+
+interface studentsInterface {
+  teacher_id: number;
+  student_id: number;
+  name: string;
+  email: string;
+  img: string;
 }
 
 const initUser: UserItem = {
@@ -38,13 +47,13 @@ interface ProfileProps {
 
 const TeacherProfile: React.FC<ProfileProps> = ({ setIsGotten }) => {
   const source = axios.CancelToken.source();
-  const [students, setStudents] = useState<UserItem[]>([]);
+  const [students, setStudents] = useState<studentsInterface[]>([]);
   const [classes, setClasses] = useState<classItem[]>([]);
   const [user, setUser] = useState<UserItem>(initUser);
   const { userData } = useUserData();
 
   useEffect(() => {
-    const fetchteacherInfo = async () => {
+    const fetchTeacherInfo = async () => {
       try {
         const data = await axios.get("/api/v1/teacher/info", {
           cancelToken: source.token,
@@ -83,7 +92,7 @@ const TeacherProfile: React.FC<ProfileProps> = ({ setIsGotten }) => {
 
     fetchStudents();
     fetchClasses();
-    fetchteacherInfo();
+    fetchTeacherInfo();
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -101,16 +110,15 @@ const TeacherProfile: React.FC<ProfileProps> = ({ setIsGotten }) => {
     >
       <section id="teacher-tables">
         <ProfileCard
-          data={students.map((student: UserItem) => ({
+          data={students.map((student: studentsInterface) => ({
             img: student.img,
             name: student.name,
-            id: student.id,
+            id: student.student_id,
           }))}
           title="الطلاب"
           type="students"
           _role="teacher"
         />
-
         <ProfileCard
           data={classes.map((oneClass: classItem) => ({
             img: avtar,

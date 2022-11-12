@@ -5,6 +5,7 @@ import type { Moment } from "moment";
 import moment from "moment";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import "./style.css";
 
 type testsType = {
   title: string;
@@ -60,7 +61,11 @@ const Calender: React.FC = () => {
     );
   };
 
-  return <Calendar dateCellRender={dateCellRender} />;
+  return (
+    <section id="test-calendar">
+      <Calendar dateCellRender={dateCellRender} />
+    </section>
+  );
 };
 
 export default Calender;

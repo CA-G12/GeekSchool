@@ -1,4 +1,5 @@
 import { FC, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
 
@@ -7,13 +8,13 @@ import "./ClassSection.css";
 
 const ClassSection: FC = () => {
   const [classes, setClasses] = useState<Array<object>>([]);
-
+  const { studentId } = useParams();
   const source = axios.CancelToken.source();
 
   useEffect(() => {
     const fetchClasses = async () => {
       try {
-        const data = await axios.get("/api/v1/student/classes");
+        const data = await axios.get(`/api/v1/student/${studentId}/classes`);
 
         setClasses(data.data.data);
       } catch (error) {
