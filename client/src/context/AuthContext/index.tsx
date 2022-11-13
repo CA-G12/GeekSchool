@@ -36,8 +36,8 @@ export const UserAuthProvider = (): UserDataInterface => {
     loginPassword: string,
     callback: any = null
   ): Promise<any> => {
+    setLoading(true);
     try {
-      setLoading(true);
       const res = await axios.post("/api/v1/auth/login", {
         email,
         loginPassword,
