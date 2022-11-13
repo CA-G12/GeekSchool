@@ -21,9 +21,9 @@ const LoginPage: React.FC = () => {
     if (!loading) {
       if (userData) {
         const { role, id } = userData;
-          if (role === "parent") navigate("/parent");
-          else if (role === "teacher") navigate("/teacher");
-          else if (role === "student") navigate(`/student/${id}/classes`);
+        if (role === "parent") navigate("/parent");
+        else if (role === "teacher") navigate("/teacher");
+        else if (role === "student") navigate(`/student/${id}/classes`);
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
