@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ConfigProvider } from "antd";
-import Question from "./components/Class/Questions";
-
 import {
+  StatisticsPage,
   SignUpPage,
   LoginPage,
   ParentProfile,
@@ -11,9 +10,9 @@ import {
   HealthProfilePage,
   LandingPage,
 } from "./pages";
-import Assignments from "./components/Class/Assignments/Assignments";
+import Question from "./components/Class/Questions";
 import { useUserData } from "./context/AuthContext";
-import StatsDummy from "./components/StatsDummy/Dummy";
+import Assignments from "./components/Class/Assignments/Assignments";
 import StudentsProfile from "./components/Class/StudentsPage";
 import Class from "./components/Class";
 import Grades from "./components/Class/Grades";
@@ -96,7 +95,7 @@ const App: React.FC = () => {
       children: [
         {
           path: "stats",
-          element: <StatsDummy />,
+          element: <StatisticsPage />,
         },
         {
           path: "students",

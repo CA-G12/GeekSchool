@@ -12,22 +12,21 @@ const LoginPage: React.FC = () => {
 
   if (userData) {
     const { role, id } = userData;
-    setTimeout(() => {
-      if (role === "parent") navigate("/parent");
-      else if (role === "teacher") navigate("/teacher");
-      else if (role === "student") navigate(`/student/${id}`);
-    }, 100);
+    if (role === "parent") navigate("/parent");
+    else if (role === "teacher") navigate("/teacher");
+    else if (role === "student") navigate(`/student/${id}`);
   }
 
   useEffect(() => {
     if (!loading) {
-      const { role, id } = userData;
-      setTimeout(() => {
+      if (userData) {
+        const { role, id } = userData;
         if (role === "parent") navigate("/parent");
         else if (role === "teacher") navigate("/teacher");
-        else if (role === "student") navigate(`/student/${id}`);
-      }, 100);
+        else if (role === "student") navigate(`/student/${id}/classes`);
+      }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
 
   const onFinish = async (fieldValues: any) => {
@@ -39,7 +38,7 @@ const LoginPage: React.FC = () => {
 
       if (loggedIn) setLoading(false);
 
-      if (!loggedIn?.error) {
+      if (loggedIn?.error) {
         message.error(loggedIn?.error.response?.data?.msg);
       }
     } catch (err: any) {

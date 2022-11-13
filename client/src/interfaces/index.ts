@@ -20,21 +20,22 @@ import {
   UserInterface,
   UserDataInterface,
   emailInterface,
-  userDataInterface,
   userDataParentInterface,
   signUpDataInterface,
   userDetailsInterface,
   reportsInterface,
 } from "./userInterface";
 
+import { dashboardNumberInterface } from "./pageInterfaces";
+
 export {
   UserInterface,
   UserDataInterface,
+  dashboardNumberInterface,
   questionInterface,
   recommendedInterface,
   feedbackInterface,
   emailInterface,
-  userDataInterface,
   userDataParentInterface,
   signUpDataInterface,
   announcementCard,

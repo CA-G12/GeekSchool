@@ -42,6 +42,7 @@ const ParentProfile: FC<{
       role: "",
     },
   ]);
+  const [loading, setLoading] = useState(true);
   const controller = new AbortController();
 
   useEffect(() => {
@@ -73,9 +74,10 @@ const ParentProfile: FC<{
     fetchChildren();
     fetchTeachers();
 
+    setLoading(false);
     return () => controller.abort();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [loading]);
   // if (userData?.role !== "parent") {
   //   return <Navigate to="/login" />;
   // }

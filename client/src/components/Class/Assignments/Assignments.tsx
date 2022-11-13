@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Dropdown, Space, Button, Menu, MenuProps, Input } from "antd";
+import { Dropdown, Space, Button, Menu, MenuProps } from "antd";
 import { PlusOutlined, FileTextOutlined } from "@ant-design/icons";
 import axios from "axios";
 import { useUserData } from "../../../context/AuthContext";
@@ -9,7 +9,7 @@ import AssignmentModal from "../../AssignmentModal";
 import { StudentAssignmentCard, TeacherAssignmentCard } from "../cards";
 import "./Assignments.css";
 
-const { Search } = Input;
+// const { Search } = Input;
 
 const Assignments: React.FC = () => {
   const [assignments, setAssignments] = useState<Array<object>>([]);
@@ -19,11 +19,11 @@ const Assignments: React.FC = () => {
   const role = useUserData().userData?.role;
   const source = axios.CancelToken.source();
 
-  // ? The search function.
-  const onSearch = (value: string) =>
-    setAssignments((prevValue: any) =>
-      prevValue.filter((object: any) => object.title.includes(value))
-    );
+  // // ? The search function.
+  // const onSearch = (value: string) =>
+  //   setAssignments((prevValue: any) =>
+  //     prevValue.filter((object: any) => object.title.includes(value))
+  //   );
 
   // ? Button events
   const handleMenuClick: MenuProps["onClick"] = (e) => {
@@ -73,17 +73,17 @@ const Assignments: React.FC = () => {
       <main className="class-assignment">
         <h1 className="assignment-title">التكليفات</h1>
         <section className="assignment-add-search">
-          <Search
+          {/* <Search
             placeholder="ابحث عن تكليف"
             className="search"
             onSearch={onSearch}
             enterButton
-          />
+          /> */}
           <Dropdown overlay={menu} className="dropdown">
             <Button className="dropdown-button">
               <Space>
                 <PlusOutlined className="plus-icon" />
-                إضافة
+                AddTest
               </Space>
             </Button>
           </Dropdown>

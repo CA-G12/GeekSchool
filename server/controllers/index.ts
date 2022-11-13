@@ -37,7 +37,7 @@ import {
   getStudentGrade,
   getStudentInfo,
   getIfStudentUserExists,
-  postStudentReports
+  postStudentReports,
 } from './student';
 import { getTeacherSchedule, getTeacherStudents, teacherInfo } from './teacher';
 import getParentTeachers from './getParentTeachers';
