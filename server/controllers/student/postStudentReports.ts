@@ -10,13 +10,6 @@ const postStudentReports = async (req: any, res: Response, next: NextFunction) =
   } catch (error) {
     next(error);
   }
+}
 
-//   try {
-//     const { studentId } = req.params;
-//     const data:any = await getStudentTestsQuery(studentId);
-//     res.json({ msg: 'The student tests', data });
-//   } catch (error) {
-//     next(error);
-//   }
-};
 export default postStudentReports;
