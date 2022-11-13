@@ -21,7 +21,7 @@ const Reports = ({
   const [dataReports, setDataReports] = useState<reportsInterface[] | null>(
     null
   );
-  const [reportInput, setReportInput] = useState<string | null>(null);
+  const [reportInput, setReportInput] = useState<string>('');
   const getReports = async () => {
     
     const { data }: any = await axios.get(
@@ -62,6 +62,7 @@ const Reports = ({
               status={reportInput === null ? "" : !reportInput ? "error" : ""}
               placeholder="أكتب الشكوى هنا"
               onChange={(e) => setReportInput(e.target.value)}
+              value={reportInput}
             />
           )}
           {visitRole === "teacher" && (
