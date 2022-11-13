@@ -20,6 +20,7 @@ const StudentProfile: FC<{
 }> = ({ setIsGotten }) => {
   const { studentId } = useParams();
   const { userData } = useUserData();
+  const [loading, setLoading] = useState(true);
   const [studentData, setStudentData] = useState<StudentDataInterface>({
     id: 0,
     name: "",
@@ -34,6 +35,7 @@ const StudentProfile: FC<{
     try {
       const data = await axios.get(`/api/v1/student/${studentId}/info`);
       setStudentData(data.data.data[0]);
+      setLoading(false);
     } catch (error: any) {
       message.error(error);
     }
@@ -42,7 +44,7 @@ const StudentProfile: FC<{
   useEffect(() => {
     getStudentInfo();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [loading]);
 
   // if (!studentData) return <Spin tip="Loading..." />;
   return (

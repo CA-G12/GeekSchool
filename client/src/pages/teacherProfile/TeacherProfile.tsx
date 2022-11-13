@@ -50,6 +50,7 @@ const TeacherProfile: React.FC<ProfileProps> = ({ setIsGotten }) => {
   const [students, setStudents] = useState<studentsInterface[]>([]);
   const [classes, setClasses] = useState<classItem[]>([]);
   const [user, setUser] = useState<UserItem>(initUser);
+  const [loading, setLoading] = useState(true);
   const { userData } = useUserData();
 
   useEffect(() => {
@@ -93,9 +94,10 @@ const TeacherProfile: React.FC<ProfileProps> = ({ setIsGotten }) => {
     fetchStudents();
     fetchClasses();
     fetchTeacherInfo();
+    setLoading(false);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [loading]);
 
   return (
     <ProfilePage
