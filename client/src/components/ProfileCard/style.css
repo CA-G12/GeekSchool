@@ -39,7 +39,7 @@
     color: var(--third-color) !important;
     margin: 4px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 30px;
 }
 
 .teachers_number {
@@ -49,4 +49,27 @@
 
 .ant-list-item-meta-content {
     padding: 0 14px;
+}
+
+.test {
+    margin: 1rem 0;
+    padding: 14px !important;
+    transition:.1s ease-out .1s;
+}
+
+.test:hover{
+    background-color: #F5F5F5;
+}
+
+.ant-list-item-meta-title{
+    font-size: 1.3rem !important;
+}
+
+.ant-avatar-image {
+    min-width: 70px;
+    min-height: 70px;
+}
+
+.test .ant-list-item-meta {
+    align-items: center;
 }

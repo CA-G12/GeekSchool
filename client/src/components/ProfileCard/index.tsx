@@ -57,49 +57,44 @@ const ProfileCard: ElementType = ({
         }}
       >
         <div>
-          <List
-            dataSource={data}
-            renderItem={(item) => (
-              <List.Item key={item.mobile}>
-                <List.Item.Meta
-                  avatar={<Avatar src={item.img} />}
-                  title={
-                    type === "students" ? (
-                      <Link
-                        to={`/student/${item.id}/classes`}
-                        style={{
-                          fontSize: "1rem",
-                          color: "var(--light-black)",
-                        }}
-                      >
-                        {item.name}
-                      </Link>
-                    ) : (
-                      <Link
-                        to={`/class/${item.id}/stats`}
-                        style={{
-                          fontSize: "1rem",
-                          color: "var(--light-black)",
-                        }}
-                      >
-                        {item.name}
-                      </Link>
-                    )
-                  }
-                  description={item.mobile}
-                />
-                <div className="icons">
-                  {type === "students" ? (
-                    <>
-                      <MailOutlined /> <WhatsAppOutlined />
-                    </>
-                  ) : (
+          {type === "students" ? (
+            <List
+            
+              dataSource={data}
+              renderItem={(item) => (
+                <Link to={`/student/${item.id}/classes`}>
+                  <List.Item key={item.mobile} className="test">
+                    <List.Item.Meta
+                      avatar={<Avatar src={item.img} />}
+                      title= {item.name}
+                      description={item.mobile}
+                    />
+                    <div className="icons">
+                        <MailOutlined /> <WhatsAppOutlined />
+                    </div>
+                  </List.Item>
+                </Link>
+              )}
+            />
+          ) : (
+            <List
+              dataSource={data}
+              renderItem={(item) => (
+                <Link to={`/class/${item.id}/stats`}>
+                  <List.Item key={item.mobile}>
+                    <List.Item.Meta
+                      avatar={<Avatar src={item.img} />}
+                      title="test"
+                      description={item.mobile}
+                    />
+                    <div className="icons">
                     <AppstoreAddOutlined />
-                  )}
-                </div>
-              </List.Item>
-            )}
-          />
+                    </div>
+                  </List.Item>
+                </Link>
+              )}
+            />
+          )}
         </div>
       </div>
     </div>
@@ -112,26 +107,25 @@ ProfileCard.defaultProps = {
 
 export default ProfileCard;
 
-// required data to run this component
-
-// interface DataType {
-//   name:string;
-//   mobile: string;
-//   img:string;
-//   id: number;
+// {
+//   type === "students" ? (
+//     <Link
+//       to={`/student/${item.id}/classes`}
+//       style={{
+//         fontSize: "1rem",
+//         color: "var(--light-black)",
+//       }}
+//     >
+//       {item.name}
+//     </Link>
+//   ) : (
+//     <Link
+//       style={{
+//         fontSize: "1rem",
+//         color: "var(--light-black)",
+//       }}
+//     >
+//       {item.name}
+//     </Link>
+//   )
 // }
-
-// const testData: DataType[] = [
-//   {
-//       "name": "Mustafa",
-//       "mobile": "9528140936",
-//       "img": "http://dummyimage.com/219x100.png/5fa2dd/ffffff",
-//       "id": 1,
-//   },
-//   {
-//       "name": "HUMAN RABIES VIRUS IMMUNE GLOBULIN",
-//       "mobile": "7127917035",
-//       "img": "http://dummyimage.com/118x100.png/dddddd/000000",
-//       "id": 2,
-//   }
-// ];
