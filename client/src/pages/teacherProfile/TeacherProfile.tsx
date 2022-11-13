@@ -94,7 +94,7 @@ const TeacherProfile: React.FC<ProfileProps> = ({ setIsGotten }) => {
     fetchStudents();
     fetchClasses();
     fetchTeacherInfo();
-    setLoading(false)
+    setLoading(false);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);

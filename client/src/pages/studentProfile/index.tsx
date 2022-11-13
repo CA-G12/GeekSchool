@@ -35,7 +35,7 @@ const StudentProfile: FC<{
     try {
       const data = await axios.get(`/api/v1/student/${studentId}/info`);
       setStudentData(data.data.data[0]);
-      setLoading(false)
+      setLoading(false);
     } catch (error: any) {
       message.error(error);
     }
