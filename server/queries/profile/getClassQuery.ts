@@ -1,10 +1,10 @@
 import { Class } from '../../models';
 
 const getClassQuery = (id: string) => (
-    Class.findAll({
+  Class.findAll({
     raw: true,
     where: {
-      id
+      id,
     },
   })
 );

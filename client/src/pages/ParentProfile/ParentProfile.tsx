@@ -54,29 +54,23 @@ const ParentProfile: FC<{
       try {
         const data = await axios.get("/api/v1/parent/info", {
           cancelToken: source.token,
-
         });
-  
+
         setParentInfo(data.data.data[0]);
-      } catch(error: any) {
-        console.log({error});
-        
-        navigate('/')
+      } catch (error: any) {
+        navigate("/");
         message.error(error.response.data.msg);
       }
-
     };
 
     const fetchChildren = async () => {
-      try{
+      try {
         const data = await axios.get(`/api/v1/profile/parent/students`, {
           cancelToken: source.token,
-
         });
-  
-        setChildren(data.data.data);
 
-      } catch(error :any) {
+        setChildren(data.data.data);
+      } catch (error: any) {
         message.error(error.response.data.msg);
       }
     };
@@ -86,10 +80,9 @@ const ParentProfile: FC<{
         const data = await axios.get("/api/v1/parent/teachers", {
           cancelToken: source.token,
         });
-  
-        setTeachers(data.data.data);
 
-      } catch(error: any) {
+        setTeachers(data.data.data);
+      } catch (error: any) {
         message.error(error.response.data.msg);
       }
     };

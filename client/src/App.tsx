@@ -20,6 +20,7 @@ import StudentGrades from "./components/Student/Grades/StudentGrades";
 import ClassSection from "./components/Student/ClassSection/ClassSection";
 import Calender from "./components/Calender";
 import "antd/dist/antd.variable.min.css";
+import "antd/dist/antd.min.css";
 import "./style.css";
 import StudentProfile from "./pages/studentProfile";
 import Feedback from "./components/Class/Feedback/Feedback";

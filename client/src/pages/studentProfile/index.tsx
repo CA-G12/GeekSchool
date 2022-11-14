@@ -37,7 +37,7 @@ const StudentProfile: FC<{
 
   const getStudentInfo = async () => {
     try {
-      const data = await axios.get(`/api/v1/student/${studentId}/info`,{
+      const data = await axios.get(`/api/v1/student/${studentId}/info`, {
         cancelToken: source.token,
         signal: controller.signal,
       });
@@ -45,14 +45,14 @@ const StudentProfile: FC<{
       setLoading(false);
     } catch (error: any) {
       message.error(error);
-      navigate('/')
+      navigate("/");
     }
   };
 
   useEffect(() => {
     getStudentInfo();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     return () => controller.abort();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
 
   // if (!studentData) return <Spin tip="Loading..." />;

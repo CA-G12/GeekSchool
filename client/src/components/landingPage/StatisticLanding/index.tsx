@@ -1,7 +1,7 @@
 import "./index.css";
 
 const StatisticLanding = () => (
-  <div className="statistic" id="statistics">
+  <section className="statistic" id="statistics">
     <div className="left">
       <div className="content">
         <div className="line">
@@ -60,12 +60,11 @@ const StatisticLanding = () => (
         </div>
       </div>
     </div>
-
     <div className="right">
       <h1>معاً لتعليم أفضل</h1>
       <p>نهدف إلى بناء عملية تعليمية بجودة عالية</p>
     </div>
-  </div>
+  </section>
 );
 
 export default StatisticLanding;

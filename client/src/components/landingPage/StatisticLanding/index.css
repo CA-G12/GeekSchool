@@ -1,26 +1,27 @@
 * {
     font-family: 'Poppins';
     font-style: normal;
-
 }
 
 .statistic {
     background-color: #0B214B;
-    height: 100vh;
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    /* gap: 4rem */
+    align-items: center;
+    padding: 3rem 6rem;
+    gap: 2rem;
+    margin-bottom: 2rem;
 }
 
 .statistic p {
     color: var(--white);
+    margin: 0;
+    font-size: 1rem;
 }
 
-.right,
-.left {
+.statistic .right,
+.statistic .left {
     display: flex;
-    height: 50%;
     flex-direction: column;
     justify-content: center !important;
     align-items: center !important;
@@ -28,24 +29,11 @@
     text-align: center !important;
 }
 
-.right {
-    /* gap: 1rem !important; */
-}
-
-.left {
-    /* width: 30%;
-    padding-top:1.3rem; */
-}
-
 .content {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
     gap: 1rem !important;
-
-
-
 }
 
 .line {
@@ -55,11 +43,7 @@
     align-items: center;
     justify-content: flex-start;
     text-align: center;
-
-
-
 }
-
 
 .number {
     width: 20%;

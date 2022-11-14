@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
 /* eslint-disable jsx-a11y/aria-role */
 import React, { useEffect, useState, Dispatch, SetStateAction } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import { message } from "antd";
 import axios from "axios";
 import ProfilePage from "../profile";
@@ -65,9 +65,7 @@ const TeacherProfile: React.FC<ProfileProps> = ({ setIsGotten }) => {
 
         setUser(data.data.data[0]);
       } catch (error: any) {
-        console.log(error);
-        
-        navigate('/')
+        navigate("/");
         message.error(error.response.data.msg);
       }
     };
@@ -85,7 +83,7 @@ const TeacherProfile: React.FC<ProfileProps> = ({ setIsGotten }) => {
 
     const fetchClasses = async () => {
       try {
-        if(userData.id) {
+        if (userData.id) {
           const data = await axios.get(
             `/api/v1/profile/teacher/${userData.id}/classes`,
             {
@@ -93,7 +91,6 @@ const TeacherProfile: React.FC<ProfileProps> = ({ setIsGotten }) => {
             }
           );
           setClasses(data?.data?.data);
-
         }
       } catch (error: any) {
         message.error(error.response.data.msg);
@@ -132,11 +129,10 @@ const TeacherProfile: React.FC<ProfileProps> = ({ setIsGotten }) => {
         />
         <ProfileCard
           data={classes.map((oneClass: classItem) => ({
-              img: avtar,
-              name: oneClass?.name,
-              id: oneClass?.id,
-            })
-          )}
+            img: avtar,
+            name: oneClass?.name,
+            id: oneClass?.id,
+          }))}
           title="الفصول الدراسية"
           type="classes"
           _role="teacher"
