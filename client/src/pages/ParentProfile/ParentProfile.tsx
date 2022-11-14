@@ -58,8 +58,6 @@ const ParentProfile: FC<{
 
         setParentInfo(data.data.data[0]);
       } catch (error: any) {
-        console.log({ error });
-
         navigate("/");
         message.error(error.response.data.msg);
       }

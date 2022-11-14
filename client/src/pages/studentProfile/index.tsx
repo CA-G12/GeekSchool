@@ -51,8 +51,8 @@ const StudentProfile: FC<{
 
   useEffect(() => {
     getStudentInfo();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     return () => controller.abort();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
 
   // if (!studentData) return <Spin tip="Loading..." />;
