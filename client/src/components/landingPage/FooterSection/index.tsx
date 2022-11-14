@@ -179,7 +179,7 @@ const Footer = () => (
           <GithubOutlined />
         </div>
         <div>
-          <p>معاً لتعليم أفضل</p>
+          <p>معاً لتعليم أفضل</p> 
         </div>
       </div>
     </footer>
