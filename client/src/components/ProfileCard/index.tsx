@@ -63,7 +63,7 @@ const ProfileCard: ElementType = ({
               dataSource={data}
               renderItem={(item) => (
                 <Link to={`/student/${item.id}/classes`}>
-                  <List.Item key={item.mobile} className="test">
+                  <List.Item key={item.mobile} className="inner_content">
                     <List.Item.Meta
                       avatar={<Avatar src={item.img} />}
                       title= {item.name}
@@ -81,10 +81,10 @@ const ProfileCard: ElementType = ({
               dataSource={data}
               renderItem={(item) => (
                 <Link to={`/class/${item.id}/stats`}>
-                  <List.Item key={item.mobile}>
+                  <List.Item key={item.mobile} className="inner_content">
                     <List.Item.Meta
                       avatar={<Avatar src={item.img} />}
-                      title="test"
+                      title= {item.name}
                       description={item.mobile}
                     />
                     <div className="icons">
@@ -106,26 +106,3 @@ ProfileCard.defaultProps = {
 };
 
 export default ProfileCard;
-
-// {
-//   type === "students" ? (
-//     <Link
-//       to={`/student/${item.id}/classes`}
-//       style={{
-//         fontSize: "1rem",
-//         color: "var(--light-black)",
-//       }}
-//     >
-//       {item.name}
-//     </Link>
-//   ) : (
-//     <Link
-//       style={{
-//         fontSize: "1rem",
-//         color: "var(--light-black)",
-//       }}
-//     >
-//       {item.name}
-//     </Link>
-//   )
-// }

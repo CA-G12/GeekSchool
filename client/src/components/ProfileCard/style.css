@@ -57,7 +57,7 @@
     transition:.1s ease-out .1s;
 }
 
-.test:hover{
+.inner_content:hover{
     background-color: #F5F5F5;
 }
 
@@ -70,6 +70,6 @@
     min-height: 70px;
 }
 
-.test .ant-list-item-meta {
+.inner_content .ant-list-item-meta {
     align-items: center;
 }
