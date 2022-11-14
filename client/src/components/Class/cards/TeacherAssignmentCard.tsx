@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Card, Button, Drawer } from "antd";
-import { UnorderedListOutlined} from "@ant-design/icons";
+import { UnorderedListOutlined, DeleteFilled } from "@ant-design/icons";
 import { useParams } from "react-router-dom";
 import { TeacherAssignmentCardProps } from "../../../interfaces";
 import "./AssignmentCards.css";
@@ -63,7 +63,7 @@ const TeacherAssignmentCard: React.FC<TeacherAssignmentCardProps> = ({
 
   return (
     <div>
-      <Card >
+      <Card style={{ margin: "5px" }}>
         <div className="card-title">
           <div className="title-content">
             <div className="icon-title">
@@ -75,21 +75,21 @@ const TeacherAssignmentCard: React.FC<TeacherAssignmentCardProps> = ({
           </div>
 
           <div className="title-side">
-            <p style={{ color: "#7C7C7C", marginLeft: '15px'}}>Posted : {createdAt.slice(0, 10)}</p>
-            {/* <DeleteFilled style={{ color: "red" }} /> */}
+            <p style={{ color: "#7C7C7C" }}>Posted: {createdAt}</p>
+            <DeleteFilled style={{ color: "red" }} />
           </div>
         </div>
 
         <div className="card-content">
-          <div className="assignment_left">
+          <div className="left">
             <p className="assignment-content">{description}</p>
           </div>
 
-          <div className="assignment_right">
+          <div className="right">
             <div className="turnedOn">
               <Button onClick={showFirstDrawer}>
-                تم تسليم
-              <span id={String(id)}>{submittedAssignment.length}</span>
+                <span id={String(id)}>{submittedAssignment.length}</span>Turned
+                on
               </Button>
               <Drawer
                 title="الطلاب الذين قاموا بتسليم التكليف!"
@@ -113,8 +113,8 @@ const TeacherAssignmentCard: React.FC<TeacherAssignmentCardProps> = ({
             </div>
             <div className="missing">
               <Button onClick={showSecondDrawer}>
-                لم يتم التسليم
                 <span id={String(id)}>{notSubmittedAssignment.length}</span>
+                Missing
               </Button>
               <Drawer
                 title="الطلاب الذيم لم يسلموا التكليف!"
