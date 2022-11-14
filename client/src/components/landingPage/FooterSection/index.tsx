@@ -86,7 +86,7 @@ const forthCol = [
 
 const Footer = () => (
   <div className="footer_wrapper">
-    <footer>
+    <footer id="footer_section">
       <div className="footer_banner">
         <img className="left_hash" src={leftHash} alt="leftHash" />
         <img className="right_hash" src={rightHash} alt="rightHash" />
@@ -133,7 +133,7 @@ const Footer = () => (
           renderItem={(item) => (
             <List.Item className="listItem-footer">
               <List.Item.Meta
-                title={<a href="https://ant.design">{item.title}</a>}
+                title={<a href="#footer_section">{item.title}</a>}
               />
             </List.Item>
           )}
@@ -146,7 +146,7 @@ const Footer = () => (
           renderItem={(item) => (
             <List.Item className="listItem-footer">
               <List.Item.Meta
-                title={<a href="https://ant.design">{item.title}</a>}
+                title={<a href="#footer_section">{item.title}</a>}
               />
             </List.Item>
           )}
@@ -159,7 +159,7 @@ const Footer = () => (
           renderItem={(item) => (
             <List.Item className="listItem-footer">
               <List.Item.Meta
-                title={<a href="https://ant.design">{item.title}</a>}
+                title={<a href="#footer_section">{item.title}</a>}
               />
             </List.Item>
           )}
