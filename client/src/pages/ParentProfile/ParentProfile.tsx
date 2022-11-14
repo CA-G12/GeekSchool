@@ -46,18 +46,21 @@ const ParentProfile: FC<{
     },
   ]);
   const [loading, setLoading] = useState(true);
-  const controller = new AbortController();
+  const source = axios.CancelToken.source();
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const data = await axios.get("/api/v1/parent/info", {
-          signal: controller.signal,
+          cancelToken: source.token,
+
         });
   
         setParentInfo(data.data.data[0]);
       } catch(error: any) {
+        console.log({error});
+        
         navigate('/')
         message.error(error.response.data.msg);
       }
@@ -67,7 +70,8 @@ const ParentProfile: FC<{
     const fetchChildren = async () => {
       try{
         const data = await axios.get(`/api/v1/profile/parent/students`, {
-          signal: controller.signal,
+          cancelToken: source.token,
+
         });
   
         setChildren(data.data.data);
@@ -80,7 +84,7 @@ const ParentProfile: FC<{
     const fetchTeachers = async () => {
       try {
         const data = await axios.get("/api/v1/parent/teachers", {
-          signal: controller.signal,
+          cancelToken: source.token,
         });
   
         setTeachers(data.data.data);
@@ -95,7 +99,6 @@ const ParentProfile: FC<{
     fetchTeachers();
 
     setLoading(false);
-    return () => controller.abort();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
 

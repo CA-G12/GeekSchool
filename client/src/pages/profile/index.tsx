@@ -91,11 +91,11 @@ const ProfilePage: FC<ProfilePageProps> = ({
               >
                 <Link
                   to={
-                    userData.role === "teacher"
+                    userData?.role === "teacher"
                       ? "/teacher"
-                      : userData.role === "parent"
+                      : userData?.role === "parent"
                       ? "/parent"
-                      : `/student/${userData.id}`
+                      : `/student/${userData?.id}`
                   }
                 >
                   view Profile
