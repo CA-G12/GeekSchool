@@ -52,6 +52,8 @@ export const UserAuthProvider = (): UserDataInterface => {
       if (callback) callback(null);
     } catch (err) {
       setLoading(false);
+      console.log(err);
+      window.location.href = "/"
       return { error: err };
     }
 

@@ -1,6 +1,7 @@
 /* eslint-disable camelcase */
 /* eslint-disable jsx-a11y/aria-role */
 import React, { useEffect, useState, Dispatch, SetStateAction } from "react";
+import { useNavigate } from 'react-router-dom';
 import { message } from "antd";
 import axios from "axios";
 import ProfilePage from "../profile";
@@ -53,15 +54,20 @@ const TeacherProfile: React.FC<ProfileProps> = ({ setIsGotten }) => {
   const [loading, setLoading] = useState(true);
   const { userData } = useUserData();
 
+  const navigate = useNavigate();
+  const controller = new AbortController();
+
   useEffect(() => {
     const fetchTeacherInfo = async () => {
       try {
         const data = await axios.get("/api/v1/teacher/info", {
           cancelToken: source.token,
+          signal: controller.signal,
         });
 
         setUser(data.data.data[0]);
       } catch (error: any) {
+        navigate('/')
         message.error(error.response.data.msg);
       }
     };
@@ -70,6 +76,7 @@ const TeacherProfile: React.FC<ProfileProps> = ({ setIsGotten }) => {
       try {
         const data = await axios.get("/api/v1/teacher/students", {
           cancelToken: source.token,
+          signal: controller.signal,
         });
         setStudents(data.data.data);
       } catch (error: any) {
@@ -79,23 +86,28 @@ const TeacherProfile: React.FC<ProfileProps> = ({ setIsGotten }) => {
 
     const fetchClasses = async () => {
       try {
-        const data = await axios.get(
-          `/api/v1/profile/teacher/${userData.id}/classes`,
-          {
-            cancelToken: source.token,
-          }
-        );
-        setClasses(data.data.data);
+        if(userData.id) {
+          const data = await axios.get(
+            `/api/v1/profile/teacher/${userData.id}/classes`,
+            {
+              cancelToken: source.token,
+              signal: controller.signal,
+            }
+          );
+          setClasses(data?.data?.data);
+
+        }
       } catch (error: any) {
         message.error(error.response.data.msg);
       }
     };
 
+    fetchTeacherInfo();
     fetchStudents();
     fetchClasses();
-    fetchTeacherInfo();
     setLoading(false);
 
+    return () => controller.abort();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
 
@@ -123,10 +135,11 @@ const TeacherProfile: React.FC<ProfileProps> = ({ setIsGotten }) => {
         />
         <ProfileCard
           data={classes.map((oneClass: classItem) => ({
-            img: avtar,
-            name: oneClass.name,
-            id: oneClass.id,
-          }))}
+              img: avtar,
+              name: oneClass?.name,
+              id: oneClass?.id,
+            })
+          )}
           title="الفصول الدراسية"
           type="classes"
           _role="teacher"
