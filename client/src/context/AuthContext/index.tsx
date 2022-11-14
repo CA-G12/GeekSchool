@@ -9,7 +9,6 @@ import {
 import axios from "axios";
 import { signUpDataInterface, UserDataInterface } from "../../interfaces";
 
-
 export const UserAuthContext = createContext<UserDataInterface | null>(null);
 
 export const useUserData = (): any => useContext(UserAuthContext);

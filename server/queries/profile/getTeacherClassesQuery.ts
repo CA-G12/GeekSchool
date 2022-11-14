@@ -1,4 +1,4 @@
-import { Class, Teacher } from '../../models';
+import { Teacher } from '../../models';
 
 const getTeacherClassesQuery = (teacherId: string) => (
   Teacher.findAll({

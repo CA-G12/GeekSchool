@@ -1,4 +1,3 @@
-/* eslint-disable react/self-closing-comp */
 import "./style.css";
 import {
   ArrowLeftOutlined,
@@ -166,7 +165,7 @@ const Footer = () => (
           )}
         />
       </div>
-      <div className="under_line"></div>
+      <div className="under_line" />
       <div className="tail_section">
         <div>
           <p>©جميع الحقوق محفوظة</p>

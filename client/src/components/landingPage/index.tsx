@@ -3,6 +3,7 @@ import LandingHeader from "./LandingHeader";
 import LandingFeedback from "./LandingFeedback";
 import Footer from "./FooterSection";
 import StatisticLanding from "./StatisticLanding";
+import LandingCard from "./LandingCard";
 
 export {
   TimeLineSection,
@@ -10,4 +11,5 @@ export {
   LandingFeedback,
   Footer,
   StatisticLanding,
+  LandingCard,
 };

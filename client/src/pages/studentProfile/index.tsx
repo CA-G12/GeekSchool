@@ -37,7 +37,7 @@ const StudentProfile: FC<{
 
   const getStudentInfo = async () => {
     try {
-      const data = await axios.get(`/api/v1/student/${studentId}/info`,{
+      const data = await axios.get(`/api/v1/student/${studentId}/info`, {
         cancelToken: source.token,
         signal: controller.signal,
       });
@@ -45,7 +45,7 @@ const StudentProfile: FC<{
       setLoading(false);
     } catch (error: any) {
       message.error(error);
-      navigate('/')
+      navigate("/");
     }
   };
 

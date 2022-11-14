@@ -2,7 +2,7 @@ import React, { ElementType, useState } from "react";
 import axios from "axios";
 import { Form, Input, Button, message } from "antd";
 import { questionInterface } from "../interfaces";
-import "antd/dist/antd.css";
+import "antd/dist/antd.min.css";
 import "./style.css";
 
 const QuestionsCard: ElementType = ({
