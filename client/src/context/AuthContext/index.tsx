@@ -9,7 +9,6 @@ import {
 import axios from "axios";
 import { signUpDataInterface, UserDataInterface } from "../../interfaces";
 
-
 export const UserAuthContext = createContext<UserDataInterface | null>(null);
 
 export const useUserData = (): any => useContext(UserAuthContext);
@@ -39,7 +38,6 @@ export const UserAuthProvider = (): UserDataInterface => {
       if (callback) callback(null);
     } catch (err) {
       setLoading(false);
-      console.log(err);
       return { error: err };
     }
 

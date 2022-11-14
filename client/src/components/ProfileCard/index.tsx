@@ -76,7 +76,7 @@ const ProfileCard: ElementType = ({
                   <List.Item key={item.mobile} className="inner_content">
                     <List.Item.Meta
                       avatar={<Avatar src={item.img} />}
-                      title= {item.name}
+                      title={item.name}
                       description={item.mobile}
                     />
                     <div className="icons">

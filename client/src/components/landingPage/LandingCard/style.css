@@ -1,0 +1,104 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#student-feedback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 6rem;
+  background-color: inherit;
+  width: 100%;
+  gap: 1rem;
+  box-shadow: none;
+  margin-bottom: 2rem;
+}
+
+#student-feedback h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+#student-feedback h2 {
+  margin: 0;
+}
+
+#student-feedback p {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+#student-feedback .feedback-cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 3rem;
+}
+
+#student-feedback .feedback-cards .feedback-card {
+  display: flex;
+  gap: 3rem;
+  width: calc(90% / 3);
+  padding: 4rem 3rem;
+  border-radius: 10px;
+  border-bottom-right-radius: 100px;
+  border: 0;
+  box-shadow: 0 2px 4px 0 #dddddd;
+}
+
+
+#student-feedback .feedback-cards .feedback-card .hr {
+  width: 100%;
+  background-color: #cdcdcd;
+  height: 1px;
+}
+
+#student-feedback .feedback-cards .feedback-card > p {
+  font-size: 1rem;
+  color: #333333;
+}
+
+#student-feedback .feedback-cards .feedback-card > div:nth-child(1) {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+#student-feedback .feedback-cards .feedback-card > div h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+#student-feedback .feedback-cards .feedback-card > div p {
+  font-size: 0.9rem;
+  color: #4d4d4d;
+}
+
+#student-feedback .feedback-cards .feedback-card > div img {
+  width: 100px;
+  border-radius: 50%;
+}
+
+#student-feedback .feedback-cards .feedback-card > div div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  width: 100%;
+}
+
+#student-feedback .feedback-cards .feedback-card > div div ul {
+  width: 100% !important;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#student-feedback .feedback-cards .feedback-card > div div ul li {
+  margin: 0 !important;
+}

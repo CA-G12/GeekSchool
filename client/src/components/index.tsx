@@ -9,6 +9,7 @@ import {
   LandingFeedback,
   Footer,
   StatisticLanding,
+  LandingCard,
 } from "./landingPage";
 import { StudentSignUp, ParentSignUp, TeacherSignUp } from "./signUpForm";
 
@@ -26,4 +27,5 @@ export {
   LandingFeedback,
   Footer,
   StatisticLanding,
+  LandingCard,
 };
