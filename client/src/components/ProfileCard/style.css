@@ -53,12 +53,22 @@
 
 .test {
     margin: 1rem 0;
-    padding: 14px !important;
-    transition:.1s ease-out .1s;
+    transition: all 0.3s ease-in-out;
+    padding: 0.5rem 1rem !important;
+    border-radius: 10px;
+    background-color: #F5F5F5;
+    box-shadow: 0 2px 4px 0 #dddddd;
 }
 
 .test:hover{
-    background-color: #F5F5F5;
+    background: var(--main-color);
+    color: var(--white);
+    transform: scale(1.03);
+}
+
+.test:hover .ant-list-item-meta-title {
+    color: var(--white) !important;
+    font-weight: 600;
 }
 
 .ant-list-item-meta-title{
@@ -66,8 +76,8 @@
 }
 
 .ant-avatar-image {
-    min-width: 70px;
-    min-height: 70px;
+    min-width: 50px;
+    min-height: 50px;
 }
 
 .test .ant-list-item-meta {

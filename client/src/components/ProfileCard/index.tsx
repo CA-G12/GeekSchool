@@ -1,8 +1,6 @@
 import { Avatar, List } from "antd";
 import { ElementType } from "react";
 import {
-  WhatsAppOutlined,
-  MailOutlined,
   AppstoreAddOutlined,
 } from "@ant-design/icons";
 import "./style.css";
@@ -59,7 +57,6 @@ const ProfileCard: ElementType = ({
         <div>
           {type === "students" ? (
             <List
-            
               dataSource={data}
               renderItem={(item) => (
                 <Link to={`/student/${item.id}/classes`}>
@@ -69,9 +66,6 @@ const ProfileCard: ElementType = ({
                       title= {item.name}
                       description={item.mobile}
                     />
-                    <div className="icons">
-                        <MailOutlined /> <WhatsAppOutlined />
-                    </div>
                   </List.Item>
                 </Link>
               )}

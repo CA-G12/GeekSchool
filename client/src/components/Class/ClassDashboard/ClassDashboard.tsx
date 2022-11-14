@@ -79,11 +79,13 @@ const ClassDashboard: React.FC = () => {
   };
 
   return (
-    <main>
+    <main id="class">
       <header>
         <div>
           <MenuOutlined onClick={openAside} />
-          <img src={Logo} alt="geek school logo" />
+          <Link to='/'>
+            <img src={Logo} alt="geek school logo" />
+          </Link>
         </div>
         <div>
           <img

@@ -34,7 +34,7 @@ header div:nth-child(1) span {
   font-size: 1.5rem;
 }
 
-header div:nth-child(2) {
+#class header div:nth-child(2) {
   width: 35px;
   height: 35px;
   padding: 3px;
@@ -42,7 +42,7 @@ header div:nth-child(2) {
   background-color: var(--second-color);
 }
 
-header div:nth-child(2) img {
+#class header div:nth-child(2) img {
   width: 100%;
   height: 100%;
   border-radius: 50%;

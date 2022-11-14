@@ -1,13 +1,14 @@
 /* eslint-disable react/jsx-no-useless-fragment */
 import { Dispatch, FC, ReactNode, SetStateAction, useState } from "react";
-import { Outlet, useNavigate, useParams } from "react-router-dom";
-import { LogoutOutlined } from "@ant-design/icons";
-import { message } from "antd";
+import { Link, Outlet, useNavigate, useParams } from "react-router-dom";
+// import { LogoutOutlined } from "@ant-design/icons";
+import { message, Popover } from "antd";
 import axios from "axios";
 import UserHeader from "../../components/profile/UserHeader";
 import Reports from "../../components/profile/Report";
 import Nav from "../../components/profile/Nav";
 import { TeacherSchedule } from "../../components";
+import { useUserData } from "../../context/AuthContext";
 import Logo from "../../assets/new-logo.png";
 import "./style.css";
 
@@ -38,6 +39,7 @@ const ProfilePage: FC<ProfilePageProps> = ({
   const [newPath, setNewPath] = useState<string | null>(pathname);
   const [activeColor] = useState<string>("profile-active");
   const { studentId } = useParams();
+  const { userData } = useUserData()
   const navigate = useNavigate();
 
   const paths = [
@@ -69,14 +71,36 @@ const ProfilePage: FC<ProfilePageProps> = ({
     <main id="profile-page">
       <header>
         <div>
-          <img src={Logo} alt="geek school logo" />
+          <Link to='/'>
+            <img src={Logo} alt="geek school logo" />
+          </Link>
         </div>
-        <LogoutOutlined onClick={logOut} />
-        <div>
-          <img
-            src="https://www.pngitem.com/pimgs/m/99-998739_dale-engen-person-placeholder-hd-png-download.png"
-            alt="person"
-          />
+        <div className="logout-image">
+          <Popover placement="bottom" content={
+            <div className="dropDown" style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '1rem',
+              padding: '0.5rem 0'
+            }}>
+              <Link to={
+                userData.role === 'teacher' ?
+                  '/teacher' :
+                  userData.role === 'parent' ?
+                    '/parent' : `/student/${userData.id}`
+              }>view Profile</Link>
+
+              <Link to='/' onClick={logOut}>Logout</Link>
+            </div>
+          } trigger="click" className="drop">
+            <div>
+              <img
+                src="https://www.pngitem.com/pimgs/m/99-998739_dale-engen-person-placeholder-hd-png-download.png"
+                alt="person"
+              />
+            </div>
+          </Popover>
         </div>
       </header>
 
