@@ -39,7 +39,7 @@ const ProfilePage: FC<ProfilePageProps> = ({
   const [newPath, setNewPath] = useState<string | null>(pathname);
   const [activeColor] = useState<string>("profile-active");
   const { studentId } = useParams();
-  const { userData } = useUserData()
+  const { userData } = useUserData();
   const navigate = useNavigate();
 
   const paths = [
@@ -71,29 +71,44 @@ const ProfilePage: FC<ProfilePageProps> = ({
     <main id="profile-page">
       <header>
         <div>
-          <Link to='/'>
+          <Link to="/">
             <img src={Logo} alt="geek school logo" />
           </Link>
         </div>
         <div className="logout-image">
-          <Popover placement="bottom" content={
-            <div className="dropDown" style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              gap: '1rem',
-              padding: '0.5rem 0'
-            }}>
-              <Link to={
-                userData.role === 'teacher' ?
-                  '/teacher' :
-                  userData.role === 'parent' ?
-                    '/parent' : `/student/${userData.id}`
-              }>view Profile</Link>
+          <Popover
+            placement="bottom"
+            content={
+              <div
+                className="dropDown"
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  gap: "1rem",
+                  padding: "0.5rem 0",
+                }}
+              >
+                <Link
+                  to={
+                    userData.role === "teacher"
+                      ? "/teacher"
+                      : userData.role === "parent"
+                      ? "/parent"
+                      : `/student/${userData.id}`
+                  }
+                >
+                  view Profile
+                </Link>
 
-              <Link to='/' onClick={logOut}>Logout</Link>
-            </div>
-          } trigger="click" className="drop">
+                <Link to="/" onClick={logOut}>
+                  Logout
+                </Link>
+              </div>
+            }
+            trigger="click"
+            className="drop"
+          >
             <div>
               <img
                 src="https://www.pngitem.com/pimgs/m/99-998739_dale-engen-person-placeholder-hd-png-download.png"

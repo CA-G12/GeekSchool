@@ -10,6 +10,6 @@ const postStudentReports = async (req: any, res: Response, next: NextFunction) =
   } catch (error) {
     next(error);
   }
-}
+};
 
 export default postStudentReports;

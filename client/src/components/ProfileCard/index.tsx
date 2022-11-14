@@ -1,8 +1,6 @@
 import { Avatar, List } from "antd";
 import { ElementType } from "react";
-import {
-  AppstoreAddOutlined,
-} from "@ant-design/icons";
+import { AppstoreAddOutlined } from "@ant-design/icons";
 import "./style.css";
 import { Link } from "react-router-dom";
 
@@ -63,7 +61,7 @@ const ProfileCard: ElementType = ({
                   <List.Item key={item.mobile} className="test">
                     <List.Item.Meta
                       avatar={<Avatar src={item.img} />}
-                      title= {item.name}
+                      title={item.name}
                       description={item.mobile}
                     />
                   </List.Item>
@@ -82,7 +80,7 @@ const ProfileCard: ElementType = ({
                       description={item.mobile}
                     />
                     <div className="icons">
-                    <AppstoreAddOutlined />
+                      <AppstoreAddOutlined />
                     </div>
                   </List.Item>
                 </Link>

@@ -21,7 +21,7 @@ const Reports = ({
   const [dataReports, setDataReports] = useState<reportsInterface[] | null>(
     null
   );
-  const [reportInput, setReportInput] = useState<string>('');
+  const [reportInput, setReportInput] = useState<string>("");
   const getReports = async () => {
     const { data }: any = await axios.get(
       `/api/v1/profile/student/${studentId}/reports`

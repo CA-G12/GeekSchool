@@ -9,7 +9,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 2rem;
   border-bottom: 1px solid #D9DDF2;
   background-color: var(--white);
   height: 8vh;
