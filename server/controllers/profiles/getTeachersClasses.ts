@@ -1,10 +1,15 @@
 import { Request, Response, NextFunction } from 'express';
-import { getTeacherClassesQuery } from '../../queries';
+import { getClassQuery, getTeacherClassesQuery } from '../../queries';
 
 const getTeachersClasses = async (req:Request, res:Response, next:NextFunction) => {
   try {
+    
     const { teacherId } = req.params;
-    const data = await getTeacherClassesQuery(teacherId);
+    const userData: any = await getTeacherClassesQuery(teacherId);
+    const {id} = userData[0];
+    
+    const data = await getClassQuery(id);
+    
     res.json({ msg: 'getting all classes successfully', data });
   } catch (error) {
     next(error);

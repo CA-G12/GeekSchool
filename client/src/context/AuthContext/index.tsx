@@ -9,19 +9,6 @@ import {
 import axios from "axios";
 import { signUpDataInterface, UserDataInterface } from "../../interfaces";
 
-// const init: UserDataInterface = {
-//   userData: {
-//     id: 0,
-//     role: '',
-//     name: '',
-//   },
-//   setUserData: () => {},
-//   login: () => {},
-//   signup: () => {},
-//   logout: () => {},
-//   getUserData: () => {},
-//   loading: false,
-// };
 
 export const UserAuthContext = createContext<UserDataInterface | null>(null);
 
@@ -52,6 +39,7 @@ export const UserAuthProvider = (): UserDataInterface => {
       if (callback) callback(null);
     } catch (err) {
       setLoading(false);
+      console.log(err);
       return { error: err };
     }
 

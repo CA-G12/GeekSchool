@@ -1,10 +1,10 @@
-import { Class } from '../../models';
+import { Class, Teacher } from '../../models';
 
 const getTeacherClassesQuery = (teacherId: string) => (
-  Class.findAll({
+  Teacher.findAll({
     raw: true,
     where: {
-      teacher_id: teacherId,
+      user_id: teacherId,
     },
   })
 );

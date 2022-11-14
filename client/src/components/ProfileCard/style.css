@@ -60,13 +60,13 @@
     box-shadow: 0 2px 4px 0 #dddddd;
 }
 
-.test:hover{
+.inner_content:hover{
     background: var(--main-color);
     color: var(--white);
     transform: scale(1.03);
 }
 
-.test:hover .ant-list-item-meta-title {
+.inner_content:hover .ant-list-item-meta-title {
     color: var(--white) !important;
     font-weight: 600;
 }
@@ -80,6 +80,6 @@
     min-height: 50px;
 }
 
-.test .ant-list-item-meta {
+.inner_content .ant-list-item-meta {
     align-items: center;
 }

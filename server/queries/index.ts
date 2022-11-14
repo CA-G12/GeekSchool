@@ -42,6 +42,7 @@ import {
   getTeacherClassesQuery,
   getReportsQuery,
   getStudentHealthsQuery,
+  getClassQuery,
 } from './profile';
 
 import { studentParentRelationQuery, getUserIdFromTableQuery } from './Auth';
@@ -91,4 +92,5 @@ export {
   getStudentInfoQuery,
   getUserIdFromTableQuery,
   postStudentReportsQuery,
+  getClassQuery,
 };

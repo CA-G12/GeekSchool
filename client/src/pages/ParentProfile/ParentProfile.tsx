@@ -1,6 +1,7 @@
 import { FC, useState, useEffect, Dispatch, SetStateAction } from "react";
-// import { Navigate } from "react-router-dom";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { message } from "antd";
 import ProfilePage from "../profile";
 import ProfileCard from "../../components/ProfileCard";
 import { useUserData } from "../../context/AuthContext";
@@ -21,6 +22,7 @@ const ParentProfile: FC<{
     name: "",
     role: "",
   });
+
   const [children, setChildren] = useState<ChildrenData[]>([
     {
       parent_id: 1,
@@ -29,6 +31,7 @@ const ParentProfile: FC<{
       img: "",
     },
   ]);
+
   const { userData } = useUserData();
 
   const [teachers, setTeachers] = useState<TeachersData[]>([
@@ -43,31 +46,52 @@ const ParentProfile: FC<{
     },
   ]);
   const [loading, setLoading] = useState(true);
-  const controller = new AbortController();
+  const source = axios.CancelToken.source();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await axios.get("/api/v1/parent/info", {
-        signal: controller.signal,
-      });
+      try {
+        const data = await axios.get("/api/v1/parent/info", {
+          cancelToken: source.token,
 
-      setParentInfo(data.data.data[0]);
+        });
+  
+        setParentInfo(data.data.data[0]);
+      } catch(error: any) {
+        console.log({error});
+        
+        navigate('/')
+        message.error(error.response.data.msg);
+      }
+
     };
 
     const fetchChildren = async () => {
-      const data = await axios.get(`/api/v1/profile/parent/students`, {
-        signal: controller.signal,
-      });
+      try{
+        const data = await axios.get(`/api/v1/profile/parent/students`, {
+          cancelToken: source.token,
 
-      setChildren(data.data.data);
+        });
+  
+        setChildren(data.data.data);
+
+      } catch(error :any) {
+        message.error(error.response.data.msg);
+      }
     };
 
     const fetchTeachers = async () => {
-      const data = await axios.get("/api/v1/parent/teachers", {
-        signal: controller.signal,
-      });
+      try {
+        const data = await axios.get("/api/v1/parent/teachers", {
+          cancelToken: source.token,
+        });
+  
+        setTeachers(data.data.data);
 
-      setTeachers(data.data.data);
+      } catch(error: any) {
+        message.error(error.response.data.msg);
+      }
     };
 
     fetchData();
@@ -75,12 +99,9 @@ const ParentProfile: FC<{
     fetchTeachers();
 
     setLoading(false);
-    return () => controller.abort();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
-  // if (userData?.role !== "parent") {
-  //   return <Navigate to="/login" />;
-  // }
+
   return (
     <ProfilePage
       name={parentInfo.name}

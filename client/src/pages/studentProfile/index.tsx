@@ -1,7 +1,7 @@
 import { message } from "antd";
 import axios from "axios";
 import { FC, useEffect, useState, Dispatch, SetStateAction } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { ProfilePage } from "..";
 import { useUserData } from "../../context/AuthContext";
 
@@ -31,19 +31,28 @@ const StudentProfile: FC<{
     role: "",
   });
 
+  const source = axios.CancelToken.source();
+  const navigate = useNavigate();
+  const controller = new AbortController();
+
   const getStudentInfo = async () => {
     try {
-      const data = await axios.get(`/api/v1/student/${studentId}/info`);
+      const data = await axios.get(`/api/v1/student/${studentId}/info`,{
+        cancelToken: source.token,
+        signal: controller.signal,
+      });
       setStudentData(data.data.data[0]);
       setLoading(false);
     } catch (error: any) {
       message.error(error);
+      navigate('/')
     }
   };
 
   useEffect(() => {
     getStudentInfo();
     // eslint-disable-next-line react-hooks/exhaustive-deps
+    return () => controller.abort();
   }, [loading]);
 
   // if (!studentData) return <Spin tip="Loading..." />;
