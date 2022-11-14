@@ -1,10 +1,6 @@
 import { Avatar, List } from "antd";
 import { ElementType } from "react";
-import {
-  WhatsAppOutlined,
-  MailOutlined,
-  AppstoreAddOutlined,
-} from "@ant-design/icons";
+import { AppstoreAddOutlined } from "@ant-design/icons";
 import "./style.css";
 import { Link } from "react-router-dom";
 
@@ -59,19 +55,15 @@ const ProfileCard: ElementType = ({
         <div>
           {type === "students" ? (
             <List
-            
               dataSource={data}
               renderItem={(item) => (
                 <Link to={`/student/${item.id}/classes`}>
                   <List.Item key={item.mobile} className="inner_content">
                     <List.Item.Meta
                       avatar={<Avatar src={item.img} />}
-                      title= {item.name}
+                      title={item.name}
                       description={item.mobile}
                     />
-                    <div className="icons">
-                        <MailOutlined /> <WhatsAppOutlined />
-                    </div>
                   </List.Item>
                 </Link>
               )}
@@ -88,7 +80,7 @@ const ProfileCard: ElementType = ({
                       description={item.mobile}
                     />
                     <div className="icons">
-                    <AppstoreAddOutlined />
+                      <AppstoreAddOutlined />
                     </div>
                   </List.Item>
                 </Link>
