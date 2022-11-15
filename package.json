@@ -11,7 +11,7 @@
     "lint-fix": "eslint --ext .ts server/ --fix && cd client && npm run lint-fix",
     "lint:client": "cd client && npm run lint",
     "format-client": "cd client && npm run format",
-    "dbBuild": "cross-env NODE_ENV=development ts-node ./server/database/build.ts",
+    "dbBuild": "cross-env NODE_ENV=production ts-node ./server/database/seed.ts",
     "dbSeed": "cross-env NODE_ENV=development ts-node ./server/database/seed.ts"
   },
   "pre-commit": [
