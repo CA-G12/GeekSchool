@@ -27,7 +27,7 @@ const Grades = () => {
   const naviagte = useNavigate();
 
   if (userData) {
-    if (userData.role === 'student') naviagte(`/class/${classId}/stats`);
+    if (userData.role === "student") naviagte(`/class/${classId}/stats`);
   }
 
   const fetchData = async () => {

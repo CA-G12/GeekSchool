@@ -18,12 +18,12 @@ import { useUserData } from "../../../context/AuthContext/index";
 import "./style.css";
 
 const icons = [
-  <DashboardOutlined title="الاحصائيات"/>,
-  <UserOutlined title="الطلاب"/>,
-  <ReconciliationOutlined title="المهمات"/>,
-  <QuestionCircleOutlined title="الأسئلة"/>,
-  <DeliveredProcedureOutlined title="التقييم"/>,
-  <FileTextOutlined title="الدرجات"/>,
+  <DashboardOutlined title="الاحصائيات" />,
+  <UserOutlined title="الطلاب" />,
+  <ReconciliationOutlined title="المهمات" />,
+  <QuestionCircleOutlined title="الأسئلة" />,
+  <DeliveredProcedureOutlined title="التقييم" />,
+  <FileTextOutlined title="الدرجات" />,
   <FundProjectionScreenOutlined />,
 ];
 
@@ -145,7 +145,7 @@ const ClassDashboard: React.FC = () => {
           ))}
           <Link to="/">
             <LogoutOutlined onClick={logOut} title="تسجيل الخروج" />
-            {open === "open" ? 'الخروج' : ""}
+            {open === "open" ? "الخروج" : ""}
           </Link>
         </aside>
         <main>

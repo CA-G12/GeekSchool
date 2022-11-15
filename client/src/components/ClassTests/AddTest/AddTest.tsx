@@ -29,8 +29,8 @@ const validateMessages = {
 const AddTest: FC = () => {
   const [, setIsShown] = useState<boolean>(true);
   const [visible, setVisible] = useState<boolean>(false);
-  const { classId } = useParams()
-  
+  const { classId } = useParams();
+
   const showModal = () => setVisible(true);
 
   const handleCancel = () => {
@@ -79,7 +79,8 @@ const AddTest: FC = () => {
           border: "none",
         }}
       >
-        إظافة إختبار جديد<FileTextOutlined />
+        إظافة إختبار جديد
+        <FileTextOutlined />
       </Button>
       <Modal
         className="modal"
@@ -87,74 +88,74 @@ const AddTest: FC = () => {
         open={visible}
         onCancel={handleCancel}
         width="60%"
-      > 
-          <Form
-            wrapperCol={layout.wrapperCol}
-            labelCol={layout.labelCol}
-            name="nest-messages"
-            onFinish={onFinish}
-            validateMessages={validateMessages}
-            className="add-test-form"
+      >
+        <Form
+          wrapperCol={layout.wrapperCol}
+          labelCol={layout.labelCol}
+          name="nest-messages"
+          onFinish={onFinish}
+          validateMessages={validateMessages}
+          className="add-test-form"
+        >
+          <CloseSquareOutlined
+            className="close-icon"
+            onClick={() => setIsShown(false)}
+          />
+          <Form.Item
+            name="exam-title"
+            label="اسم الاختبار: "
+            rules={[{ required: true }]}
+            className="form-item"
           >
-            <CloseSquareOutlined
-              className="close-icon"
-              onClick={() => setIsShown(false)}
+            <Input className="input" />
+          </Form.Item>
+          <Form.Item
+            name="exam-date"
+            label="موعد الاختبار: "
+            rules={config.rules}
+            className="form-item"
+          >
+            <DatePicker
+              className="input date-picker"
+              showTime
+              format="YYYY-MM-DD HH:mm:ss"
             />
-            <Form.Item
-              name="exam-title"
-              label="اسم الاختبار: "
-              rules={[{ required: true }]}
-              className="form-item"
-            >
-              <Input className="input" />
-            </Form.Item>
-            <Form.Item
-              name="exam-date"
-              label="موعد الاختبار: "
-              rules={config.rules}
-              className="form-item"
-            >
-              <DatePicker
-                className="input date-picker"
-                showTime
-                format="YYYY-MM-DD HH:mm:ss"
-              />
-            </Form.Item>
-            <Form.Item
-              name="exam-notes"
-              label="ملاحظات إضافية: "
-              className="form-item"
-            >
-              <Input.TextArea className="textarea" />
-            </Form.Item>
-            <Form.Item
-              wrapperCol={{ ...layout.wrapperCol, offset: 8 }}
+          </Form.Item>
+          <Form.Item
+            name="exam-notes"
+            label="ملاحظات إضافية: "
+            className="form-item"
+          >
+            <Input.TextArea className="textarea" />
+          </Form.Item>
+          <Form.Item
+            wrapperCol={{ ...layout.wrapperCol, offset: 8 }}
+            style={{
+              width: "20%",
+              display: "flex",
+              justifyContent: "flex-end",
+            }}
+          >
+            <Button
+              type="primary"
+              htmlType="submit"
               style={{
-                width: "20%",
-                display: "flex",
-                justifyContent: "flex-end",
+                width: "196px",
+                height: "50px",
+                backgroundColor: "#0CBE8A",
+                border: "1px solid #0CBE8A",
+                borderRadius: "8px",
+                fontSize: "large",
+                fontWeight: "bold",
+                boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.25)",
               }}
             >
-              <Button
-                type="primary"
-                htmlType="submit"
-                style={{
-                  width: "196px",
-                  height: "50px",
-                  backgroundColor: "#0CBE8A",
-                  border: "1px solid #0CBE8A",
-                  borderRadius: "8px",
-                  fontSize: "large",
-                  fontWeight: "bold",
-                  boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.25)",
-                }}
-              >
-                إضافة الإختبار
-              </Button>
-            </Form.Item>
+              إضافة الإختبار
+            </Button>
+          </Form.Item>
         </Form>
-        </Modal>
-      </div>
+      </Modal>
+    </div>
   );
 };
 

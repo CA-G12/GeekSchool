@@ -93,8 +93,8 @@ const TeacherAssignmentCard: React.FC<TeacherAssignmentCardProps> = ({
                     <img alt="student" src={assignment.img} />
                     <h4 className="name">{assignment["Student.User.name"]}</h4>
                   </div>
-                  ))
-                ) : (
+                ))
+              ) : (
                 <h3>No student to show!</h3>
               )}
             </Drawer>
@@ -117,8 +117,8 @@ const TeacherAssignmentCard: React.FC<TeacherAssignmentCardProps> = ({
                     <img alt="student" src={assignment.img} />
                     <h4 className="name">{assignment["Student.User.name"]}</h4>
                   </div>
-                  ))
-                ) : (
+                ))
+              ) : (
                 <h3>No student to show!</h3>
               )}
             </Drawer>
@@ -128,7 +128,6 @@ const TeacherAssignmentCard: React.FC<TeacherAssignmentCardProps> = ({
     </div>
   );
 };
-
 
 /* 
         <div className="card-title">

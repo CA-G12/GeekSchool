@@ -17,7 +17,6 @@ const Assignments: React.FC = () => {
   const { classId } = useParams();
   const { userData } = useUserData();
 
-
   const menu = (
     <Menu
       items={[
@@ -33,11 +32,12 @@ const Assignments: React.FC = () => {
     const fetchAssignmentsData = async () => {
       try {
         const data = await axios.get(`/api/v1/class/${classId}/assignments`);
-        if (userData.role === 'student') setAssignments(data.data.data);
-        else if (userData.role === 'teacher') setAssignments(data.data.data.rows)
-        setLoading(false)
+        if (userData.role === "student") setAssignments(data.data.data);
+        else if (userData.role === "teacher")
+          setAssignments(data.data.data.rows);
+        setLoading(false);
       } catch (error: any) {
-        message.error(error.response.data.msg)
+        message.error(error.response.data.msg);
       }
     };
     fetchAssignmentsData();
@@ -60,30 +60,30 @@ const Assignments: React.FC = () => {
           </Dropdown>
         </div>
       </div>
-        {role === "student" && (
-          <section className="assignments-box">
-            {assignments.map((assignment: any) => (
-              <StudentAssignmentCard
-                title={assignment.title}
-                createdAt={assignment.createdAt}
-                description={assignment.description}
-              />
-            ))}
-          </section>
-        )}
-        {role === "teacher" && (
-          <section className="assignment-box">
-            {assignments.map((assignment: any) => (
-              <TeacherAssignmentCard
-                id={assignment.id}
-                title={assignment.title}
-                createdAt={assignment.createdAt}
-                description={assignment.description}
-              />
-            ))}
-          </section>
-        )}
-      </section>
+      {role === "student" && (
+        <section className="assignments-box">
+          {assignments.map((assignment: any) => (
+            <StudentAssignmentCard
+              title={assignment.title}
+              createdAt={assignment.createdAt}
+              description={assignment.description}
+            />
+          ))}
+        </section>
+      )}
+      {role === "teacher" && (
+        <section className="assignment-box">
+          {assignments.map((assignment: any) => (
+            <TeacherAssignmentCard
+              id={assignment.id}
+              title={assignment.title}
+              createdAt={assignment.createdAt}
+              description={assignment.description}
+            />
+          ))}
+        </section>
+      )}
+    </section>
   );
 };
 

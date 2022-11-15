@@ -18,19 +18,19 @@ const AnsweredQuestion: FC<Props> = ({
   handleChange,
 }) => {
   const [edit, setEdit] = useState(false);
-  const [input, setInput] = useState('');
-  const [data, setData] = useState('');
+  const [input, setInput] = useState("");
+  const [data, setData] = useState("");
   const { role } = useUserData().userData;
 
   useEffect(() => {
     setData(input);
-  }, [input])
+  }, [input]);
 
   return (
     <div className="question_card">
       <p className="question">{question}</p>
       <div className="question-hr" />
-      {edit &&  role === 'teacher' ? (
+      {edit && role === "teacher" ? (
         <div className="question_input">
           <Input
             placeholder="Enter Your Answer"
@@ -41,8 +41,8 @@ const AnsweredQuestion: FC<Props> = ({
             type="primary"
             className="answer_btn"
             onClick={() => {
-              setEdit(false)
-              handleChange(id, input)
+              setEdit(false);
+              handleChange(id, input);
             }}
           >
             حفظ
@@ -51,15 +51,15 @@ const AnsweredQuestion: FC<Props> = ({
       ) : (
         <div className="question_input">
           <p className="answer">{answer}</p>
-          {role === 'teacher' &&
+          {role === "teacher" && (
             <Button
-            type="primary"
-            className="edit_btn"
-            onClick={() => setEdit(true)}
+              type="primary"
+              className="edit_btn"
+              onClick={() => setEdit(true)}
             >
               تعديل
             </Button>
-          }
+          )}
         </div>
       )}
     </div>

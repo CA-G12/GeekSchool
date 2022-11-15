@@ -44,7 +44,7 @@ const Feedback: React.FC = () => {
       },
     });
 
-    setLoading(true)
+    setLoading(true);
   };
 
   const onFinishFailed = (errorInfo: any) => {
@@ -59,34 +59,31 @@ const Feedback: React.FC = () => {
   return (
     <section className="class-feedback">
       <h1>التغذية الراجعة</h1>
-      { userData.role === 'student' &&
-            <Form
-              style={{ display: "flex" }}
-              name="basic"
-              initialValues={{ remember: true }}
-              onFinish={onFinish}
-              onFinishFailed={onFinishFailed}
-              autoComplete="off"
-              className="add-feedback-form"
-            >
-              <Form.Item
-              name="feedback"
-              style={{width: '100%'}}
-                rules={[{ required: true, message: "الرجاء التفضل بإدخال نص" }]}
-              >
-                <Input
-                  className="input-field"
-                  placeholder="شارك مراجعة جديدة!"
-                />
-              </Form.Item>
-    
-              <Form.Item>
-                <Button type="primary" htmlType="submit" className="submit-btn">
-                  أرسل
-                </Button>
-              </Form.Item>
-            </Form>
-        }
+      {userData.role === "student" && (
+        <Form
+          style={{ display: "flex" }}
+          name="basic"
+          initialValues={{ remember: true }}
+          onFinish={onFinish}
+          onFinishFailed={onFinishFailed}
+          autoComplete="off"
+          className="add-feedback-form"
+        >
+          <Form.Item
+            name="feedback"
+            style={{ width: "100%" }}
+            rules={[{ required: true, message: "الرجاء التفضل بإدخال نص" }]}
+          >
+            <Input className="input-field" placeholder="شارك مراجعة جديدة!" />
+          </Form.Item>
+
+          <Form.Item>
+            <Button type="primary" htmlType="submit" className="submit-btn">
+              أرسل
+            </Button>
+          </Form.Item>
+        </Form>
+      )}
 
       <section className="feedbacks-boxes">
         {feedbacks.map((feedback: any) => (

@@ -7,11 +7,13 @@ import Swal from "sweetalert2";
 import "./index.css";
 
 // eslint-disable-next-line no-unused-vars
-const AssignmentModal: React.FC<{setLoading: Function}> = ({setLoading}) => {
+const AssignmentModal: React.FC<{ setLoading: Function }> = ({
+  setLoading,
+}) => {
   const [form] = Form.useForm();
   const source = axios.CancelToken.source();
   const [visible, setVisible] = useState<boolean>(false);
-  const {classId} = useParams()
+  const { classId } = useParams();
 
   const showModal = () => setVisible(true);
 
@@ -31,7 +33,7 @@ const AssignmentModal: React.FC<{setLoading: Function}> = ({setLoading}) => {
         title: "تم إضافة المهمة بنجاح",
         icon: "success",
       });
-      setLoading(true)
+      setLoading(true);
     } catch (error: any) {
       Swal.fire({
         icon: "error",
@@ -56,7 +58,8 @@ const AssignmentModal: React.FC<{setLoading: Function}> = ({setLoading}) => {
           border: "none",
         }}
       >
-        إظافة تكليف جديد<FileTextOutlined />
+        إظافة تكليف جديد
+        <FileTextOutlined />
       </Button>
       <Modal
         className="modal"

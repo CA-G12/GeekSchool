@@ -9,29 +9,27 @@ const StudentAssignmentCard: FC<StudentAssignmentCardProps> = ({
   createdAt,
   description,
 }: StudentAssignmentCardProps) => (
-  <div className="assignment-card" style={{gap: '2rem'}}>
-      <div className="assignment-top">
-        <div className="assignment-title">
-          <div>
-            <FileTextOutlined />
-          </div>
-          <h1>{title}</h1>
+  <div className="assignment-card" style={{ gap: "2rem" }}>
+    <div className="assignment-top">
+      <div className="assignment-title">
+        <div>
+          <FileTextOutlined />
         </div>
-        <p>تاريخ النشر: {createdAt}</p>
+        <h1>{title}</h1>
       </div>
-      <div className="card-content">
-        <div className="left">
-          <p className="assignment-content">{description}</p>
-        </div>
+      <p>تاريخ النشر: {createdAt}</p>
+    </div>
+    <div className="card-content">
+      <div className="left">
+        <p className="assignment-content">{description}</p>
+      </div>
 
-        <div
-          className="right"
-        >
-          <Button style={{ borderRadius: "5px" }} type="primary">
-            Turned on
-          </Button>
-        </div>
+      <div className="right">
+        <Button style={{ borderRadius: "5px" }} type="primary">
+          Turned on
+        </Button>
       </div>
+    </div>
   </div>
 );
 

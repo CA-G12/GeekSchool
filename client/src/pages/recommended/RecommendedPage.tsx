@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { RecommendedCard } from "../../components";
 import AddRecommended from "../../components/AddRecommended";
 import { useUserData } from "../../context/AuthContext";
-import './style.css';
+import "./style.css";
 
 type recommendedType = {
   description: string;
@@ -20,9 +20,7 @@ const RecommendedPage: React.FC = () => {
   const { classId } = useParams();
   useEffect(() => {
     const fetchRecommended = async () => {
-      const { data } = await axios.get(
-        `/api/v1/class/${classId}/recommended`
-      );
+      const { data } = await axios.get(`/api/v1/class/${classId}/recommended`);
       setRecommended(data.rows.reverse());
     };
     fetchRecommended();
@@ -34,7 +32,11 @@ const RecommendedPage: React.FC = () => {
     <section className="recommended-section">
       <div>
         <h1>توصيات إضافية</h1>
-        {useUserData().userData?.role === "teacher" ? <AddRecommended setLoading={setLoading} /> : ""}
+        {useUserData().userData?.role === "teacher" ? (
+          <AddRecommended setLoading={setLoading} />
+        ) : (
+          ""
+        )}
       </div>
       <div className="recommended-container">
         {recommended.map((ele) => (

@@ -20,13 +20,11 @@ const Questions: FC<Props> = () => {
 
   const fetchData = async () => {
     try {
-      const { data } = await axios(
-        `/api/v1/class/${classId}/questions`
-      );
+      const { data } = await axios(`/api/v1/class/${classId}/questions`);
       setQuestions(data.data);
-      setLoading(false)
+      setLoading(false);
     } catch (error: any) {
-      message.error(error.response.data.msg)
+      message.error(error.response.data.msg);
     }
   };
 
@@ -36,7 +34,7 @@ const Questions: FC<Props> = () => {
       answer: value,
     });
 
-    setLoading(true)
+    setLoading(true);
     setQuestions(
       questions
         .sort((a, b) => (a.answer > b.answer ? 1 : -1))
@@ -49,7 +47,7 @@ const Questions: FC<Props> = () => {
 
   useEffect(() => {
     fetchData();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
 
   return (
@@ -65,16 +63,16 @@ const Questions: FC<Props> = () => {
               answer={q.answer}
               handleChange={handleChange}
             />
-            ) : (
-              <Question
-                key={q.id}
-                id={q.id}
-                question={q.question}
-                answer={q.answer}
-                handleChange={handleChange}
-              />
-            )
-          )}
+          ) : (
+            <Question
+              key={q.id}
+              id={q.id}
+              question={q.question}
+              answer={q.answer}
+              handleChange={handleChange}
+            />
+          )
+        )}
       </div>
     </section>
   );

@@ -25,7 +25,7 @@ import "./style.css";
 import StudentProfile from "./pages/studentProfile";
 import Feedback from "./components/Class/Feedback/Feedback";
 import RecommendedPage from "./pages/recommended/RecommendedPage";
-import NotFoundPage from './pages/notFoundPage'
+import NotFoundPage from "./pages/notFoundPage";
 
 ConfigProvider.config({
   theme: {
@@ -126,9 +126,9 @@ const App: React.FC = () => {
       ],
     },
     {
-      path: '*',
-      element: <NotFoundPage />
-    }
+      path: "*",
+      element: <NotFoundPage />,
+    },
   ]);
 
   return (
