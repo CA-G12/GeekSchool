@@ -1,21 +1,80 @@
-.first-part .class-name {
-  width: 50%;
-  color: var(--white);
-  margin: 0rem;
+.class_card {
+  max-width: 300px;
+  font-family: "Poppins", "sans-serif";
+  position: relative;
 }
 
-.first-part .teacher-name {
-  color: var(--white);
-  margin: 0rem;
+.class_card .first-part {
+  background-image: url("../../../../assets/class_bcg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top right;
+  transform: scaleX(-1);
+  height: 80px;
+  padding: 0px ;
+}
+
+
+.class_card .first-part > div {
+  padding: 8px 0px 8px 30px  !important;
+}
+
+.class-name,
+.teacher-name {
+  transform: scaleX(-1);
+  direction: rtl;
+  font-family: "Poppins" !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  line-height: 24px !important;
+  color: #fff !important;
 }
 
 .class-avatar {
   position: absolute;
-  z-index: 10;
-  left: 8%;
-  top: 28%;
+  width: 50px;
+  height: 50px;
+  left: 25px;
+  top: 50px;
+  z-index: 1;
 }
 
-.marked {
-  font-size: 0.5rem;
+.assignments > div{
+  padding-bottom: 5px !important;
+  font-size: 16 !important;
+}
+
+.assignment-row > div{
+  padding: 8px !important;
+  margin: 0 !important;
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
+}
+.assignments-tests > div{
+  padding: 8px !important;
+  margin: 0 !important;
+}
+
+.test-row > div{
+  padding: 8px !important;
+  margin: 0 !important;
+  margin-bottom: 16px !important;
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.2);
+}
+
+.bottom_section {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.tests > div{
+  padding: 0 24px !important;
+  margin-top: 8px;
+}
+
+.assignment-title, .test-title {
+  font-size: 14px !important;
+  margin: 0 !important;
+  padding-bottom: 8px !important;
 }
