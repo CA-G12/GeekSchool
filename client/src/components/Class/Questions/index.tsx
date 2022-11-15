@@ -1,9 +1,6 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable no-console */
 import { FC, useEffect, useState } from "react";
-import type { PaginationProps } from "antd";
+import { message } from "antd";
 import axios from "axios";
-import { Pagination } from "antd";
 import { useParams } from "react-router-dom";
 import Question from "./Question";
 import AnsweredQuestion from "./AnsweredQuestion";
@@ -18,19 +15,16 @@ interface questionInterface {
 
 const Questions: FC<Props> = () => {
   const [questions, setQuestions] = useState<questionInterface[]>([]);
-  const [count, setCount] = useState<number>(1);
-  const [current, setCurrent] = useState(1);
+  const [loading, setLoading] = useState<boolean>(true);
   const { classId } = useParams();
 
   const fetchData = async () => {
     try {
-      const { data } = await axios(
-        `/api/v1/class/${classId}/questions/?page=${current}`
-      );
-      setCount(data.count);
+      const { data } = await axios(`/api/v1/class/${classId}/questions`);
       setQuestions(data.data);
-    } catch (error) {
-      console.log(error);
+      setLoading(false);
+    } catch (error: any) {
+      message.error(error.response.data.msg);
     }
   };
 
@@ -39,6 +33,8 @@ const Questions: FC<Props> = () => {
     await axios.put(`/api/v1/class/${classId}/questions/${id}`, {
       answer: value,
     });
+
+    setLoading(true);
     setQuestions(
       questions
         .sort((a, b) => (a.answer > b.answer ? 1 : -1))
@@ -49,18 +45,15 @@ const Questions: FC<Props> = () => {
     );
   };
 
-  const onChange: PaginationProps["onChange"] = (page) => {
-    setCurrent(page);
-  };
-
   useEffect(() => {
-    // api call to get questions from the back
     fetchData();
-  }, [current]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [loading]);
+
   return (
-    <div className="card">
-      <div>
-        <h1 className="title">الإسئلة</h1>
+    <section className="questions">
+      <h1 className="title">الأسئلة</h1>
+      <div className="questions-container">
         {questions.map((q) =>
           q.answer ? (
             <AnsweredQuestion
@@ -81,12 +74,7 @@ const Questions: FC<Props> = () => {
           )
         )}
       </div>
-      <Pagination
-        current={current}
-        onChange={onChange}
-        total={10 * Math.ceil(count / 2)}
-      />
-    </div>
+    </section>
   );
 };
 

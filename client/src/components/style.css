@@ -3,9 +3,6 @@
   margin: 0;
   box-sizing: border-box;
 }
-body {
-  background-color: #eeee;
-}
 
 .recommended-card,
 .feedback-card {
@@ -15,11 +12,13 @@ body {
   justify-content: space-between;
   align-items: center;
   box-shadow: 0px 2px 4px #00000026;
+  border-radius: 5px;
 }
 
 .recommended-card p {
   width: 90%;
-  color: #222;
+  color: #666;
+  font-size: 1rem;
   margin: 0 !important;
 }
 
@@ -33,6 +32,7 @@ body {
   color: #0F93CB;
   text-decoration: none;
   font-weight: 600;
+  flex-shrink: 0;
 }
 
 .recommended-card a i {

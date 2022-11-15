@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import { Table, Space, Spin, notification } from "antd";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import NameCell from "./NameCell";
 import Resultcell from "./ResultCell";
 import handleStudentsData from "./handleData";
 import "./style.css";
+import { useUserData } from "../../../context/AuthContext";
 
 interface StudentInterface {
   id: number;
@@ -22,6 +23,12 @@ const Grades = () => {
   const [error, setError] = useState("");
   const [col, setCol] = useState<Col[]>([]);
   const { classId } = useParams();
+  const { userData } = useUserData();
+  const naviagte = useNavigate();
+
+  if (userData) {
+    if (userData.role === "student") naviagte(`/class/${classId}/stats`);
+  }
 
   const fetchData = async () => {
     try {

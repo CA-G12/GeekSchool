@@ -15,25 +15,24 @@ const ClassCard: FC<ClassCardProps> = ({
   assignments,
   tests,
 }) => (
-  <section
-    id={String(id)}
-    className="class_card"
-  >
+  <section id={String(id)} className="class_card">
     <Card
       className="first-part"
-      bodyStyle={{
-        // width: "100%",
-        // height: "8rem",
-        // backgroundImage: `url(${ClassBcg})`,
-        // backgroundPosition: "right center",
-        // backgroundSize: 'contain',
-        // display: "flex",
-        // flexDirection: "column",
-        // alignItems: "flex-end",
-        // justifyContent: "center",
-        // gap: "0.7rem",
-        // paddingLeft: "6rem",
-      }}
+      bodyStyle={
+        {
+          // width: "100%",
+          // height: "8rem",
+          // backgroundImage: `url(${ClassBcg})`,
+          // backgroundPosition: "right center",
+          // backgroundSize: 'contain',
+          // display: "flex",
+          // flexDirection: "column",
+          // alignItems: "flex-end",
+          // justifyContent: "center",
+          // gap: "0.7rem",
+          // paddingLeft: "6rem",
+        }
+      }
     >
       <Title level={3} className="class-name">
         {className}
@@ -46,10 +45,7 @@ const ClassCard: FC<ClassCardProps> = ({
       <img className="class-avatar" src={ClassAvatar} alt="class avatar" />
     </Link>
     <Card className="assignments-tests">
-      <Card
-        className="assignments"
-        bordered={false}
-      >
+      <Card className="assignments" bordered={false}>
         {assignments.map((assignment) => (
           <Card
             id={String(assignment.id)}
@@ -60,37 +56,29 @@ const ClassCard: FC<ClassCardProps> = ({
               {assignment.title}
             </Title>
             <div className="bottom_section">
-            <Text type="secondary" strong className="created-at">
-              {assignment.createdAt.split("T")[0]}
-            </Text>
-            <Text mark className="marked">
-              تكليف
-            </Text>
-
+              <Text type="secondary" strong className="created-at">
+                {assignment.createdAt.split("T")[0]}
+              </Text>
+              <Text mark className="marked">
+                تكليف
+              </Text>
             </div>
           </Card>
         ))}
       </Card>
-      <Card
-        className="tests"
-        bordered={false}
-      >
+      <Card className="tests" bordered={false}>
         {tests.map((test) => (
-          <Card
-            id={String(test.id)}
-            bordered={false}
-            className="test-row"
-          >
+          <Card id={String(test.id)} bordered={false} className="test-row">
             <Title level={5} className="test-title">
               {test.title}
             </Title>
             <div className="bottom_section">
-            <Text type="secondary" strong className="created-at">
-              {test.date.split("T")[0]}
-            </Text>
-            <Text mark className="marked">
-              إختبار
-            </Text>
+              <Text type="secondary" strong className="created-at">
+                {test.date.split("T")[0]}
+              </Text>
+              <Text mark className="marked">
+                إختبار
+              </Text>
             </div>
           </Card>
         ))}

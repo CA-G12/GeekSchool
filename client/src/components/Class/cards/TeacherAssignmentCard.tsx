@@ -1,7 +1,8 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Card, Button, Drawer } from "antd";
-import { UnorderedListOutlined, DeleteFilled } from "@ant-design/icons";
+import { Button, Drawer } from "antd";
+import { FileTextOutlined } from "@ant-design/icons";
 import { useParams } from "react-router-dom";
 import { TeacherAssignmentCardProps } from "../../../interfaces";
 import "./AssignmentCards.css";
@@ -62,8 +63,73 @@ const TeacherAssignmentCard: React.FC<TeacherAssignmentCardProps> = ({
   };
 
   return (
-    <div>
-      <Card style={{ margin: "5px" }}>
+    <div className="assignment-card">
+      <div className="assignment-top">
+        <div className="assignment-title">
+          <div>
+            <FileTextOutlined />
+          </div>
+          <h1>{title}</h1>
+        </div>
+        <p>تاريخ النشر: {createdAt}</p>
+      </div>
+      <div className="assignment-bottom">
+        <p>{description}</p>
+        <div>
+          <div className="assignment-submit">
+            <Button onClick={showFirstDrawer}>
+              <span id={String(id)}>{submittedAssignment.length}</span>
+              <span>قام بالتسليم</span>
+            </Button>
+            <Drawer
+              title="الطلاب الذين قاموا بتسليم التكليف!"
+              placement="left"
+              onClose={onFirstClose}
+              open={openFirst}
+            >
+              {submittedAssignment.length !== 0 ? (
+                submittedAssignment.map((assignment: any) => (
+                  <div className="student-box" id={assignment.student_id}>
+                    <img alt="student" src={assignment.img} />
+                    <h4 className="name">{assignment["Student.User.name"]}</h4>
+                  </div>
+                ))
+              ) : (
+                <h3>No student to show!</h3>
+              )}
+            </Drawer>
+          </div>
+          <div className="assignment-hr" />
+          <div className="assignment-unSubmit">
+            <Button onClick={showSecondDrawer}>
+              <span id={String(id)}>{notSubmittedAssignment.length}</span>
+              <span>لم يقم بالتسليم</span>
+            </Button>
+            <Drawer
+              title="الطلاب الذيم لم يسلموا التكليف!"
+              placement="left"
+              onClose={onSecondClose}
+              open={openSecond}
+            >
+              {notSubmittedAssignment.length !== 0 ? (
+                submittedAssignment.map((assignment: any) => (
+                  <div className="student-box" id={assignment.student_id}>
+                    <img alt="student" src={assignment.img} />
+                    <h4 className="name">{assignment["Student.User.name"]}</h4>
+                  </div>
+                ))
+              ) : (
+                <h3>No student to show!</h3>
+              )}
+            </Drawer>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* 
         <div className="card-title">
           <div className="title-content">
             <div className="icon-title">
@@ -138,9 +204,5 @@ const TeacherAssignmentCard: React.FC<TeacherAssignmentCardProps> = ({
             </div>
           </div>
         </div>
-      </Card>
-    </div>
-  );
-};
-
+        */
 export default TeacherAssignmentCard;

@@ -14,16 +14,16 @@ import React, { useState } from "react";
 import { Link, Outlet, useNavigate, useParams } from "react-router-dom";
 import AsideLink from "../../AsideLink";
 import Logo from "../../../assets/new-logo.png";
-import "./style.css";
 import { useUserData } from "../../../context/AuthContext/index";
+import "./style.css";
 
 const icons = [
-  <DashboardOutlined />,
-  <UserOutlined />,
-  <ReconciliationOutlined />,
-  <QuestionCircleOutlined />,
-  <DeliveredProcedureOutlined />,
-  <FileTextOutlined />,
+  <DashboardOutlined title="الاحصائيات" />,
+  <UserOutlined title="الطلاب" />,
+  <ReconciliationOutlined title="المهمات" />,
+  <QuestionCircleOutlined title="الأسئلة" />,
+  <DeliveredProcedureOutlined title="التقييم" />,
+  <FileTextOutlined title="الدرجات" />,
   <FundProjectionScreenOutlined />,
 ];
 
@@ -144,7 +144,8 @@ const ClassDashboard: React.FC = () => {
             />
           ))}
           <Link to="/">
-            <LogoutOutlined onClick={logOut} />
+            <LogoutOutlined onClick={logOut} title="تسجيل الخروج" />
+            {open === "open" ? "الخروج" : ""}
           </Link>
         </aside>
         <main>

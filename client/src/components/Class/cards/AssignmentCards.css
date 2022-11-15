@@ -1,154 +1,117 @@
- :root {
-    --Carmine-Pink: #ED4C4C;
-    --Caribbean-Green: #1B93CB;
-    --Gray: #7C7C7C;
-    --Gainsboro: #DFDFDF;
-} 
-
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-} 
-
-.icon-title {
-    background-color: var(--Caribbean-Green);
-    width: 37.42px;
-    height: 37px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-weight: 600;
-    font-size: 16px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.title-side {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+.class-assignment .assignment-card {
+  width: 100%;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+  background-color: var(--white);
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.title-side p {
-    padding: 17px 10px 0 0;
+.class-assignment .assignment-card > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-h1 {
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 25px;
-    display: flex;
-    align-items: center;
-    margin: 10px;
+.class-assignment .assignment-card .assignment-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
-.card-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px;
-    width: 97%;
+.class-assignment h1,
+.class-assignment p,
+.class-assignment h2 {
+  margin: 0;
+  padding: 0;
 }
 
-.title-content {
-    display: flex;
-    width: 62%;
-    align-items: center;
+.class-assignment .assignment-card .assignment-title div {
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--second-color);
+  width: 40px;
+  height: 40px;
 }
 
-.card-content {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding: 0 10px;
+.class-assignment .assignment-card .assignment-title h1 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333333;
 }
 
-.left {
-    width: 60%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-left: 1px solid var(--Gainsboro);
+.class-assignment .assignment-card .assignment-title div span{
+  color: var(--white);
+  font-size: 1.2rem;
 }
 
-.right {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-    width: 40%;
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 33px;
+.class-assignment .assignment-card .assignment-bottom > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  height: 100%;
 }
 
-.turnedOn,
-.missing {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-left: 10px;
-    text-align: center;
+.class-assignment .assignment-card .assignment-bottom button {
+  border: 0;
+  background-color: inherit;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.turnedOn button,
-.missing button {
-    border: none !important;
-    background-color: transparent !important;
-    box-shadow: none !important;
-    display: flex;
-    flex-direction: column;
-    font-size: 22px;
-    margin-top: -3rem;
+.class-assignment .assignment-card .assignment-bottom .assignment-hr {
+  height: 100%;
+  width: 1.5px;
+  background-color: #cccccc;
 }
 
-.turnedOn button {
-    color: var(--Caribbean-Green) !important;
+.class-assignment .assignment-card .assignment-bottom .assignment-submit,
+.class-assignment .assignment-card .assignment-bottom .assignment-unSubmit {
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
-.missing button {
-    color: var(--Carmine-Pink) !important;
+.class-assignment .assignment-card .assignment-bottom .assignment-submit button {
+  color: var(--second-color);
+  width: 100%;
+  height: 100%;
+  transition: all 0.2s ease-in-out;
 }
 
-.assignment-content {
-    color: var(--Gray);
+.class-assignment .assignment-card .assignment-bottom .assignment-unSubmit button {
+  color: #ED4C4C;
+  width: 100%;
+  height: 100%;
+  transition: all 0.2s ease-in-out;
 }
 
-.student-box {
-    width: 100%;
-    display: flex;
-    min-height: 5rem;
-    padding: 0.8rem;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    margin-bottom: 1rem;
+.class-assignment .assignment-card .assignment-bottom .assignment-submit button:hover,
+.class-assignment .assignment-card .assignment-bottom .assignment-unSubmit button:hover {
+  transform: scale(1.1);
 }
 
-.student-box img {
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid var(--Gray);
+.class-assignment .assignment-card .assignment-bottom button span:nth-child(1) {
+  font-size: 2rem;
+  font-weight: 600;
 }
 
-.student-box .name {
-    width: 50%;
-    font-size: 0.5rem;
-    color: var(--Gray);
-} 
+.class-assignment .assignment-card .assignment-bottom button span:nth-child(2) {
+  font-size: 1.5rem;
+  font-weight: 400;
+}

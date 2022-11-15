@@ -1,14 +1,19 @@
 import { Button, Modal, Form, Input } from "antd";
 import React, { useState } from "react";
-import { CloseOutlined, FileTextOutlined } from "@ant-design/icons";
+import { useParams } from "react-router-dom";
+import { FileTextOutlined } from "@ant-design/icons";
 import axios from "axios";
-import "./index.css";
 import Swal from "sweetalert2";
+import "./index.css";
 
-const AssignmentModal: React.FC = () => {
+// eslint-disable-next-line no-unused-vars
+const AssignmentModal: React.FC<{ setLoading: Function }> = ({
+  setLoading,
+}) => {
   const [form] = Form.useForm();
   const source = axios.CancelToken.source();
   const [visible, setVisible] = useState<boolean>(false);
+  const { classId } = useParams();
 
   const showModal = () => setVisible(true);
 
@@ -19,7 +24,7 @@ const AssignmentModal: React.FC = () => {
   const onFinish = async (fieldValues: any) => {
     try {
       await axios.post(
-        "/api/v1/class/25/assignment",
+        `/api/v1/class/${classId}/assignment`,
         { ...fieldValues },
         { cancelToken: source.token }
       );
@@ -28,6 +33,7 @@ const AssignmentModal: React.FC = () => {
         title: "تم إضافة المهمة بنجاح",
         icon: "success",
       });
+      setLoading(true);
     } catch (error: any) {
       Swal.fire({
         icon: "error",
@@ -45,13 +51,14 @@ const AssignmentModal: React.FC = () => {
         onClick={() => showModal()}
         style={{
           width: "100%",
-          backgroundColor: "transparent",
+          backgroundColor: "#1111",
           borderRadius: "5rem",
           color: "#000",
           boxShadow: "none",
           border: "none",
         }}
       >
+        إظافة تكليف جديد
         <FileTextOutlined />
       </Button>
       <Modal
@@ -60,11 +67,6 @@ const AssignmentModal: React.FC = () => {
         open={visible}
         onCancel={handleCancel}
         width="60%"
-        closeIcon={
-          <CloseOutlined
-            style={{ color: "#0CBE8A", border: "2px solid #0CBE8A" }}
-          />
-        }
       >
         <Form
           form={form}
