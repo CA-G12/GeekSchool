@@ -4,31 +4,33 @@ import { Button, Form, Input } from "antd";
 import axios, { AxiosResponse } from "axios";
 import Swal from "sweetalert2";
 import FeedbackCard from "../../FeedbackCard";
+import { useUserData } from "../../../context/AuthContext";
 import "./Feedback.css";
 
 const Feedback: React.FC = () => {
   const [feedbacks, setFeedbacks] = useState<object[]>([]);
-
   const source = axios.CancelToken.source();
   const { classId } = useParams();
+  const { userData } = useUserData();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       const feedbackData: AxiosResponse = await axios.get(
         `/api/v1/class/${classId}/feedback`
       );
-
-      setFeedbacks(feedbackData.data.data.rows);
+      setFeedbacks(feedbackData.data.data.rows.reverse());
+      setLoading(false);
     };
 
     fetchData();
 
     return () => source.cancel();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [loading]);
 
   const onFinish = async (values: any) => {
-    await axios.post(`api/v1/class/${classId}/feedback`, {
+    await axios.post(`/api/v1/class/${classId}/feedback`, {
       feedback: values.feedback,
     });
 
@@ -41,6 +43,8 @@ const Feedback: React.FC = () => {
         popup: "animate__animated animate__fadeOutUp",
       },
     });
+
+    setLoading(true)
   };
 
   const onFinishFailed = (errorInfo: any) => {
@@ -53,46 +57,43 @@ const Feedback: React.FC = () => {
   };
 
   return (
-    <main className="class-feedback">
-      <h1 className="feedback-title">التغذية الراجعة</h1>
-      <section className="feedback-inner">
-        <Form
-          style={{ padding: "0.5rem", display: "flex" }}
-          name="basic"
-          // labelCol={{ span: 8 }}
-          // wrapperCol={{ span: 16 }}
-          initialValues={{ remember: true }}
-          onFinish={onFinish}
-          onFinishFailed={onFinishFailed}
-          autoComplete="off"
-          className="add-feedback-form"
-        >
-          <Form.Item
-            style={{ width: "90%", padding: "1rem" }}
-            name="feedback"
-            rules={[{ required: true, message: "الرجاء التفضل بإدخال نص" }]}
-          >
-            <Input
-              className="input-field"
-              placeholder="شارك مراجعة جديدة!"
-              style={{ width: "100%" }}
-            />
-          </Form.Item>
-
-          <Form.Item style={{ width: "10%" }}>
-            <Button type="primary" htmlType="submit" className="submit-btn">
-              أرسل
-            </Button>
-          </Form.Item>
-        </Form>
-      </section>
+    <section className="class-feedback">
+      <h1>التغذية الراجعة</h1>
+      { userData.role === 'student' &&
+            <Form
+              style={{ display: "flex" }}
+              name="basic"
+              initialValues={{ remember: true }}
+              onFinish={onFinish}
+              onFinishFailed={onFinishFailed}
+              autoComplete="off"
+              className="add-feedback-form"
+            >
+              <Form.Item
+              name="feedback"
+              style={{width: '100%'}}
+                rules={[{ required: true, message: "الرجاء التفضل بإدخال نص" }]}
+              >
+                <Input
+                  className="input-field"
+                  placeholder="شارك مراجعة جديدة!"
+                />
+              </Form.Item>
+    
+              <Form.Item>
+                <Button type="primary" htmlType="submit" className="submit-btn">
+                  أرسل
+                </Button>
+              </Form.Item>
+            </Form>
+        }
 
       <section className="feedbacks-boxes">
         {feedbacks.map((feedback: any) => (
           <FeedbackCard feedback={feedback.feedback} />
         ))}
       </section>
-    </main>
+    </section>
   );
 };
 

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import "./style.css";
 import { Form, Button, message, Input, Modal } from "antd";
 import axios from "axios";
 import { PlusOutlined, CloseOutlined } from "@ant-design/icons";
 import { useParams } from "react-router-dom";
+import "./style.css";
 
-const AddRecommended: React.FC = () => {
+const AddRecommended: React.FC<{setLoading: Function}> = ({setLoading}) => {
   const [form] = Form.useForm();
   const [visible, setVisible] = useState<boolean>(false);
   const source = axios.CancelToken.source();
@@ -26,6 +26,7 @@ const AddRecommended: React.FC = () => {
       );
 
       message.success(newRecommneded.data.msg);
+      setLoading(false);
     } catch (error: any) {
       message.error(error.response.data.msg);
     }
@@ -40,7 +41,7 @@ const AddRecommended: React.FC = () => {
         onClick={() => showModal()}
         style={{ borderRadius: "30px" }}
       >
-        <PlusOutlined /> إضافة
+        <PlusOutlined /> إظافة توصية
       </Button>
       <Modal
         className="modal"

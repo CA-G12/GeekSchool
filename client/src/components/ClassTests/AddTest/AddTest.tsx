@@ -1,9 +1,10 @@
 import { FC, useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
-import { Button, Form, Input, DatePicker } from "antd";
-import { CloseSquareOutlined } from "@ant-design/icons";
+import { Button, Form, Input, DatePicker, Modal } from "antd";
+import { CloseSquareOutlined, FileTextOutlined } from "@ant-design/icons";
 import "./AddTest.css";
+import { useParams } from "react-router-dom";
 
 const layout = {
   labelCol: { span: 8 },
@@ -25,12 +26,16 @@ const validateMessages = {
   },
 };
 
-// interface Props {
-//   setValue: React.Dispatch<React.SetStateAction<boolean>>;
-// }
-
 const AddTest: FC = () => {
-  const [isShown, setIsShown] = useState<boolean>(true);
+  const [, setIsShown] = useState<boolean>(true);
+  const [visible, setVisible] = useState<boolean>(false);
+  const { classId } = useParams()
+  
+  const showModal = () => setVisible(true);
+
+  const handleCancel = () => {
+    setVisible(false);
+  };
 
   const onFinish = async (fieldValues: any) => {
     const values = {
@@ -40,7 +45,7 @@ const AddTest: FC = () => {
     };
 
     try {
-      await axios.post("/api/v1/class/test", { ...values });
+      await axios.post(`/api/v1/class/${classId}/test`, { ...values });
       await Swal.fire({
         title: "The test is added successfully!",
         showClass: {
@@ -61,9 +66,28 @@ const AddTest: FC = () => {
   };
 
   return (
-    <>
-      {isShown && (
-        <section className="add-test-cont">
+    <div>
+      <Button
+        type="primary"
+        onClick={() => showModal()}
+        style={{
+          width: "100%",
+          backgroundColor: "#1111",
+          borderRadius: "5rem",
+          color: "#000",
+          boxShadow: "none",
+          border: "none",
+        }}
+      >
+        إظافة إختبار جديد<FileTextOutlined />
+      </Button>
+      <Modal
+        className="modal"
+        footer={null}
+        open={visible}
+        onCancel={handleCancel}
+        width="60%"
+      > 
           <Form
             wrapperCol={layout.wrapperCol}
             labelCol={layout.labelCol}
@@ -128,11 +152,9 @@ const AddTest: FC = () => {
                 إضافة الإختبار
               </Button>
             </Form.Item>
-          </Form>
-        </section>
-      )}
-      <div />
-    </>
+        </Form>
+        </Modal>
+      </div>
   );
 };
 

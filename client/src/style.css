@@ -42,6 +42,10 @@ body {
   background: inherit;
 }
 
+main > .title {
+  text-align: start;
+}
+
 ::-webkit-scrollbar-thumb {
   background: #2e9cc792;
   border-radius: 5px;

@@ -1,31 +1,24 @@
 import { FC } from "react";
-import { Card, Button } from "antd";
-import "./AssignmentCards.css";
-import { UnorderedListOutlined } from "@ant-design/icons";
+import { Button } from "antd";
+import { FileTextOutlined } from "@ant-design/icons";
 import { StudentAssignmentCardProps } from "../../../interfaces";
+import "./AssignmentCards.css";
 
 const StudentAssignmentCard: FC<StudentAssignmentCardProps> = ({
   title,
   createdAt,
   description,
 }: StudentAssignmentCardProps) => (
-  <div>
-    <Card style={{ margin: "5px" }}>
-      <div className="card-title">
-        <div className="title-content">
-          <div className="icon-title">
-            <UnorderedListOutlined />{" "}
-          </div>
+  <div className="assignment-card" style={{gap: '2rem'}}>
+      <div className="assignment-top">
+        <div className="assignment-title">
           <div>
-            <h1>{title}</h1>
+            <FileTextOutlined />
           </div>
+          <h1>{title}</h1>
         </div>
-
-        <div className="title-side">
-          <p style={{ color: "#7C7C7C" }}>Posted: {createdAt}</p>
-        </div>
+        <p>تاريخ النشر: {createdAt}</p>
       </div>
-
       <div className="card-content">
         <div className="left">
           <p className="assignment-content">{description}</p>
@@ -33,14 +26,12 @@ const StudentAssignmentCard: FC<StudentAssignmentCardProps> = ({
 
         <div
           className="right"
-          style={{ justifyContent: "right", paddingRight: "45px" }}
         >
           <Button style={{ borderRadius: "5px" }} type="primary">
             Turned on
           </Button>
         </div>
       </div>
-    </Card>
   </div>
 );
 

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { message } from "antd";
 import { Area } from "@antv/g2plot";
 import { DashboardCard } from "../../components/Class/cards";
@@ -12,11 +13,12 @@ const init = {
   questionsLength: 0,
 };
 
-const StatisticsPage: any = ({ classId }: { classId: number | string }) => {
+const StatisticsPage: any = () => {
   const [
     { studentLength, assignmentLength, questionsLength },
     setDashboardNumber,
   ] = useState<dashboardNumberInterface>(init);
+  const { classId } = useParams();
 
   // eslint-disable-next-line no-unused-vars
   const chart = () => {

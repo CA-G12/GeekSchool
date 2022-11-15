@@ -114,7 +114,7 @@ const StudentsProfile = () => {
   }
 
   return (
-    <>
+    <section className="students-section">
       <h1 className="title">الطلاب</h1>
       <div className="table_wrapper">
         <Table
@@ -124,7 +124,7 @@ const StudentsProfile = () => {
           pagination={{ pageSize: 4 }}
         />
       </div>
-    </>
+    </section>
   );
 };
 

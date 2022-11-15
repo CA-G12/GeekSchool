@@ -1,50 +1,29 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Dropdown, Space, Button, Menu, MenuProps } from "antd";
-import { PlusOutlined, FileTextOutlined } from "@ant-design/icons";
+import { Dropdown, Space, Button, Menu, message } from "antd";
+import { PlusOutlined } from "@ant-design/icons";
 import axios from "axios";
 import { useUserData } from "../../../context/AuthContext";
-import AddTest from "../../ClassTests/AddTest/AddTest";
+// import AddTest from "../../ClassTests/AddTest/AddTest";
 import AssignmentModal from "../../AssignmentModal";
 import { StudentAssignmentCard, TeacherAssignmentCard } from "../cards";
 import "./Assignments.css";
 
-// const { Search } = Input;
-
 const Assignments: React.FC = () => {
   const [assignments, setAssignments] = useState<Array<object>>([]);
-  const [addTest, setAddTest] = useState<boolean>(false);
-
-  const { classId } = useParams();
+  const [loading, setLoading] = useState<boolean>(true);
   const role = useUserData().userData?.role;
   const source = axios.CancelToken.source();
+  const { classId } = useParams();
+  const { userData } = useUserData();
 
-  // // ? The search function.
-  // const onSearch = (value: string) =>
-  //   setAssignments((prevValue: any) =>
-  //     prevValue.filter((object: any) => object.title.includes(value))
-  //   );
-
-  // ? Button events
-  const handleMenuClick: MenuProps["onClick"] = (e) => {
-    if (e.key === "2") {
-      setAddTest(true);
-    }
-  };
 
   const menu = (
     <Menu
-      onClick={handleMenuClick}
       items={[
         {
-          label: "إضافة تكليف",
           key: "1",
-          icon: <AssignmentModal />,
-        },
-        {
-          label: "إضافة اختبار",
-          key: "2",
-          icon: <FileTextOutlined />,
+          icon: <AssignmentModal setLoading={setLoading} />,
         },
       ]}
     />
@@ -52,42 +31,35 @@ const Assignments: React.FC = () => {
 
   useEffect(() => {
     const fetchAssignmentsData = async () => {
-      const data = await axios.get(`/api/v1/class/${classId}/assignments`);
-
-      if (data.data.data.count) {
-        setAssignments(data.data.data.rows);
-      } else {
-        setAssignments(data.data.data);
+      try {
+        const data = await axios.get(`/api/v1/class/${classId}/assignments`);
+        if (userData.role === 'student') setAssignments(data.data.data);
+        else if (userData.role === 'teacher') setAssignments(data.data.data.rows)
+        setLoading(false)
+      } catch (error: any) {
+        message.error(error.response.data.msg)
       }
     };
-
     fetchAssignmentsData();
-
     return () => source.cancel();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [loading]);
 
   return (
-    <>
-      {addTest && <AddTest />}
-      <main className="class-assignment">
-        <h1 className="assignment-title">التكليفات</h1>
-        <section className="assignment-add-search">
-          {/* <Search
-            placeholder="ابحث عن تكليف"
-            className="search"
-            onSearch={onSearch}
-            enterButton
-          /> */}
+    <section className="class-assignment">
+      <div>
+        <h1>التكليفات</h1>
+        <div className="assignment-add-search">
           <Dropdown overlay={menu} className="dropdown">
             <Button className="dropdown-button">
               <Space>
                 <PlusOutlined className="plus-icon" />
-                AddTest
+                إظافة مهمة جديدة
               </Space>
             </Button>
           </Dropdown>
-        </section>
+        </div>
+      </div>
         {role === "student" && (
           <section className="assignments-box">
             {assignments.map((assignment: any) => (
@@ -111,8 +83,7 @@ const Assignments: React.FC = () => {
             ))}
           </section>
         )}
-      </main>
-    </>
+      </section>
   );
 };
 

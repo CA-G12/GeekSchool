@@ -1,11 +1,10 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { Pagination } from "antd";
-import type { PaginationProps } from "antd";
 import { useParams } from "react-router-dom";
 import { RecommendedCard } from "../../components";
 import AddRecommended from "../../components/AddRecommended";
 import { useUserData } from "../../context/AuthContext";
+import './style.css';
 
 type recommendedType = {
   description: string;
@@ -14,37 +13,30 @@ type recommendedType = {
 };
 
 const RecommendedPage: React.FC = () => {
-  const [current, setCurrent] = useState<number>(1);
-  const [count, setCount] = useState<number>(1);
   const [recommended, setRecommended] = useState<Array<recommendedType>>([]);
+  const [loading, setLoading] = useState<boolean>(true);
   const source = axios.CancelToken.source();
 
   const { classId } = useParams();
   useEffect(() => {
     const fetchRecommended = async () => {
       const { data } = await axios.get(
-        `/api/v1/class/${classId}/recommended/?page=${current}`
+        `/api/v1/class/${classId}/recommended`
       );
-      setRecommended(data.rows);
-      setCount(data.count);
+      setRecommended(data.rows.reverse());
     };
     fetchRecommended();
     return () => source.cancel();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [current]);
-
-  const onChange: PaginationProps["onChange"] = (page) => {
-    setCurrent(page);
-  };
+  }, [loading]);
 
   return (
-    <div className="card">
+    <section className="recommended-section">
       <div>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <h2>توصيات إضافية</h2>
-          {useUserData().userData?.role === "teacher" ? <AddRecommended /> : ""}
-        </div>
-
+        <h1>توصيات إضافية</h1>
+        {useUserData().userData?.role === "teacher" ? <AddRecommended setLoading={setLoading} /> : ""}
+      </div>
+      <div className="recommended-container">
         {recommended.map((ele) => (
           <RecommendedCard
             description={ele.description}
@@ -52,12 +44,7 @@ const RecommendedPage: React.FC = () => {
           />
         ))}
       </div>
-      <Pagination
-        current={current}
-        onChange={onChange}
-        total={10 * Math.ceil(count / 2)}
-      />
-    </div>
+    </section>
   );
 };
 export default RecommendedPage;
