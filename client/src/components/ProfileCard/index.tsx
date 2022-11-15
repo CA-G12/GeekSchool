@@ -3,7 +3,7 @@ import { ElementType } from "react";
 import { WhatsAppOutlined } from "@ant-design/icons";
 import "./style.css";
 import { Link } from "react-router-dom";
-import ReactWhatsapp from 'react-whatsapp';
+import ReactWhatsapp from "react-whatsapp";
 
 interface DataType {
   name: string;
@@ -72,22 +72,23 @@ const ProfileCard: ElementType = ({
             <List
               dataSource={data}
               renderItem={(item) => (
-                <Link to={_role !== "parent" ? `/class/${item.id}/stats` : ''}>
+                <Link to={_role !== "parent" ? `/class/${item.id}/stats` : ""}>
                   <List.Item key={item.mobile} className="inner_content">
                     <List.Item.Meta
                       avatar={<Avatar src={item.img} />}
                       title={item.name}
                     />
-                    {_role === "parent" ?
+                    {_role === "parent" ? (
                       <div className="icons">
-                        <ReactWhatsapp style={{ background: 'none', border: 'none' }} number={item.mobile} message="مرحباً أستاذ.">
+                        <ReactWhatsapp
+                          style={{ background: "none", border: "none" }}
+                          number={item.mobile}
+                          message="مرحباً أستاذ."
+                        >
                           <WhatsAppOutlined />
-                          </ReactWhatsapp>
+                        </ReactWhatsapp>
                       </div>
-                      :
-                      null
-                    }
-
+                    ) : null}
                   </List.Item>
                 </Link>
               )}
