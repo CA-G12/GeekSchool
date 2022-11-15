@@ -1,8 +1,9 @@
 import { Avatar, List } from "antd";
 import { ElementType } from "react";
-import { AppstoreAddOutlined } from "@ant-design/icons";
+import { WhatsAppOutlined } from "@ant-design/icons";
 import "./style.css";
 import { Link } from "react-router-dom";
+import ReactWhatsapp from 'react-whatsapp';
 
 interface DataType {
   name: string;
@@ -62,7 +63,6 @@ const ProfileCard: ElementType = ({
                     <List.Item.Meta
                       avatar={<Avatar src={item.img} />}
                       title={item.name}
-                      description={item.mobile}
                     />
                   </List.Item>
                 </Link>
@@ -72,16 +72,22 @@ const ProfileCard: ElementType = ({
             <List
               dataSource={data}
               renderItem={(item) => (
-                <Link to={`/class/${item.id}/stats`}>
+                <Link to={_role !== "parent" ? `/class/${item.id}/stats` : ''}>
                   <List.Item key={item.mobile} className="inner_content">
                     <List.Item.Meta
                       avatar={<Avatar src={item.img} />}
                       title={item.name}
-                      description={item.mobile}
                     />
-                    <div className="icons">
-                      <AppstoreAddOutlined />
-                    </div>
+                    {_role === "parent" ?
+                      <div className="icons">
+                        <ReactWhatsapp style={{ background: 'none', border: 'none' }} number={item.mobile} message="مرحباً أستاذ.">
+                          <WhatsAppOutlined />
+                          </ReactWhatsapp>
+                      </div>
+                      :
+                      null
+                    }
+
                   </List.Item>
                 </Link>
               )}
