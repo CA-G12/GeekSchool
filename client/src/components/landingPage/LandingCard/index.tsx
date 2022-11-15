@@ -16,7 +16,7 @@ const LandingCard = () => (
           <div>
             <h2>محمود حماد</h2>
             <p>طالب اعدادي</p>
-            <Rate disabled defaultValue={5} value={1} />
+            <Rate disabled defaultValue={5} value={5} />
           </div>
         </div>
         <div className="hr" />
@@ -31,8 +31,8 @@ const LandingCard = () => (
           <img src={card2} alt="person two" />
           <div>
             <h2> باسل الشيخ</h2>
-            <p>طالب ثانوية</p>
-            <Rate disabled defaultValue={5} value={3} />
+            <p>طالب فاشل</p>
+            <Rate disabled defaultValue={5} value={1} />
           </div>
         </div>
         <div className="hr" />
