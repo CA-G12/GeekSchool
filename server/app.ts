@@ -19,10 +19,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.disable('x-powered-by');
 
-app.use('/api/v1/', router);
+app.use('/api/v1', router);
+
+app.use(serverError);
 
 app.use(notFound);
-app.use(serverError);
 
 if (nodeEnv === 'production') {
   app.use(express.static(join(__dirname, '..', 'client', 'build')));
