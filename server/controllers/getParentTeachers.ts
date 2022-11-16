@@ -1,10 +1,11 @@
 import { Response, NextFunction } from 'express';
-import { getParentTeachersQuery } from '../queries';
+import { getParentTeachersQuery, getUserIdFromTableQuery } from '../queries';
 
 const getParentTeachers = async (req: any, res: Response, next: NextFunction) => {
   try {
-    const { id } = req.user;
-    const data = await getParentTeachersQuery(id);
+    const { id, role } = req.user;
+    const parentId = await getUserIdFromTableQuery(role, id);
+    const data = await getParentTeachersQuery((parentId?.getDataValue('id')));
     res.json({ data });
   } catch (error) {
     next(error);
