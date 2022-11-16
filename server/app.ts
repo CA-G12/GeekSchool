@@ -22,6 +22,7 @@ app.disable('x-powered-by');
 app.use('/api/v1', router);
 
 app.use(serverError);
+
 app.use(notFound);
 
 if (nodeEnv === 'production') {
