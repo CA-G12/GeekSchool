@@ -63,7 +63,6 @@
 .inner_content:hover{
     background: var(--main-color);
     color: var(--white);
-    transform: scale(1.03);
 }
 
 .inner_content:hover .ant-list-item-meta-title {
