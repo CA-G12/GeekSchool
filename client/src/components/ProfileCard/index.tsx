@@ -84,6 +84,7 @@ const ProfileCard: ElementType = ({
                           style={{ background: "none", border: "none" }}
                           number={item.mobile}
                           message="مرحباً أستاذ."
+                          element="button"
                         >
                           <WhatsAppOutlined />
                         </ReactWhatsapp>
