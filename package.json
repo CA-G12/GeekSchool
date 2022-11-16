@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon ./server/index.ts",
     "start": "cross-env NODE_ENV=production ts-node ./server/index.ts",
+    "build": "tsc",
     "test": "cross-env NODE_ENV=test jest --runInBand server/__test__/",
     "lint": "eslint --ext .ts server/",
     "lint-fix": "eslint --ext .ts server/ --fix && cd client && npm run lint-fix",
@@ -54,6 +55,11 @@
     "ts-jest": "^29.0.3",
     "ts-node": "^10.9.1"
   },
+  
+  "optionalDependencies": {
+    "fsevents": "^2.3.2"
+  },
+
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
     "@types/bcryptjs": "^2.4.2",
