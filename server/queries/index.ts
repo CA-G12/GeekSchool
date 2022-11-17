@@ -30,6 +30,7 @@ import {
   studentGradesQuery,
   getStudentInfoQuery,
   postStudentReportsQuery,
+  putParentIdForStudentQuery,
 } from './student';
 
 import getParentInfoQuery from './parent';
@@ -97,4 +98,5 @@ export {
   getClassQuery,
   getAllMessageQuery,
   addMessageQuery,
+  putParentIdForStudentQuery,
 };
