@@ -42,7 +42,7 @@ const ClassSection: FC = () => {
           teacherName={classObject.Teacher.User.name}
           assignments={classObject.Assignments}
           tests={classObject.Tests}
-          key={`${i+1}classes`}
+          key={`${i + 1}classes`}
         />
       ))}
     </main>

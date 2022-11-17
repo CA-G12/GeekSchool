@@ -85,7 +85,7 @@ const init: HealthDataInterface = {
 const HealthProfilePage = () => {
   const { studentId } = useParams();
   const [healthData, setHealthData] = useState<HealthDataInterface>(init);
-  const [loading, setLoading] = useState<boolean>(true)
+  const [loading, setLoading] = useState<boolean>(true);
   const role: string | undefined = useUserData()?.userData?.role;
   const handleUpdateHealth = async (healthValue: string, type: string) => {
     try {
@@ -102,9 +102,7 @@ const HealthProfilePage = () => {
 
   const getHealthData = async () => {
     try {
-      const data = await axios.get(
-        `/api/v1/student/${studentId}/health`
-      );
+      const data = await axios.get(`/api/v1/student/${studentId}/health`);
       if (data.data.data[0]) {
         setHealthData(data.data.data[0]);
         setLoading(false);
