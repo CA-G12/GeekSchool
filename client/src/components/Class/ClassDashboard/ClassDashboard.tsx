@@ -8,6 +8,7 @@ import {
   MenuOutlined,
   FundProjectionScreenOutlined,
   LogoutOutlined,
+  // WechatOutlined,
 } from "@ant-design/icons";
 import { message, Popover } from "antd";
 import React, { useState } from "react";
@@ -23,8 +24,9 @@ const icons = [
   <ReconciliationOutlined title="المهمات" />,
   <QuestionCircleOutlined title="الأسئلة" />,
   <DeliveredProcedureOutlined title="التقييم" />,
-  <FileTextOutlined title="الدرجات" />,
-  <FundProjectionScreenOutlined />,
+  <FileTextOutlined title="التوصيات" />,
+  <FundProjectionScreenOutlined title="الدرجات"/>,
+  // <WechatOutlined title="المحادثة"/>
 ];
 
 const labels = [
@@ -35,6 +37,7 @@ const labels = [
   "التقييم",
   "التوصيات",
   "الدرجات",
+  // "المحادثة",
 ];
 
 const ClassDashboard: React.FC = () => {
@@ -54,6 +57,7 @@ const ClassDashboard: React.FC = () => {
     `/class/${classId}/feedback`,
     `/class/${classId}/recommended`,
     `/class/${classId}/grades`,
+    // `/class/${classId}/chats`,
   ];
 
   const openAside = () => {

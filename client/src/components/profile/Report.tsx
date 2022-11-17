@@ -18,8 +18,8 @@ const Reports = ({
   studentId: string | number | undefined;
   visitRole: string | undefined;
 }) => {
-  const [dataReports, setDataReports] = useState<reportsInterface[] | null>(
-    null
+  const [dataReports, setDataReports] = useState<reportsInterface[]>(
+    []
   );
   const [reportInput, setReportInput] = useState<string>("");
   const getReports = async () => {
@@ -54,7 +54,8 @@ const Reports = ({
     <aside id="profile-aside">
       <section id="reports">
         <h1>الشكاوي</h1>
-        <div className="report-form">
+        {dataReports.length ? 
+        <><div className="report-form">
           {visitRole === "teacher" && (
             <Input
               status={reportInput === null ? "" : !reportInput ? "error" : ""}
@@ -76,7 +77,7 @@ const Reports = ({
               key={`${report.id}reports`}
             />
           ))}
-        </div>
+        </div> </>: <p>لا يوجد شكاوي</p>}
       </section>
     </aside>
   ) : (
