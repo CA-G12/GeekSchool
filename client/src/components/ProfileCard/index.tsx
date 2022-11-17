@@ -1,9 +1,9 @@
 import { Avatar, List } from "antd";
 import { ElementType } from "react";
-import { WhatsAppOutlined } from "@ant-design/icons";
-import "./style.css";
 import { Link } from "react-router-dom";
+import { WhatsAppOutlined } from "@ant-design/icons";
 import ReactWhatsapp from "react-whatsapp";
+import "./style.css";
 
 interface DataType {
   name: string;

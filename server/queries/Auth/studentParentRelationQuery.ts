@@ -7,7 +7,7 @@ const studentParentRelationQuery = (
   studentId:string | number,
 ) => Student.findAll({
   where: {
-    [Op.and]: [{ id: studentId }, { parent_id: id }],
+    [Op.and]: [{ user_id: studentId }, { parent_id: id }],
   },
 });
 

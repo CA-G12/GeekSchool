@@ -196,11 +196,23 @@ nav,
   gap: 1rem;
   background: var(--main-color);
   border-radius: 0.8rem;
+  width: 100%;
+  justify-content: center;
 }
 
-#reports h1 {
+#reports > h1 {
   color: var(--white);
   font-size: 1.6rem;
+  width: 100%;
+}
+
+#reports > p {
+  text-align: center;
+  color: #dfdfdf;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.2rem 2rem;
+  border: 1px solid #dfdfdf;
 }
 
 #reports .report-form {

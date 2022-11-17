@@ -45,7 +45,7 @@ const StudentProfile: FC<{
       setLoading(false);
     } catch (error: any) {
       message.error(error);
-      navigate("/");
+      navigate("/*");
     }
   };
 
@@ -55,7 +55,6 @@ const StudentProfile: FC<{
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
 
-  // if (!studentData) return <Spin tip="Loading..." />;
   return (
     <ProfilePage
       name={studentData?.name}

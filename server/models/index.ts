@@ -15,8 +15,8 @@ import Teacher from './teacher';
 import Test from './test';
 import TestStudent from './testStudent';
 import User from './user';
+import Chat from './chat';
 import sequelize from '../database/connection';
-
 // Relations
 
 // *** Announcement ***
@@ -120,4 +120,5 @@ export {
   TestStudent,
   User,
   sequelize,
+  Chat,
 };

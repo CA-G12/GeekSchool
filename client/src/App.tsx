@@ -14,18 +14,19 @@ import Question from "./components/Class/Questions";
 import { useUserData } from "./context/AuthContext";
 import Assignments from "./components/Class/Assignments/Assignments";
 import StudentsProfile from "./components/Class/StudentsPage";
+import ChatBox from "./components/Class/Chat";
 import Class from "./components/Class";
 import Grades from "./components/Class/Grades";
 import StudentGrades from "./components/Student/Grades/StudentGrades";
 import ClassSection from "./components/Student/ClassSection/ClassSection";
 import Calender from "./components/Calender";
-import "antd/dist/antd.variable.min.css";
-import "antd/dist/antd.min.css";
-import "./style.css";
 import StudentProfile from "./pages/studentProfile";
 import Feedback from "./components/Class/Feedback/Feedback";
 import RecommendedPage from "./pages/recommended/RecommendedPage";
 import NotFoundPage from "./pages/notFoundPage";
+import "antd/dist/antd.variable.min.css";
+import "antd/dist/antd.min.css";
+import "./style.css";
 
 ConfigProvider.config({
   theme: {
@@ -122,6 +123,10 @@ const App: React.FC = () => {
         {
           path: "grades",
           element: <Grades />,
+        },
+        {
+          path: "chats",
+          element: <ChatBox />,
         },
       ],
     },

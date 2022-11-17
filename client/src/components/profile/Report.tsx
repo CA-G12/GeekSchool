@@ -18,9 +18,7 @@ const Reports = ({
   studentId: string | number | undefined;
   visitRole: string | undefined;
 }) => {
-  const [dataReports, setDataReports] = useState<reportsInterface[] | null>(
-    null
-  );
+  const [dataReports, setDataReports] = useState<reportsInterface[]>([]);
   const [reportInput, setReportInput] = useState<string>("");
   const getReports = async () => {
     const { data }: any = await axios.get(
@@ -54,29 +52,37 @@ const Reports = ({
     <aside id="profile-aside">
       <section id="reports">
         <h1>الشكاوي</h1>
-        <div className="report-form">
-          {visitRole === "teacher" && (
-            <Input
-              status={reportInput === null ? "" : !reportInput ? "error" : ""}
-              placeholder="أكتب الشكوى هنا"
-              onChange={(e) => setReportInput(e.target.value)}
-              value={reportInput}
-            />
-          )}
-          {visitRole === "teacher" && (
-            <Button onClick={addNewReport}>
-              <PlusOutlined />
-            </Button>
-          )}
-        </div>
-        <div className="reports-container">
-          {dataReports?.map((report) => (
-            <ReportCard
-              report={report.description}
-              key={`${report.id}reports`}
-            />
-          ))}
-        </div>
+        {dataReports.length ? (
+          <>
+            <div className="report-form">
+              {visitRole === "teacher" && (
+                <Input
+                  status={
+                    reportInput === null ? "" : !reportInput ? "error" : ""
+                  }
+                  placeholder="أكتب الشكوى هنا"
+                  onChange={(e) => setReportInput(e.target.value)}
+                  value={reportInput}
+                />
+              )}
+              {visitRole === "teacher" && (
+                <Button onClick={addNewReport}>
+                  <PlusOutlined />
+                </Button>
+              )}
+            </div>
+            <div className="reports-container">
+              {dataReports?.map((report) => (
+                <ReportCard
+                  report={report.description}
+                  key={`${report.id}reports`}
+                />
+              ))}
+            </div>{" "}
+          </>
+        ) : (
+          <p>لا يوجد شكاوي</p>
+        )}
       </section>
     </aside>
   ) : (
