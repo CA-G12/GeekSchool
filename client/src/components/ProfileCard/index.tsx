@@ -40,7 +40,6 @@ const ProfileCard: ElementType = ({
     subtitle2 = type === "students" ? `من الطلاب` : `من الفصول الدراسية`;
   }
 
-  console.log("data: ", title, data);
   return (
     <div className="profile_card">
       <div className="card_header">
