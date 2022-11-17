@@ -7,6 +7,10 @@ const Student = sequelize.define('Student', {
     autoIncrement: true,
     primaryKey: true,
   },
+  parent_id: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+  },
 });
 
 export default Student;
