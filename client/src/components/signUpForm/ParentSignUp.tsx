@@ -16,16 +16,14 @@ const ParentSignUp: React.ElementType = ({
   const [emailInput, setEmailInput] = useState<string>("");
 
   const handleAddEmail = (): void => {
-      setEmail([emailInput, ...emails]);
+    setEmail([emailInput, ...emails]);
   };
 
-  const handleEmailChange = async (
-    email: string
-  ): Promise<any> => {
+  const handleEmailChange = async (email: string): Promise<any> => {
     try {
       if (emailInput !== "" && regex.test(emailInput)) {
         const res = await axios.post("/api/v1/student/validate", {
-          email
+          email,
         });
         if (res.status === 200) {
           message.success("The student email is a valid email!");
@@ -81,9 +79,7 @@ const ParentSignUp: React.ElementType = ({
         />
         <Button
           type="primary"
-          icon={
-            <PlusOutlined style={{ fontSize: "1.2rem" }} />
-          }
+          icon={<PlusOutlined style={{ fontSize: "1.2rem" }} />}
           onClick={() => handleEmailChange(emailInput)}
           style={{
             background: "#13B9DE",

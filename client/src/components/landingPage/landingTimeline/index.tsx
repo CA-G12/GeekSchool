@@ -78,7 +78,9 @@ const TimeLineSection: FC = () => {
       <div className="timeline-text">
         <h1>{role}</h1>
         {data.map((e: any) => (
-          <Timeline.Item className="list-items-l" key={`${e} timeline`}>{e}</Timeline.Item>
+          <Timeline.Item className="list-items-l" key={`${e} timeline`}>
+            {e}
+          </Timeline.Item>
         ))}
         <Timeline.Item className="list-items">
           في صفحة الفصل الدراسي، يمكنك القيام بالتالي:

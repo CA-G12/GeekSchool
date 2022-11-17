@@ -25,7 +25,7 @@ const icons = [
   <QuestionCircleOutlined title="الأسئلة" />,
   <DeliveredProcedureOutlined title="التقييم" />,
   <FileTextOutlined title="التوصيات" />,
-  <FundProjectionScreenOutlined title="الدرجات"/>,
+  <FundProjectionScreenOutlined title="الدرجات" />,
   // <WechatOutlined title="المحادثة"/>
 ];
 

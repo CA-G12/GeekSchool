@@ -26,10 +26,7 @@ import {
   reportsInterface,
 } from "./userInterface";
 
-import {
-  messageInterface,
-  textMessageInterface
-} from './chat'
+import { messageInterface, textMessageInterface } from "./chat";
 
 import { dashboardNumberInterface } from "./pageInterfaces";
 
