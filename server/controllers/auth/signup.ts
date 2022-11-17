@@ -20,6 +20,7 @@ const addChild = async (child: any, parentId: number) => {
   await createStudent(studentId, parentId);
 };
 
+// eslint-disable-next-line no-unused-vars
 const createParentAccount = async (user: UserTableInterface, children?: Array<string>) => {
   const parentUser = await createUser(user);
   const parentUserId = parentUser.getDataValue('id');
@@ -56,15 +57,19 @@ const signup = async (req: Request, res: Response, next: NextFunction) => {
     };
 
     if (role === 'parent') {
-      await createParentAccount({
+      user = await createUser({
         name, email, password: hashedPassword, mobile, location, role,
-      }, children);
+      });
+      const parent = await createParent(user.getDataValue('id'));
+      children?.forEach((child) => {
+        addChild(child, parent.getDataValue('id'));
+      });
     } else if (role === 'teacher') {
       user = await createUser({
         name, email, mobile, password: hashedPassword, role, location,
       });
       await createTeacher(user.getDataValue('id'));
-    } else {
+    } else if (role === 'student') {
       user = await createUser({
         name, email, mobile, password: hashedPassword, role, location,
       });

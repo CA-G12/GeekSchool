@@ -50,6 +50,8 @@ import getParentTeachersQuery from './getParentTeachers';
 
 import getTeacherScheduleQuery from './getTeacherScheduleQuery';
 
+import { getAllMessageQuery, addMessageQuery } from './chat';
+
 export {
   createUser,
   createParent,
@@ -93,4 +95,6 @@ export {
   getUserIdFromTableQuery,
   postStudentReportsQuery,
   getClassQuery,
+  getAllMessageQuery,
+  addMessageQuery,
 };

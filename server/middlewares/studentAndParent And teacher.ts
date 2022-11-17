@@ -1,15 +1,21 @@
 import { Response, NextFunction } from 'express';
-import { studentParentRelationQuery } from '../queries';
+import { studentParentRelationQuery, getUserIdFromTableQuery } from '../queries';
 import { CustomError } from '../utils';
 
 const studentAndParentAndTeacher = async (req: any, res: Response, next: NextFunction) => {
   try {
     const { id, role } = req.user;
-    const { studentId } = req.params;
-    const data: any = await studentParentRelationQuery(id, studentId);
+    const userId = await getUserIdFromTableQuery(role, id);
 
-    if (role === 'student' || role === 'teacher') next();
-    else if (role === 'parent') {
+    const { studentId } = req.params;
+
+    if (role === 'teacher') next();
+    else if (role === 'student') {
+      if (+studentId === id) next();
+      else { throw new CustomError(401, 'Unauthenticated'); }
+    } else if (role === 'parent') {
+      const data: any = await studentParentRelationQuery(userId?.getDataValue('id'), studentId);
+
       if (data.length) next();
       else { throw new CustomError(401, 'Unauthenticated'); }
     } else { throw new CustomError(401, 'Unauthenticated'); }

@@ -26,6 +26,8 @@ import {
   reportsInterface,
 } from "./userInterface";
 
+import { messageInterface, textMessageInterface } from "./chat";
+
 import { dashboardNumberInterface } from "./pageInterfaces";
 
 export {
@@ -52,4 +54,6 @@ export {
   ParentInfoInterface,
   ChildrenData,
   TeachersData,
+  messageInterface,
+  textMessageInterface,
 };

@@ -42,6 +42,8 @@ import {
 import { getTeacherSchedule, getTeacherStudents, teacherInfo } from './teacher';
 import getParentTeachers from './getParentTeachers';
 
+import { addMessage, getAllMessage } from './chat';
+
 export {
   signup,
   logout,
@@ -85,4 +87,6 @@ export {
   getStudentInfo,
   getIfStudentUserExists,
   postStudentReports,
+  addMessage,
+  getAllMessage,
 };
