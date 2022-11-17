@@ -2,7 +2,13 @@ import { Request, Response, NextFunction } from 'express';
 import { hash } from 'bcryptjs';
 
 import {
-  createUser, createTeacher, findUserByEmail, createParent, createStudent,
+  createUser,
+  createTeacher,
+  findUserByEmail,
+  createParent,
+  createStudent,
+  putParentIdForStudentQuery,
+  createStudentHealthQuery,
 } from '../../queries';
 
 import {
@@ -10,29 +16,13 @@ import {
   userValidation,
   signToken,
   UserRequestInterface,
-  UserTableInterface,
 } from '../../utils';
 
-const addChild = async (child: any, parentId: number) => {
+const putParentIdForStudent = async (child: string, parentId: number) => {
   const studentUser = await findUserByEmail(child);
   const studentId = studentUser?.getDataValue('id');
 
-  await createStudent(studentId, parentId);
-};
-
-const createParentAccount = async (user: UserTableInterface, children?: Array<string>) => {
-  const parentUser = await createUser(user);
-  const parentUserId = parentUser.getDataValue('id');
-  const parent = await createParent(parentUserId);
-  const parentId = parent.getDataValue('id');
-
-  // [email1, email2]
-  // check if emails in user
-  // create students
-  // create one parent
-  children?.forEach((child) => {
-    addChild(child, parentId);
-  });
+  await putParentIdForStudentQuery(studentId, parentId);
 };
 
 const signup = async (req: Request, res: Response, next: NextFunction) => {
@@ -56,18 +46,24 @@ const signup = async (req: Request, res: Response, next: NextFunction) => {
     };
 
     if (role === 'parent') {
-      await createParentAccount({
+      user = await createUser({
         name, email, password: hashedPassword, mobile, location, role,
-      }, children);
+      });
+      const parent = await createParent(user.getDataValue('id'));
+      children?.forEach((child) => {
+        putParentIdForStudent(child, parent.getDataValue('id'));
+      });
     } else if (role === 'teacher') {
       user = await createUser({
         name, email, mobile, password: hashedPassword, role, location,
       });
       await createTeacher(user.getDataValue('id'));
-    } else {
+    } else if (role === 'student') {
       user = await createUser({
         name, email, mobile, password: hashedPassword, role, location,
       });
+      const student = await createStudent(user.getDataValue('id'));
+      await createStudentHealthQuery(student.getDataValue('id'));
     }
 
     const token = await signToken({ id: user.getDataValue('id'), name, role });

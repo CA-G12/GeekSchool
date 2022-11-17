@@ -31,6 +31,8 @@ import {
   studentGradesQuery,
   getStudentInfoQuery,
   postStudentReportsQuery,
+  putParentIdForStudentQuery,
+  createStudentHealthQuery,
 } from './student';
 
 import getParentInfoQuery from './parent';
@@ -50,6 +52,8 @@ import { studentParentRelationQuery, getUserIdFromTableQuery } from './Auth';
 import getParentTeachersQuery from './getParentTeachers';
 
 import getTeacherScheduleQuery from './getTeacherScheduleQuery';
+
+import { getAllMessageQuery, addMessageQuery } from './chat';
 
 export {
   createUser,
@@ -94,5 +98,10 @@ export {
   getUserIdFromTableQuery,
   postStudentReportsQuery,
   getClassQuery,
+  getAllMessageQuery,
+  addMessageQuery,
+  putParentIdForStudentQuery,
+  createStudentHealthQuery,
   postClassQuery,
+
 };

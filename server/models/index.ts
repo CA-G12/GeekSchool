@@ -15,8 +15,8 @@ import Teacher from './teacher';
 import Test from './test';
 import TestStudent from './testStudent';
 import User from './user';
+import Chat from './chat';
 import sequelize from '../database/connection';
-
 // Relations
 
 // *** Announcement ***
@@ -84,9 +84,6 @@ Schedule.belongsTo(Class, { foreignKey: 'class_id' });
 User.hasOne(Student, { foreignKey: 'user_id', sourceKey: 'id' });
 Student.belongsTo(User, { foreignKey: 'user_id' });
 
-Parent.hasMany(Student, { foreignKey: 'parent_id', sourceKey: 'id' });
-Student.belongsTo(Parent, { foreignKey: 'parent_id' });
-
 // *** Teacher ***
 User.hasOne(Teacher, { foreignKey: 'user_id', sourceKey: 'id' });
 Teacher.belongsTo(User, { foreignKey: 'user_id' });
@@ -120,4 +117,5 @@ export {
   TestStudent,
   User,
   sequelize,
+  Chat,
 };

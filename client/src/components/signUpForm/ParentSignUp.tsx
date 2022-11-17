@@ -14,34 +14,28 @@ const ParentSignUp: React.ElementType = ({
   const regex = /^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,3})+$/;
   const [emails, setEmail] = useState<string[] | []>([]);
   const [emailInput, setEmailInput] = useState<string>("");
-  const [isChildEmailValid, setIsChildEmailValid] = useState<boolean>(false);
 
   const handleAddEmail = (): void => {
-    if (emailInput !== "" && regex.test(emailInput)) {
-      setEmail([emailInput, ...emails]);
-      setIsChildEmailValid(false);
-    } else {
-      message.error("Child email required or not an email ");
-    }
+    setEmail([emailInput, ...emails]);
   };
 
-  const handleEmailChange = async (
-    e: React.ChangeEvent<HTMLInputElement>
-  ): Promise<any> => {
+  const handleEmailChange = async (email: string): Promise<any> => {
     try {
-      const res = await axios.post("/api/v1/student/validate", {
-        email: e.target.value,
-      });
-      if (res.status === 200) {
-        message.success("The student email is a valid email!");
-        setEmailInput(e.target.value);
-        setIsChildEmailValid(true);
-        setIsOk(true);
+      if (emailInput !== "" && regex.test(emailInput)) {
+        const res = await axios.post("/api/v1/student/validate", {
+          email,
+        });
+        if (res.status === 200) {
+          message.success("The student email is a valid email!");
+          setIsOk(true);
+        }
+        handleAddEmail();
+      } else {
+        message.error("Child email required or not an email ");
       }
     } catch (error: any) {
       if (error.response.status === 404) {
         message.error("The student email you entered does not exist!");
-        setIsChildEmailValid(false);
         setIsOk(false);
       }
     }
@@ -80,15 +74,13 @@ const ParentSignUp: React.ElementType = ({
       <div className="add-child">
         <Input
           placeholder="البريد الإلكتروني للأبناء"
-          onChange={handleEmailChange}
+          onChange={(e) => setEmailInput(e.target.value)}
           style={{ height: "100%", width: "89%" }}
         />
         <Button
           type="primary"
-          icon={
-            isChildEmailValid && <PlusOutlined style={{ fontSize: "1.2rem" }} />
-          }
-          onClick={handleAddEmail}
+          icon={<PlusOutlined style={{ fontSize: "1.2rem" }} />}
+          onClick={() => handleEmailChange(emailInput)}
           style={{
             background: "#13B9DE",
             border: 0,

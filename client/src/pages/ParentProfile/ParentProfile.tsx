@@ -106,28 +106,30 @@ const ParentProfile: FC<{
       visitRole={userData?.role}
       setIsGotten={setIsGotten}
     >
-      <ProfileCard
-        data={children.map((child: ChildrenData) => ({
-          id: child.user_id,
-          img: child.img,
-          name: child.name,
-          mobile: parentInfo.mobile,
-        }))}
-        title="students"
-        type="students"
-        _role="parent"
-      />
-      <ProfileCard
-        data={teachers.map((teacher: TeachersData) => ({
-          id: teacher.id,
-          img: teacher.img,
-          name: teacher.name,
-          mobile: parentInfo.mobile,
-        }))}
-        title="teacher"
-        type="teacher"
-        _role="parent"
-      />
+      <section id="teacher-tables">
+        <ProfileCard
+          data={children.map((child: ChildrenData) => ({
+            id: child.user_id,
+            img: child.img,
+            name: child.name,
+            mobile: parentInfo.mobile,
+          }))}
+          title="students"
+          type="students"
+          _role="parent"
+        />
+        <ProfileCard
+          data={teachers.map((teacher: TeachersData) => ({
+            id: teacher.id,
+            img: teacher.img,
+            name: teacher.name,
+            mobile: parentInfo.mobile,
+          }))}
+          title="teacher"
+          type="teacher"
+          _role="parent"
+        />
+      </section>
     </ProfilePage>
   );
 };

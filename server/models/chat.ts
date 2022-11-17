@@ -1,16 +1,21 @@
 import { DataTypes } from 'sequelize';
 import sequelize from '../database/connection';
 
-const Student = sequelize.define('Student', {
+const Chat = sequelize.define('Chat', {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
     primaryKey: true,
   },
-  parent_id: {
+  sender_id: {
     type: DataTypes.INTEGER,
-    allowNull: true,
+  },
+  class_id: {
+    type: DataTypes.INTEGER,
+  },
+  message: {
+    type: DataTypes.TEXT,
   },
 });
 
-export default Student;
+export default Chat;
