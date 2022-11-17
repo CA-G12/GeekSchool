@@ -4,7 +4,7 @@ const getClassQuery = (id: string) => (
   Class.findAll({
     raw: true,
     where: {
-      id,
+      teacher_id: id,
     },
   })
 );

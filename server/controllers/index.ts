@@ -25,6 +25,7 @@ import {
   getClassGrades,
   postRecommendation,
   getTests,
+  addNewClass,
 } from './class';
 
 import {
@@ -89,4 +90,6 @@ export {
   postStudentReports,
   addMessage,
   getAllMessage,
+  addNewClass,
+
 };
