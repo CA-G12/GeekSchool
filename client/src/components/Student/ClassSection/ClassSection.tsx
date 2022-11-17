@@ -35,13 +35,14 @@ const ClassSection: FC = () => {
 
   return (
     <main className="classes">
-      {classes.map((classObject: any) => (
+      {classes.map((classObject: any, i) => (
         <ClassCard
           id={classObject.id}
           className={classObject.name}
           teacherName={classObject.Teacher.User.name}
           assignments={classObject.Assignments}
           tests={classObject.Tests}
+          key={`${i + 1}classes`}
         />
       ))}
     </main>

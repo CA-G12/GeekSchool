@@ -4,6 +4,7 @@ import getStudentTestsQuery from './getStudentTests';
 import getStudentInfoQuery from './getStudentInfoQuery';
 import postStudentReportsQuery from './postStudentReportsQuery';
 import putParentIdForStudentQuery from './putParentIdForStudentQuery';
+import createStudentHealthQuery from './addStudentHealthQuery';
 
 export {
   getStudentClassesQuery,
@@ -12,4 +13,5 @@ export {
   getStudentInfoQuery,
   postStudentReportsQuery,
   putParentIdForStudentQuery,
+  createStudentHealthQuery,
 };
