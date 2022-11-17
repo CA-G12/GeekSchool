@@ -142,6 +142,7 @@ const ProfilePage: FC<ProfilePageProps> = ({
                 handleClicked={handleClicked}
                 newPath={newPath}
                 testPath={paths[i]}
+                key={`${i+1}nav`}
               />
             ))}
           </nav>

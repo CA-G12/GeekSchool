@@ -8,6 +8,7 @@ import {
   createParent,
   createStudent,
   putParentIdForStudentQuery,
+  createStudentHealthQuery,
 } from '../../queries';
 
 import {
@@ -61,7 +62,8 @@ const signup = async (req: Request, res: Response, next: NextFunction) => {
       user = await createUser({
         name, email, mobile, password: hashedPassword, role, location,
       });
-      await createStudent(user.getDataValue('id'));
+      const student = await createStudent(user.getDataValue('id'));
+      await createStudentHealthQuery(student.getDataValue('id'));
     }
 
     const token = await signToken({ id: user.getDataValue('id'), name, role });

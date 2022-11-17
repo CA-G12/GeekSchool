@@ -31,6 +31,7 @@ import {
   getStudentInfoQuery,
   postStudentReportsQuery,
   putParentIdForStudentQuery,
+  createStudentHealthQuery,
 } from './student';
 
 import getParentInfoQuery from './parent';
@@ -99,4 +100,5 @@ export {
   getAllMessageQuery,
   addMessageQuery,
   putParentIdForStudentQuery,
+  createStudentHealthQuery,
 };
