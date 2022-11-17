@@ -18,8 +18,8 @@ const AddClass: React.FC<{ setLoading: Function }> = ({ setLoading }) => {
   };
 
   const onFinish = async (fieldValues: any) => {
-    console.log("fieldValues: ", fieldValues);
     try {
+      setLoading(true);
       const newClass = await axios.post(
         `/api/v1/class/`,
         { ...fieldValues },

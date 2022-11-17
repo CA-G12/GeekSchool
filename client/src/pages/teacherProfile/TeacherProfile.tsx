@@ -72,10 +72,12 @@ const TeacherProfile: React.FC<ProfileProps> = ({ setIsGotten }) => {
 
     const fetchStudents = async () => {
       try {
+        setLoading(true);
         const data = await axios.get("/api/v1/teacher/students", {
           cancelToken: source.token,
         });
         setStudents(data.data.data);
+        setLoading(false);
       } catch (error: any) {
         message.error(error.response.data.msg);
       }
@@ -83,6 +85,7 @@ const TeacherProfile: React.FC<ProfileProps> = ({ setIsGotten }) => {
 
     const fetchClasses = async () => {
       try {
+        setLoading(true);
         if (userData.id) {
           const data = await axios.get(
             `/api/v1/profile/teacher/${userData.id}/classes`,
@@ -91,6 +94,7 @@ const TeacherProfile: React.FC<ProfileProps> = ({ setIsGotten }) => {
             }
           );
           setClasses(data?.data?.data);
+          setLoading(false);
         }
       } catch (error: any) {
         message.error(error.response.data.msg);
@@ -100,7 +104,7 @@ const TeacherProfile: React.FC<ProfileProps> = ({ setIsGotten }) => {
     fetchTeacherInfo();
     fetchStudents();
     fetchClasses();
-    setLoading(false);
+    // setLoading(false);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
