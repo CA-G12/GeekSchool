@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import { Form, Button, message, Input, Modal } from "antd";
 import axios from "axios";
 import { PlusOutlined, CloseOutlined } from "@ant-design/icons";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 import "./style.css";
 
-const AddRecommended: React.FC<{ setLoading: Function }> = ({ setLoading }) => {
+const AddClass: React.FC<{ setLoading: Function }> = ({ setLoading }) => {
   const [form] = Form.useForm();
   const [visible, setVisible] = useState<boolean>(false);
   const source = axios.CancelToken.source();
-  const { classId } = useParams();
+  //   const { classId } = useParams();
 
   const showModal = () => setVisible(true);
 
@@ -18,14 +18,15 @@ const AddRecommended: React.FC<{ setLoading: Function }> = ({ setLoading }) => {
   };
 
   const onFinish = async (fieldValues: any) => {
+    console.log("fieldValues: ", fieldValues);
     try {
-      const newRecommneded = await axios.post(
-        `/api/v1/class/${classId}/recommended`,
+      const newClass = await axios.post(
+        `/api/v1/class/`,
         { ...fieldValues },
         { cancelToken: source.token }
       );
 
-      message.success(newRecommneded.data.msg);
+      message.success(newClass.data.msg);
       setLoading(false);
     } catch (error: any) {
       message.error(error.response.data.msg);
@@ -39,9 +40,9 @@ const AddRecommended: React.FC<{ setLoading: Function }> = ({ setLoading }) => {
       <Button
         type="primary"
         onClick={() => showModal()}
-        style={{ borderRadius: "30px" }}
+        style={{ borderRadius: "50px" }}
       >
-        <PlusOutlined /> إضافة توصية
+        <PlusOutlined />
       </Button>
       <Modal
         className="modal"
@@ -69,33 +70,17 @@ const AddRecommended: React.FC<{ setLoading: Function }> = ({ setLoading }) => {
           form={form}
         >
           <Form.Item
-            label="تفاصيل المقترح"
+            label="الفصل الدراسي"
             style={{ width: "90%" }}
-            name="description"
+            name="name"
             rules={[
               {
                 required: true,
-                message: "تفاصيل المقترح مطلوبة",
+                message: "اسم الفصل الدراسي مطلوب",
               },
             ]}
           >
-            <Input className="input" placeholder="تفاصيل المقترح" />
-          </Form.Item>
-
-          <Form.Item
-            label="تفاصيل المقترح"
-            style={{ width: "90%" }}
-            name="materialLink"
-            rules={[
-              {
-                required: true,
-                message: "يجب إدخال رابط صالح",
-              },
-              { type: "url", warningOnly: true },
-              { type: "string", min: 6 },
-            ]}
-          >
-            <Input placeholder="رابط مصدر المقترح " />
+            <Input className="input" placeholder="اسم الفصل الدراسي" />
           </Form.Item>
 
           <Form.Item
@@ -116,4 +101,4 @@ const AddRecommended: React.FC<{ setLoading: Function }> = ({ setLoading }) => {
   );
 };
 
-export default AddRecommended;
+export default AddClass;

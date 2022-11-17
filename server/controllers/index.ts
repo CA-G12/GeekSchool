@@ -25,6 +25,7 @@ import {
   getClassGrades,
   postRecommendation,
   getTests,
+  addNewClass,
 } from './class';
 
 import {
@@ -85,4 +86,5 @@ export {
   getStudentInfo,
   getIfStudentUserExists,
   postStudentReports,
+  addNewClass,
 };

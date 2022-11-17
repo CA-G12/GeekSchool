@@ -3,6 +3,8 @@ import { ElementType } from "react";
 import { AppstoreAddOutlined } from "@ant-design/icons";
 import "./style.css";
 import { Link } from "react-router-dom";
+// import ReactWhatsapp from "react-whatsapp";
+import AddClassModal from "../AddClassModal";
 
 interface DataType {
   name: string;
@@ -16,6 +18,7 @@ interface ProfileCardCC {
   title: string;
   type?: string;
   _role: string;
+  setLoading: Function;
 }
 
 const ProfileCard: ElementType = ({
@@ -23,6 +26,7 @@ const ProfileCard: ElementType = ({
   title,
   type,
   _role,
+  setLoading,
 }: ProfileCardCC) => {
   let subtitle1;
   let subtitle2;
@@ -35,10 +39,16 @@ const ProfileCard: ElementType = ({
     subtitle2 = type === "students" ? `من الطلاب` : `من الفصول الدراسية`;
   }
 
+  console.log("data: ", title, data);
   return (
     <div className="profile_card">
       <div className="card_header">
-        <h1>{title}</h1>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <h1>{title}</h1>
+          {_role === "teacher" && type === "classes" ? (
+            <AddClassModal setLoading={setLoading} />
+          ) : null}
+        </div>
         <p>
           {subtitle1}
           <span className="teachers_number"> {data.length} </span> {subtitle2}
@@ -61,8 +71,7 @@ const ProfileCard: ElementType = ({
                   <List.Item key={item.mobile} className="inner_content">
                     <List.Item.Meta
                       avatar={<Avatar src={item.img} />}
-                      title={item.name}
-                      description={item.mobile}
+                      title={`${item.name}ffff`}
                     />
                   </List.Item>
                 </Link>

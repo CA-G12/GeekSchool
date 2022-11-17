@@ -51,7 +51,7 @@ const TeacherProfile: React.FC<ProfileProps> = ({ setIsGotten }) => {
   const [students, setStudents] = useState<studentsInterface[]>([]);
   const [classes, setClasses] = useState<classItem[]>([]);
   const [user, setUser] = useState<UserItem>(initUser);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState<boolean>(true);
   const { userData } = useUserData();
 
   const navigate = useNavigate();
@@ -136,6 +136,7 @@ const TeacherProfile: React.FC<ProfileProps> = ({ setIsGotten }) => {
           title="الفصول الدراسية"
           type="classes"
           _role="teacher"
+          setLoading={setLoading}
         />
       </section>
     </ProfilePage>

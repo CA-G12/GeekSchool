@@ -29,9 +29,11 @@ import {
   addAnnouncement,
   postRecommendation,
   getTests,
+  addNewClass,
 } from '../controllers';
 
 const classRouter = Router();
+classRouter.post('/', userAuth, teacherAuth, addNewClass);
 
 classRouter.get('/:classId/statistics', userAuth, studentAndTeacher, getStats);
 classRouter.get('/:classId/announcement', userAuth, studentAndTeacher, getAnnouncement);
