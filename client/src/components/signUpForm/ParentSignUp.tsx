@@ -15,29 +15,41 @@ const ParentSignUp: React.ElementType = ({
   const [emails, setEmail] = useState<string[] | []>([]);
   const [emailInput, setEmailInput] = useState<string>("");
 
-  const handleAddEmail = (): void => {
-    setEmail([emailInput, ...emails]);
+
+  const handleEmailInput = (elm: React.ChangeEvent<HTMLInputElement>) => {
+    const newEmail = elm.target.value;
+    const checkNewEmailIfExist = emails.filter((e) => e === newEmail).length;
+    if (!checkNewEmailIfExist) {
+      setEmailInput(newEmail);
+    }
   };
 
   const handleEmailChange = async (email: string): Promise<any> => {
-    try {
+    const checkNewEmailIfExist = emails.filter((e) => e === emailInput).length;
+    if (!checkNewEmailIfExist) {
+      console.log(checkNewEmailIfExist);
       if (emailInput !== "" && regex.test(emailInput)) {
-        const res = await axios.post("/api/v1/student/validate", {
-          email,
-        });
-        if (res.status === 200) {
-          message.success("The student email is a valid email!");
-          setIsOk(true);
+        
+        try {
+          const res = await axios.post("/api/v1/student/validate", {
+            email,
+          });
+          if (res.status === 200) {
+            message.success("The student email is a valid email!");
+            setEmail([emailInput, ...emails]);
+            setIsOk(true);
+          }
+        } catch (error: any) {
+          if (error.response.status === 404) {
+            message.error("The student email you entered does not exist!");
+            setIsOk(false);
+          }
         }
-        handleAddEmail();
       } else {
         message.error("Child email required or not an email ");
       }
-    } catch (error: any) {
-      if (error.response.status === 404) {
-        message.error("The student email you entered does not exist!");
-        setIsOk(false);
-      }
+    } else {
+      message.error("you are already added this email");
     }
   };
 
@@ -74,7 +86,7 @@ const ParentSignUp: React.ElementType = ({
       <div className="add-child">
         <Input
           placeholder="البريد الإلكتروني للأبناء"
-          onChange={(e) => setEmailInput(e.target.value)}
+          onChange={handleEmailInput}
           style={{ height: "100%", width: "89%" }}
         />
         <Button

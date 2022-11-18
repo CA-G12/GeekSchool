@@ -63,7 +63,7 @@ const SignUpPage: FC = () => {
       }
     } catch (err: any) {
       if (err.name === "ValidationError") message.error(err.message);
-      message.error(err.response.data.msg);
+      message.error(err.response?.data?.msg);
     }
   };
 
