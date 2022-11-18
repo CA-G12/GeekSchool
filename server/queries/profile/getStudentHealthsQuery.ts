@@ -1,10 +1,9 @@
 import { Health } from '../../models';
 
-const getStudentHealthsQuery = (studentId: string) => (
+const getStudentHealthsQuery = (studentId: number) => (
   Health.findAll({
-    raw: true,
     where: {
-      id: studentId,
+      student_id: studentId,
     },
   })
 );

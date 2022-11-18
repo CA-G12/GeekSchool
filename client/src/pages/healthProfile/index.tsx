@@ -69,7 +69,7 @@ interface HealthDataInterface {
 }
 
 const init: HealthDataInterface = {
-  id: 2,
+  id: 0,
   dental: "",
   vision: "",
   blood_pressure: null,
@@ -79,12 +79,13 @@ const init: HealthDataInterface = {
   other: null,
   createdAt: "2022-11-09T20:21:54.838Z",
   updatedAt: "2022-11-09T20:21:54.838Z",
-  student_id: 2,
+  student_id: 0,
 };
 
 const HealthProfilePage = () => {
   const { studentId } = useParams();
   const [healthData, setHealthData] = useState<HealthDataInterface>(init);
+  const [loading, setLoading] = useState<boolean>(true);
   const role: string | undefined = useUserData()?.userData?.role;
   const handleUpdateHealth = async (healthValue: string, type: string) => {
     try {
@@ -101,10 +102,11 @@ const HealthProfilePage = () => {
 
   const getHealthData = async () => {
     try {
-      const data = await axios.get(
-        `/api/v1/profile/student/${studentId}/health`
-      );
-      setHealthData(data.data.data[0]);
+      const data = await axios.get(`/api/v1/student/${studentId}/health`);
+      if (data.data.data[0]) {
+        setHealthData(data.data.data[0]);
+        setLoading(false);
+      }
     } catch (error: any) {
       message.error(error.response.data.msg);
     }
@@ -113,7 +115,7 @@ const HealthProfilePage = () => {
   useEffect(() => {
     getHealthData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [loading]);
 
   return (
     <main>

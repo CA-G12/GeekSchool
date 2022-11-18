@@ -1,3 +1,4 @@
+import { Op } from 'sequelize';
 import {
   Class, ClassStudent, Student, User,
 } from '../../models';
@@ -11,6 +12,11 @@ const getTeacherStudentsQuery = (teacherId: number) => Class.findAll({
   },
   include: [{
     model: ClassStudent,
+    where: {
+      id: {
+        [Op.ne]: null,
+      },
+    },
     attributes: [],
     include: [{
       model: Student,

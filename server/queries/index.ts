@@ -17,6 +17,7 @@ import {
   deleteAssignmentQuery,
   postRecommendationQuery,
   getTestsQuery,
+  postClassQuery,
 } from './class';
 
 import { createUser, findUserByEmail } from './userQueries';
@@ -31,6 +32,7 @@ import {
   getStudentInfoQuery,
   postStudentReportsQuery,
   putParentIdForStudentQuery,
+  createStudentHealthQuery,
 } from './student';
 
 import getParentInfoQuery from './parent';
@@ -99,4 +101,7 @@ export {
   getAllMessageQuery,
   addMessageQuery,
   putParentIdForStudentQuery,
+  createStudentHealthQuery,
+  postClassQuery,
+
 };
