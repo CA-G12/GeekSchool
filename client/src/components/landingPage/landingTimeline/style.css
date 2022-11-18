@@ -6,172 +6,131 @@
 
 #timeline-section {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 2rem;
-  padding: 0rem 4rem;
-  height: 100vh;
-  background-color: rgb(10 33 75);
+  padding: 1rem 6rem;
+  background-color: white;
+  margin-bottom: 2rem;
 }
 
-#timeline-section>div {
-  width: 100%;
+.timeline-buttons {
   display: flex;
   justify-content: center;
-  align-items: center;
-}
-
-#timeline-section>div:nth-child(1) {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding: 2rem 0;
-  text-align: right;
-
-}
-
-.list-items-l {
-  text-align: right;
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  
-}
-
-.list-items-l li{
-  text-align: left;
-
-}
-.list-items {
-
-  text-align: right;
-  display: flex;
-  justify-content: right;
-  flex-wrap: wrap;
-}
-
-#timeline-section>div:nth-child(1) h1 {
-  font-size: 1.8rem;
-  color: var(--white);
-  position: relative;
-  padding: 1rem 0;
-  margin-bottom: 1rem;
-  font-weight: 800;
-
-}
-
-#timeline-section>div:nth-child(1) h1::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
+  gap: 1.5rem;
   width: 100%;
-  height: 1px;
-  background-color: var(--white);
+  border-bottom: 1px solid #cccccc;
 }
 
-#timeline-section>div:nth-child(2) {
-  border-right: 1px solid #dbdbdb;
-}
-
-#timeline-section>div:nth-child(1) li {
-  width: 100%;
-  font-size: 1rem;
-  padding: 0;
-  text-align: right;
-  color: var(--white);
-}
-
-#timeline-section>div:nth-child(1) li>div:nth-child(1) {
-  display: none;
-}
-
-#timeline-section>div:nth-child(1) li>div:nth-child(3) {
-  margin: 0 1rem;
-}
-
-#timeline-section .step-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-right: 1.2rem;
-}
-
-#timeline-section .step-list li {
-  color: #ddd !important;
-}
-
-#timeline-section .step-list li:nth-child(1) {
-  margin-top: 1rem;
-}
-
-#timeline-section .timeline-buttons .buttons {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-#timeline-section .timeline-buttons .buttons div {
-  width: 45%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#timeline-section .timeline-buttons .buttons div:nth-child(1) {
-  width: 100%;
-  margin-bottom: 1rem;
-}
-
-#timeline-section .timeline-buttons .buttons div button {
-  outline: 0;
+.timeline-buttons button {
+  padding: 0.5rem 0 1rem;
+  background-color: inherit;
   border: 0;
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  color: var(--white);
-  font-size: 1.5rem;
-  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 500;
+  position: relative;
+  font-weight: 500;
   transition: all 0.2s ease-in-out;
 }
 
-#timeline-section .timeline-buttons .buttons div button:hover {
-  transform: scale(1.1);
+.timeline-buttons button::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: var(--second-color);
+  transition: all 0.2s ease-in-out;
 }
 
-#timeline-section .timeline-buttons .buttons div:nth-child(1) button {
-  background-color: rgb(57, 212, 43);
-  box-shadow: 0 2px 10px 0 rgb(57, 212, 43),
-    0 2px 20px 0 rgb(57, 212, 43);
+.timeline-buttons button:hover {
+  color: var(--second-color);
+  cursor: pointer;
 }
 
-#timeline-section .timeline-buttons .buttons div:nth-child(1) button:hover {
-  background-color: rgba(57, 212, 43, 0.9);
-  box-shadow: 0 2px 10px 0 rgb(57, 212, 43),
-    0 2px 20px 0 rgb(57, 212, 43),
-    0 2px 30px 0 rgb(57, 212, 43);
+.timeline-buttons button:hover::before {
+  width: 100%;
 }
 
-#timeline-section .timeline-buttons .buttons div:nth-child(2) button {
-  background-color: rgb(43, 156, 212);
-  box-shadow: 0 2px 10px 0 rgb(43, 156, 212),
-    0 2px 20px 0 rgb(43, 156, 212);
+.timeline-buttons button.timeline-active {
+  color: var(--second-color);
 }
 
-#timeline-section .timeline-buttons .buttons div:nth-child(2) button:hover {
-  background-color: rgba(43, 156, 212, 0.9);
-  box-shadow: 0 2px 10px 0 rgb(43, 156, 212),
-    0 2px 20px 0 rgb(43, 156, 212),
-    0 2px 30px 0 rgb(43, 156, 212);
+.timeline-buttons button.timeline-active::before {
+  width: 100%;
 }
 
-#timeline-section .timeline-buttons .buttons div:nth-child(3) button {
-  background-color: rgb(195, 43, 212);
-  box-shadow: 0 2px 10px 0 rgb(195, 43, 212),
-    0 2px 20px 0 rgb(195, 43, 212);
+.timeline-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 80%;
 }
 
-#timeline-section .timeline-buttons .buttons div:nth-child(3) button:hover {
-  background-color: rgba(195, 43, 212, 0.9);
-  box-shadow: 0 2px 10px 0 rgb(195, 43, 212),
-    0 2px 20px 0 rgb(195, 43, 212),
-    0 2px 30px 0 rgb(195, 43, 212);
+.timeline-container::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background-color: var(--second-color);
+}
+
+.timeline-container .timeline-card {
+  padding: 2rem 2rem;
+  align-self: flex-start;
+  width: 50%;
+  position: relative;
+}
+
+.timeline-container .timeline-card .timeline-circle {
+  content: '';
+  position: absolute;
+  left: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--white);
+  border: 4px solid var(--second-color);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  z-index: 100;
+}
+
+.timeline-container .timeline-card:nth-child(even) {
+  align-self: flex-end;
+}
+
+.timeline-container .timeline-card:nth-child(even) .timeline-circle {
+  right: -15px;
+}
+
+.timeline-container .timeline-card div {
+  border: 1px solid #cccccc;
+  padding: 1rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.timeline-container .timeline-card div ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #444444;
+}
+
+.timeline-container .timeline-card div p {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #444444;
 }

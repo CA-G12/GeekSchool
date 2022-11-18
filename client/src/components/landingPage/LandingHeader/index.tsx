@@ -44,12 +44,8 @@ const LandingHeader: React.FC = () => {
         </section>
         {!userId && (
           <section className="buttons">
-            <Link to="/login">
-              <Button type="primary">تسجيل دخول</Button>
-            </Link>
-            <Link to="/signup">
-              <Button type="primary">إنشاء حساب</Button>
-            </Link>
+            <Link to="/login">تسجيل دخول</Link>
+            <Link to="/signup">إنشاء حساب</Link>
           </section>
         )}
         {userRole && (
