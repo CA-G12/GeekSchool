@@ -23,38 +23,62 @@ const TimeLineSection: FC = () => {
 
   useEffect(() => {
     handleData();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [role]);
 
   return (
     <section id="timeline-section">
       <div className="timeline-buttons">
-        <button type="button" name="student" className={role === 'student' ? 'timeline-active' : ''} onClick={(e: any) => setRole(e.target.name)}>
+        <button
+          type="button"
+          name="student"
+          className={role === "student" ? "timeline-active" : ""}
+          onClick={(e: any) => setRole(e.target.name)}
+        >
           طالب
         </button>
-        <button type="button" name="teacher" className={role === 'teacher' ? 'timeline-active' : ''} onClick={(e: any) => setRole(e.target.name)}>
+        <button
+          type="button"
+          name="teacher"
+          className={role === "teacher" ? "timeline-active" : ""}
+          onClick={(e: any) => setRole(e.target.name)}
+        >
           مدرس
         </button>
-        <button type="button" name="parent" className={role === 'parent' ? 'timeline-active' : ''} onClick={(e: any) => setRole(e.target.name)}>
+        <button
+          type="button"
+          name="parent"
+          className={role === "parent" ? "timeline-active" : ""}
+          onClick={(e: any) => setRole(e.target.name)}
+        >
           ولي أمر
         </button>
       </div>
       <div className="timeline-container">
-        {data.map((e)=> <div className="timeline-card" >
-            <span className="timeline-circle" style={{border: `4px solid ${e.color}`}}/>
-            <div style={{borderBottom: `4px solid ${e.color}`}}>
+        {data.map((e) => (
+          <div className="timeline-card">
+            <span
+              className="timeline-circle"
+              style={{ border: `4px solid ${e.color}` }}
+            />
+            <div style={{ borderBottom: `4px solid ${e.color}` }}>
               <p>{e.text}</p>
             </div>
-          </div>)
-        }
+          </div>
+        ))}
         <div className="timeline-card">
-          <span className="timeline-circle" style={{border: `4px solid ${dataStep.color}`}}/>
-          <div style={{borderBottom: `4px solid ${dataStep.color}`}}>
+          <span
+            className="timeline-circle"
+            style={{ border: `4px solid ${dataStep.color}` }}
+          />
+          <div style={{ borderBottom: `4px solid ${dataStep.color}` }}>
             <ul>
-              {dataStep.data.map((e) => <li>{e}</li>)}
+              {dataStep.data.map((e) => (
+                <li>{e}</li>
+              ))}
             </ul>
           </div>
-          </div>
+        </div>
       </div>
     </section>
   );
