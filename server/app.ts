@@ -30,5 +30,4 @@ if (nodeEnv === 'production') {
 app.use(serverError);
 app.use(notFound);
 
-
 export default app;

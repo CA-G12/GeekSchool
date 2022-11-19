@@ -20,7 +20,7 @@ const AddStudent: React.FC<{ setLoading: Function }> = ({ setLoading }) => {
     const email = fieldValues.name;
 
     try {
-      setLoading(true)
+      setLoading(true);
 
       const res = await axios.post(
         "/api/v1/student/validate",
@@ -37,7 +37,7 @@ const AddStudent: React.FC<{ setLoading: Function }> = ({ setLoading }) => {
 
         message.success(updateParentId.data.msg);
       }
-      setLoading(false)
+      setLoading(false);
     } catch (error: any) {
       if (error.response.status === 404) {
         message.error("The student email you entered does not exist!");

@@ -9,7 +9,7 @@ import {
   createStudent,
   putParentIdForStudentQuery,
   createStudentHealthQuery,
-  getUserIdFromTableQuery
+  getUserIdFromTableQuery,
 } from '../../queries';
 
 import {

@@ -39,7 +39,7 @@ import {
   getStudentInfo,
   getIfStudentUserExists,
   postStudentReports,
-  putParentIdForStudent
+  putParentIdForStudent,
 } from './student';
 import { getTeacherSchedule, getTeacherStudents, teacherInfo } from './teacher';
 import getParentTeachers from './getParentTeachers';
