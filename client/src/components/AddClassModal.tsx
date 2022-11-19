@@ -2,26 +2,18 @@ import React, { useState } from "react";
 import { Form, Button, message, Input, Modal } from "antd";
 import axios from "axios";
 import { PlusOutlined, CloseOutlined } from "@ant-design/icons";
-// import { useParams } from "react-router-dom";
 import "./style.css";
 
 const AddClass: React.FC<{ setLoading: Function }> = ({ setLoading }) => {
-  console.log(setLoading);
-  
   const [form] = Form.useForm();
   const [visible, setVisible] = useState<boolean>(false);
   const source = axios.CancelToken.source();
-  //   const { classId } = useParams();
-
   const showModal = () => setVisible(true);
-
   const handleCancel = () => {
     setVisible(false);
   };
 
   const onFinish = async (fieldValues: any) => {
-    console.log(setLoading);
-    
     try {
       setLoading(true);
       const newClass = await axios.post(
