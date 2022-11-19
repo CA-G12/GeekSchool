@@ -13,7 +13,6 @@ const putParentIdForStudent = async (req: Request, res: Response, next: NextFunc
 
     res.json({ msg: 'student updated successfully' });
   } catch (error) {
-    console.log(error);
     next(error);
   }
 };
