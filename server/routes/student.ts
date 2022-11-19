@@ -8,7 +8,7 @@ import {
   getIfStudentUserExists,
   postStudentReports,
   getStudentHealth,
-  putParentIdForStudent
+  putParentIdForStudent,
 } from '../controllers';
 import {
   userAuth,

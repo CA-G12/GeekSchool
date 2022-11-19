@@ -90,7 +90,7 @@ const ParentProfile: FC<{
     fetchData();
     fetchChildren();
     fetchTeachers();
-    
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
 
