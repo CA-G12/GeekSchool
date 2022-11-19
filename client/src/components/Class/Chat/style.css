@@ -61,20 +61,43 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  flex-direction: row-reverse;
 }
 
-#chat-box .chat-container .chat-message .message-info div {
+#chat-box .chat-container .chat-message .message-info div:nth-child(1) {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   padding: 1px;
   border: 0.5px solid var(--second-color);
   overflow: hidden;
-  flex-direction: row-reverse;
 }
 
 #chat-box .chat-container .chat-message .message-info.message-active {
   flex-direction: row;
+}
+
+#chat-box .chat-container .chat-message .message-info.message-active div:nth-child(2) {
+  flex-direction: row;
+}
+
+#chat-box .chat-container .chat-message .message-info div:nth-child(2) {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-direction: row-reverse;
+}
+
+#chat-box .chat-container .chat-message .message-info.message-active div:nth-child(2) span {
+  right: 10px;
+}
+
+#chat-box .chat-container .chat-message .message-info div:nth-child(2) span {
+  font-size: 0.5rem;
+  position: absolute;
+  left: 10px;
+  bottom: -12px;
 }
 
 #chat-box .chat-container .chat-message .message-info.message-active p {
@@ -83,7 +106,7 @@
   border: 1px solid #ffffff;
 }
 
-#chat-box .chat-container .chat-message .message-info div img {
+#chat-box .chat-container .chat-message .message-info div:nth-child(1) img {
   width: 100%;
   height: 100%;
   border-radius: 50%;
@@ -92,12 +115,19 @@
 #chat-box .chat-container .chat-message .message-info p {
   padding: 0.3rem 1rem;
   background-color: var(--white);
-  border-top-right-radius: 30px;
-  border-bottom-left-radius: 30px;
-  border-top-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 15px;
+  border-bottom-right-radius: 15px;
   border: 1px solid #cccccc;
   box-shadow: 0 0px 4px 0 #cccccc;
+}
+
+#chat-box .chat-container .chat-message .message-info.message-active p {
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 #chat-box .chat-container .form-message {

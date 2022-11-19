@@ -5,13 +5,20 @@ interface messageInterface {
   class_id: number;
   sender_id: number;
   message: string;
-  updatedAt: string;
   createdAt: string;
+  User: {
+    img: string;
+    name: string;
+  };
 }
 
 interface textMessageInterface {
-  messageText: string;
   senderId: number;
+  userId: number;
+  messageText: string;
+  img: string;
+  date: string;
+  name: string;
 }
 
 export { messageInterface, textMessageInterface };

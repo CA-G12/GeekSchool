@@ -1,16 +1,24 @@
 import express, { Request, Response } from 'express';
+import http from 'http';
 import compression from 'compression';
 import cookieParser from 'cookie-parser';
 import morgan from 'morgan';
 import { join } from 'path';
+
+import { Server } from 'socket.io';
 import router from './routes';
 import { nodeEnv } from './config/environment';
-
 import { serverError, notFound } from './controllers';
+import ioHandler from './IOHandler/IoHandler';
 
 const app = express();
+const server = http.createServer(app);
 
-app.set('port', process.env.PORT || 8080);
+const io = new Server(server, {
+  cors: {
+    origin: '*',
+  },
+});
 
 app.use(morgan('dev'));
 app.use(cookieParser());
@@ -20,7 +28,9 @@ app.use(express.urlencoded({ extended: false }));
 app.disable('x-powered-by');
 
 app.use('/api/v1', router);
+ioHandler(io);
 
+app.set('port', process.env.PORT || 8080);
 app.use(serverError);
 
 app.use(notFound);
@@ -32,4 +42,4 @@ if (nodeEnv === 'production') {
   });
 }
 
-export default app;
+export { app, server };

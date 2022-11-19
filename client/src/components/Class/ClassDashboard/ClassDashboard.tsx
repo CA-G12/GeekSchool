@@ -8,7 +8,7 @@ import {
   MenuOutlined,
   FundProjectionScreenOutlined,
   LogoutOutlined,
-  // WechatOutlined,
+  WechatOutlined,
 } from "@ant-design/icons";
 import { message, Popover } from "antd";
 import React, { useState } from "react";
@@ -26,7 +26,7 @@ const icons = [
   <DeliveredProcedureOutlined title="التقييم" />,
   <FileTextOutlined title="التوصيات" />,
   <FundProjectionScreenOutlined title="الدرجات" />,
-  // <WechatOutlined title="المحادثة"/>
+  <WechatOutlined title="المحادثة" />,
 ];
 
 const labels = [
@@ -37,7 +37,7 @@ const labels = [
   "التقييم",
   "التوصيات",
   "الدرجات",
-  // "المحادثة",
+  "المحادثة",
 ];
 
 const ClassDashboard: React.FC = () => {
@@ -57,7 +57,7 @@ const ClassDashboard: React.FC = () => {
     `/class/${classId}/feedback`,
     `/class/${classId}/recommended`,
     `/class/${classId}/grades`,
-    // `/class/${classId}/chats`,
+    `/class/${classId}/chats`,
   ];
 
   const openAside = () => {
@@ -107,11 +107,11 @@ const ClassDashboard: React.FC = () => {
               >
                 <Link
                   to={
-                    userData.role === "teacher"
+                    userData?.role === "teacher"
                       ? "/teacher"
-                      : userData.role === "parent"
+                      : userData?.role === "parent"
                       ? "/parent"
-                      : `/student/${userData.id}`
+                      : `/student/${userData?.id}`
                   }
                 >
                   view Profile

@@ -66,13 +66,16 @@ const signup = async (req: Request, res: Response, next: NextFunction) => {
       await createStudentHealthQuery(student.getDataValue('id'));
     }
 
-    const token = await signToken({ id: user.getDataValue('id'), name, role });
+    const token = await signToken({
+      id: user.getDataValue('id'), img: user.getDataValue('img'), name, role,
+    });
     res.cookie('token', token).status(201).json(
       {
         data: {
           id: user.getDataValue('id'),
           role,
           name,
+          img: user.getDataValue('img'),
         },
         msg: 'Account is created successfully!',
       },
