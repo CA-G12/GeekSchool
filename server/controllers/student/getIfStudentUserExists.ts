@@ -5,7 +5,6 @@ import { CustomError } from '../../utils';
 const getIfStudentUserExists = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const { email } = req.body;
-
     const data = await findUserByEmail(email);
 
     if (data === null || data.getDataValue('role') !== 'student') {
