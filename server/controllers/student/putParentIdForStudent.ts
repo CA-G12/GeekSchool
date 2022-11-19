@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import {findUserByEmail, putParentIdForStudentQuery }from '../../queries';
+import { findUserByEmail, putParentIdForStudentQuery } from '../../queries';
 
 const putParentIdForStudent = async (req: Request, res: Response, next: NextFunction) => {
   try {
