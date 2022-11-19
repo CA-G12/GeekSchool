@@ -5,7 +5,7 @@ const getParentStudent = async (req:any, res:Response, next:NextFunction) => {
   try {
     const { id } = req.user;
     const parent = await getUserIdFromTableQuery('parent', id);
-
+    console.log(parent?.getDataValue('id'));
     const data = await getParentStudentQuery(parent?.getDataValue('id'));
     res.json({ msg: 'getting all student successfully', data });
   } catch (error) {

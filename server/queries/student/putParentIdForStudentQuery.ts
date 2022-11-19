@@ -5,7 +5,7 @@ const putParentIdForStudentQuery = (
   parentId: number,
 ) => Student.update({ parent_id: parentId }, {
   where: {
-    user_id: studentId,
+    id: studentId,
   },
 });
 
