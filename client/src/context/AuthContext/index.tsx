@@ -91,6 +91,7 @@ export const UserAuthProvider = (): UserDataInterface => {
         id: data.id,
         role: data.role,
         name: data.name,
+        img: data.img,
       });
     } catch (err) {
       setLoading(false);
