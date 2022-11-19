@@ -51,15 +51,14 @@
     "pg-hstore": "^2.3.4",
     "rc-virtual-list": "^3.4.11",
     "sequelize": "^6.25.0",
+    "socket.io": "^4.5.3",
     "sweetalert2": "^11.6.1",
     "ts-jest": "^29.0.3",
     "ts-node": "^10.9.1"
   },
-  
   "optionalDependencies": {
     "fsevents": "^2.3.2"
   },
-
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
     "@types/bcryptjs": "^2.4.2",

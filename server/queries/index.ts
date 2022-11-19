@@ -103,5 +103,4 @@ export {
   putParentIdForStudentQuery,
   createStudentHealthQuery,
   postClassQuery,
-
 };
