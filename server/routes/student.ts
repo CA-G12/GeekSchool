@@ -8,6 +8,7 @@ import {
   getIfStudentUserExists,
   postStudentReports,
   getStudentHealth,
+  putParentIdForStudent
 } from '../controllers';
 import {
   userAuth,
@@ -26,5 +27,6 @@ studentRouter.get('/:studentId/info', userAuth, studentAndParentAndTeacher, getS
 studentRouter.get('/:studentId/health', userAuth, studentAndParentAndTeacher, getStudentHealth);
 studentRouter.post('/validate', getIfStudentUserExists);
 studentRouter.post('/:studentId/reports', userAuth, teacherAuth, postStudentReports);
+studentRouter.put('/addStudent', userAuth, parentAuth, putParentIdForStudent);
 
 export default studentRouter;

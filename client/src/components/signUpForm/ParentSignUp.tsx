@@ -15,7 +15,6 @@ const ParentSignUp: React.ElementType = ({
   const [emails, setEmail] = useState<string[] | []>([]);
   const [emailInput, setEmailInput] = useState<string>("");
 
-
   const handleEmailInput = (elm: React.ChangeEvent<HTMLInputElement>) => {
     const newEmail = elm.target.value;
     const checkNewEmailIfExist = emails.filter((e) => e === newEmail).length;
@@ -27,9 +26,7 @@ const ParentSignUp: React.ElementType = ({
   const handleEmailChange = async (email: string): Promise<any> => {
     const checkNewEmailIfExist = emails.filter((e) => e === emailInput).length;
     if (!checkNewEmailIfExist) {
-      console.log(checkNewEmailIfExist);
       if (emailInput !== "" && regex.test(emailInput)) {
-        
         try {
           const res = await axios.post("/api/v1/student/validate", {
             email,
@@ -38,6 +35,7 @@ const ParentSignUp: React.ElementType = ({
             message.success("The student email is a valid email!");
             setEmail([emailInput, ...emails]);
             setIsOk(true);
+            setEmailInput("");
           }
         } catch (error: any) {
           if (error.response.status === 404) {
@@ -88,6 +86,7 @@ const ParentSignUp: React.ElementType = ({
           placeholder="البريد الإلكتروني للأبناء"
           onChange={handleEmailInput}
           style={{ height: "100%", width: "89%" }}
+          value={emailInput}
         />
         <Button
           type="primary"
