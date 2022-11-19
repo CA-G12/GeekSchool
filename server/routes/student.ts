@@ -29,4 +29,5 @@ studentRouter.post('/validate', getIfStudentUserExists);
 studentRouter.post('/:studentId/reports', userAuth, teacherAuth, postStudentReports);
 studentRouter.put('/addStudent', userAuth, parentAuth, putParentIdForStudent);
 
+
 export default studentRouter;
