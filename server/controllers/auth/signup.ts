@@ -50,6 +50,7 @@ const signup = async (req: Request, res: Response, next: NextFunction) => {
         name, email, password: hashedPassword, mobile, location, role,
       });
       const parent = await createParent(user.getDataValue('id'));
+      
       children?.forEach((child) => {
         putParentIdForStudent(child, parent.getDataValue('id'));
       });

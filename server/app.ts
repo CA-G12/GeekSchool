@@ -31,9 +31,6 @@ app.use('/api/v1', router);
 ioHandler(io);
 
 app.set('port', process.env.PORT || 8080);
-app.use(serverError);
-
-app.use(notFound);
 
 if (nodeEnv === 'production') {
   app.use(express.static(join(__dirname, '..', 'client', 'build')));
@@ -41,5 +38,7 @@ if (nodeEnv === 'production') {
     res.sendFile(join(__dirname, '..', 'client', 'build', 'index.html'));
   });
 }
+app.use(serverError);
+app.use(notFound);
 
 export { app, server };
