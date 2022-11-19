@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { WhatsAppOutlined } from "@ant-design/icons";
 import ReactWhatsapp from "react-whatsapp";
 import AddClassModal from "../AddClassModal";
-
+import AddStudentModal from "../AddStudentModal"
 import "./style.css";
 
 interface DataType {
@@ -44,10 +44,22 @@ const ProfileCard: ElementType = ({
     <div className="profile_card">
       <div className="card_header">
         <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <h1>{title}</h1>
-          {_role === "teacher" && type === "classes" ? (
-            <AddClassModal setLoading={setLoading} />
-          ) : null}
+          <h1>{
+          title === "students"
+          ? "الطلاب" 
+          : title === "teacher"
+          ? "المدرسين"
+          : "الفصول الدراسية"
+          }</h1>
+ 
+          {
+            
+          _role === "teacher" && type === "classes" 
+          ? ( <AddClassModal setLoading={setLoading} /> )
+          : _role === "parent" && type === "students" 
+          ? (<AddStudentModal setLoading={setLoading}/>)
+          : null
+          }
         </div>
         <p>
           {subtitle1}

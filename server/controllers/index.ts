@@ -39,6 +39,7 @@ import {
   getStudentInfo,
   getIfStudentUserExists,
   postStudentReports,
+  putParentIdForStudent
 } from './student';
 import { getTeacherSchedule, getTeacherStudents, teacherInfo } from './teacher';
 import getParentTeachers from './getParentTeachers';
@@ -91,5 +92,5 @@ export {
   addMessage,
   getAllMessage,
   addNewClass,
-
+  putParentIdForStudent,
 };
