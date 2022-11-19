@@ -33,6 +33,27 @@
   display: flex;
   align-items: center;
   box-shadow: none;
+  gap: 1rem;
+}
+
+.landing-section .landing-header .buttons a {
+  font-size: 1rem;
+  padding: 0.2rem 1rem;
+  border-radius: 30px;
+  transition: all 0.2s ease-in-out;
+}
+
+.landing-section .landing-header .buttons a:nth-child(2) {
+  background-color: var(--second-color);
+  color: var(--white);
+}
+
+.landing-section .landing-header .buttons a:nth-child(1):hover {
+  outline: 1px solid var(--second-color);
+}
+
+.landing-section .landing-header .buttons a:nth-child(2):hover {
+  background-color: var(--third-color);
 }
 
 .landing-section .landing-header .buttons button,

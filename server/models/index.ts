@@ -84,9 +84,6 @@ Schedule.belongsTo(Class, { foreignKey: 'class_id' });
 User.hasOne(Student, { foreignKey: 'user_id', sourceKey: 'id' });
 Student.belongsTo(User, { foreignKey: 'user_id' });
 
-Parent.hasMany(Student, { foreignKey: 'parent_id', sourceKey: 'id' });
-Student.belongsTo(Parent, { foreignKey: 'parent_id' });
-
 // *** Teacher ***
 User.hasOne(Teacher, { foreignKey: 'user_id', sourceKey: 'id' });
 Teacher.belongsTo(User, { foreignKey: 'user_id' });
