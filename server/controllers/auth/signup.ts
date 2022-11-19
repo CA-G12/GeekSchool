@@ -20,6 +20,8 @@ import {
 
 const putParentIdForStudent = async (child: string, parentId: number) => {
   const studentUser = await findUserByEmail(child);
+  console.log(studentUser);
+  
   const studentId = studentUser?.getDataValue('id');
 
   await putParentIdForStudentQuery(studentId, parentId);
@@ -50,9 +52,9 @@ const signup = async (req: Request, res: Response, next: NextFunction) => {
         name, email, password: hashedPassword, mobile, location, role,
       });
       const parent = await createParent(user.getDataValue('id'));
-      
+
       children?.forEach((child) => {
-        putParentIdForStudent(child, parent.getDataValue('id'));
+        putParentIdForStudent(child, parent.getDataValue('user_id'));
       });
     } else if (role === 'teacher') {
       user = await createUser({
