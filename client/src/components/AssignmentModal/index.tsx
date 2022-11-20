@@ -58,7 +58,7 @@ const AssignmentModal: React.FC<{ setLoading: Function }> = ({
           border: "none",
         }}
       >
-        إظافة تكليف جديد
+        إضافة تكليف جديد
         <FileTextOutlined />
       </Button>
       <Modal

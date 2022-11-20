@@ -19,14 +19,14 @@ const AddRecommended: React.FC<{ setLoading: Function }> = ({ setLoading }) => {
 
   const onFinish = async (fieldValues: any) => {
     try {
+      setLoading(false);
       const newRecommneded = await axios.post(
         `/api/v1/class/${classId}/recommended`,
         { ...fieldValues },
         { cancelToken: source.token }
       );
-
+      setLoading(true);
       message.success(newRecommneded.data.msg);
-      setLoading(false);
     } catch (error: any) {
       message.error(error.response.data.msg);
     }
