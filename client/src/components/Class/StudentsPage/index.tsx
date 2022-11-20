@@ -4,12 +4,20 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import NameCell from "./NameCell";
 import Action from "./Action";
+import AddStudents from "./addStudent";
+import { useUserData } from "../../../context/AuthContext";
+
 import "./style.css";
+
+interface studentsInterface {
+  id: number;
+  name: string;
+}
 
 interface StudentInterface {
   id: number;
   name: string;
-  mobile: string;
+  email: string;
   img: string;
   parentName: string;
 }
@@ -20,8 +28,8 @@ const columns = [
     dataIndex: "name",
   },
   {
-    title: "رقم الجوال",
-    dataIndex: "mobile",
+    title: "البريد الالكتروني",
+    dataIndex: "email",
   },
   {
     title: "إسم ولي الأمر",
@@ -35,10 +43,12 @@ const columns = [
 
 const StudentsProfile = () => {
   const [students, setStudents] = useState<StudentInterface[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [otherStudents, setOtherStudents] = useState<studentsInterface[]>([]);
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const { classId } = useParams();
+  const { userData } = useUserData();
 
   const fetchData = async () => {
     try {
@@ -46,13 +56,12 @@ const StudentsProfile = () => {
 
       const {
         data: { data },
-      } = await axios(`/api/v1/class/${classId}/students`);
-
+      } = await axios.get(`/api/v1/class/${classId}/students`);
       setStudents(
         data.map((s: any) => ({
           id: s.student_id,
           name: s.name,
-          mobile: s.mobile,
+          email: s.email,
           img: s.img,
           parentName: s["Student.Parent.User.name"],
         }))
@@ -64,26 +73,45 @@ const StudentsProfile = () => {
     }
   };
 
+  const fetchStudents = async () => {
+    try {
+      setLoading(true);
+      const studentsdata = await axios.get(
+        `/api/v1/class/${classId}/otherStudents/`
+      );
+
+      setOtherStudents(studentsdata?.data.data);
+      setLoading(false);
+      await fetchData();
+    } catch (err) {
+      setLoading(false);
+      setError("Something went wrong");
+    }
+  };
+
   const handelDeleteStudent = async (id: number) => {
     await axios.delete(`/api/v1/class/${classId}/student`, {
       data: { studentId: id },
     });
     await fetchData();
+    await fetchStudents();
   };
+
   const handelStudentProfile = async (id: number) => {
     navigate(`/student/${id}`);
   };
 
   useEffect(() => {
     fetchData();
+    fetchStudents();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const dataSource = students.map((s) => ({
     name: <NameCell name={s.name} image={s.img} />,
-    mobile: s.mobile,
+    email: s.email,
     parentName: s.parentName,
-    action: (
+    action: userData?.role === "teacher" && (
       <Action
         id={s.id}
         handelDeleteStudent={() => handelDeleteStudent(s.id)}
@@ -115,7 +143,19 @@ const StudentsProfile = () => {
 
   return (
     <section className="students-section">
-      <h1 className="title">الطلاب</h1>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <h1 className="title">الطلاب</h1>
+        {userData?.role === "teacher" ? (
+          <AddStudents
+            otherStudents={otherStudents}
+            setLoading={setLoading}
+            fetchData={fetchData}
+            fetchStudents={fetchStudents}
+          />
+        ) : (
+          ""
+        )}
+      </div>
       <div className="table_wrapper">
         <Table
           columns={columns}
