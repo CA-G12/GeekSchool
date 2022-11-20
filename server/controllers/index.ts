@@ -26,6 +26,7 @@ import {
   postRecommendation,
   getTests,
   addNewClass,
+  addNewStudents,
 } from './class';
 
 import {
@@ -39,6 +40,7 @@ import {
   getStudentInfo,
   getIfStudentUserExists,
   postStudentReports,
+  getOtherStudents,
   putParentIdForStudent,
 } from './student';
 import { getTeacherSchedule, getTeacherStudents, teacherInfo } from './teacher';
@@ -92,5 +94,7 @@ export {
   addMessage,
   getAllMessage,
   addNewClass,
+  getOtherStudents,
+  addNewStudents,
   putParentIdForStudent,
 };

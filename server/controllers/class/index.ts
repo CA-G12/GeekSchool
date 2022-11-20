@@ -20,6 +20,7 @@ import postQuestion from './postQuestion';
 import getTests from './getTests';
 import getClassGrades from './getClassGrades';
 import addNewClass from './addNewClass';
+import addNewStudents from './addNewStudentsToClass';
 
 export {
   addNewAssignment,
@@ -44,4 +45,5 @@ export {
   getTests,
   getClassGrades,
   addNewClass,
+  addNewStudents,
 };

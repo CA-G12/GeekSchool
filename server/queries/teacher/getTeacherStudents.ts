@@ -10,6 +10,7 @@ const getTeacherStudentsQuery = (teacherId: number) => Class.findAll({
   where: {
     teacher_id: teacherId,
   },
+  group: ['teacher_id', 'ClassStudents.student_id', 'ClassStudents.Student.User.img', 'ClassStudents.Student.User.name', 'ClassStudents.Student.User.email'],
   include: [{
     model: ClassStudent,
     where: {

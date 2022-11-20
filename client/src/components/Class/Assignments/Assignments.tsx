@@ -50,14 +50,16 @@ const Assignments: React.FC = () => {
       <div>
         <h1>التكليفات</h1>
         <div className="assignment-add-search">
-          <Dropdown overlay={menu} className="dropdown">
-            <Button className="dropdown-button">
-              <Space>
-                <PlusOutlined className="plus-icon" />
-                إظافة مهمة جديدة
-              </Space>
-            </Button>
-          </Dropdown>
+          {role === "teacher" && (
+            <Dropdown overlay={menu} className="dropdown">
+              <Button className="dropdown-button">
+                <Space>
+                  <PlusOutlined className="plus-icon" />
+                  إضافة مهمة جديدة
+                </Space>
+              </Button>
+            </Dropdown>
+          )}
         </div>
       </div>
       {role === "student" && (

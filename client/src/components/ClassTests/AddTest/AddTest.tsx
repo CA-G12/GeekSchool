@@ -79,7 +79,7 @@ const AddTest: FC = () => {
           border: "none",
         }}
       >
-        إظافة إختبار جديد
+        إضافة إختبار جديد
         <FileTextOutlined />
       </Button>
       <Modal

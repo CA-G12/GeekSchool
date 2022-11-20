@@ -30,10 +30,14 @@ import {
   postRecommendation,
   getTests,
   addNewClass,
+  addNewStudents,
+  getOtherStudents,
 } from '../controllers';
 
 const classRouter = Router();
 classRouter.post('/', userAuth, teacherAuth, addNewClass);
+classRouter.get('/:classId/otherStudents', userAuth, teacherAuth, getOtherStudents);
+classRouter.post('/:classId/addStudents', userAuth, teacherAuth, addNewStudents);
 
 classRouter.get('/:classId/statistics', userAuth, studentAndTeacher, getStats);
 classRouter.get('/:classId/announcement', userAuth, studentAndTeacher, getAnnouncement);

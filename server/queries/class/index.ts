@@ -21,6 +21,7 @@ import getClassGradesQuery from './getClassGradesQuery';
 import postQuestionQuery from './postQuestionQuery';
 import getTestsQuery from './getTestsQuery';
 import postClassQuery from './postClass';
+import addNewStudentsQuery from './addStudentsToClass';
 
 export {
   getAnnouncementQuery,
@@ -46,4 +47,5 @@ export {
   postQuestionQuery,
   getTestsQuery,
   postClassQuery,
+  addNewStudentsQuery,
 };

@@ -1,47 +1,62 @@
 import React, { useState } from "react";
-import { Form, Button, message, Input, Modal } from "antd";
+import { Form, Button, message, Modal, Select } from "antd";
 import axios from "axios";
 import { PlusOutlined, CloseOutlined } from "@ant-design/icons";
 import { useParams } from "react-router-dom";
 import "./style.css";
 
-const AddRecommended: React.FC<{ setLoading: Function }> = ({ setLoading }) => {
+interface studentsInterface {
+  id: number;
+  name: string;
+}
+
+const AddClass: React.FC<{
+  setLoading: Function;
+  fetchData: Function;
+  fetchStudents: Function;
+  otherStudents: studentsInterface[];
+}> = ({ setLoading, fetchStudents, fetchData, otherStudents }) => {
   const [form] = Form.useForm();
   const [visible, setVisible] = useState<boolean>(false);
+
   const source = axios.CancelToken.source();
   const { classId } = useParams();
-
-  const showModal = () => setVisible(true);
 
   const handleCancel = () => {
     setVisible(false);
   };
 
+  const showModal = () => {
+    setVisible(true);
+  };
+
   const onFinish = async (fieldValues: any) => {
     try {
-      setLoading(false);
-      const newRecommneded = await axios.post(
-        `/api/v1/class/${classId}/recommended`,
+      setLoading(true);
+      const newStudents = await axios.post(
+        `/api/v1/class/${classId}/addStudents`,
         { ...fieldValues },
         { cancelToken: source.token }
       );
-      setLoading(true);
-      message.success(newRecommneded.data.msg);
+      message.success(` ${newStudents.data.msg} `);
+      await fetchData();
+      await fetchStudents();
+      setLoading(false);
     } catch (error: any) {
       message.error(error.response.data.msg);
     }
+
     handleCancel();
     form.resetFields();
   };
-
   return (
     <div>
       <Button
         type="primary"
         onClick={() => showModal()}
-        style={{ borderRadius: "30px" }}
+        style={{ borderRadius: "50px" }}
       >
-        <PlusOutlined /> إضافة توصية
+        <PlusOutlined /> أضف طلاب
       </Button>
       <Modal
         className="modal"
@@ -68,39 +83,17 @@ const AddRecommended: React.FC<{ setLoading: Function }> = ({ setLoading }) => {
           labelCol={{ span: 5 }}
           form={form}
         >
-          <Form.Item
-            label="تفاصيل المقترح"
-            style={{ width: "90%" }}
-            name="description"
-            rules={[
-              {
-                required: true,
-                message: "تفاصيل المقترح مطلوبة",
-              },
-            ]}
-          >
-            <Input className="input" placeholder="تفاصيل المقترح" />
-          </Form.Item>
-
-          <Form.Item
-            label="تفاصيل المقترح"
-            style={{ width: "90%" }}
-            name="materialLink"
-            rules={[
-              {
-                required: true,
-                message: "يجب إدخال رابط صالح",
-              },
-              { type: "url", warningOnly: true },
-              { type: "string", min: 6 },
-            ]}
-          >
-            <Input placeholder="رابط مصدر المقترح " />
+          <Form.Item label="حدد طلاب" style={{ width: "90%" }} name="students">
+            <Select mode="multiple" placeholder="حدد طلاب لإضافتهم">
+              {otherStudents.map((student) => (
+                <Select.Option value={student.id}>{student.name}</Select.Option>
+              ))}
+            </Select>
           </Form.Item>
 
           <Form.Item
             className="button"
-            style={{ width: "55%", display: "flex", justifyContent: "start" }}
+            style={{ width: "100%", display: "flex", justifyContent: "end" }}
           >
             <Button
               type="primary"
@@ -116,4 +109,4 @@ const AddRecommended: React.FC<{ setLoading: Function }> = ({ setLoading }) => {
   );
 };
 
-export default AddRecommended;
+export default AddClass;
