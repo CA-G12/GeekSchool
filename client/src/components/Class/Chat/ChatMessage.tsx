@@ -28,6 +28,6 @@ const ChatMessage = ({
       </span>
     </div>
   </div>
-);
+)
 
 export default ChatMessage;

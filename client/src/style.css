@@ -35,7 +35,7 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -47,10 +47,10 @@ main > .title {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2e9cc792;
+  background: var(--main-color);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: inherit;
+  background: #5d9ab292;
 }
