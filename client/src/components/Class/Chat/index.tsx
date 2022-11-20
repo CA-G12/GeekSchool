@@ -15,13 +15,13 @@ const socket = io(`${process.env.REACT_APP_BASE_URL}`);
 const ChatBox = () => {
   const [messages, setMessage] = useState<[messageInterface] | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
-  const [text, setText] = useState<string>('')
+  const [text, setText] = useState<string>("");
   const { userData } = useUserData();
   const { classId } = useParams();
   const bottomRef = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
-    socket.on("connect", () => { });
+    socket.on("connect", () => {});
     socket?.emit("newUser", userData.id);
   }, [socket]);
 
@@ -39,7 +39,7 @@ const ChatBox = () => {
     getMessage();
   }, [loading]);
 
-  const handleAddMessage = async() => {
+  const handleAddMessage = async () => {
     try {
       const { data } = await axios.post(`/api/v1/chat/${classId}/addMessage`, {
         message: text,
@@ -55,10 +55,10 @@ const ChatBox = () => {
           name: userData.name,
         },
       };
-      
+
       setMessage((prev: any): any => [...prev, newMessage]);
       socket.emit("addMessage", newMessage);
-      setText('');
+      setText("");
     } catch (error: any) {
       message.error(error.response.data.msg);
     }
@@ -91,17 +91,17 @@ const ChatBox = () => {
   }, [socket]);
 
   useEffect(() => {
-    bottomRef.current?.addEventListener('DOMNodeInserted', (event: any) => {
-        const { currentTarget: target } = event;
-        target.scroll({ top: target.scrollHeight, behavior: 'smooth' })
-      })
-  }, [messages])
+    bottomRef.current?.addEventListener("DOMNodeInserted", (event: any) => {
+      const { currentTarget: target } = event;
+      target.scroll({ top: target.scrollHeight, behavior: "smooth" });
+    });
+  }, [messages]);
 
   return (
     <section id="chat-box">
       <h1>محادثة الصف</h1>
       <div className="chat-container">
-        <div className="chat-message" ref={bottomRef} >
+        <div className="chat-message" ref={bottomRef}>
           {messages ? (
             messages?.map((e) => (
               <ChatMessage
@@ -118,20 +118,23 @@ const ChatBox = () => {
             <p>لا يوجد رسائل</p>
           )}
         </div>
-        <form className="form-message" onSubmit={(e) => {
-          e.preventDefault()
-          handleAddMessage()
-        }}>
-            <input
-              type="text"
-              placeholder="أكتب رسالتك"
-              name="text"
-              value={text}
-              onChange={(e) => {setText(e.target.value)}}
-            />
-          <button type="submit">
-            إرسال
-          </button> 
+        <form
+          className="form-message"
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleAddMessage();
+          }}
+        >
+          <input
+            type="text"
+            placeholder="أكتب رسالتك"
+            name="text"
+            value={text}
+            onChange={(e) => {
+              setText(e.target.value);
+            }}
+          />
+          <button type="submit">إرسال</button>
         </form>
       </div>
     </section>
