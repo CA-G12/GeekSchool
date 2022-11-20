@@ -61,7 +61,7 @@ const Feedback: React.FC = () => {
       <h1>التغذية الراجعة</h1>
       {userData.role === "student" && (
         <Form
-          style={{ display: "flex" }}
+          style={{ display: "flex", padding: "1rem" }}
           name="basic"
           initialValues={{ remember: true }}
           onFinish={onFinish}
