@@ -1,16 +1,24 @@
 import express, { Request, Response } from 'express';
+import http from 'http';
 import compression from 'compression';
 import cookieParser from 'cookie-parser';
 import morgan from 'morgan';
 import { join } from 'path';
+
+import { Server } from 'socket.io';
 import router from './routes';
 import { nodeEnv } from './config/environment';
-
 import { serverError, notFound } from './controllers';
+import ioHandler from './IOHandler/IoHandler';
 
 const app = express();
+const server = http.createServer(app);
 
-app.set('port', process.env.PORT || 8080);
+const io = new Server(server, {
+  cors: {
+    origin: '*',
+  },
+});
 
 app.use(morgan('dev'));
 app.use(cookieParser());
@@ -20,10 +28,9 @@ app.use(express.urlencoded({ extended: false }));
 app.disable('x-powered-by');
 
 app.use('/api/v1', router);
+ioHandler(io);
 
-app.use(serverError);
-
-app.use(notFound);
+app.set('port', process.env.PORT || 8080);
 
 if (nodeEnv === 'production') {
   app.use(express.static(join(__dirname, '..', 'client', 'build')));
@@ -31,5 +38,7 @@ if (nodeEnv === 'production') {
     res.sendFile(join(__dirname, '..', 'client', 'build', 'index.html'));
   });
 }
+app.use(serverError);
+app.use(notFound);
 
-export default app;
+export { app, server };

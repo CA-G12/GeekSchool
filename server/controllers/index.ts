@@ -41,6 +41,7 @@ import {
   getIfStudentUserExists,
   postStudentReports,
   getOtherStudents,
+  putParentIdForStudent,
 } from './student';
 import { getTeacherSchedule, getTeacherStudents, teacherInfo } from './teacher';
 import getParentTeachers from './getParentTeachers';
@@ -95,4 +96,5 @@ export {
   addNewClass,
   getOtherStudents,
   addNewStudents,
+  putParentIdForStudent,
 };

@@ -34,6 +34,10 @@ header div:nth-child(1) span {
   font-size: 1.5rem;
 }
 
+#class {
+  overflow: hidden;
+}
+
 #class header div:nth-child(2) {
   width: 35px;
   height: 35px;
@@ -53,6 +57,7 @@ header div:nth-child(1) span {
   height: 100%;
   gap: 2rem;
   height: 92vh;
+  overflow: hidden;
 }
 
 #main-layout main {
@@ -67,10 +72,15 @@ aside {
   align-items: flex-start;
   background-color: var(--white);
   height: 100%;
-  padding: 2rem 0;
+  padding: 1rem 0;
   transition: all 0.2s ease-in-out;
   gap: 2rem;
   box-shadow: -1px 0 2px 0 #D9DDF2;
+  overflow: auto;
+}
+
+aside::-webkit-scrollbar {
+  width: 2px !important;
 }
 
 aside span {

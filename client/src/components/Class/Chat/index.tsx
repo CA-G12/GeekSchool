@@ -1,89 +1,141 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable camelcase */
+/* eslint-disable-next-line react-hooks/exhaustive-deps */
 import axios from "axios";
-import { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useState, useEffect, useRef } from "react";
+import { useParams } from "react-router-dom";
 import { message } from "antd";
-import { messageInterface, textMessageInterface } from "../../../interfaces";
+import { io } from "socket.io-client";
+import ChatMessage from "./ChatMessage";
+import { messageInterface } from "../../../interfaces";
 import { useUserData } from "../../../context/AuthContext";
-import { card2 } from "../../../assets";
 import "./style.css";
 
-const ChatMessage = ({ messageText, senderId }: textMessageInterface) => {
-  const { userData } = useUserData();
-
-  return (
-    <div
-      className={
-        userData.id === senderId
-          ? "message-info message-active"
-          : "message-info"
-      }
-    >
-      <div>
-        <Link to="/class/1/chats">
-          {" "}
-          <img src={card2} alt="person" />
-        </Link>
-      </div>
-      <p id={`${senderId}`}>{messageText}</p>
-    </div>
-  );
-};
-
+const socket = io(`${process.env.REACT_APP_BASE_URL}`);
 const ChatBox = () => {
   const [messages, setMessage] = useState<[messageInterface] | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
-  const [textInput, setTextInput] = useState<string>("");
-
+  const [text, setText] = useState<string>("");
+  const { userData } = useUserData();
   const { classId } = useParams();
+  const bottomRef = useRef<HTMLInputElement | null>(null);
 
-  const getMessage = async () => {
+  useEffect(() => {
+    socket.on("connect", () => {});
+    socket?.emit("newUser", userData.id);
+  }, [socket]);
+
+  useEffect(() => {
+    const getMessage = async () => {
+      try {
+        const { data } = await axios.get(`/api/v1/chat/${classId}/messages`);
+        setMessage(data);
+        setLoading(false);
+      } catch (error: any) {
+        message.error(error.response.data.msg);
+      }
+    };
+
+    getMessage();
+  }, [loading]);
+
+  const handleAddMessage = async () => {
     try {
-      const { data } = await axios.get(`/api/v1/chat/${classId}/messages`);
-      setMessage(data);
-      setLoading(false);
+      const { data } = await axios.post(`/api/v1/chat/${classId}/addMessage`, {
+        message: text,
+      });
+
+      const newMessage = {
+        id: data.id,
+        message: text,
+        sender_id: data.sender_id,
+        createdAt: data.createdAt,
+        User: {
+          img: userData.img,
+          name: userData.name,
+        },
+      };
+
+      setMessage((prev: any): any => [...prev, newMessage]);
+      socket.emit("addMessage", newMessage);
+      setText("");
     } catch (error: any) {
       message.error(error.response.data.msg);
     }
   };
 
   useEffect(() => {
-    getMessage();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [loading]);
+    socket.on("sendMessage", (newMessageReceived) => {
+      const {
+        id,
+        // eslint-disable-next-line @typescript-eslint/no-shadow
+        message,
+        sender_id,
+        createdAt,
+        User: { img, name },
+      } = newMessageReceived;
+      setMessage((prev: any): any => [
+        ...prev,
+        {
+          id,
+          message,
+          sender_id,
+          createdAt,
+          User: {
+            img,
+            name,
+          },
+        },
+      ]);
+    });
+  }, [socket]);
 
-  const handleAddMessage = async () => {
-    try {
-      await axios.post(`/api/v1/chat/${classId}/addMessage`, {
-        message: textInput,
-      });
-    } catch (error: any) {
-      message.error(error.response.data.msg);
-    }
-  };
+  useEffect(() => {
+    bottomRef.current?.addEventListener("DOMNodeInserted", (event: any) => {
+      const { currentTarget: target } = event;
+      target.scroll({ top: target.scrollHeight, behavior: "smooth" });
+    });
+  }, [messages]);
 
   return (
     <section id="chat-box">
       <h1>محادثة الصف</h1>
       <div className="chat-container">
-        <div className="chat-message">
+        <div className="chat-message" ref={bottomRef}>
           {messages ? (
             messages?.map((e) => (
-              <ChatMessage messageText={e.message} senderId={e.sender_id} />
+              <ChatMessage
+                messageText={e.message}
+                senderId={e.sender_id}
+                userId={userData?.id}
+                img={e.User.img}
+                name={e.User.name}
+                date={e.createdAt}
+                key={`${Math.random()}chat`}
+              />
             ))
           ) : (
             <p>لا يوجد رسائل</p>
           )}
         </div>
-        <div className="form-message">
+        <form
+          className="form-message"
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleAddMessage();
+          }}
+        >
           <input
             type="text"
             placeholder="أكتب رسالتك"
-            onChange={(e) => setTextInput(e.target.value)}
+            name="text"
+            value={text}
+            onChange={(e) => {
+              setText(e.target.value);
+            }}
           />
-          <button type="button" onClick={handleAddMessage}>
-            إرسال
-          </button>
-        </div>
+          <button type="submit">إرسال</button>
+        </form>
       </div>
     </section>
   );

@@ -6,6 +6,7 @@ import getStudentInfo from './getStudentInfo';
 import getIfStudentUserExists from './getIfStudentUserExists';
 import postStudentReports from './postStudentReports';
 import getOtherStudents from './getOtherStudents';
+import putParentIdForStudent from './putParentIdForStudent';
 
 export {
   getStudentClasses,
@@ -16,4 +17,5 @@ export {
   getIfStudentUserExists,
   postStudentReports,
   getOtherStudents,
+  putParentIdForStudent,
 };

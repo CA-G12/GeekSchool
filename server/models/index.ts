@@ -92,12 +92,17 @@ Teacher.belongsTo(User, { foreignKey: 'user_id' });
 Class.hasMany(Test, { foreignKey: 'class_id', sourceKey: 'id' });
 Test.belongsTo(Class, { foreignKey: 'class_id' });
 
+// *** Chat ***
+User.hasMany(Chat, { foreignKey: 'sender_id', sourceKey: 'id' });
+Chat.belongsTo(User, { foreignKey: 'sender_id' });
+
 // *** TestStudent ***
 Test.hasMany(TestStudent, { foreignKey: 'test_id', sourceKey: 'id' });
 TestStudent.belongsTo(Test, { foreignKey: 'test_id' });
 
 Student.hasMany(TestStudent, { foreignKey: 'student_id', sourceKey: 'id' });
 TestStudent.belongsTo(Student, { foreignKey: 'student_id' });
+
 export {
   Announcement,
   Assignment,

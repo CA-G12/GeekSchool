@@ -1,31 +1,47 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Form, Button, message, Input, Modal } from "antd";
 import axios from "axios";
 import { PlusOutlined, CloseOutlined } from "@ant-design/icons";
 import "./style.css";
+import { UserAuthContext } from "../context/AuthContext";
 
-const AddClass: React.FC<{ setLoading: Function }> = ({ setLoading }) => {
+const AddStudent: React.FC<{ setLoading: Function }> = ({ setLoading }) => {
   const [form] = Form.useForm();
   const [visible, setVisible] = useState<boolean>(false);
   const source = axios.CancelToken.source();
+  const useUserData = useContext(UserAuthContext);
+
   const showModal = () => setVisible(true);
   const handleCancel = () => {
     setVisible(false);
   };
 
   const onFinish = async (fieldValues: any) => {
+    const email = fieldValues.name;
+
     try {
       setLoading(true);
-      const newClass = await axios.post(
-        `/api/v1/class/`,
-        { ...fieldValues },
+
+      const res = await axios.post(
+        "/api/v1/student/validate",
+        { email },
         { cancelToken: source.token }
       );
+      if (res.status === 200) {
+        const parentId = useUserData?.userData?.id;
+        const updateParentId = await axios.put(
+          "/api/v1/student/addStudent",
+          { email, parentId },
+          { cancelToken: source.token }
+        );
 
-      message.success(newClass.data.msg);
+        message.success(updateParentId.data.msg);
+      }
       setLoading(false);
     } catch (error: any) {
-      message.error(error.response.data.msg);
+      if (error.response.status === 404) {
+        message.error("The student email you entered does not exist!");
+      }
     }
     handleCancel();
     form.resetFields();
@@ -66,17 +82,21 @@ const AddClass: React.FC<{ setLoading: Function }> = ({ setLoading }) => {
           form={form}
         >
           <Form.Item
-            label="الفصل الدراسي"
+            label="إيميل الطالب"
             style={{ width: "90%" }}
             name="name"
             rules={[
               {
                 required: true,
-                message: "اسم الفصل الدراسي مطلوب",
+                message: "الرجاء ادخال الإيميل",
               },
             ]}
           >
-            <Input className="input" placeholder="اسم الفصل الدراسي" />
+            <Input
+              type="email"
+              className="input"
+              placeholder="email@example.com"
+            />
           </Form.Item>
 
           <Form.Item
@@ -97,4 +117,4 @@ const AddClass: React.FC<{ setLoading: Function }> = ({ setLoading }) => {
   );
 };
 
-export default AddClass;
+export default AddStudent;

@@ -50,6 +50,7 @@ const signup = async (req: Request, res: Response, next: NextFunction) => {
         name, email, password: hashedPassword, mobile, location, role,
       });
       const parent = await createParent(user.getDataValue('id'));
+
       children?.forEach((child) => {
         putParentIdForStudent(child, parent.getDataValue('id'));
       });
@@ -66,13 +67,16 @@ const signup = async (req: Request, res: Response, next: NextFunction) => {
       await createStudentHealthQuery(student.getDataValue('id'));
     }
 
-    const token = await signToken({ id: user.getDataValue('id'), name, role });
+    const token = await signToken({
+      id: user.getDataValue('id'), img: user.getDataValue('img'), name, role,
+    });
     res.cookie('token', token).status(201).json(
       {
         data: {
           id: user.getDataValue('id'),
           role,
           name,
+          img: user.getDataValue('img'),
         },
         msg: 'Account is created successfully!',
       },

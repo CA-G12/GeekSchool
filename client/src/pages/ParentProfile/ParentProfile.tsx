@@ -45,7 +45,7 @@ const ParentProfile: FC<{
       role: "",
     },
   ]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState<boolean>(true);
   const source = axios.CancelToken.source();
   const navigate = useNavigate();
 
@@ -91,7 +91,6 @@ const ParentProfile: FC<{
     fetchChildren();
     fetchTeachers();
 
-    setLoading(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
 
@@ -117,6 +116,7 @@ const ParentProfile: FC<{
           title="students"
           type="students"
           _role="parent"
+          setLoading={setLoading}
         />
         <ProfileCard
           data={teachers.map((teacher: TeachersData) => ({
