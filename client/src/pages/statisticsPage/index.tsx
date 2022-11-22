@@ -1,23 +1,15 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { message } from "antd";
+import { message, Spin } from "antd";
 import { Area } from "@antv/g2plot";
 import { DashboardCard } from "../../components/Class/cards";
 import { dashboardNumberInterface } from "../../interfaces";
 import "./style.css";
 
-const init = {
-  studentLength: 0,
-  assignmentLength: 0,
-  questionsLength: 0,
-};
-
 const StatisticsPage: any = () => {
-  const [
-    { studentLength, assignmentLength, questionsLength },
-    setDashboardNumber,
-  ] = useState<dashboardNumberInterface>(init);
+  const [dashboardNumber, setDashboardNumber] = useState<dashboardNumberInterface | null>(null);
+  const [loading, setLoading] = useState<boolean>(true);
   const { classId } = useParams();
 
   // eslint-disable-next-line no-unused-vars
@@ -84,6 +76,7 @@ const StatisticsPage: any = () => {
           statisticsData.data.data.assignmentsNum.assignmentsCount,
         questionsLength: statisticsData.data.data.questionsNum.questionsCount,
       });
+      setLoading(false)
     } catch (err: any) {
       message.error(err.message);
     }
@@ -92,22 +85,32 @@ const StatisticsPage: any = () => {
   useEffect(() => {
     getStatistics();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [loading]);
   return (
     <section id="dashboard-page">
-      <section id="dashboard-cards">
-        <DashboardCard length={studentLength} name="الطلاب" color="#FB7D5B" />
-        <DashboardCard
-          length={assignmentLength}
-          name="المهمات"
-          color="#FCC43E"
-        />
-        <DashboardCard
-          length={questionsLength}
-          name="الاسئلة"
-          color="#111111"
-        />
-      </section>
+      {dashboardNumber ?
+        <section id="dashboard-cards">
+          <DashboardCard length={dashboardNumber.studentLength} name="الطلاب" color="#FB7D5B" />
+          <DashboardCard
+            length={dashboardNumber.assignmentLength}
+            name="المهمات"
+            color="#FCC43E"
+          />
+          <DashboardCard
+            length={dashboardNumber.questionsLength}
+            name="الاسئلة"
+            color="#111111"
+            />
+        </section> : 
+        <div className="loading" style={{
+          height: '70vh',
+          width: '100%',
+          display: "flex",
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}>
+          <Spin size="large" />
+        </div>}
       <section id="dashboard-chart" />
     </section>
   );

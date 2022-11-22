@@ -1,4 +1,4 @@
-import { message } from "antd";
+import { message, Spin } from "antd";
 import axios from "axios";
 import { FC, useEffect, useState, Dispatch, SetStateAction } from "react";
 import { useNavigate, useParams } from "react-router-dom";
@@ -21,15 +21,7 @@ const StudentProfile: FC<{
   const { studentId } = useParams();
   const { userData } = useUserData();
   const [loading, setLoading] = useState(true);
-  const [studentData, setStudentData] = useState<StudentDataInterface>({
-    id: 0,
-    name: "",
-    mobile: "",
-    email: "",
-    img: "",
-    location: "",
-    role: "",
-  });
+  const [studentData, setStudentData] = useState<StudentDataInterface | null>(null);
 
   const source = axios.CancelToken.source();
   const navigate = useNavigate();
@@ -56,6 +48,7 @@ const StudentProfile: FC<{
   }, [loading]);
 
   return (
+    studentData ?
     <ProfilePage
       name={studentData?.name}
       location={studentData?.location}
@@ -65,7 +58,16 @@ const StudentProfile: FC<{
       image={studentData?.img}
       visitRole={userData?.role}
       setIsGotten={setIsGotten}
-    />
+      /> :
+      <div className="loading" style={{
+        height: '100vh',
+        width: '100%',
+        display: "flex",
+        justifyContent: 'center',
+        alignItems: 'center'
+      }}>
+          <Spin size="large" />
+      </div>
   );
 };
 

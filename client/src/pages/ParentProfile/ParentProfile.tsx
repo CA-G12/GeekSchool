@@ -1,7 +1,7 @@
 import { FC, useState, useEffect, Dispatch, SetStateAction } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { message } from "antd";
+import { message, Spin } from "antd";
 import ProfilePage from "../profile";
 import ProfileCard from "../../components/ProfileCard";
 import { useUserData } from "../../context/AuthContext";
@@ -14,14 +14,7 @@ import {
 const ParentProfile: FC<{
   setIsGotten: Dispatch<SetStateAction<boolean>>;
 }> = ({ setIsGotten }) => {
-  const [parentInfo, setParentInfo] = useState<ParentInfoInterface>({
-    email: "",
-    img: "",
-    location: "",
-    mobile: "",
-    name: "",
-    role: "",
-  });
+  const [parentInfo, setParentInfo] = useState<ParentInfoInterface | null>(null);
 
   const [children, setChildren] = useState<ChildrenData[]>([
     {
@@ -95,6 +88,7 @@ const ParentProfile: FC<{
   }, [loading]);
 
   return (
+    parentInfo ?
     <ProfilePage
       name={parentInfo.name}
       email={parentInfo.email}
@@ -130,7 +124,16 @@ const ParentProfile: FC<{
           _role="parent"
         />
       </section>
-    </ProfilePage>
+      </ProfilePage> :
+        <div className="loading" style={{
+          height: '100vh',
+          width: '100%',
+          display: "flex",
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}>
+          <Spin size="large" />
+        </div>
   );
 };
 

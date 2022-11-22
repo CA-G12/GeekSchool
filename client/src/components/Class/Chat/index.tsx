@@ -4,7 +4,7 @@
 import axios from "axios";
 import { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
-import { message } from "antd";
+import { message, Spin } from "antd";
 import { io } from "socket.io-client";
 import ChatMessage from "./ChatMessage";
 import { messageInterface } from "../../../interfaces";
@@ -12,8 +12,9 @@ import { useUserData } from "../../../context/AuthContext";
 import "./style.css";
 
 const socket = io(`${process.env.REACT_APP_BASE_URL}`);
+
 const ChatBox = () => {
-  const [messages, setMessage] = useState<[messageInterface] | null>(null);
+  const [messages, setMessage] = useState<[messageInterface] | []>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [text, setText] = useState<string>("");
   const { userData } = useUserData();
@@ -38,7 +39,7 @@ const ChatBox = () => {
 
     getMessage();
   }, [loading]);
-
+  
   const handleAddMessage = async () => {
     try {
       const { data } = await axios.post(`/api/v1/chat/${classId}/addMessage`, {
@@ -47,7 +48,7 @@ const ChatBox = () => {
 
       const newMessage = {
         id: data.id,
-        message: text,
+        message: data.message,
         sender_id: data.sender_id,
         createdAt: data.createdAt,
         User: {
@@ -91,52 +92,64 @@ const ChatBox = () => {
   }, [socket]);
 
   useEffect(() => {
-    bottomRef.current?.addEventListener("DOMNodeInserted", (event: any) => {
-      const { currentTarget: target } = event;
-      target.scroll({ top: target.scrollHeight, behavior: "smooth" });
-    });
+    bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
   return (
     <section id="chat-box">
-      <h1>محادثة الصف</h1>
-      <div className="chat-container">
-        <div className="chat-message" ref={bottomRef}>
-          {messages ? (
-            messages?.map((e) => (
-              <ChatMessage
-                messageText={e.message}
-                senderId={e.sender_id}
-                userId={userData?.id}
-                img={e.User.img}
-                name={e.User.name}
-                date={e.createdAt}
-                key={`${Math.random()}chat`}
-              />
-            ))
-          ) : (
-            <p>لا يوجد رسائل</p>
-          )}
-        </div>
-        <form
-          className="form-message"
-          onSubmit={(e) => {
-            e.preventDefault();
-            handleAddMessage();
-          }}
-        >
-          <input
-            type="text"
-            placeholder="أكتب رسالتك"
-            name="text"
-            value={text}
-            onChange={(e) => {
-              setText(e.target.value);
+      {!loading ?
+      <>
+        <h1>محادثة الصف</h1>
+        <div className="chat-container">
+          <div className="chat-message">
+            {messages ? (
+              messages?.map((e) => (
+                <div ref={bottomRef} key={`${Math.random()}chat`}>
+                  <ChatMessage
+                    messageText={e.message}
+                    senderId={e.sender_id}
+                    userId={userData?.id}
+                    img={e.User.img}
+                    name={e.User.name}
+                    date={e.createdAt}
+                  />
+                </div>
+              ))
+            ) : (
+              <p>لا يوجد رسائل</p>
+            )}
+            <div style={{height: '10px'}} ref={bottomRef} />
+          </div>
+          <form
+            className="form-message"
+            onSubmit={(e) => {
+              e.preventDefault();
+              handleAddMessage();
             }}
-          />
-          <button type="submit">إرسال</button>
-        </form>
-      </div>
+          >
+            <input
+              type="text"
+              placeholder="أكتب رسالتك"
+              name="text"
+              value={text}
+              onChange={(e: any) => {
+                setText(e.target.value);
+              }}
+            />
+            <button type="submit">إرسال</button>
+          </form>
+        </div>
+      </> : 
+        <div className="loading" style={{
+          height: '100%',
+          width: '100%',
+          display: "flex",
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}>
+          <Spin size="large" />
+        </div>
+      }
     </section>
   );
 };

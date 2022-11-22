@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/aria-role */
 import React, { useEffect, useState, Dispatch, SetStateAction } from "react";
 import { useNavigate } from "react-router-dom";
-import { message } from "antd";
+import { message, Spin } from "antd";
 import axios from "axios";
 import ProfilePage from "../profile";
 import ProfileCard from "../../components/ProfileCard";
@@ -27,15 +27,6 @@ interface studentsInterface {
   img: string;
 }
 
-const initUser: UserItem = {
-  id: 1,
-  email: "",
-  name: "",
-  img: "",
-  location: "",
-  mobile: "",
-};
-
 interface classItem {
   name: string;
   img: string;
@@ -50,7 +41,7 @@ const TeacherProfile: React.FC<ProfileProps> = ({ setIsGotten }) => {
   const source = axios.CancelToken.source();
   const [students, setStudents] = useState<studentsInterface[]>([]);
   const [classes, setClasses] = useState<classItem[]>([]);
-  const [user, setUser] = useState<UserItem>(initUser);
+  const [user, setUser] = useState<UserItem | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const { userData } = useUserData();
 
@@ -110,6 +101,7 @@ const TeacherProfile: React.FC<ProfileProps> = ({ setIsGotten }) => {
   }, [loading]);
 
   return (
+    user ?
     <ProfilePage
       name={user?.name}
       location={user?.location}
@@ -143,7 +135,16 @@ const TeacherProfile: React.FC<ProfileProps> = ({ setIsGotten }) => {
           setLoading={setLoading}
         />
       </section>
-    </ProfilePage>
+      </ProfilePage> : 
+      <div className="loading" style={{
+        height: '100vh',
+        width: '100%',
+        display: "flex",
+        justifyContent: 'center',
+        alignItems: 'center'
+      }}>
+        <Spin size="large" />
+      </div>
   );
 };
 export default TeacherProfile;

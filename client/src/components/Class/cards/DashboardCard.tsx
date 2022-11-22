@@ -1,5 +1,5 @@
 interface dashboardCardInterface {
-  length: number | string;
+  length: number | string | undefined;
   name: string;
   color: string;
 }

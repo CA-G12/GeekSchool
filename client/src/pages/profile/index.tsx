@@ -61,7 +61,6 @@ const ProfilePage: FC<ProfilePageProps> = ({
       message.success(logOutData.data.msg);
       setIsGotten(false);
       navigate("/");
-      window.location.reload();
     } catch (error: any) {
       message.error(error.response.data.msg);
     }

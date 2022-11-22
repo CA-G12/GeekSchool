@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Button, Form, Input } from "antd";
+import { Button, Form, Input, Spin } from "antd";
 import axios, { AxiosResponse } from "axios";
 import Swal from "sweetalert2";
 import FeedbackCard from "../../FeedbackCard";
@@ -58,6 +58,8 @@ const Feedback: React.FC = () => {
 
   return (
     <section className="class-feedback">
+      {!loading ?
+      <>
       <h1>التغذية الراجعة</h1>
       {userData.role === "student" && (
         <Form
@@ -87,9 +89,19 @@ const Feedback: React.FC = () => {
 
       <section className="feedbacks-boxes">
         {feedbacks.map((feedback: any) => (
-          <FeedbackCard feedback={feedback.feedback} />
+          <FeedbackCard feedback={feedback.feedback} key={feedback.id} />
         ))}
       </section>
+      </> :
+        <div className="loading" style={{
+          height: '100%',
+          width: '100%',
+          display: "flex",
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}>
+          <Spin size="large" />
+        </div>}
     </section>
   );
 };
