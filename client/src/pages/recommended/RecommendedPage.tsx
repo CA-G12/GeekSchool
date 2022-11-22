@@ -34,7 +34,7 @@ const RecommendedPage: React.FC = () => {
 
   return (
     <section className="recommended-section">
-      {!loading ?
+      {!loading ? (
         <>
           <div>
             <h1>توصيات إضافية</h1>
@@ -49,20 +49,25 @@ const RecommendedPage: React.FC = () => {
               <RecommendedCard
                 description={ele.description}
                 materialLink={ele.material_link}
-                key={ele.description+1}
+                key={ele.description + 1}
               />
             ))}
           </div>
-        </> :
-        <div className="loading" style={{
-          height: '100%',
-          width: '100%',
-          display: "flex",
-          justifyContent: 'center',
-          alignItems: 'center'
-        }}>
+        </>
+      ) : (
+        <div
+          className="loading"
+          style={{
+            height: "100%",
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <Spin size="large" />
-        </div>}
+        </div>
+      )}
     </section>
   );
 };

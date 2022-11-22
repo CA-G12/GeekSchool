@@ -100,8 +100,7 @@ const TeacherProfile: React.FC<ProfileProps> = ({ setIsGotten }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
 
-  return (
-    user ?
+  return user ? (
     <ProfilePage
       name={user?.name}
       location={user?.location}
@@ -135,16 +134,20 @@ const TeacherProfile: React.FC<ProfileProps> = ({ setIsGotten }) => {
           setLoading={setLoading}
         />
       </section>
-      </ProfilePage> : 
-      <div className="loading" style={{
-        height: '100vh',
-        width: '100%',
+    </ProfilePage>
+  ) : (
+    <div
+      className="loading"
+      style={{
+        height: "100vh",
+        width: "100%",
         display: "flex",
-        justifyContent: 'center',
-        alignItems: 'center'
-      }}>
-        <Spin size="large" />
-      </div>
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <Spin size="large" />
+    </div>
   );
 };
 export default TeacherProfile;

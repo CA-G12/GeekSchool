@@ -8,7 +8,8 @@ import { dashboardNumberInterface } from "../../interfaces";
 import "./style.css";
 
 const StatisticsPage: any = () => {
-  const [dashboardNumber, setDashboardNumber] = useState<dashboardNumberInterface | null>(null);
+  const [dashboardNumber, setDashboardNumber] =
+    useState<dashboardNumberInterface | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const { classId } = useParams();
 
@@ -76,7 +77,7 @@ const StatisticsPage: any = () => {
           statisticsData.data.data.assignmentsNum.assignmentsCount,
         questionsLength: statisticsData.data.data.questionsNum.questionsCount,
       });
-      setLoading(false)
+      setLoading(false);
     } catch (err: any) {
       message.error(err.message);
     }
@@ -88,9 +89,13 @@ const StatisticsPage: any = () => {
   }, [loading]);
   return (
     <section id="dashboard-page">
-      {dashboardNumber ?
+      {dashboardNumber ? (
         <section id="dashboard-cards">
-          <DashboardCard length={dashboardNumber.studentLength} name="الطلاب" color="#FB7D5B" />
+          <DashboardCard
+            length={dashboardNumber.studentLength}
+            name="الطلاب"
+            color="#FB7D5B"
+          />
           <DashboardCard
             length={dashboardNumber.assignmentLength}
             name="المهمات"
@@ -100,17 +105,22 @@ const StatisticsPage: any = () => {
             length={dashboardNumber.questionsLength}
             name="الاسئلة"
             color="#111111"
-            />
-        </section> : 
-        <div className="loading" style={{
-          height: '70vh',
-          width: '100%',
-          display: "flex",
-          justifyContent: 'center',
-          alignItems: 'center'
-        }}>
+          />
+        </section>
+      ) : (
+        <div
+          className="loading"
+          style={{
+            height: "70vh",
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <Spin size="large" />
-        </div>}
+        </div>
+      )}
       <section id="dashboard-chart" />
     </section>
   );

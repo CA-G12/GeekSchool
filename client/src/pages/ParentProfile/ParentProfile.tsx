@@ -14,7 +14,9 @@ import {
 const ParentProfile: FC<{
   setIsGotten: Dispatch<SetStateAction<boolean>>;
 }> = ({ setIsGotten }) => {
-  const [parentInfo, setParentInfo] = useState<ParentInfoInterface | null>(null);
+  const [parentInfo, setParentInfo] = useState<ParentInfoInterface | null>(
+    null
+  );
 
   const [children, setChildren] = useState<ChildrenData[]>([
     {
@@ -87,8 +89,7 @@ const ParentProfile: FC<{
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
 
-  return (
-    parentInfo ?
+  return parentInfo ? (
     <ProfilePage
       name={parentInfo.name}
       email={parentInfo.email}
@@ -124,16 +125,20 @@ const ParentProfile: FC<{
           _role="parent"
         />
       </section>
-      </ProfilePage> :
-        <div className="loading" style={{
-          height: '100vh',
-          width: '100%',
-          display: "flex",
-          justifyContent: 'center',
-          alignItems: 'center'
-        }}>
-          <Spin size="large" />
-        </div>
+    </ProfilePage>
+  ) : (
+    <div
+      className="loading"
+      style={{
+        height: "100vh",
+        width: "100%",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <Spin size="large" />
+    </div>
   );
 };
 

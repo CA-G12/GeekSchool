@@ -47,7 +47,7 @@ const Assignments: React.FC = () => {
 
   return (
     <section className="class-assignment">
-      {!loading ? 
+      {!loading ? (
         <>
           <div>
             <h1>التكليفات</h1>
@@ -89,17 +89,21 @@ const Assignments: React.FC = () => {
               ))}
             </section>
           )}
-        </> :
-        <div className="loading" style={{
-          height: '100%',
-          width: '100%',
-          display: "flex",
-          justifyContent: 'center',
-          alignItems: 'center'
-        }}>
+        </>
+      ) : (
+        <div
+          className="loading"
+          style={{
+            height: "100%",
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <Spin size="large" />
         </div>
-      }
+      )}
     </section>
   );
 };

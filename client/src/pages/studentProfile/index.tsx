@@ -21,7 +21,9 @@ const StudentProfile: FC<{
   const { studentId } = useParams();
   const { userData } = useUserData();
   const [loading, setLoading] = useState(true);
-  const [studentData, setStudentData] = useState<StudentDataInterface | null>(null);
+  const [studentData, setStudentData] = useState<StudentDataInterface | null>(
+    null
+  );
 
   const source = axios.CancelToken.source();
   const navigate = useNavigate();
@@ -47,8 +49,7 @@ const StudentProfile: FC<{
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
 
-  return (
-    studentData ?
+  return studentData ? (
     <ProfilePage
       name={studentData?.name}
       location={studentData?.location}
@@ -58,16 +59,20 @@ const StudentProfile: FC<{
       image={studentData?.img}
       visitRole={userData?.role}
       setIsGotten={setIsGotten}
-      /> :
-      <div className="loading" style={{
-        height: '100vh',
-        width: '100%',
+    />
+  ) : (
+    <div
+      className="loading"
+      style={{
+        height: "100vh",
+        width: "100%",
         display: "flex",
-        justifyContent: 'center',
-        alignItems: 'center'
-      }}>
-          <Spin size="large" />
-      </div>
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <Spin size="large" />
+    </div>
   );
 };
 

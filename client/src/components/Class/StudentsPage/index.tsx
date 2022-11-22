@@ -98,8 +98,8 @@ const StudentsProfile = () => {
   };
 
   useEffect(() => {
-      fetchData();
-      fetchStudents();
+    fetchData();
+    fetchStudents();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
 
@@ -131,39 +131,44 @@ const StudentsProfile = () => {
 
   return (
     <section className="students-section">
-      {!loading ? <>
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <h1 className="title">الطلاب</h1>
-        {userData?.role === "teacher" ? (
-          <AddStudents
-            otherStudents={otherStudents}
-            setLoading={setLoading}
-            fetchData={fetchData}
-            fetchStudents={fetchStudents}
-          />
-        ) : (
-          ""
-        )}
-      </div>
-      <div className="table_wrapper">
-        <Table
-          columns={columns}
-          dataSource={dataSource}
-          size="middle"
-          pagination={{ pageSize: 4 }}
-        />
-        </div>
-      </> :
-        <div className="loading" style={{
-          height: '100%',
-          width: '100%',
-          display: "flex",
-          justifyContent: 'center',
-          alignItems: 'center'
-        }}>
+      {!loading ? (
+        <>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <h1 className="title">الطلاب</h1>
+            {userData?.role === "teacher" ? (
+              <AddStudents
+                otherStudents={otherStudents}
+                setLoading={setLoading}
+                fetchData={fetchData}
+                fetchStudents={fetchStudents}
+              />
+            ) : (
+              ""
+            )}
+          </div>
+          <div className="table_wrapper">
+            <Table
+              columns={columns}
+              dataSource={dataSource}
+              size="middle"
+              pagination={{ pageSize: 4 }}
+            />
+          </div>
+        </>
+      ) : (
+        <div
+          className="loading"
+          style={{
+            height: "100%",
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <Spin size="large" />
         </div>
-      }
+      )}
     </section>
   );
 };

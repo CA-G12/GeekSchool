@@ -39,7 +39,7 @@ const ChatBox = () => {
 
     getMessage();
   }, [loading]);
-  
+
   const handleAddMessage = async () => {
     try {
       const { data } = await axios.post(`/api/v1/chat/${classId}/addMessage`, {
@@ -92,64 +92,68 @@ const ChatBox = () => {
   }, [socket]);
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
   return (
     <section id="chat-box">
-      {!loading ?
-      <>
-        <h1>محادثة الصف</h1>
-        <div className="chat-container">
-          <div className="chat-message">
-            {messages ? (
-              messages?.map((e) => (
-                <div ref={bottomRef} key={`${Math.random()}chat`}>
-                  <ChatMessage
-                    messageText={e.message}
-                    senderId={e.sender_id}
-                    userId={userData?.id}
-                    img={e.User.img}
-                    name={e.User.name}
-                    date={e.createdAt}
-                  />
-                </div>
-              ))
-            ) : (
-              <p>لا يوجد رسائل</p>
-            )}
-            <div style={{height: '10px'}} ref={bottomRef} />
-          </div>
-          <form
-            className="form-message"
-            onSubmit={(e) => {
-              e.preventDefault();
-              handleAddMessage();
-            }}
-          >
-            <input
-              type="text"
-              placeholder="أكتب رسالتك"
-              name="text"
-              value={text}
-              onChange={(e: any) => {
-                setText(e.target.value);
+      {!loading ? (
+        <>
+          <h1>محادثة الصف</h1>
+          <div className="chat-container">
+            <div className="chat-message">
+              {messages ? (
+                messages?.map((e) => (
+                  <div ref={bottomRef} key={`${Math.random()}chat`}>
+                    <ChatMessage
+                      messageText={e.message}
+                      senderId={e.sender_id}
+                      userId={userData?.id}
+                      img={e.User.img}
+                      name={e.User.name}
+                      date={e.createdAt}
+                    />
+                  </div>
+                ))
+              ) : (
+                <p>لا يوجد رسائل</p>
+              )}
+              <div style={{ height: "10px" }} ref={bottomRef} />
+            </div>
+            <form
+              className="form-message"
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleAddMessage();
               }}
-            />
-            <button type="submit">إرسال</button>
-          </form>
-        </div>
-      </> : 
-        <div className="loading" style={{
-          height: '100%',
-          width: '100%',
-          display: "flex",
-          justifyContent: 'center',
-          alignItems: 'center'
-        }}>
+            >
+              <input
+                type="text"
+                placeholder="أكتب رسالتك"
+                name="text"
+                value={text}
+                onChange={(e: any) => {
+                  setText(e.target.value);
+                }}
+              />
+              <button type="submit">إرسال</button>
+            </form>
+          </div>
+        </>
+      ) : (
+        <div
+          className="loading"
+          style={{
+            height: "100%",
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <Spin size="large" />
         </div>
-      }
+      )}
     </section>
   );
 };
