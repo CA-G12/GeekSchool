@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from "react";
-import { message } from "antd";
+import { message, Spin } from "antd";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import Question from "./Question";
@@ -52,28 +52,45 @@ const Questions: FC<Props> = () => {
 
   return (
     <section className="questions">
-      <h1 className="title">الأسئلة</h1>
-      <div className="questions-container">
-        {questions.map((q) =>
-          q.answer ? (
-            <AnsweredQuestion
-              key={q.id}
-              id={q.id}
-              question={q.question}
-              answer={q.answer}
-              handleChange={handleChange}
-            />
-          ) : (
-            <Question
-              key={q.id}
-              id={q.id}
-              question={q.question}
-              answer={q.answer}
-              handleChange={handleChange}
-            />
-          )
-        )}
-      </div>
+      {!loading ? (
+        <>
+          <h1 className="title">الأسئلة</h1>
+          <div className="questions-container">
+            {questions.map((q) =>
+              q.answer ? (
+                <AnsweredQuestion
+                  key={q.id}
+                  id={q.id}
+                  question={q.question}
+                  answer={q.answer}
+                  handleChange={handleChange}
+                />
+              ) : (
+                <Question
+                  key={q.id}
+                  id={q.id}
+                  question={q.question}
+                  answer={q.answer}
+                  handleChange={handleChange}
+                />
+              )
+            )}
+          </div>
+        </>
+      ) : (
+        <div
+          className="loading"
+          style={{
+            height: "100%",
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Spin size="large" />
+        </div>
+      )}
     </section>
   );
 };

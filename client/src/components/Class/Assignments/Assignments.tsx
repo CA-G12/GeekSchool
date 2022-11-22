@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { Dropdown, Space, Button, Menu, message } from "antd";
+import { Dropdown, Space, Button, Menu, message, Spin } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 import axios from "axios";
 import { useUserData } from "../../../context/AuthContext";
@@ -47,43 +47,62 @@ const Assignments: React.FC = () => {
 
   return (
     <section className="class-assignment">
-      <div>
-        <h1>التكليفات</h1>
-        <div className="assignment-add-search">
-          {role === "teacher" && (
-            <Dropdown overlay={menu} className="dropdown">
-              <Button className="dropdown-button">
-                <Space>
-                  <PlusOutlined className="plus-icon" />
-                  إضافة مهمة جديدة
-                </Space>
-              </Button>
-            </Dropdown>
+      {!loading ? (
+        <>
+          <div>
+            <h1>التكليفات</h1>
+            <div className="assignment-add-search">
+              {role === "teacher" && (
+                <Dropdown overlay={menu} className="dropdown">
+                  <Button className="dropdown-button">
+                    <Space>
+                      <PlusOutlined className="plus-icon" />
+                      إضافة مهمة جديدة
+                    </Space>
+                  </Button>
+                </Dropdown>
+              )}
+            </div>
+          </div>
+          {role === "student" && (
+            <section className="assignments-box">
+              {assignments.map((assignment: any) => (
+                <StudentAssignmentCard
+                  title={assignment.title}
+                  createdAt={assignment.createdAt}
+                  description={assignment.description}
+                  key={assignment.id}
+                />
+              ))}
+            </section>
           )}
+          {role === "teacher" && (
+            <section className="assignment-box">
+              {assignments.map((assignment: any) => (
+                <TeacherAssignmentCard
+                  id={assignment.id}
+                  title={assignment.title}
+                  createdAt={assignment.createdAt}
+                  description={assignment.description}
+                  key={assignment.id}
+                />
+              ))}
+            </section>
+          )}
+        </>
+      ) : (
+        <div
+          className="loading"
+          style={{
+            height: "100%",
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Spin size="large" />
         </div>
-      </div>
-      {role === "student" && (
-        <section className="assignments-box">
-          {assignments.map((assignment: any) => (
-            <StudentAssignmentCard
-              title={assignment.title}
-              createdAt={assignment.createdAt}
-              description={assignment.description}
-            />
-          ))}
-        </section>
-      )}
-      {role === "teacher" && (
-        <section className="assignment-box">
-          {assignments.map((assignment: any) => (
-            <TeacherAssignmentCard
-              id={assignment.id}
-              title={assignment.title}
-              createdAt={assignment.createdAt}
-              description={assignment.description}
-            />
-          ))}
-        </section>
       )}
     </section>
   );

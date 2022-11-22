@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Table, Space, Spin, notification } from "antd";
+import { Table, Spin, notification } from "antd";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import NameCell from "./NameCell";
@@ -52,8 +52,6 @@ const StudentsProfile = () => {
 
   const fetchData = async () => {
     try {
-      setLoading(true);
-
       const {
         data: { data },
       } = await axios.get(`/api/v1/class/${classId}/students`);
@@ -66,7 +64,6 @@ const StudentsProfile = () => {
           parentName: s["Student.Parent.User.name"],
         }))
       );
-      setLoading(false);
     } catch (err) {
       setLoading(false);
       setError("Something went wrong");
@@ -75,7 +72,6 @@ const StudentsProfile = () => {
 
   const fetchStudents = async () => {
     try {
-      setLoading(true);
       const studentsdata = await axios.get(
         `/api/v1/class/${classId}/otherStudents/`
       );
@@ -105,7 +101,7 @@ const StudentsProfile = () => {
     fetchData();
     fetchStudents();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [loading]);
 
   const dataSource = students.map((s) => ({
     name: <NameCell name={s.name} image={s.img} />,
@@ -119,14 +115,6 @@ const StudentsProfile = () => {
       />
     ),
   }));
-
-  if (loading) {
-    return (
-      <Space size="large">
-        <Spin size="large" />
-      </Space>
-    );
-  }
 
   if (error) {
     notification.config({
@@ -143,27 +131,44 @@ const StudentsProfile = () => {
 
   return (
     <section className="students-section">
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <h1 className="title">الطلاب</h1>
-        {userData?.role === "teacher" ? (
-          <AddStudents
-            otherStudents={otherStudents}
-            setLoading={setLoading}
-            fetchData={fetchData}
-            fetchStudents={fetchStudents}
-          />
-        ) : (
-          ""
-        )}
-      </div>
-      <div className="table_wrapper">
-        <Table
-          columns={columns}
-          dataSource={dataSource}
-          size="middle"
-          pagination={{ pageSize: 4 }}
-        />
-      </div>
+      {!loading ? (
+        <>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <h1 className="title">الطلاب</h1>
+            {userData?.role === "teacher" ? (
+              <AddStudents
+                otherStudents={otherStudents}
+                setLoading={setLoading}
+                fetchData={fetchData}
+                fetchStudents={fetchStudents}
+              />
+            ) : (
+              ""
+            )}
+          </div>
+          <div className="table_wrapper">
+            <Table
+              columns={columns}
+              dataSource={dataSource}
+              size="middle"
+              pagination={{ pageSize: 4 }}
+            />
+          </div>
+        </>
+      ) : (
+        <div
+          className="loading"
+          style={{
+            height: "100%",
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Spin size="large" />
+        </div>
+      )}
     </section>
   );
 };

@@ -74,13 +74,13 @@ aside {
   height: 100%;
   padding: 1rem 0;
   transition: all 0.2s ease-in-out;
-  gap: 2rem;
+  gap: 1.5rem;
   box-shadow: -1px 0 2px 0 #D9DDF2;
-  overflow: auto;
 }
 
 aside::-webkit-scrollbar {
   width: 2px !important;
+  visibility: hidden;
 }
 
 aside span {
@@ -104,6 +104,16 @@ aside a {
   color: var(--gray) !important;
   position: relative;
   flex-shrink: 0 !important;
+  transition: all 0.2s ease-in-out;
+}
+
+aside a:hover {
+  background-color: rgb(180, 220, 252);
+  color: var(--third-color) !important;
+}
+
+aside a:hover span {
+  color: var(--third-color) !important;
 }
 
 .active {
