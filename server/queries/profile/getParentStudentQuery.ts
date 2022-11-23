@@ -1,6 +1,6 @@
 import { Student, User } from '../../models';
 
-const getParentStudentQuery = (parentId: string) => (Student.findAll({
+const getParentStudentQuery = (parentId: number) => (Student.findAll({
   raw: true,
   where: {
     parent_id: parentId,

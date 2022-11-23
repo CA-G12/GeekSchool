@@ -9,6 +9,7 @@ import {
   createStudent,
   putParentIdForStudentQuery,
   createStudentHealthQuery,
+  getUserIdFromTableQuery,
 } from '../../queries';
 
 import {
@@ -20,9 +21,11 @@ import {
 
 const putParentIdForStudent = async (child: string, parentId: number) => {
   const studentUser = await findUserByEmail(child);
-  const studentId = studentUser?.getDataValue('id');
 
-  await putParentIdForStudentQuery(studentId, parentId);
+  const studentId = studentUser?.getDataValue('id');
+  const studentData = await getUserIdFromTableQuery('student', studentId);
+
+  await putParentIdForStudentQuery(studentData?.getDataValue('id'), parentId);
 };
 
 const signup = async (req: Request, res: Response, next: NextFunction) => {
